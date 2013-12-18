@@ -9,7 +9,7 @@
 #import "ICNewsDetail.h"
 #import "ICNews.h"
 #import "ICNewsDetailAttachment.h"
-#include "../ICModuleConfig.h"
+#include "../ICModelConfig.h"
 
 @implementation ICNewsDetail
 
@@ -65,6 +65,8 @@
         self.type = [[json objectForKey:@"doctype"] intValue];
         // title
         self.title = [json objectForKey:@"doctitle"];
+        self.title = [self.title stringByReplacingOccurrencesOfString:@"<br>" withString:@""];
+        self.title = [self.title stringByReplacingOccurrencesOfString:@"\u3000\u3000" withString:@" "];
         // subtitles
         NSMutableArray *subtitles = [NSMutableArray array];
         NSString *subtitle;

@@ -9,7 +9,7 @@
 #import "ICNewsList.h"
 #import "ICNews.h"
 #import "ICNewsChannel.h"
-#import "../ICModuleConfig.h"
+#import "../ICModelConfig.h"
 
 @interface ICNewsList ()
 
@@ -80,7 +80,7 @@
             news.title = [a objectForKey:@"n"];
             news.author = [a objectForKey:@"au"];
             news.preview = [a objectForKey:@"ab"];
-            news.iconUrl = [NSURL URLWithString:[a objectForKey:@"ic"]];
+            news.imageURL = [NSURL URLWithString:[a objectForKey:@"ic"]];
             news.detailKey = [a objectForKey:@"url"];
             news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
                                                                        withString:@""];

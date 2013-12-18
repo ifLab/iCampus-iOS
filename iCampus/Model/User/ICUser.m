@@ -7,8 +7,8 @@
 //
 
 #import "ICUser.h"
-#import "NSString+RSA/NSString+RSA.h"
-#import "../ICModuleConfig.h"
+#import "../../External/NSString+RSA/NSString+RSA.h"
+#import "../ICModelConfig.h"
 
 @interface ICUser ()
 

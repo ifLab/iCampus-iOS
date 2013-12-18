@@ -8,7 +8,7 @@
 
 #import "ICCampusList.h"
 #import "ICCampus.h"
-#import "../ICModuleConfig.h"
+#import "../ICModelConfig.h"
 
 @interface ICCampusList ()
 

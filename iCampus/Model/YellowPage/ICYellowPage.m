@@ -8,7 +8,7 @@
 
 #import "ICYellowPage.h"
 #import "ICYellowPageContact.h"
-#import "../ICModuleConfig.h"
+#import "../ICModelConfig.h"
 
 @interface ICYellowPage ()
 

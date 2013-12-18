@@ -8,7 +8,7 @@
 
 #import "ICNewsChannel.h"
 #import "ICNewsChannelList.h"
-#import "../ICModuleConfig.h"
+#import "../ICModelConfig.h"
 
 @interface ICNewsChannelList ()
 

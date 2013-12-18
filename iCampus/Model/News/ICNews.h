@@ -15,8 +15,8 @@
 @property (nonatomic, copy) NSString   *title    ;
 @property (nonatomic, copy) NSString   *author   ;
 @property (nonatomic, copy) NSString   *preview  ;
-@property (nonatomic, copy) NSURL      *iconUrl  ;
 @property (nonatomic, copy) NSString   *detailKey;
+@property (nonatomic, copy) NSURL      *imageURL ;
 
 @end
 
