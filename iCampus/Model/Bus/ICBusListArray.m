@@ -118,7 +118,7 @@
     return self.array.lastObject;
 }
 
-- (ICBusList *)BusListAtIndex:(NSUInteger)index {
+- (ICBusList *)busListAtIndex:(NSUInteger)index {
     return [self.array objectAtIndex:index];
 }
 

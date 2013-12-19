@@ -31,13 +31,16 @@
                 self.timeLabel.text = [dateFormatter stringFromDate:self.newsDetail.creationTime];
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
                 paragraphStyle.lineSpacing = 10.0;
+                if (!__self.newsDetail) {
+                    return;
+                }
                 NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:__self.newsDetail.body];
                 [attributedString addAttribute:NSParagraphStyleAttributeName
                                          value:paragraphStyle
                                          range:NSMakeRange(0, __self.newsDetail.body.length)];
                 __self.bodyLabel.attributedText = attributedString;
                 [__self.bodyLabel sizeToFit];
-                __self.scrollView.contentSize = CGSizeMake(__self.scrollView.frame.size.width, __self.bodyLabel.frame.size.height + 165.0);
+                __self.scrollView.contentSize = CGSizeMake(__self.scrollView.frame.size.width, __self.bodyLabel.frame.size.height + 365.0);
                 [self.imagePager reloadData];
             });
         });
@@ -55,6 +58,7 @@
         self.imagePager.delegate = self;
         self.imagePager.dataSource = self;
         self.imagePager.slideshowTimeInterval = 5.0f;
+        self.imagePager.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0];
         [self.scrollView addSubview:self.imagePager];
         self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 200,
                                                                    self.scrollView.frame.size.width, 75.0)];
@@ -89,7 +93,7 @@
 }
 
 - (NSString *)captionForImageAtIndex:(NSUInteger)index {
-    return @"";
+    return nil;
 }
 
 - (NSArray *)arrayWithImages {
@@ -101,7 +105,7 @@
 }
 
 - (UIImage *)placeHolderImageForImagePager {
-    return nil;
+    return [UIImage imageNamed:@"ICNewsDetailImagePlaceHolder"];
 }
 
 @end

@@ -12,7 +12,7 @@
 
 @interface ICBus : NSObject
 
-@property (nonatomic)         NSUInteger       index        ;
+@property (nonatomic)         NSUInteger       index         ;
 @property (nonatomic, copy)   NSString         *name         ;
 @property (nonatomic, copy)   NSString         *description  ;
 @property (nonatomic, copy)   NSDate           *departureTime;

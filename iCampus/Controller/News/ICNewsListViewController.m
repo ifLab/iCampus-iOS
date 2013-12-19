@@ -17,6 +17,7 @@
 
 @interface ICNewsListViewController () <ICNewsChannelDelegate>
 
+@property BOOL isLoading;
 @property NSUInteger page;
 
 @end
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.isLoading = NO;
     self.title = @"新闻";
     self.tableView.rowHeight = 72.0f;
     self.navigationController.navigationBar.translucent = NO;
@@ -101,14 +103,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)continueLoadingNewsList {
-    self.page++;
+    if (self.isLoading) {
+        return;
+    }
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.isLoading = YES;
         ICNewsList *newNewsList = [ICNewsList newsListWithChannel:self.channel
-                                                        pageIndex:self.page];
-        [self.newsList addNewsFromNewsList:newNewsList];
+                                                        pageIndex:self.page+1];
+        if (newNewsList.count != 0) {
+            [self.newsList addNewsFromNewsList:newNewsList];
+            self.page++;
+        }
         ICNewsListViewController __weak *__self = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             [__self.tableView reloadData];
+            self.isLoading = NO;
             [__self.tableView.infiniteScrollingView stopAnimating];
         });
     });

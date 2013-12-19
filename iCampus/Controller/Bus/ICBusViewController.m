@@ -8,6 +8,7 @@
 
 #import "ICBusViewController.h"
 #import "../../Model/Bus/ICBus.h"
+#import "../../View/Bus/ICBusCell.h"
 
 #define CELL_STOPS_MAINVIEW 1001
 
@@ -17,7 +18,6 @@
 @interface ICBusViewController ()
 
 @property (strong, nonatomic) ICBusListArray *busLines;
-@property (strong, nonatomic) NSMutableArray *busList;
 //@property (strong, nonatomic) ICSchoolBusList *busList;
 
 @property NSIndexPath *expandingIndexPath;
@@ -49,7 +49,6 @@
     // Get Bus Info
     //NSLog(@"1");
     //self.busList = [[ICSchoolBusList alloc] init];
-    self.busList = [NSMutableArray array];
     //NSLog(@"2");
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         //NSLog(@"3");
@@ -61,15 +60,6 @@
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //NSLog(@"5");
-                
-                for (ICBusList *list in self.busLines) {
-                    if (list != nil) {
-                        [self.busList addObject:list];
-                    } else {
-                        NSLog(@"Fecth Bus Data Occur Error 2.");
-                        self.loadingLabel.text = @"Error Occurs : 2";
-                    }
-                }
                 
                 [self.loadingLabel removeFromSuperview];
                 [self.tableView reloadData];
@@ -96,144 +86,97 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    ICBusList *buses = [self.busList objectAtIndex:section];
-    if (self.expandingIndexPath == nil) {
-        return [buses count];
-    } else {
-        return [buses count] + 1;
-    }
+    ICBusList *buses = [self.busLines busListAtIndex:section];
+    return [buses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = nil;
-    if (self.expandingIndexPath.row != indexPath.row || self.expandingIndexPath == nil) {
-        CellIdentifier = @"NormalCell";
-    } else {
-        CellIdentifier = @"ExpandingCell";
+//    static NSString *CellIdentifier = nil;
+//    if (self.expandingIndexPath.row != indexPath.row || self.expandingIndexPath == nil) {
+//        CellIdentifier = @"NormalCell";
+//    } else {
+//        CellIdentifier = @"ExpandingCell";
+//    }
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    //UITableViewCell *cell = nil;
+//    
+//    ICBusList *buses = [self.busList objectAtIndex:indexPath.section];
+//    
+//    if (self.expandingIndexPath.row != indexPath.row || self.expandingIndexPath == nil) {
+//        UILabel *busNameLabel = nil;
+//        UILabel *busDescLabel = nil;
+//        UILabel *departureTimeLabel = nil;
+//        //UILabel *returnTimeLabel = nil;
+//    
+//        if (cell == nil) {
+//            cell
+//        } else {
+//            busNameLabel = (UILabel *)[cell.contentView viewWithTag:1001];
+//            busDescLabel = (UILabel *)[cell.contentView viewWithTag:1004];
+//            departureTimeLabel = (UILabel *)[cell.contentView viewWithTag:1002];
+//            //returnTimeLabel = (UILabel *)[cell.contentView viewWithTag:1003];
+//        }
+//        
+//        ICBus *currBus = nil;
+//        if (self.expandingIndexPath != nil) {
+//            if (indexPath.row > self.expandingIndexPath.row) {
+//                currBus = [buses busAtIndex:indexPath.row -1 ];
+//            } else {
+//                currBus = [buses busAtIndex:indexPath.row];
+//            }
+//        } else {
+//            currBus = [buses busAtIndex:indexPath.row];
+//        }
+//        
+//        busNameLabel.text = currBus.name;
+//        busDescLabel.text = currBus.description;
+//        
+//        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"hh:mm"];
+//        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+//        departureTimeLabel.text = [dateFormatter stringFromDate:currBus.departureTime];
+//        //returnTimeLabel.text = [dateFormatter stringFromDate:currBus.returnTime];
+//        //departureTimeLabel.text = @"06:40";
+//        //returnTimeLabel.text = @"11:25";
+//        
+//    } else {
+//        UIScrollView *busStopView = nil;
+//        UIView *stops = nil;
+//        
+//        if (cell == nil) {
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//            
+//            busStopView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320.0, CELL_EXPANDING_HEIGHT)];
+//            busStopView.contentSize = CGSizeMake(640.0, busStopView.frame.size.height);
+//            busStopView.backgroundColor = [UIColor colorWithRed:236/255.0 green:240/255.0 blue:241/255.0 alpha:1.0];
+//            busStopView.tag = 2001;
+//            busStopView.showsHorizontalScrollIndicator = NO;
+//            [cell.contentView addSubview:busStopView];
+//            
+//            UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(155.0, 0, 10.0, 10.0)];
+//            arrow.image = [UIImage imageNamed:@"SchoolBusExpandingCellArrow.png"];
+//            [cell.contentView addSubview:arrow];
+//        } else {
+//            busStopView = (UIScrollView *)[cell.contentView viewWithTag:2001];
+//        }
+//        
+//        stops = [self stopsLayoutForExpandingCellWithBus:[buses busAtIndex:indexPath.row - 1]];
+//        busStopView.contentSize = CGSizeMake(stops.frame.size.width, CELL_EXPANDING_HEIGHT);
+//        UIView *older = [busStopView viewWithTag:CELL_STOPS_MAINVIEW];
+//        if (older) {
+//            [older removeFromSuperview];
+//        }
+//        [busStopView addSubview:stops];
+//    }
+//
+    ICBus *bus = [[self.busLines busListAtIndex:indexPath.section] busAtIndex:indexPath.row];
+#   warning Bus with same title might cause error.
+    ICBusCell *cell = [tableView dequeueReusableCellWithIdentifier:bus.name];
+    if (!cell) {
+        cell = [[ICBusCell alloc] initWithBus:bus
+                              reuseIdentifier:bus.name];
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //UITableViewCell *cell = nil;
-    
-    ICBusList *buses = [self.busList objectAtIndex:indexPath.section];
-    
-    if (self.expandingIndexPath.row != indexPath.row || self.expandingIndexPath == nil) {
-        UILabel *busNameLabel = nil;
-        UILabel *busDescLabel = nil;
-        UILabel *departureTimeLabel = nil;
-        //UILabel *returnTimeLabel = nil;
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            UIView *selectedBg = [[UIView alloc] initWithFrame:cell.frame];
-            selectedBg.backgroundColor = [UIColor colorWithRed:189/255.0 green:195/255.0 blue:199/255.0 alpha:1.0];
-            cell.selectedBackgroundView = selectedBg;
-            
-            UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(18.0, 18.0, 36.0, 36.0)];
-            icon.image = [UIImage imageNamed:@"BusCellIcon.png"];
-            [cell.contentView addSubview:icon];
-            
-            busNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60.0, 14.0, 240.0, 24.0)];
-            busNameLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
-            busNameLabel.font = [UIFont systemFontOfSize:18.0];
-            busNameLabel.tag = 1001;
-            //busNameLabel.backgroundColor = [UIColor yellowColor];
-            [cell.contentView addSubview:busNameLabel];
-            
-            busDescLabel = [[UILabel alloc] initWithFrame:CGRectMake(60.0, 40.0, 160.0, 20.0)];
-            busDescLabel.textColor = [UIColor grayColor];
-            busDescLabel.font = [UIFont systemFontOfSize:14.0];
-            busDescLabel.tag = 1004;
-            //busDescLabel.backgroundColor = [UIColor blueColor];
-            [cell.contentView addSubview:busDescLabel];
-            
-            departureTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(260.0, 40.0, 55.0, 20.0)];
-            departureTimeLabel.textColor = [UIColor grayColor
-                                            ];
-            departureTimeLabel.font = [UIFont systemFontOfSize:16.0];
-            departureTimeLabel.textAlignment = NSTextAlignmentLeft;
-            departureTimeLabel.tag = 1002;
-            //departureTimeLabel.backgroundColor = [UIColor redColor];
-            [cell.contentView addSubview:departureTimeLabel];
-            
-            //returnTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(260.0, 38.0, 55.0, 20.0)];
-            //returnTimeLabel.textColor = [UIColor colorWithRed:230/255.0 green:126/255.0 blue:34/255.0 alpha:1.0];
-            //returnTimeLabel.font = [UIFont systemFontOfSize:16.0];
-            //returnTimeLabel.textAlignment = NSTextAlignmentLeft;
-            //returnTimeLabel.tag = 1003;
-            //returnTimeLabel.backgroundColor = [UIColor redColor];
-            //[cell.contentView addSubview:returnTimeLabel];
-            
-            UIImageView *deprIcon = [[UIImageView alloc] initWithFrame:CGRectMake(235.0, 40.0, 20.0, 20.0)];
-            deprIcon.image = [UIImage imageNamed:@"SchoolBusTimeIcon.png"];
-            [cell.contentView addSubview:deprIcon];
-            //UIImageView *retnIcon = [[UIImageView alloc] initWithFrame:CGRectMake(235.0, 38.0, 20.0, 20.0)];
-            //retnIcon.image = [UIImage imageNamed:@"SchoolBusRetnIcon.png"];
-            //[cell.contentView addSubview:retnIcon];
-            
-            UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 71.0, 320.0, 1.0)];
-            line.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1.0];
-            [cell.contentView addSubview:line];
-        } else {
-            busNameLabel = (UILabel *)[cell.contentView viewWithTag:1001];
-            busDescLabel = (UILabel *)[cell.contentView viewWithTag:1004];
-            departureTimeLabel = (UILabel *)[cell.contentView viewWithTag:1002];
-            //returnTimeLabel = (UILabel *)[cell.contentView viewWithTag:1003];
-        }
-        
-        ICBus *currBus = nil;
-        if (self.expandingIndexPath != nil) {
-            if (indexPath.row > self.expandingIndexPath.row) {
-                currBus = [buses busAtIndex:indexPath.row -1 ];
-            } else {
-                currBus = [buses busAtIndex:indexPath.row];
-            }
-        } else {
-            currBus = [buses busAtIndex:indexPath.row];
-        }
-        
-        busNameLabel.text = currBus.name;
-        busDescLabel.text = currBus.description;
-        
-        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"hh:mm"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-        departureTimeLabel.text = [dateFormatter stringFromDate:currBus.departureTime];
-        //returnTimeLabel.text = [dateFormatter stringFromDate:currBus.returnTime];
-        //departureTimeLabel.text = @"06:40";
-        //returnTimeLabel.text = @"11:25";
-        
-    } else {
-        UIScrollView *busStopView = nil;
-        UIView *stops = nil;
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            busStopView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320.0, CELL_EXPANDING_HEIGHT)];
-            busStopView.contentSize = CGSizeMake(640.0, busStopView.frame.size.height);
-            busStopView.backgroundColor = [UIColor colorWithRed:236/255.0 green:240/255.0 blue:241/255.0 alpha:1.0];
-            busStopView.tag = 2001;
-            busStopView.showsHorizontalScrollIndicator = NO;
-            [cell.contentView addSubview:busStopView];
-            
-            UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(155.0, 0, 10.0, 10.0)];
-            arrow.image = [UIImage imageNamed:@"SchoolBusExpandingCellArrow.png"];
-            [cell.contentView addSubview:arrow];
-        } else {
-            busStopView = (UIScrollView *)[cell.contentView viewWithTag:2001];
-        }
-        
-        stops = [self stopsLayoutForExpandingCellWithBus:[buses busAtIndex:indexPath.row - 1]];
-        busStopView.contentSize = CGSizeMake(stops.frame.size.width, CELL_EXPANDING_HEIGHT);
-        UIView *older = [busStopView viewWithTag:CELL_STOPS_MAINVIEW];
-        if (older) {
-            [older removeFromSuperview];
-        }
-        [busStopView addSubview:stops];
-    }
-    
     return cell;
 }
 
@@ -291,19 +234,19 @@
         //stopNameLabel.backgroundColor = [UIColor yellowColor];
         //stopDeprLabel.backgroundColor = [UIColor colorWithRed:231/255.0 green:76/255.0 blue:60/255.0 alpha:1.0];
         //stopRetnLabel.backgroundColor = [UIColor colorWithRed:230/255.0 green:126/255.0 blue:34/255.0 alpha:1.0];
-        container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SchoolBusContainerBg.png"]];
+        container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ICBusStationNormal"]];
         if (i == 0) {
-            container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SchoolBusContainerBgF.png"]];
+            container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ICBusStationFirst"]];
         }
         if (i == count - 1) {
-            container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SchoolBusContainerBgL.png"]];
+            container.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ICBusStationLast"]];
         }
         
         stopNameLabel.numberOfLines = 2;
         
         NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"hh:mm"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
         
         stopNameLabel.text = stop.name;
         stopDeprLabel.text = [dateFormatter stringFromDate:stop.time]==nil?@"-":[dateFormatter stringFromDate:stop.time];
@@ -354,6 +297,11 @@
         NSIndexPath *toPath = [NSIndexPath indexPathForRow:self.expandingIndexPath.row - 1 inSection:self.expandingIndexPath.section];
         [self.tableView scrollToRowAtIndexPath:toPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section {
+    return [self.busLines busListAtIndex:section].name;
 }
 
 /*

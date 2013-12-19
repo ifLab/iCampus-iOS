@@ -12,26 +12,30 @@
 
 @implementation ICNewsCell
 
-- (id)initWithNews:(ICNews *)news reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+- (id)initWithNews:(ICNews *)news
+   reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [self initWithStyle:UITableViewCellStyleDefault
+               reuseIdentifier:reuseIdentifier];
     if (self) {
         self.titleLabel.text   = news.title;
         self.previewLabel.text = news.preview;
         ICNewsCell __weak *__self = self;
         [self.thumbnailImageView setImageWithURLRequest:[NSURLRequest requestWithURL:news.imageURL]
-                                       placeholderImage:nil
+                                       placeholderImage:[UIImage imageNamed:@"ICNewsDetailImagePlaceHolder"]
                                                 success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                                     __self.thumbnailImageView.image = image;
                                                 }
                                                 failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                                    __self.thumbnailImageView.image = nil;
+                                                    __self.thumbnailImageView.image = [UIImage imageNamed:@"ICNewsDetailImagePlaceHolder"];
                                                 }];
     }
     return self;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style
+                reuseIdentifier:reuseIdentifier];
     if (self) {
         self.thumbnailImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, 10.0, 66.7, 50.0)];
         self.thumbnailImageView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];

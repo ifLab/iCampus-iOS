@@ -10,6 +10,7 @@
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
+		95798F331863093C0049CF77 /* ICBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798F321863093C0049CF77 /* ICBusCell.m */; };
 		95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000A71861F4CD008B18BD /* ICAppDelegate.m */; };
 		95A000AE1861F504008B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95A000B01861F927008B18BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A000AF1861F927008B18BD /* AudioToolbox.framework */; };
@@ -91,6 +92,8 @@
 		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
 		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
 		95798EA2186285080049CF77 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
+		95798F311863093C0049CF77 /* ICBusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusCell.h; sourceTree = "<group>"; };
+		95798F321863093C0049CF77 /* ICBusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusCell.m; sourceTree = "<group>"; };
 		95A000A61861F4CD008B18BD /* ICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICAppDelegate.h; sourceTree = "<group>"; };
 		95A000A71861F4CD008B18BD /* ICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
 		95A000AD1861F504008B18BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 		95A000E2186218A0008B18BD /* Bus */ = {
 			isa = PBXGroup;
 			children = (
+				95798F311863093C0049CF77 /* ICBusCell.h */,
+				95798F321863093C0049CF77 /* ICBusCell.m */,
 			);
 			path = Bus;
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
+				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
 				95798EA5186285080049CF77 /* KIImagePager.m in Sources */,
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,

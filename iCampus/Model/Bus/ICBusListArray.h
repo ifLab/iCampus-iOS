@@ -19,6 +19,6 @@
 - (NSUInteger)count;
 - (ICBusList *)firstBusList;
 - (ICBusList *)lastBusList;
-- (ICBusList *)BusListAtIndex:(NSUInteger)index;
+- (ICBusList *)busListAtIndex:(NSUInteger)index;
 
 @end

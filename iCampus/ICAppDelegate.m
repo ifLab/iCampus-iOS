@@ -19,10 +19,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0],
-      NSForegroundColorAttributeName,nil]];
+      NSForegroundColorAttributeName, nil]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     return YES;
