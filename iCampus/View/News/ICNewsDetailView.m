@@ -20,7 +20,7 @@
              frame:(CGRect)frame {
     self = [self initWithFrame:frame];
     if (self) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^(void){
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
             self.newsDetail = [ICNewsDetail newsDetailWithNews:news];
             ICNewsDetailView __weak *__self = self;
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -38,6 +38,7 @@
                 __self.bodyLabel.attributedText = attributedString;
                 [__self.bodyLabel sizeToFit];
                 __self.scrollView.contentSize = CGSizeMake(__self.scrollView.frame.size.width, __self.bodyLabel.frame.size.height + 165.0);
+                [self.imagePager reloadData];
             });
         });
     }
@@ -49,15 +50,24 @@
     if (self) {
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.frame];
         [self addSubview:self.scrollView];
-        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width, 75.0)];
+        self.imagePager = [[KIImagePager alloc] initWithFrame:CGRectMake(0.0, 0.0,
+                                                                         self.frame.size.width, 200.0)];
+        self.imagePager.delegate = self;
+        self.imagePager.dataSource = self;
+        self.imagePager.slideshowTimeInterval = 5.0f;
+        [self.scrollView addSubview:self.imagePager];
+        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 200,
+                                                                   self.scrollView.frame.size.width, 75.0)];
         [self.scrollView addSubview:self.headerView];
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 10.0, self.scrollView.frame.size.width - 20.0, 40.0)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 10.0,
+                                                                    self.scrollView.frame.size.width - 20.0, 40.0)];
         self.titleLabel.font = [UIFont systemFontOfSize:18.0f];
         self.titleLabel.textColor = [UIColor darkTextColor];
         self.titleLabel.numberOfLines = 1;
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         [self.headerView addSubview:self.titleLabel];
-        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 45.0, self.scrollView.frame.size.width - 20.0, 20)];
+        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 45.0,
+                                                                   self.scrollView.frame.size.width - 20.0, 20)];
         self.timeLabel.font = [UIFont systemFontOfSize:12.0f];
         self.timeLabel.textColor = [UIColor lightGrayColor];
         self.timeLabel.numberOfLines = 1;
@@ -66,14 +76,32 @@
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(20.0, self.headerView.frame.size.height, self.scrollView.frame.size.width - 40.0, 1.0)];
         line.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
         [self.headerView addSubview:line];
-        self.bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.headerView.frame.size.height + 15.0, self.scrollView.frame.size.width - 20.0, self.frame.size.height)];
+        self.bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, self.headerView.frame.size.height + self.headerView.frame.origin.y + 15.0,
+                                                                   self.scrollView.frame.size.width - 20.0, self.frame.size.height)];
         self.bodyLabel.font = [UIFont systemFontOfSize:14.0f];
         self.bodyLabel.textColor = [UIColor darkGrayColor];
         self.bodyLabel.numberOfLines = 0;
         self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.scrollView addSubview:self.bodyLabel];
+        
     }
     return self;
+}
+
+- (NSString *)captionForImageAtIndex:(NSUInteger)index {
+    return @"";
+}
+
+- (NSArray *)arrayWithImages {
+    return self.newsDetail.imageURLs;
+}
+
+- (UIViewContentMode)contentModeForImage:(NSUInteger)image {
+    return UIViewContentModeScaleAspectFill;
+}
+
+- (UIImage *)placeHolderImageForImagePager {
+    return nil;
 }
 
 @end

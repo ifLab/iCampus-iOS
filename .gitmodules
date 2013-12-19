@@ -1,0 +1,3 @@
+[submodule "iCampus/External/ETFoursquareImages"]
+	path = iCampus/External/ETFoursquareImages
+	url = https://github.com/EugeneTrapeznikov/ETFoursquareImages.git

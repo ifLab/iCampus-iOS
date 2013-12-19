@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KIImagePager.h"
 
 @class ICNews, ICNewsDetail;
 
-@interface ICNewsDetailView : UIView
+@interface ICNewsDetailView : UIView <KIImagePagerDelegate, KIImagePagerDataSource>
 
-@property (nonatomic, strong) UILabel      *titleLabel ;
-@property (nonatomic, strong) UILabel      *bodyLabel  ;
-@property (nonatomic, strong) UILabel      *timeLabel  ;
-@property (nonatomic, strong) UIView       *headerView ;
-@property (nonatomic, strong) UIScrollView *scrollView ;
-@property (nonatomic, strong) ICNewsDetail *newsDetail ;
+@property (nonatomic, strong) UILabel            *titleLabel     ;
+@property (nonatomic, strong) UILabel            *bodyLabel      ;
+@property (nonatomic, strong) UILabel            *timeLabel      ;
+@property (nonatomic, strong) UIView             *headerView     ;
+@property (nonatomic, strong) NSArray            *images         ;
+@property (nonatomic, strong) UIScrollView       *scrollView     ;
+@property (nonatomic, strong) ICNewsDetail       *newsDetail     ;
+@property (nonatomic, strong) KIImagePager       *imagePager     ;
 
 - (id)initWithNews:(ICNews *)news
              frame:(CGRect)frame;

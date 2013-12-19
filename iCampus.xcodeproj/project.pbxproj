@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
+		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
+		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
 		95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000A71861F4CD008B18BD /* ICAppDelegate.m */; };
 		95A000AE1861F504008B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95A000B01861F927008B18BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A000AF1861F927008B18BD /* AudioToolbox.framework */; };
@@ -29,6 +32,7 @@
 		95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A001191862594E008B18BD /* ICNewsChannelViewController.m */; };
 		95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */; };
 		95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011D1862594E008B18BD /* ICNewsListViewController.m */; };
+		95A0016A186268A5008B18BD /* MSRImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A00169186268A5008B18BD /* MSRImageScrollView.m */; };
 		95AC70AC185F473300C94B71 /* ICCampus.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7078185F473200C94B71 /* ICCampus.m */; };
 		95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC707A185F473200C94B71 /* ICCampusList.m */; };
 		95AC70B2185F473300C94B71 /* ICNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7086185F473200C94B71 /* ICNews.m */; };
@@ -83,6 +87,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95798E9F186285080049CF77 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
+		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
+		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
+		95798EA2186285080049CF77 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		95A000A61861F4CD008B18BD /* ICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICAppDelegate.h; sourceTree = "<group>"; };
 		95A000A71861F4CD008B18BD /* ICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
 		95A000AD1861F504008B18BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 		95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsDetailViewController.m; sourceTree = "<group>"; };
 		95A0011C1862594E008B18BD /* ICNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsListViewController.h; sourceTree = "<group>"; };
 		95A0011D1862594E008B18BD /* ICNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsListViewController.m; sourceTree = "<group>"; };
+		95A00168186268A5008B18BD /* MSRImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRImageScrollView.h; sourceTree = "<group>"; };
+		95A00169186268A5008B18BD /* MSRImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRImageScrollView.m; sourceTree = "<group>"; };
 		95AC7077185F473200C94B71 /* ICCampus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampus.h; sourceTree = "<group>"; };
 		95AC7078185F473200C94B71 /* ICCampus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCampus.m; sourceTree = "<group>"; };
 		95AC7079185F473200C94B71 /* ICCampusList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampusList.h; sourceTree = "<group>"; };
@@ -231,6 +241,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95798E9E186285080049CF77 /* KIImagePager */ = {
+			isa = PBXGroup;
+			children = (
+				95798E9F186285080049CF77 /* KICamera.png */,
+				95798EA0186285080049CF77 /* KICamera@2x.png */,
+				95798EA1186285080049CF77 /* KIImagePager.h */,
+				95798EA2186285080049CF77 /* KIImagePager.m */,
+			);
+			path = KIImagePager;
+			sourceTree = "<group>";
+		};
 		95A000C7186214FA008B18BD /* Bus */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,10 +365,10 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				95A0010F1862594E008B18BD /* Bus */,
 				95A001121862594E008B18BD /* Campus */,
 				95A001131862594E008B18BD /* Gate */,
-				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				95A001171862594E008B18BD /* News */,
 				95A0011E1862594E008B18BD /* School */,
 				95A0011F1862594E008B18BD /* User */,
@@ -413,6 +434,15 @@
 			children = (
 			);
 			path = YellowPage;
+			sourceTree = "<group>";
+		};
+		95A001641862685D008B18BD /* MSRImageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				95A00168186268A5008B18BD /* MSRImageScrollView.h */,
+				95A00169186268A5008B18BD /* MSRImageScrollView.m */,
+			);
+			path = MSRImageScrollView;
 			sourceTree = "<group>";
 		};
 		95AC7074185F473200C94B71 /* Model */ = {
@@ -608,6 +638,8 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				95798E9E186285080049CF77 /* KIImagePager */,
+				95A001641862685D008B18BD /* MSRImageScrollView */,
 				95A001011862388B008B18BD /* NSString+RSA */,
 				A320CA5B183E365D00BCA05F /* AFNetworking */,
 				A320CA44183E353100BCA05F /* UIKit+AFNetworking */,
@@ -718,8 +750,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
 				95A000AE1861F504008B18BD /* Main.storyboard in Resources */,
+				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
 				95A000B618620B91008B18BD /* LICENSE in Resources */,
 			);
@@ -745,6 +779,7 @@
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
+				95798EA5186285080049CF77 /* KIImagePager.m in Sources */,
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
@@ -762,6 +797,7 @@
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
 				95A000DE186214FA008B18BD /* ICSchool.m in Sources */,
+				95A0016A186268A5008B18BD /* MSRImageScrollView.m in Sources */,
 				95AC70B3185F473300C94B71 /* ICNewsChannel.m in Sources */,
 				95AC70B4185F473300C94B71 /* ICNewsChannelList.m in Sources */,
 				A320CA73183E365D00BCA05F /* AFSecurityPolicy.m in Sources */,
