@@ -11,6 +11,12 @@
 #import "ICNewsDetailAttachment.h"
 #include "../ICModelConfig.h"
 
+@interface ICNewsDetail ()
+
+@property (nonatomic, strong) NSArray *images;
+
+@end
+
 @implementation ICNewsDetail
 
 + (ICNewsDetail *)newsDetailWithNews:(ICNews *)news {
@@ -56,6 +62,17 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[dataString dataUsingEncoding:NSUTF8StringEncoding]
                                                              options:kNilOptions
                                                                error:nil];
+        NSArray *a = [[json objectForKey:@"as"] objectForKey:@"a"];
+        NSMutableArray *imageURLs = [NSMutableArray array];
+        for (NSDictionary __strong *b in a) {
+            if (![b.class isSubclassOfClass:NSDictionary.class]) {
+                continue;
+            }
+            b = [b objectForKey:@"attributes"];
+            NSURL *url = [NSURL URLWithString:[b objectForKey:@"url"]];
+            [imageURLs addObject:url];
+        }
+        self.imageURLs = [NSArray arrayWithArray:imageURLs];
         json = [json objectForKey:@"property"];
         // source index
         self.sourceIndex = [[json objectForKey:@"docid"] intValue];
@@ -116,7 +133,7 @@
         self.body = [self.body stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
         self.body = [self.body stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         // pc url
-        self.pcUrl = [NSURL URLWithString:[json objectForKey:@"pcurl"]];
+        self.pcURL = [NSURL URLWithString:[json objectForKey:@"pcurl"]];
     }
     return self;
 }

@@ -25,8 +25,9 @@
 @property (nonatomic, copy) NSDate     *creationTime      ;
 @property (nonatomic, copy) NSString   *abstract          ;
 @property (nonatomic, copy) NSString   *body              ;
-@property (nonatomic, copy) NSURL      *pcUrl             ;
+@property (nonatomic, copy) NSURL      *pcURL             ;
 @property (nonatomic, copy) NSArray    *attachments       ;
+@property (nonatomic, copy) NSArray    *imageURLs         ;
 
 + (ICNewsDetail *)newsDetailWithNews:(ICNews *)news;
 
