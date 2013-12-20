@@ -7,7 +7,6 @@
 //
 
 #import "ICNewsDetailViewController.h"
-
 #import "ICNews.h"
 #import "ICNewsDetailView.h"
 

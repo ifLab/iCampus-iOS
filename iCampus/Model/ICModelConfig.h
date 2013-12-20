@@ -9,7 +9,7 @@
 
 #   pragma mark - Debug options
 
-#   define __IC_ERROR_ONLY_DEBUG__
+//#   define __IC_ERROR_ONLY_DEBUG__
 #   define __IC_DATA_MODULE_DEBUG__
 #   ifdef __IC_DATA_MODULE_DEBUG__
 #       define __IC_CAMPUS_MODULE_DEBUG__

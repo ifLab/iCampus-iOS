@@ -7,7 +7,7 @@
 //
 
 #import "ICNewsChannelCell.h"
-#import "ICNewsChannel.h"
+#import "../../Model/News/ICNews.h"
 
 @implementation ICNewsChannelCell
 

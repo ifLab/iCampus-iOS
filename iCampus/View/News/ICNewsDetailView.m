@@ -8,7 +8,6 @@
 
 #import "ICNewsDetailView.h"
 #import "ICNews.h"
-#import "ICNewsDetail.h"
 
 @interface ICNewsDetailView ()
 

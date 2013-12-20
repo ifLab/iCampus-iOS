@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952B5BFB1863FDBA009DDBB5 /* ICBusStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationCell.m */; };
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
@@ -88,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		952B5BF91863FDBA009DDBB5 /* ICBusStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationCell.h; sourceTree = "<group>"; };
+		952B5BFA1863FDBA009DDBB5 /* ICBusStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationCell.m; sourceTree = "<group>"; };
 		95798E9F186285080049CF77 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
 		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
 		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
@@ -303,6 +306,8 @@
 			children = (
 				95798F311863093C0049CF77 /* ICBusCell.h */,
 				95798F321863093C0049CF77 /* ICBusCell.m */,
+				952B5BF91863FDBA009DDBB5 /* ICBusStationCell.h */,
+				952B5BFA1863FDBA009DDBB5 /* ICBusStationCell.m */,
 			);
 			path = Bus;
 			sourceTree = "<group>";
@@ -782,6 +787,7 @@
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
+				952B5BFB1863FDBA009DDBB5 /* ICBusStationCell.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,

@@ -12,7 +12,6 @@
 #import "../ICControllerConfig.h"
 #import "../../Model/News/ICNews.h"
 #import "../../View/News/ICNewsCell.h"
-#import "../../External/MBProgressHUD/MBProgressHUD.h"
 #import "../../External/SVPullToRefresh/SVPullToRefresh.h"
 
 @interface ICNewsListViewController () <ICNewsChannelDelegate>

@@ -7,7 +7,7 @@
 //
 
 #define kPageControlHeight  30
-#define kOverlayWidth       50
+#define kOverlayWidth       35
 #define kOverlayHeight      15
 
 #import "KIImagePager.h"
@@ -94,17 +94,17 @@
 
 - (void) initalizeImageCounter
 {
-    _indicatorBackground = [[UIView alloc] initWithFrame:CGRectMake(_scrollView.frame.size.width-(kOverlayWidth-4),
-                                                                    _scrollView.frame.size.height-kOverlayHeight,
+    _indicatorBackground = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                    10,
                                                                     kOverlayWidth,
                                                                     kOverlayHeight)];
     _indicatorBackground.backgroundColor = [UIColor whiteColor];
-    _indicatorBackground.alpha = 0.7f;
-    _indicatorBackground.layer.cornerRadius = 5.0f;
+    _indicatorBackground.alpha = 0.5f;
+//    _indicatorBackground.layer.cornerRadius = 0.0f;
     
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
     [icon setImage:[UIImage imageNamed:@"KICamera"]];
-    icon.center = CGPointMake(_indicatorBackground.frame.size.width-18, _indicatorBackground.frame.size.height/2);
+    icon.center = CGPointMake(icon.frame.size.height / 2 + 2, _indicatorBackground.frame.size.height / 2);
     [_indicatorBackground addSubview:icon];
     
     _countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 48, 24)];
@@ -112,7 +112,7 @@
     [_countLabel setBackgroundColor:[UIColor clearColor]];
     [_countLabel setTextColor:[UIColor blackColor]];
     [_countLabel setFont:[UIFont systemFontOfSize:11.0f]];
-    _countLabel.center = CGPointMake(15, _indicatorBackground.frame.size.height/2);
+    _countLabel.center = CGPointMake(icon.frame.size.height / 2 + 18, _indicatorBackground.frame.size.height / 2 + 0.8);
     [_indicatorBackground addSubview:_countLabel];
     
     [self addSubview:_indicatorBackground];
