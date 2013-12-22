@@ -63,10 +63,10 @@
 
 - (void)        tableView:(UITableView *)tableView
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath
-                             animated:YES];
     [self performSegueWithIdentifier:(NSString *)ICSchoolListToDetailIdentifier
                               sender:self];
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
