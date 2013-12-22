@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
+		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
+		957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */; };
+		957279B418674602007F3F01 /* ICSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B318674602007F3F01 /* ICSchoolCell.m */; };
+		957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B91867552A007F3F01 /* ICSchoolDetailView.m */; };
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
@@ -93,6 +97,14 @@
 		9508477E18658760008A4571 /* ICBusStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationView.m; sourceTree = "<group>"; };
 		952B5BF91863FDBA009DDBB5 /* ICBusStationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationListCell.h; sourceTree = "<group>"; };
 		952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationListCell.m; sourceTree = "<group>"; };
+		957279A91867375D007F3F01 /* ICSchoolListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolListViewController.h; sourceTree = "<group>"; };
+		957279AA1867375D007F3F01 /* ICSchoolListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolListViewController.m; sourceTree = "<group>"; };
+		957279AC18673D45007F3F01 /* ICSchoolDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolDetailViewController.h; sourceTree = "<group>"; };
+		957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolDetailViewController.m; sourceTree = "<group>"; };
+		957279B218674602007F3F01 /* ICSchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolCell.h; sourceTree = "<group>"; };
+		957279B318674602007F3F01 /* ICSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolCell.m; sourceTree = "<group>"; };
+		957279B81867552A007F3F01 /* ICSchoolDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolDetailView.h; sourceTree = "<group>"; };
+		957279B91867552A007F3F01 /* ICSchoolDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolDetailView.m; sourceTree = "<group>"; };
 		95798E9F186285080049CF77 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
 		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
 		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
@@ -337,6 +349,10 @@
 		95A000E7186218A0008B18BD /* School */ = {
 			isa = PBXGroup;
 			children = (
+				957279B218674602007F3F01 /* ICSchoolCell.h */,
+				957279B318674602007F3F01 /* ICSchoolCell.m */,
+				957279B81867552A007F3F01 /* ICSchoolDetailView.h */,
+				957279B91867552A007F3F01 /* ICSchoolDetailView.m */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -430,6 +446,10 @@
 		95A0011E1862594E008B18BD /* School */ = {
 			isa = PBXGroup;
 			children = (
+				957279A91867375D007F3F01 /* ICSchoolListViewController.h */,
+				957279AA1867375D007F3F01 /* ICSchoolListViewController.m */,
+				957279AC18673D45007F3F01 /* ICSchoolDetailViewController.h */,
+				957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */,
 			);
 			path = School;
 			sourceTree = "<group>";
@@ -792,12 +812,14 @@
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
 				A320CA75183E365D00BCA05F /* AFURLRequestSerialization.m in Sources */,
 				A320CA57183E353100BCA05F /* UIButton+AFNetworking.m in Sources */,
+				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
 				A320CA58183E353100BCA05F /* UIImageView+AFNetworking.m in Sources */,
 				A320CA59183E353100BCA05F /* UIProgressView+AFNetworking.m in Sources */,
 				95A00100186227D0008B18BD /* ICNewsChannelCell.m in Sources */,
+				957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */,
 				A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
@@ -817,6 +839,7 @@
 				A320CA72183E365D00BCA05F /* AFNetworkReachabilityManager.m in Sources */,
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
 				A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */,
+				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				A320CA55183E353100BCA05F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -830,6 +853,7 @@
 				A320CA71183E365D00BCA05F /* AFHTTPSessionManager.m in Sources */,
 				95AC70AC185F473300C94B71 /* ICCampus.m in Sources */,
 				A320CA76183E365D00BCA05F /* AFURLResponseSerialization.m in Sources */,
+				957279B418674602007F3F01 /* ICSchoolCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@
         if (!school) {
             return self;
         }
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=schoolintro&action=detail&mod=%@&id=%lu", ICSchoolServerDomain, school.mark, (unsigned long)school.index];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=collegeintro&action=detail&mod=%@&id=%lu", ICSchoolServerDomain, school.mark, (unsigned long)school.index];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_SCHOOL_MODULE_DETAIL_DEBUG__)

@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) ICNewsChannelList *channels;
 
+- (IBAction)dismiss:(id)sender;
+
 @end
 
 @implementation ICNewsChannelViewController
@@ -61,10 +63,15 @@
     return cell;
 }
 
--       (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)        tableView:(UITableView *)tableView
+  didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.delegate newsChannelViewController:self
                    didFinishSelectingChannel:[self.channels channelAtIndex:indexPath.row]];
+}
+
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 @end

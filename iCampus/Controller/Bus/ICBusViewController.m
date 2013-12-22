@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setTranslucent:NO];
+    self.navigationController.navigationBar.translucent = NO;
     self.title = @"校车";
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.busLines = [ICBusListArray array];
@@ -88,7 +88,8 @@
         [tableView deleteRowsAtIndexPaths:@[expandingIndexPath]
                          withRowAnimation:UITableViewRowAnimationFade];
         if (expandingIndexPath.section == indexPath.section) {
-            if (expandingIndexPath.row - 1 == indexPath.row) {
+            if (expandingIndexPath.row - 1 == indexPath.row ||
+                expandingIndexPath.row == indexPath.row) {
                 return;
             } else if (expandingIndexPath.row - 1 < indexPath.row) {
                 indexPath = [NSIndexPath indexPathForRow:indexPath.row - 1

@@ -22,6 +22,9 @@
                                 <state key="normal" image="ICGateSchoolIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Ahd-Pc-TW7" kind="modal" id="2m1-as-HeT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-Zu-3Wu">
                                 <rect key="frame" x="35" y="156" width="60" height="60"/>
@@ -138,9 +141,9 @@
         <!--News List View Controller-->
         <scene sceneID="8Ac-vC-zm4">
             <objects>
-                <tableViewController wantsFullScreenLayout="YES" id="rtJ-as-yZ1" customClass="ICNewsListViewController" sceneMemberID="viewController">
+                <tableViewController id="rtJ-as-yZ1" customClass="ICNewsListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XyN-Eo-8yu">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -148,7 +151,6 @@
                             <outlet property="delegate" destination="rtJ-as-yZ1" id="4FJ-t8-DpO"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="iB5-nv-Fsm">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="l2h-aj-WEg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,7 +171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aX0-Ob-Xvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="34"/>
+            <point key="canvasLocation" x="1718" y="-1421"/>
         </scene>
         <!--News Channel View Controller-->
         <scene sceneID="laR-VL-TrA">
@@ -184,11 +186,18 @@
                             <outlet property="delegate" destination="eUf-Ag-3EU" id="rtO-xQ-eA4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dKc-QV-g66"/>
+                    <navigationItem key="navigationItem" id="dKc-QV-g66">
+                        <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="zgn-hx-J2C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="eUf-Ag-3EU" id="hwx-Ly-Nhg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1G-l1-3x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="34"/>
+            <point key="canvasLocation" x="2744" y="-2101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HBg-xS-1FI">
@@ -224,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0e-6k-efj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="34"/>
+            <point key="canvasLocation" x="1334" y="-1421"/>
         </scene>
         <!--Bus View Controller-->
         <scene sceneID="eQw-oV-tFR">
@@ -250,7 +259,70 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsz-tF-ruJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="798"/>
+            <point key="canvasLocation" x="1718" y="-706"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cQd-d6-q6I">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Ahd-Pc-TW7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2w-hC-hai">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="87j-iP-F62" kind="relationship" relationship="rootViewController" id="38G-mW-LLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbf-XC-HYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="34"/>
+        </scene>
+        <!--School List View Controller-->
+        <scene sceneID="2Ca-6L-C9C">
+            <objects>
+                <tableViewController id="87j-iP-F62" customClass="ICSchoolListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w2S-c1-vzT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="87j-iP-F62" id="lpl-s8-DfD"/>
+                            <outlet property="delegate" destination="87j-iP-F62" id="VpK-0W-SD5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jy7-D1-Rjy">
+                        <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="zKS-15-C3a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="87j-iP-F62" id="ywg-WY-D6m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="0ht-rT-g4c" kind="push" identifier="IC_SCHOOL_LIST_TO_DETAIL" id="Tlz-hY-RHb"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9x-3k-djr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="34"/>
+        </scene>
+        <!--School Detail View Controller-->
+        <scene sceneID="N4q-12-PW9">
+            <objects>
+                <viewController id="0ht-rT-g4c" customClass="ICSchoolDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D7g-6t-1io"/>
+                        <viewControllerLayoutGuide type="bottom" id="CGz-MN-hg6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whp-5W-r2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c6i-ir-odL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhj-qc-3qp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M6x-UC-43i">
@@ -265,7 +337,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNY-Wh-PL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="798"/>
+            <point key="canvasLocation" x="1334" y="-706"/>
         </scene>
         <!--News Detail View Controller-->
         <scene sceneID="nUH-vv-XjC">
@@ -284,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73I-ld-eoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="-721"/>
+            <point key="canvasLocation" x="2310" y="-1421"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zfl-oD-Yi7">
@@ -302,7 +374,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOL-qA-cGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="34"/>
+            <point key="canvasLocation" x="2310" y="-2101"/>
         </scene>
     </scenes>
     <resources>

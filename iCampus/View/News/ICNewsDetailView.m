@@ -21,28 +21,30 @@
              frame:(CGRect)frame {
     self = [self initWithFrame:frame];
     if (self) {
+        ICNewsDetailView __weak *__self = self;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            self.newsDetail = [ICNewsDetail newsDetailWithNews:news];
-            ICNewsDetailView __weak *__self = self;
+            __self.newsDetail = [ICNewsDetail newsDetailWithNews:news];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.titleLabel.text = self.newsDetail.title;
+                __self.titleLabel.text = __self.newsDetail.title;
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 dateFormatter.timeZone = [NSTimeZone localTimeZone];
                 dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
-                self.timeLabel.text = [dateFormatter stringFromDate:self.newsDetail.creationTime];
+                __self.timeLabel.text = [dateFormatter stringFromDate:__self.newsDetail.creationTime];
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
                 paragraphStyle.lineSpacing = 10.0;
                 if (!__self.newsDetail) {
                     return;
                 }
-                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:__self.newsDetail.body];
+                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
+                                                               initWithString:__self.newsDetail.body];
                 [attributedString addAttribute:NSParagraphStyleAttributeName
                                          value:paragraphStyle
                                          range:NSMakeRange(0, __self.newsDetail.body.length)];
                 __self.bodyLabel.attributedText = attributedString;
                 [__self.bodyLabel sizeToFit];
-                __self.scrollView.contentSize = CGSizeMake(__self.scrollView.frame.size.width, __self.bodyLabel.frame.size.height + 365.0);
-                [self.imagePager reloadData];
+                __self.scrollView.contentSize = CGSizeMake(__self.scrollView.frame.size.width,
+                                                           __self.bodyLabel.frame.size.height + 365.0);
+                [__self.imagePager reloadData];
             });
         });
     }
@@ -91,7 +93,7 @@
             _bodyLabel  = [[UILabel      alloc] init]; {
                 self.bodyLabel.frame         = CGRectMake(10.0, self.headerView.frame.size.height + self.headerView.frame.origin.y + 15.0,
                                                           self.scrollView.frame.size.width - 20.0, self.frame.size.height);
-                self.bodyLabel.font          = [UIFont systemFontOfSize:14.0f];
+                self.bodyLabel.font          = [UIFont systemFontOfSize:14.0];
                 self.bodyLabel.textColor     = [UIColor darkGrayColor];
                 self.bodyLabel.numberOfLines = 0;
                 self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;

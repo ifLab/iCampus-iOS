@@ -9,7 +9,8 @@
 
 #   pragma mark - Segue identifiers
 
-static const NSString *ICNewsListToChannelIdentifier = @"IC_NEWS_LIST_TO_CHANNEL";
-static const NSString *ICNewsListToDetailIdentifier  = @"IC_NEWS_LIST_TO_DETAIL" ;
+static const NSString *ICNewsListToChannelIdentifier  = @"IC_NEWS_LIST_TO_CHANNEL" ;
+static const NSString *ICNewsListToDetailIdentifier   = @"IC_NEWS_LIST_TO_DETAIL"  ;
+static const NSString *ICSchoolListToDetailIdentifier = @"IC_SCHOOL_LIST_TO_DETAIL";
 
 //=====================================================================
