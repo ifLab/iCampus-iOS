@@ -1,5 +1,5 @@
 //
-//  ICBusStationCell.h
+//  ICBusStationListCell.h
 //  iCampus
 //
 //  Created by Darren Liu on 13-12-20.
@@ -10,11 +10,14 @@
 
 @class ICBusStationList;
 
-@interface ICBusStationCell : UITableViewCell
+@interface ICBusStationListCell : UITableViewCell
 
-@property (nonatomic, strong) ICBusStationList *stationList;
+@property (nonatomic, strong)           ICBusStationList *stationList;
+@property (nonatomic, strong, readonly) UIScrollView     *scrollView ;
 
 - (id)initWithStationList:(ICBusStationList *)stationList
           reuseIdentifier:(NSString *)reuseIdentifier;
+
+- (void)setStationList:(ICBusStationList *)stationList;
 
 @end

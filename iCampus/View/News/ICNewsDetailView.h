@@ -13,14 +13,13 @@
 
 @interface ICNewsDetailView : UIView <KIImagePagerDelegate, KIImagePagerDataSource>
 
-@property (nonatomic, strong) UILabel      *titleLabel;
-@property (nonatomic, strong) UILabel      *bodyLabel ;
-@property (nonatomic, strong) UILabel      *timeLabel ;
-@property (nonatomic, strong) UIView       *headerView;
-@property (nonatomic, strong) NSArray      *images    ;
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) ICNewsDetail *newsDetail;
-@property (nonatomic, strong) KIImagePager *imagePager;
+@property (nonatomic, strong, readonly) UILabel      *titleLabel;
+@property (nonatomic, strong, readonly) UILabel      *bodyLabel ;
+@property (nonatomic, strong, readonly) UILabel      *timeLabel ;
+@property (nonatomic, strong, readonly) UIView       *headerView;
+@property (nonatomic, strong, readonly) NSArray      *images    ;
+@property (nonatomic, strong, readonly) UIScrollView *scrollView;
+@property (nonatomic, strong, readonly) KIImagePager *imagePager;
 
 - (id)initWithNews:(ICNews *)news
              frame:(CGRect)frame;

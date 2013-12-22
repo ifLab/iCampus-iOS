@@ -12,13 +12,13 @@
 
 @interface ICBusCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *busIcon           ;
-@property (nonatomic, strong) UIImageView *departureIcon     ;
-@property (nonatomic, strong) UIImageView *returnIcon        ;
-@property (nonatomic, strong) UILabel     *nameLabel         ;
-@property (nonatomic, strong) UILabel     *descriptionLabel  ;
-@property (nonatomic, strong) UILabel     *departureTimeLabel;
-@property (nonatomic, strong) UILabel     *returnTimeLabel   ;
+@property (nonatomic, strong, readonly) UIImageView *busIcon           ;
+@property (nonatomic, strong, readonly) UIImageView *departureIcon     ;
+@property (nonatomic, strong, readonly) UIImageView *returnIcon        ;
+@property (nonatomic, strong, readonly) UILabel     *nameLabel         ;
+@property (nonatomic, strong, readonly) UILabel     *descriptionLabel  ;
+@property (nonatomic, strong, readonly) UILabel     *departureTimeLabel;
+@property (nonatomic, strong, readonly) UILabel     *returnTimeLabel   ;
 
 - (id)initWithBus:(ICBus *)bus
   reuseIdentifier:(NSString *)reuseIdentifier;

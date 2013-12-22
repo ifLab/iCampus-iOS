@@ -12,9 +12,9 @@
 
 @interface ICNewsCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *thumbnailImageView;
-@property (nonatomic, strong) UILabel     *previewLabel      ;
-@property (nonatomic, strong) UILabel     *titleLabel        ;
+@property (nonatomic, strong, readonly) UIImageView *thumbnailImageView;
+@property (nonatomic, strong, readonly) UILabel     *previewLabel      ;
+@property (nonatomic, strong, readonly) UILabel     *titleLabel        ;
 
 - (id)initWithNews:(ICNews *)news
    reuseIdentifier:(NSString *)reuseIdentifier;
