@@ -45,8 +45,8 @@
             NSLog(@"%@ %@ %@", ICBusTag, ICSucceededTag, urlString);
 #       endif
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName]];
-        for (__strong NSDictionary *a in json) {
+        dateFormatter.timeZone = [NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName];
+        for (NSDictionary __strong *a in json) {
             ICBusList *busList = [[ICBusList alloc] init];
             busList.index = [[a objectForKey:@"id"] intValue];
             busList.name = [a objectForKey:@"catName"];
@@ -54,7 +54,7 @@
             a = [a objectForKey:@"catBus"];
             for (NSDictionary *b in a) {
                 NSArray *c = [b objectForKey:@"busLine"];
-                [dateFormatter setDateFormat:@"hh:mm"];
+                dateFormatter.dateFormat = @"HH:mm";
                 ICBusStationList *stationList = [[ICBusStationList alloc] init];
                 for (NSDictionary *d in c) {
                     for (NSString *e in d) {
@@ -64,15 +64,16 @@
                         [stationList addStation:station];
                     }
                 }
-                [dateFormatter setDateFormat:@"hh:mm:ss"];
-                NSObject *returnTime = [b objectForKey:@"returnTime"];
+                [dateFormatter setDateFormat:@"HH:mm:ss"];
+                id returnTime = [b objectForKey:@"returnTime"];
                 if ([returnTime isEqual:[NSNull null]]) {
                     returnTime = nil;
                 } else {
-                    returnTime = [dateFormatter dateFromString:(NSString *)returnTime];
+                    returnTime = [dateFormatter dateFromString:[NSString stringWithString:returnTime]];
                 }
+                NSLog(@"%@", returnTime);
                 ICBus *bus = [[ICBus alloc] init];
-                bus.index = [[b objectForKey:@"busCat"] intValue];
+                bus.index = [[b objectForKey:@"id"] intValue];
                 bus.name = [b objectForKey:@"busName"];
                 bus.description = [b objectForKey:@"busIntro"];
                 bus.departureTime = [dateFormatter dateFromString:[b objectForKey:@"departTime"]];

@@ -28,7 +28,7 @@
                 __self.titleLabel.text = __self.newsDetail.title;
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 dateFormatter.timeZone = [NSTimeZone localTimeZone];
-                dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+                dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
                 __self.timeLabel.text = [dateFormatter stringFromDate:__self.newsDetail.creationTime];
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
                 paragraphStyle.lineSpacing = 10.0;

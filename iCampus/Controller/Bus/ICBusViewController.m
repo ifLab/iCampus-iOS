@@ -65,7 +65,7 @@
     ICBusCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)bus.index]];
     if (!cell) {
         cell = [[ICBusCell alloc] initWithBus:bus
-                              reuseIdentifier:bus.name];
+                              reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)bus.index]];
     }
     return cell;
 }

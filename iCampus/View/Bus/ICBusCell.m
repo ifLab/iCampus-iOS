@@ -17,7 +17,7 @@
                reuseIdentifier:reuseIdentifier];
     if (self) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"hh:mm";
+        dateFormatter.dateFormat = @"HH:mm";
         dateFormatter.timeZone   = [NSTimeZone localTimeZone];
         self.nameLabel.text          = bus.name;
         self.descriptionLabel.text   = bus.description;

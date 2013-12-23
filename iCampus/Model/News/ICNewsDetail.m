@@ -112,7 +112,7 @@
         self.sourceNames = [NSArray arrayWithArray:sourceNames];
         // source creation time
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName]];
         NSString *sourceCreationTimeString = [json objectForKey:@"docreltime"];
         self.sourceCreationTime = [dateFormatter dateFromString:sourceCreationTimeString];

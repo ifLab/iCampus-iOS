@@ -58,11 +58,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICNews *news = [self.newsList newsAtIndex:indexPath.row];
-#   warning News with same title might cause error.
-    ICNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:news.title];
+#   warning News with same index might cause error.
+    ICNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)news.index]];
     if (!cell) {
         cell = [[ICNewsCell alloc] initWithNews:news
-                                reuseIdentifier:news.title];
+                                reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)news.index]];
     }
     return cell;
 }
