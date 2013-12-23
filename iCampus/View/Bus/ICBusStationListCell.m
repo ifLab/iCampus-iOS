@@ -27,9 +27,10 @@
     self = [super initWithStyle:style
                 reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ICBusExpandingBackground"]];
         _scrollView  = [[UIScrollView alloc] init]; {
             self.scrollView.frame           = CGRectMake(0, 0, 320.0, 120.0);
-            self.scrollView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
+            self.scrollView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:245/255.0 alpha:0.5];
             [self.contentView addSubview:self.scrollView];
         }
         UIView *line = [[UIView       alloc] init]; {
@@ -51,7 +52,7 @@
         BOOL first = (i == 0);
         BOOL last = (i == self.stationList.count - 1);
         UIView *view = [[UIView alloc] init]; {
-            view.frame = CGRectMake(110.0 * i, 0.0, 120.0, 100.0);
+            view.frame = CGRectMake(110.0 * i, 0.0, 110.0, 120.0);
             ICBusStationView *stationView = [[ICBusStationView alloc] initWithStation:[self.stationList stationAtIndex:i]
                                                                               isFirst:first
                                                                                isLast:last];
