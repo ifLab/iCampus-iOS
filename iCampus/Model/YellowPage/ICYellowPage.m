@@ -56,6 +56,11 @@
             ICYellowPageContact *contact = [[ICYellowPageContact alloc] init];
             contact.index = [[a objectForKey:@"id"] intValue];
             contact.name = [a objectForKey:@"name"];
+            contact.name = [contact.name stringByReplacingOccurrencesOfString:@"\u3000" withString:@""];
+            contact.name = [contact.name stringByReplacingOccurrencesOfString:@" "      withString:@""];
+            contact.name = [contact.name stringByReplacingOccurrencesOfString:@"("      withString:@"\uff08"];
+            contact.name = [contact.name stringByReplacingOccurrencesOfString:@")"      withString:@"\uff09"];
+            contact.name = [contact.name stringByReplacingOccurrencesOfString:@":"      withString:@"\uff1a"];
             contact.telephone = [a objectForKey:@"telnum"];
             contact.departmentIndex = [[a objectForKey:@"depart"] intValue];
             [instance addContact:contact];

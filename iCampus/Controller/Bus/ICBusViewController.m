@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    self.title = @"校车";
     self.tableView.contentInset = UIEdgeInsetsMake(15.0, 0, 0, 0);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.busLines = [ICBusListArray array];

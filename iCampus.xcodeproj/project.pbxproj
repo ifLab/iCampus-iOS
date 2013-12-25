@@ -50,6 +50,8 @@
 		95AC70BE185F473300C94B71 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC709F185F473200C94B71 /* ICUser.m */; };
 		95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70A8185F473300C94B71 /* ICYellowPage.m */; };
 		95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70AA185F473300C94B71 /* ICYellowPageContact.m */; };
+		95FF2841186ACBCD00B5C18A /* ICYellowPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */; };
+		95FF2844186ACFD300B5C18A /* ICContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2843186ACFD300B5C18A /* ICContactCell.m */; };
 		A30D1DFD182A64BA00F35D4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1DFC182A64BA00F35D4F /* Foundation.framework */; };
 		A30D1DFF182A64BA00F35D4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1DFE182A64BA00F35D4F /* CoreGraphics.framework */; };
 		A30D1E01182A64BA00F35D4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1E00182A64BA00F35D4F /* UIKit.framework */; };
@@ -177,6 +179,10 @@
 		95AC70A8185F473300C94B71 /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPage.m; sourceTree = "<group>"; };
 		95AC70A9185F473300C94B71 /* ICYellowPageContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageContact.h; sourceTree = "<group>"; };
 		95AC70AA185F473300C94B71 /* ICYellowPageContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageContact.m; sourceTree = "<group>"; };
+		95FF283F186ACBCD00B5C18A /* ICYellowPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageViewController.h; sourceTree = "<group>"; };
+		95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageViewController.m; sourceTree = "<group>"; };
+		95FF2842186ACFD300B5C18A /* ICContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICContactCell.h; sourceTree = "<group>"; };
+		95FF2843186ACFD300B5C18A /* ICContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICContactCell.m; sourceTree = "<group>"; };
 		A30D1DF9182A64BA00F35D4F /* iCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30D1DFC182A64BA00F35D4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A30D1DFE182A64BA00F35D4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -367,6 +373,8 @@
 		95A000E9186218A0008B18BD /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
+				95FF2842186ACFD300B5C18A /* ICContactCell.h */,
+				95FF2843186ACFD300B5C18A /* ICContactCell.m */,
 			);
 			path = YellowPage;
 			sourceTree = "<group>";
@@ -464,6 +472,8 @@
 		95A001201862594E008B18BD /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
+				95FF283F186ACBCD00B5C18A /* ICYellowPageViewController.h */,
+				95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */,
 			);
 			path = YellowPage;
 			sourceTree = "<group>";
@@ -807,6 +817,7 @@
 				95798EA5186285080049CF77 /* KIImagePager.m in Sources */,
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
+				95FF2841186ACBCD00B5C18A /* ICYellowPageViewController.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
@@ -829,6 +840,7 @@
 				A320CA73183E365D00BCA05F /* AFSecurityPolicy.m in Sources */,
 				95A000DC186214FA008B18BD /* ICBusStation.m in Sources */,
 				95AC70BE185F473300C94B71 /* ICUser.m in Sources */,
+				95FF2844186ACFD300B5C18A /* ICContactCell.m in Sources */,
 				95AC70B7185F473300C94B71 /* ICNewsList.m in Sources */,
 				95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */,
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,

@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"学院";
     self.navigationController.navigationBar.translucent = NO;
     ICSchoolListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{

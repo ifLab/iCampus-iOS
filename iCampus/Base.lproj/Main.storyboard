@@ -59,6 +59,9 @@
                                 <state key="normal" image="ICGateYellowPageIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Dy5-DI-hfw" kind="modal" id="xDo-Zm-d9d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewN-B5-bpK">
                                 <rect key="frame" x="225" y="257" width="60" height="60"/>
@@ -138,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="739" y="34"/>
         </scene>
-        <!--News List View Controller-->
+        <!--News List View Controller - 新闻-->
         <scene sceneID="8Ac-vC-zm4">
             <objects>
                 <tableViewController id="rtJ-as-yZ1" customClass="ICNewsListViewController" sceneMemberID="viewController">
@@ -153,7 +156,7 @@
                             <outlet property="delegate" destination="rtJ-as-yZ1" id="4FJ-t8-DpO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iB5-nv-Fsm">
+                    <navigationItem key="navigationItem" title="新闻" id="iB5-nv-Fsm">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="l2h-aj-WEg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -238,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="1334" y="-1421"/>
         </scene>
-        <!--Bus View Controller-->
+        <!--Bus View Controller - 校车-->
         <scene sceneID="eQw-oV-tFR">
             <objects>
                 <tableViewController id="w8G-uv-uBL" customClass="ICBusViewController" sceneMemberID="viewController">
@@ -253,7 +256,7 @@
                             <outlet property="delegate" destination="w8G-uv-uBL" id="ZYl-lL-3vR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Hkw-T7-A0z">
+                    <navigationItem key="navigationItem" title="校车" id="Hkw-T7-A0z">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="5Se-ch-5eP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -281,7 +284,7 @@
             </objects>
             <point key="canvasLocation" x="1334" y="34"/>
         </scene>
-        <!--School List View Controller-->
+        <!--School List View Controller - 学院-->
         <scene sceneID="2Ca-6L-C9C">
             <objects>
                 <tableViewController id="87j-iP-F62" customClass="ICSchoolListViewController" sceneMemberID="viewController">
@@ -296,7 +299,7 @@
                             <outlet property="delegate" destination="87j-iP-F62" id="VpK-0W-SD5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jy7-D1-Rjy">
+                    <navigationItem key="navigationItem" title="学院" id="jy7-D1-Rjy">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="zKS-15-C3a">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -311,6 +314,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9x-3k-djr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1718" y="34"/>
+        </scene>
+        <!--Yellow Page View Controller - 黄页-->
+        <scene sceneID="dao-Qu-1In">
+            <objects>
+                <tableViewController id="hc3-Os-IdX" customClass="ICYellowPageViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h9m-8P-LON">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="黄页" id="Yqy-ZF-5lD">
+                        <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="GBO-hY-fyQ">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dismiss:" destination="hc3-Os-IdX" id="6Lm-y0-7u1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aQ-Vi-dmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="784"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jfn-w5-Sie">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Dy5-DI-hfw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nxb-PN-X18">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hc3-Os-IdX" kind="relationship" relationship="rootViewController" id="OZ5-TD-zAZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WrH-qg-zkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="784"/>
         </scene>
         <!--School Detail View Controller-->
         <scene sceneID="N4q-12-PW9">

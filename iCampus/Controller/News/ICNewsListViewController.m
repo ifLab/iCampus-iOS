@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     self.loading = NO;
-    self.title = @"新闻";
     self.tableView.rowHeight = 72.0f;
     self.navigationController.navigationBar.translucent = NO;
     ICNewsListViewController __weak *__self = self;
