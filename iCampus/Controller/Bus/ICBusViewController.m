@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     self.title = @"校车";
+    self.tableView.contentInset = UIEdgeInsetsMake(15.0, 0, 0, 0);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.busLines = [ICBusListArray array];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -105,9 +106,19 @@
                              animated:YES];
 }
 
-- (NSString *)  tableView:(UITableView *)tableView
-  titleForHeaderInSection:(NSInteger)section {
-    return [self.busLines busListAtIndex:section].name;
+- (UIView *)   tableView:(UITableView *)tableView
+  viewForHeaderInSection:(NSInteger)section {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 40.0)];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:14.0];
+    label.backgroundColor = [UIColor whiteColor];
+    label.text = [self.busLines busListAtIndex:section].name;
+    return label;
+}
+
+- (CGFloat)      tableView:(UITableView *)tableView
+  heightForHeaderInSection:(NSInteger)section {
+    return 40.0;
 }
 
 - (IBAction)dismiss:(id)sender {
