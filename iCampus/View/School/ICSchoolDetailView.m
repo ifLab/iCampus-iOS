@@ -50,7 +50,7 @@
                                                           self.scrollView.frame.size.width - 20.0,
                                                           self.scrollView.frame.size.height - 40.0);
                 self.bodyLabel.textColor     = [UIColor darkGrayColor];
-                self.bodyLabel.font          = [UIFont systemFontOfSize:16.0];
+                self.bodyLabel.font          = [UIFont systemFontOfSize:14.0];
                 self.bodyLabel.numberOfLines = 0;
                 self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
                 [self.scrollView addSubview:self.bodyLabel];
