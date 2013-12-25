@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    self.tableView.rowHeight = 56.0;
     ICSchoolListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.schoolList = [ICSchoolList schoolList];
@@ -32,11 +33,6 @@
             [__self.tableView reloadData];
         });
     });
-}
-
-- (CGFloat)     tableView:(UITableView *)tableView
-  heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 56.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

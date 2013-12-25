@@ -29,7 +29,7 @@
     if (self) {
         self.frame = CGRectMake(0, 0, self.frame.size.width, 64.0);
         UIView *view = [[UIView alloc] init]; {
-            view.frame           = CGRectMake(0, 0, self.frame.size.width - 10.0, 28.0);
+            view.frame           = CGRectMake(0, 0, self.frame.size.width, 28.0);
             view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
             [self.contentView addSubview:view];
             _nameLabel   = [[UILabel alloc] init]; {

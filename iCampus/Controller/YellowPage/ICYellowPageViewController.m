@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     self.navigationController.navigationBar.translucent = NO;
+    self.tableView.rowHeight = 64.0;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.yellowPage = [ICYellowPage yellowPage];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,11 +49,6 @@
                                       reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)contact.index]];
     }
     return cell;
-}
-
-- (CGFloat)     tableView:(UITableView *)tableView
-  heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 64.0;
 }
 
 - (void)        tableView:(UITableView *)tableView
