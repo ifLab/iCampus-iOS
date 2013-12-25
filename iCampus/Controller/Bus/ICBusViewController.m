@@ -61,7 +61,6 @@
         }
     }
     ICBus *bus = [[self.busLines busListAtIndex:indexPath.section] busAtIndex:indexPath.row];
-#   warning Bus with same index might cause error.
     ICBusCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)bus.index]];
     if (!cell) {
         cell = [[ICBusCell alloc] initWithBus:bus

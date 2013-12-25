@@ -47,7 +47,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICSchool *school = [self.schoolList schoolAtIndex:indexPath.row];
-#   warning School with same name might cause error.
     ICSchoolCell *cell = [self.tableView dequeueReusableCellWithIdentifier:school.name];
     if (!cell) {
         cell = [[ICSchoolCell alloc] initWithSchool:school

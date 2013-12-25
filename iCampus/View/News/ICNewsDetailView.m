@@ -85,8 +85,8 @@
                     [self.headerView addSubview:self.timeLabel];
                 }
                 UIView *line = [[UIView  alloc] init]; {
-                    line.frame = CGRectMake(20.0, self.headerView.frame.size.height, self.scrollView.frame.size.width - 40.0, 1.0);
-                    line.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0];
+                    line.frame = CGRectMake(15.0, self.headerView.frame.size.height, self.scrollView.frame.size.width - 15.0, 0.5);
+                    line.backgroundColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.2];
                     [self.headerView addSubview:line];
                 }
             }

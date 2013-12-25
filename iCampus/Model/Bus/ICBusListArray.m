@@ -74,7 +74,6 @@
                 } else {
                     returnTime = [dateFormatter dateFromString:[NSString stringWithString:returnTime]];
                 }
-                NSLog(@"%@", returnTime);
                 ICBus *bus = [[ICBus alloc] init];
                 bus.index = [[b objectForKey:@"id"] intValue];
                 bus.name = [b objectForKey:@"busName"];

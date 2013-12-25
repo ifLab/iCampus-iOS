@@ -47,7 +47,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICNewsChannel *channel = [self.channels channelAtIndex:indexPath.row];
-#   warning Channels with same title might cause error.
     ICNewsChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:channel.title];
     if (cell == nil) {
         if (indexPath.row == 0) {

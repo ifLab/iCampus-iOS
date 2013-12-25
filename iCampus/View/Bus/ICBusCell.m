@@ -73,11 +73,6 @@
             self.returnIcon.image = [UIImage imageNamed:@"ICBusReturnIcon"];
             [self.contentView addSubview:self.returnIcon];
         }
-        UIView *line        = [[UIView      alloc] init]; {
-            line.frame           = CGRectMake(0, 71.0, 320.0, 1.0);
-            line.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1.0];
-            [self.contentView addSubview:line];
-        }
     }
     return self;
 }

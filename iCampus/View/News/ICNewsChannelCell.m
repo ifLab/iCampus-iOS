@@ -35,11 +35,6 @@
             textLabel.textAlignment = NSTextAlignmentCenter;
             textLabel.font          = [UIFont systemFontOfSize:16.0];
         }
-        UIView  *line      = [[UIView alloc] init]; {
-            line.frame           = CGRectMake(0.0, 49.0, 320.0, 1.0);
-            line.backgroundColor = [UIColor colorWithRed:225.0/255.0 green:225.0/255.0 blue:225.0/255.0 alpha:1.0];
-            [self.contentView addSubview:line];
-        }
     }
     return self;
 }

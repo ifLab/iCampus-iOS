@@ -16,8 +16,8 @@
 
 @interface ICNewsListViewController () <ICNewsChannelDelegate>
 
-@property BOOL isLoading;
-@property NSUInteger page;
+@property (nonatomic, getter = isLoading) BOOL loading;
+@property (nonatomic)                     NSUInteger page;
 
 @end
 
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.isLoading = NO;
+    self.loading = NO;
     self.title = @"新闻";
     self.tableView.rowHeight = 72.0f;
     self.navigationController.navigationBar.translucent = NO;
@@ -58,7 +58,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICNews *news = [self.newsList newsAtIndex:indexPath.row];
-#   warning News with same index might cause error.
     ICNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)news.index]];
     if (!cell) {
         cell = [[ICNewsCell alloc] initWithNews:news
@@ -107,7 +106,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
     ICNewsListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        __self.isLoading = YES;
+        __self.loading = YES;
         ICNewsList *newNewsList = [ICNewsList newsListWithChannel:__self.channel
                                                         pageIndex:__self.page+1];
         if (newNewsList.count != 0) {
@@ -116,7 +115,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [__self.tableView reloadData];
-            __self.isLoading = NO;
+            __self.loading = NO;
             [__self.tableView.infiniteScrollingView stopAnimating];
         });
     });

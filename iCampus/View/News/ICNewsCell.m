@@ -58,11 +58,6 @@
             self.previewLabel.textColor     = [UIColor grayColor];
             [self.contentView addSubview:self.previewLabel];
         }
-        UIView *line        = [[UIView      alloc] init]; {
-            line.frame           = CGRectMake(0.0, 0.0, 320.0, 1.0);
-            line.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
-            [self.contentView addSubview:line];
-        }
     }
     return self;
 }

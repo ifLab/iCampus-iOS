@@ -12,6 +12,8 @@
 
 @interface ICSchoolCell : UITableViewCell
 
+@property (nonatomic, strong, readonly) UILabel *nameLabel;
+
 - (id)initWithSchool:(ICSchool *)school
      reuseIdentifier:(NSString *)reuseIdentifier;
 
