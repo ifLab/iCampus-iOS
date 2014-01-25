@@ -1,5 +1,5 @@
 //
-//  ICContactCell.h
+//  ICYellowPageContactCell.h
 //  iCampus
 //
 //  Created by Darren Liu on 13-12-25.
@@ -10,10 +10,10 @@
 
 @class ICYellowPageContact;
 
-@interface ICContactCell : UITableViewCell
+@interface ICYellowPageContactCell : UITableViewCell
 
-@property (nonatomic, strong, readonly) UILabel *phoneLabel;
 @property (nonatomic, strong, readonly) UILabel *nameLabel ;
+@property (nonatomic, strong, readonly) UILabel *phoneLabel;
 
 - (id)initWithContact:(ICYellowPageContact *)contact
       reuseIdentifier:(NSString *)reuseIdentifier;

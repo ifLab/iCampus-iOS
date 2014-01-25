@@ -182,10 +182,10 @@
         <scene sceneID="laR-VL-TrA">
             <objects>
                 <tableViewController id="eUf-Ag-3EU" customClass="ICNewsChannelViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hEU-UZ-f4y">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="hEU-UZ-f4y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="eUf-Ag-3EU" id="46l-O0-Ghg"/>
@@ -315,30 +315,6 @@
             </objects>
             <point key="canvasLocation" x="1718" y="34"/>
         </scene>
-        <!--Yellow Page View Controller - 黄页-->
-        <scene sceneID="dao-Qu-1In">
-            <objects>
-                <tableViewController id="hc3-Os-IdX" customClass="ICYellowPageViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h9m-8P-LON">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="黄页" id="Yqy-ZF-5lD">
-                        <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="GBO-hY-fyQ">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="dismiss:" destination="hc3-Os-IdX" id="6Lm-y0-7u1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7aQ-Vi-dmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1718" y="784"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jfn-w5-Sie">
             <objects>
@@ -347,12 +323,60 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hc3-Os-IdX" kind="relationship" relationship="rootViewController" id="OZ5-TD-zAZ"/>
+                        <segue destination="mwV-CM-UMJ" kind="relationship" relationship="rootViewController" id="4gs-83-zDn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrH-qg-zkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1334" y="784"/>
+        </scene>
+        <!--Yellow Page Department View Controller - 黄页-->
+        <scene sceneID="B8C-p4-0mx">
+            <objects>
+                <tableViewController id="mwV-CM-UMJ" customClass="ICYellowPageDepartmentViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gib-wl-ila">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mwV-CM-UMJ" id="A0R-Tm-8Pe"/>
+                            <outlet property="delegate" destination="mwV-CM-UMJ" id="wD0-Xz-uTb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="黄页" id="vuK-MH-1vm">
+                        <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="S8f-B3-DYo">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="mwV-CM-UMJ" id="F5h-ew-mdP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="nGd-Hs-teq" kind="push" identifier="IC_YELLOW_PAGE_DEPARTMENT_TO_LIST" id="5Dn-9B-9Ne"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lU-Gq-rgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="784"/>
+        </scene>
+        <!--Yellow Page List View Controller-->
+        <scene sceneID="2Hc-NA-OoP">
+            <objects>
+                <tableViewController id="nGd-Hs-teq" customClass="ICYellowPageListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IQG-Tq-ptC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="nGd-Hs-teq" id="v3r-4b-ZhX"/>
+                            <outlet property="delegate" destination="nGd-Hs-teq" id="fY2-Vv-Uei"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jRR-oj-GFf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ATi-Um-g7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="784"/>
         </scene>
         <!--School Detail View Controller-->
         <scene sceneID="N4q-12-PW9">

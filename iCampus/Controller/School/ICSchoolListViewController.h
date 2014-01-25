@@ -12,4 +12,6 @@
 
 @interface ICSchoolListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+- (IBAction)dismiss:(id)sender;
+
 @end

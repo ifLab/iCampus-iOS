@@ -25,7 +25,6 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     self.tableView.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0];
     self.tableView.rowHeight = 50.0;
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0, 0, 0);
     ICNewsChannelViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.channels = [ICNewsChannelList channelList];
@@ -49,15 +48,8 @@
     ICNewsChannel *channel = [self.channels channelAtIndex:indexPath.row];
     ICNewsChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:channel.title];
     if (cell == nil) {
-        if (indexPath.row == 0) {
-            cell = [[ICNewsChannelCell alloc] initWithChannel:channel
-                                              reuseIdentifier:channel.title
-                                                      isFirst:YES];
-        } else {
-            cell = [[ICNewsChannelCell alloc] initWithChannel:channel
-                                              reuseIdentifier:channel.title
-                                                      isFirst:NO];
-        }
+        cell = [[ICNewsChannelCell alloc] initWithChannel:channel
+                                          reuseIdentifier:channel.title];
     }
     return cell;
 }

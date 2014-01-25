@@ -1,22 +1,22 @@
 //
-//  ICNewsChannelCell.m
+//  ICYellowPageDepartmentCell.m
 //  iCampus
 //
-//  Created by Darren Liu on 13-12-19.
-//  Copyright (c) 2013年 BISTU. All rights reserved.
+//  Created by Darren Liu on 14-1-26.
+//  Copyright (c) 2014年 BISTU. All rights reserved.
 //
 
-#import "ICNewsChannelCell.h"
-#import "../../Model/News/ICNews.h"
+#import "ICYellowPageDepartmentCell.h"
+#import "../../Model/YellowPage/ICYellowPage.h"
 
-@implementation ICNewsChannelCell
+@implementation ICYellowPageDepartmentCell
 
-- (id)initWithChannel:(ICNewsChannel *)channel
-      reuseIdentifier:(NSString *)reuseIdentifier {
+- (id)initWithDepartment:(ICYellowPageDepartment *)department
+         reuseIdentifier:(NSString *)reuseIdentifier; {
     self = [self initWithStyle:UITableViewCellStyleDefault
                reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.textLabel.text = channel.title;
+        self.textLabel.text = department.name;
     }
     return self;
 }
@@ -27,7 +27,6 @@
                 reuseIdentifier:reuseIdentifier];
     if (self) {
         UILabel *textLabel = self.textLabel; {
-            textLabel.textAlignment = NSTextAlignmentCenter;
             textLabel.font          = [UIFont systemFontOfSize:16.0];
         }
     }

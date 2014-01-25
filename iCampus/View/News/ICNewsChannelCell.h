@@ -13,7 +13,6 @@
 @interface ICNewsChannelCell : UITableViewCell
 
 - (id)initWithChannel:(ICNewsChannel *)channel
-      reuseIdentifier:(NSString *)reuseIdentifier
-              isFirst:(BOOL)first;
+      reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

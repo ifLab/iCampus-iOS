@@ -27,6 +27,10 @@
 #       define __IC_BUS_MODULE_DEBUG__
 #       define __IC_USER_MODULE_DEBUG__
 #       define __IC_YELLOWPAGE_MODULE_DEBUG__
+#       ifdef __IC_YELLOWPAGE_MODULE_DEBUG__
+#           define __IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__
+#           define __IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__
+#       endif
 #   endif
 
 //=====================================================================
@@ -60,15 +64,16 @@ static const NSString *ICTimeZoneName = @"Asia/Shanghai";
 
 #   pragma mark - Static strings for debug
 
-static const NSString *ICCampusTag        = @"[CAMPUS]"        ;
-static const NSString *ICSchoolListTag    = @"[SCHOOL|LIST]"  ;
-static const NSString *ICSchoolDetailTag  = @"[SCHOOL|DETAIL]";
-static const NSString *ICNewsChannelTag   = @"[NEWS|CHANNEL]"  ;
-static const NSString *ICNewsListTag      = @"[NEWS|LIST]"     ;
-static const NSString *ICNewsDetailTag    = @"[NEWS|DETAIL]"   ;
-static const NSString *ICBusTag           = @"[BUS]"     ;
-static const NSString *ICUserTag          = @"[USER]"          ;
-static const NSString *ICYellowPageTag    = @"[YELLOWPAGE]"    ;
+static const NSString *ICCampusTag               = @"[CAMPUS]"               ;
+static const NSString *ICSchoolListTag           = @"[SCHOOL|LIST]"          ;
+static const NSString *ICSchoolDetailTag         = @"[SCHOOL|DETAIL]"        ;
+static const NSString *ICNewsChannelTag          = @"[NEWS|CHANNEL]"         ;
+static const NSString *ICNewsListTag             = @"[NEWS|LIST]"            ;
+static const NSString *ICNewsDetailTag           = @"[NEWS|DETAIL]"          ;
+static const NSString *ICBusTag                  = @"[BUS]"                  ;
+static const NSString *ICUserTag                 = @"[USER]"                 ;
+static const NSString *ICYellowPageDepartmentTag = @"[YELLOWPAGE|DEPARTMENT]";
+static const NSString *ICYellowPageListTag       = @"[YELLOWPAGE|LIST]"      ;
 
 static const NSString *ICFetchingTag  = @"<FETCHING>"  ;
 static const NSString *ICSucceededTag = @"<SUCCEEDED>" ;

@@ -6,9 +6,11 @@
 //  Copyright (c) 2013年 Darren Liu. All rights reserved.
 //
 
+#import <string.h>
 #import "ICYellowPage.h"
 #import "ICYellowPageContact.h"
 #import "../ICModelConfig.h"
+#import "ICYellowPageDepartment.h"
 
 @interface ICYellowPage ()
 
@@ -18,21 +20,22 @@
 
 @implementation ICYellowPage
 
-+ (ICYellowPage *)yellowPage {
++ (ICYellowPage *)yellowPageWithDepartment:(ICYellowPageDepartment *)department {
     ICYellowPage *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=yellowpage&list=0", ICYellowPageServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/yellowpage.php?action=tel&catid=%lu",
+                               ICYellowPageServerDomain, (unsigned long)department.departmentIndex];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_DEBUG__)
-            NSLog(@"%@ %@ %@", ICYellowPageTag, ICFetchingTag, urlString);
+#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__)
+            NSLog(@"%@ %@ %@", ICYellowPageListTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_YELLOWPAGE_MODULE_DEBUG__
-                NSLog(@"%@ %@ %@ %@", ICYellowPageTag, ICFailedTag, ICNullTag, urlString);
+#           ifdef __IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__
+                NSLog(@"%@ %@ %@ %@", ICYellowPageListTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return instance;
         }
@@ -41,13 +44,13 @@
         dataString = [dataString stringByReplacingOccurrencesOfString:@"\n"
                                                            withString:@""];
         if ([dataString characterAtIndex:0] != '[' && [dataString characterAtIndex:0] != '{') {
-#           ifdef __IC_YELLOWPAGE_MODULE_DEBUG__
-                NSLog(@"%@ %@ %@ %@", ICYellowPageTag, ICFailedTag, ICBrokenTag, urlString);
+#           ifdef __IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__
+                NSLog(@"%@ %@ %@ %@", ICYellowPageListTag, ICFailedTag, ICBrokenTag, urlString);
 #           endif
             return instance;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_DEBUG__)
-            NSLog(@"%@ %@ %@", ICYellowPageTag, ICSucceededTag, urlString);
+#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__)
+            NSLog(@"%@ %@ %@", ICYellowPageListTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data
                                                         options:kNilOptions
@@ -56,11 +59,6 @@
             ICYellowPageContact *contact = [[ICYellowPageContact alloc] init];
             contact.index = [[a objectForKey:@"id"] intValue];
             contact.name = [a objectForKey:@"name"];
-            contact.name = [contact.name stringByReplacingOccurrencesOfString:@"\u3000" withString:@""];
-            contact.name = [contact.name stringByReplacingOccurrencesOfString:@" "      withString:@""];
-            contact.name = [contact.name stringByReplacingOccurrencesOfString:@"("      withString:@"\uff08"];
-            contact.name = [contact.name stringByReplacingOccurrencesOfString:@")"      withString:@"\uff09"];
-            contact.name = [contact.name stringByReplacingOccurrencesOfString:@":"      withString:@"\uff1a"];
             contact.telephone = [a objectForKey:@"telnum"];
             contact.departmentIndex = [[a objectForKey:@"depart"] intValue];
             [instance addContact:contact];
@@ -111,6 +109,28 @@
     return [self.array countByEnumeratingWithState:state
                                            objects:buffer
                                              count:len];
+}
+
+- (ICYellowPage *)yellowPageSortedByPinyin {
+    ICYellowPage *instance = [[ICYellowPage alloc] init];
+    instance.array = [[self.array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        ICYellowPageContact *contact1 = obj1;
+        ICYellowPageContact *contact2 = obj2;
+        NSStringEncoding gbk = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        const char *name1 = [contact1.name cStringUsingEncoding:gbk];
+        const char *name2 = [contact2.name cStringUsingEncoding:gbk];
+        const int value = strcmp(name1, name2);
+        NSComparisonResult result;
+        if (value < 0) {
+            result = NSOrderedAscending;
+        } else if (value > 0) {
+            result = NSOrderedDescending;
+        } else {
+            result = NSOrderedSame;
+        }
+        return result;
+    }] mutableCopy];
+    return instance;
 }
 
 @end

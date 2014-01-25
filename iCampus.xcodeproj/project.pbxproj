@@ -50,8 +50,12 @@
 		95AC70BE185F473300C94B71 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC709F185F473200C94B71 /* ICUser.m */; };
 		95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70A8185F473300C94B71 /* ICYellowPage.m */; };
 		95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70AA185F473300C94B71 /* ICYellowPageContact.m */; };
-		95FF2841186ACBCD00B5C18A /* ICYellowPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */; };
-		95FF2844186ACFD300B5C18A /* ICContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2843186ACFD300B5C18A /* ICContactCell.m */; };
+		95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852018940E8E006402FD /* ICYellowPageDepartment.m */; };
+		95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852318940FE9006402FD /* ICYellowPageDepartmentViewController.m */; };
+		95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48526189411DC006402FD /* ICYellowPageDepartmentList.m */; };
+		95E4852A18941B75006402FD /* ICYellowPageDepartmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852918941B75006402FD /* ICYellowPageDepartmentCell.m */; };
+		95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2840186ACBCD00B5C18A /* ICYellowPageListViewController.m */; };
+		95FF2844186ACFD300B5C18A /* ICYellowPageContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FF2843186ACFD300B5C18A /* ICYellowPageContactCell.m */; };
 		A30D1DFD182A64BA00F35D4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1DFC182A64BA00F35D4F /* Foundation.framework */; };
 		A30D1DFF182A64BA00F35D4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1DFE182A64BA00F35D4F /* CoreGraphics.framework */; };
 		A30D1E01182A64BA00F35D4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30D1E00182A64BA00F35D4F /* UIKit.framework */; };
@@ -179,10 +183,18 @@
 		95AC70A8185F473300C94B71 /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPage.m; sourceTree = "<group>"; };
 		95AC70A9185F473300C94B71 /* ICYellowPageContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageContact.h; sourceTree = "<group>"; };
 		95AC70AA185F473300C94B71 /* ICYellowPageContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageContact.m; sourceTree = "<group>"; };
-		95FF283F186ACBCD00B5C18A /* ICYellowPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageViewController.h; sourceTree = "<group>"; };
-		95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageViewController.m; sourceTree = "<group>"; };
-		95FF2842186ACFD300B5C18A /* ICContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICContactCell.h; sourceTree = "<group>"; };
-		95FF2843186ACFD300B5C18A /* ICContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICContactCell.m; sourceTree = "<group>"; };
+		95E4851F18940E8E006402FD /* ICYellowPageDepartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartment.h; sourceTree = "<group>"; };
+		95E4852018940E8E006402FD /* ICYellowPageDepartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartment.m; sourceTree = "<group>"; };
+		95E4852218940FE9006402FD /* ICYellowPageDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartmentViewController.h; sourceTree = "<group>"; };
+		95E4852318940FE9006402FD /* ICYellowPageDepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartmentViewController.m; sourceTree = "<group>"; };
+		95E48525189411DC006402FD /* ICYellowPageDepartmentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartmentList.h; sourceTree = "<group>"; };
+		95E48526189411DC006402FD /* ICYellowPageDepartmentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartmentList.m; sourceTree = "<group>"; };
+		95E4852818941B75006402FD /* ICYellowPageDepartmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartmentCell.h; sourceTree = "<group>"; };
+		95E4852918941B75006402FD /* ICYellowPageDepartmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartmentCell.m; sourceTree = "<group>"; };
+		95FF283F186ACBCD00B5C18A /* ICYellowPageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageListViewController.h; sourceTree = "<group>"; };
+		95FF2840186ACBCD00B5C18A /* ICYellowPageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageListViewController.m; sourceTree = "<group>"; };
+		95FF2842186ACFD300B5C18A /* ICYellowPageContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageContactCell.h; sourceTree = "<group>"; };
+		95FF2843186ACFD300B5C18A /* ICYellowPageContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageContactCell.m; sourceTree = "<group>"; };
 		A30D1DF9182A64BA00F35D4F /* iCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30D1DFC182A64BA00F35D4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A30D1DFE182A64BA00F35D4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -373,8 +385,10 @@
 		95A000E9186218A0008B18BD /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
-				95FF2842186ACFD300B5C18A /* ICContactCell.h */,
-				95FF2843186ACFD300B5C18A /* ICContactCell.m */,
+				95FF2842186ACFD300B5C18A /* ICYellowPageContactCell.h */,
+				95FF2843186ACFD300B5C18A /* ICYellowPageContactCell.m */,
+				95E4852818941B75006402FD /* ICYellowPageDepartmentCell.h */,
+				95E4852918941B75006402FD /* ICYellowPageDepartmentCell.m */,
 			);
 			path = YellowPage;
 			sourceTree = "<group>";
@@ -472,8 +486,10 @@
 		95A001201862594E008B18BD /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
-				95FF283F186ACBCD00B5C18A /* ICYellowPageViewController.h */,
-				95FF2840186ACBCD00B5C18A /* ICYellowPageViewController.m */,
+				95FF283F186ACBCD00B5C18A /* ICYellowPageListViewController.h */,
+				95FF2840186ACBCD00B5C18A /* ICYellowPageListViewController.m */,
+				95E4852218940FE9006402FD /* ICYellowPageDepartmentViewController.h */,
+				95E4852318940FE9006402FD /* ICYellowPageDepartmentViewController.m */,
 			);
 			path = YellowPage;
 			sourceTree = "<group>";
@@ -534,6 +550,10 @@
 		95AC70A6185F473300C94B71 /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
+				95E48525189411DC006402FD /* ICYellowPageDepartmentList.h */,
+				95E48526189411DC006402FD /* ICYellowPageDepartmentList.m */,
+				95E4851F18940E8E006402FD /* ICYellowPageDepartment.h */,
+				95E4852018940E8E006402FD /* ICYellowPageDepartment.m */,
 				95AC70A7185F473300C94B71 /* ICYellowPage.h */,
 				95AC70A8185F473300C94B71 /* ICYellowPage.m */,
 				95AC70A9185F473300C94B71 /* ICYellowPageContact.h */,
@@ -817,11 +837,12 @@
 				95798EA5186285080049CF77 /* KIImagePager.m in Sources */,
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
-				95FF2841186ACBCD00B5C18A /* ICYellowPageViewController.m in Sources */,
+				95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
 				A320CA75183E365D00BCA05F /* AFURLRequestSerialization.m in Sources */,
+				95E4852A18941B75006402FD /* ICYellowPageDepartmentCell.m in Sources */,
 				A320CA57183E353100BCA05F /* UIButton+AFNetworking.m in Sources */,
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
@@ -839,8 +860,9 @@
 				95AC70B4185F473300C94B71 /* ICNewsChannelList.m in Sources */,
 				A320CA73183E365D00BCA05F /* AFSecurityPolicy.m in Sources */,
 				95A000DC186214FA008B18BD /* ICBusStation.m in Sources */,
+				95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */,
 				95AC70BE185F473300C94B71 /* ICUser.m in Sources */,
-				95FF2844186ACFD300B5C18A /* ICContactCell.m in Sources */,
+				95FF2844186ACFD300B5C18A /* ICYellowPageContactCell.m in Sources */,
 				95AC70B7185F473300C94B71 /* ICNewsList.m in Sources */,
 				95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */,
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,
@@ -854,6 +876,8 @@
 				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
+				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
+				95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */,
 				A320CA55183E353100BCA05F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A320CA6F183E365D00BCA05F /* AFHTTPRequestOperation.m in Sources */,
 				95A000EA186218A0008B18BD /* ICNewsCell.m in Sources */,

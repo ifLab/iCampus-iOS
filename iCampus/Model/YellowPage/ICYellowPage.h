@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class ICYellowPageContact;
+@class ICYellowPageContact, ICYellowPageDepartment;
 
 @interface ICYellowPage : NSObject <NSFastEnumeration>
 
-+ (ICYellowPage *)yellowPage;
++ (ICYellowPage *)yellowPageWithDepartment:(ICYellowPageDepartment *)department;
 - (void)addContact:(ICYellowPageContact *)contact;
 - (void)addContactFromYellowPage:(ICYellowPage *)yellowPage;
 - (void)removeContact:(ICYellowPageContact *)contact;
@@ -20,8 +20,10 @@
 - (ICYellowPageContact *)firstContact;
 - (ICYellowPageContact *)lastContact;
 - (ICYellowPageContact *)contactAtIndex:(NSUInteger)index;
+- (ICYellowPage *)yellowPageSortedByPinyin;
 
 @end
 
-
 #import "ICYellowPageContact.h"
+#import "ICYellowPageDepartment.h"
+#import "ICYellowPageDepartmentList.h"

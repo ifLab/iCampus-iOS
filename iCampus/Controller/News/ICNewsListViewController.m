@@ -65,8 +65,8 @@
     return cell;
 }
 
--       (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)        tableView:(UITableView *)tableView
+  didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:(NSString *)ICNewsListToDetailIdentifier
                               sender:self];
 }
@@ -76,8 +76,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([segue.identifier isEqualToString:(NSString *)ICNewsListToChannelIdentifier]) {
         ICNewsChannelViewController *channelViewController = (ICNewsChannelViewController *)(((UINavigationController *)segue.destinationViewController).topViewController);
         channelViewController.delegate = self;
-    }
-    if ([segue.identifier isEqualToString:(NSString *)ICNewsListToDetailIdentifier]) {
+    } else if ([segue.identifier isEqualToString:(NSString *)ICNewsListToDetailIdentifier]) {
         ICNewsDetailViewController *detailViewController = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         detailViewController.news = [self.newsList newsAtIndex:indexPath.row];

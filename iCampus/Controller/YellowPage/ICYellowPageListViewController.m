@@ -1,32 +1,32 @@
 //
-//  ICYellowPageViewController.m
+//  ICYellowPageListViewController.m
 //  iCampus
 //
 //  Created by Darren Liu on 13-12-25.
 //  Copyright (c) 2013年 BISTU. All rights reserved.
 //
 
-#import "ICYellowPageViewController.h"
-#import "../../View/YellowPage/ICContactCell.h"
+#import "ICYellowPageListViewController.h"
+#import "../../View/YellowPage/ICYellowPageContactCell.h"
 #import "../../Model/YellowPage/ICYellowPage.h"
 
-@interface ICYellowPageViewController ()
+@interface ICYellowPageListViewController ()
 
 @property (nonatomic, strong) ICYellowPage *yellowPage;
 
-- (IBAction)dismiss:(id)sender;
-
 @end
 
-@implementation ICYellowPageViewController
+@implementation ICYellowPageListViewController
 
 - (void)viewDidLoad {
     self.navigationController.navigationBar.translucent = NO;
-    self.tableView.rowHeight = 64.0;
+    self.tableView.rowHeight = 48.0;
+    self.title = self.department.name;
+    ICYellowPageListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        self.yellowPage = [ICYellowPage yellowPage];
+        __self.yellowPage = [[ICYellowPage yellowPageWithDepartment:self.department] yellowPageSortedByPinyin];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [__self.tableView reloadData];
         });
     });
 }
@@ -45,8 +45,8 @@
     ICYellowPageContact *contact = [self.yellowPage contactAtIndex:indexPath.row];
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)contact.index]];
     if (!cell) {
-        cell = [[ICContactCell alloc] initWithContact:contact
-                                      reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)contact.index]];
+        cell = [[ICYellowPageContactCell alloc] initWithContact:contact
+                                                reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)contact.index]];
     }
     return cell;
 }
@@ -55,11 +55,6 @@
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath
                                   animated:YES];
-}
-
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
 }
 
 @end

@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) ICSchoolList *schoolList;
 
-- (IBAction)dismiss:(id)sender;
-
 @end
 
 @implementation ICSchoolListViewController
