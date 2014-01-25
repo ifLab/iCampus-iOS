@@ -5,31 +5,33 @@
 //  Created by Darren Liu on 13-11-12.
 //  Copyright (c) 2013年 Darren Liu. All rights reserved.
 //
+
+#import "../ICConfig.h"
+
 //=====================================================================
 
 #   pragma mark - Debug options
 
-//#   define __IC_ERROR_ONLY_DEBUG__
-#   define __IC_DATA_MODULE_DEBUG__
-#   ifdef __IC_DATA_MODULE_DEBUG__
-#       define __IC_CAMPUS_MODULE_DEBUG__
-#       define __IC_SCHOOL_MODULE_DEBUG__
-#       ifdef __IC_SCHOOL_MODULE_DEBUG__
-#           define __IC_SCHOOL_MODULE_LIST_DEBUG__
-#           define __IC_SCHOOL_MODULE_DETAIL_DEBUG__
+#   define IC_DATA_MODULE_DEBUG
+#   ifdef IC_DATA_MODULE_DEBUG
+#       define IC_CAMPUS_DATA_MODULE_DEBUG
+#       define IC_SCHOOL_DATA_MODULE_DEBUG
+#       ifdef IC_SCHOOL_DATA_MODULE_DEBUG
+#           define IC_SCHOOL_LIST_DATA_MODULE_DEBUG
+#           define IC_SCHOOL_DETAIL_DATA_MODULE_DEBUG
 #       endif
-#       define __IC_NEWS_MODULE_DEBUG__
-#       ifdef __IC_NEWS_MODULE_DEBUG__
-#           define __IC_NEWS_MODULE_CHANNEL_DEBUG__
-#           define __IC_NEWS_MODULE_LIST_DEBUG__
-#           define __IC_NEWS_MODULE_DETAIL_DEBUG__
+#       define IC_NEWS_DATA_MODULE_DEBUG
+#       ifdef IC_NEWS_DATA_MODULE_DEBUG
+#           define IC_NEWS_CHANNEL_DATA_MODULE_DEBUG
+#           define IC_NEWS_LIST_DATA_MODULE_DEBUG
+#           define IC_NEWS_DETAIL_DATA_MODULE_DEBUG
 #       endif
-#       define __IC_BUS_MODULE_DEBUG__
-#       define __IC_USER_MODULE_DEBUG__
-#       define __IC_YELLOWPAGE_MODULE_DEBUG__
-#       ifdef __IC_YELLOWPAGE_MODULE_DEBUG__
-#           define __IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__
-#           define __IC_YELLOWPAGE_MODULE_CONTACT_DEBUG__
+#       define IC_BUS_DATA_MODULE_DEBUG
+#       define IC_USER_DATA_MODULE_DEBUG
+#       define IC_YELLOWPAGE_DATA_MODULE_DEBUG
+#       ifdef IC_YELLOWPAGE_DATA_MODULE_DEBUG
+#           define IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG
+#           define IC_YELLOWPAGE_CONTACT_DATA_MODULE_DEBUG
 #       endif
 #   endif
 
@@ -60,26 +62,5 @@ static const NSString *ICOldServerDomain = @"m.bistu.edu.cn"  ;
 
 static const NSString *ICTimeZoneName = @"Asia/Shanghai";
 
-//=====================================================================
-
-#   pragma mark - Static strings for debug
-
-static const NSString *ICCampusTag               = @"[CAMPUS]"               ;
-static const NSString *ICSchoolListTag           = @"[SCHOOL|LIST]"          ;
-static const NSString *ICSchoolDetailTag         = @"[SCHOOL|DETAIL]"        ;
-static const NSString *ICNewsChannelTag          = @"[NEWS|CHANNEL]"         ;
-static const NSString *ICNewsListTag             = @"[NEWS|LIST]"            ;
-static const NSString *ICNewsDetailTag           = @"[NEWS|DETAIL]"          ;
-static const NSString *ICBusTag                  = @"[BUS]"                  ;
-static const NSString *ICUserTag                 = @"[USER]"                 ;
-static const NSString *ICYellowPageDepartmentTag = @"[YELLOWPAGE|DEPARTMENT]";
-static const NSString *ICYellowPageListTag       = @"[YELLOWPAGE|LIST]"      ;
-
-static const NSString *ICFetchingTag  = @"<FETCHING>"  ;
-static const NSString *ICSucceededTag = @"<SUCCEEDED>" ;
-static const NSString *ICFailedTag    = @"<FAILED>"    ;
-
-static const NSString *ICBrokenTag = @"(BROKEN)";
-static const NSString *ICNullTag   = @"(NULL)"  ;
 
 //=====================================================================

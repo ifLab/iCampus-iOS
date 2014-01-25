@@ -24,19 +24,19 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=map", ICCampusServerDomain];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_CAMPUS_MODULE_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_CAMPUS_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICCampusTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_CAMPUS_MODULE_DEBUG__
+#           ifdef IC_CAMPUS_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICCampusTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return instance;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_CAMPUS_MODULE_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_CAMPUS_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICCampusTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data

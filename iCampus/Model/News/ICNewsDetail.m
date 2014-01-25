@@ -34,14 +34,14 @@
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_DETAIL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_DETAIL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsDetailTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                      returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_NEWS_MODULE_DETAIL_DEBUG__
+#           ifdef IC_NEWS_DETAIL_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICNewsDetailTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return nil;
@@ -51,12 +51,12 @@
         dataString = [dataString stringByReplacingOccurrencesOfString:@"\r" withString:@""];
         dataString = [dataString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         if ([dataString isEqualToString:@"-1"] || [dataString isEqualToString:@"false"] || ([dataString characterAtIndex:0] != '{' && [dataString characterAtIndex:0] != '[')) {
-#           ifdef __IC_NEWS_MODULE_DETAIL_DEBUG__
+#           ifdef IC_NEWS_DETAIL_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICNewsDetailTag, ICFailedTag, ICBrokenTag, urlString);
 #           endif
             return nil;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_DETAIL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_DETAIL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsDetailTag, ICSucceededTag, urlString);
 #       endif
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[dataString dataUsingEncoding:NSUTF8StringEncoding]

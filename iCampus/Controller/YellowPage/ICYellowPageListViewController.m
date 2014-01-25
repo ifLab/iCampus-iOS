@@ -9,6 +9,7 @@
 #import "ICYellowPageListViewController.h"
 #import "../../View/YellowPage/ICYellowPageContactCell.h"
 #import "../../Model/YellowPage/ICYellowPage.h"
+#import "../ICControllerConfig.h"
 
 @interface ICYellowPageListViewController ()
 
@@ -55,6 +56,20 @@
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath
                                   animated:YES];
+    NSString *urlString = [NSString stringWithFormat:@"tel://%@", [self.yellowPage contactAtIndex:indexPath.row].telephone];
+    NSURL *url = [NSURL URLWithString:urlString];
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_YELLOWPAGE_DIAL_MODULE_DEBUG)
+        NSLog(@"%@ %@ %@", ICYellowPageDialTag, ICFetchingTag, urlString);
+#   endif
+    if (![[UIApplication sharedApplication] openURL:url]) {
+#       ifdef IC_YELLOWPAGE_DIAL_MODULE_DEBUG
+            NSLog(@"%@ %@ %@", ICYellowPageDialTag, ICFailedTag, urlString);
+#       endif
+        return;
+    }
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_YELLOWPAGE_DIAL_MODULE_DEBUG)
+        NSLog(@"%@ %@ %@", ICYellowPageDialTag, ICSucceededTag, urlString);
+#   endif
 }
 
 @end

@@ -24,19 +24,19 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=collegeintro", ICSchoolServerDomain];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_SCHOOL_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_SCHOOL_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICSchoolListTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_SCHOOL_MODULE_LIST_DEBUG__
+#           ifdef IC_SCHOOL_LIST_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICSchoolListTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return nil;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_SCHOOL_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_SCHOOL_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICSchoolListTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data

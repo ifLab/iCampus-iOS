@@ -26,7 +26,7 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/bus.php", ICBusServerDomain];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_BUS_MODULE_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_BUS_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICBusTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
@@ -39,12 +39,12 @@
                                                              options:kNilOptions
                                                                error:nil];
         if (!json) {
-#           ifdef __IC_BUS_MODULE_DEBUG__
+#           ifdef IC_BUS_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICBusTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return instance;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_BUS_MODULE_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_BUS_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICBusTag, ICSucceededTag, urlString);
 #       endif
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

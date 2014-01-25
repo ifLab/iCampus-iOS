@@ -23,7 +23,7 @@
     if (instance) {
         NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=newschannel", ICNewsServerDomain];
         NSURL *url = [NSURL URLWithString:urlString];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_CHANNEL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_CHANNEL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsChannelTag, ICFetchingTag, urlString);
 #       endif
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -31,12 +31,12 @@
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_NEWS_MODULE_CHANNEL_DEBUG__
+#           ifdef __IC_NEWS_CHANNEL_DATA_MODULE_DEBUG__
                 NSLog(@"%@ %@ %@ %@", ICNewsChannelTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return instance;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_CHANNEL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_CHANNEL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsChannelTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data

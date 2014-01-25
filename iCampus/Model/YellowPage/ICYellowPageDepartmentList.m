@@ -24,14 +24,14 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/yellowpage.php?action=cat", ICYellowPageServerDomain];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICYellowPageDepartmentTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__
+#           ifdef IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ %@ %@", ICYellowPageDepartmentTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return instance;
@@ -41,12 +41,12 @@
         dataString = [dataString stringByReplacingOccurrencesOfString:@"\n"
                                                            withString:@""];
         if ([dataString characterAtIndex:0] != '[' && [dataString characterAtIndex:0] != '{') {
-#           ifdef __IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__
+#           ifdef IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ %@ %@", ICYellowPageDepartmentTag, ICFailedTag, ICBrokenTag, urlString);
 #           endif
             return instance;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_YELLOWPAGE_MODULE_DEPARTMENT_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICYellowPageDepartmentTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data

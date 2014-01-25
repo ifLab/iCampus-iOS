@@ -25,19 +25,19 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=collegeintro&action=detail&mod=%@&id=%lu", ICSchoolServerDomain, school.mark, (unsigned long)school.index];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_SCHOOL_MODULE_DETAIL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_SCHOOL_DETAIL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICSchoolDetailTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_SCHOOL_MODULE_DETAIL_DEBUG__
+#           ifdef IC_SCHOOL_DETAIL_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICSchoolDetailTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return self;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_SCHOOL_MODULE_DETAIL_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_SCHOOL_DETAIL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICSchoolDetailTag, ICSucceededTag, urlString);
 #       endif
         NSDictionary *json = [[NSJSONSerialization JSONObjectWithData:data

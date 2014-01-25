@@ -352,7 +352,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="nGd-Hs-teq" kind="push" identifier="IC_YELLOW_PAGE_DEPARTMENT_TO_LIST" id="5Dn-9B-9Ne"/>
+                        <segue destination="nGd-Hs-teq" kind="push" identifier="IC_YELLOWPAGE_DEPARTMENT_TO_LIST" id="5Dn-9B-9Ne"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lU-Gq-rgC" userLabel="First Responder" sceneMemberID="firstResponder"/>

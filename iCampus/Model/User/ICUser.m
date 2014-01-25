@@ -40,14 +40,14 @@
     NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=member&action=getloginkey_ios_der", ICUserServerDomain];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-#   if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_USER_MODULE_DEBUG__)
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_USER_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICUserTag, ICFetchingTag, urlString);
 #   endif
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:nil
                                                      error:nil];
     if (!data) {
-#       ifdef __IC_USER_MODULE_DEBUG__
+#       ifdef IC_USER_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ %@ Could not fetch RSA public key.", ICUserTag, ICFailedTag, ICNullTag);
 #       endif
         return NO;
@@ -64,12 +64,12 @@
                                                        error:nil];
     NSString *rsaPublicKey = [array objectAtIndex:0];
     if (!rsaPublicKey) {
-#       ifdef __IC_USER_MODULE_DEBUG__
+#       ifdef IC_USER_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ %@ Could not fetch RSA public key.", ICUserTag, ICFailedTag, ICBrokenTag);
 #       endif
         return NO;
     }
-#   if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_USER_MODULE_DEBUG__)
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_USER_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ RSA public key length: %lu", ICUserTag, ICSucceededTag, (unsigned long)rsaPublicKey.length);
 #   endif
     NSString *rsaEncryptedString = [[NSString stringWithFormat:@"%@|%@|%.0f",
@@ -82,7 +82,7 @@
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     url = [NSURL URLWithString:urlString];
     request = [NSURLRequest requestWithURL:url];
-#   if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_USER_MODULE_DEBUG__)
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_USER_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICUserTag, ICFetchingTag, urlString);
 #   endif
     data = [NSURLConnection sendSynchronousRequest:request
@@ -91,7 +91,7 @@
     dataString = [[NSString alloc] initWithData:data
                                        encoding:NSUTF8StringEncoding];
     if ([dataString isEqualToString:@"-20001"] || [dataString isEqualToString:@"-20002"]) {
-#       ifdef __IC_USER_MODULE_DEBUG__
+#       ifdef IC_USER_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ Username didn't match the password.", ICUserTag, ICFailedTag);
 #       endif
         return NO;
@@ -104,7 +104,7 @@
     _identifier  = [[json objectForKey:@"userid"     ] integerValue];
     _username    = [[json objectForKey:@"username"   ] copy        ];
     _loggedIn    = YES;
-#   if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_USER_MODULE_DEBUG__)
+#   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_USER_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ User %@ logged in successfully with password '%@'", ICUserTag, ICSucceededTag, _username, self.password);
 #   endif
     return YES;

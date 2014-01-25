@@ -49,19 +49,19 @@
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsListTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_NEWS_MODULE_LIST_DEBUG__
+#           ifdef IC_NEWS_LIST_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICNewsListTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return self;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsListTag, ICSucceededTag, urlString);
 #       endif
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
@@ -99,19 +99,19 @@
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsListTag, ICFetchingTag, urlString);
 #       endif
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
-#           ifdef __IC_NEWS_MODULE_LIST_DEBUG__
+#           ifdef IC_NEWS_LIST_DATA_MODULE_DEBUG
                 NSLog(@"%@ %@ %@ %@", ICNewsListTag, ICFailedTag, ICNullTag, urlString);
 #           endif
             return self;
         }
-#       if !defined(__IC_ERROR_ONLY_DEBUG__) && defined(__IC_NEWS_MODULE_LIST_DEBUG__)
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsListTag, ICSucceededTag, urlString);
 #       endif
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data
