@@ -22,8 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.tableView.rowHeight = 48.0f;
+    self.tableView.rowHeight = 48.0;
     ICYellowPageDepartmentViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.departmentList = [ICYellowPageDepartmentList departmentList];

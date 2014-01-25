@@ -19,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.view addSubview:[[ICNewsDetailView alloc] initWithNews:self.news
                                                            frame:self.view.frame]];
 }

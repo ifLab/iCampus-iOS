@@ -32,7 +32,7 @@
             self.nameLabel.textColor = [UIColor darkTextColor];
         }
         _phoneLabel = [[UILabel alloc] init]; {
-            self.phoneLabel.frame           = CGRectMake(0, 0, 100, self.frame.size.height);
+            self.phoneLabel.frame           = CGRectMake(0, 0, 80, self.frame.size.height);
             self.phoneLabel.textAlignment   = NSTextAlignmentRight;
             self.phoneLabel.backgroundColor = [UIColor clearColor];
             self.phoneLabel.font            = [UIFont systemFontOfSize:15.0f];

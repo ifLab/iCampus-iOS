@@ -21,7 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.school.name;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.view addSubview:[[ICSchoolDetailView alloc] initWithSchool:self.school
                                                                frame:self.view.frame]];
 }

@@ -10,7 +10,7 @@
 
 @class ICYellowPageDepartment;
 
-@interface ICYellowPageListViewController : UITableViewController
+@interface ICYellowPageListViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) ICYellowPageDepartment *department;
 

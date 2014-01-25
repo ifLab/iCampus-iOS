@@ -21,9 +21,17 @@
 
 #   pragma mark - Segue identifiers
 
-static const NSString *ICNewsListToChannelIdentifier          = @"IC_NEWS_LIST_TO_CHANNEL"         ;
-static const NSString *ICNewsListToDetailIdentifier           = @"IC_NEWS_LIST_TO_DETAIL"          ;
-static const NSString *ICSchoolListToDetailIdentifier         = @"IC_SCHOOL_LIST_TO_DETAIL"        ;
-static const NSString *ICYellowPageDepartmentToListIdentifier = @"IC_YELLOWPAGE_DEPARTMENT_TO_LIST";
+static const NSString *ICNewsListToChannelIdentifier          = @"IC_NEWS_LIST_TO_CHANNEL"          ;
+static const NSString *ICNewsListToDetailIdentifier           = @"IC_NEWS_LIST_TO_DETAIL"           ;
+static const NSString *ICSchoolListToDetailIdentifier         = @"IC_SCHOOL_LIST_TO_DETAIL"         ;
+static const NSString *ICYellowPageDepartmentToListIdentifier = @"IC_YELLOWPAGE_DEPARTMENT_TO_LIST" ;
+static const NSString *ICYellowPageListToNewContactIdentifier = @"IC_YELLOWPAGE_LIST_TO_NEW_CONTACT";
+
+//=====================================================================
+
+#   pragma mark - Locale settings
+
+static const NSString *ICSchoolName            = @"北京信息科技大学";
+static const NSString *ICSchoolTelephonePrefix = @"+86(0)10"     ;
 
 //=====================================================================
