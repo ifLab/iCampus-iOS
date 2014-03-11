@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */; };
+		1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C878B0818CDDB3B00BEAC6B /* MapKit.framework */; };
+		1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0C18CDDFF100BEAC6B /* ICMap.m */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
 		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
@@ -99,6 +102,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C878B0518CDDACE00BEAC6B /* ICMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMapViewController.h; sourceTree = "<group>"; };
+		1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapViewController.m; sourceTree = "<group>"; };
+		1C878B0818CDDB3B00BEAC6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1C878B0B18CDDFF100BEAC6B /* ICMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMap.h; sourceTree = "<group>"; };
+		1C878B0C18CDDFF100BEAC6B /* ICMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMap.m; sourceTree = "<group>"; };
 		9508477D18658760008A4571 /* ICBusStationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationView.h; sourceTree = "<group>"; };
 		9508477E18658760008A4571 /* ICBusStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationView.m; sourceTree = "<group>"; };
 		952B5BF91863FDBA009DDBB5 /* ICBusStationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationListCell.h; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */,
 				A30D1DFF182A64BA00F35D4F /* CoreGraphics.framework in Frameworks */,
 				A30D1E01182A64BA00F35D4F /* UIKit.framework in Frameworks */,
 				A30D1DFD182A64BA00F35D4F /* Foundation.framework in Frameworks */,
@@ -278,6 +287,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C878B0418CDDAAD00BEAC6B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1C878B0518CDDACE00BEAC6B /* ICMapViewController.h */,
+				1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1C878B0A18CDDF8100BEAC6B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1C878B0B18CDDFF100BEAC6B /* ICMap.h */,
+				1C878B0C18CDDFF100BEAC6B /* ICMap.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		95798E9E186285080049CF77 /* KIImagePager */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				95A001161862594E008B18BD /* ICControllerConfig.h */,
+				1C878B0418CDDAAD00BEAC6B /* Map */,
 				95A0010F1862594E008B18BD /* Bus */,
 				95A001121862594E008B18BD /* Campus */,
 				95A001131862594E008B18BD /* Gate */,
@@ -499,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
+				1C878B0A18CDDF8100BEAC6B /* Map */,
 				95A000C7186214FA008B18BD /* Bus */,
 				95A000D2186214FA008B18BD /* School */,
 				95AC7076185F473200C94B71 /* Campus */,
@@ -585,6 +614,7 @@
 		A30D1DFB182A64BA00F35D4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C878B0818CDDB3B00BEAC6B /* MapKit.framework */,
 				95A000AF1861F927008B18BD /* AudioToolbox.framework */,
 				A30D1DFC182A64BA00F35D4F /* Foundation.framework */,
 				A30D1DFE182A64BA00F35D4F /* CoreGraphics.framework */,
@@ -828,11 +858,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				9508477F18658760008A4571 /* ICBusStationView.m in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
+				1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
