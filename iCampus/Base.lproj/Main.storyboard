@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUT-gG-yUc">
-                                <rect key="frame" x="130" y="156" width="60" height="60"/>
+                                <rect key="frame" x="130" y="96" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGateSchoolIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-Zu-3Wu">
-                                <rect key="frame" x="35" y="156" width="60" height="60"/>
+                                <rect key="frame" x="35" y="96" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGateNewsIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJp-uS-tIc">
-                                <rect key="frame" x="225" y="156" width="60" height="60"/>
+                                <rect key="frame" x="225" y="96" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGateMapIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mly-gx-KgM">
-                                <rect key="frame" x="35" y="257" width="60" height="60"/>
+                                <rect key="frame" x="35" y="197" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGateBusIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umb-lA-wbe">
-                                <rect key="frame" x="130" y="257" width="60" height="60"/>
+                                <rect key="frame" x="130" y="197" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGateYellowPageIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,58 +67,54 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewN-B5-bpK">
-                                <rect key="frame" x="225" y="257" width="60" height="60"/>
+                                <rect key="frame" x="225" y="197" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ICGatePlaceHolder">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新闻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4A-UJ-2Sn">
-                                <rect key="frame" x="35" y="220" width="60" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4A-UJ-2Sn">
+                                <rect key="frame" x="35" y="160" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学院" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-mx-0Ch">
-                                <rect key="frame" x="130" y="220" width="60" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-mx-0Ch">
+                                <rect key="frame" x="130" y="160" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-Nx-1ew">
-                                <rect key="frame" x="225" y="220" width="60" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-Nx-1ew">
+                                <rect key="frame" x="225" y="160" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="校车" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O7-er-M8n">
-                                <rect key="frame" x="35" y="321" width="60" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O7-er-M8n">
+                                <rect key="frame" x="35" y="261" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="黄页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00j-e2-xiT">
-                                <rect key="frame" x="130" y="321" width="60" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00j-e2-xiT">
+                                <rect key="frame" x="130" y="261" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更多" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBy-r2-Q3w">
-                                <rect key="frame" x="225" y="321" width="60" height="21"/>
+                                <rect key="frame" x="225" y="261" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ICGateLogo" translatesAutoresizingMaskIntoConstraints="NO" id="28n-w2-ETW">
-                                <rect key="frame" x="10" y="80" width="300" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="739" y="34"/>
         </scene>
-        <!--Map View Controller - 地图-->
+        <!--Map View Controller - Map-->
         <scene sceneID="8CB-fb-iT9">
             <objects>
                 <viewController id="oGL-eT-RWG" customClass="ICMapViewController" sceneMemberID="viewController">
@@ -171,7 +167,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="地图" id="WCd-Oc-s9w">
+                    <navigationItem key="navigationItem" title="Map" id="WCd-Oc-s9w">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="YwQ-HT-ROt">
                             <connections>
                                 <action selector="dismiss:" destination="oGL-eT-RWG" id="j5t-n3-1tm"/>
@@ -191,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1791" y="1568"/>
         </scene>
-        <!--News List View Controller - 新闻-->
+        <!--News List View Controller - News-->
         <scene sceneID="8Ac-vC-zm4">
             <objects>
                 <tableViewController id="rtJ-as-yZ1" customClass="ICNewsListViewController" sceneMemberID="viewController">
@@ -207,7 +203,7 @@
                             <outlet property="delegate" destination="rtJ-as-yZ1" id="4FJ-t8-DpO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新闻" id="iB5-nv-Fsm">
+                    <navigationItem key="navigationItem" title="News" id="iB5-nv-Fsm">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="l2h-aj-WEg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -293,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="1334" y="-1421"/>
         </scene>
-        <!--Bus View Controller - 校车-->
+        <!--Bus View Controller - Bug-->
         <scene sceneID="eQw-oV-tFR">
             <objects>
                 <tableViewController id="w8G-uv-uBL" customClass="ICBusViewController" sceneMemberID="viewController">
@@ -309,7 +305,7 @@
                             <outlet property="delegate" destination="w8G-uv-uBL" id="ZYl-lL-3vR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="校车" id="Hkw-T7-A0z">
+                    <navigationItem key="navigationItem" title="Bug" id="Hkw-T7-A0z">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="5Se-ch-5eP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -337,7 +333,7 @@
             </objects>
             <point key="canvasLocation" x="1334" y="34"/>
         </scene>
-        <!--School List View Controller - 学院-->
+        <!--School List View Controller - School-->
         <scene sceneID="2Ca-6L-C9C">
             <objects>
                 <tableViewController id="87j-iP-F62" customClass="ICSchoolListViewController" sceneMemberID="viewController">
@@ -353,7 +349,7 @@
                             <outlet property="delegate" destination="87j-iP-F62" id="VpK-0W-SD5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="学院" id="jy7-D1-Rjy">
+                    <navigationItem key="navigationItem" title="School" id="jy7-D1-Rjy">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="zKS-15-C3a">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -384,7 +380,7 @@
             </objects>
             <point key="canvasLocation" x="1334" y="804"/>
         </scene>
-        <!--Yellow Page Department View Controller - 黄页-->
+        <!--Yellow Page Department View Controller - Information-->
         <scene sceneID="B8C-p4-0mx">
             <objects>
                 <tableViewController id="mwV-CM-UMJ" customClass="ICYellowPageDepartmentViewController" sceneMemberID="viewController">
@@ -398,7 +394,7 @@
                             <outlet property="delegate" destination="mwV-CM-UMJ" id="wD0-Xz-uTb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="黄页" id="vuK-MH-1vm">
+                    <navigationItem key="navigationItem" title="Information" id="vuK-MH-1vm">
                         <barButtonItem key="leftBarButtonItem" image="ICNavigationBarBackIcon" id="S8f-B3-DYo">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -542,7 +538,6 @@
     </scenes>
     <resources>
         <image name="ICGateBusIcon" width="60" height="60"/>
-        <image name="ICGateLogo" width="600" height="100"/>
         <image name="ICGateMapIcon" width="60" height="60"/>
         <image name="ICGateNewsIcon" width="60" height="60"/>
         <image name="ICGatePlaceHolder" width="60" height="60"/>
