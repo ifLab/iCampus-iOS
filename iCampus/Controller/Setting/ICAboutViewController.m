@@ -55,7 +55,7 @@
     } else if (cell == self.ifLabCell) {
         textLabel.text = @"　　ifLab全称北京信息科技大学网络实践创新联盟，简称“创联”，是由学校信息网络中心组织和管理的技术社团。\n　　i代表internet（互联网），innovation（创新）；f代表future（未来），fulfill（实践）。\n　　我们的使命是学习和研究前沿互联网技术，建设和开发有助于学校教育信息化的项目；通过这些项目提高成员的IT水平，培养一批有专业造诣和项目实践经验的人才。\n　　我们的目标是成为校内最大最强的技术社团；在信息网络中心指导下协助建设学校信息化创新项目；帮助校内社团、组织及师生提高前沿IT技能；每年培养10个以上相当于1年专业工作经验的IT人才。\n　　我们欢迎校内的社团组织、学术机构与我们联盟合作。我们可以提供必要的技术协助，或者帮其他社团培养需要的技术人才。\n　　目前我们主要学习研究的领域为移动互联网以及云计算。\n　　你可以通过访问http://www.iflab.org或者关注新浪微博ifLab来了解我们。";
     } else if (cell == self.creditsCell) {
-        textLabel.text = @"项目负责人 曾铮\n系统设计 曾铮 郑小博\n美工设计 马奎 肖晨曦\nAPI 顾翔\n管理后台 黄伟\niOS 马奎 刘鸿喆\nAndroid 李占宇 王鹏 黄伟 李轶男 刘相宇\nPhoneGap 熊伦\nWebApp 曾铮";
+        textLabel.text = @"项目负责人 曾铮\n系统设计 曾铮 郑小博\n美工设计 马奎 肖晨曦\nAPI 顾翔\n管理后台 黄伟\niOS 马奎 刘鸿喆\nAndroid 李占宇 王鹏 黄陈 李轶男 刘相宇\nPhoneGap 熊伦\nWebApp 曾铮";
     }
     [textLabel sizeToFit];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, textLabel.frame.size.height + 20);
