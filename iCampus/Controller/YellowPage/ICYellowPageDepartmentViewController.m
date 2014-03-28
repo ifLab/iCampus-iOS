@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 48.0;
+    self.clearsSelectionOnViewWillAppear = YES;
     ICYellowPageDepartmentViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.departmentList = [ICYellowPageDepartmentList departmentList];
@@ -63,8 +64,6 @@
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     ICYellowPageListViewController *destinationViewController = (ICYellowPageListViewController *)segue.destinationViewController;
     destinationViewController.department = [self.departmentList departmentAtIndex:indexPath.row];
-    [self.tableView deselectRowAtIndexPath:indexPath
-                                  animated:YES];
 }
 
 - (IBAction)dismiss:(id)sender {

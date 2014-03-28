@@ -51,7 +51,7 @@
 }
 
 - (ICBus *)busAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state

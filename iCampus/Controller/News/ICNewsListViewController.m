@@ -29,6 +29,7 @@
     self.loading = NO;
     self.tableView.rowHeight = 72.0f;
     self.navigationController.navigationBar.translucent = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
     ICNewsListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.channel = [ICNewsChannelList channelList].firstChannel;
@@ -80,8 +81,6 @@
         ICNewsDetailViewController *detailViewController = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         detailViewController.news = [self.newsList newsAtIndex:indexPath.row];
-        [self.tableView deselectRowAtIndexPath:indexPath
-                                      animated:YES];
     }
 }
 

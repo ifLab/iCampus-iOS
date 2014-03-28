@@ -138,10 +138,6 @@
                      phones,
                      &error);
     CFRelease(phones);
-    if (error) {
-        CFRelease(error);
-        return;
-    }
     ABRecordSetValue(newPerson,
                      kABPersonOrganizationProperty,
                      (__bridge CFTypeRef)ICSchoolName,

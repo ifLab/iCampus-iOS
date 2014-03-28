@@ -44,13 +44,13 @@
                                                           error:nil];
         for (NSDictionary *a in json) {
             ICCampus *campus = [[ICCampus alloc] init];
-            campus.index = [[a objectForKey:@"id"] intValue];
-            campus.name = [a objectForKey:@"areaName"];
-            campus.address = [a objectForKey:@"areaAddress"];
-            campus.zipCode = [[a objectForKey:@"zipCode"] intValue];
-            campus.longitude = [[a objectForKey:@"longitude"] floatValue];
-            campus.latitude = [[a objectForKey:@"latitude"] floatValue];
-            campus.zoom = [[a objectForKey:@"zoom"] floatValue];
+            campus.index = [a[@"id"] intValue];
+            campus.name = a[@"areaName"];
+            campus.address = a[@"areaAddress"];
+            campus.zipCode = [a[@"zipCode"] intValue];
+            campus.longitude = [a[@"longitude"] floatValue];
+            campus.latitude = [a[@"latitude"] floatValue];
+            campus.zoom = [a[@"zoom"] floatValue];
             [instance addCampus:campus];
         }
     }
@@ -90,7 +90,7 @@
 }
 
 - (ICCampus *)campusAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state

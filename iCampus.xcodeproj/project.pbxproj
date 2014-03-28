@@ -11,6 +11,9 @@
 		1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C878B0818CDDB3B00BEAC6B /* MapKit.framework */; };
 		1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0C18CDDFF100BEAC6B /* ICMap.m */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
+		951BE86818E5E9030049AB5F /* ICSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICSettingViewController.m */; };
+		951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
+		951BE87418E5F9810049AB5F /* ICAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE87318E5F9810049AB5F /* ICAboutViewController.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
 		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
 		957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */; };
@@ -104,7 +107,6 @@
 /* Begin PBXFileReference section */
 		1C46417318D5F18B00B4CCED /* DebugNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugNSLog.h; sourceTree = "<group>"; };
 		1C50FCEA18D00ED70085C313 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		1C50FCEB18D00ED70085C313 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1C50FCEC18D00ED70085C313 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1C878B0518CDDACE00BEAC6B /* ICMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMapViewController.h; sourceTree = "<group>"; };
 		1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapViewController.m; sourceTree = "<group>"; };
@@ -113,6 +115,11 @@
 		1C878B0C18CDDFF100BEAC6B /* ICMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMap.m; sourceTree = "<group>"; };
 		9508477D18658760008A4571 /* ICBusStationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationView.h; sourceTree = "<group>"; };
 		9508477E18658760008A4571 /* ICBusStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationView.m; sourceTree = "<group>"; };
+		951BE86618E5E9030049AB5F /* ICSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSettingViewController.h; path = Setting/ICSettingViewController.h; sourceTree = "<group>"; };
+		951BE86718E5E9030049AB5F /* ICSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSettingViewController.m; path = Setting/ICSettingViewController.m; sourceTree = "<group>"; };
+		951BE87218E5F9810049AB5F /* ICAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAboutViewController.h; path = Setting/ICAboutViewController.h; sourceTree = "<group>"; };
+		951BE87318E5F9810049AB5F /* ICAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAboutViewController.m; path = Setting/ICAboutViewController.m; sourceTree = "<group>"; };
+		951BE87A18E607730049AB5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		952B5BF91863FDBA009DDBB5 /* ICBusStationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationListCell.h; sourceTree = "<group>"; };
 		952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationListCell.m; sourceTree = "<group>"; };
 		957279A91867375D007F3F01 /* ICSchoolListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolListViewController.h; sourceTree = "<group>"; };
@@ -309,6 +316,17 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		951BE86218E5E68F0049AB5F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				951BE86618E5E9030049AB5F /* ICSettingViewController.h */,
+				951BE86718E5E9030049AB5F /* ICSettingViewController.m */,
+				951BE87218E5F9810049AB5F /* ICAboutViewController.h */,
+				951BE87318E5F9810049AB5F /* ICAboutViewController.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		95798E9E186285080049CF77 /* KIImagePager */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,9 +468,9 @@
 				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				1C878B0418CDDAAD00BEAC6B /* Map */,
 				95A0010F1862594E008B18BD /* Bus */,
-				95A001121862594E008B18BD /* Campus */,
 				95A001131862594E008B18BD /* Gate */,
 				95A001171862594E008B18BD /* News */,
+				951BE86218E5E68F0049AB5F /* Setting */,
 				95A0011E1862594E008B18BD /* School */,
 				95A0011F1862594E008B18BD /* User */,
 				95A001201862594E008B18BD /* YellowPage */,
@@ -467,13 +485,6 @@
 				95A001111862594E008B18BD /* ICBusViewController.m */,
 			);
 			path = Bus;
-			sourceTree = "<group>";
-		};
-		95A001121862594E008B18BD /* Campus */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Campus;
 			sourceTree = "<group>";
 		};
 		95A001131862594E008B18BD /* Gate */ = {
@@ -804,7 +815,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = BISTU;
 				TargetAttributes = {
 					A30D1DF8182A64BA00F35D4F = {
@@ -854,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D1E26182A64BA00F35D4F /* InfoPlist.strings in Resources */,
+				951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +892,7 @@
 				95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
+				951BE87418E5F9810049AB5F /* ICAboutViewController.m in Sources */,
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
 				A320CA75183E365D00BCA05F /* AFURLRequestSerialization.m in Sources */,
 				95E4852A18941B75006402FD /* ICYellowPageDepartmentCell.m in Sources */,
@@ -914,6 +927,7 @@
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
 				A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */,
 				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
+				951BE86818E5E9030049AB5F /* ICSettingViewController.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
@@ -956,7 +970,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A000AD1861F504008B18BD /* Base */,
-				1C50FCEB18D00ED70085C313 /* zh-Hans */,
+				951BE87A18E607730049AB5F /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -986,7 +1000,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1025,7 +1038,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1091,7 +1103,6 @@
 		A30D1E2F182A64BA00F35D4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCampus.app/iCampus";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1114,7 +1125,6 @@
 		A30D1E30182A64BA00F35D4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCampus.app/iCampus";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

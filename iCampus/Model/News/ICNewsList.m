@@ -67,21 +67,21 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                error:nil];
-        json = [json objectForKey:@"d"];
+        json = json[@"d"];
         NSDateFormatter   *dateFormatter;
         dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName]];
         for (NSMutableDictionary __strong *a in json) {
-            a = [a objectForKey:@"attributes"];
+            a = a[@"attributes"];
             ICNews *news = [[ICNews alloc] init];
-            news.index = [[a objectForKey:@"id"] intValue];
-            news.date = [dateFormatter dateFromString:[a objectForKey:@"rt"]];
-            news.title = [a objectForKey:@"n"];
-            news.author = [a objectForKey:@"au"];
-            news.preview = [a objectForKey:@"ab"];
-            news.imageURL = [NSURL URLWithString:[a objectForKey:@"ic"]];
-            news.detailKey = [a objectForKey:@"url"];
+            news.index = [a[@"id"] intValue];
+            news.date = [dateFormatter dateFromString:a[@"rt"]];
+            news.title = a[@"n"];
+            news.author = a[@"au"];
+            news.preview = a[@"ab"];
+            news.imageURL = [NSURL URLWithString:a[@"ic"]];
+            news.detailKey = a[@"url"];
             news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
                                                                        withString:@""];
             news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@".xml"
@@ -123,11 +123,11 @@
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName]];
         self.array = [NSMutableArray array];
         for (NSDictionary __strong *a in json) {
-            a = [a objectForKey:@"attributes"];
+            a = a[@"attributes"];
             ICNews *news = [[ICNews alloc] init];
-            news.index = [[a objectForKey:@"id"] intValue];
-            news.date = [dateFormatter dateFromString:[a objectForKey:@"rt"]];
-            news.title = [a objectForKey:@"n"];
+            news.index = [a[@"id"] intValue];
+            news.date = [dateFormatter dateFromString:a[@"rt"]];
+            news.title = a[@"n"];
             [self addNews:news];
         }
     }
@@ -167,7 +167,7 @@
 }
 
 - (ICNews *)newsAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 @end

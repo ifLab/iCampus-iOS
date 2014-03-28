@@ -139,14 +139,14 @@ const CGFloat InfoViewHeight = 60.0f;
     
     [self.menuView reloadData];
     
-    self.addressLabel.text = (NSString *)[self.list[0] objectForKey:ICMapAddress];
-    self.zipCodeLabel.text = (NSString *)[self.list[0] objectForKey:ICMapZipCode];
+    self.addressLabel.text = (NSString *)(self.list[0])[ICMapAddress];
+    self.zipCodeLabel.text = (NSString *)(self.list[0])[ICMapZipCode];
     
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = ((NSNumber *)[self.list[0] objectForKey:ICMapLongitude]).floatValue;
-    zoomLocation.longitude= ((NSNumber *)[self.list[0] objectForKey:ICMapLatitude]).floatValue;
+    zoomLocation.latitude = ((NSNumber *)(self.list[0])[ICMapLongitude]).floatValue;
+    zoomLocation.longitude= ((NSNumber *)(self.list[0])[ICMapLatitude]).floatValue;
     
-    CGFloat zoomLevel = ((NSNumber *)[self.list[0] objectForKey:ICMapZoomLevel]).floatValue * 60;
+    CGFloat zoomLevel = ((NSNumber *)(self.list[0])[ICMapZoomLevel]).floatValue * 60;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomLevel, zoomLevel);
     
@@ -172,7 +172,7 @@ const CGFloat InfoViewHeight = 60.0f;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = [self.list[indexPath.row] objectForKey:ICMapName];
+    cell.textLabel.text = (self.list[indexPath.row])[ICMapName];
     
     return cell;
 }
@@ -181,14 +181,14 @@ const CGFloat InfoViewHeight = 60.0f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.addressLabel.text = (NSString *)[self.list[indexPath.row] objectForKey:ICMapAddress];
-    self.zipCodeLabel.text = (NSString *)[self.list[indexPath.row] objectForKey:ICMapZipCode];
+    self.addressLabel.text = (NSString *)(self.list[indexPath.row])[ICMapAddress];
+    self.zipCodeLabel.text = (NSString *)(self.list[indexPath.row])[ICMapZipCode];
     
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = ((NSNumber *)[self.list[indexPath.row] objectForKey:ICMapLongitude]).floatValue;
-    zoomLocation.longitude= ((NSNumber *)[self.list[indexPath.row] objectForKey:ICMapLatitude]).floatValue;
+    zoomLocation.latitude = ((NSNumber *)(self.list[indexPath.row])[ICMapLongitude]).floatValue;
+    zoomLocation.longitude= ((NSNumber *)(self.list[indexPath.row])[ICMapLatitude]).floatValue;
     
-    CGFloat zoomLevel = ((NSNumber *)[self.list[indexPath.row] objectForKey:ICMapZoomLevel]).floatValue * 60;
+    CGFloat zoomLevel = ((NSNumber *)(self.list[indexPath.row])[ICMapZoomLevel]).floatValue * 60;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomLevel, zoomLevel);
     

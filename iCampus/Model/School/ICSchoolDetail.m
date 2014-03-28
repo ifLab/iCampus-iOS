@@ -43,11 +43,11 @@
         NSDictionary *json = [[NSJSONSerialization JSONObjectWithData:data
                                                               options:kNilOptions
                                                                 error:nil] firstObject];
-        self.index = [[json objectForKey:@"id"] intValue];
-        self.mark = [json objectForKey:@"mark"];
-        self.name = [json objectForKey:@"introName"];
-        self.body = [json objectForKey:@"introCont"];
-        self.rank = [[json objectForKey:@"rank"] intValue];
+        self.index = [json[@"id"] intValue];
+        self.mark = json[@"mark"];
+        self.name = json[@"introName"];
+        self.body = json[@"introCont"];
+        self.rank = [json[@"rank"] intValue];
     }
     return self;
 }

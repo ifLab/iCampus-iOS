@@ -51,34 +51,34 @@
         dateFormatter.timeZone = [NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName];
         for (NSDictionary __strong *a in json) {
             ICBusList *busList = [[ICBusList alloc] init];
-            busList.index = [[a objectForKey:@"id"] intValue];
-            busList.name = [a objectForKey:@"catName"];
-            busList.description = [a objectForKey:@"catIntro"];
-            a = [a objectForKey:@"catBus"];
+            busList.index = [a[@"id"] intValue];
+            busList.name = a[@"catName"];
+            busList.description = a[@"catIntro"];
+            a = a[@"catBus"];
             for (NSDictionary *b in a) {
-                NSArray *c = [b objectForKey:@"busLine"];
+                NSArray *c = b[@"busLine"];
                 dateFormatter.dateFormat = @"HH:mm";
                 ICBusStationList *stationList = [[ICBusStationList alloc] init];
                 for (NSDictionary *d in c) {
                     for (NSString *e in d) {
                         ICBusStation *station = [[ICBusStation alloc] init];
                         station.name = e;
-                        station.time = [dateFormatter dateFromString:[d objectForKey:e]];
+                        station.time = [dateFormatter dateFromString:d[e]];
                         [stationList addStation:station];
                     }
                 }
                 [dateFormatter setDateFormat:@"HH:mm:ss"];
-                id returnTime = [b objectForKey:@"returnTime"];
+                id returnTime = b[@"returnTime"];
                 if ([returnTime isEqual:[NSNull null]]) {
                     returnTime = nil;
                 } else {
                     returnTime = [dateFormatter dateFromString:[NSString stringWithString:returnTime]];
                 }
                 ICBus *bus = [[ICBus alloc] init];
-                bus.index = [[b objectForKey:@"id"] intValue];
-                bus.name = [b objectForKey:@"busName"];
-                bus.description = [b objectForKey:@"busIntro"];
-                bus.departureTime = [dateFormatter dateFromString:[b objectForKey:@"departTime"]];
+                bus.index = [b[@"id"] intValue];
+                bus.name = b[@"busName"];
+                bus.description = b[@"busIntro"];
+                bus.departureTime = [dateFormatter dateFromString:b[@"departTime"]];
                 bus.returnTime = (NSDate *)returnTime;
                 bus.stationList = stationList;
                 [busList addBus:bus];
@@ -122,7 +122,7 @@
 }
 
 - (ICBusList *)busListAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state

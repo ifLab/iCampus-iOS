@@ -54,9 +54,9 @@
                                                           error:nil];
         for (NSDictionary *a in json) {
             ICYellowPageDepartment *department = [[ICYellowPageDepartment alloc] init];
-            department.index           = [[a objectForKey:@"id"] intValue];
-            department.name            = [a objectForKey:@"name"];
-            department.departmentIndex = [[a objectForKey:@"depart"] intValue];
+            department.index           = [a[@"id"] intValue];
+            department.name            = a[@"name"];
+            department.departmentIndex = [a[@"depart"] intValue];
             [instance addDepartment:department];
         }
     }
@@ -104,7 +104,7 @@
 }
 
 - (ICYellowPageDepartment *)departmentAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 @end

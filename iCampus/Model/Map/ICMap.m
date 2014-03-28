@@ -77,24 +77,22 @@
     
     for (NSDictionary *each in origin) {
         
-        NSNumber *longitude = [NSNumber numberWithFloat:[(NSString *)[each valueForKey:@"longitude"] floatValue]];
-        NSNumber *latitute = [NSNumber numberWithFloat:[(NSString *)[each valueForKey:@"latitude"] floatValue]];
-        NSNumber *zoomLevel = [NSNumber numberWithFloat:[(NSString *)[each valueForKey:@"zoom"] floatValue]];
+        NSNumber *longitude = @([(NSString *)[each valueForKey:@"longitude"] floatValue]);
+        NSNumber *latitute = @([(NSString *)[each valueForKey:@"latitude"] floatValue]);
+        NSNumber *zoomLevel = @([(NSString *)[each valueForKey:@"zoom"] floatValue]);
         
         NSString *idstr = (NSString *)[each valueForKey:@"id"];
         NSString *name = (NSString *)[each valueForKey:@"areaName"];
         NSString *addr = (NSString *)[each valueForKey:@"areaAddress"];
         NSString *zip = (NSString *)[each valueForKey:@"zipCode"];
         
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              longitude, ICMapLongitude,
-                              latitute, ICMapLatitude,
-                              zoomLevel, ICMapZoomLevel,
-                              idstr, ICMapIDStr,
-                              name, ICMapName,
-                              addr, ICMapAddress,
-                              zip, ICMapZipCode,
-                              nil];
+        NSDictionary *dict = @{ICMapLongitude: longitude,
+                              ICMapLatitude: latitute,
+                              ICMapZoomLevel: zoomLevel,
+                              ICMapIDStr: idstr,
+                              ICMapName: name,
+                              ICMapAddress: addr,
+                              ICMapZipCode: zip};
         [self.list addObject:dict];
     }
 }

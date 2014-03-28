@@ -1,0 +1,42 @@
+
+/* Class = "IBUILabel"; text = "Info"; ObjectID = "00j-e2-xiT"; */
+"00j-e2-xiT.text" = "Info";
+
+/* Class = "IBUILabel"; text = "Bus"; ObjectID = "1O7-er-M8n"; */
+"1O7-er-M8n.text" = "Bus";
+
+/* Class = "IBUINavigationItem"; title = "Bus"; ObjectID = "Hkw-T7-A0z"; */
+"Hkw-T7-A0z.title" = "Bus";
+
+/* Class = "IBUILabel"; text = "关于"; ObjectID = "LYM-CD-iJV"; */
+"LYM-CD-iJV.text" = "关于";
+
+/* Class = "IBUILabel"; text = "Map"; ObjectID = "Qe2-Nx-1ew"; */
+"Qe2-Nx-1ew.text" = "Map";
+
+/* Class = "IBUINavigationItem"; title = "Map"; ObjectID = "WCd-Oc-s9w"; */
+"WCd-Oc-s9w.title" = "Map";
+
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "hRl-wc-J4m"; */
+"hRl-wc-J4m.title" = "Settings";
+
+/* Class = "IBUILabel"; text = "News"; ObjectID = "i4A-UJ-2Sn"; */
+"i4A-UJ-2Sn.text" = "News";
+
+/* Class = "IBUINavigationItem"; title = "News"; ObjectID = "iB5-nv-Fsm"; */
+"iB5-nv-Fsm.title" = "News";
+
+/* Class = "IBUINavigationItem"; title = "School"; ObjectID = "jy7-D1-Rjy"; */
+"jy7-D1-Rjy.title" = "School";
+
+/* Class = "IBUILabel"; text = "更多"; ObjectID = "nBy-r2-Q3w"; */
+"nBy-r2-Q3w.text" = "更多";
+
+/* Class = "IBUILabel"; text = "School"; ObjectID = "uCD-mx-0Ch"; */
+"uCD-mx-0Ch.text" = "School";
+
+/* Class = "IBUITableViewSection"; headerTitle = "其它"; ObjectID = "vCX-Ap-WPe"; */
+"vCX-Ap-WPe.headerTitle" = "其它";
+
+/* Class = "IBUINavigationItem"; title = "Information"; ObjectID = "vuK-MH-1vm"; */
+"vuK-MH-1vm.title" = "Information";

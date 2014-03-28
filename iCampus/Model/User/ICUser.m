@@ -62,7 +62,7 @@
     NSArray *array = [NSJSONSerialization JSONObjectWithData:jsonData
                                                      options:kNilOptions
                                                        error:nil];
-    NSString *rsaPublicKey = [array objectAtIndex:0];
+    NSString *rsaPublicKey = array[0];
     if (!rsaPublicKey) {
 #       ifdef IC_USER_DATA_MODULE_DEBUG
             NSLog(@"%@ %@ %@ Could not fetch RSA public key.", ICUserTag, ICFailedTag, ICBrokenTag);
@@ -99,10 +99,10 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:nil];
-    _accessToken = [[json objectForKey:@"accessToken"] copy        ];
-    _idType      = [[json objectForKey:@"idtype"     ] integerValue];
-    _identifier  = [[json objectForKey:@"userid"     ] integerValue];
-    _username    = [[json objectForKey:@"username"   ] copy        ];
+    _accessToken = [json[@"accessToken"] copy        ];
+    _idType      = [json[@"idtype"] integerValue];
+    _identifier  = [json[@"userid"] integerValue];
+    _username    = [json[@"username"] copy        ];
     _loggedIn    = YES;
 #   if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_USER_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ User %@ logged in successfully with password '%@'", ICUserTag, ICSucceededTag, _username, self.password);

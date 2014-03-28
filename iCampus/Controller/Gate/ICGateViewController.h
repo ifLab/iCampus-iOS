@@ -13,6 +13,5 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *messageButton;
 
 - (IBAction)checkMessage:(id)sender;
-- (IBAction)displaySettings:(id)sender;
 
 @end

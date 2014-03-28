@@ -62,49 +62,49 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[dataString dataUsingEncoding:NSUTF8StringEncoding]
                                                              options:kNilOptions
                                                                error:nil];
-        NSArray *a = [[json objectForKey:@"as"] objectForKey:@"a"];
+        NSArray *a = json[@"as"][@"a"];
         NSMutableArray *imageURLs = [NSMutableArray array];
         for (NSDictionary __strong *b in a) {
             if (![b.class isSubclassOfClass:NSDictionary.class]) {
                 continue;
             }
-            b = [b objectForKey:@"attributes"];
-            NSURL *url = [NSURL URLWithString:[b objectForKey:@"url"]];
+            b = b[@"attributes"];
+            NSURL *url = [NSURL URLWithString:b[@"url"]];
             [imageURLs addObject:url];
         }
         self.imageURLs = [NSArray arrayWithArray:imageURLs];
-        json = [json objectForKey:@"property"];
+        json = json[@"property"];
         // source index
-        self.sourceIndex = [[json objectForKey:@"docid"] intValue];
+        self.sourceIndex = [json[@"docid"] intValue];
         // channel index
-        self.channelIndex = [[json objectForKey:@"docchannel"] intValue];
+        self.channelIndex = [json[@"docchannel"] intValue];
         // type
-        self.type = [[json objectForKey:@"doctype"] intValue];
+        self.type = [json[@"doctype"] intValue];
         // title
-        self.title = [json objectForKey:@"doctitle"];
+        self.title = json[@"doctitle"];
         self.title = [self.title stringByReplacingOccurrencesOfString:@"<br>" withString:@""];
         self.title = [self.title stringByReplacingOccurrencesOfString:@"\u3000\u3000" withString:@" "];
         // subtitles
         NSMutableArray *subtitles = [NSMutableArray array];
         NSString *subtitle;
-        if ([[[json objectForKey:@"subdoctitle"] class] isSubclassOfClass:NSString.class]) {
-            subtitle = [json objectForKey:@"subdoctitle"];
+        if ([[json[@"subdoctitle"] class] isSubclassOfClass:NSString.class]) {
+            subtitle = json[@"subdoctitle"];
             [subtitles addObject:subtitle];
         } else {
-            NSDictionary *subtitlesDictionary = [json objectForKey:@"subdoctitle"];
+            NSDictionary *subtitlesDictionary = json[@"subdoctitle"];
             for (subtitle in subtitlesDictionary) {
                 [subtitles addObject:subtitle];
             }
         }
         // authors
-        NSDictionary *authorsDictionary = [json objectForKey:@"docauthor"];
+        NSDictionary *authorsDictionary = json[@"docauthor"];
         NSMutableArray *authors = [NSMutableArray array];
         for (NSString *author in authorsDictionary) {
             [authors addObject:author];
         }
         self.authors = [NSArray arrayWithArray:authors];
         // source names
-        NSDictionary *sourceNamesDictionary = [json objectForKey:@"docsourcename"];
+        NSDictionary *sourceNamesDictionary = json[@"docsourcename"];
         NSMutableArray *sourceNames = [NSMutableArray array];
         for (NSString *sourceName in sourceNamesDictionary) {
             [sourceNames addObject:sourceName];
@@ -114,26 +114,26 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName]];
-        NSString *sourceCreationTimeString = [json objectForKey:@"docreltime"];
+        NSString *sourceCreationTimeString = json[@"docreltime"];
         self.sourceCreationTime = [dateFormatter dateFromString:sourceCreationTimeString];
         // modification time
-        NSString *modificationTimeString = [json objectForKey:@"opertime"];
+        NSString *modificationTimeString = json[@"opertime"];
         self.modificationTime = [dateFormatter dateFromString:modificationTimeString];
         // creator
-        self.creator = [json objectForKey:@"cruser"];
-        NSString *creationTimeString = [json objectForKey:@"crtime"];
+        self.creator = json[@"cruser"];
+        NSString *creationTimeString = json[@"crtime"];
         self.creationTime = [dateFormatter dateFromString:creationTimeString];
         // abstract
-        self.abstract = [json objectForKey:@"docabstract"];
+        self.abstract = json[@"docabstract"];
         // body
-        self.body = [json objectForKey:@"dochtmlcon"];
+        self.body = json[@"dochtmlcon"];
         self.body = [self.body stringByReplacingOccurrencesOfString:@"\t" withString:@""];
         self.body = [self.body stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         self.body = [self.body stringByReplacingOccurrencesOfString:@"\r" withString:@""];
         self.body = [self.body stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
         self.body = [self.body stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         // pc url
-        self.pcURL = [NSURL URLWithString:[json objectForKey:@"pcurl"]];
+        self.pcURL = [NSURL URLWithString:json[@"pcurl"]];
     }
     return self;
 }

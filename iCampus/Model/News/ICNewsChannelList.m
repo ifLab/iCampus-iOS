@@ -46,12 +46,12 @@
         dateFormatter.timeZone = [NSTimeZone timeZoneWithName:(NSString *)ICTimeZoneName];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         for (NSDictionary __strong *a in json) {
-            a = [a objectForKey:@"attributes"];
+            a = a[@"attributes"];
             ICNewsChannel *channel = [[ICNewsChannel alloc] init];
-            channel.index = [[a objectForKey:@"id"] intValue];
-            channel.lastUpdateDate = [dateFormatter dateFromString:[a objectForKey:@"lmt"]];
-            channel.title = [a objectForKey:@"n"];
-            channel.listKey = [a objectForKey:@"url"];
+            channel.index = [a[@"id"] intValue];
+            channel.lastUpdateDate = [dateFormatter dateFromString:a[@"lmt"]];
+            channel.title = a[@"n"];
+            channel.listKey = a[@"url"];
             channel.listKey = [channel.listKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
                                                                          withString:@""];
             [instance addChannel:channel];
@@ -93,7 +93,7 @@
 }
 
 - (ICNewsChannel *)channelAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state

@@ -37,7 +37,7 @@
     self = [super initWithFrame:CGRectMake(0, 0, 120.0, 100.0)];
     if (self) {
         for (UIView *view in self.subviews) {
-            [self removeFromSuperview];
+            [view removeFromSuperview];
         }
         _nameLabel = [[UILabel alloc] init]; {
             self.nameLabel.frame         = CGRectMake(0.0, 10.0, 120.0, 40.0);

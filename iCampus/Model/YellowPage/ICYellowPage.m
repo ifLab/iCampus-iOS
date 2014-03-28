@@ -57,10 +57,10 @@
                                                           error:nil];
         for (NSDictionary *a in json) {
             ICYellowPageContact *contact = [[ICYellowPageContact alloc] init];
-            contact.index = [[a objectForKey:@"id"] intValue];
-            contact.name = [a objectForKey:@"name"];
-            contact.telephone = [a objectForKey:@"telnum"];
-            contact.departmentIndex = [[a objectForKey:@"depart"] intValue];
+            contact.index = [a[@"id"] intValue];
+            contact.name = a[@"name"];
+            contact.telephone = a[@"telnum"];
+            contact.departmentIndex = [a[@"depart"] intValue];
             [instance addContact:contact];
         }
     }
@@ -100,7 +100,7 @@
 }
 
 - (ICYellowPageContact *)contactAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state

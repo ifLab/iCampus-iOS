@@ -5,14 +5,32 @@
 /* Class = "IBUILabel"; text = "校车"; ObjectID = "1O7-er-M8n"; */
 "1O7-er-M8n.text" = "校车";
 
+/* Class = "IBUILabel"; text = "ifLab"; ObjectID = "FJZ-rT-JV7"; */
+"FJZ-rT-JV7.text" = "ifLab";
+
 /* Class = "IBUINavigationItem"; title = "校车"; ObjectID = "Hkw-T7-A0z"; */
 "Hkw-T7-A0z.title" = "校车";
+
+/* Class = "IBUILabel"; text = "关于"; ObjectID = "LYM-CD-iJV"; */
+"LYM-CD-iJV.text" = "关于";
 
 /* Class = "IBUILabel"; text = "地图"; ObjectID = "Qe2-Nx-1ew"; */
 "Qe2-Nx-1ew.text" = "地图";
 
+/* Class = "IBUILabel"; text = "开发者"; ObjectID = "R8w-YN-MNB"; */
+"R8w-YN-MNB.text" = "开发者";
+
 /* Class = "IBUINavigationItem"; title = "地图"; ObjectID = "WCd-Oc-s9w"; */
 "WCd-Oc-s9w.title" = "地图";
+
+/* Class = "IBUITableViewSection"; headerTitle = "学校"; ObjectID = "fgF-m3-RAU"; */
+"fgF-m3-RAU.headerTitle" = "学校";
+
+/* Class = "IBUINavigationItem"; title = "设置"; ObjectID = "hRl-wc-J4m"; */
+"hRl-wc-J4m.title" = "设置";
+
+/* Class = "IBUILabel"; text = "学校简介"; ObjectID = "hnd-Vx-x7T"; */
+"hnd-Vx-x7T.text" = "学校简介";
 
 /* Class = "IBUILabel"; text = "新闻"; ObjectID = "i4A-UJ-2Sn"; */
 "i4A-UJ-2Sn.text" = "新闻";
@@ -26,8 +44,23 @@
 /* Class = "IBUILabel"; text = "更多"; ObjectID = "nBy-r2-Q3w"; */
 "nBy-r2-Q3w.text" = "更多";
 
+/* Class = "IBUILabel"; text = "院系专业"; ObjectID = "nDH-2I-t2q"; */
+"nDH-2I-t2q.text" = "院系专业";
+
+/* Class = "IBUINavigationItem"; title = "关于"; ObjectID = "qis-Di-abj"; */
+"qis-Di-abj.title" = "关于";
+
+/* Class = "IBUILabel"; text = "历史沿革"; ObjectID = "t9m-kz-BDO"; */
+"t9m-kz-BDO.text" = "历史沿革";
+
 /* Class = "IBUILabel"; text = "学院"; ObjectID = "uCD-mx-0Ch"; */
 "uCD-mx-0Ch.text" = "学院";
 
+/* Class = "IBUITableViewSection"; headerTitle = "其它"; ObjectID = "vCX-Ap-WPe"; */
+"vCX-Ap-WPe.headerTitle" = "其它";
+
 /* Class = "IBUINavigationItem"; title = "黄页"; ObjectID = "vuK-MH-1vm"; */
 "vuK-MH-1vm.title" = "黄页";
+
+/* Class = "IBUITableViewSection"; headerTitle = "组织与开发者"; ObjectID = "w4s-oX-H8d"; */
+"w4s-oX-H8d.headerTitle" = "组织与开发者";

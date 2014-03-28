@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.rowHeight = 56.0;
     ICSchoolListViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -57,8 +58,6 @@
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:(NSString *)ICSchoolListToDetailIdentifier
                               sender:self];
-    [tableView deselectRowAtIndexPath:indexPath
-                             animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue

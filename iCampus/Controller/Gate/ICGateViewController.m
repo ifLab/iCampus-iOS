@@ -26,7 +26,6 @@
     
     [self.navigationController.navigationBar setTranslucent:NO];
     
-    self.navigationItem.rightBarButtonItem = nil;
     self.navigationItem.leftBarButtonItem = nil;
 }
 
@@ -45,9 +44,6 @@
         self.messageButton.image = [UIImage imageNamed:@"ICNavigationBarMessageHighlightedIcon"];
         self.messageButton.tag = MSGBTN_NORMAL;
     }
-}
-
-- (IBAction)displaySettings:(id)sender {
 }
 
 @end

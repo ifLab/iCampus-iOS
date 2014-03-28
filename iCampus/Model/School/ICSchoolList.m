@@ -44,9 +44,9 @@
                                                            error:nil];
         for (NSDictionary *a in json) {
             ICSchool *school = [[ICSchool alloc] init];
-            school.index = [[a objectForKey:@"id"] intValue];
-            school.name = [a objectForKey:@"introName"];
-            school.mark = [a objectForKey:@"mod"];
+            school.index = [a[@"id"] intValue];
+            school.name = a[@"introName"];
+            school.mark = a[@"mod"];
             [instance addSchool:school];
         }
     }
@@ -94,7 +94,7 @@
 }
 
 - (ICSchool *)schoolAtIndex:(NSUInteger)index {
-    return [self.array objectAtIndex:index];
+    return (self.array)[index];
 }
 
 @end
