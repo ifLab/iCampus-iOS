@@ -57,6 +57,14 @@
     } else if (cell == self.creditsCell) {
         textLabel.text = @"项目负责人 曾铮\n系统设计 曾铮 郑小博\n美工设计 马奎 肖晨曦\nAPI 顾翔\n管理后台 黄伟\niOS 马奎 刘鸿喆\nAndroid 李占宇 王鹏 黄陈 李轶男 刘相宇\nPhoneGap 熊伦\nWebApp 曾铮";
     }
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 10.0;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
+                                                   initWithString:textLabel.text];
+    [attributedString addAttribute:NSParagraphStyleAttributeName
+                             value:paragraphStyle
+                             range:NSMakeRange(0, textLabel.text.length)];
+    textLabel.attributedText = attributedString;
     [textLabel sizeToFit];
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, textLabel.frame.size.height + 20);
     [self.navigationController pushViewController:detailViewController animated:YES];
