@@ -587,7 +587,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Disciplines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDH-2I-t2q">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="College" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDH-2I-t2q">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -645,8 +645,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="qis-Di-abj"/>
                     <connections>
+                        <outlet property="collegeCell" destination="dYS-t5-Mrn" id="tlx-Y5-bb7"/>
                         <outlet property="creditsCell" destination="IbP-C4-lQw" id="uSZ-ny-P6z"/>
-                        <outlet property="disciplinesCell" destination="dYS-t5-Mrn" id="8qy-2P-Urm"/>
                         <outlet property="historyCell" destination="fKO-yh-dwL" id="fV6-Mv-Sx9"/>
                         <outlet property="ifLabCell" destination="4Ie-lE-6w9" id="Z7F-jy-5rC"/>
                         <outlet property="introductionCell" destination="2AO-jk-tKI" id="q2I-w5-ncH"/>

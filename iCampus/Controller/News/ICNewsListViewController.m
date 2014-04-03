@@ -58,10 +58,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICNews *news = [self.newsList newsAtIndex:indexPath.row];
-    ICNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)news.index]];
+    NSString *identifier = [NSString stringWithFormat:@"%lu", (unsigned long)news.index];
+    ICNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[ICNewsCell alloc] initWithNews:news
-                                reuseIdentifier:[NSString stringWithFormat:@"%lu", (unsigned long)news.index]];
+                                reuseIdentifier:identifier];
     }
     return cell;
 }

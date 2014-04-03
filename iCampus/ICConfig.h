@@ -13,6 +13,7 @@
 
 #   pragma mark - Static strings for debug
 
+static const NSString *ICAboutTag                = @"[ABOUT]"                ;
 static const NSString *ICCampusTag               = @"[CAMPUS]"               ;
 static const NSString *ICSchoolListTag           = @"[SCHOOL|LIST]"          ;
 static const NSString *ICSchoolDetailTag         = @"[SCHOOL|DETAIL]"        ;

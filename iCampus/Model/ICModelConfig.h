@@ -14,6 +14,7 @@
 
 #   define IC_DATA_MODULE_DEBUG
 #   ifdef IC_DATA_MODULE_DEBUG
+#       define IC_ABOUT_DATA_MODULE_DEBUG
 #       define IC_CAMPUS_DATA_MODULE_DEBUG
 #       define IC_SCHOOL_DATA_MODULE_DEBUG
 #       ifdef IC_SCHOOL_DATA_MODULE_DEBUG
@@ -49,6 +50,7 @@ static const NSString *ICAppPass = @"a9d9edb932a26f47576e8b4739404285";
 static const NSString *ICServerDomain    = @"api.bistu.edu.cn";
 static const NSString *ICOldServerDomain = @"m.bistu.edu.cn"  ;
 
+#   define ICAboutServerDomain      ICOldServerDomain
 #   define ICSchoolServerDomain     ICServerDomain
 #   define ICNewsServerDomain       ICServerDomain
 #   define ICBusServerDomain        ICOldServerDomain

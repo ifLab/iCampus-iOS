@@ -10,7 +10,7 @@
 
 @class ICNewsChannel, ICNewsList;
 
-@interface ICNewsListViewController : UITableViewController
+@interface ICNewsListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) ICNewsChannel *channel ;
 @property (strong, nonatomic) ICNewsList    *newsList;

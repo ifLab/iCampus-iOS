@@ -56,6 +56,7 @@
 		95AC70BE185F473300C94B71 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC709F185F473200C94B71 /* ICUser.m */; };
 		95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70A8185F473300C94B71 /* ICYellowPage.m */; };
 		95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70AA185F473300C94B71 /* ICYellowPageContact.m */; };
+		95C4B1A818ED2593002B8188 /* ICAboutWebpage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4B1A718ED2593002B8188 /* ICAboutWebpage.m */; };
 		95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852018940E8E006402FD /* ICYellowPageDepartment.m */; };
 		95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852318940FE9006402FD /* ICYellowPageDepartmentViewController.m */; };
 		95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48526189411DC006402FD /* ICYellowPageDepartmentList.m */; };
@@ -119,7 +120,6 @@
 		951BE86718E5E9030049AB5F /* ICSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSettingViewController.m; path = Setting/ICSettingViewController.m; sourceTree = "<group>"; };
 		951BE87218E5F9810049AB5F /* ICAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAboutViewController.h; path = Setting/ICAboutViewController.h; sourceTree = "<group>"; };
 		951BE87318E5F9810049AB5F /* ICAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAboutViewController.m; path = Setting/ICAboutViewController.m; sourceTree = "<group>"; };
-		951BE87A18E607730049AB5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		952B5BF91863FDBA009DDBB5 /* ICBusStationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationListCell.h; sourceTree = "<group>"; };
 		952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationListCell.m; sourceTree = "<group>"; };
 		957279A91867375D007F3F01 /* ICSchoolListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolListViewController.h; sourceTree = "<group>"; };
@@ -202,6 +202,9 @@
 		95AC70A8185F473300C94B71 /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPage.m; sourceTree = "<group>"; };
 		95AC70A9185F473300C94B71 /* ICYellowPageContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageContact.h; sourceTree = "<group>"; };
 		95AC70AA185F473300C94B71 /* ICYellowPageContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageContact.m; sourceTree = "<group>"; };
+		95C4B1A618ED2593002B8188 /* ICAboutWebpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAboutWebpage.h; path = Setting/ICAboutWebpage.h; sourceTree = "<group>"; };
+		95C4B1A718ED2593002B8188 /* ICAboutWebpage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAboutWebpage.m; path = Setting/ICAboutWebpage.m; sourceTree = "<group>"; };
+		95C4B1AC18ED2985002B8188 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		95E4851F18940E8E006402FD /* ICYellowPageDepartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartment.h; sourceTree = "<group>"; };
 		95E4852018940E8E006402FD /* ICYellowPageDepartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartment.m; sourceTree = "<group>"; };
 		95E4852218940FE9006402FD /* ICYellowPageDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartmentViewController.h; sourceTree = "<group>"; };
@@ -541,6 +544,7 @@
 		95AC7074185F473200C94B71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95C4B1A218ED200A002B8188 /* Setting */,
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
 				1C878B0A18CDDF8100BEAC6B /* Map */,
 				95A000C7186214FA008B18BD /* Bus */,
@@ -605,6 +609,15 @@
 				95AC70AA185F473300C94B71 /* ICYellowPageContact.m */,
 			);
 			path = YellowPage;
+			sourceTree = "<group>";
+		};
+		95C4B1A218ED200A002B8188 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				95C4B1A618ED2593002B8188 /* ICAboutWebpage.h */,
+				95C4B1A718ED2593002B8188 /* ICAboutWebpage.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		A30D1DF0182A64BA00F35D4F = {
@@ -909,6 +922,7 @@
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
 				95A000DE186214FA008B18BD /* ICSchool.m in Sources */,
+				95C4B1A818ED2593002B8188 /* ICAboutWebpage.m in Sources */,
 				95AC70B3185F473300C94B71 /* ICNewsChannel.m in Sources */,
 				95AC70B4185F473300C94B71 /* ICNewsChannelList.m in Sources */,
 				A320CA73183E365D00BCA05F /* AFSecurityPolicy.m in Sources */,
@@ -970,7 +984,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A000AD1861F504008B18BD /* Base */,
-				951BE87A18E607730049AB5F /* zh-Hans */,
+				95C4B1AC18ED2985002B8188 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
