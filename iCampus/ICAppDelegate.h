@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ICUser;
+
 @interface ICAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ICUser *user;
 
 @end

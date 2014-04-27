@@ -93,24 +93,28 @@
         case 2: {
             self.addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
             if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized) {
-                dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
                 ABAddressBookRequestAccessWithCompletion(self.addressBook, ^(bool granted, CFErrorRef error) {
-                    dispatch_semaphore_signal(semaphore);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (!granted) {
+                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法访问通讯录"
+                                                                                message:@"请检查您的设置，确认本应用有权限访问您的通讯录。"
+                                                                               delegate:nil
+                                                                      cancelButtonTitle:@"好" otherButtonTitles:nil];
+                            [alertView show];
+                        } else {
+                            [self performSegueWithIdentifier:(NSString *)ICYellowPageListToNewContactIdentifier
+                                                      sender:self];
+                        }
+                        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow
+                                                      animated:YES];
+                    });
                 });
-                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-                if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized) {
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法访问通讯录"
-                                                                        message:@"请检查您的设置，确认本应用有权限访问您的通讯录。"
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"好" otherButtonTitles:nil];
-                    [alertView show];
-                    [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow
-                                                  animated:YES];
-                    break;
-                }
+            } else {
+                [self performSegueWithIdentifier:(NSString *)ICYellowPageListToNewContactIdentifier
+                                              sender:self];
+                [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow
+                                              animated:YES];
             }
-            [self performSegueWithIdentifier:(NSString *)ICYellowPageListToNewContactIdentifier
-                                      sender:self];
             break;
         }
         default:

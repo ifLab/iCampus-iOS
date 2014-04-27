@@ -11,17 +11,26 @@
 /* Class = "IBUINavigationItem"; title = "校车"; ObjectID = "Hkw-T7-A0z"; */
 "Hkw-T7-A0z.title" = "校车";
 
-/* Class = "IBUILabel"; text = "关于"; ObjectID = "LYM-CD-iJV"; */
-"LYM-CD-iJV.text" = "关于";
+/* Class = "IBUILabel"; text = "类型"; ObjectID = "I3P-kv-fI3"; */
+"I3P-kv-fI3.text" = "类型";
+
+/* Class = "IBUINavigationItem"; title = "登录"; ObjectID = "KPx-9E-2tZ"; */
+"KPx-9E-2tZ.title" = "登录";
 
 /* Class = "IBUILabel"; text = "地图"; ObjectID = "Qe2-Nx-1ew"; */
 "Qe2-Nx-1ew.text" = "地图";
+
+/* Class = "IBUILabel"; text = "姓名"; ObjectID = "Qy8-em-qfd"; */
+"Qy8-em-qfd.text" = "姓名";
 
 /* Class = "IBUILabel"; text = "开发者"; ObjectID = "R8w-YN-MNB"; */
 "R8w-YN-MNB.text" = "开发者";
 
 /* Class = "IBUINavigationItem"; title = "地图"; ObjectID = "WCd-Oc-s9w"; */
 "WCd-Oc-s9w.title" = "地图";
+
+/* Class = "IBUILabel"; text = "登录"; ObjectID = "fUp-8o-KYZ"; */
+"fUp-8o-KYZ.text" = "登录";
 
 /* Class = "IBUITableViewSection"; headerTitle = "学校"; ObjectID = "fgF-m3-RAU"; */
 "fgF-m3-RAU.headerTitle" = "学校";
@@ -41,11 +50,17 @@
 /* Class = "IBUINavigationItem"; title = "学院"; ObjectID = "jy7-D1-Rjy"; */
 "jy7-D1-Rjy.title" = "学院";
 
-/* Class = "IBUILabel"; text = "更多"; ObjectID = "nBy-r2-Q3w"; */
-"nBy-r2-Q3w.text" = "更多";
+/* Class = "IBUINavigationItem"; title = "账号"; ObjectID = "n7k-vs-2vl"; */
+"n7k-vs-2vl.title" = "账号";
+
+/* Class = "IBUILabel"; text = "关于"; ObjectID = "nBy-r2-Q3w"; */
+"nBy-r2-Q3w.text" = "关于";
 
 /* Class = "IBUILabel"; text = "院系专业"; ObjectID = "nDH-2I-t2q"; */
 "nDH-2I-t2q.text" = "院系专业";
+
+/* Class = "IBUILabel"; text = "更多"; ObjectID = "qh3-4j-5V8"; */
+"qh3-4j-5V8.text" = "更多";
 
 /* Class = "IBUINavigationItem"; title = "关于"; ObjectID = "qis-Di-abj"; */
 "qis-Di-abj.title" = "关于";
@@ -56,11 +71,14 @@
 /* Class = "IBUILabel"; text = "学院"; ObjectID = "uCD-mx-0Ch"; */
 "uCD-mx-0Ch.text" = "学院";
 
-/* Class = "IBUITableViewSection"; headerTitle = "其它"; ObjectID = "vCX-Ap-WPe"; */
-"vCX-Ap-WPe.headerTitle" = "其它";
-
 /* Class = "IBUINavigationItem"; title = "黄页"; ObjectID = "vuK-MH-1vm"; */
 "vuK-MH-1vm.title" = "黄页";
 
 /* Class = "IBUITableViewSection"; headerTitle = "组织与开发者"; ObjectID = "w4s-oX-H8d"; */
 "w4s-oX-H8d.headerTitle" = "组织与开发者";
+
+/* Class = "IBUILabel"; text = "账号"; ObjectID = "wOC-Zh-zpo"; */
+"wOC-Zh-zpo.text" = "账号";
+
+/* Class = "IBUILabel"; text = "账号"; ObjectID = "ynV-Pb-Kei"; */
+"ynV-Pb-Kei.text" = "账号";
