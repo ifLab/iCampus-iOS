@@ -26,8 +26,8 @@
                                     animated:YES];
     [self.loginView loadWithURL:[NSURL URLWithString:@"https://222.249.250.89:8443/oauth/authorize"]
                     redirectURI:@"about:blank"
-                       clientID:@"6cd01d6c9a0d60beae9e0dab22d9a7d4"
-                   clientSecret:@"30f536f4cf00e5ba2d2354d341446b01"];
+                       clientID:@"3ef19cbbc8ff1bd9cecb1f646759a7a1"
+                   clientSecret:@"294a5816a059d9bb588bf3221010bfac"];
 };
 
 - (void)loginView:(ICLoginView *)loginView

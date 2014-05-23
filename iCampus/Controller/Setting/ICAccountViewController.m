@@ -11,14 +11,41 @@
 #import "ICControllerConfig.h"
 #import "ICUser.h"
 #import "AFNetworking.h"
+#import "ICAccountEditViewController.h"
 
-@interface ICAccountViewController () <ICLoginViewControllerDelegate>
+@interface ICAccountViewController () <ICLoginViewControllerDelegate, ICAccoutEditViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *loginCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *IDCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *nameCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *typeCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *QQCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *WeChatCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *mobileCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *emailCell;
+@property (nonatomic) NSInteger numberOfSections;
+@property (strong, nonatomic) NSArray *rightBarButtonItems;
 
 @end
 
 @implementation ICAccountViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.numberOfSections = 1;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
+    self.navigationItem.rightBarButtonItems = nil;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (ICCurrentUser) {
         [self loginViewController:nil
                              user:ICCurrentUser
@@ -36,42 +63,61 @@
                        user:(ICUser *)user
                    didLogin:(BOOL)success {
     if (success) {
-        UITableViewCell *loginCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0
-                                                                                              inSection:0]];
-        UITableViewCell *IDCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0
-                                                                                                inSection:1]];
-        UITableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1
-                                                                                                 inSection:1]];
-        UITableViewCell *typeCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2
-                                                                                             inSection:1]];
-        loginCell.userInteractionEnabled = NO;
-        loginCell.textLabel.textColor = [UIColor grayColor];
+        self.loginCell.userInteractionEnabled = NO;
+        self.loginCell.textLabel.textColor = [UIColor grayColor];
         NSArray *languages = [NSLocale preferredLanguages];
         NSString *currentLanguage = [languages objectAtIndex:0];
         if ([currentLanguage isEqualToString:@"zh-Hans"]) {
-            loginCell.textLabel.text = @"已登录";
+            self.loginCell.textLabel.text = @"已登录";
         } else {
-            loginCell.textLabel.text = @"Already logged in";
+            self.loginCell.textLabel.text = @"Already logged in";
         }
-        NSInteger n = [self.tableView numberOfRowsInSection:1];
-        for (int i = 0; i < n; i++) {
-            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i
-                                                                                             inSection:1]];
-            cell.hidden = NO;
-        }
-        IDCell.detailTextLabel.text = user.ID;
-        nameCell.detailTextLabel.text = user.name;
-        typeCell.detailTextLabel.text = user.type;
+        self.IDCell.detailTextLabel.text = user.ID;
+        self.nameCell.detailTextLabel.text = user.name;
+        self.typeCell.detailTextLabel.text = user.type;
+        self.QQCell.detailTextLabel.text = user.QQ;
+        self.WeChatCell.detailTextLabel.text = user.WeChat;
+        self.mobileCell.detailTextLabel.text = user.mobile;
+        self.emailCell.detailTextLabel.text = user.email;
+        self.numberOfSections = 3;
+        self.navigationItem.rightBarButtonItems = self.rightBarButtonItems;
         [self.tableView reloadData];
+        [loginViewContrller dismissViewControllerAnimated:YES
+                                               completion:nil];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender {
     if ([segue.identifier isEqualToString:(NSString *)ICAccountToLoginIdentifier]) {
-        UINavigationController *navigationController = ((UINavigationController *)segue.destinationViewController);
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
         ICLoginViewController *loginViewController = (ICLoginViewController *)navigationController.topViewController;
         loginViewController.delegate = self;
+    } else if ([segue.identifier isEqualToString:(NSString *)ICAccountToEditIdentifier]) {
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        ICAccountEditViewController *editViewController = (ICAccountEditViewController *)navigationController.topViewController;
+        editViewController.delegate = self;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.numberOfSections;
+}
+
+- (void)accountEditViewController:(ICAccountEditViewController *)accountEditViewController
+             didDismissWithStatus:(ICAccountEditViewControllerDismissStatus)status {
+    [accountEditViewController dismiss:self];
+    if (status == ICAccountEditViewControllerDismissStatusDone) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            if ([ICCurrentUser login]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self loginViewController:nil
+                                         user:ICCurrentUser
+                                     didLogin:YES];
+                    
+                });
+            }
+        });
     }
 }
 
