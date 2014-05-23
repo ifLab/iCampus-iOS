@@ -13,6 +13,7 @@
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICAccountViewController.m */; };
 		951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
+		9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
 		95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F83190A96DD00354F0B /* CALayer+ModalAlert.m */; };
 		95353F92190A96DD00354F0B /* LMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F85190A96DD00354F0B /* LMAlertView.m */; };
@@ -146,6 +147,8 @@
 		9508477E18658760008A4571 /* ICBusStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationView.m; sourceTree = "<group>"; };
 		951BE86618E5E9030049AB5F /* ICAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAccountViewController.h; path = Setting/ICAccountViewController.h; sourceTree = "<group>"; };
 		951BE86718E5E9030049AB5F /* ICAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAccountViewController.m; path = Setting/ICAccountViewController.m; sourceTree = "<group>"; };
+		9529B9A3192E2AA300C37A3A /* ICAccountEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAccountEditViewController.h; path = Setting/ICAccountEditViewController.h; sourceTree = "<group>"; };
+		9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAccountEditViewController.m; path = Setting/ICAccountEditViewController.m; sourceTree = "<group>"; };
 		952B5BF91863FDBA009DDBB5 /* ICBusStationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationListCell.h; sourceTree = "<group>"; };
 		952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationListCell.m; sourceTree = "<group>"; };
 		95353F82190A96DD00354F0B /* CALayer+ModalAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ModalAlert.h"; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				95697F2D190BB6880088D564 /* ICLoginViewController.m */,
 				95697F2F190BB6A30088D564 /* ICSettingViewController.h */,
 				95697F30190BB6A30088D564 /* ICSettingViewController.m */,
+				9529B9A3192E2AA300C37A3A /* ICAccountEditViewController.h */,
+				9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -1179,6 +1184,7 @@
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,
 				A320CA77183E365D00BCA05F /* AFURLSessionManager.m in Sources */,
 				955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */,
+				9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */,
 				95697F27190B5F340088D564 /* RBBEasingFunction.m in Sources */,
 				95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */,
 				A320CA74183E365D00BCA05F /* AFURLConnectionOperation.m in Sources */,

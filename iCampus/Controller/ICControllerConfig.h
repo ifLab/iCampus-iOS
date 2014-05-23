@@ -27,6 +27,7 @@ static const NSString *ICSchoolListToDetailIdentifier         = @"IC_SCHOOL_LIST
 static const NSString *ICYellowPageDepartmentToListIdentifier = @"IC_YELLOWPAGE_DEPARTMENT_TO_LIST" ;
 static const NSString *ICYellowPageListToNewContactIdentifier = @"IC_YELLOWPAGE_LIST_TO_NEW_CONTACT";
 static const NSString *ICAccountToLoginIdentifier             = @"IC_ACCOUNT_TO_LOGIN"              ;
+static const NSString *ICAccountToEditIdentifier              = @"IC_ACCOUNT_TO_EDIT"               ;
 
 //=====================================================================
 
