@@ -57,4 +57,31 @@
     return list;
 }
 
++ (id)loadJobListWithID:(NSString*)userID {
+    ICJobList *list = [[ICJobList alloc] init];
+    ICJob *job;
+    
+    NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?userid=%@", userID];
+    list.url = [NSURL URLWithString:u];
+    NSLog(@"兼职：开始获取发布列表，%@", list.url);
+    NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:list.url]
+                                         returningResponse:nil
+                                                     error:nil];
+    if (!data) {
+        NSLog(@"兼职：获取发布列表错误");
+        return nil;
+    }
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                      error:nil];
+    for (NSDictionary *j in json) {
+        job = [[ICJob alloc] init];
+        job.index = [j[@"id"] intValue];
+        job.title = j[@"title"];
+        [list.jobList addObject:job];
+    }
+    NSLog(@"兼职：获取发布个数：%lu", (unsigned long)list.jobList.count);
+    return list;
+}
+
 @end

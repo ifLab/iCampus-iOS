@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICJobMyJobTableViewController.h"
 
-@interface ICJobMoreTableViewController : UITableViewController
+@protocol ICJobMoreTableViewControllerDelegate <NSObject>
 
+- (void)needReloadData;
+
+@end
+
+@interface ICJobMoreTableViewController : UITableViewController <ICJobMyJobTableViewControllerDelegate>
+
+@property (weak, nonatomic) id <ICJobMoreTableViewControllerDelegate> delegate;
 
 @end

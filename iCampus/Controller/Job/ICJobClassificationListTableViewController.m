@@ -19,8 +19,7 @@
 
 @implementation ICJobClassificationListTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -28,8 +27,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // 数据获取
@@ -42,7 +40,7 @@
                 [self.HUD hide:YES];
                 [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
                                            message:@"请检查您的网络连接后重试"
-                                          delegate:nil
+                                          delegate:self
                                  cancelButtonTitle:@"确定"
                                  otherButtonTitles:nil]show];
             } else {
@@ -54,9 +52,19 @@
     });
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)     alertView:(UIAlertView *)alertView
+  clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0: {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+        }
+        default: {break;}
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -80,11 +88,11 @@
     ICJobClassification *jobClassification = self.jobClassificationList.jobClassificationList[indexPath.row];
     [self.delegate changeClassificationWith:jobClassification];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -43,6 +43,10 @@
         jobClassification.title = c[@"name"];
         [jobClassificationList.jobClassificationList addObject:jobClassification];
     }
+    if ((unsigned long)jobClassificationList.jobClassificationList.count == 1) {
+        NSLog(@"兼职：获取分类列表错误");
+        return nil;
+    }
     NSLog(@"兼职：获取类型数量%lu", (unsigned long)jobClassificationList.jobClassificationList.count);
     return jobClassificationList;
 }

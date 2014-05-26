@@ -47,15 +47,17 @@
 }
 
 - (IBAction)dismiss:(id)sender {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(ICLoginViewControllerDelegate)]) {
-        if (self.navigationItem.rightBarButtonItem.style != UIBarButtonItemStyleDone) {
-            [self.delegate loginViewController:self
-                                          user:nil
-                                      didLogin:NO];
-        }
-    }
     [self.presentingViewController dismissViewControllerAnimated:YES
-                                                      completion:nil];
+                                                      completion:
+     ^{
+         if (self.delegate && [self.delegate conformsToProtocol:@protocol(ICLoginViewControllerDelegate)]) {
+             if (self.navigationItem.rightBarButtonItem.style != UIBarButtonItemStyleDone) {
+                 [self.delegate loginViewController:self
+                                               user:nil
+                                           didLogin:NO];
+             }
+         }
+     }];
 }
 
 @end

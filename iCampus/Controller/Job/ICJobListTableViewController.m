@@ -19,10 +19,19 @@
 @property ICJobClassification* classification;
 @property BOOL type;
 @property NSInteger userID;
+@property BOOL firstAppear;
 
 @end
 
 @implementation ICJobListTableViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.firstAppear = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,9 +51,8 @@
     // 添加兼全职切换按钮
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"兼职", @"全职"]];
     self.segmentedControl.frame = CGRectMake(-3, 64, self.view.frame.size.width + 6, 40);
-    NSDictionary *attributesDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   [UIColor whiteColor],NSForegroundColorAttributeName,
-                                   [UIFont systemFontOfSize:16.0],NSFontAttributeName, nil];
+    NSDictionary *attributesDic = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                   NSFontAttributeName: [UIFont systemFontOfSize:16.0]};
     [self.segmentedControl setTitleTextAttributes:attributesDic
                                          forState:UIControlStateSelected];
     self.segmentedControl.tintColor = [UIColor colorWithRed:0.277 green:0.633 blue:0.871 alpha:1.0];
@@ -91,6 +99,15 @@
     });
 }
 
+//#warning 兼职模块未开启登录验证
+///*
+- (void)viewDidAppear:(BOOL)animated {
+    if (!ICCurrentUser && self.firstAppear) {
+        self.firstAppear = NO;
+        [self performSegueWithIdentifier:(NSString *)@"IC_JOB_LIST_TO_LOGIN" sender:self];
+    }
+}//*/
+
 - (IBAction)modalJobNewJobViewController:(id)sender {
     [self performSegueWithIdentifier:(NSString *)@"IC_JOB_LIST_TO_NEW" sender:self];
 }
@@ -99,6 +116,13 @@
 }
 - (IBAction)modalJobClassificationListTableViewController:(id)sender {
     [self performSegueWithIdentifier:(NSString *)@"IC_JOB_LIST_TO_CLASSIFICATION" sender:self];
+}
+
+- (void)appearSegmentedControl {
+    self.segmentedControl.hidden = NO;
+}
+- (void)disappearSegmentedControl {
+    self.segmentedControl.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -147,16 +171,56 @@
         [self disappearSegmentedControl];
         ICJobDetailTableViewController *controller = (ICJobDetailTableViewController*) segue.destinationViewController;
         controller.delegate = self;
+        controller.mode = [NSString stringWithFormat:@"APPEAR_FAVORITES_BUTTON"];
     } else if ([segue.identifier isEqualToString:@"IC_JOB_LIST_TO_CLASSIFICATION"]) {
         // 跳转到分类列表
         UINavigationController *navigationController = segue.destinationViewController;
         ICJobClassificationListTableViewController *controller = (ICJobClassificationListTableViewController*) navigationController.topViewController;
         controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:nil]) {}
+    } else if ([segue.identifier isEqualToString:@"IC_JOB_LIST_TO_LOGIN"]) {
+        // 跳转到登录界面
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        ICLoginViewController *loginViewController = (ICLoginViewController *)navigationController.topViewController;
+        loginViewController.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"IC_JOB_LIST_TO_NEW"]) {
+        // 跳转到发布界面
+        UINavigationController *navigationController = segue.destinationViewController;
+        ICJobClassificationListTableViewController *controller = (ICJobClassificationListTableViewController*) navigationController.topViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"IC_JOB_LIST_TO_MORE"]) {
+        // 跳转到更多界面
+        UINavigationController *navigationController = segue.destinationViewController;
+        ICJobClassificationListTableViewController *controller = (ICJobClassificationListTableViewController*) navigationController.topViewController;
+        controller.delegate = self;
+    }
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)needReloadData {
+    NSLog(@"兼职：数据刷新");
+    // 数据获取
+    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
+                                    animated:YES];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.jobList = [ICJobList loadJobListWithType:self.type classification:self.classification];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.jobList == nil) {
+                [self.HUD hide:YES];
+                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
+                                           message:@"请检查您的网络连接后重试"
+                                          delegate:nil
+                                 cancelButtonTitle:@"确定"
+                                 otherButtonTitles:nil]show];
+            } else {
+                [self.tableView reloadData];
+                [self.HUD hide:YES];
+                NSLog(@"兼职：工作列表数据载入成功");
+            }
+        });
+    });
 }
 
 - (IBAction)changeType:(id)sender {
@@ -218,11 +282,12 @@
     });
 }
 
-- (void)disappearSegmentedControl {
-    self.segmentedControl.hidden = YES;
-}
-- (void)appearSegmentedControl {
-    self.segmentedControl.hidden = NO;
+- (void)loginViewController:(ICLoginViewController *)loginViewContrller
+                       user:(ICUser *)user
+                   didLogin:(BOOL)success {
+    if (!success) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

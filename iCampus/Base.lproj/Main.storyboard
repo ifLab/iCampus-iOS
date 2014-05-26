@@ -623,6 +623,7 @@
                         <outlet property="classificationButton" destination="ecJ-Ok-Snr" id="tYl-Ln-9Qm"/>
                         <segue destination="qbz-JT-f8V" kind="modal" identifier="IC_JOB_LIST_TO_NEW" id="eb6-oe-RNe"/>
                         <segue destination="hf3-ed-4Wk" kind="modal" identifier="IC_JOB_LIST_TO_MORE" id="pRS-v2-OEn"/>
+                        <segue destination="z3j-8q-02T" kind="modal" identifier="IC_JOB_LIST_TO_LOGIN" id="zlw-TM-uaT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynh-Po-g3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1274,11 +1275,11 @@
                         <sections>
                             <tableViewSection id="Ray-Wz-hXc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="BKo-xt-fJD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="BKo-xt-fJD">
                                         <rect key="frame" x="0.0" y="64" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKo-xt-fJD" id="5ER-7O-K6J">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的发布" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-Cy-yOD">
@@ -1292,14 +1293,14 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" label=""/>
                                         <connections>
-                                            <segue destination="v6w-U2-COF" kind="push" id="8ES-d8-yAs"/>
+                                            <segue destination="v6w-U2-COF" kind="push" identifier="IC_JOB_MORE_TO_MINE" id="86C-Y2-TS3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="ybc-BG-fkm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="55" id="ybc-BG-fkm">
                                         <rect key="frame" x="0.0" y="119" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ybc-BG-fkm" id="cfU-C3-sTR">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxz-VW-K60">
@@ -1312,6 +1313,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" label=""/>
+                                        <connections>
+                                            <segue destination="POM-oo-7yX" kind="push" id="I6a-cu-PvQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1331,7 +1335,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKu-3U-vAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="5404"/>
+            <point key="canvasLocation" x="2768" y="4988"/>
         </scene>
         <!--Job New Job Table View Controller-->
         <scene sceneID="OBX-Dm-ksE">
@@ -1341,6 +1345,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="工作名称 *" id="7jC-bL-KpS">
                                 <cells>
@@ -1354,7 +1359,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbF-nt-Vyb">
                                                     <rect key="frame" x="20" y="3" width="280" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1393,7 +1397,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-cz-2KK">
                                                     <rect key="frame" x="15" y="3" width="291" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1414,7 +1417,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQN-mg-t4a">
                                                     <rect key="frame" x="15" y="2" width="291" height="115"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1435,7 +1437,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPC-6C-JcI">
                                                     <rect key="frame" x="15" y="2" width="291" height="115"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1456,7 +1457,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Lr-85s">
                                                     <rect key="frame" x="15" y="2" width="291" height="115"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1477,7 +1477,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSo-Bj-LLZ">
                                                     <rect key="frame" x="15" y="3" width="291" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
@@ -1486,7 +1485,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="联系方式 *" id="HsX-HW-IHR">
+                            <tableViewSection headerTitle="联系方式 *(请至少填写一种)" id="HsX-HW-IHR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="a2c-wW-UdO" detailTextLabel="l2C-zF-92p" rowHeight="43" style="IBUITableViewCellStyleValue2" id="EJL-wk-Hq8">
                                         <rect key="frame" x="0.0" y="1121" width="320" height="43"/>
@@ -1499,7 +1498,7 @@
                                                     <rect key="frame" x="15" y="13" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l2C-zF-92p">
@@ -1644,7 +1643,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBc-Q3-C1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="4634"/>
+            <point key="canvasLocation" x="2768" y="4218"/>
+        </scene>
+        <!--Table View Controller - 我的收藏-->
+        <scene sceneID="cLs-vb-X1j">
+            <objects>
+                <tableViewController id="POM-oo-7yX" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="A8d-nC-9dm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="SnM-bc-A8e">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SnM-bc-A8e" id="fOL-i8-qYC">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qN3-A4-xQc" kind="push" identifier="IC_JOB_FAVORITES_JOB_TO_JOB_DETAIL" id="bjp-w1-NxF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="POM-oo-7yX" id="qtS-Wb-DZa"/>
+                            <outlet property="delegate" destination="POM-oo-7yX" id="qE7-2x-U2m"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的收藏" id="4ZB-4P-mAa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glw-hE-eS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331" y="4988"/>
         </scene>
         <!--Job Detail Table View Controller - 加载中...-->
         <scene sceneID="VPa-6k-XYp">
@@ -1867,12 +1898,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="加载中..." id="fyZ-iP-h9k">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Y4n-Ww-LnD">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="Y4n-Ww-LnD">
                             <connections>
                                 <action selector="cancel:" destination="qN3-A4-xQc" id="M4Q-vo-mFW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="收藏" id="sxm-BJ-EQv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="companyCell" destination="JUq-Ad-iZj" id="Bw2-vz-ISM"/>
@@ -1888,7 +1918,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCY-7P-JTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="3094"/>
+            <point key="canvasLocation" x="3902" y="3094"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SuT-cH-58W">
@@ -1906,7 +1936,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hku-cf-CV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="4634"/>
+            <point key="canvasLocation" x="2334" y="4218"/>
         </scene>
         <!--Job Classification List Table View Controller-->
         <scene sceneID="tzR-TU-sax">
@@ -1943,24 +1973,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7I-Rn-Eay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="3864"/>
+            <point key="canvasLocation" x="2768" y="3448"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Job My Job Table View Controller - 我的发布-->
         <scene sceneID="qkj-gC-pZz">
             <objects>
-                <tableViewController id="v6w-U2-COF" sceneMemberID="viewController">
+                <tableViewController id="v6w-U2-COF" customClass="ICJobMyJobTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pK9-9f-CZp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2VG-qu-IRL">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job" id="2VG-qu-IRL">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2VG-qu-IRL" id="3IL-V3-AZX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qN3-A4-xQc" kind="push" identifier="IC_JOB_MY_JOB_TO_JOB_DETAIL" id="dqR-fp-KBv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1968,11 +2001,11 @@
                             <outlet property="delegate" destination="v6w-U2-COF" id="Eb8-AZ-QZJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fIp-GK-Nd5"/>
+                    <navigationItem key="navigationItem" title="我的发布" id="fIp-GK-Nd5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NO-uu-9i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3331" y="5404"/>
+            <point key="canvasLocation" x="3331" y="4332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9pv-IB-4zR">
@@ -1990,7 +2023,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiC-i9-m0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="5404"/>
+            <point key="canvasLocation" x="2334" y="4988"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="acD-Kk-K1I">
@@ -2008,7 +2041,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHp-0c-D25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="3864"/>
+            <point key="canvasLocation" x="2334" y="3448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1P-Mz-Iy5">
@@ -2047,4 +2080,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zlw-TM-uaT"/>
+        <segue reference="fZd-Wu-dNP"/>
+    </inferredMetricsTieBreakers>
 </document>

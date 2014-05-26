@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MBProgressHUD.h"
+#import "ICUser.h"
 #import "../../Model/Job/ICJobList.h"
 #import "../../Model/Job/ICJobClassificationList.h"
 #import "ICJobDetailTableViewController.h"
 #import "ICJobClassificationListTableViewController.h"
+#import "ICJobMoreTableViewController.h"
+#import "../Setting/ICLoginViewController.h"
+#import "MBProgressHUD.h"
 
-@interface ICJobListTableViewController : UITableViewController <ICJobClassificationListTableViewControllerDelegate, ICJobDetailTableViewControllerDelegate>
-
-- (void)changeClassificationWith:(ICJobClassification*)classification;
-- (void)appearSegmentedControl;
+@interface ICJobListTableViewController : UITableViewController <ICJobClassificationListTableViewControllerDelegate, ICJobDetailTableViewControllerDelegate, ICJobMoreTableViewControllerDelegate, ICLoginViewControllerDelegate>
 
 @end

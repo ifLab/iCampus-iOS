@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MBProgressHUD.h"
 #import "../../Model/Job/ICJobClassificationList.h"
+#import "MBProgressHUD.h"
 
 @protocol ICJobClassificationListTableViewControllerDelegate <NSObject>
 

@@ -28,8 +28,7 @@
 
 @implementation ICJobDetailTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -40,6 +39,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"兼职：当前工作ID：%lu", (long)self.jobID);
+    
+    // 添加导航栏右侧按钮
+    if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
+        self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"收藏"
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(addToFavorites:)];
+        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+    }
+//    if ([self.mode isEqual: @"APPEAR_DEL_FROM_MINE_BUTTON"]) {
+//        self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"删除"
+//                                                               style:UIBarButtonItemStyleBordered
+//                                                              target:self
+//                                                              action:@selector(addToFavorites:)];
+//        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+//    }
     
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -87,6 +102,17 @@
     });
 }
 
+- (IBAction)addToFavorites:(id)sender {
+    NSLog(@"addToFavorites");
+}
+- (IBAction)delFromFavorites:(id)sender {
+    NSLog(@"delFromFavorites");
+}
+
+- (IBAction)delFromMine:(id)sender {
+    NSLog(@"delFromMine");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -132,5 +158,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.navigationController popViewControllerAnimated:YES];
     [self.delegate appearSegmentedControl];
 }
+
 @end
 

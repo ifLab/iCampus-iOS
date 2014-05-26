@@ -10,11 +10,12 @@
 		1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */; };
 		1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C878B0818CDDB3B00BEAC6B /* MapKit.framework */; };
 		1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0C18CDDFF100BEAC6B /* ICMap.m */; };
+		470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */; };
+		4756272C1932236700369FC8 /* ICJobFavoritesJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */; };
 		47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F08191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m */; };
 		47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F0A191F5D2A00DADA49 /* ICJobDetailTableViewController.m */; };
 		47D25F15191F5D2A00DADA49 /* ICJobListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F0C191F5D2A00DADA49 /* ICJobListTableViewController.m */; };
 		47D25F16191F5D2A00DADA49 /* ICJobMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F0E191F5D2A00DADA49 /* ICJobMoreTableViewController.m */; };
-		47D25F17191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F10191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.m */; };
 		47D25F18191F5D2A00DADA49 /* ICJobNewJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F12191F5D2A00DADA49 /* ICJobNewJobTableViewController.m */; };
 		47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F1B191F5DAF00DADA49 /* ICJob.m */; };
 		47D25F23191F5DAF00DADA49 /* ICJobClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F1D191F5DAF00DADA49 /* ICJobClassification.m */; };
@@ -153,6 +154,10 @@
 		1C878B0818CDDB3B00BEAC6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1C878B0B18CDDFF100BEAC6B /* ICMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMap.h; sourceTree = "<group>"; };
 		1C878B0C18CDDFF100BEAC6B /* ICMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMap.m; sourceTree = "<group>"; };
+		470EBD021930DADE0007D1A5 /* ICJobMyJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobMyJobTableViewController.h; sourceTree = "<group>"; };
+		470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobMyJobTableViewController.m; sourceTree = "<group>"; };
+		4756272A1932236700369FC8 /* ICJobFavoritesJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobFavoritesJobTableViewController.h; sourceTree = "<group>"; };
+		4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobFavoritesJobTableViewController.m; sourceTree = "<group>"; };
 		47D25F07191F5D2A00DADA49 /* ICJobClassificationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobClassificationListTableViewController.h; sourceTree = "<group>"; };
 		47D25F08191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobClassificationListTableViewController.m; sourceTree = "<group>"; };
 		47D25F09191F5D2A00DADA49 /* ICJobDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobDetailTableViewController.h; sourceTree = "<group>"; };
@@ -161,8 +166,6 @@
 		47D25F0C191F5D2A00DADA49 /* ICJobListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobListTableViewController.m; sourceTree = "<group>"; };
 		47D25F0D191F5D2A00DADA49 /* ICJobMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobMoreTableViewController.h; sourceTree = "<group>"; };
 		47D25F0E191F5D2A00DADA49 /* ICJobMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobMoreTableViewController.m; sourceTree = "<group>"; };
-		47D25F0F191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobMyFavoritesJobTableViewController.h; sourceTree = "<group>"; };
-		47D25F10191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobMyFavoritesJobTableViewController.m; sourceTree = "<group>"; };
 		47D25F11191F5D2A00DADA49 /* ICJobNewJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobNewJobTableViewController.h; sourceTree = "<group>"; };
 		47D25F12191F5D2A00DADA49 /* ICJobNewJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobNewJobTableViewController.m; sourceTree = "<group>"; };
 		47D25F1A191F5DAF00DADA49 /* ICJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJob.h; sourceTree = "<group>"; };
@@ -442,8 +445,10 @@
 				47D25F12191F5D2A00DADA49 /* ICJobNewJobTableViewController.m */,
 				47D25F0D191F5D2A00DADA49 /* ICJobMoreTableViewController.h */,
 				47D25F0E191F5D2A00DADA49 /* ICJobMoreTableViewController.m */,
-				47D25F0F191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.h */,
-				47D25F10191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.m */,
+				470EBD021930DADE0007D1A5 /* ICJobMyJobTableViewController.h */,
+				470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */,
+				4756272A1932236700369FC8 /* ICJobFavoritesJobTableViewController.h */,
+				4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */,
 			);
 			path = Job;
 			sourceTree = "<group>";
@@ -1234,7 +1239,6 @@
 				957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */,
 				A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
-				47D25F17191F5D2A00DADA49 /* ICJobMyFavoritesJobTableViewController.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
 				47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */,
 				47D25F15191F5D2A00DADA49 /* ICJobListTableViewController.m in Sources */,
@@ -1260,6 +1264,7 @@
 				955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */,
 				9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */,
 				95697F27190B5F340088D564 /* RBBEasingFunction.m in Sources */,
+				470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */,
 				95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */,
 				A320CA74183E365D00BCA05F /* AFURLConnectionOperation.m in Sources */,
 				95AC70B2185F473300C94B71 /* ICNews.m in Sources */,
@@ -1292,6 +1297,7 @@
 				A320CA76183E365D00BCA05F /* AFURLResponseSerialization.m in Sources */,
 				957279B418674602007F3F01 /* ICSchoolCell.m in Sources */,
 				47D25F23191F5DAF00DADA49 /* ICJobClassification.m in Sources */,
+				4756272C1932236700369FC8 /* ICJobFavoritesJobTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1420,13 +1426,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1437,13 +1443,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

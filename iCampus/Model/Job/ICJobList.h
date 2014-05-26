@@ -19,4 +19,6 @@
 + (id)loadJobListWithType:(BOOL)type
              classification:(ICJobClassification*)classification;
 
++ (id)loadJobListWithID:(NSString*)userID;
+
 @end

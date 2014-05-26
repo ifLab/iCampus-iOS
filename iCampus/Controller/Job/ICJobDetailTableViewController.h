@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MBProgressHUD.h"
 #import "../../Model/Job/ICJob.h"
 #import "../../Model/Job/ICJobClassification.h"
+#import "MBProgressHUD.h"
 
 @protocol ICJobDetailTableViewControllerDelegate <NSObject>
 
@@ -21,5 +21,7 @@
 
 @property (weak, nonatomic) id <ICJobDetailTableViewControllerDelegate> delegate;
 @property NSInteger jobID;
+@property (strong, nonatomic) UIBarButtonItem *favoritesButton;
+@property NSString *mode;
 
 @end
