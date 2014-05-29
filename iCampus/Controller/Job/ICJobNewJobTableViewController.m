@@ -12,8 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (weak, nonatomic) IBOutlet UITextView *locationTextView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UITextView *locationTextView;
 @property (weak, nonatomic) IBOutlet UITextView *qualificationsTextView;
 @property (weak, nonatomic) IBOutlet UITextView *salaryTextView;
 @property (weak, nonatomic) IBOutlet UITextView *companyTextView;
@@ -118,15 +118,16 @@
     } else {
         self.titleTextView.superview.backgroundColor = [UIColor clearColor];
     }
-    if ([self.locationTextView.text length] == 0) {
-        self.locationTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.locationTextView.superview.backgroundColor = [UIColor clearColor];
-    }
     if ([self.descriptionTextView.text length] == 0) {
         self.descriptionTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
     } else {
         self.descriptionTextView.superview.backgroundColor = [UIColor clearColor];
+    }
+    /*
+    if ([self.locationTextView.text length] == 0) {
+        self.locationTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+    } else {
+        self.locationTextView.superview.backgroundColor = [UIColor clearColor];
     }
     if ([self.qualificationsTextView.text length] == 0) {
         self.qualificationsTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
@@ -137,7 +138,7 @@
         self.salaryTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
     } else {
         self.salaryTextView.superview.backgroundColor = [UIColor clearColor];
-    }
+    } //*/
     if ([self.contactNameTextField.text length] == 0) {
         self.contactNameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
     } else {
@@ -156,10 +157,10 @@
     }
     
     if ([self.titleTextView.text length] *
-        [self.locationTextView.text length] *
         [self.descriptionTextView.text length] *
-        [self.qualificationsTextView.text length] *
-        [self.salaryTextView.text length] *
+//        [self.locationTextView.text length] *
+//        [self.qualificationsTextView.text length] *
+//        [self.salaryTextView.text length] *
         [self.contactNameTextField.text length] == 0) {
         [[[UIAlertView alloc]initWithTitle:@"信息不完整！"
                                    message:@"请确认已正确填写所有必填项后再提交"
@@ -201,14 +202,16 @@
         AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
                                                parameters:@{@"title": self.titleTextView.text,
                                                             @"mod": mod,
-                                                            @"location": self.locationTextView.text,
-                                                            @"description": self.descriptionTextView.text,
                                                             @"typeid": typeid,
-                                                            @"location": self.locationTextView.text,
                                                             @"description": self.descriptionTextView.text,
-                                                            @"qualifications": self.qualificationsTextView.text,
-                                                            @"salary": self.salaryTextView.text,
-                                                            @"company": self.companyTextView.text,
+//                                                            @"location": self.locationTextView.text,
+//                                                            @"qualifications": self.qualificationsTextView.text,
+//                                                            @"salary": self.salaryTextView.text,
+//                                                            @"company": self.companyTextView.text,
+                                                            @"location": @"空",
+                                                            @"qualifications": @"空",
+                                                            @"salary": @"空",
+                                                            @"company": @"空",
                                                             @"contactName": self.contactNameTextField.text,
                                                             @"contactPhone": self.contactPhoneTextField.text,
                                                             @"contactEmail": self.contactEmailTextField.text,

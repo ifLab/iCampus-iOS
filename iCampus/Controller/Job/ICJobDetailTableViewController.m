@@ -22,7 +22,6 @@
 - (IBAction)cancel:(id)sender;
 
 @property (nonatomic, strong) MBProgressHUD *HUD;
-@property (strong, nonatomic) ICJob *job;
 
 @end
 
@@ -38,7 +37,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     NSLog(@"兼职：当前工作ID：%lu", (long)self.jobID);
+    
+    if ([self.mode isEqual: @"DONT_NEED_LOAD_DATA_FROM_NET"]) {
+        self.navigationItem.title = self.job.title;
+        if (![self.job.description isKindOfClass:[NSNull class]])
+            self.descriptionCell.textLabel.text = self.job.description;
+        if (![self.job.location isKindOfClass:[NSNull class]])
+            self.locationCell.textLabel.text = self.job.location;
+        if (![self.job.qualifications isKindOfClass:[NSNull class]])
+            self.qualificationsCell.textLabel.text = self.job.qualifications;
+        if (![self.job.salary isKindOfClass:[NSNull class]])
+            self.salaryCell.textLabel.text = self.job.salary;
+        if (![self.job.company isKindOfClass:[NSNull class]])
+            self.companyCell.textLabel.text = self.job.company;
+        if (![self.job.contactName isKindOfClass:[NSNull class]])
+            self.contactNameLabel.text = self.job.contactName;
+        if (![self.job.contactPhone isKindOfClass:[NSNull class]])
+            self.contactPhoneLabel.text = self.job.contactPhone;
+        if (![self.job.contactEmail isKindOfClass:[NSNull class]])
+            self.contactEmailLabel.text = self.job.contactEmail;
+        if (![self.job.contactQQ isKindOfClass:[NSNull class]])
+            self.contactQQLabel.text = self.job.contactQQ;
+        [self.descriptionCell.textLabel sizeToFit];
+        [self.locationCell.textLabel sizeToFit];
+        [self.qualificationsCell.textLabel sizeToFit];
+        [self.salaryCell.textLabel sizeToFit];
+        [self.companyCell.textLabel sizeToFit];
+        [self.tableView reloadData];
+        return;
+    }
     
     // 添加导航栏右侧按钮
     if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
@@ -103,15 +132,27 @@
 }
 
 - (IBAction)addToFavorites:(id)sender {
-    NSLog(@"addToFavorites");
+    if ([ICJobFavoritesJobList addJob:self.job]) {
+        [[[UIAlertView alloc]initWithTitle:@"添加成功！"
+                                   message:nil
+                                  delegate:nil
+                         cancelButtonTitle:@"确定"
+                         otherButtonTitles:nil]show];
+    } else {
+        [[[UIAlertView alloc]initWithTitle:@"已收藏！"
+                                   message:@"请不要重复添加"
+                                  delegate:nil
+                         cancelButtonTitle:@"确定"
+                         otherButtonTitles:nil]show];
+    }
 }
-- (IBAction)delFromFavorites:(id)sender {
-    NSLog(@"delFromFavorites");
-}
-
-- (IBAction)delFromMine:(id)sender {
-    NSLog(@"delFromMine");
-}
+//- (IBAction)delFromFavorites:(id)sender {
+//    NSLog(@"delFromFavorites");
+//}
+//
+//- (IBAction)delFromMine:(id)sender {
+//    NSLog(@"delFromMine");
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -121,7 +162,7 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return self.descriptionCell.textLabel.frame.size.height + 22;
-    }
+    }/*/
     if (indexPath.section == 1) {
         return self.locationCell.textLabel.frame.size.height + 22;
     }
@@ -133,7 +174,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
     if (indexPath.section == 4) {
         return self.companyCell.textLabel.frame.size.height + 22;
-    }
+    }//*/
     return 43;
 }
 

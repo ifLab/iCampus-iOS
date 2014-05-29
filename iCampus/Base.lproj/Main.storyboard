@@ -1385,30 +1385,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="工作地点 *" id="P18-Lv-Fpb">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="46" id="KLd-Ae-564">
-                                        <rect key="frame" x="0.0" y="430" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLd-Ae-564" id="Z7P-3y-wqA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-cz-2KK">
-                                                    <rect key="frame" x="15" y="3" width="291" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                </textView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="工作描述 *" id="8ni-dr-lc4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="121" id="oGX-FP-sOI">
-                                        <rect key="frame" x="0.0" y="524" width="320" height="121"/>
+                                        <rect key="frame" x="0.0" y="430" width="320" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGX-FP-sOI" id="QXL-Ok-DpM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
@@ -1425,70 +1405,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="任职要求 *" id="4bc-h9-cVe">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="121" id="TGa-yU-XtV">
-                                        <rect key="frame" x="0.0" y="693" width="320" height="121"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGa-yU-XtV" id="r8d-gU-qej">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPC-6C-JcI">
-                                                    <rect key="frame" x="15" y="2" width="291" height="115"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                </textView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="薪资待遇 *" id="a5x-88-pLZ">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="121" id="te9-11-HtF">
-                                        <rect key="frame" x="0.0" y="862" width="320" height="121"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="te9-11-HtF" id="Kyd-06-E0r">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-Lr-85s">
-                                                    <rect key="frame" x="15" y="2" width="291" height="115"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                </textView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="公司名称" id="wFG-qz-8JX">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="0VB-kp-Mhl">
-                                        <rect key="frame" x="0.0" y="1031" width="320" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VB-kp-Mhl" id="du0-Hi-PBX">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSo-Bj-LLZ">
-                                                    <rect key="frame" x="15" y="3" width="291" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                </textView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="联系方式 *(请至少填写一种)" id="HsX-HW-IHR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="a2c-wW-UdO" detailTextLabel="l2C-zF-92p" rowHeight="43" style="IBUITableViewCellStyleValue2" id="EJL-wk-Hq8">
-                                        <rect key="frame" x="0.0" y="1121" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="599" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EJL-wk-Hq8" id="cZi-nU-x10">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
@@ -1518,7 +1438,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mAk-iV-T9p" detailTextLabel="ha6-cn-t4M" rowHeight="43" style="IBUITableViewCellStyleValue2" id="lNU-4N-mrG">
-                                        <rect key="frame" x="0.0" y="1164" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="642" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lNU-4N-mrG" id="AJc-7N-l82">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
@@ -1548,7 +1468,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ymh-DG-gnC" detailTextLabel="vya-TE-Zjf" rowHeight="43" style="IBUITableViewCellStyleValue2" id="xHF-DH-SD1">
-                                        <rect key="frame" x="0.0" y="1207" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="685" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xHF-DH-SD1" id="pDh-Zt-6UQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
@@ -1578,7 +1498,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YTO-uL-7kZ" detailTextLabel="IVr-eR-aWV" rowHeight="43" style="IBUITableViewCellStyleValue2" id="Ies-2Z-KE6">
-                                        <rect key="frame" x="0.0" y="1250" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="728" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ies-2Z-KE6" id="xZE-BX-rKA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
@@ -1628,16 +1548,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="companyTextView" destination="vSo-Bj-LLZ" id="yue-uw-IZl"/>
                         <outlet property="contactEmailTextField" destination="4yK-PZ-XgN" id="zZ1-lb-kfB"/>
                         <outlet property="contactNameTextField" destination="TXn-J3-act" id="d9A-Bm-LZd"/>
                         <outlet property="contactPhoneTextField" destination="Tk2-m2-smr" id="XBQ-B5-eMz"/>
                         <outlet property="contactQQTextField" destination="QVq-8i-Qc8" id="1nD-4T-i2g"/>
                         <outlet property="descriptionTextView" destination="jQN-mg-t4a" id="GAg-Bs-8RY"/>
-                        <outlet property="locationTextView" destination="DjH-cz-2KK" id="kK5-qV-w9C"/>
                         <outlet property="pickerView" destination="E9C-C6-wdx" id="2be-eZ-Xfi"/>
-                        <outlet property="qualificationsTextView" destination="VPC-6C-JcI" id="hpa-ly-2z2"/>
-                        <outlet property="salaryTextView" destination="fgs-Lr-85s" id="SRe-GU-Y7V"/>
                         <outlet property="titleTextView" destination="sbF-nt-Vyb" id="zf1-t6-XAw"/>
                     </connections>
                 </tableViewController>
@@ -1645,16 +1561,16 @@
             </objects>
             <point key="canvasLocation" x="2768" y="4218"/>
         </scene>
-        <!--Table View Controller - 我的收藏-->
+        <!--Job Favorites Job Table View Controller - 我的收藏-->
         <scene sceneID="cLs-vb-X1j">
             <objects>
-                <tableViewController id="POM-oo-7yX" sceneMemberID="viewController">
+                <tableViewController id="POM-oo-7yX" customClass="ICJobFavoritesJobTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="A8d-nC-9dm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="SnM-bc-A8e">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job" id="SnM-bc-A8e">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SnM-bc-A8e" id="fOL-i8-qYC">
@@ -1707,94 +1623,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="工作地点" id="teO-To-Qo4">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job Detail" textLabel="iIa-lj-DZo" style="IBUITableViewCellStyleDefault" id="sVW-iA-u3T">
-                                        <rect key="frame" x="0.0" y="210" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sVW-iA-u3T" id="g2o-ey-eDf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="待定" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="iIa-lj-DZo">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="任职要求" id="CRv-0K-FGp">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job Detail" textLabel="LcT-9n-hUb" style="IBUITableViewCellStyleDefault" id="rsc-PA-g8A">
-                                        <rect key="frame" x="0.0" y="302" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rsc-PA-g8A" id="WKc-6n-Wbb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="LcT-9n-hUb">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="薪酬待遇" id="g6c-jp-srY">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job Detail" textLabel="KDy-Fa-5gf" style="IBUITableViewCellStyleDefault" id="uSP-hq-kvc">
-                                        <rect key="frame" x="0.0" y="394" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uSP-hq-kvc" id="2cN-QT-C2H">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="待定" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="KDy-Fa-5gf">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="公司名称" id="Uxt-7j-Q9W">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job Detail" textLabel="Lsc-ks-z5n" style="IBUITableViewCellStyleDefault" id="JUq-Ad-iZj">
-                                        <rect key="frame" x="0.0" y="486" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUq-Ad-iZj" id="PMv-Ch-qpI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="Lsc-ks-z5n">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="联系方式" id="whH-P2-cCC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Omc-T2-3AB" detailTextLabel="b2o-OZ-ya3" rowHeight="55" style="IBUITableViewCellStyleValue2" id="Cta-eN-Plw">
-                                        <rect key="frame" x="0.0" y="578" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="210" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cta-eN-Plw" id="5YJ-f6-Z7B">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -1818,7 +1650,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e3j-FU-owg" detailTextLabel="Myb-ep-6sW" rowHeight="55" style="IBUITableViewCellStyleValue2" id="NXo-X6-i8M">
-                                        <rect key="frame" x="0.0" y="633" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="265" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NXo-X6-i8M" id="wCx-eh-LcZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -1842,7 +1674,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="uF5-3H-QnE" detailTextLabel="yLE-Ek-BuR" rowHeight="55" style="IBUITableViewCellStyleValue2" id="3Oo-yD-weX">
-                                        <rect key="frame" x="0.0" y="688" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="320" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Oo-yD-weX" id="GAJ-So-RI6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -1866,7 +1698,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zCz-ss-iRX" detailTextLabel="lSk-sZ-Pkg" rowHeight="55" style="IBUITableViewCellStyleValue2" id="5Hz-ps-BFh">
-                                        <rect key="frame" x="0.0" y="743" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="375" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Hz-ps-BFh" id="g5k-zY-LUw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -1905,15 +1737,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="companyCell" destination="JUq-Ad-iZj" id="Bw2-vz-ISM"/>
                         <outlet property="contactEmailLabel" destination="yLE-Ek-BuR" id="moY-YZ-dPS"/>
                         <outlet property="contactNameLabel" destination="b2o-OZ-ya3" id="JON-Iy-Owb"/>
                         <outlet property="contactPhoneLabel" destination="Myb-ep-6sW" id="VGi-7F-tbf"/>
                         <outlet property="contactQQLabel" destination="lSk-sZ-Pkg" id="p53-c0-WEq"/>
                         <outlet property="descriptionCell" destination="0RJ-N9-KwD" id="2tb-OU-Kjd"/>
-                        <outlet property="locationCell" destination="sVW-iA-u3T" id="O4A-TK-uF4"/>
-                        <outlet property="qualificationsCell" destination="rsc-PA-g8A" id="GsL-xe-dP9"/>
-                        <outlet property="salaryCell" destination="uSP-hq-kvc" id="iAd-UZ-Jkd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCY-7P-JTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2082,6 +1910,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zlw-TM-uaT"/>
-        <segue reference="fZd-Wu-dNP"/>
+        <segue reference="bjp-w1-NxF"/>
     </inferredMetricsTieBreakers>
 </document>

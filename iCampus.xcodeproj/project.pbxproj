@@ -12,6 +12,7 @@
 		1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0C18CDDFF100BEAC6B /* ICMap.m */; };
 		470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */; };
 		4756272C1932236700369FC8 /* ICJobFavoritesJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */; };
+		47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */; };
 		47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F08191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m */; };
 		47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F0A191F5D2A00DADA49 /* ICJobDetailTableViewController.m */; };
 		47D25F15191F5D2A00DADA49 /* ICJobListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F0C191F5D2A00DADA49 /* ICJobListTableViewController.m */; };
@@ -158,6 +159,8 @@
 		470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobMyJobTableViewController.m; sourceTree = "<group>"; };
 		4756272A1932236700369FC8 /* ICJobFavoritesJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobFavoritesJobTableViewController.h; sourceTree = "<group>"; };
 		4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobFavoritesJobTableViewController.m; sourceTree = "<group>"; };
+		47B934A719360F1C00205034 /* ICJobFavoritesJobList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobFavoritesJobList.h; sourceTree = "<group>"; };
+		47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobFavoritesJobList.m; sourceTree = "<group>"; };
 		47D25F07191F5D2A00DADA49 /* ICJobClassificationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobClassificationListTableViewController.h; sourceTree = "<group>"; };
 		47D25F08191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobClassificationListTableViewController.m; sourceTree = "<group>"; };
 		47D25F09191F5D2A00DADA49 /* ICJobDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobDetailTableViewController.h; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				47D25F1D191F5DAF00DADA49 /* ICJobClassification.m */,
 				47D25F1E191F5DAF00DADA49 /* ICJobClassificationList.h */,
 				47D25F1F191F5DAF00DADA49 /* ICJobClassificationList.m */,
+				47B934A719360F1C00205034 /* ICJobFavoritesJobList.h */,
+				47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */,
 			);
 			path = Job;
 			sourceTree = "<group>";
@@ -1276,6 +1281,7 @@
 				951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
+				47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
 				47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */,
 				955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */,
