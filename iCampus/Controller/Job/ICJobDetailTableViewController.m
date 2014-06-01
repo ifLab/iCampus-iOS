@@ -72,7 +72,7 @@
     // 添加导航栏右侧按钮
     if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
         if (![ICJobFavoritesJobList checkJob:self.job]) {
-            self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"★"
+            self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"☆"
                                                                    style:UIBarButtonItemStyleBordered
                                                                   target:self
                                                                   action:@selector(addToFavorites:)];
