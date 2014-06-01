@@ -148,4 +148,14 @@
     return YES;
 }
 
++ (BOOL)checkJob:(ICJob*)job {
+    ICJobFavoritesJobList *list = [ICJobFavoritesJobList loadData];
+    for (ICJob *j in list.favoritesList) {
+        if (j.index == job.index) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

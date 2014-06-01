@@ -16,5 +16,6 @@
 + (id)loadData;
 + (BOOL)addJob:(ICJob*)job;
 - (BOOL)deleteJob:(ICJob*)job;
++ (BOOL)checkJob:(ICJob*)job;
 
 @end

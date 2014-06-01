@@ -71,11 +71,13 @@
     
     // 添加导航栏右侧按钮
     if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
-        self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"收藏"
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target:self
-                                                              action:@selector(addToFavorites:)];
-        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        if (![ICJobFavoritesJobList checkJob:self.job]) {
+            self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"★"
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self
+                                                                  action:@selector(addToFavorites:)];
+            self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        }
     }
 //    if ([self.mode isEqual: @"APPEAR_DEL_FROM_MINE_BUTTON"]) {
 //        self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"删除"
