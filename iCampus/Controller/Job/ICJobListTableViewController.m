@@ -53,7 +53,30 @@
     self.navigationItem.rightBarButtonItems = @[more, newJob];
     
     // 添加兼全职切换按钮
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"兼职", @"全职"]];
+    NSString *partTimeString;
+    NSString *fullTimeString;
+    NSString *allString;
+    NSString *okString;
+    NSString *loadFailedString;
+    NSString *retryString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        partTimeString = @"兼职";
+        fullTimeString = @"全职";
+        allString = @"全部";
+        okString = @"好";
+        loadFailedString = @"加载失败";
+        retryString = @"请检查您的网络连接后重试。";
+    } else {
+        partTimeString = @"Part-time";
+        fullTimeString = @"Full-time";
+        allString = @"All";
+        okString = @"OK";
+        loadFailedString = @"Loading failed";
+        retryString = @"Please check you network connection and try again.";
+    }
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[partTimeString, fullTimeString]];
     self.segmentedControl.frame = CGRectMake(-3, 64, self.view.frame.size.width + 6, 40);
     NSDictionary *attributesDic = @{NSForegroundColorAttributeName: [UIColor whiteColor],
                                    NSFontAttributeName: [UIFont systemFontOfSize:16.0]};
@@ -74,7 +97,7 @@
     self.segmentedControl.selectedSegmentIndex = self.type;
     self.classification = [[ICJobClassification alloc] init];
     self.classification.index = 0;
-    self.classification.title = @"全部";
+    self.classification.title = allString;
     [self.classificationButton setTitle:self.classification.title forState:UIControlStateNormal];
     
     [self.tableView reloadData];
@@ -87,10 +110,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];
@@ -209,10 +232,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];
@@ -237,10 +274,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];
@@ -262,10 +313,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];

@@ -40,10 +40,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobClassificationList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:self
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];

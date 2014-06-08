@@ -74,15 +74,39 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.classificationList = [ICJobClassificationList loadJobClassificationList];
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *partTimeString;
+            NSString *fullTimeString;
+            NSString *allString;
+            NSString *okString;
+            NSString *loadFailedString;
+            NSString *retryString;
+            NSArray *languages = [NSLocale preferredLanguages];
+            NSString *currentLanguage = [languages objectAtIndex:0];
+            if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                partTimeString = @"兼职";
+                fullTimeString = @"全职";
+                allString = @"全部";
+                okString = @"好";
+                loadFailedString = @"加载失败";
+                retryString = @"请检查您的网络连接后重试。";
+            } else {
+                partTimeString = @"Part-time";
+                fullTimeString = @"Full-time";
+                allString = @"All";
+                okString = @"OK";
+                loadFailedString = @"Loading failed";
+                retryString = @"Please check you network connection and try again.";
+            }
             if (self.classificationList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"分类数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:self
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
-                self.typeArray = [[NSMutableArray alloc] initWithObjects:@"兼职", @"全职", nil];
+                self.typeArray = [NSMutableArray arrayWithArray:@[partTimeString, fullTimeString]];
                 self.classificationArray = [[NSMutableArray alloc] init];
                 for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
                     if (classification.index != 0) {
@@ -118,22 +142,6 @@
     } else {
         self.descriptionTextView.superview.backgroundColor = [UIColor clearColor];
     }
-    /*
-    if ([self.locationTextView.text length] == 0) {
-        self.locationTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.locationTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.qualificationsTextView.text length] == 0) {
-        self.qualificationsTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.qualificationsTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.salaryTextView.text length] == 0) {
-        self.salaryTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.salaryTextView.superview.backgroundColor = [UIColor clearColor];
-    } //*/
     if ([self.contactNameTextField.text length] == 0) {
         self.contactNameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
     } else {
@@ -153,23 +161,12 @@
     
     if ([self.titleTextView.text length] *
         [self.descriptionTextView.text length] *
-//        [self.locationTextView.text length] *
-//        [self.qualificationsTextView.text length] *
-//        [self.salaryTextView.text length] *
         [self.contactNameTextField.text length] == 0) {
-        [[[UIAlertView alloc]initWithTitle:@"信息不完整！"
-                                   message:@"请确认已正确填写所有必填项后再提交"
-                                  delegate:nil
-                         cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil]show];
+        // ...
     } else if ([self.contactPhoneTextField.text length] +
                [self.contactEmailTextField.text length] +
                [self.contactQQTextField.text length] == 0) {
-        [[[UIAlertView alloc]initWithTitle:@"信息不完整！"
-                                   message:@"请至少填写一种联系方式"
-                                  delegate:nil
-                         cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil]show];
+        // ...
     } else {
         NSString *mod = [NSString stringWithFormat:@"%d", ([self.pickerView selectedRowInComponent:0] == 1 ? 1 : 2)];
         NSInteger classificationRow = [self.pickerView selectedRowInComponent:1];
@@ -181,9 +178,9 @@
                 break;
             }
         }
-        if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"空";
-        if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"空";
-        if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"空";
+        if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"";
+        if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"";
+        if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"";
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -192,19 +189,29 @@
         }
         self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                         animated:YES];
+        NSString *failedString;
+        NSString *retryString;
+        NSString *okString;
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+            failedString = @"发布失败";
+            retryString = @"请检查您的网络连接后重试。";
+            okString = @"好";
+        } else {
+            failedString = @"Publish failed";
+            retryString = @"Please check you network connection and try again.";
+            okString = @"OK";
+        }
         AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
                                                parameters:@{@"title": self.titleTextView.text,
                                                             @"mod": mod,
                                                             @"typeid": typeid,
                                                             @"description": self.descriptionTextView.text,
-//                                                            @"location": self.locationTextView.text,
-//                                                            @"qualifications": self.qualificationsTextView.text,
-//                                                            @"salary": self.salaryTextView.text,
-//                                                            @"company": self.companyTextView.text,
-                                                            @"location": @"空",
-                                                            @"qualifications": @"空",
-                                                            @"salary": @"空",
-                                                            @"company": @"空",
+                                                            @"location": @"",
+                                                            @"qualifications": @"",
+                                                            @"salary": @"",
+                                                            @"company": @"",
                                                             @"contactName": self.contactNameTextField.text,
                                                             @"contactPhone": self.contactPhoneTextField.text,
                                                             @"contactEmail": self.contactEmailTextField.text,
@@ -220,26 +227,22 @@
                                                                        error:nil];
                                                       NSInteger jobID = [json[@"id"] intValue];
                                                       if (jobID == 0) {
-                                                          [[[UIAlertView alloc]initWithTitle:@"上传失败！"
-                                                                                     message:@"请检查您的网络连接后重试"
+                                                          [[[UIAlertView alloc]initWithTitle:failedString
+                                                                                     message:retryString
                                                                                     delegate:nil
-                                                                           cancelButtonTitle:@"确定"
+                                                                           cancelButtonTitle:okString
                                                                            otherButtonTitles:nil]show];
                                                       } else {
-                                                          [[[UIAlertView alloc]initWithTitle:@"上传成功！"
-                                                                                     message:nil
-                                                                                    delegate:self
-                                                                           cancelButtonTitle:@"确定"
-                                                                           otherButtonTitles:nil]show];
                                                           [self.delegate needReloadData];
+                                                          [self dismissViewControllerAnimated:YES
+                                                                                   completion:nil];
                                                       }
                                                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                       [self.HUD hide:YES];
-                                                      NSLog(@"Error: %@ ***** %@", operation.responseString, error);
-                                                      [[[UIAlertView alloc]initWithTitle:@"上传失败！"
-                                                                                 message:@"请检查您的网络连接后重试"
+                                                      [[[UIAlertView alloc]initWithTitle:failedString
+                                                                                 message:retryString
                                                                                 delegate:nil
-                                                                       cancelButtonTitle:@"确定"
+                                                                       cancelButtonTitle:okString
                                                                        otherButtonTitles:nil]show];
                                                   }];
         [operation start];

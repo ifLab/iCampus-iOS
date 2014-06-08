@@ -79,6 +79,7 @@
 		95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A001191862594E008B18BD /* ICNewsChannelViewController.m */; };
 		95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */; };
 		95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011D1862594E008B18BD /* ICNewsListViewController.m */; };
+		95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95AC70AC185F473300C94B71 /* ICCampus.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7078185F473200C94B71 /* ICCampus.m */; };
 		95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC707A185F473200C94B71 /* ICCampusList.m */; };
 		95AC70B2185F473300C94B71 /* ICNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7086185F473200C94B71 /* ICNews.m */; };
@@ -195,7 +196,6 @@
 		95353F8E190A96DD00354F0B /* LMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationController.h; sourceTree = "<group>"; };
 		95353F8F190A96DD00354F0B /* LMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationController.m; sourceTree = "<group>"; };
 		95353F90190A96DD00354F0B /* Radial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radial.png; sourceTree = "<group>"; };
-		953ED5DF190D0B220050FFAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		954F569B190CEDAD00138ACF /* ICUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUser.h; path = iCampus/Model/User/ICUser.h; sourceTree = SOURCE_ROOT; };
 		954F569C190CEDAD00138ACF /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUser.m; path = iCampus/Model/User/ICUser.m; sourceTree = SOURCE_ROOT; };
 		955A065E190A51FD00628AA6 /* ICLoginView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICLoginView.hh; sourceTree = "<group>"; };
@@ -289,6 +289,7 @@
 		95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsDetailViewController.m; sourceTree = "<group>"; };
 		95A0011C1862594E008B18BD /* ICNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsListViewController.h; sourceTree = "<group>"; };
 		95A0011D1862594E008B18BD /* ICNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsListViewController.m; sourceTree = "<group>"; };
+		95A841931944E44800CF5B57 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		95AC7077185F473200C94B71 /* ICCampus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampus.h; sourceTree = "<group>"; };
 		95AC7078185F473200C94B71 /* ICCampus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCampus.m; sourceTree = "<group>"; };
 		95AC7079185F473200C94B71 /* ICCampusList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampusList.h; sourceTree = "<group>"; };
@@ -1171,6 +1172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */,
 				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
@@ -1325,7 +1327,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A000AD1861F504008B18BD /* Base */,
-				953ED5DF190D0B220050FFAD /* zh-Hans */,
+				95A841931944E44800CF5B57 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1426,6 +1428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1433,8 +1436,11 @@
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1444,6 +1450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1451,8 +1458,10 @@
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

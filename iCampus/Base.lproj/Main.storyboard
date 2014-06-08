@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Uaa-08-PIB">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
@@ -127,7 +128,7 @@
                                     <segue destination="qbW-25-MPY" kind="modal" id="s5G-H0-R6j"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="职位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-ai-U1s">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-ai-U1s">
                                 <rect key="frame" x="225" y="260" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -593,7 +594,7 @@
                             <rect key="frame" x="120" y="-18" width="80" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="TEST">
+                            <state key="normal" title="Job">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -1256,7 +1257,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的发布" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-Cy-yOD">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Published" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDm-Cy-yOD">
                                                     <rect key="frame" x="93" y="7" width="135" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1276,7 +1277,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxz-VW-K60">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favourites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxz-VW-K60">
                                                     <rect key="frame" x="93" y="7" width="135" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1319,7 +1320,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="工作名称 *" id="7jC-bL-KpS">
+                            <tableViewSection headerTitle="Title" id="7jC-bL-KpS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="43" id="dNA-P0-thf">
                                         <rect key="frame" x="0.0" y="119" width="320" height="43"/>
@@ -1338,7 +1339,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="工作类型 *" id="SWD-aF-Vxh">
+                            <tableViewSection headerTitle="Type *" id="SWD-aF-Vxh">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="172" id="dzS-gs-t48">
                                         <rect key="frame" x="0.0" y="210" width="320" height="172"/>
@@ -1355,7 +1356,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="工作描述 *" id="8ni-dr-lc4">
+                            <tableViewSection headerTitle="Description *" id="8ni-dr-lc4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="121" id="oGX-FP-sOI">
                                         <rect key="frame" x="0.0" y="430" width="320" height="121"/>
@@ -1374,7 +1375,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="联系方式 *(请至少填写一种)" id="HsX-HW-IHR">
+                            <tableViewSection headerTitle="Contact * (at least one field is required)" id="HsX-HW-IHR">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="a2c-wW-UdO" detailTextLabel="l2C-zF-92p" rowHeight="43" style="IBUITableViewCellStyleValue2" id="EJL-wk-Hq8">
                                         <rect key="frame" x="0.0" y="599" width="320" height="43"/>
@@ -1383,14 +1384,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="姓名:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2c-wW-UdO">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2c-wW-UdO">
                                                     <rect key="frame" x="15" y="13" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5WM-2u-IBd">
+                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5WM-2u-IBd">
                                                     <rect key="frame" x="114" y="7" width="186" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -1403,13 +1404,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="5WM-2u-IBd" firstAttribute="top" secondItem="cZi-nU-x10" secondAttribute="top" constant="7" id="88N-8M-mXa"/>
-                                                <constraint firstAttribute="bottom" secondItem="5WM-2u-IBd" secondAttribute="bottom" constant="5.5" id="8th-uB-EeH"/>
-                                                <constraint firstAttribute="trailing" secondItem="5WM-2u-IBd" secondAttribute="trailing" constant="20" symbolic="YES" id="Bvy-xK-FTi"/>
-                                                <constraint firstItem="5WM-2u-IBd" firstAttribute="leading" secondItem="a2c-wW-UdO" secondAttribute="trailing" constant="8" symbolic="YES" id="GnB-gF-OzS"/>
-                                                <constraint firstItem="5WM-2u-IBd" firstAttribute="baseline" secondItem="l2C-zF-92p" secondAttribute="baseline" id="KGe-NK-dnH"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mAk-iV-T9p" detailTextLabel="ha6-cn-t4M" rowHeight="43" style="IBUITableViewCellStyleValue2" id="lNU-4N-mrG">
@@ -1419,15 +1413,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="电话:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mAk-iV-T9p">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mAk-iV-T9p">
                                                     <rect key="frame" x="15" y="13" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-d2-c5z">
-                                                    <rect key="frame" x="120" y="7" width="180" height="30"/>
+                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-d2-c5z">
+                                                    <rect key="frame" x="114" y="7" width="186" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 </textField>
@@ -1439,13 +1433,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="PAO-d2-c5z" firstAttribute="leading" secondItem="mAk-iV-T9p" secondAttribute="trailing" constant="14" id="0YL-xx-vg3"/>
-                                                <constraint firstItem="PAO-d2-c5z" firstAttribute="top" secondItem="AJc-7N-l82" secondAttribute="top" constant="7" id="Pv4-iY-Uz8"/>
-                                                <constraint firstAttribute="trailing" secondItem="PAO-d2-c5z" secondAttribute="trailing" constant="20" symbolic="YES" id="WrZ-R8-cnQ"/>
-                                                <constraint firstItem="PAO-d2-c5z" firstAttribute="baseline" secondItem="ha6-cn-t4M" secondAttribute="baseline" id="cDI-fa-UCo"/>
-                                                <constraint firstAttribute="bottom" secondItem="PAO-d2-c5z" secondAttribute="bottom" constant="5.5" id="eSt-tg-m9o"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ymh-DG-gnC" detailTextLabel="vya-TE-Zjf" rowHeight="43" style="IBUITableViewCellStyleValue2" id="xHF-DH-SD1">
@@ -1455,14 +1442,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymh-DG-gnC">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymh-DG-gnC">
                                                     <rect key="frame" x="15" y="13" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-VP-sP9">
+                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-VP-sP9">
                                                     <rect key="frame" x="114" y="7" width="186" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -1475,13 +1462,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="L9x-VP-sP9" firstAttribute="top" secondItem="pDh-Zt-6UQ" secondAttribute="top" constant="7" id="7IN-hh-Mw9"/>
-                                                <constraint firstItem="L9x-VP-sP9" firstAttribute="baseline" secondItem="vya-TE-Zjf" secondAttribute="baseline" id="Rfh-Ps-qyA"/>
-                                                <constraint firstItem="L9x-VP-sP9" firstAttribute="leading" secondItem="ymh-DG-gnC" secondAttribute="trailing" constant="8" symbolic="YES" id="ohV-dX-XOe"/>
-                                                <constraint firstAttribute="trailing" secondItem="L9x-VP-sP9" secondAttribute="trailing" constant="20" symbolic="YES" id="pBE-dQ-1uY"/>
-                                                <constraint firstAttribute="bottom" secondItem="L9x-VP-sP9" secondAttribute="bottom" constant="5.5" id="wGm-Qa-UQd"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YTO-uL-7kZ" detailTextLabel="IVr-eR-aWV" rowHeight="43" style="IBUITableViewCellStyleValue2" id="Ies-2Z-KE6">
@@ -1491,14 +1471,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="QQ:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YTO-uL-7kZ">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="QQ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YTO-uL-7kZ">
                                                     <rect key="frame" x="15" y="13" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwV-vu-jZd">
+                                                <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwV-vu-jZd">
                                                     <rect key="frame" x="114" y="7" width="186" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -1511,13 +1491,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LwV-vu-jZd" firstAttribute="leading" secondItem="YTO-uL-7kZ" secondAttribute="trailing" constant="8" symbolic="YES" id="BCv-Ju-5Jf"/>
-                                                <constraint firstAttribute="bottom" secondItem="LwV-vu-jZd" secondAttribute="bottom" constant="5.5" id="Cyz-lq-WGl"/>
-                                                <constraint firstAttribute="trailing" secondItem="LwV-vu-jZd" secondAttribute="trailing" constant="20" symbolic="YES" id="HbD-Fe-5bB"/>
-                                                <constraint firstItem="LwV-vu-jZd" firstAttribute="top" secondItem="xZE-BX-rKA" secondAttribute="top" constant="7" id="cgz-bg-Rya"/>
-                                                <constraint firstItem="LwV-vu-jZd" firstAttribute="baseline" secondItem="IVr-eR-aWV" secondAttribute="baseline" id="zQU-9h-m6N"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1554,7 +1527,7 @@
             </objects>
             <point key="canvasLocation" x="2768" y="2324"/>
         </scene>
-        <!--Job Favorites Job Table View Controller - 我的收藏-->
+        <!--Job Favorites Job Table View Controller - Favourites-->
         <scene sceneID="cLs-vb-X1j">
             <objects>
                 <tableViewController id="POM-oo-7yX" customClass="ICJobFavoritesJobTableViewController" sceneMemberID="viewController">
@@ -1580,13 +1553,13 @@
                             <outlet property="delegate" destination="POM-oo-7yX" id="qE7-2x-U2m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的收藏" id="4ZB-4P-mAa"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="4ZB-4P-mAa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glw-hE-eS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3331" y="3094"/>
         </scene>
-        <!--Job Detail Table View Controller - 加载中...-->
+        <!--Job Detail Table View Controller - Loading...-->
         <scene sceneID="VPa-6k-XYp">
             <objects>
                 <tableViewController id="qN3-A4-xQc" customClass="ICJobDetailTableViewController" sceneMemberID="viewController">
@@ -1595,7 +1568,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="职位介绍" id="uiQ-4l-zxh">
+                            <tableViewSection headerTitle="Introduction" id="uiQ-4l-zxh">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Job Detail" textLabel="4ua-aF-5K7" rowHeight="43" style="IBUITableViewCellStyleDefault" id="0RJ-N9-KwD">
                                         <rect key="frame" x="0.0" y="119" width="320" height="43"/>
@@ -1604,7 +1577,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="4ua-aF-5K7">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="4ua-aF-5K7">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="42"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1616,7 +1589,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="联系方式" id="whH-P2-cCC">
+                            <tableViewSection headerTitle="Contact" id="whH-P2-cCC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Omc-T2-3AB" detailTextLabel="b2o-OZ-ya3" rowHeight="55" style="IBUITableViewCellStyleValue2" id="Cta-eN-Plw">
                                         <rect key="frame" x="0.0" y="210" width="320" height="55"/>
@@ -1625,14 +1598,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="联系人:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Omc-T2-3AB">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Omc-T2-3AB">
                                                     <rect key="frame" x="15" y="19" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="招聘人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2o-OZ-ya3">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2o-OZ-ya3">
                                                     <rect key="frame" x="112" y="19" width="42" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1649,14 +1622,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="电话:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3j-FU-owg">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3j-FU-owg">
                                                     <rect key="frame" x="15" y="19" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Myb-ep-6sW">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Myb-ep-6sW">
                                                     <rect key="frame" x="112" y="19" width="14" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1673,14 +1646,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uF5-3H-QnE">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uF5-3H-QnE">
                                                     <rect key="frame" x="15" y="19" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yLE-Ek-BuR">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yLE-Ek-BuR">
                                                     <rect key="frame" x="112" y="19" width="14" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1697,14 +1670,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="QQ:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zCz-ss-iRX">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="QQ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zCz-ss-iRX">
                                                     <rect key="frame" x="15" y="19" width="91" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="无" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lSk-sZ-Pkg">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lSk-sZ-Pkg">
                                                     <rect key="frame" x="112" y="19" width="14" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1722,7 +1695,7 @@
                             <outlet property="delegate" destination="qN3-A4-xQc" id="HVi-jg-Fno"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="加载中..." id="fyZ-iP-h9k">
+                    <navigationItem key="navigationItem" title="Loading..." id="fyZ-iP-h9k">
                         <barButtonItem key="leftBarButtonItem" title="返回" id="Y4n-Ww-LnD">
                             <connections>
                                 <action selector="cancel:" destination="qN3-A4-xQc" id="M4Q-vo-mFW"/>
@@ -1796,7 +1769,7 @@
             </objects>
             <point key="canvasLocation" x="2768" y="1554"/>
         </scene>
-        <!--Job My Job Table View Controller - 我的发布-->
+        <!--Job My Job Table View Controller - Published-->
         <scene sceneID="qkj-gC-pZz">
             <objects>
                 <tableViewController id="v6w-U2-COF" customClass="ICJobMyJobTableViewController" sceneMemberID="viewController">
@@ -1822,7 +1795,7 @@
                             <outlet property="delegate" destination="v6w-U2-COF" id="Eb8-AZ-QZJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的发布" id="fIp-GK-Nd5"/>
+                    <navigationItem key="navigationItem" title="Published" id="fIp-GK-Nd5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NO-uu-9i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1902,7 +1875,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KcT-YY-djm"/>
+        <segue reference="zlw-TM-uaT"/>
         <segue reference="dqR-fp-KBv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

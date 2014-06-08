@@ -85,10 +85,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];
@@ -113,12 +127,26 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                                     options:kNilOptions
                                                       error:nil];
     NSInteger success = [json[@"id"] intValue];
+    NSString *okString;
+    NSString *failedString;
+    NSString *retryString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        okString = @"好";
+        failedString = @"删除失败";
+        retryString = @"请检查您的网络连接后重试。";
+    } else {
+        okString = @"OK";
+        failedString = @"Remove failed";
+        retryString = @"Please check you network connection and try again.";
+    }
     if (!data || success != 0) {
         [self.HUD hide:YES];
-        [[[UIAlertView alloc]initWithTitle:@"删除错误！"
-                                   message:@"请检查您的网络连接后重试"
+        [[[UIAlertView alloc]initWithTitle:failedString
+                                   message:retryString
                                   delegate:nil
-                         cancelButtonTitle:@"确定"
+                         cancelButtonTitle:okString
                          otherButtonTitles:nil]show];
     } else {
         [self.HUD hide:YES];

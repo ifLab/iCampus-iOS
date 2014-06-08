@@ -79,10 +79,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.job == nil || self.job.index != self.jobID) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:self
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 self.navigationItem.title = self.job.title;
@@ -134,11 +148,25 @@
 }
 
 - (IBAction)addOrDelFavorites:(id)sender {
+    NSString *addedString;
+    NSString *removedString;
+    NSString *okString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        addedString = @"成功添加到收藏";
+        removedString = @"成功移除收藏";
+        okString = @"好";
+    } else {
+        addedString = @"Successfully added to favourites.";
+        removedString = @"Successfully removed from favourites.";
+        okString = @"OK";
+    }
     if ([ICJobFavoritesJobList addJob:self.job]) {
-        [[[UIAlertView alloc]initWithTitle:@"添加成功！"
+        [[[UIAlertView alloc]initWithTitle:addedString
                                    message:nil
                                   delegate:nil
-                         cancelButtonTitle:@"确定"
+                         cancelButtonTitle:okString
                          otherButtonTitles:nil]show];
         self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites1"]
                                                                style:UIBarButtonItemStyleBordered
@@ -148,10 +176,10 @@
         return;
     }
     if ([ICJobFavoritesJobList deleteJob:self.job]) {
-        [[[UIAlertView alloc]initWithTitle:@"已移除收藏！"
+        [[[UIAlertView alloc]initWithTitle:removedString
                                    message:nil
                                   delegate:nil
-                         cancelButtonTitle:@"确定"
+                         cancelButtonTitle:okString
                          otherButtonTitles:nil]show];
         self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites0"]
                                                                style:UIBarButtonItemStyleBordered
@@ -161,13 +189,6 @@
         return;
     }
 }
-//- (IBAction)delFromFavorites:(id)sender {
-//    NSLog(@"delFromFavorites");
-//}
-//
-//- (IBAction)delFromMine:(id)sender {
-//    NSLog(@"delFromMine");
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -177,19 +198,7 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return self.descriptionCell.textLabel.frame.size.height + 22;
-    }/*/
-    if (indexPath.section == 1) {
-        return self.locationCell.textLabel.frame.size.height + 22;
     }
-    if (indexPath.section == 2) {
-        return self.qualificationsCell.textLabel.frame.size.height + 22;
-    }
-    if (indexPath.section == 3) {
-        return self.salaryCell.textLabel.frame.size.height + 22;
-    }
-    if (indexPath.section == 4) {
-        return self.companyCell.textLabel.frame.size.height + 22;
-    }//*/
     return 43;
 }
 
