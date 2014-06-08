@@ -7,6 +7,8 @@
 //
 
 #import "ICJobDetailTableViewController.h"
+#import "ICJob.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobDetailTableViewController ()
 
@@ -19,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *contactPhoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactEmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactQQLabel;
+@property (nonatomic, strong) MBProgressHUD *HUD;
+
 - (IBAction)cancel:(id)sender;
 
-@property (nonatomic, strong) MBProgressHUD *HUD;
+
 
 @end
 
@@ -37,8 +41,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"兼职：当前工作ID：%lu", (long)self.jobID);
     
     if ([self.mode isEqual: @"DONT_NEED_LOAD_DATA_FROM_NET"]) {
         self.navigationItem.title = self.job.title;
@@ -109,7 +111,6 @@
                 [self.companyCell.textLabel sizeToFit];
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：ID为%lu的工作详情载入成功", (long)self.jobID);
                 
                 // 添加导航栏右侧按钮
                 if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {

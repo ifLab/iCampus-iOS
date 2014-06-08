@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ICJobClassification.h"
 
 @interface ICJobClassificationList : NSObject
 

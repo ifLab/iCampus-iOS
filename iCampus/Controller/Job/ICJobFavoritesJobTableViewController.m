@@ -7,6 +7,8 @@
 //
 
 #import "ICJobFavoritesJobTableViewController.h"
+#import "ICJob.h"
+#import "ICJobDetailTableViewController.h"
 
 @interface ICJobFavoritesJobTableViewController ()
 

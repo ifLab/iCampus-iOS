@@ -47,13 +47,13 @@
 		95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F16190B5F340088D564 /* RBBLinearInterpolation.m */; };
 		95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F18190B5F340088D564 /* RBBSpringAnimation.m */; };
 		95697F2A190B5F340088D564 /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F1A190B5F340088D564 /* RBBTweenAnimation.m */; };
-		95697F2E190BB6880088D564 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F2D190BB6880088D564 /* ICLoginViewController.m */; };
 		95697F31190BB6A30088D564 /* ICSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F30190BB6A30088D564 /* ICSettingViewController.m */; };
 		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
 		957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */; };
 		957279B418674602007F3F01 /* ICSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B318674602007F3F01 /* ICSchoolCell.m */; };
 		957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B91867552A007F3F01 /* ICSchoolDetailView.m */; };
 		9576D3C11944B0A30095FCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
+		9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9576D3C71944C1180095FCC2 /* ICLoginViewController.m */; };
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
@@ -228,8 +228,6 @@
 		95697F19190B5F340088D564 /* RBBTweenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBTweenAnimation.h; sourceTree = "<group>"; };
 		95697F1A190B5F340088D564 /* RBBTweenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBTweenAnimation.m; sourceTree = "<group>"; };
 		95697F1B190B5F340088D564 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		95697F2C190BB6880088D564 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLoginViewController.h; path = Setting/ICLoginViewController.h; sourceTree = "<group>"; };
-		95697F2D190BB6880088D564 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLoginViewController.m; path = Setting/ICLoginViewController.m; sourceTree = "<group>"; };
 		95697F2F190BB6A30088D564 /* ICSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSettingViewController.h; path = Setting/ICSettingViewController.h; sourceTree = "<group>"; };
 		95697F30190BB6A30088D564 /* ICSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSettingViewController.m; path = Setting/ICSettingViewController.m; sourceTree = "<group>"; };
 		957279A91867375D007F3F01 /* ICSchoolListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolListViewController.h; sourceTree = "<group>"; };
@@ -240,6 +238,8 @@
 		957279B318674602007F3F01 /* ICSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolCell.m; sourceTree = "<group>"; };
 		957279B81867552A007F3F01 /* ICSchoolDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolDetailView.h; sourceTree = "<group>"; };
 		957279B91867552A007F3F01 /* ICSchoolDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolDetailView.m; sourceTree = "<group>"; };
+		9576D3C61944C1180095FCC2 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLoginViewController.h; sourceTree = "<group>"; };
+		9576D3C71944C1180095FCC2 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLoginViewController.m; sourceTree = "<group>"; };
 		95798E9F186285080049CF77 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
 		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
 		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
@@ -469,10 +469,9 @@
 		951BE86218E5E68F0049AB5F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				9576D3C51944C1180095FCC2 /* Login */,
 				951BE86618E5E9030049AB5F /* ICAccountViewController.h */,
 				951BE86718E5E9030049AB5F /* ICAccountViewController.m */,
-				95697F2C190BB6880088D564 /* ICLoginViewController.h */,
-				95697F2D190BB6880088D564 /* ICLoginViewController.m */,
 				95697F2F190BB6A30088D564 /* ICSettingViewController.h */,
 				95697F30190BB6A30088D564 /* ICSettingViewController.m */,
 				9529B9A3192E2AA300C37A3A /* ICAccountEditViewController.h */,
@@ -590,6 +589,16 @@
 				95697F1A190B5F340088D564 /* RBBTweenAnimation.m */,
 			);
 			path = RBBAnimation;
+			sourceTree = "<group>";
+		};
+		9576D3C51944C1180095FCC2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9576D3C61944C1180095FCC2 /* ICLoginViewController.h */,
+				9576D3C71944C1180095FCC2 /* ICLoginViewController.m */,
+			);
+			name = Login;
+			path = Setting/Login;
 			sourceTree = "<group>";
 		};
 		95798E9E186285080049CF77 /* KIImagePager */ = {
@@ -1189,6 +1198,7 @@
 			files = (
 				95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
+				9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */,
 				95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */,
 				47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */,
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
@@ -1219,7 +1229,6 @@
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
-				95697F2E190BB6880088D564 /* ICLoginViewController.m in Sources */,
 				95697F23190B5F340088D564 /* RBBAnimation.m in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
 				47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */,
@@ -1423,6 +1432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1440,6 +1450,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -7,19 +7,23 @@
 //
 
 #import "ICJobListTableViewController.h"
+#import "ICJob.h"
+#import "ICUser.h"
+#import "ICLoginViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobListTableViewController ()
 
-@property UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UIButton *classificationButton;
-- (IBAction)cancel:(id)sender;
+@property (nonatomic, strong)        UISegmentedControl  *segmentedControl;
+@property (nonatomic, weak) IBOutlet UIButton            *classificationButton;
+@property (nonatomic, strong)        MBProgressHUD       *HUD;
+@property (nonatomic, strong)        ICJobList           *jobList;
+@property (nonatomic, strong)        ICJobClassification *classification;
+@property (nonatomic)                BOOL                 type;
+@property (nonatomic)                NSInteger            userID;
+@property (nonatomic)                BOOL                 firstAppear;
 
-@property (nonatomic, strong) MBProgressHUD *HUD;
-@property (strong, nonatomic) ICJobList *jobList;
-@property ICJobClassification* classification;
-@property BOOL type;
-@property NSInteger userID;
-@property BOOL firstAppear;
+- (IBAction)cancel:(id)sender;
 
 @end
 
@@ -74,8 +78,6 @@
     [self.classificationButton setTitle:self.classification.title forState:UIControlStateNormal];
     
     [self.tableView reloadData];
-    NSLog(@"兼职：初始化成功");
-    NSLog(@"兼职：当前数据，类型：%@，类别：%@", (self.type ? @"全职" : @"兼职"), self.classification.title);
     
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -93,7 +95,6 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：工作列表数据载入成功");
             }
         });
     });
@@ -200,7 +201,6 @@
 }
 
 - (void)needReloadData {
-    NSLog(@"兼职：数据刷新");
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
@@ -217,7 +217,6 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：工作列表数据载入成功");
             }
         });
     });
@@ -229,8 +228,6 @@
     } else {
         self.type = NO;
     }
-    NSLog(@"兼职：更改类型为：%@", (self.type ? @"全职" : @"兼职"));
-    NSLog(@"兼职：当前数据，类型：%@，类别：%@", (self.type ? @"全职" : @"兼职"), self.classification.title);
     
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -248,7 +245,6 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：工作列表数据载入成功");
             }
         });
     });
@@ -257,8 +253,6 @@
 - (void)changeClassificationWith:(ICJobClassification*)classification {
     self.classification = classification;
     [self.classificationButton setTitle:self.classification.title forState:UIControlStateNormal];
-    NSLog(@"兼职：更改类别为：%@", classification.title);
-    NSLog(@"兼职：当前数据，类型：%@，类别：%@", (self.type ? @"全职" : @"兼职"), self.classification.title);
     
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -276,7 +270,6 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：工作列表数据载入成功");
             }
         });
     });

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../../Model/Job/ICJobClassificationList.h"
-#import "MBProgressHUD.h"
+
+@class ICJobClassification, MBProgressHUD;
 
 @protocol ICJobClassificationListTableViewControllerDelegate <NSObject>
 
-- (void)changeClassificationWith:(ICJobClassification*)classification;
+- (void)changeClassificationWith:(ICJobClassification *)classification;
 
 @end
 

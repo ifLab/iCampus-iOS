@@ -7,6 +7,10 @@
 //
 
 #import "ICJobNewJobTableViewController.h"
+#import "ICJob.h"
+#import "ICUser.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobNewJobTableViewController ()
 
@@ -17,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *contactPhoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactQQTextField;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
 
@@ -87,7 +92,6 @@
                 [self.pickerView reloadAllComponents];
                 self.pickerView.hidden = 0;
                 [self.HUD hide:YES];
-                NSLog(@"兼职：分类选择器数据载入成功，并设置完成");
             }
         });
     });
@@ -184,7 +188,6 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         if (!ICCurrentUser) {
-            NSLog(@"兼职：用户尚未登录");
             return;
         }
         self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -217,14 +220,12 @@
                                                                        error:nil];
                                                       NSInteger jobID = [json[@"id"] intValue];
                                                       if (jobID == 0) {
-                                                          NSLog(@"兼职：上传失败");
                                                           [[[UIAlertView alloc]initWithTitle:@"上传失败！"
                                                                                      message:@"请检查您的网络连接后重试"
                                                                                     delegate:nil
                                                                            cancelButtonTitle:@"确定"
                                                                            otherButtonTitles:nil]show];
                                                       } else {
-                                                          NSLog(@"兼职：上传成功，ID：%ld", (long)jobID);
                                                           [[[UIAlertView alloc]initWithTitle:@"上传成功！"
                                                                                      message:nil
                                                                                     delegate:self

@@ -7,6 +7,8 @@
 //
 
 #import "ICJobClassificationListTableViewController.h"
+#import "ICJob.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobClassificationListTableViewController ()
 
@@ -46,7 +48,6 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：分类列表数据载入成功");
             }
         });
     });

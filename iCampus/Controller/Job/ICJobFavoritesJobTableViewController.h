@@ -7,9 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../../Model/Job/ICJob.h"
-#import "../../Model/Job/ICJobFavoritesJobList.h"
-#import "ICJobDetailTableViewController.h"
 
 @interface ICJobFavoritesJobTableViewController : UITableViewController
 

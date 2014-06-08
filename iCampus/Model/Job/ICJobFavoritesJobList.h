@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ICJob.h"
+
+@class ICJob;
 
 @interface ICJobFavoritesJobList : NSObject
 
