@@ -72,7 +72,7 @@
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
     ICJob *job = self.favoritesJobList.favoritesList[indexPath.row];
-    [self.favoritesJobList deleteJob:job];
+    [ICJobFavoritesJobList deleteJob:job];
     self.favoritesJobList = [ICJobFavoritesJobList loadData];
     [self.tableView reloadData];
 }

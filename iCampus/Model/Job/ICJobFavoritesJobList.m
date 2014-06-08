@@ -132,20 +132,24 @@
 
 + (BOOL)addJob:(ICJob*)job {
     ICJobFavoritesJobList *list = [ICJobFavoritesJobList loadData];
-    for (ICJob *j in list.favoritesList) {
-        if (j.index == job.index) {
-            return NO;
-        }
+    if ([ICJobFavoritesJobList checkJob:job]) {
+        return NO;
     }
     [list.favoritesList addObject:job];
     [list writeData];
     return YES;
 }
 
-- (BOOL)deleteJob:(ICJob*)job {
-    [self.favoritesList removeObject:job];
-    [self writeData];
-    return YES;
++ (BOOL)deleteJob:(ICJob*)job {
+    ICJobFavoritesJobList *list = [ICJobFavoritesJobList loadData];
+    for (ICJob *j in list.favoritesList) {
+        if (j.index == job.index) {
+            [list.favoritesList removeObject:j];
+            [list writeData];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 + (BOOL)checkJob:(ICJob*)job {

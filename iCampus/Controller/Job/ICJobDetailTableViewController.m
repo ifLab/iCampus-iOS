@@ -69,24 +69,6 @@
         return;
     }
     
-    // 添加导航栏右侧按钮
-    if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
-        if (![ICJobFavoritesJobList checkJob:self.job]) {
-            self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"☆"
-                                                                   style:UIBarButtonItemStyleBordered
-                                                                  target:self
-                                                                  action:@selector(addToFavorites:)];
-            self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
-        }
-    }
-//    if ([self.mode isEqual: @"APPEAR_DEL_FROM_MINE_BUTTON"]) {
-//        self.favoritesButton = [[UIBarButtonItem alloc]initWithTitle:@"删除"
-//                                                               style:UIBarButtonItemStyleBordered
-//                                                              target:self
-//                                                              action:@selector(addToFavorites:)];
-//        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
-//    }
-    
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
@@ -128,24 +110,54 @@
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
                 NSLog(@"兼职：ID为%lu的工作详情载入成功", (long)self.jobID);
+                
+                // 添加导航栏右侧按钮
+                if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
+                    if ([ICJobFavoritesJobList checkJob:self.job]) {
+                        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites1"]
+                                                                               style:UIBarButtonItemStyleBordered
+                                                                              target:self
+                                                                              action:@selector(addOrDelFavorites:)];
+                        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+                    } else {
+                        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites0"]
+                                                                               style:UIBarButtonItemStyleBordered
+                                                                              target:self
+                                                                              action:@selector(addOrDelFavorites:)];
+                        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+                    }
+                }
             }
         });
     });
 }
 
-- (IBAction)addToFavorites:(id)sender {
+- (IBAction)addOrDelFavorites:(id)sender {
     if ([ICJobFavoritesJobList addJob:self.job]) {
         [[[UIAlertView alloc]initWithTitle:@"添加成功！"
                                    message:nil
                                   delegate:nil
                          cancelButtonTitle:@"确定"
                          otherButtonTitles:nil]show];
-    } else {
-        [[[UIAlertView alloc]initWithTitle:@"已收藏！"
-                                   message:@"请不要重复添加"
+        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites1"]
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(addOrDelFavorites:)];
+        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        return;
+    }
+    if ([ICJobFavoritesJobList deleteJob:self.job]) {
+        [[[UIAlertView alloc]initWithTitle:@"已移除收藏！"
+                                   message:nil
                                   delegate:nil
                          cancelButtonTitle:@"确定"
                          otherButtonTitles:nil]show];
+        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites0"]
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(addOrDelFavorites:)];
+        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        return;
     }
 }
 //- (IBAction)delFromFavorites:(id)sender {
