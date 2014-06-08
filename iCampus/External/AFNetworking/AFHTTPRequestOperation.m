@@ -52,6 +52,10 @@ static dispatch_group_t http_request_operation_completion_group() {
 
 @implementation AFHTTPRequestOperation
 
+@synthesize response = _response;
+@synthesize request = _request;
+@synthesize error = _error;
+
 - (void)setResponseSerializer:(AFHTTPResponseSerializer <AFURLResponseSerialization> *)responseSerializer {
     NSParameterAssert(responseSerializer);
 

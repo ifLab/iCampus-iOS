@@ -24,7 +24,6 @@
 		47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F21191F5DAF00DADA49 /* ICJobList.m */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICAccountViewController.m */; };
-		951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
 		95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F83190A96DD00354F0B /* CALayer+ModalAlert.m */; };
@@ -39,12 +38,7 @@
 		955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A065F190A51FD00628AA6 /* ICLoginView.mm */; };
 		955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A0662190A52BE00628AA6 /* ICLoginPage.mm */; };
 		95697F1C190B5F340088D564 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697EFF190B5F340088D564 /* CAAnimation+Blocks.m */; };
-		95697F1D190B5F340088D564 /* COPYRIGHT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95697F00190B5F340088D564 /* COPYRIGHT.txt */; };
-		95697F1E190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F01190B5F340088D564 /* README.md */; };
-		95697F1F190B5F340088D564 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95697F03190B5F340088D564 /* LICENSE */; };
 		95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F06190B5F340088D564 /* LMFixedTextView.m */; };
-		95697F21190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F07190B5F340088D564 /* README.md */; };
-		95697F22190B5F340088D564 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95697F09190B5F340088D564 /* LICENSE */; };
 		95697F23190B5F340088D564 /* RBBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F0C190B5F340088D564 /* RBBAnimation.m */; };
 		95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F0E190B5F340088D564 /* RBBBlockBasedArray.m */; };
 		95697F25190B5F340088D564 /* RBBCubicBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F10190B5F340088D564 /* RBBCubicBezier.m */; };
@@ -53,19 +47,18 @@
 		95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F16190B5F340088D564 /* RBBLinearInterpolation.m */; };
 		95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F18190B5F340088D564 /* RBBSpringAnimation.m */; };
 		95697F2A190B5F340088D564 /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F1A190B5F340088D564 /* RBBTweenAnimation.m */; };
-		95697F2B190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F1B190B5F340088D564 /* README.md */; };
 		95697F2E190BB6880088D564 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F2D190BB6880088D564 /* ICLoginViewController.m */; };
 		95697F31190BB6A30088D564 /* ICSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F30190BB6A30088D564 /* ICSettingViewController.m */; };
 		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
 		957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */; };
 		957279B418674602007F3F01 /* ICSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B318674602007F3F01 /* ICSchoolCell.m */; };
 		957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B91867552A007F3F01 /* ICSchoolDetailView.m */; };
+		9576D3C11944B0A30095FCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
 		95798F331863093C0049CF77 /* ICBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798F321863093C0049CF77 /* ICBusCell.m */; };
 		95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000A71861F4CD008B18BD /* ICAppDelegate.m */; };
-		95A000AE1861F504008B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95A000B01861F927008B18BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A000AF1861F927008B18BD /* AudioToolbox.framework */; };
 		95A000B618620B91008B18BD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95A000B518620B91008B18BD /* LICENSE */; };
 		95A000D9186214FA008B18BD /* ICBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000C9186214FA008B18BD /* ICBus.m */; };
@@ -1171,16 +1164,9 @@
 			files = (
 				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
-				95A000AE1861F504008B18BD /* Main.storyboard in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
-				95697F2B190B5F340088D564 /* README.md in Resources */,
-				95697F1F190B5F340088D564 /* LICENSE in Resources */,
-				95697F1D190B5F340088D564 /* COPYRIGHT.txt in Resources */,
-				95697F22190B5F340088D564 /* LICENSE in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
-				95697F1E190B5F340088D564 /* README.md in Resources */,
 				95353F98190A96DD00354F0B /* Radial.png in Resources */,
-				95697F21190B5F340088D564 /* README.md in Resources */,
 				95A000B618620B91008B18BD /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1190,7 +1176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D1E26182A64BA00F35D4F /* InfoPlist.strings in Resources */,
-				951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */,
+				9576D3C11944B0A30095FCC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,13 +1418,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1449,13 +1435,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,10 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UITextView *locationTextView;
-@property (weak, nonatomic) IBOutlet UITextView *qualificationsTextView;
-@property (weak, nonatomic) IBOutlet UITextView *salaryTextView;
-@property (weak, nonatomic) IBOutlet UITextView *companyTextView;
 @property (weak, nonatomic) IBOutlet UITextField *contactNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactPhoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactEmailTextField;
@@ -63,11 +59,6 @@
                                                                              action:@selector(dismissKeyBoard)];
     NSArray * buttonsArray = @[flexBtn, dismissKeyBoardButton];
     [topView setItems:buttonsArray];
-    [self.locationTextView setInputAccessoryView:topView];
-    [self.descriptionTextView setInputAccessoryView:topView];
-    [self.qualificationsTextView setInputAccessoryView:topView];
-    [self.salaryTextView setInputAccessoryView:topView];
-    [self.companyTextView setInputAccessoryView:topView];
     [self.contactPhoneTextField setInputAccessoryView:topView];
     [self.contactQQTextField setInputAccessoryView:topView];
     
@@ -186,7 +177,6 @@
                 break;
             }
         }
-        if (self.companyTextView.text.length == 0) self.companyTextView.text = @"空";
         if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"空";
         if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"空";
         if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"空";
@@ -275,11 +265,6 @@
 
 // 键盘隐藏
 - (void)dismissKeyBoard {
-    [self.locationTextView resignFirstResponder];
-    [self.descriptionTextView resignFirstResponder];
-    [self.qualificationsTextView resignFirstResponder];
-    [self.salaryTextView resignFirstResponder];
-    [self.companyTextView resignFirstResponder];
     [self.contactPhoneTextField resignFirstResponder];
     [self.contactQQTextField resignFirstResponder];
 }
