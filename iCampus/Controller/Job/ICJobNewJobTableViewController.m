@@ -132,123 +132,125 @@
 }
 
 - (IBAction)done:(id)sender {
-    if ([self.titleTextView.text length] == 0) {
-        self.titleTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+    BOOL __block failed = NO;
+    typedef BOOL (^TextViewTestingBlock)(UIView *);
+    typedef void (^SetSuperViewWithSubViewBlock)(UIView *);
+    TextViewTestingBlock isBlank = ^(UIView *view) {
+        if (view.class == [UITextView class]) {
+            return (BOOL)!((UITextView *)view).text.length;
+        } else if (view.class == [UITextField class]) {
+            return (BOOL)!((UITextField *)view).text.length;
+        }
+        return NO;
+    };
+    SetSuperViewWithSubViewBlock highlight = ^(UIView *view) {
+        view.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+        failed = YES;
+    };
+    SetSuperViewWithSubViewBlock reset = ^(UIView *view) {
+        view.superview.backgroundColor = [UIColor clearColor];
+    };
+    SetSuperViewWithSubViewBlock testHighlight = ^(UIView *view) {
+        if (isBlank(view)) {
+            highlight(view);
+        } else {
+            reset(view);
+        }
+    };
+    testHighlight(self.titleTextView);
+    testHighlight(self.descriptionTextView);
+    testHighlight(self.contactNameTextField);
+    if (isBlank(self.contactEmailTextField) && isBlank(self.contactPhoneTextField) && isBlank(self.contactQQTextField)) {
+        highlight(self.contactEmailTextField);
+        highlight(self.contactPhoneTextField);
+        highlight(self.contactQQTextField);
     } else {
-        self.titleTextView.superview.backgroundColor = [UIColor clearColor];
+        reset(self.contactPhoneTextField);
+        reset(self.contactEmailTextField);
+        reset(self.contactQQTextField);
     }
-    if ([self.descriptionTextView.text length] == 0) {
-        self.descriptionTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.descriptionTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.contactNameTextField.text length] == 0) {
-        self.contactNameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.contactNameTextField.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.contactPhoneTextField.text length] +
-        [self.contactEmailTextField.text length] +
-        [self.contactQQTextField.text length] == 0) {
-        self.contactPhoneTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-        self.contactEmailTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-        self.contactQQTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.contactPhoneTextField.backgroundColor = [UIColor clearColor];
-        self.contactEmailTextField.backgroundColor = [UIColor clearColor];
-        self.contactQQTextField.backgroundColor = [UIColor clearColor];
+    if (failed) {
+        return;
     }
     
-    if ([self.titleTextView.text length] *
-        [self.descriptionTextView.text length] *
-        [self.contactNameTextField.text length] == 0) {
-        // ...
-    } else if ([self.contactPhoneTextField.text length] +
-               [self.contactEmailTextField.text length] +
-               [self.contactQQTextField.text length] == 0) {
-        // ...
+    NSString *mod = [NSString stringWithFormat:@"%d", ([self.pickerView selectedRowInComponent:0] == 1 ? 1 : 2)];
+    NSInteger classificationRow = [self.pickerView selectedRowInComponent:1];
+    NSString *classificationTitle = (self.classificationArray)[classificationRow];
+    NSString *typeid;
+    for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
+        if (classificationTitle == classification.title) {
+            typeid = [NSString stringWithFormat:@"%d", (int)classification.index];
+            break;
+        }
+    }
+    if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"";
+    if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"";
+    if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"";
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    if (!ICCurrentUser) {
+        return;
+    }
+    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
+                                    animated:YES];
+    NSString *failedString;
+    NSString *retryString;
+    NSString *okString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        failedString = @"发布失败";
+        retryString = @"请检查您的网络连接后重试。";
+        okString = @"好";
     } else {
-        NSString *mod = [NSString stringWithFormat:@"%d", ([self.pickerView selectedRowInComponent:0] == 1 ? 1 : 2)];
-        NSInteger classificationRow = [self.pickerView selectedRowInComponent:1];
-        NSString *classificationTitle = (self.classificationArray)[classificationRow];
-        NSString *typeid;
-        for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
-            if (classificationTitle == classification.title) {
-                typeid = [NSString stringWithFormat:@"%d", (int)classification.index];
-                break;
-            }
-        }
-        if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"";
-        if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"";
-        if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"";
-        
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        if (!ICCurrentUser) {
-            return;
-        }
-        self.HUD = [MBProgressHUD showHUDAddedTo:self.view
-                                        animated:YES];
-        NSString *failedString;
-        NSString *retryString;
-        NSString *okString;
-        NSArray *languages = [NSLocale preferredLanguages];
-        NSString *currentLanguage = [languages objectAtIndex:0];
-        if ([currentLanguage isEqualToString:@"zh-Hans"]) {
-            failedString = @"发布失败";
-            retryString = @"请检查您的网络连接后重试。";
-            okString = @"好";
-        } else {
-            failedString = @"Publish failed";
-            retryString = @"Please check you network connection and try again.";
-            okString = @"OK";
-        }
-        AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
-                                               parameters:@{@"title": self.titleTextView.text,
-                                                            @"mod": mod,
-                                                            @"typeid": typeid,
-                                                            @"description": self.descriptionTextView.text,
-                                                            @"location": @"",
-                                                            @"qualifications": @"",
-                                                            @"salary": @"",
-                                                            @"company": @"",
-                                                            @"contactName": self.contactNameTextField.text,
-                                                            @"contactPhone": self.contactPhoneTextField.text,
-                                                            @"contactEmail": self.contactEmailTextField.text,
-                                                            @"contactQQ": self.contactQQTextField.text,
-                                                            @"userid": ICCurrentUser.ID,
-//                                                            @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
-                                                            }
-                                constructingBodyWithBlock:nil
-                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                      [self.HUD hide:YES];
-                                                      NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                     options:kNilOptions
-                                                                       error:nil];
-                                                      NSInteger jobID = [json[@"id"] intValue];
-                                                      if (jobID == 0) {
-                                                          [[[UIAlertView alloc]initWithTitle:failedString
-                                                                                     message:retryString
-                                                                                    delegate:nil
-                                                                           cancelButtonTitle:okString
-                                                                           otherButtonTitles:nil]show];
-                                                      } else {
-                                                          [self.delegate needReloadData];
-                                                          [self dismissViewControllerAnimated:YES
-                                                                                   completion:nil];
-                                                      }
-                                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                      [self.HUD hide:YES];
+        failedString = @"Publish failed";
+        retryString = @"Please check you network connection and try again.";
+        okString = @"OK";
+    }
+    AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
+                                           parameters:@{@"title": self.titleTextView.text,
+                                                        @"mod": mod,
+                                                        @"typeid": typeid,
+                                                        @"description": self.descriptionTextView.text,
+                                                        @"location": @"",
+                                                        @"qualifications": @"",
+                                                        @"salary": @"",
+                                                        @"company": @"",
+                                                        @"contactName": self.contactNameTextField.text,
+                                                        @"contactPhone": self.contactPhoneTextField.text,
+                                                        @"contactEmail": self.contactEmailTextField.text,
+                                                        @"contactQQ": self.contactQQTextField.text,
+                                                        @"userid": ICCurrentUser.ID
+                                                        }
+                                         //  @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
+                            constructingBodyWithBlock:nil
+                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                  [self.HUD hide:YES];
+                                                  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:kNilOptions
+                                                                   error:nil];
+                                                  NSInteger jobID = [json[@"id"] intValue];
+                                                  if (jobID == 0) {
                                                       [[[UIAlertView alloc]initWithTitle:failedString
                                                                                  message:retryString
                                                                                 delegate:nil
                                                                        cancelButtonTitle:okString
                                                                        otherButtonTitles:nil]show];
-                                                  }];
-        [operation start];
-
-//        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+                                                  } else {
+                                                      [self.delegate needReloadData];
+                                                      [self dismissViewControllerAnimated:YES
+                                                                               completion:nil];
+                                                  }
+                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                  [self.HUD hide:YES];
+                                                  [[[UIAlertView alloc]initWithTitle:failedString
+                                                                             message:retryString
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:okString
+                                                                   otherButtonTitles:nil]show];
+                                              }];
+    [operation start];
 }
 
 - (void)     alertView:(UIAlertView *)alertView

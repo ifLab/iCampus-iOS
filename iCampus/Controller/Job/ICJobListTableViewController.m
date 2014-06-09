@@ -77,19 +77,16 @@
         retryString = @"Please check you network connection and try again.";
     }
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[partTimeString, fullTimeString]];
-    self.segmentedControl.frame = CGRectMake(-3, 64, self.view.frame.size.width + 6, 40);
-    NSDictionary *attributesDic = @{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                   NSFontAttributeName: [UIFont systemFontOfSize:16.0]};
-    [self.segmentedControl setTitleTextAttributes:attributesDic
-                                         forState:UIControlStateSelected];
-    self.segmentedControl.tintColor = [UIColor colorWithRed:0.277 green:0.633 blue:0.871 alpha:1.0];
-    self.segmentedControl.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
+    self.segmentedControl.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, 32);
+//    NSDictionary *attributesDic = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+//                                   NSFontAttributeName: [UIFont systemFontOfSize:16.0]};
+//    [self.segmentedControl setTitleTextAttributes:attributesDic
+//                                         forState:UIControlStateSelected];
+    self.segmentedControl.tintColor = [UIColor colorWithRed:44/255.0 green:151/255.0 blue:222/255.0 alpha:1];
+    self.segmentedControl.backgroundColor = [UIColor whiteColor];
     [self.segmentedControl addTarget:self
                               action:@selector(changeType:)
                     forControlEvents:UIControlEventValueChanged];
-    [self.navigationController.view addSubview:self.segmentedControl];
-    self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(40 + 10, 0, 0, 0);
     
     // 数据初始化
     self.jobList = [[ICJobList alloc] init];
@@ -142,38 +139,21 @@
     [self performSegueWithIdentifier:(NSString *)@"IC_JOB_LIST_TO_CLASSIFICATION" sender:self];
 }
 
-- (void)appearSegmentedControl {
-    self.segmentedControl.hidden = NO;
-}
-- (void)disappearSegmentedControl {
-    self.segmentedControl.hidden = YES;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView
   numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-//#warning 若要显示搜索框则改为1，搜索框功能未实现
-        return 0;
-    }
     return self.jobList.jobList.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Job"];
-    if (indexPath.section == 0) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:@"searchBarCell"];
-        [cell addSubview:[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44)]];
-        return cell;
-    }
     ICJob *job = self.jobList.jobList[indexPath.row];
     cell.textLabel.text = job.title;
     return cell;
@@ -192,9 +172,7 @@
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         ICJob *job = self.jobList.jobList[indexPath.row];
         jobTableViewController.jobID = job.index;
-        [self disappearSegmentedControl];
         ICJobDetailTableViewController *controller = (ICJobDetailTableViewController*) segue.destinationViewController;
-        controller.delegate = self;
         controller.mode = [NSString stringWithFormat:@"APPEAR_FAVORITES_BUTTON"];
     } else if ([segue.identifier isEqualToString:@"IC_JOB_LIST_TO_CLASSIFICATION"]) {
         // 跳转到分类列表
@@ -338,6 +316,32 @@
             }
         });
     });
+}
+
+-     (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 48;
+    }
+    return 0;
+}
+
+-  (UIView *)tableView:(UITableView *)tableView
+viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 48)];
+        self.segmentedControl.center = view.center;
+        view.backgroundColor = self.segmentedControl.backgroundColor;
+        UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, .5)];
+        line1.backgroundColor = [UIColor lightGrayColor];
+        UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(0, 47.5, self.view.frame.size.width, .5)];
+        line2.backgroundColor = [UIColor lightGrayColor];
+        [view addSubview:self.segmentedControl];
+        [view addSubview:line1];
+        [view addSubview:line2];
+        return view;
+    }
+    return nil;
 }
 
 - (void)loginViewController:(ICLoginViewController *)loginViewContrller

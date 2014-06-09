@@ -15,7 +15,6 @@
 @interface ICJobListTableViewController : UITableViewController
 <
 ICJobClassificationListTableViewControllerDelegate,
-ICJobDetailTableViewControllerDelegate,
 ICJobMoreTableViewControllerDelegate,
 ICLoginViewControllerDelegate
 >

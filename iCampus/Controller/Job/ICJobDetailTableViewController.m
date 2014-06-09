@@ -207,7 +207,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (buttonIndex) {
         case 0: {
             [self.navigationController popViewControllerAnimated:YES];
-            [self.delegate appearSegmentedControl];
             break;
         }
         default: {break;}
@@ -221,7 +220,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (IBAction)cancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    [self.delegate appearSegmentedControl];
 }
 
 @end

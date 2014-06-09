@@ -8,17 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ICJobDetailTableViewControllerDelegate <NSObject>
-
-- (void)appearSegmentedControl;
-
-@end
-
 @class ICJob;
 
 @interface ICJobDetailTableViewController : UITableViewController
 
-@property (weak, nonatomic) id <ICJobDetailTableViewControllerDelegate> delegate;
 @property (strong, nonatomic) ICJob *job;
 @property NSInteger jobID;
 @property (strong, nonatomic) UIBarButtonItem *favoritesButton;
