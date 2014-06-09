@@ -13,19 +13,11 @@
 @interface ICJobDetailTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *descriptionCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *locationCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *qualificationsCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *salaryCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *companyCell;
 @property (weak, nonatomic) IBOutlet UILabel *contactNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactPhoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactEmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactQQLabel;
 @property (nonatomic, strong) MBProgressHUD *HUD;
-
-- (IBAction)cancel:(id)sender;
-
-
 
 @end
 
@@ -46,14 +38,6 @@
         self.navigationItem.title = self.job.title;
         if (![self.job.description isKindOfClass:[NSNull class]])
             self.descriptionCell.textLabel.text = self.job.description;
-        if (![self.job.location isKindOfClass:[NSNull class]])
-            self.locationCell.textLabel.text = self.job.location;
-        if (![self.job.qualifications isKindOfClass:[NSNull class]])
-            self.qualificationsCell.textLabel.text = self.job.qualifications;
-        if (![self.job.salary isKindOfClass:[NSNull class]])
-            self.salaryCell.textLabel.text = self.job.salary;
-        if (![self.job.company isKindOfClass:[NSNull class]])
-            self.companyCell.textLabel.text = self.job.company;
         if (![self.job.contactName isKindOfClass:[NSNull class]])
             self.contactNameLabel.text = self.job.contactName;
         if (![self.job.contactPhone isKindOfClass:[NSNull class]])
@@ -63,10 +47,6 @@
         if (![self.job.contactQQ isKindOfClass:[NSNull class]])
             self.contactQQLabel.text = self.job.contactQQ;
         [self.descriptionCell.textLabel sizeToFit];
-        [self.locationCell.textLabel sizeToFit];
-        [self.qualificationsCell.textLabel sizeToFit];
-        [self.salaryCell.textLabel sizeToFit];
-        [self.companyCell.textLabel sizeToFit];
         [self.tableView reloadData];
         return;
     }
@@ -102,14 +82,6 @@
                 self.navigationItem.title = self.job.title;
                 if (![self.job.description isKindOfClass:[NSNull class]])
                     self.descriptionCell.textLabel.text = self.job.description;
-                if (![self.job.location isKindOfClass:[NSNull class]])
-                    self.locationCell.textLabel.text = self.job.location;
-                if (![self.job.qualifications isKindOfClass:[NSNull class]])
-                    self.qualificationsCell.textLabel.text = self.job.qualifications;
-                if (![self.job.salary isKindOfClass:[NSNull class]])
-                    self.salaryCell.textLabel.text = self.job.salary;
-                if (![self.job.company isKindOfClass:[NSNull class]])
-                    self.companyCell.textLabel.text = self.job.company;
                 if (![self.job.contactName isKindOfClass:[NSNull class]])
                     self.contactNameLabel.text = self.job.contactName;
                 if (![self.job.contactPhone isKindOfClass:[NSNull class]])
@@ -119,10 +91,6 @@
                 if (![self.job.contactQQ isKindOfClass:[NSNull class]])
                     self.contactQQLabel.text = self.job.contactQQ;
                 [self.descriptionCell.textLabel sizeToFit];
-                [self.locationCell.textLabel sizeToFit];
-                [self.qualificationsCell.textLabel sizeToFit];
-                [self.salaryCell.textLabel sizeToFit];
-                [self.companyCell.textLabel sizeToFit];
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
                 
@@ -216,10 +184,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (NSIndexPath*)tableView:(UITableView *)tableView
  willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
-}
-
-- (IBAction)cancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
