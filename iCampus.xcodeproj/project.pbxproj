@@ -134,6 +134,21 @@
 		A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5401830ED39007D569E /* MBProgressHUD.m */; };
 		A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5451830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m */; };
 		A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */; };
+		BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */; };
+		BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF4193C816200542524 /* ICUsedGoodDetailView.m */; };
+		BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF8193C816200542524 /* ICUsedGoodListCell.m */; };
+		BE168E09193C818C00542524 /* ICUsedGoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E00193C818C00542524 /* ICUsedGoodDetailViewController.m */; };
+		BE168E0A193C818C00542524 /* ICUsedGoodFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E02193C818C00542524 /* ICUsedGoodFilterViewController.m */; };
+		BE168E0B193C818C00542524 /* ICUsedGoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E04193C818C00542524 /* ICUsedGoodListViewController.m */; };
+		BE168E0C193C818C00542524 /* ICUsedGoodMyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E06193C818C00542524 /* ICUsedGoodMyListTableViewController.m */; };
+		BE168E22193C82B300542524 /* ICUsedGood.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E1B193C82B300542524 /* ICUsedGood.m */; };
+		BE168E23193C82B300542524 /* ICUsedGoodDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E1D193C82B300542524 /* ICUsedGoodDetail.m */; };
+		BE168E29193C82DC00542524 /* APNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E28193C82DC00542524 /* APNavigationController.m */; };
+		BE4695C8193CCC9C001D8BFB /* ICUsedGoodType.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */; };
+		BED23A13193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED23A12193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m */; };
+		BEF1E3EA193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E3E9193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m */; };
+		BEF1E3ED193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E3EC193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m */; };
+		BEF1E3F0193F444D00ED0B14 /* ICUsedGoodImagePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E3EF193F444D00ED0B14 /* ICUsedGoodImagePoster.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,6 +404,36 @@
 		A3C8B5451830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		A3C8B5461830F6CF007D569E /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		BE1455E31941460C00D9F850 /* ICUsedGoodFilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodFilterTableViewCell.h; path = UsedGood/ICUsedGoodFilterTableViewCell.h; sourceTree = "<group>"; };
+		BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodFilterTableViewCell.m; path = UsedGood/ICUsedGoodFilterTableViewCell.m; sourceTree = "<group>"; };
+		BE168DF3193C816200542524 /* ICUsedGoodDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodDetailView.h; path = UsedGood/ICUsedGoodDetailView.h; sourceTree = "<group>"; };
+		BE168DF4193C816200542524 /* ICUsedGoodDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodDetailView.m; path = UsedGood/ICUsedGoodDetailView.m; sourceTree = "<group>"; };
+		BE168DF7193C816200542524 /* ICUsedGoodListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodListCell.h; path = UsedGood/ICUsedGoodListCell.h; sourceTree = "<group>"; };
+		BE168DF8193C816200542524 /* ICUsedGoodListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodListCell.m; path = UsedGood/ICUsedGoodListCell.m; sourceTree = "<group>"; };
+		BE168DFF193C818C00542524 /* ICUsedGoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodDetailViewController.h; path = UsedGood/ICUsedGoodDetailViewController.h; sourceTree = "<group>"; };
+		BE168E00193C818C00542524 /* ICUsedGoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodDetailViewController.m; path = UsedGood/ICUsedGoodDetailViewController.m; sourceTree = "<group>"; };
+		BE168E01193C818C00542524 /* ICUsedGoodFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodFilterViewController.h; path = UsedGood/ICUsedGoodFilterViewController.h; sourceTree = "<group>"; };
+		BE168E02193C818C00542524 /* ICUsedGoodFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodFilterViewController.m; path = UsedGood/ICUsedGoodFilterViewController.m; sourceTree = "<group>"; };
+		BE168E03193C818C00542524 /* ICUsedGoodListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodListViewController.h; path = UsedGood/ICUsedGoodListViewController.h; sourceTree = "<group>"; };
+		BE168E04193C818C00542524 /* ICUsedGoodListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodListViewController.m; path = UsedGood/ICUsedGoodListViewController.m; sourceTree = "<group>"; };
+		BE168E05193C818C00542524 /* ICUsedGoodMyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodMyListTableViewController.h; path = UsedGood/ICUsedGoodMyListTableViewController.h; sourceTree = "<group>"; };
+		BE168E06193C818C00542524 /* ICUsedGoodMyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodMyListTableViewController.m; path = UsedGood/ICUsedGoodMyListTableViewController.m; sourceTree = "<group>"; };
+		BE168E1A193C82B300542524 /* ICUsedGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsedGood.h; sourceTree = "<group>"; };
+		BE168E1B193C82B300542524 /* ICUsedGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGood.m; sourceTree = "<group>"; };
+		BE168E1C193C82B300542524 /* ICUsedGoodDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsedGoodDetail.h; sourceTree = "<group>"; };
+		BE168E1D193C82B300542524 /* ICUsedGoodDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGoodDetail.m; sourceTree = "<group>"; };
+		BE168E27193C82DC00542524 /* APNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNavigationController.h; sourceTree = "<group>"; };
+		BE168E28193C82DC00542524 /* APNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNavigationController.m; sourceTree = "<group>"; };
+		BE4695C6193CCC9C001D8BFB /* ICUsedGoodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsedGoodType.h; sourceTree = "<group>"; };
+		BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGoodType.m; sourceTree = "<group>"; };
+		BED23A11193D726100EBAB92 /* ICUsedGoodPublishTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodPublishTableViewController.h; path = UsedGood/ICUsedGoodPublishTableViewController.h; sourceTree = "<group>"; };
+		BED23A12193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodPublishTableViewController.m; path = UsedGood/ICUsedGoodPublishTableViewController.m; sourceTree = "<group>"; };
+		BEF1E3E8193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodPublishTableCellTableViewCell.h; path = UsedGood/ICUsedGoodPublishTableCellTableViewCell.h; sourceTree = "<group>"; };
+		BEF1E3E9193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodPublishTableCellTableViewCell.m; path = UsedGood/ICUsedGoodPublishTableCellTableViewCell.m; sourceTree = "<group>"; };
+		BEF1E3EB193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodUploadImageView.h; path = UsedGood/ICUsedGoodUploadImageView.h; sourceTree = "<group>"; };
+		BEF1E3EC193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodUploadImageView.m; path = UsedGood/ICUsedGoodUploadImageView.m; sourceTree = "<group>"; };
+		BEF1E3EE193F444D00ED0B14 /* ICUsedGoodImagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodImagePoster.h; path = UsedGood/ICUsedGoodImagePoster.h; sourceTree = "<group>"; };
+		BEF1E3EF193F444D00ED0B14 /* ICUsedGoodImagePoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodImagePoster.m; path = UsedGood/ICUsedGoodImagePoster.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +688,7 @@
 		95A000E1186218A0008B18BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE168D94193C801300542524 /* UsedGood */,
 				95A000E2186218A0008B18BD /* Bus */,
 				95A000E3186218A0008B18BD /* Campus */,
 				95A000E4186218A0008B18BD /* News */,
@@ -738,6 +784,7 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BE168D95193C801C00542524 /* UsedGood */,
 				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				47D25F06191F5D2A00DADA49 /* Job */,
 				1C878B0418CDDAAD00BEAC6B /* Map */,
@@ -826,6 +873,7 @@
 		95AC7074185F473200C94B71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE168E19193C82B300542524 /* UsedGood */,
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
 				47D25F19191F5DAF00DADA49 /* Job */,
 				95C2C4E21907F653009E39C7 /* About */,
@@ -958,8 +1006,8 @@
 			children = (
 				95A000B518620B91008B18BD /* LICENSE */,
 				95A000AC1861F504008B18BD /* Main.storyboard */,
-				95A000A61861F4CD008B18BD /* ICAppDelegate.h */,
 				95A000A71861F4CD008B18BD /* ICAppDelegate.m */,
+				95A000A61861F4CD008B18BD /* ICAppDelegate.h */,
 				95E4852B18942D90006402FD /* ICConfig.h */,
 				95AC7074185F473200C94B71 /* Model */,
 				95A000E1186218A0008B18BD /* View */,
@@ -1053,6 +1101,7 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				BE168E26193C82DC00542524 /* APNavigationController */,
 				95697EFC190B5F340088D564 /* CAAnimationBlocks */,
 				95697F02190B5F340088D564 /* LMFixedTextView */,
 				95697F08190B5F340088D564 /* RBBAnimation */,
@@ -1086,6 +1135,64 @@
 				A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */,
 			);
 			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		BE168D94193C801300542524 /* UsedGood */ = {
+			isa = PBXGroup;
+			children = (
+				BE168DF3193C816200542524 /* ICUsedGoodDetailView.h */,
+				BE168DF4193C816200542524 /* ICUsedGoodDetailView.m */,
+				BE168DF7193C816200542524 /* ICUsedGoodListCell.h */,
+				BE168DF8193C816200542524 /* ICUsedGoodListCell.m */,
+				BEF1E3E8193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.h */,
+				BEF1E3E9193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m */,
+				BEF1E3EB193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.h */,
+				BEF1E3EC193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m */,
+				BEF1E3EE193F444D00ED0B14 /* ICUsedGoodImagePoster.h */,
+				BEF1E3EF193F444D00ED0B14 /* ICUsedGoodImagePoster.m */,
+				BE1455E31941460C00D9F850 /* ICUsedGoodFilterTableViewCell.h */,
+				BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */,
+			);
+			name = UsedGood;
+			sourceTree = "<group>";
+		};
+		BE168D95193C801C00542524 /* UsedGood */ = {
+			isa = PBXGroup;
+			children = (
+				BE168DFF193C818C00542524 /* ICUsedGoodDetailViewController.h */,
+				BE168E00193C818C00542524 /* ICUsedGoodDetailViewController.m */,
+				BE168E01193C818C00542524 /* ICUsedGoodFilterViewController.h */,
+				BE168E02193C818C00542524 /* ICUsedGoodFilterViewController.m */,
+				BE168E03193C818C00542524 /* ICUsedGoodListViewController.h */,
+				BE168E04193C818C00542524 /* ICUsedGoodListViewController.m */,
+				BE168E05193C818C00542524 /* ICUsedGoodMyListTableViewController.h */,
+				BE168E06193C818C00542524 /* ICUsedGoodMyListTableViewController.m */,
+				BED23A11193D726100EBAB92 /* ICUsedGoodPublishTableViewController.h */,
+				BED23A12193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m */,
+			);
+			name = UsedGood;
+			sourceTree = "<group>";
+		};
+		BE168E19193C82B300542524 /* UsedGood */ = {
+			isa = PBXGroup;
+			children = (
+				BE168E1A193C82B300542524 /* ICUsedGood.h */,
+				BE168E1B193C82B300542524 /* ICUsedGood.m */,
+				BE168E1C193C82B300542524 /* ICUsedGoodDetail.h */,
+				BE168E1D193C82B300542524 /* ICUsedGoodDetail.m */,
+				BE4695C6193CCC9C001D8BFB /* ICUsedGoodType.h */,
+				BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */,
+			);
+			path = UsedGood;
+			sourceTree = "<group>";
+		};
+		BE168E26193C82DC00542524 /* APNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BE168E27193C82DC00542524 /* APNavigationController.h */,
+				BE168E28193C82DC00542524 /* APNavigationController.m */,
+			);
+			path = APNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1203,12 +1310,15 @@
 			files = (
 				95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
+				BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */,
 				95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */,
 				47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */,
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
+				BE168E0B193C818C00542524 /* ICUsedGoodListViewController.m in Sources */,
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				9508477F18658760008A4571 /* ICBusStationView.m in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
+				BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
 				1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */,
 				95353F93190A96DD00354F0B /* LMEmbeddedViewController.m in Sources */,
@@ -1217,6 +1327,7 @@
 				47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
+				BE168E0C193C818C00542524 /* ICUsedGoodMyListTableViewController.m in Sources */,
 				95798EA5186285080049CF77 /* KIImagePager.m in Sources */,
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
@@ -1238,6 +1349,7 @@
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
 				47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */,
 				A320CA58183E353100BCA05F /* UIImageView+AFNetworking.m in Sources */,
+				BEF1E3EA193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m in Sources */,
 				954F569D190CEDAD00138ACF /* ICUser.m in Sources */,
 				A320CA59183E353100BCA05F /* UIProgressView+AFNetworking.m in Sources */,
 				95A00100186227D0008B18BD /* ICNewsChannelCell.m in Sources */,
@@ -1266,9 +1378,11 @@
 				95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */,
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,
 				A320CA77183E365D00BCA05F /* AFURLSessionManager.m in Sources */,
+				BE4695C8193CCC9C001D8BFB /* ICUsedGoodType.m in Sources */,
 				955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */,
 				9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */,
 				95697F27190B5F340088D564 /* RBBEasingFunction.m in Sources */,
+				BE168E23193C82B300542524 /* ICUsedGoodDetail.m in Sources */,
 				470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */,
 				95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */,
 				A320CA74183E365D00BCA05F /* AFURLConnectionOperation.m in Sources */,
@@ -1276,25 +1390,33 @@
 				95A000DA186214FA008B18BD /* ICBusList.m in Sources */,
 				A320CA72183E365D00BCA05F /* AFNetworkReachabilityManager.m in Sources */,
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
+				BE168E09193C818C00542524 /* ICUsedGoodDetailViewController.m in Sources */,
 				A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */,
 				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
+				BE168E0A193C818C00542524 /* ICUsedGoodFilterViewController.m in Sources */,
+				BE168E22193C82B300542524 /* ICUsedGood.m in Sources */,
 				951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
+				BE168E29193C82DC00542524 /* APNavigationController.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
 				47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */,
 				955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */,
+				BEF1E3ED193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m in Sources */,
 				95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */,
+				BEF1E3F0193F444D00ED0B14 /* ICUsedGoodImagePoster.m in Sources */,
 				95353F94190A96DD00354F0B /* LMModalItemTableViewCell.m in Sources */,
 				A320CA55183E353100BCA05F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A320CA6F183E365D00BCA05F /* AFHTTPRequestOperation.m in Sources */,
 				95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */,
+				BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */,
 				95A000EA186218A0008B18BD /* ICNewsCell.m in Sources */,
 				95A001071862388B008B18BD /* Base64.m in Sources */,
 				95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */,
 				95697F26190B5F340088D564 /* RBBCustomAnimation.m in Sources */,
 				95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */,
+				BED23A13193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m in Sources */,
 				A30D1E09182A64BA00F35D4F /* main.m in Sources */,
 				A320CA56183E353100BCA05F /* UIAlertView+AFNetworking.m in Sources */,
 				95AC70B6185F473300C94B71 /* ICNewsDetailAttachment.m in Sources */,
@@ -1432,13 +1554,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1449,13 +1571,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zheng zeng (37KUB55X29)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zheng zeng (37KUB55X29)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F7AB56C3-AD02-4883-BB40-580B12A2EFE2";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

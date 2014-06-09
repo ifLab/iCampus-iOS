@@ -28,6 +28,12 @@ static const NSString *ICYellowPageDepartmentToListIdentifier = @"IC_YELLOWPAGE_
 static const NSString *ICYellowPageListToNewContactIdentifier = @"IC_YELLOWPAGE_LIST_TO_NEW_CONTACT";
 static const NSString *ICAccountToLoginIdentifier             = @"IC_ACCOUNT_TO_LOGIN"              ;
 static const NSString *ICAccountToEditIdentifier              = @"IC_ACCOUNT_TO_EDIT"               ;
+static const NSString *ICUsedGoodListToFilterIdentifier       = @"IC_USED_GOOD_LIST_TO_FILTER"      ;
+static const NSString *ICUsedGoodListToMyListIdentifier       = @"IC_USED_GOOD_LIST_TO_MYLIST"      ;
+static const NSString *ICUsedGoodListToPublishIdentifier      = @"IC_USED_GOOD_LIST_TO_PUBLISH"     ;
+static const NSString *ICUsedGoodPublishToLoginIdentifier     = @"IC_USED_GOOD_PUBLISH_TO_LOGIN"    ;
+static const NSString *ICUsedGoodMyListToLoginIdentifier      = @"IC_USED_GOOD_MY_LIST_TO_LOGIN"    ;
+
 
 //=====================================================================
 

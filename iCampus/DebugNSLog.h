@@ -8,7 +8,7 @@
 
 #if DEBUG
 
-#warning NSLogs will be shown
+// #warning NSLogs will be shown
 
 #else
 
