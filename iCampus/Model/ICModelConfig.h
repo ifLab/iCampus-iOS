@@ -34,6 +34,13 @@
 #           define IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG
 #           define IC_YELLOWPAGE_CONTACT_DATA_MODULE_DEBUG
 #       endif
+#       define IC_JOB_DATA_MODULE_DEBUG
+#       ifdef IC_JOB_DATA_MODULE_DEBUG
+#           define IC_JOB_LIST_DATA_MODULE_DEBUG
+#           define IC_JOB_DETAIL_DATA_MODULE_DEBUG
+#           define IC_JOB_CLASSIFICATION_DATA_MODULE_DEBUG
+#           define IC_JOB_PUBLISH_DATA_MODULE_DEBUG
+#       endif
 #   endif
 
 //=====================================================================

@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ICUser.h"
-#import "../../Model/Job/ICJobList.h"
-#import "../../Model/Job/ICJobClassificationList.h"
-#import "ICJobDetailTableViewController.h"
 #import "ICJobClassificationListTableViewController.h"
+#import "ICJobDetailTableViewController.h"
 #import "ICJobMoreTableViewController.h"
-#import "../Setting/ICLoginViewController.h"
-#import "MBProgressHUD.h"
+#import "ICLoginViewController.h"
 
-@interface ICJobListTableViewController : UITableViewController <ICJobClassificationListTableViewControllerDelegate, ICJobDetailTableViewControllerDelegate, ICJobMoreTableViewControllerDelegate, ICLoginViewControllerDelegate>
-
+@interface ICJobListTableViewController : UITableViewController
+<
+ICJobClassificationListTableViewControllerDelegate,
+ICJobMoreTableViewControllerDelegate,
+ICLoginViewControllerDelegate
+>
 @end

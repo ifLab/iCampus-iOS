@@ -93,7 +93,6 @@
         ICUsedGoodDetailViewController *detailViewController = (ICUsedGoodDetailViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         detailViewController.usedGood= self.datas[indexPath.row];
-        detailViewController.del.hidden=NO;
     } else if ([segue.identifier isEqualToString:(NSString *)ICUsedGoodMyListToLoginIdentifier]) {
         UINavigationController *navigationViewController = (UINavigationController *)segue.destinationViewController;
         ICLoginViewController *loginViewController = (ICLoginViewController *)navigationViewController.topViewController;

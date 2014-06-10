@@ -37,9 +37,12 @@
             NSMutableArray *imgURLlist=[NSMutableArray array];
             for (NSString __strong *str in [urlString componentsSeparatedByString:@";"]) {
                 NSURL *url=[NSURL URLWithString:str];
-                [imgURLlist addObject:url];
+                if (url) {
+                    [imgURLlist addObject:url];
+                }
             }
             good.imageURLs=[NSMutableArray arrayWithArray:imgURLlist];
+            
             good.price=a[@"price"];
             good.title=a[@"titile"];
             good.time=a[@"time"];
@@ -52,9 +55,8 @@
         }
         NSArray *reveredArray = [[list reverseObjectEnumerator]allObjects];
         return [NSArray arrayWithArray:reveredArray];
-    }else{
-        return Nil;
     }
+    return nil;
 }
 + (NSArray *)goodListWithUserID:(NSString *)userID {
     NSMutableArray *list = [NSMutableArray array];
@@ -79,7 +81,10 @@
             NSMutableArray *imgURLlist=[NSMutableArray array];
             for (NSString __strong *str in [urlString componentsSeparatedByString:@";"]) {
                 NSURL *url=[NSURL URLWithString:str];
-                [imgURLlist addObject:url];
+                if (url) {
+                    [imgURLlist addObject:url];
+                }
+
             }
             good.imageURLs=[NSMutableArray arrayWithArray:imgURLlist];
             good.time=a[@"time"];

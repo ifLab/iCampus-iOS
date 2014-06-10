@@ -41,7 +41,7 @@
     if (success) {
         self.datas=[NSMutableArray array];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            self.datas= [[NSMutableArray alloc]initWithArray:[ICUsedGood goodListWithType:nil]];
+            self.datas = [NSMutableArray arrayWithArray:[ICUsedGood goodListWithType:nil]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });
@@ -128,6 +128,7 @@
         ICUsedGoodDetailViewController *detailViewController = (ICUsedGoodDetailViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         detailViewController.usedGood= self.datas[indexPath.row];
+        detailViewController.navigationItem.rightBarButtonItem=nil;
     } else if ([segue.identifier isEqualToString:(NSString *)ICUsedGoodListToFilterIdentifier])
     {
         ICUsedGoodFilterViewController *filterViewController = (ICUsedGoodFilterViewController *)((UINavigationController *)segue.destinationViewController).topViewController;

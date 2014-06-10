@@ -7,18 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ICJob.h"
-#import "ICJobClassification.h"
 
-@class ICJob, ICJobChannel;
+@class ICJob, ICJobChannel, ICJobClassification;
 
 @interface ICJobList : NSObject
 
 @property (nonatomic, strong) NSMutableArray *jobList;
 
 + (id)loadJobListWithType:(BOOL)type
-             classification:(ICJobClassification*)classification;
+           classification:(ICJobClassification *)classification;
 
-+ (id)loadJobListWithID:(NSString*)userID;
++ (id)loadJobListWithID:(NSString *)userID;
 
 @end

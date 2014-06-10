@@ -7,11 +7,11 @@
 //
 
 #import "ICJobFavoritesJobList.h"
+#import "ICJob.h"
 
 @implementation ICJobFavoritesJobList
 
-- (NSMutableArray *)favoritesList
-{
+- (NSMutableArray *)favoritesList {
     if (!_favoritesList) {
         _favoritesList = [@[] mutableCopy];
     }
@@ -23,7 +23,6 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     if (![fm changeCurrentDirectoryPath:documentsDirectory]) {
-        NSLog(@"兼职：进入Documents目录失败");
         return nil;
     }
     if (![fm changeCurrentDirectoryPath:@"ICJob"]) {
@@ -31,29 +30,23 @@
            withIntermediateDirectories:YES
                             attributes:nil
                                  error:NULL]) {
-            NSLog(@"兼职：创建ICJob目录失败");
             return nil;
         }
         if (![fm changeCurrentDirectoryPath:@"ICJob"]) {
-            NSLog(@"兼职：进入ICJob目录失败");
             return nil;
         }
     }
     NSString *jobDirectory = [fm currentDirectoryPath];
     NSString *dataPath = [jobDirectory stringByAppendingPathComponent:@"FavoritesJobs.json"];
-    NSLog(@"兼职：成功进入ICJob目录，%@", jobDirectory);
     if (![fm fileExistsAtPath:dataPath]) {
         if (![fm createFileAtPath:dataPath contents:nil attributes:nil]) {
-            NSLog(@"兼职：创建FavoritesJobList失败");
             return nil;
         }
     }
     if (![fm isReadableFileAtPath:dataPath]) {
-        NSLog(@"兼职：无法读取FavoritesJobList");
         return nil;
     }
     if (![fm isWritableFileAtPath:dataPath]) {
-        NSLog(@"兼职：无法读取FavoritesJobList");
         return nil;
     }
     return dataPath;
@@ -99,30 +92,18 @@
     NSFileManager *fm = [[NSFileManager alloc] init];
     NSMutableArray *jobArray = [NSMutableArray array];
     for (ICJob *job in self.favoritesList) {
-        NSDictionary *j = [[NSDictionary alloc] initWithObjects:@[[NSString stringWithFormat:@"%lu", (unsigned long)job.index],
-                                                                  job.title,
-                                                                  job.description,
-                                                                  job.location,
-                                                                  job.qualifications,
-                                                                  job.salary,
-                                                                  job.company,
-                                                                  job.contactName,
-                                                                  job.contactPhone,
-                                                                  job.contactEmail,
-                                                                  job.contactQQ,
-                                                                  job.promulgatorID]
-                                                        forKeys:@[@"id",
-                                                                  @"title",
-                                                                  @"description",
-                                                                  @"location",
-                                                                  @"qualifications",
-                                                                  @"salary",
-                                                                  @"company",
-                                                                  @"contactName",
-                                                                  @"contactPhone",
-                                                                  @"contactEmail",
-                                                                  @"contactQQ",
-                                                                  @"promulgatorID"]];
+        NSDictionary *j = @{@"id"            : [NSString stringWithFormat:@"%lu", (unsigned long)job.index],
+                            @"title"         : job.title,
+                            @"description"   : job.description,
+                            @"location"      : job.location,
+                            @"qualifications": job.qualifications,
+                            @"salary"        : job.salary,
+                            @"company"       : job.company,
+                            @"contactName"   : job.contactName,
+                            @"contactPhone"  : job.contactPhone,
+                            @"contactEmail"  : job.contactEmail,
+                            @"contactQQ"     : job.contactQQ,
+                            @"promulgatorID" : job.promulgatorID};
         [jobArray addObject:j];
     }
     NSData *data = [NSJSONSerialization dataWithJSONObject:jobArray options:NSJSONWritingPrettyPrinted error:nil];
@@ -132,20 +113,24 @@
 
 + (BOOL)addJob:(ICJob*)job {
     ICJobFavoritesJobList *list = [ICJobFavoritesJobList loadData];
-    for (ICJob *j in list.favoritesList) {
-        if (j.index == job.index) {
-            return NO;
-        }
+    if ([ICJobFavoritesJobList checkJob:job]) {
+        return NO;
     }
     [list.favoritesList addObject:job];
     [list writeData];
     return YES;
 }
 
-- (BOOL)deleteJob:(ICJob*)job {
-    [self.favoritesList removeObject:job];
-    [self writeData];
-    return YES;
++ (BOOL)deleteJob:(ICJob*)job {
+    ICJobFavoritesJobList *list = [ICJobFavoritesJobList loadData];
+    for (ICJob *j in list.favoritesList) {
+        if (j.index == job.index) {
+            [list.favoritesList removeObject:j];
+            [list writeData];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 + (BOOL)checkJob:(ICJob*)job {

@@ -7,12 +7,9 @@
 //
 
 #import "ICJobList.h"
-
-@interface ICJobList ()
-
-@property NSURL *url;
-
-@end
+#import "ICJobClassification.h"
+#import "ICJob.h"
+#import "ICModelConfig.h"
 
 @implementation ICJobList
 
@@ -25,62 +22,73 @@
 }
 
 + (id)loadJobListWithType:(BOOL)type
-           classification:(ICJobClassification*)classification {
+           classification:(ICJobClassification *)classification {
     ICJobList *list = [[ICJobList alloc] init];
-    ICJob *job;
-    
-    NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php"];
-    if (classification.index == 0) {
-        u = [NSString stringWithFormat:@"%@?mod=%@", u, (type ? @"1" : @"2")];
-    } else {
-        u = [NSString stringWithFormat:@"%@%@&typeid=%lu", u, (type ? @"?mod=2" : @"?mod=1"), (unsigned long)classification.index];
+    if (list) {
+        NSMutableString *URLString = [NSMutableString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?mod=%@",
+                                      type ? @"1" : @"2"];
+        if (classification.index != 0) {
+            [URLString appendFormat:@"&typeid=%lu", (unsigned long)classification.index];
+        }
+        NSURL *URL = [NSURL URLWithString:URLString];
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_LIST_DATA_MODULE_DEBUG)
+            NSLog(@"%@ %@ %@", ICJobListTag, ICFetchingTag, URLString);
+#       endif
+        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:URL]
+                                             returningResponse:nil
+                                                         error:nil];
+        if (!data) {
+#           ifdef IC_JOB_LIST_DATA_MODULE_DEBUG
+                NSLog(@"%@ %@ %@ %@", ICJobListTag, ICFailedTag, ICNullTag, URLString);
+#           endif
+            return nil;
+        }
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_LIST_DATA_MODULE_DEBUG)
+            NSLog(@"%@ %@ %@", ICJobListTag, ICSucceededTag, URLString);
+#       endif
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:data
+                                                        options:kNilOptions
+                                                          error:nil];
+        for (NSDictionary *j in json) {
+            ICJob *job = [[ICJob alloc] init];
+            job.index = [j[@"id"] intValue];
+            job.title = j[@"title"];
+            [list.jobList addObject:job];
+        }
     }
-    list.url = [NSURL URLWithString:u];
-    NSLog(@"兼职：开始获取工作列表，%@", list.url);
-    NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:list.url]
-                                         returningResponse:nil
-                                                     error:nil];
-    if (!data) {
-        NSLog(@"兼职：获取工作列表错误");
-        return nil;
-    }
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:data
-                                                    options:kNilOptions
-                                                      error:nil];
-    for (NSDictionary *j in json) {
-        job = [[ICJob alloc] init];
-        job.index = [j[@"id"] intValue];
-        job.title = j[@"title"];
-        [list.jobList addObject:job];
-    }
-    NSLog(@"兼职：获取工作个数：%lu", (unsigned long)list.jobList.count);
     return list;
 }
 
-+ (id)loadJobListWithID:(NSString*)userID {
++ (id)loadJobListWithID:(NSString *)userID {
     ICJobList *list = [[ICJobList alloc] init];
-    ICJob *job;
-    
-    NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?userid=%@", userID];
-    list.url = [NSURL URLWithString:u];
-    NSLog(@"兼职：开始获取发布列表，%@", list.url);
-    NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:list.url]
-                                         returningResponse:nil
-                                                     error:nil];
-    if (!data) {
-        NSLog(@"兼职：获取发布列表错误");
-        return nil;
+    if (list) {
+        NSString *URLString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?userid=%@", userID];
+        NSURL *URL = [NSURL URLWithString:URLString];
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_LIST_DATA_MODULE_DEBUG)
+            NSLog(@"%@ %@ %@", ICJobListTag, ICFetchingTag, URLString);
+#       endif
+        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:URL]
+                                             returningResponse:nil
+                                                         error:nil];
+        if (!data) {
+#           ifdef IC_JOB_LIST_DATA_MODULE_DEBUG
+                NSLog(@"%@ %@ %@ %@", ICJobListTag, ICFailedTag, ICNullTag, URLString);
+#           endif
+            return nil;
+        }
+#       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_LIST_DATA_MODULE_DEBUG)
+            NSLog(@"%@ %@ %@", ICJobListTag, ICSucceededTag, URLString);
+#       endif
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:data
+                                                        options:kNilOptions
+                                                          error:nil];
+        for (NSDictionary *j in json) {
+            ICJob *job = [[ICJob alloc] init];
+            job.index = [j[@"id"] intValue];
+            job.title = j[@"title"];
+            [list.jobList addObject:job];
+        }
     }
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:data
-                                                    options:kNilOptions
-                                                      error:nil];
-    for (NSDictionary *j in json) {
-        job = [[ICJob alloc] init];
-        job.index = [j[@"id"] intValue];
-        job.title = j[@"title"];
-        [list.jobList addObject:job];
-    }
-    NSLog(@"兼职：获取发布个数：%lu", (unsigned long)list.jobList.count);
     return list;
 }
 

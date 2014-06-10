@@ -7,10 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ICUser.h"
-#import "../../Model/Job/ICJobList.h"
-#import "ICJobDetailTableViewController.h"
-#import "MBProgressHUD.h"
 
 @protocol ICJobMyJobTableViewControllerDelegate <NSObject>
 

@@ -25,6 +25,10 @@ static const NSString *ICUserTag                 = @"[USER]"                 ;
 static const NSString *ICYellowPageDepartmentTag = @"[YELLOWPAGE|DEPARTMENT]";
 static const NSString *ICYellowPageListTag       = @"[YELLOWPAGE|LIST]"      ;
 static const NSString *ICYellowPageDialTag       = @"[YELLOWPAGE|DIAL]"      ;
+static const NSString *ICJobListTag              = @"[JOB|LIST]"             ;
+static const NSString *ICJobDetailTag            = @"[JOB|DETAIL]"           ;
+static const NSString *ICJobClassificationTag    = @"[JOB|CLASS]"            ;
+static const NSString *ICJobPublishTag           = @"[JOB|PUBLISH]"          ;
 
 static const NSString *ICFetchingTag  = @"<FETCHING>"  ;
 static const NSString *ICSucceededTag = @"<SUCCEEDED>" ;

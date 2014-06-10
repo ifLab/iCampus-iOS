@@ -7,11 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ICUser.h"
-#import "../../Model/Job/ICJobList.h"
-#import "../../Model/Job/ICJobClassificationList.h"
-#import "MBProgressHUD.h"
-#import "AFNetworking.h"
 
 @protocol ICJobNewJobTableViewControllerDelegate <NSObject>
 

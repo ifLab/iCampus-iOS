@@ -88,7 +88,7 @@
     if (accumulator > 2) outputLength++;
     
     //truncate data to match actual output length
-    outputData.length = outputLength;
+    outputData.length = (NSUInteger)outputLength;
     return outputLength? outputData: nil;
 }
 

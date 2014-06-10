@@ -21,6 +21,9 @@
         self.previewLabel.text=usedGood.preview;
         self.priceLabel.text=[NSString  stringWithFormat:  @"¥ %@" , usedGood.price];
         ICUsedGoodListCell __weak *__self = self;
+        if (!usedGood.imageURLs.count) {
+            return self;
+        }
         [self.thumbnailImageView setImageWithURLRequest:[NSURLRequest requestWithURL:(usedGood.imageURLs[0])]
                                    placeholderImage:[UIImage imageNamed:@"ICNewsDetailImagePlaceHolder"]
                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {

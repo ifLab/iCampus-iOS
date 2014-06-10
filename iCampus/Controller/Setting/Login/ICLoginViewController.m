@@ -33,9 +33,11 @@
 - (void)loginView:(ICLoginView *)loginView
              user:(ICUser *)user
          didLogin:(BOOL)success {
-    [self.delegate loginViewController:self
-                                  user:user
-                              didLogin:success];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate loginViewController:self
+                                      user:user
+                                  didLogin:success];
+    }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self
                                                                                            action:@selector(dismiss:)];

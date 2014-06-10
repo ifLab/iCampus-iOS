@@ -7,6 +7,10 @@
 //
 
 #import "ICJobMyJobTableViewController.h"
+#import "ICJob.h"
+#import "ICJobDetailTableViewController.h"
+#import "ICUser.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobMyJobTableViewController ()
 
@@ -72,7 +76,6 @@
 - (void) getData {
     // 数据获取
     if (!ICCurrentUser) {
-        NSLog(@"兼职：用户尚未登录");
         return;
     }
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
@@ -82,15 +85,28 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+                NSString *okString;
+                NSString *loadFailedString;
+                NSString *retryString;
+                NSArray *languages = [NSLocale preferredLanguages];
+                NSString *currentLanguage = [languages objectAtIndex:0];
+                if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                    okString = @"好";
+                    loadFailedString = @"加载失败";
+                    retryString = @"请检查您的网络连接后重试。";
+                } else {
+                    okString = @"OK";
+                    loadFailedString = @"Loading failed";
+                    retryString = @"Please check you network connection and try again.";
+                }
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:nil
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
-                NSLog(@"兼职：发布列表数据载入成功");
             }
         });
     });
@@ -102,7 +118,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     ICJob *job = self.jobList.jobList[indexPath.row];
     NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job_unvalid.php?id=%lu", (unsigned long)job.index];
     NSURL *url = [[NSURL alloc] initWithString:u];
-    NSLog(@"兼职：删除工作，ID：%lu，%@", (unsigned long)job.index, url);
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
     NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:url]
@@ -112,18 +127,29 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                                     options:kNilOptions
                                                       error:nil];
     NSInteger success = [json[@"id"] intValue];
-    NSLog(@"%ld", (long)success);
+    NSString *okString;
+    NSString *failedString;
+    NSString *retryString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        okString = @"好";
+        failedString = @"删除失败";
+        retryString = @"请检查您的网络连接后重试。";
+    } else {
+        okString = @"OK";
+        failedString = @"Remove failed";
+        retryString = @"Please check you network connection and try again.";
+    }
     if (!data || success != 0) {
         [self.HUD hide:YES];
-        NSLog(@"兼职：删除工作错误");
-        [[[UIAlertView alloc]initWithTitle:@"删除错误！"
-                                   message:@"请检查您的网络连接后重试"
+        [[[UIAlertView alloc]initWithTitle:failedString
+                                   message:retryString
                                   delegate:nil
-                         cancelButtonTitle:@"确定"
+                         cancelButtonTitle:okString
                          otherButtonTitles:nil]show];
     } else {
         [self.HUD hide:YES];
-        NSLog(@"兼职：删除工作成功");
         [self getData];
         [self.delegate tellICJobListTableViewControllerNeedReloadData];
     }

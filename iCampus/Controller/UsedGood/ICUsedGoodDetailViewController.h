@@ -13,6 +13,5 @@
 
 @interface ICUsedGoodDetailViewController : UIViewController
 @property(nonatomic, strong) ICUsedGood *usedGood;
-@property (strong, nonatomic) IBOutlet UIButton *del;
 
 @end

@@ -7,20 +7,21 @@
 //
 
 #import "ICJobNewJobTableViewController.h"
+#import "ICJob.h"
+#import "ICUser.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface ICJobNewJobTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UITextView *locationTextView;
-@property (weak, nonatomic) IBOutlet UITextView *qualificationsTextView;
-@property (weak, nonatomic) IBOutlet UITextView *salaryTextView;
-@property (weak, nonatomic) IBOutlet UITextView *companyTextView;
 @property (weak, nonatomic) IBOutlet UITextField *contactNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactPhoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactQQTextField;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
 
@@ -63,11 +64,6 @@
                                                                              action:@selector(dismissKeyBoard)];
     NSArray * buttonsArray = @[flexBtn, dismissKeyBoardButton];
     [topView setItems:buttonsArray];
-    [self.locationTextView setInputAccessoryView:topView];
-    [self.descriptionTextView setInputAccessoryView:topView];
-    [self.qualificationsTextView setInputAccessoryView:topView];
-    [self.salaryTextView setInputAccessoryView:topView];
-    [self.companyTextView setInputAccessoryView:topView];
     [self.contactPhoneTextField setInputAccessoryView:topView];
     [self.contactQQTextField setInputAccessoryView:topView];
     
@@ -78,15 +74,39 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.classificationList = [ICJobClassificationList loadJobClassificationList];
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *partTimeString;
+            NSString *fullTimeString;
+            NSString *allString;
+            NSString *okString;
+            NSString *loadFailedString;
+            NSString *retryString;
+            NSArray *languages = [NSLocale preferredLanguages];
+            NSString *currentLanguage = [languages objectAtIndex:0];
+            if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+                partTimeString = @"兼职";
+                fullTimeString = @"全职";
+                allString = @"全部";
+                okString = @"好";
+                loadFailedString = @"加载失败";
+                retryString = @"请检查您的网络连接后重试。";
+            } else {
+                partTimeString = @"Part-time";
+                fullTimeString = @"Full-time";
+                allString = @"All";
+                okString = @"OK";
+                loadFailedString = @"Loading failed";
+                retryString = @"Please check you network connection and try again.";
+            }
             if (self.classificationList == nil) {
                 [self.HUD hide:YES];
-                [[[UIAlertView alloc]initWithTitle:@"分类数据载入错误！"
-                                           message:@"请检查您的网络连接后重试"
+
+                [[[UIAlertView alloc]initWithTitle:loadFailedString
+                                           message:retryString
                                           delegate:self
-                                 cancelButtonTitle:@"确定"
+                                 cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
-                self.typeArray = [[NSMutableArray alloc] initWithObjects:@"兼职", @"全职", nil];
+                self.typeArray = [NSMutableArray arrayWithArray:@[partTimeString, fullTimeString]];
                 self.classificationArray = [[NSMutableArray alloc] init];
                 for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
                     if (classification.index != 0) {
@@ -96,7 +116,6 @@
                 [self.pickerView reloadAllComponents];
                 self.pickerView.hidden = 0;
                 [self.HUD hide:YES];
-                NSLog(@"兼职：分类选择器数据载入成功，并设置完成");
             }
         });
     });
@@ -113,148 +132,125 @@
 }
 
 - (IBAction)done:(id)sender {
-    if ([self.titleTextView.text length] == 0) {
-        self.titleTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+    BOOL __block failed = NO;
+    typedef BOOL (^TextViewTestingBlock)(UIView *);
+    typedef void (^SetSuperViewWithSubViewBlock)(UIView *);
+    TextViewTestingBlock isBlank = ^(UIView *view) {
+        if (view.class == [UITextView class]) {
+            return (BOOL)!((UITextView *)view).text.length;
+        } else if (view.class == [UITextField class]) {
+            return (BOOL)!((UITextField *)view).text.length;
+        }
+        return NO;
+    };
+    SetSuperViewWithSubViewBlock highlight = ^(UIView *view) {
+        view.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+        failed = YES;
+    };
+    SetSuperViewWithSubViewBlock reset = ^(UIView *view) {
+        view.superview.backgroundColor = [UIColor clearColor];
+    };
+    SetSuperViewWithSubViewBlock testHighlight = ^(UIView *view) {
+        if (isBlank(view)) {
+            highlight(view);
+        } else {
+            reset(view);
+        }
+    };
+    testHighlight(self.titleTextView);
+    testHighlight(self.descriptionTextView);
+    testHighlight(self.contactNameTextField);
+    if (isBlank(self.contactEmailTextField) && isBlank(self.contactPhoneTextField) && isBlank(self.contactQQTextField)) {
+        highlight(self.contactEmailTextField);
+        highlight(self.contactPhoneTextField);
+        highlight(self.contactQQTextField);
     } else {
-        self.titleTextView.superview.backgroundColor = [UIColor clearColor];
+        reset(self.contactPhoneTextField);
+        reset(self.contactEmailTextField);
+        reset(self.contactQQTextField);
     }
-    if ([self.descriptionTextView.text length] == 0) {
-        self.descriptionTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.descriptionTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    /*
-    if ([self.locationTextView.text length] == 0) {
-        self.locationTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.locationTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.qualificationsTextView.text length] == 0) {
-        self.qualificationsTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.qualificationsTextView.superview.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.salaryTextView.text length] == 0) {
-        self.salaryTextView.superview.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.salaryTextView.superview.backgroundColor = [UIColor clearColor];
-    } //*/
-    if ([self.contactNameTextField.text length] == 0) {
-        self.contactNameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.contactNameTextField.backgroundColor = [UIColor clearColor];
-    }
-    if ([self.contactPhoneTextField.text length] +
-        [self.contactEmailTextField.text length] +
-        [self.contactQQTextField.text length] == 0) {
-        self.contactPhoneTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-        self.contactEmailTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-        self.contactQQTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
-    } else {
-        self.contactPhoneTextField.backgroundColor = [UIColor clearColor];
-        self.contactEmailTextField.backgroundColor = [UIColor clearColor];
-        self.contactQQTextField.backgroundColor = [UIColor clearColor];
+    if (failed) {
+        return;
     }
     
-    if ([self.titleTextView.text length] *
-        [self.descriptionTextView.text length] *
-//        [self.locationTextView.text length] *
-//        [self.qualificationsTextView.text length] *
-//        [self.salaryTextView.text length] *
-        [self.contactNameTextField.text length] == 0) {
-        [[[UIAlertView alloc]initWithTitle:@"信息不完整！"
-                                   message:@"请确认已正确填写所有必填项后再提交"
-                                  delegate:nil
-                         cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil]show];
-    } else if ([self.contactPhoneTextField.text length] +
-               [self.contactEmailTextField.text length] +
-               [self.contactQQTextField.text length] == 0) {
-        [[[UIAlertView alloc]initWithTitle:@"信息不完整！"
-                                   message:@"请至少填写一种联系方式"
-                                  delegate:nil
-                         cancelButtonTitle:@"确定"
-                         otherButtonTitles:nil]show];
-    } else {
-        NSString *mod = [NSString stringWithFormat:@"%d", ([self.pickerView selectedRowInComponent:0] == 1 ? 1 : 2)];
-        NSInteger classificationRow = [self.pickerView selectedRowInComponent:1];
-        NSString *classificationTitle = (self.classificationArray)[classificationRow];
-        NSString *typeid;
-        for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
-            if (classificationTitle == classification.title) {
-                typeid = [NSString stringWithFormat:@"%d", (int)classification.index];
-                break;
-            }
+    NSString *mod = [NSString stringWithFormat:@"%d", ([self.pickerView selectedRowInComponent:0] == 1 ? 1 : 2)];
+    NSInteger classificationRow = [self.pickerView selectedRowInComponent:1];
+    NSString *classificationTitle = (self.classificationArray)[classificationRow];
+    NSString *typeid;
+    for (ICJobClassification *classification in self.classificationList.jobClassificationList) {
+        if (classificationTitle == classification.title) {
+            typeid = [NSString stringWithFormat:@"%d", (int)classification.index];
+            break;
         }
-        if (self.companyTextView.text.length == 0) self.companyTextView.text = @"空";
-        if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"空";
-        if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"空";
-        if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"空";
-        
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        if (!ICCurrentUser) {
-            NSLog(@"兼职：用户尚未登录");
-            return;
-        }
-        self.HUD = [MBProgressHUD showHUDAddedTo:self.view
-                                        animated:YES];
-        AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
-                                               parameters:@{@"title": self.titleTextView.text,
-                                                            @"mod": mod,
-                                                            @"typeid": typeid,
-                                                            @"description": self.descriptionTextView.text,
-//                                                            @"location": self.locationTextView.text,
-//                                                            @"qualifications": self.qualificationsTextView.text,
-//                                                            @"salary": self.salaryTextView.text,
-//                                                            @"company": self.companyTextView.text,
-                                                            @"location": @"空",
-                                                            @"qualifications": @"空",
-                                                            @"salary": @"空",
-                                                            @"company": @"空",
-                                                            @"contactName": self.contactNameTextField.text,
-                                                            @"contactPhone": self.contactPhoneTextField.text,
-                                                            @"contactEmail": self.contactEmailTextField.text,
-                                                            @"contactQQ": self.contactQQTextField.text,
-                                                            @"userid": ICCurrentUser.ID,
-//                                                            @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
-                                                            }
-                                constructingBodyWithBlock:nil
-                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                      [self.HUD hide:YES];
-                                                      NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                     options:kNilOptions
-                                                                       error:nil];
-                                                      NSInteger jobID = [json[@"id"] intValue];
-                                                      if (jobID == 0) {
-                                                          NSLog(@"兼职：上传失败");
-                                                          [[[UIAlertView alloc]initWithTitle:@"上传失败！"
-                                                                                     message:@"请检查您的网络连接后重试"
-                                                                                    delegate:nil
-                                                                           cancelButtonTitle:@"确定"
-                                                                           otherButtonTitles:nil]show];
-                                                      } else {
-                                                          NSLog(@"兼职：上传成功，ID：%ld", (long)jobID);
-                                                          [[[UIAlertView alloc]initWithTitle:@"上传成功！"
-                                                                                     message:nil
-                                                                                    delegate:self
-                                                                           cancelButtonTitle:@"确定"
-                                                                           otherButtonTitles:nil]show];
-                                                          [self.delegate needReloadData];
-                                                      }
-                                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                      [self.HUD hide:YES];
-                                                      NSLog(@"Error: %@ ***** %@", operation.responseString, error);
-                                                      [[[UIAlertView alloc]initWithTitle:@"上传失败！"
-                                                                                 message:@"请检查您的网络连接后重试"
-                                                                                delegate:nil
-                                                                       cancelButtonTitle:@"确定"
-                                                                       otherButtonTitles:nil]show];
-                                                  }];
-        [operation start];
-
-//        [self dismissViewControllerAnimated:YES completion:nil];
     }
+    if (self.contactPhoneTextField.text.length == 0) self.contactPhoneTextField.text = @"";
+    if (self.contactEmailTextField.text.length == 0) self.contactEmailTextField.text = @"";
+    if (self.contactQQTextField.text.length == 0) self.contactQQTextField.text = @"";
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    if (!ICCurrentUser) {
+        return;
+    }
+    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
+                                    animated:YES];
+    NSString *failedString;
+    NSString *retryString;
+    NSString *okString;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        failedString = @"发布失败";
+        retryString = @"请检查您的网络连接后重试。";
+        okString = @"好";
+    } else {
+        failedString = @"Publish failed";
+        retryString = @"Please check you network connection and try again.";
+        okString = @"OK";
+    }
+    AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
+                                           parameters:@{@"title": self.titleTextView.text,
+                                                        @"mod": mod,
+                                                        @"typeid": typeid,
+                                                        @"description": self.descriptionTextView.text,
+                                                        @"location": @"",
+                                                        @"qualifications": @"",
+                                                        @"salary": @"",
+                                                        @"company": @"",
+                                                        @"contactName": self.contactNameTextField.text,
+                                                        @"contactPhone": self.contactPhoneTextField.text,
+                                                        @"contactEmail": self.contactEmailTextField.text,
+                                                        @"contactQQ": self.contactQQTextField.text,
+                                                        @"userid": ICCurrentUser.ID
+                                                        }
+                                         //  @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
+                            constructingBodyWithBlock:nil
+                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                  [self.HUD hide:YES];
+                                                  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:kNilOptions
+                                                                   error:nil];
+                                                  NSInteger jobID = [json[@"id"] intValue];
+                                                  if (jobID == 0) {
+                                                      [[[UIAlertView alloc]initWithTitle:failedString
+                                                                                 message:retryString
+                                                                                delegate:nil
+                                                                       cancelButtonTitle:okString
+                                                                       otherButtonTitles:nil]show];
+                                                  } else {
+                                                      [self.delegate needReloadData];
+                                                      [self dismissViewControllerAnimated:YES
+                                                                               completion:nil];
+                                                  }
+                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                  [self.HUD hide:YES];
+                                                  [[[UIAlertView alloc]initWithTitle:failedString
+                                                                             message:retryString
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:okString
+                                                                   otherButtonTitles:nil]show];
+                                              }];
+    [operation start];
 }
 
 - (void)     alertView:(UIAlertView *)alertView
@@ -275,11 +271,6 @@
 
 // 键盘隐藏
 - (void)dismissKeyBoard {
-    [self.locationTextView resignFirstResponder];
-    [self.descriptionTextView resignFirstResponder];
-    [self.qualificationsTextView resignFirstResponder];
-    [self.salaryTextView resignFirstResponder];
-    [self.companyTextView resignFirstResponder];
     [self.contactPhoneTextField resignFirstResponder];
     [self.contactQQTextField resignFirstResponder];
 }

@@ -24,7 +24,6 @@
 {
     [super viewDidLoad];
     self.title=@"Detail";
-    [self.del addTarget:self action:@selector(deleteUsedGood:) forControlEvents:UIControlEventTouchUpInside];
     self.detailView=[[ICUsedGoodDetailView alloc] initWithUsedGood:self.usedGood
                                                              frame:self.view.frame];
     [self.detailView.detailButton addTarget:self action:@selector(showContact:) forControlEvents:UIControlEventTouchUpInside];

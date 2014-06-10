@@ -24,7 +24,6 @@
 		47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F21191F5DAF00DADA49 /* ICJobList.m */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICAccountViewController.m */; };
-		951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */; };
 		952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B5BFA1863FDBA009DDBB5 /* ICBusStationListCell.m */; };
 		95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F83190A96DD00354F0B /* CALayer+ModalAlert.m */; };
@@ -39,12 +38,7 @@
 		955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A065F190A51FD00628AA6 /* ICLoginView.mm */; };
 		955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A0662190A52BE00628AA6 /* ICLoginPage.mm */; };
 		95697F1C190B5F340088D564 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697EFF190B5F340088D564 /* CAAnimation+Blocks.m */; };
-		95697F1D190B5F340088D564 /* COPYRIGHT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95697F00190B5F340088D564 /* COPYRIGHT.txt */; };
-		95697F1E190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F01190B5F340088D564 /* README.md */; };
-		95697F1F190B5F340088D564 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95697F03190B5F340088D564 /* LICENSE */; };
 		95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F06190B5F340088D564 /* LMFixedTextView.m */; };
-		95697F21190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F07190B5F340088D564 /* README.md */; };
-		95697F22190B5F340088D564 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95697F09190B5F340088D564 /* LICENSE */; };
 		95697F23190B5F340088D564 /* RBBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F0C190B5F340088D564 /* RBBAnimation.m */; };
 		95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F0E190B5F340088D564 /* RBBBlockBasedArray.m */; };
 		95697F25190B5F340088D564 /* RBBCubicBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F10190B5F340088D564 /* RBBCubicBezier.m */; };
@@ -53,19 +47,18 @@
 		95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F16190B5F340088D564 /* RBBLinearInterpolation.m */; };
 		95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F18190B5F340088D564 /* RBBSpringAnimation.m */; };
 		95697F2A190B5F340088D564 /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F1A190B5F340088D564 /* RBBTweenAnimation.m */; };
-		95697F2B190B5F340088D564 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 95697F1B190B5F340088D564 /* README.md */; };
-		95697F2E190BB6880088D564 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F2D190BB6880088D564 /* ICLoginViewController.m */; };
 		95697F31190BB6A30088D564 /* ICSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697F30190BB6A30088D564 /* ICSettingViewController.m */; };
 		957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AA1867375D007F3F01 /* ICSchoolListViewController.m */; };
 		957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279AD18673D45007F3F01 /* ICSchoolDetailViewController.m */; };
 		957279B418674602007F3F01 /* ICSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B318674602007F3F01 /* ICSchoolCell.m */; };
 		957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957279B91867552A007F3F01 /* ICSchoolDetailView.m */; };
+		9576D3C11944B0A30095FCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
+		9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9576D3C71944C1180095FCC2 /* ICLoginViewController.m */; };
 		95798EA3186285080049CF77 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798E9F186285080049CF77 /* KICamera.png */; };
 		95798EA4186285080049CF77 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95798EA0186285080049CF77 /* KICamera@2x.png */; };
 		95798EA5186285080049CF77 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798EA2186285080049CF77 /* KIImagePager.m */; };
 		95798F331863093C0049CF77 /* ICBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95798F321863093C0049CF77 /* ICBusCell.m */; };
 		95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000A71861F4CD008B18BD /* ICAppDelegate.m */; };
-		95A000AE1861F504008B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95A000B01861F927008B18BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A000AF1861F927008B18BD /* AudioToolbox.framework */; };
 		95A000B618620B91008B18BD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 95A000B518620B91008B18BD /* LICENSE */; };
 		95A000D9186214FA008B18BD /* ICBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A000C9186214FA008B18BD /* ICBus.m */; };
@@ -86,6 +79,7 @@
 		95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A001191862594E008B18BD /* ICNewsChannelViewController.m */; };
 		95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */; };
 		95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A0011D1862594E008B18BD /* ICNewsListViewController.m */; };
+		95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A000AC1861F504008B18BD /* Main.storyboard */; };
 		95AC70AC185F473300C94B71 /* ICCampus.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7078185F473200C94B71 /* ICCampus.m */; };
 		95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC707A185F473200C94B71 /* ICCampusList.m */; };
 		95AC70B2185F473300C94B71 /* ICNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7086185F473200C94B71 /* ICNews.m */; };
@@ -217,7 +211,6 @@
 		95353F8E190A96DD00354F0B /* LMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationController.h; sourceTree = "<group>"; };
 		95353F8F190A96DD00354F0B /* LMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationController.m; sourceTree = "<group>"; };
 		95353F90190A96DD00354F0B /* Radial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radial.png; sourceTree = "<group>"; };
-		953ED5DF190D0B220050FFAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		954F569B190CEDAD00138ACF /* ICUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUser.h; path = iCampus/Model/User/ICUser.h; sourceTree = SOURCE_ROOT; };
 		954F569C190CEDAD00138ACF /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUser.m; path = iCampus/Model/User/ICUser.m; sourceTree = SOURCE_ROOT; };
 		955A065E190A51FD00628AA6 /* ICLoginView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICLoginView.hh; sourceTree = "<group>"; };
@@ -250,8 +243,6 @@
 		95697F19190B5F340088D564 /* RBBTweenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBTweenAnimation.h; sourceTree = "<group>"; };
 		95697F1A190B5F340088D564 /* RBBTweenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBTweenAnimation.m; sourceTree = "<group>"; };
 		95697F1B190B5F340088D564 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		95697F2C190BB6880088D564 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICLoginViewController.h; path = Setting/ICLoginViewController.h; sourceTree = "<group>"; };
-		95697F2D190BB6880088D564 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICLoginViewController.m; path = Setting/ICLoginViewController.m; sourceTree = "<group>"; };
 		95697F2F190BB6A30088D564 /* ICSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSettingViewController.h; path = Setting/ICSettingViewController.h; sourceTree = "<group>"; };
 		95697F30190BB6A30088D564 /* ICSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSettingViewController.m; path = Setting/ICSettingViewController.m; sourceTree = "<group>"; };
 		957279A91867375D007F3F01 /* ICSchoolListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolListViewController.h; sourceTree = "<group>"; };
@@ -262,6 +253,8 @@
 		957279B318674602007F3F01 /* ICSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolCell.m; sourceTree = "<group>"; };
 		957279B81867552A007F3F01 /* ICSchoolDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSchoolDetailView.h; sourceTree = "<group>"; };
 		957279B91867552A007F3F01 /* ICSchoolDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSchoolDetailView.m; sourceTree = "<group>"; };
+		9576D3C61944C1180095FCC2 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLoginViewController.h; sourceTree = "<group>"; };
+		9576D3C71944C1180095FCC2 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLoginViewController.m; sourceTree = "<group>"; };
 		95798E9F186285080049CF77 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
 		95798EA0186285080049CF77 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
 		95798EA1186285080049CF77 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
@@ -311,6 +304,7 @@
 		95A0011B1862594E008B18BD /* ICNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsDetailViewController.m; sourceTree = "<group>"; };
 		95A0011C1862594E008B18BD /* ICNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsListViewController.h; sourceTree = "<group>"; };
 		95A0011D1862594E008B18BD /* ICNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsListViewController.m; sourceTree = "<group>"; };
+		95A841931944E44800CF5B57 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		95AC7077185F473200C94B71 /* ICCampus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampus.h; sourceTree = "<group>"; };
 		95AC7078185F473200C94B71 /* ICCampus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCampus.m; sourceTree = "<group>"; };
 		95AC7079185F473200C94B71 /* ICCampusList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCampusList.h; sourceTree = "<group>"; };
@@ -521,10 +515,9 @@
 		951BE86218E5E68F0049AB5F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				9576D3C51944C1180095FCC2 /* Login */,
 				951BE86618E5E9030049AB5F /* ICAccountViewController.h */,
 				951BE86718E5E9030049AB5F /* ICAccountViewController.m */,
-				95697F2C190BB6880088D564 /* ICLoginViewController.h */,
-				95697F2D190BB6880088D564 /* ICLoginViewController.m */,
 				95697F2F190BB6A30088D564 /* ICSettingViewController.h */,
 				95697F30190BB6A30088D564 /* ICSettingViewController.m */,
 				9529B9A3192E2AA300C37A3A /* ICAccountEditViewController.h */,
@@ -642,6 +635,16 @@
 				95697F1A190B5F340088D564 /* RBBTweenAnimation.m */,
 			);
 			path = RBBAnimation;
+			sourceTree = "<group>";
+		};
+		9576D3C51944C1180095FCC2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9576D3C61944C1180095FCC2 /* ICLoginViewController.h */,
+				9576D3C71944C1180095FCC2 /* ICLoginViewController.m */,
+			);
+			name = Login;
+			path = Setting/Login;
 			sourceTree = "<group>";
 		};
 		95798E9E186285080049CF77 /* KIImagePager */ = {
@@ -1276,18 +1279,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */,
 				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
-				95A000AE1861F504008B18BD /* Main.storyboard in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
-				95697F2B190B5F340088D564 /* README.md in Resources */,
-				95697F1F190B5F340088D564 /* LICENSE in Resources */,
-				95697F1D190B5F340088D564 /* COPYRIGHT.txt in Resources */,
-				95697F22190B5F340088D564 /* LICENSE in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
-				95697F1E190B5F340088D564 /* README.md in Resources */,
 				95353F98190A96DD00354F0B /* Radial.png in Resources */,
-				95697F21190B5F340088D564 /* README.md in Resources */,
 				95A000B618620B91008B18BD /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,7 +1294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D1E26182A64BA00F35D4F /* InfoPlist.strings in Resources */,
-				951BE86D18E5F4770049AB5F /* Main.storyboard in Resources */,
+				9576D3C11944B0A30095FCC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1311,6 +1308,7 @@
 				95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
 				BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */,
+				9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */,
 				95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */,
 				47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */,
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
@@ -1344,7 +1342,6 @@
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
-				95697F2E190BB6880088D564 /* ICLoginViewController.m in Sources */,
 				95697F23190B5F340088D564 /* RBBAnimation.m in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
 				47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */,
@@ -1452,7 +1449,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A000AD1861F504008B18BD /* Base */,
-				953ED5DF190D0B220050FFAD /* zh-Hans */,
+				95A841931944E44800CF5B57 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1553,14 +1550,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1570,14 +1572,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ICJob.h"
+
+@class ICJob;
 
 @interface ICJobFavoritesJobList : NSObject
 
@@ -15,7 +16,7 @@
 
 + (id)loadData;
 + (BOOL)addJob:(ICJob*)job;
-- (BOOL)deleteJob:(ICJob*)job;
++ (BOOL)deleteJob:(ICJob*)job;
 + (BOOL)checkJob:(ICJob*)job;
 
 @end
