@@ -8,8 +8,6 @@
 
 #if DEBUG
 
-#warning NSLogs will be shown
-
 #else
 
 #define NSLog(...) {}

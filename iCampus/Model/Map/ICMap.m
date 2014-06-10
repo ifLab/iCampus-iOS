@@ -53,25 +53,16 @@
                                          returningResponse:nil
                                                      error:&error];
     if (error) {
-        NSLog(@"Download data failed. Reason:%@", error.description);
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            //
-        });
         return;
     }
     NSArray * origin= [NSJSONSerialization JSONObjectWithData:data
                                                       options:NSJSONReadingAllowFragments
                                                         error:&error];
     if (error) {
-        NSLog(@"Parsing json failed. Reason:%@", error.description);
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            //
-        });
         return;
     }
     
     if ([origin isEqual:[NSNull null]]) {
-        NSLog(@"No data.");
         return;
     }
     

@@ -12,7 +12,7 @@
 
 #   pragma mark - Debug options
 
-#   define IC_DATA_MODULE_DEBUG
+//#   define IC_DATA_MODULE_DEBUG
 #   ifdef IC_DATA_MODULE_DEBUG
 #       define IC_ABOUT_DATA_MODULE_DEBUG
 #       define IC_CAMPUS_DATA_MODULE_DEBUG

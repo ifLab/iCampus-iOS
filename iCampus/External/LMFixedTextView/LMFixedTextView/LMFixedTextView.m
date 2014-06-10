@@ -59,7 +59,7 @@ NSString *const LMFixedTextAttributeName = @"LMFixedText";
 		// If the end of the selection crosses over into the hashtag suffix
 		else if (range.location + range.length > suffixRange.location) {
             long long length = [self.text length] - suffixRange.length - range.location;
-			self.selectedRange = NSMakeRange(range.location, length);
+			self.selectedRange = NSMakeRange(range.location, (NSUInteger)length);
 		}
 	}
 }

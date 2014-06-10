@@ -48,6 +48,7 @@
             self.contactQQLabel.text = self.job.contactQQ;
         [self.descriptionCell.textLabel sizeToFit];
         [self.tableView reloadData];
+        self.favoritesButton.image = [UIImage imageNamed:@"JobFavorites1"];
         return;
     }
     
@@ -97,17 +98,9 @@
                 // 添加导航栏右侧按钮
                 if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
                     if ([ICJobFavoritesJobList checkJob:self.job]) {
-                        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites1"]
-                                                                               style:UIBarButtonItemStyleBordered
-                                                                              target:self
-                                                                              action:@selector(addOrDelFavorites:)];
-                        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+                        self.favoritesButton.image = [UIImage imageNamed:@"JobFavorites1"];
                     } else {
-                        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites0"]
-                                                                               style:UIBarButtonItemStyleBordered
-                                                                              target:self
-                                                                              action:@selector(addOrDelFavorites:)];
-                        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+                        self.favoritesButton.image = [UIImage imageNamed:@"JobFavorites0"];
                     }
                 }
             }
@@ -116,44 +109,12 @@
 }
 
 - (IBAction)addOrDelFavorites:(id)sender {
-    NSString *addedString;
-    NSString *removedString;
-    NSString *okString;
-    NSArray *languages = [NSLocale preferredLanguages];
-    NSString *currentLanguage = [languages objectAtIndex:0];
-    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
-        addedString = @"成功添加到收藏";
-        removedString = @"成功移除收藏";
-        okString = @"好";
-    } else {
-        addedString = @"Successfully added to favourites.";
-        removedString = @"Successfully removed from favourites.";
-        okString = @"OK";
-    }
     if ([ICJobFavoritesJobList addJob:self.job]) {
-        [[[UIAlertView alloc]initWithTitle:addedString
-                                   message:nil
-                                  delegate:nil
-                         cancelButtonTitle:okString
-                         otherButtonTitles:nil]show];
-        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites1"]
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target:self
-                                                              action:@selector(addOrDelFavorites:)];
-        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        self.favoritesButton.image = [UIImage imageNamed:@"JobFavorites1"];
         return;
     }
     if ([ICJobFavoritesJobList deleteJob:self.job]) {
-        [[[UIAlertView alloc]initWithTitle:removedString
-                                   message:nil
-                                  delegate:nil
-                         cancelButtonTitle:okString
-                         otherButtonTitles:nil]show];
-        self.favoritesButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"JobFavorites0"]
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target:self
-                                                              action:@selector(addOrDelFavorites:)];
-        self.navigationItem.rightBarButtonItems = @[self.favoritesButton];
+        self.favoritesButton.image = [UIImage imageNamed:@"JobFavorites0"];
         return;
     }
 }

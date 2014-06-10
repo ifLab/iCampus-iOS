@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) ICJob *job;
 @property NSInteger jobID;
-@property (strong, nonatomic) UIBarButtonItem *favoritesButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favoritesButton;
 @property NSString *mode;
 
 @end
