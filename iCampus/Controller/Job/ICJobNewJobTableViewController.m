@@ -56,16 +56,28 @@
     self.contactQQTextField.delegate = self;
     
     // 为键盘添加隐藏按钮
-    UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
-    UIBarButtonItem *flexBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *dismissKeyBoardButton = [[UIBarButtonItem alloc] initWithTitle:@"完成"
-                                                                              style:UIBarButtonItemStyleDone
-                                                                             target:self
-                                                                             action:@selector(dismissKeyBoard)];
-    NSArray * buttonsArray = @[flexBtn, dismissKeyBoardButton];
-    [topView setItems:buttonsArray];
-    [self.contactPhoneTextField setInputAccessoryView:topView];
-    [self.contactQQTextField setInputAccessoryView:topView];
+    void (^addTopView)(UIView *) = ^(UIView *view) {
+        UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
+        UIBarButtonItem *flexBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *dismissKeyBoardButton;
+        topView.backgroundColor = [UIColor whiteColor];
+        if (view.class == [UITextField class]) {
+            ((UITextField *)view).inputAccessoryView = topView;
+            dismissKeyBoardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                  target:self
+                                                                                  action:@selector(dismissKeyBoard)];
+        } else if (view.class == [UITextView class]) {
+            ((UITextView *)view).inputAccessoryView = topView;
+            dismissKeyBoardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                  target:self
+                                                                                  action:@selector(dismissKeyBoard)];
+        }
+        NSArray *buttonsArray = @[flexBtn, dismissKeyBoardButton];
+        topView.items = buttonsArray;
+    };
+    addTopView(self.contactPhoneTextField);
+    addTopView(self.contactQQTextField);
+    addTopView(self.descriptionTextView);
     
     // 获取并设置工作类型选择器
     self.pickerView.hidden = 1;
@@ -76,7 +88,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *partTimeString;
             NSString *fullTimeString;
-            NSString *allString;
             NSString *okString;
             NSString *loadFailedString;
             NSString *retryString;
@@ -85,14 +96,12 @@
             if ([currentLanguage isEqualToString:@"zh-Hans"]) {
                 partTimeString = @"兼职";
                 fullTimeString = @"全职";
-                allString = @"全部";
                 okString = @"好";
                 loadFailedString = @"加载失败";
                 retryString = @"请检查您的网络连接后重试。";
             } else {
                 partTimeString = @"Part-time";
                 fullTimeString = @"Full-time";
-                allString = @"All";
                 okString = @"OK";
                 loadFailedString = @"Loading failed";
                 retryString = @"Please check you network connection and try again.";
@@ -209,7 +218,7 @@
         okString = @"OK";
     }
     AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
-                                           parameters:@{@"title": self.titleTextView.text,
+                                           parameters:@{@"title": self.titleTextView.text ? self.titleTextView.text : @"",
                                                         @"mod": mod,
                                                         @"typeid": typeid,
                                                         @"description": self.descriptionTextView.text,
@@ -271,12 +280,16 @@
 
 // 键盘隐藏
 - (void)dismissKeyBoard {
+    [self.titleTextView resignFirstResponder];
     [self.contactPhoneTextField resignFirstResponder];
     [self.contactQQTextField resignFirstResponder];
-}
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.contactNameTextField resignFirstResponder];
     [self.contactEmailTextField resignFirstResponder];
+    [self.descriptionTextView resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self dismissKeyBoard];
     return YES;
 }
 

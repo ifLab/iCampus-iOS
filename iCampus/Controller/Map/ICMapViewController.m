@@ -94,9 +94,23 @@ const CGFloat InfoViewHeight = 60.0f;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    dispatch_sync(dispatch_get_global_queue(0, 0), ^{
-        [self loadData];
+    ICMapViewController __weak *__self = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __self.list = [__self.mapModel mapList];
+        if (!__self.list.count) {
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [__self.menuView reloadData];
+            __self.addressLabel.text = (NSString *)(__self.list[0])[ICMapAddress];
+            __self.zipCodeLabel.text = (NSString *)(__self.list[0])[ICMapZipCode];
+            CLLocationCoordinate2D zoomLocation;
+            zoomLocation.latitude = ((NSNumber *)(__self.list[0])[ICMapLongitude]).floatValue;
+            zoomLocation.longitude= ((NSNumber *)(__self.list[0])[ICMapLatitude]).floatValue;
+            CGFloat zoomLevel = ((NSNumber *)(__self.list[0])[ICMapZoomLevel]).floatValue * 60;
+            MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomLevel, zoomLevel);
+            [__self.mapView setRegion:viewRegion animated:YES];
+        });
     });
 }
 
@@ -131,26 +145,6 @@ const CGFloat InfoViewHeight = 60.0f;
                      completion:^(BOOL finished) {
                          self.isMenuViewShowing = !self.isMenuViewShowing;
                      }];
-}
-
-- (void)loadData
-{
-    self.list = [self.mapModel mapList];
-    
-    [self.menuView reloadData];
-    
-    self.addressLabel.text = (NSString *)(self.list[0])[ICMapAddress];
-    self.zipCodeLabel.text = (NSString *)(self.list[0])[ICMapZipCode];
-    
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = ((NSNumber *)(self.list[0])[ICMapLongitude]).floatValue;
-    zoomLocation.longitude= ((NSNumber *)(self.list[0])[ICMapLatitude]).floatValue;
-    
-    CGFloat zoomLevel = ((NSNumber *)(self.list[0])[ICMapZoomLevel]).floatValue * 60;
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomLevel, zoomLevel);
-    
-    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 #pragma mark - Table view data source

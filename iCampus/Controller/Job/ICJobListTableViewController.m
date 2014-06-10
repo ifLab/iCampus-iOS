@@ -102,19 +102,20 @@
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
+    ICJobListTableViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        self.jobList = [ICJobList loadJobListWithType:self.type classification:self.classification];
+        __self.jobList = [ICJobList loadJobListWithType:__self.type classification:__self.classification];
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.jobList == nil) {
-                [self.HUD hide:YES];
+            if (__self.jobList == nil) {
+                [__self.HUD hide:YES];
                 [[[UIAlertView alloc]initWithTitle:loadFailedString
                                            message:retryString
                                           delegate:nil
                                  cancelButtonTitle:okString
                                  otherButtonTitles:nil]show];
             } else {
-                [self.tableView reloadData];
-                [self.HUD hide:YES];
+                [__self.tableView reloadData];
+                [__self.HUD hide:YES];
             }
         });
     });

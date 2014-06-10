@@ -27,7 +27,7 @@
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_CLASSIFICATION_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICJobClassificationTag, ICFetchingTag, URLString);
 #       endif
-        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.bistu.edu.cn/newapi/jobtype.php"]]
+        NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]
                                              returningResponse:nil
                                                          error:nil];
         if (!data) {
