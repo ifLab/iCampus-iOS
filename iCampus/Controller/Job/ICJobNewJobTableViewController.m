@@ -231,8 +231,8 @@
                                                         @"contactEmail": self.contactEmailTextField.text,
                                                         @"contactQQ": self.contactQQTextField.text,
                                                         @"userid": ICCurrentUser.ID
+//                                                        @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
                                                         }
-                                         //  @"Authorization": [NSString stringWithFormat:@"Bearer %@", ICCurrentUser.token]
                             constructingBodyWithBlock:nil
                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                   [self.HUD hide:YES];
@@ -240,9 +240,17 @@
                                                                  options:kNilOptions
                                                                    error:nil];
                                                   NSInteger jobID = [json[@"id"] intValue];
+                                                  NSString *explanation;
+                                                  explanation = json[@"message"];
                                                   if (jobID == 0) {
                                                       [[[UIAlertView alloc]initWithTitle:failedString
                                                                                  message:retryString
+                                                                                delegate:nil
+                                                                       cancelButtonTitle:okString
+                                                                       otherButtonTitles:nil]show];
+                                                  } else if (jobID < 0) {
+                                                      [[[UIAlertView alloc]initWithTitle:@"对不起，您的账户被锁定！"
+                                                                                 message:explanation
                                                                                 delegate:nil
                                                                        cancelButtonTitle:okString
                                                                        otherButtonTitles:nil]show];
