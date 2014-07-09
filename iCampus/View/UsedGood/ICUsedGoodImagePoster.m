@@ -64,15 +64,34 @@ const CGFloat Space = (320 - Grid * 4) / 5;
     
     // 判断是否支持相机
     
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSString *title;
+    NSString *cancel;
+    NSString *button1;
+    NSString *button2;
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        title =@"选择";
+        cancel=@"取消";
+        button1=@"拍照";
+        button2=@"相册";
+    }
+    else{
+        title =@"choose";
+        cancel=@"cancel";
+        button1=@"shoot";
+        button2=@"album";
+    }
+
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         
     {
-        sheet  = [[UIActionSheet alloc] initWithTitle:@"choose" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@"shoot", @"album", nil];
+        sheet  = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles:button1, button2, nil];
         
     }
     else {
         
-        sheet = [[UIActionSheet alloc] initWithTitle:@"choose" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles: @"album", nil];
+        sheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancel destructiveButtonTitle:nil otherButtonTitles: button2, nil];
         
     }
     
@@ -200,6 +219,27 @@ const CGFloat Space = (320 - Grid * 4) / 5;
 }
 - (void)uploadImageViewDidPressDeleteButton:(ICUsedGoodUploadImageView *)uploadImageView{
     self.delPosition = [self.imageList indexOfObject:uploadImageView];
+    
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSString *title;
+    NSString *cancel;
+    NSString *message;
+    NSString *button1;
+
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        title =@"删除？";
+        cancel=@"取消";
+        button1=@"确定";
+        message=@"确认删除这张图片";
+    }
+    else{
+        title =@"Really delete?";
+        cancel=@"cancel";
+        button1=@"Yes";
+        message=@"Do you really want to delete this photo?";
+    }
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Really delete?" message:@"Do you really want to delete this photo?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alert addButtonWithTitle:@"Yes"];
     [alert show];
@@ -208,6 +248,25 @@ const CGFloat Space = (320 - Grid * 4) / 5;
 
 - (void)uploadImageView:(ICUsedGoodUploadImageView *)uploadImageView didUploaded:(BOOL)success {
     if (!success) {
+        
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        NSString *title;
+        NSString *cancel;
+        NSString *message;
+        if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+            title =@"错误";
+            cancel=@"确定";
+            message=@"上传失败";
+
+        }
+        else{
+            title =@"Error";
+            cancel=@"yes";
+            message=@"Upload Faild";
+
+        }
+
         [[[UIAlertView alloc]initWithTitle:@"Error" message:@"Upload Faild" delegate:self cancelButtonTitle:@"Yes" otherButtonTitles: nil]show];
     }
 }

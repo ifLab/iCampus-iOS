@@ -70,13 +70,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSString *title;
+    NSString *done;
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        title =@"完成";
+        done =@"完成";
+    }
+    else{
+        title =@"Done";
+        done = @"Done";
+    }
+
     self.typeList=[NSMutableArray array];
-    self.publish=[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(finishPublish:)];
+    self.publish=[[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStyleDone target:self action:@selector(finishPublish:)];
     self.navigationItem.rightBarButtonItem=self.publish;
     
     UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
     UIBarButtonItem *flexBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *dismissKeyBoardButton = [[UIBarButtonItem alloc] initWithTitle:@"Hide"
+    UIBarButtonItem *dismissKeyBoardButton = [[UIBarButtonItem alloc] initWithTitle:done
                                                                               style:UIBarButtonItemStyleDone
                                                                              target:self
                                                                              action:@selector(dismissKeyBoard)];
@@ -103,7 +116,17 @@
         [namelist addObject:type.name];
     }
     UIActionSheet *sheet;
-    sheet  = [[UIActionSheet alloc] initWithTitle:@"choose category" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSString *title;
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+            title =@"选择类型";
+        }
+        else{
+            title =@"choose category";
+        }
+
+    sheet  = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     for (NSString *name in namelist) {
         [sheet addButtonWithTitle:name];
     }
@@ -202,9 +225,25 @@
      }
           failure:
      ^(AFHTTPRequestOperation *operation, NSError *error) {
-         [[[UIAlertView alloc]initWithTitle:@"Error" message:@"Upload Faild" delegate:self cancelButtonTitle:@"Yes" otherButtonTitles: nil]show];
-         NSLog(@"fail");
-     }];
+         NSArray *languages = [NSLocale preferredLanguages];
+         NSString *currentLanguage = [languages objectAtIndex:0];
+         NSString *title;
+         NSString *message;
+         NSString *cancel;
+         if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+             title =@"错误";
+             message =@"上传失败";
+             cancel =@"确定";
+             
+         }
+         else{
+             title =@"Error";
+             message =@"Upload Faild";
+             cancel =@"Yes";
+         }
+         
+         [[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles: nil]show];
+        }];
     
     
 }

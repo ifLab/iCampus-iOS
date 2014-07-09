@@ -33,6 +33,7 @@ static const NSString *ICUsedGoodListToMyListIdentifier       = @"IC_USED_GOOD_L
 static const NSString *ICUsedGoodListToPublishIdentifier      = @"IC_USED_GOOD_LIST_TO_PUBLISH"     ;
 static const NSString *ICUsedGoodPublishToLoginIdentifier     = @"IC_USED_GOOD_PUBLISH_TO_LOGIN"    ;
 static const NSString *ICUsedGoodMyListToLoginIdentifier      = @"IC_USED_GOOD_MY_LIST_TO_LOGIN"    ;
+static const NSString *ICUsedGoodDetailToContactIdentifier    = @"IC_USED_GOOD_DETAIL_TO_CONTACT"   ;
 
 
 //=====================================================================

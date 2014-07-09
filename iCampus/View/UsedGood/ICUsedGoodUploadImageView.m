@@ -47,7 +47,6 @@
 
 - (void)upload {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-#warning image format
     NSData *imageData = UIImageJPEGRepresentation(self.image, 0.5);
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager POST:@"http://jwcapp.bistu.edu.cn/upload.php"

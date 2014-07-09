@@ -19,7 +19,16 @@
         self.detailTextField.backgroundColor = self.detailTextLabel.backgroundColor;
         self.detailTextField.textAlignment = self.detailTextLabel.textAlignment;
         self.detailTextField.textColor = self.detailTextLabel.textColor;
-        self.detailTextField.placeholder = @"Essential";
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        NSString *title;
+        if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+            title =@"必填";
+        }
+        else{
+            title =@"Essential";
+        }
+        self.detailTextField.placeholder = title;
         self.detailTextField.enabled = self.detailTextLabel.enabled;
         [self addSubview:self.detailTextField];
         self.detailTextLabel.hidden = YES;

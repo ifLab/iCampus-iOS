@@ -199,3 +199,6 @@
 
 /* Class = "IBUILabel"; text = "QQ"; ObjectID = "zCz-ss-iRX"; */
 "zCz-ss-iRX.text" = "QQ";
+
+/* Class = "IBUILabel"; text = "二手交易"; ObjectID = "9tC-ze-4bb"; */
+"9tC-ze-4bb.text" = "二手交易";

@@ -1929,10 +1929,25 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="L13-wj-fhh" kind="modal" identifier="IC_USED_GOOD_DETAIL_TO_CONTACT" id="CvB-sE-e3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d7-4h-zUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2334" y="3852"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NSM-ce-dls">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="L13-wj-fhh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r7F-0L-wKk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dph-g3-TDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789" y="3842"/>
         </scene>
         <!--Used Good My List Table View Controller - My Publish-->
         <scene sceneID="8fq-KJ-U8t">

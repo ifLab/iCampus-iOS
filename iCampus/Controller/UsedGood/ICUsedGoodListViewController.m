@@ -53,10 +53,32 @@
 {
     
     [super viewDidLoad];
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSString *title1;
+    NSString *title2;
+    NSString *filter1;
+    NSString *mine1;
+    NSString *publish1;
+    if ([currentLanguage isEqualToString:@"zh-Hans"]) {
+        title1 =@"二手物品";
+        filter1=@"类别";
+        mine1=@"我的发布";
+        publish1=@"发布物品";
+        title2=@" ";
+    }
+    else{
+        title1 =@"Used Goods";
+        filter1=@"Filter";
+        mine1=@"Mine";
+        publish1=@"Publish";
+        title2=@"Goods";
+    }
+
     [self publishViewController:nil didPublish:YES];
     APNavigationController *navigationController = (APNavigationController *)self.navigationController;
-    navigationController.activeBarButtonTitle = @"Used Goods";
-    navigationController.activeNavigationBarTitle = @"Used Goods";
+    navigationController.activeBarButtonTitle = title1;
+    navigationController.activeNavigationBarTitle = title1;
     
     self.mask = [[UIButton alloc] initWithFrame:self.tableView.frame];
     self.mask.backgroundColor = [UIColor blackColor];
@@ -65,24 +87,24 @@
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.tableFooterView = [UIView new];
     
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Goods" style:UIBarButtonItemStyleBordered target:self action:@selector(popMyself:)];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title2 style:UIBarButtonItemStyleBordered target:self action:@selector(popMyself:)];
     
     
     self.navigationController.navigationBar.translucent = NO;
     self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.rowHeight = 72.0f;
     
-    self.title=@"Used Goods";
+    self.title=title1;
     self.type=self.title;
     UIBarButtonItem *person,*filter,*publish,*show;
-    filter=[[UIBarButtonItem alloc]initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(pushFilterViewController:)];
+    filter=[[UIBarButtonItem alloc]initWithTitle:filter1 style:UIBarButtonItemStyleBordered target:self action:@selector(pushFilterViewController:)];
     UIBarButtonItem *button2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:0];
     UIBarButtonItem *button4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:0];
     
     
-    person=[[UIBarButtonItem alloc]initWithTitle:@"Mine" style:UIBarButtonItemStyleBordered target:self action:@selector(pushMyListViewController:)];
+    person=[[UIBarButtonItem alloc]initWithTitle:mine1 style:UIBarButtonItemStyleBordered target:self action:@selector(pushMyListViewController:)];
     
-    publish=[[UIBarButtonItem alloc]initWithTitle:@"Publish" style:UIBarButtonItemStyleBordered target:self action:@selector(pushPublishViewController:)];
+    publish=[[UIBarButtonItem alloc]initWithTitle:publish1 style:UIBarButtonItemStyleBordered target:self action:@selector(pushPublishViewController:)];
     
     show=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ICNavigationBarCategoryIcon"] style:UIBarButtonItemStyleBordered target:self action:@selector(toggleDropDown:)];
     self.navigationItem.rightBarButtonItem =show;
@@ -90,14 +112,6 @@
     navigationController.dropDownToolbar.barTintColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:0];
     navigationController.dropDownToolbar.tintColor = [UIColor colorWithRed:100/255.0 green:120/255.0 blue:150/255.0 alpha:1];
 
-    
-
-    //((UIBarButtonItem *)self.navigationItem.rightBarButtonItems[0]).imageInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void) usedGoodFilterView:(ICUsedGoodFilterViewController *)view
