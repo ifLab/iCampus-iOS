@@ -37,7 +37,7 @@
         NSDictionary *j = json[0];
         job.index          = [j[@"id"] intValue];
         job.title          = j[@"title"];
-        job.description    = j[@"description"];
+        job.introduction   = j[@"description"];
         job.location       = j[@"location"];
         job.qualifications = j[@"qualifications"];
         job.salary         = j[@"salary"];

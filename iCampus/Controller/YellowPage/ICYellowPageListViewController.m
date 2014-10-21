@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) ICYellowPage     *yellowPage;
 @property (nonatomic)         ABAddressBookRef  addressBook;
+@property (nonatomic)         BOOL              firstAppear;
 
 @end
 

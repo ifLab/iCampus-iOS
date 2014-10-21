@@ -53,7 +53,7 @@
             ICBusList *busList = [[ICBusList alloc] init];
             busList.index = [a[@"id"] intValue];
             busList.name = a[@"catName"];
-            busList.description = a[@"catIntro"];
+            busList.introduction = a[@"catIntro"];
             a = a[@"catBus"];
             for (NSDictionary *b in a) {
                 NSArray *c = b[@"busLine"];
@@ -77,7 +77,7 @@
                 ICBus *bus = [[ICBus alloc] init];
                 bus.index = [b[@"id"] intValue];
                 bus.name = b[@"busName"];
-                bus.description = b[@"busIntro"];
+                bus.introduction = b[@"busIntro"];
                 bus.departureTime = [dateFormatter dateFromString:b[@"departTime"]];
                 bus.returnTime = (NSDate *)returnTime;
                 bus.stationList = stationList;

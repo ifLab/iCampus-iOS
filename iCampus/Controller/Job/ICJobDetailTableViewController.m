@@ -36,8 +36,8 @@
     
     if ([self.mode isEqual: @"DONT_NEED_LOAD_DATA_FROM_NET"]) {
         self.navigationItem.title = self.job.title;
-        if (![self.job.description isKindOfClass:[NSNull class]])
-            self.descriptionCell.textLabel.text = self.job.description;
+        if (![self.job.introduction isKindOfClass:[NSNull class]])
+            self.descriptionCell.textLabel.text = self.job.introduction;
         if (![self.job.contactName isKindOfClass:[NSNull class]])
             self.contactNameLabel.text = self.job.contactName;
         if (![self.job.contactPhone isKindOfClass:[NSNull class]])
@@ -81,8 +81,8 @@
                                  otherButtonTitles:nil]show];
             } else {
                 self.navigationItem.title = self.job.title;
-                if (![self.job.description isKindOfClass:[NSNull class]])
-                    self.descriptionCell.textLabel.text = self.job.description;
+                if (![self.job.introduction isKindOfClass:[NSNull class]])
+                    self.descriptionCell.textLabel.text = self.job.introduction;
                 if (![self.job.contactName isKindOfClass:[NSNull class]])
                     self.contactNameLabel.text = self.job.contactName;
                 if (![self.job.contactPhone isKindOfClass:[NSNull class]])

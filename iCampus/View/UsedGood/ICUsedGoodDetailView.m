@@ -34,7 +34,7 @@
                 self.priceLabel.text=[NSString  stringWithFormat:  @"¥ %@" , good.price];
                 self.priceLabel.shadowOffset = CGSizeMake(1, 1);
                 self.priceLabel.shadowColor = [UIColor grayColor];
-                self.bodyLabel.text=good.description;
+                self.bodyLabel.text=good.introduction;
                 
                 [self.bodyLabel sizeToFit];
                 [self.bodyView sizeThatFits:CGSizeMake(self.scrollView.frame.size.width, self.bodyLabel.frame.size.height)];

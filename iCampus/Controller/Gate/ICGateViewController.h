@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMPageMenuViewController.h"
 
-@interface ICGateViewController : UIViewController
+@interface ICGateViewController : KMPageMenuViewController
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *messageButton;
 

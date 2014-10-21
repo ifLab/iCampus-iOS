@@ -12,9 +12,9 @@
 
 @interface ICBusList : NSObject <NSFastEnumeration>
 
-@property (nonatomic)       NSUInteger  index      ;
-@property (nonatomic, copy) NSString   *name       ;
-@property (nonatomic, copy) NSString   *description;
+@property (nonatomic)       NSUInteger  index       ;
+@property (nonatomic, copy) NSString   *name        ;
+@property (nonatomic, copy) NSString   *introduction;
 
 - (void)addBus:(ICBus *)bus;
 - (void)addBusFromBusList:(ICBusList *)busList;

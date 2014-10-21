@@ -12,20 +12,20 @@
 
 @interface ICUsedGood : NSObject
 
-@property (nonatomic, copy) NSString            *description  ;
-@property (nonatomic, copy) NSString            *ID           ;
-@property (nonatomic, copy) NSMutableArray      *imageURLs    ;
-@property (nonatomic, copy) NSString            *price        ;
-@property (nonatomic, copy) NSString            *time         ;
-@property (nonatomic, copy) NSString            *title        ;
-@property (nonatomic, copy) NSString            *typeID       ;
-@property (nonatomic, copy) NSNumber            *userID       ;
-@property (nonatomic, copy) NSNumber            *position     ;
-@property (nonatomic, copy) NSString            *author       ;
-@property (nonatomic, copy) NSString            *preview      ;
-@property (nonatomic, copy) NSString            *Phone        ;
-@property (nonatomic, copy) NSString            *Email        ;
-@property (nonatomic, copy) NSString            *QQ           ;
+@property (nonatomic, copy) NSString       *introduction;
+@property (nonatomic, copy) NSString       *ID          ;
+@property (nonatomic, copy) NSMutableArray *imageURLs   ;
+@property (nonatomic, copy) NSString       *price       ;
+@property (nonatomic, copy) NSString       *time        ;
+@property (nonatomic, copy) NSString       *title       ;
+@property (nonatomic, copy) NSString       *typeID      ;
+@property (nonatomic, copy) NSNumber       *userID      ;
+@property (nonatomic, copy) NSNumber       *position    ;
+@property (nonatomic, copy) NSString       *author      ;
+@property (nonatomic, copy) NSString       *preview     ;
+@property (nonatomic, copy) NSString       *Phone       ;
+@property (nonatomic, copy) NSString       *Email       ;
+@property (nonatomic, copy) NSString       *QQ          ;
 
 
 

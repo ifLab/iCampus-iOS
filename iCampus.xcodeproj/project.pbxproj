@@ -35,6 +35,7 @@
 		95353F97190A96DD00354F0B /* LMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F8F190A96DD00354F0B /* LMNavigationController.m */; };
 		95353F98190A96DD00354F0B /* Radial.png in Resources */ = {isa = PBXBuildFile; fileRef = 95353F90190A96DD00354F0B /* Radial.png */; };
 		954F569D190CEDAD00138ACF /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F569C190CEDAD00138ACF /* ICUser.m */; };
+		954F626919F62F00001CC1CC /* KMPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F626819F62F00001CC1CC /* KMPageMenuViewController.m */; };
 		955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A065F190A51FD00628AA6 /* ICLoginView.mm */; };
 		955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A0662190A52BE00628AA6 /* ICLoginPage.mm */; };
 		95697F1C190B5F340088D564 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 95697EFF190B5F340088D564 /* CAAnimation+Blocks.m */; };
@@ -90,6 +91,22 @@
 		95AC70B7185F473300C94B71 /* ICNewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC7090185F473200C94B71 /* ICNewsList.m */; };
 		95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70A8185F473300C94B71 /* ICYellowPage.m */; };
 		95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC70AA185F473300C94B71 /* ICYellowPageContact.m */; };
+		95B57F8219F5FAF20069D0A7 /* KMClassTableDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7119F5FAF20069D0A7 /* KMClassTableDetailVC.m */; };
+		95B57F8319F5FAF20069D0A7 /* KMClassTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7319F5FAF20069D0A7 /* KMClassTableVC.m */; };
+		95B57F8419F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7619F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m */; };
+		95B57F8519F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7819F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m */; };
+		95B57F8619F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7A19F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.m */; };
+		95B57F8719F5FAF20069D0A7 /* KMFreeRoomTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7C19F5FAF20069D0A7 /* KMFreeRoomTVC.m */; };
+		95B57F8819F5FAF20069D0A7 /* KMGradeResultTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F7F19F5FAF20069D0A7 /* KMGradeResultTVC.m */; };
+		95B57F8919F5FAF20069D0A7 /* KMGradeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F8119F5FAF20069D0A7 /* KMGradeVC.m */; };
+		95B57F8D19F5FDD00069D0A7 /* KMNetworkActivityCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F8C19F5FDD00069D0A7 /* KMNetworkActivityCenter.m */; };
+		95B57F9419F5FDF60069D0A7 /* KMClassTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F9019F5FDF60069D0A7 /* KMClassTableModel.m */; };
+		95B57F9519F5FDF60069D0A7 /* KMFreeRoomsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F9319F5FDF60069D0A7 /* KMFreeRoomsModel.m */; };
+		95B57F9B19F5FE2B0069D0A7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95B57F9819F5FE2B0069D0A7 /* SVProgressHUD.bundle */; };
+		95B57F9C19F5FE2B0069D0A7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F9A19F5FE2B0069D0A7 /* SVProgressHUD.m */; };
+		95B57FA319F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57F9F19F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m */; };
+		95B57FA419F5FE7F0069D0A7 /* KMGradeResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57FA219F5FE7F0069D0A7 /* KMGradeResultCell.m */; };
+		95B57FA819F5FEC50069D0A7 /* KMGradeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57FA719F5FEC50069D0A7 /* KMGradeModel.m */; };
 		95C2C4E01907F5E6009E39C7 /* ICAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2C4DF1907F5E6009E39C7 /* ICAboutViewController.m */; };
 		95C2C4E51907F653009E39C7 /* ICAboutWebpage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2C4E41907F653009E39C7 /* ICAboutWebpage.m */; };
 		95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852018940E8E006402FD /* ICYellowPageDepartment.m */; };
@@ -213,6 +230,8 @@
 		95353F90190A96DD00354F0B /* Radial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radial.png; sourceTree = "<group>"; };
 		954F569B190CEDAD00138ACF /* ICUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUser.h; path = iCampus/Model/User/ICUser.h; sourceTree = SOURCE_ROOT; };
 		954F569C190CEDAD00138ACF /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUser.m; path = iCampus/Model/User/ICUser.m; sourceTree = SOURCE_ROOT; };
+		954F626719F62F00001CC1CC /* KMPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPageMenuViewController.h; sourceTree = "<group>"; };
+		954F626819F62F00001CC1CC /* KMPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPageMenuViewController.m; sourceTree = "<group>"; };
 		955A065E190A51FD00628AA6 /* ICLoginView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICLoginView.hh; sourceTree = "<group>"; };
 		955A065F190A51FD00628AA6 /* ICLoginView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ICLoginView.mm; sourceTree = "<group>"; };
 		955A0661190A52BE00628AA6 /* ICLoginPage.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICLoginPage.hh; sourceTree = "<group>"; };
@@ -326,6 +345,38 @@
 		95AC70A8185F473300C94B71 /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPage.m; sourceTree = "<group>"; };
 		95AC70A9185F473300C94B71 /* ICYellowPageContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageContact.h; sourceTree = "<group>"; };
 		95AC70AA185F473300C94B71 /* ICYellowPageContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageContact.m; sourceTree = "<group>"; };
+		95B57F7019F5FAF20069D0A7 /* KMClassTableDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMClassTableDetailVC.h; sourceTree = "<group>"; };
+		95B57F7119F5FAF20069D0A7 /* KMClassTableDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMClassTableDetailVC.m; sourceTree = "<group>"; };
+		95B57F7219F5FAF20069D0A7 /* KMClassTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMClassTableVC.h; sourceTree = "<group>"; };
+		95B57F7319F5FAF20069D0A7 /* KMClassTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMClassTableVC.m; sourceTree = "<group>"; };
+		95B57F7519F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomBuildingsTVC.h; sourceTree = "<group>"; };
+		95B57F7619F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomBuildingsTVC.m; sourceTree = "<group>"; };
+		95B57F7719F5FAF20069D0A7 /* KMFreeRoomDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomDetailTVC.h; sourceTree = "<group>"; };
+		95B57F7819F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomDetailTVC.m; sourceTree = "<group>"; };
+		95B57F7919F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomRoomsTVC.h; sourceTree = "<group>"; };
+		95B57F7A19F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomRoomsTVC.m; sourceTree = "<group>"; };
+		95B57F7B19F5FAF20069D0A7 /* KMFreeRoomTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomTVC.h; sourceTree = "<group>"; };
+		95B57F7C19F5FAF20069D0A7 /* KMFreeRoomTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomTVC.m; sourceTree = "<group>"; };
+		95B57F7E19F5FAF20069D0A7 /* KMGradeResultTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGradeResultTVC.h; sourceTree = "<group>"; };
+		95B57F7F19F5FAF20069D0A7 /* KMGradeResultTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGradeResultTVC.m; sourceTree = "<group>"; };
+		95B57F8019F5FAF20069D0A7 /* KMGradeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGradeVC.h; sourceTree = "<group>"; };
+		95B57F8119F5FAF20069D0A7 /* KMGradeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGradeVC.m; sourceTree = "<group>"; };
+		95B57F8B19F5FDD00069D0A7 /* KMNetworkActivityCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNetworkActivityCenter.h; sourceTree = "<group>"; };
+		95B57F8C19F5FDD00069D0A7 /* KMNetworkActivityCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMNetworkActivityCenter.m; sourceTree = "<group>"; };
+		95B57F8F19F5FDF60069D0A7 /* KMClassTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMClassTableModel.h; sourceTree = "<group>"; };
+		95B57F9019F5FDF60069D0A7 /* KMClassTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMClassTableModel.m; sourceTree = "<group>"; };
+		95B57F9219F5FDF60069D0A7 /* KMFreeRoomsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomsModel.h; sourceTree = "<group>"; };
+		95B57F9319F5FDF60069D0A7 /* KMFreeRoomsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomsModel.m; sourceTree = "<group>"; };
+		95B57F9719F5FE2B0069D0A7 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		95B57F9819F5FE2B0069D0A7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		95B57F9919F5FE2B0069D0A7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		95B57F9A19F5FE2B0069D0A7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		95B57F9E19F5FE7F0069D0A7 /* KMFreeRoomDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFreeRoomDetailCell.h; sourceTree = "<group>"; };
+		95B57F9F19F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMFreeRoomDetailCell.m; sourceTree = "<group>"; };
+		95B57FA119F5FE7F0069D0A7 /* KMGradeResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGradeResultCell.h; sourceTree = "<group>"; };
+		95B57FA219F5FE7F0069D0A7 /* KMGradeResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGradeResultCell.m; sourceTree = "<group>"; };
+		95B57FA619F5FEC50069D0A7 /* KMGradeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGradeModel.h; sourceTree = "<group>"; };
+		95B57FA719F5FEC50069D0A7 /* KMGradeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGradeModel.m; sourceTree = "<group>"; };
 		95C2C4DE1907F5E6009E39C7 /* ICAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAboutViewController.h; path = About/ICAboutViewController.h; sourceTree = "<group>"; };
 		95C2C4DF1907F5E6009E39C7 /* ICAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAboutViewController.m; path = About/ICAboutViewController.m; sourceTree = "<group>"; };
 		95C2C4E31907F653009E39C7 /* ICAboutWebpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICAboutWebpage.h; sourceTree = "<group>"; };
@@ -548,6 +599,15 @@
 			path = LMAlertView;
 			sourceTree = "<group>";
 		};
+		954F626619F62F00001CC1CC /* KMPageMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				954F626719F62F00001CC1CC /* KMPageMenuViewController.h */,
+				954F626819F62F00001CC1CC /* KMPageMenuViewController.m */,
+			);
+			path = KMPageMenuViewController;
+			sourceTree = "<group>";
+		};
 		955A065C190A51FD00628AA6 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +751,8 @@
 		95A000E1186218A0008B18BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95B57F9D19F5FE7F0069D0A7 /* FreeRoom */,
+				95B57FA019F5FE7F0069D0A7 /* Grade */,
 				BE168D94193C801300542524 /* UsedGood */,
 				95A000E2186218A0008B18BD /* Bus */,
 				95A000E3186218A0008B18BD /* Campus */,
@@ -787,6 +849,9 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95B57F6F19F5FAF20069D0A7 /* ClassTable */,
+				95B57F7419F5FAF20069D0A7 /* FreeRoom */,
+				95B57F7D19F5FAF20069D0A7 /* Grade */,
 				BE168D95193C801C00542524 /* UsedGood */,
 				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				47D25F06191F5D2A00DADA49 /* Job */,
@@ -876,6 +941,9 @@
 		95AC7074185F473200C94B71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95B57FA519F5FEC50069D0A7 /* Grade */,
+				95B57F8E19F5FDF60069D0A7 /* ClassTable */,
+				95B57F9119F5FDF60069D0A7 /* FreeRoom */,
 				BE168E19193C82B300542524 /* UsedGood */,
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
 				47D25F19191F5DAF00DADA49 /* Job */,
@@ -944,6 +1012,108 @@
 				95AC70AA185F473300C94B71 /* ICYellowPageContact.m */,
 			);
 			path = YellowPage;
+			sourceTree = "<group>";
+		};
+		95B57F6F19F5FAF20069D0A7 /* ClassTable */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F7019F5FAF20069D0A7 /* KMClassTableDetailVC.h */,
+				95B57F7119F5FAF20069D0A7 /* KMClassTableDetailVC.m */,
+				95B57F7219F5FAF20069D0A7 /* KMClassTableVC.h */,
+				95B57F7319F5FAF20069D0A7 /* KMClassTableVC.m */,
+			);
+			path = ClassTable;
+			sourceTree = "<group>";
+		};
+		95B57F7419F5FAF20069D0A7 /* FreeRoom */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F7519F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.h */,
+				95B57F7619F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m */,
+				95B57F7719F5FAF20069D0A7 /* KMFreeRoomDetailTVC.h */,
+				95B57F7819F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m */,
+				95B57F7919F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.h */,
+				95B57F7A19F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.m */,
+				95B57F7B19F5FAF20069D0A7 /* KMFreeRoomTVC.h */,
+				95B57F7C19F5FAF20069D0A7 /* KMFreeRoomTVC.m */,
+			);
+			path = FreeRoom;
+			sourceTree = "<group>";
+		};
+		95B57F7D19F5FAF20069D0A7 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F7E19F5FAF20069D0A7 /* KMGradeResultTVC.h */,
+				95B57F7F19F5FAF20069D0A7 /* KMGradeResultTVC.m */,
+				95B57F8019F5FAF20069D0A7 /* KMGradeVC.h */,
+				95B57F8119F5FAF20069D0A7 /* KMGradeVC.m */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
+		95B57F8A19F5FDD00069D0A7 /* KMNetworkActivityCenter */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F8B19F5FDD00069D0A7 /* KMNetworkActivityCenter.h */,
+				95B57F8C19F5FDD00069D0A7 /* KMNetworkActivityCenter.m */,
+			);
+			path = KMNetworkActivityCenter;
+			sourceTree = "<group>";
+		};
+		95B57F8E19F5FDF60069D0A7 /* ClassTable */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F8F19F5FDF60069D0A7 /* KMClassTableModel.h */,
+				95B57F9019F5FDF60069D0A7 /* KMClassTableModel.m */,
+			);
+			path = ClassTable;
+			sourceTree = "<group>";
+		};
+		95B57F9119F5FDF60069D0A7 /* FreeRoom */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F9219F5FDF60069D0A7 /* KMFreeRoomsModel.h */,
+				95B57F9319F5FDF60069D0A7 /* KMFreeRoomsModel.m */,
+			);
+			path = FreeRoom;
+			sourceTree = "<group>";
+		};
+		95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F9719F5FE2B0069D0A7 /* SVProgressHUD-Prefix.pch */,
+				95B57F9819F5FE2B0069D0A7 /* SVProgressHUD.bundle */,
+				95B57F9919F5FE2B0069D0A7 /* SVProgressHUD.h */,
+				95B57F9A19F5FE2B0069D0A7 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		95B57F9D19F5FE7F0069D0A7 /* FreeRoom */ = {
+			isa = PBXGroup;
+			children = (
+				95B57F9E19F5FE7F0069D0A7 /* KMFreeRoomDetailCell.h */,
+				95B57F9F19F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m */,
+			);
+			path = FreeRoom;
+			sourceTree = "<group>";
+		};
+		95B57FA019F5FE7F0069D0A7 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				95B57FA119F5FE7F0069D0A7 /* KMGradeResultCell.h */,
+				95B57FA219F5FE7F0069D0A7 /* KMGradeResultCell.m */,
+			);
+			path = Grade;
+			sourceTree = "<group>";
+		};
+		95B57FA519F5FEC50069D0A7 /* Grade */ = {
+			isa = PBXGroup;
+			children = (
+				95B57FA619F5FEC50069D0A7 /* KMGradeModel.h */,
+				95B57FA719F5FEC50069D0A7 /* KMGradeModel.m */,
+			);
+			path = Grade;
 			sourceTree = "<group>";
 		};
 		95C2C4DD1907F56A009E39C7 /* About */ = {
@@ -1104,6 +1274,9 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */,
+				95B57F8A19F5FDD00069D0A7 /* KMNetworkActivityCenter */,
+				954F626619F62F00001CC1CC /* KMPageMenuViewController */,
 				BE168E26193C82DC00542524 /* APNavigationController */,
 				95697EFC190B5F340088D564 /* CAAnimationBlocks */,
 				95697F02190B5F340088D564 /* LMFixedTextView */,
@@ -1282,6 +1455,7 @@
 				95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */,
 				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
+				95B57F9B19F5FE2B0069D0A7 /* SVProgressHUD.bundle in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
 				95353F98190A96DD00354F0B /* Radial.png in Resources */,
@@ -1306,6 +1480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */,
+				95B57F8319F5FAF20069D0A7 /* KMClassTableVC.m in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
 				BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */,
 				9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */,
@@ -1319,10 +1494,14 @@
 				BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
 				1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */,
+				95B57F9C19F5FE2B0069D0A7 /* SVProgressHUD.m in Sources */,
 				95353F93190A96DD00354F0B /* LMEmbeddedViewController.m in Sources */,
 				95C2C4E01907F5E6009E39C7 /* ICAboutViewController.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
+				95B57F8919F5FAF20069D0A7 /* KMGradeVC.m in Sources */,
+				95B57F8519F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m in Sources */,
 				47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */,
+				954F626919F62F00001CC1CC /* KMPageMenuViewController.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
 				BE168E0C193C818C00542524 /* ICUsedGoodMyListTableViewController.m in Sources */,
@@ -1331,16 +1510,20 @@
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
 				95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				95B57F8819F5FAF20069D0A7 /* KMGradeResultTVC.m in Sources */,
 				95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
 				95353F95190A96DD00354F0B /* LMModalSegue.m in Sources */,
+				95B57FA819F5FEC50069D0A7 /* KMGradeModel.m in Sources */,
 				A320CA75183E365D00BCA05F /* AFURLRequestSerialization.m in Sources */,
 				95E4852A18941B75006402FD /* ICYellowPageDepartmentCell.m in Sources */,
 				95353F92190A96DD00354F0B /* LMAlertView.m in Sources */,
+				95B57F8619F5FAF20069D0A7 /* KMFreeRoomRoomsTVC.m in Sources */,
 				A320CA57183E353100BCA05F /* UIButton+AFNetworking.m in Sources */,
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
+				95B57FA419F5FE7F0069D0A7 /* KMGradeResultCell.m in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
 				95697F23190B5F340088D564 /* RBBAnimation.m in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
@@ -1359,6 +1542,7 @@
 				95353F97190A96DD00354F0B /* LMNavigationController.m in Sources */,
 				95697F25190B5F340088D564 /* RBBCubicBezier.m in Sources */,
 				95A000DE186214FA008B18BD /* ICSchool.m in Sources */,
+				95B57F8719F5FAF20069D0A7 /* KMFreeRoomTVC.m in Sources */,
 				95C2C4E51907F653009E39C7 /* ICAboutWebpage.m in Sources */,
 				47D25F16191F5D2A00DADA49 /* ICJobMoreTableViewController.m in Sources */,
 				95AC70B3185F473300C94B71 /* ICNewsChannel.m in Sources */,
@@ -1373,6 +1557,7 @@
 				95AC70B7185F473300C94B71 /* ICNewsList.m in Sources */,
 				47D25F18191F5D2A00DADA49 /* ICJobNewJobTableViewController.m in Sources */,
 				95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */,
+				95B57F9519F5FDF60069D0A7 /* KMFreeRoomsModel.m in Sources */,
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,
 				A320CA77183E365D00BCA05F /* AFURLSessionManager.m in Sources */,
 				BE4695C8193CCC9C001D8BFB /* ICUsedGoodType.m in Sources */,
@@ -1387,9 +1572,12 @@
 				95A000DA186214FA008B18BD /* ICBusList.m in Sources */,
 				A320CA72183E365D00BCA05F /* AFNetworkReachabilityManager.m in Sources */,
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
+				95B57F9419F5FDF60069D0A7 /* KMClassTableModel.m in Sources */,
 				BE168E09193C818C00542524 /* ICUsedGoodDetailViewController.m in Sources */,
+				95B57F8219F5FAF20069D0A7 /* KMClassTableDetailVC.m in Sources */,
 				A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */,
 				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
+				95B57FA319F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m in Sources */,
 				BE168E0A193C818C00542524 /* ICUsedGoodFilterViewController.m in Sources */,
 				BE168E22193C82B300542524 /* ICUsedGood.m in Sources */,
 				951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */,
@@ -1398,6 +1586,7 @@
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
+				95B57F8D19F5FDD00069D0A7 /* KMNetworkActivityCenter.m in Sources */,
 				47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */,
 				955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */,
 				BEF1E3ED193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m in Sources */,
@@ -1418,6 +1607,7 @@
 				A320CA56183E353100BCA05F /* UIAlertView+AFNetworking.m in Sources */,
 				95AC70B6185F473300C94B71 /* ICNewsDetailAttachment.m in Sources */,
 				A320CA71183E365D00BCA05F /* AFHTTPSessionManager.m in Sources */,
+				95B57F8419F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m in Sources */,
 				95AC70AC185F473300C94B71 /* ICCampus.m in Sources */,
 				A320CA76183E365D00BCA05F /* AFURLResponseSerialization.m in Sources */,
 				957279B418674602007F3F01 /* ICSchoolCell.m in Sources */,

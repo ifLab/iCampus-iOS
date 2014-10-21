@@ -14,7 +14,7 @@
 
 @property (nonatomic)         NSUInteger       index         ;
 @property (nonatomic, copy)   NSString         *name         ;
-@property (nonatomic, copy)   NSString         *description  ;
+@property (nonatomic, copy)   NSString         *introduction ;
 @property (nonatomic, copy)   NSDate           *departureTime;
 @property (nonatomic, copy)   NSDate           *returnTime   ;
 @property (nonatomic, strong) ICBusStationList *stationList  ;

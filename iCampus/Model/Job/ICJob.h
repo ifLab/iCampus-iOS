@@ -12,7 +12,7 @@
 
 @property (nonatomic)       NSUInteger  index         ;
 @property (nonatomic, copy) NSString   *title         ;
-@property (nonatomic, copy) NSString   *description   ;
+@property (nonatomic, copy) NSString   *introduction  ;
 @property (nonatomic, copy) NSString   *location      ;
 @property (nonatomic, copy) NSString   *qualifications;
 @property (nonatomic, copy) NSString   *salary        ;

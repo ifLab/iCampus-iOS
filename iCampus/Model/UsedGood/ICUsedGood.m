@@ -31,7 +31,7 @@
 
         for (NSDictionary *a in json) {
             ICUsedGood* good = [[ICUsedGood alloc] init];
-            good.description=a[@"description"];
+            good.introduction=a[@"description"];
             good.ID=a[@"id"];
             NSString *urlString=a[@"pic"];
             NSMutableArray *imgURLlist=[NSMutableArray array];
@@ -75,7 +75,7 @@
 
         for (NSDictionary *a in json) {
             ICUsedGood* good = [[ICUsedGood alloc] init];
-            good.description=a[@"description"];
+            good.introduction=a[@"description"];
             good.ID=a[@"id"];
             NSString*urlString=a[@"pic"];
             NSMutableArray *imgURLlist=[NSMutableArray array];

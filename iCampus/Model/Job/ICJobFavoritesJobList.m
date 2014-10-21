@@ -72,7 +72,7 @@
         job = [[ICJob alloc] init];
         job.index = [j[@"id"] intValue];
         job.title = j[@"title"];
-        job.description = j[@"description"];
+        job.introduction = j[@"description"];
         job.location = j[@"location"];
         job.qualifications = j[@"qualifications"];
         job.salary = j[@"salary"];
@@ -94,7 +94,7 @@
     for (ICJob *job in self.favoritesList) {
         NSDictionary *j = @{@"id"            : [NSString stringWithFormat:@"%lu", (unsigned long)job.index],
                             @"title"         : job.title,
-                            @"description"   : job.description,
+                            @"description"   : job.introduction,
                             @"location"      : job.location,
                             @"qualifications": job.qualifications,
                             @"salary"        : job.salary,

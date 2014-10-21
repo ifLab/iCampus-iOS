@@ -11,10 +11,13 @@
 #import "../../Model/YellowPage/ICYellowPage.h"
 #import "../../View/YellowPage/ICYellowPageDepartmentCell.h"
 #import "ICYellowPageListViewController.h"
+#import "../../Model/User/ICUser.h"
+#import "../Setting/Login/ICLoginViewController.h"
 
-@interface ICYellowPageDepartmentViewController ()
+@interface ICYellowPageDepartmentViewController () <ICLoginViewControllerDelegate>
 
 @property (nonatomic, strong) ICYellowPageDepartmentList *departmentList;
+@property (nonatomic)         BOOL                        firstAppear;
 
 @end
 
@@ -24,6 +27,7 @@
     [super viewDidLoad];
     self.tableView.rowHeight = 48.0;
     self.clearsSelectionOnViewWillAppear = YES;
+    self.firstAppear = YES;
     ICYellowPageDepartmentViewController __weak *__self = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.departmentList = [ICYellowPageDepartmentList departmentList];
@@ -31,6 +35,13 @@
             [__self.tableView reloadData];
         });
     });
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (!ICCurrentUser && self.firstAppear) {
+        self.firstAppear = NO;
+        [self performSegueWithIdentifier:@"IC_YELLOWPAGE_TO_LOGIN" sender:self];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -61,14 +72,26 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender {
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-    ICYellowPageListViewController *destinationViewController = (ICYellowPageListViewController *)segue.destinationViewController;
-    destinationViewController.department = [self.departmentList departmentAtIndex:indexPath.row];
+    if ([segue.identifier isEqualToString:@"IC_YELLOWPAGE_TO_LOGIN"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ICLoginViewController *loginViewController = (ICLoginViewController *)navigationController.topViewController;
+        loginViewController.delegate = self;
+    } else {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        ICYellowPageListViewController *destinationViewController = (ICYellowPageListViewController *)segue.destinationViewController;
+        destinationViewController.department = [self.departmentList departmentAtIndex:indexPath.row];
+    }
 }
 
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+}
+
+- (void)loginViewController:(ICLoginViewController *)loginViewContrller user:(ICUser *)user didLogin:(BOOL)success {
+    if (!success) {
+        [self dismiss:self];
+    }
 }
 
 @end

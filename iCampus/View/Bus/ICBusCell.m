@@ -20,7 +20,7 @@
         dateFormatter.dateFormat = @"HH:mm";
         dateFormatter.timeZone   = [NSTimeZone localTimeZone];
         self.nameLabel.text          = bus.name;
-        self.descriptionLabel.text   = bus.description;
+        self.descriptionLabel.text   = bus.introduction;
         self.departureTimeLabel.text = (bus.departureTime)? [dateFormatter stringFromDate:bus.departureTime] : @"-";
         self.returnTimeLabel.text    = (bus.returnTime)? [dateFormatter stringFromDate:bus.returnTime] : @"-";
     }

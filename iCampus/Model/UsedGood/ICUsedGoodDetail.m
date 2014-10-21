@@ -25,7 +25,7 @@
         self.price=good.price;
         self.author=good.author;
         self.preview=good.preview;
-        self.description=good.description;
+        self.introduction=good.introduction;
         self.imageURLs=good.imageURLs;
         self.Phone=good.Phone;
         self.Email=good.Email;
