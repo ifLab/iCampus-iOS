@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString   *WeChat     ;
 @property (nonatomic, copy) NSString   *mobile     ;
 @property (nonatomic, copy) NSString   *email      ;
+@property (nonatomic, copy) NSString   *group      ;
 
 - (id)initWithToken:(NSString *)token
         expiresTime:(NSUInteger)expiresTime;

@@ -217,7 +217,7 @@
 {
     ICUsedGood *good= self.datas[indexPath.row];
     static NSString *prefix = @"IC_USED_GOOD";
-    NSString *identifier = [NSString stringWithFormat:@"%@_%d_%d", prefix, indexPath.row, indexPath.section];
+    NSString *identifier = [NSString stringWithFormat:@"%@_%ld_%ld", prefix, (long)indexPath.row, (long)indexPath.section];
     ICUsedGoodListCell *cell =
         [[ICUsedGoodListCell alloc]initWithUsedGood:good reuseIdentifier:identifier];
 

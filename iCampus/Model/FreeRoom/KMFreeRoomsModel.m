@@ -79,7 +79,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *paras = @{@"districtCode": buildingID};
+    NSDictionary *paras = @{@"buildingCode": buildingID};
     [manager GET:@"http://jwcapi.iflab.org/classroom.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSMutableArray *preparedData = [@[] mutableCopy];
@@ -102,16 +102,23 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *paras = @{@"districtCode": roomID};
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone localTimeZone];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    NSDictionary *paras = @{@"jsbh": roomID, @"date": [formatter stringFromDate:[NSDate date]]};
     [manager GET:@"http://jwcapi.iflab.org/classinfo.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSMutableArray *preparedData = [@[] mutableCopy];
             for (NSDictionary *dict in responseObject) {
                 KMRoomDetail *obj = [KMRoomDetail new];
-                obj.order = [dict[@"xxxx"] integerValue];
-                obj.courseName = dict[@"xxxxx"];
-                obj.courseTeacher = dict[@"xxxxxx"];
-                
+                NSLog(@"%@", dict);
+                obj.order = [dict[@"sjd"] integerValue];
+                if (![dict[@"kcdm"] isKindOfClass:[NSNull class]]) {
+                    obj.courseName = dict[@"kcdm"][@"kczwmc"];
+                }
+                if (![dict[@"jsxx"] isKindOfClass:[NSNull class]]) {
+                    obj.courseTeacher = dict[@"jsxx"][@"xkkh"];
+                }
                 [preparedData addObject:obj];
             }
             result(YES, [preparedData copy], nil);

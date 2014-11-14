@@ -81,7 +81,7 @@
 {
     ICUsedGoodType *type = [self.typeList objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"TYPE_LIST_CELL";
-      NSString *identifier = [NSString stringWithFormat:@"%@_%d_%d", CellIdentifier, indexPath.row, indexPath.section];
+      NSString *identifier = [NSString stringWithFormat:@"%@_%ld_%ld", CellIdentifier, (long)indexPath.row, (long)indexPath.section];
     ICUsedGoodFilterTableViewCell *cell = [[ICUsedGoodFilterTableViewCell alloc]initWithType:type reuseIdentifier:identifier];
     return cell;
 }

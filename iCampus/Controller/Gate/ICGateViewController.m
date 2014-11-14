@@ -64,7 +64,7 @@
 - (NSArray *)itemTitles
 {
     if (!_itemTitles) {
-        _itemTitles = @[@"新闻", @"学院", @"黄页", @"校车", @"地图", @"兼职", @"成绩", @"课程", @"教室", @"二手", @"关于"];
+        _itemTitles = @[@"新闻", @"学院", @"黄页", @"校车", @"地图", @"兼职", @"成绩", @"课程", @"教室", @"二手", @"群组", @"关于"];
     }
     return _itemTitles;
 }
@@ -81,6 +81,7 @@
                        [UIImage imageNamed:@"FrontIconsGradeSearch"],
                        [UIImage imageNamed:@"FrontIconsClassTable"],
                        [UIImage imageNamed:@"FrontIconsFreeRooms"],
+                       [UIImage imageNamed:@"ICGatePlaceHolder"],
                        [UIImage imageNamed:@"ICGatePlaceHolder"],
                        [UIImage imageNamed:@"ICGatePlaceHolder"]
                        ];
@@ -101,6 +102,7 @@
                     @"IC_GATE_TO_CLASSTABLE",
                     @"IC_GATE_TO_FREEROOM",
                     @"IC_GATE_TO_USEDGOOD",
+                    @"IC_GATE_TO_GROUP",
                     @"IC_GATE_TO_ABOUT"];
     }
     return _segues;
@@ -123,7 +125,7 @@
     return [[KMPageMenuItem alloc] initWithIcon:self.itemIcons[position] title:self.itemTitles[position]];
 }
 
-#pragma mark - kMPageMenuViewController Delegate
+#pragma mark - KMPageMenuViewControllerDelegate
 
 - (void)pageMenuViewController:(KMPageMenuViewController *)pageMenuViewController didSelectItemAtPage:(int)page position:(int)position
 {
