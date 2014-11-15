@@ -39,6 +39,8 @@
 
 @property (nonatomic) NSInteger order;
 @property (strong, nonatomic) NSString *courseName;
+@property (strong, nonatomic) NSString *courseCollage;
+@property (strong, nonatomic) NSString *courseCredits;
 @property (strong, nonatomic) NSString *courseTeacher;
 
 @end
@@ -50,6 +52,6 @@
 + (void)getCampusList:(void(^)(BOOL success, NSArray *data, NSError *error))result;
 + (void)getBuildingListWithCampusID:(NSString *)campusID :(void(^)(BOOL success, NSArray *data, NSError *error))result;
 + (void)getRoomListWithBuildingID:(NSString *)buildingID :(void(^)(BOOL success, NSArray *data, NSError *error))result;
-+ (void)getRoomDetailWithRoomID:(NSString *)roomID :(void(^)(BOOL success, NSArray *data, NSError *error))result;
++ (id)getRoomDetailWithRoomID:(NSString *)roomID atDate:(NSString *)date;
 
 @end
