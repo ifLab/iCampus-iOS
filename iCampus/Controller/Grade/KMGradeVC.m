@@ -10,13 +10,15 @@
 #import "SVProgressHUD.h"
 #import "KMGradeResultTVC.h"
 #import "KMGradeModel.h"
+#import "ICLoginViewController.h"
+#import "ICUser.h"
 
 #define KMTableViewWidth 280.0f
 #define KMTableViewHeight 200.0f
 
 #define KMToGradeResultVC @"to_result_vc"
 
-@interface KMGradeVC () <UITableViewDataSource, UITableViewDelegate, KMGradeModelDelegate, KMGradeModelResultDelegate>
+@interface KMGradeVC () <UITableViewDataSource, UITableViewDelegate, KMGradeModelDelegate, KMGradeModelResultDelegate, ICLoginViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *semesterLabel;
@@ -35,6 +37,8 @@
 
 @property (strong, nonatomic) UIControl *coverView;
 @property (strong, nonatomic) UITableView *tableView;
+
+@property (nonatomic) BOOL firstAppear;
 
 @end
 
@@ -116,6 +120,8 @@
 {
     [super viewDidLoad];
     
+    self.firstAppear = YES;
+    
     UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToPopup:)];
     swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
     self.view.gestureRecognizers = @[swipeGesture];
@@ -133,6 +139,13 @@
     [self.model years];
     [self.model semesters];
     [self.model categories];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (!ICCurrentUser && self.firstAppear) {
+        self.firstAppear = false;
+        [self performSegueWithIdentifier:@"IC_GRADE_TO_LOGIN" sender:self];
+    }
 }
 
 - (void)swipeToPopup:(id)sender
@@ -356,11 +369,27 @@
         if (self.model.grades.count > 0) {
             resultVC.grades = [self.model.grades copy];
         }
+    } else if ([segue.identifier isEqualToString:@"IC_GRADE_TO_LOGIN"]) {
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        ICLoginViewController *loginViewController = (ICLoginViewController *)navigationController.topViewController;
+        loginViewController.delegate = self;
     }
 }
 
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)loginViewController:(ICLoginViewController *)loginViewContrller user:(ICUser *)user didLogin:(BOOL)success {
+    if (success) {
+        [SVProgressHUD showWithStatus:@"正在加载" maskType:SVProgressHUDMaskTypeBlack];
+        _model = nil;
+        [self.model years];
+        [self.model semesters];
+        [self.model categories];
+    } else {
+        [self dismiss:self];
+    }
 }
 
 @end

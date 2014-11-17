@@ -91,6 +91,8 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItems = self.normalBarItems;
+    self.tableView.rowHeight = 56;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = [NSTimeZone localTimeZone];
@@ -161,12 +163,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Course"];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"第%ld节", (long)indexPath.row + 1];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     KMRoomDetail *currObj = (KMRoomDetail *)self.data[indexPath.row];
     if (currObj.order == indexPath.row + 1) {
-        cell.backgroundColor = [[UIColor alloc] initWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
+        cell.backgroundColor = [[UIColor alloc] initWithRed:111/255.0 green:175/255.0 blue:66/255.0 alpha:1.0];
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@-%@", currObj.courseTeacher, currObj.courseName];
     } else {
         cell.backgroundColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+        cell.textLabel.textColor = [UIColor colorWithRed:40/255.0 green:40/255.0 blue:40/255.0 alpha:1.0];
         cell.detailTextLabel.text = @" ";
     }
     return cell;
@@ -175,11 +180,13 @@
 - (void)        tableView:(UITableView *)tableView
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     KMRoomDetail *currObj = (KMRoomDetail *)self.data[indexPath.row];
-    [[[UIAlertView alloc]initWithTitle:currObj.courseName
-                               message:[NSString stringWithFormat:@"老师：%@\n学院：%@\n学分：%@\n", currObj.courseTeacher, currObj.courseCollage, currObj.courseCredits]
-                              delegate:self
-                     cancelButtonTitle:@"确认"
-                     otherButtonTitles:nil]show];
+    if (currObj.courseName != nil) {
+        [[[UIAlertView alloc]initWithTitle:currObj.courseName
+                                   message:[NSString stringWithFormat:@"开课学院：%@\n授课教师：%@\n学分：%@", currObj.courseCollage, currObj.courseTeacher, currObj.courseCredits]
+                                  delegate:self
+                         cancelButtonTitle:@"确认"
+                         otherButtonTitles:nil]show];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

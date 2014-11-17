@@ -133,7 +133,6 @@
     NSMutableArray *list = [[NSMutableArray alloc] init];
     NSMutableString *URLString = [NSMutableString stringWithFormat:@"http://jwcapi.iflab.org/classinfo.php?jsbh=%@", roomID];
     [URLString appendFormat:@"&date=%@", date];
-    NSLog(@"%@", URLString);
     NSURL *URL = [NSURL URLWithString:URLString];
     NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:URL]
                                          returningResponse:nil

@@ -10,8 +10,10 @@
 #import "KMClassTableModel.h"
 #import "KMClassTableDetailVC.h"
 #import "SVProgressHUD.h"
+#import "ICUser.h"
+#import "ICLoginViewController.h"
 
-@interface KMClassTableVC () <KMClassTableModelDelegate>
+@interface KMClassTableVC () <KMClassTableModelDelegate, ICLoginViewControllerDelegate>
 
 @property (strong, nonatomic) KMClassTableModel *model;
 
@@ -25,6 +27,8 @@
 
 @property (strong, nonatomic) NSArray *normalBarItems;
 @property (strong, nonatomic) NSArray *selectingBarItems;
+
+@property (nonatomic) BOOL firstAppear;
 
 @end
 
@@ -105,6 +109,7 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItems = self.normalBarItems;
+    self.firstAppear = true;
     
     self.topScrollView.userInteractionEnabled = NO;
     self.leftScrollView.userInteractionEnabled = NO;
@@ -124,6 +129,14 @@
     [super viewWillAppear:animated];
     
     //[self.view addSubview:self.initialCoverView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!ICCurrentUser && self.firstAppear) {
+        self.firstAppear = false;
+        [self performSegueWithIdentifier:@"IC_CLASSTABLE_TO_LOGIN" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -389,9 +402,25 @@
     }
 }
 
+- (void)loginViewController:(ICLoginViewController *)loginViewContrller user:(ICUser *)user didLogin:(BOOL)success {
+    if (success) {
+        [self.model fetchWeeklyCoursesWithDate:nil];
+        [SVProgressHUD showWithStatus:@"正在加载" maskType:SVProgressHUDMaskTypeBlack];
+    } else {
+        [self dismiss:self];
+    }
+}
 
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"IC_CLASSTABLE_TO_LOGIN"]) {
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        ICLoginViewController *loginViewController = (ICLoginViewController *)navigationController.topViewController;
+        loginViewController.delegate = self;
+    }
 }
 
 @end
