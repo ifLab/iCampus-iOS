@@ -34,13 +34,9 @@
     }
     NSString *jsonString = [[[NSString alloc] initWithData:data
                                                   encoding:NSUTF8StringEncoding] stringByRemovingPercentEncoding];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
+    NSDictionary *information = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
                                                     options:kNilOptions
                                                       error:nil];
-    if (json.count < 1) {
-        return NO;
-    }
-    NSDictionary *information = json[0];
     self.ID = information[@"userid"];
     self.name = information[@"username"];
     self.type = information[@"idtype"];
@@ -53,7 +49,7 @@
     if (!data) {
         return NO;
     }
-    json = [NSJSONSerialization JSONObjectWithData:data
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data
                                            options:kNilOptions
                                              error:nil];
     if (json.count < 1) {

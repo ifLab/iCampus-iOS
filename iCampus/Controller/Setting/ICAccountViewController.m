@@ -82,6 +82,7 @@
         self.numberOfSections = 3;
         self.navigationItem.rightBarButtonItems = self.rightBarButtonItems;
         [self.tableView reloadData];
+        [self.tableView layoutIfNeeded];
         [loginViewContrller dismissViewControllerAnimated:YES
                                                completion:nil];
     }
