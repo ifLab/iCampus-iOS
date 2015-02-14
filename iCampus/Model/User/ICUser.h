@@ -21,6 +21,10 @@
 @property (nonatomic, copy) NSString   *mobile     ;
 @property (nonatomic, copy) NSString   *email      ;
 @property (nonatomic, copy) NSString   *group      ;
+@property (nonatomic, copy) NSURL      *avatarURL  ;
+@property (nonatomic, copy) NSString   *idCard     ;
+@property (nonatomic, copy) NSString   *department ;
+@property (nonatomic)       BOOL        active     ;
 
 - (id)initWithToken:(NSString *)token
         expiresTime:(NSUInteger)expiresTime;

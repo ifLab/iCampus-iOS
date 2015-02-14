@@ -37,9 +37,15 @@
     NSDictionary *information = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
                                                     options:kNilOptions
                                                       error:nil];
-    self.ID = information[@"userid"];
-    self.name = information[@"username"];
-    self.type = information[@"idtype"];
+    NSLog(@"%@", jsonString);
+    self.ID = information[@"userName"];
+    self.name = information[@"realName"];
+    self.type = information[@"userType"];
+    self.email = information[@"email"];
+    self.avatarURL = [NSURL URLWithString:information[@"avatar"]];
+    self.idCard = information[@"idCard"];
+    self.active = [information[@"active"] isEqualToString:@"1"];
+    self.department = information[@"department"];
     URLString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/userinfo.php?userid=%@", self.ID];
     URL = [NSURL URLWithString:URLString];
     request = [NSMutableURLRequest requestWithURL:URL];
@@ -59,7 +65,6 @@
     self.QQ = information[@"qq"];
     self.WeChat = information[@"wechat"];
     self.mobile = information[@"mobile"];
-    self.email = information[@"email"];
     ICCurrentUser = self;
     return YES;
 }
