@@ -35,11 +35,13 @@
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.jobClassificationList = [ICJobClassificationList loadJobClassificationList];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobClassificationList == nil) {
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 NSString *okString;
                 NSString *loadFailedString;
                 NSString *retryString;
@@ -62,6 +64,7 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
             }
         });
     });

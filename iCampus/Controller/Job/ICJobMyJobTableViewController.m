@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
     // 数据获取
     [self getData];
 }
@@ -78,13 +78,14 @@
     if (!ICCurrentUser) {
         return;
     }
-    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
-                                    animated:YES];
+    [self.HUD show:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.jobList = [ICJobList loadJobListWithID:ICCurrentUser.ID];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.jobList == nil) {
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 NSString *okString;
                 NSString *loadFailedString;
                 NSString *retryString;
@@ -107,6 +108,7 @@
             } else {
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
             }
         });
     });
@@ -118,8 +120,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     ICJob *job = self.jobList.jobList[indexPath.row];
     NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job_unvalid.php?id=%lu", (unsigned long)job.index];
     NSURL *url = [[NSURL alloc] initWithString:u];
-    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
-                                    animated:YES];
+    [self.HUD show:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:url]
                                          returningResponse:nil
                                                      error:nil];
@@ -143,6 +145,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
     if (!data || success != 0) {
         [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         [[[UIAlertView alloc]initWithTitle:failedString
                                    message:retryString
                                   delegate:nil
@@ -150,6 +153,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                          otherButtonTitles:nil]show];
     } else {
         [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         [self getData];
         [self.delegate tellICJobListTableViewControllerNeedReloadData];
     }

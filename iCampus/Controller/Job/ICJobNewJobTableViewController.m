@@ -83,6 +83,7 @@
     self.pickerView.hidden = 1;
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.classificationList = [ICJobClassificationList loadJobClassificationList];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -108,6 +109,7 @@
             }
             if (self.classificationList == nil) {
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 
                 [[[UIAlertView alloc]initWithTitle:loadFailedString
                                            message:retryString
@@ -125,6 +127,7 @@
                 [self.pickerView reloadAllComponents];
                 self.pickerView.hidden = 0;
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
             }
         });
     });
@@ -201,8 +204,8 @@
     if (!ICCurrentUser) {
         return;
     }
-    self.HUD = [MBProgressHUD showHUDAddedTo:self.view
-                                    animated:YES];
+    [self.HUD show:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     NSString *failedString;
     NSString *retryString;
     NSString *okString;
@@ -236,6 +239,7 @@
                             constructingBodyWithBlock:nil
                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                   [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                                                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:kNilOptions
                                                                    error:nil];
@@ -261,6 +265,7 @@
                                                   }
                                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                   [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                                                   [[[UIAlertView alloc]initWithTitle:failedString
                                                                              message:retryString
                                                                             delegate:nil

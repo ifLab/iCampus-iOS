@@ -55,11 +55,13 @@
     // 数据获取
     self.HUD = [MBProgressHUD showHUDAddedTo:self.view
                                     animated:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.job = [ICJob loadJobDetailWith:self.jobID];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.job == nil || self.job.index != self.jobID) {
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 NSString *okString;
                 NSString *loadFailedString;
                 NSString *retryString;
@@ -94,6 +96,7 @@
                 [self.descriptionCell.textLabel sizeToFit];
                 [self.tableView reloadData];
                 [self.HUD hide:YES];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 
                 // 添加导航栏右侧按钮
                 if ([self.mode isEqual: @"APPEAR_FAVORITES_BUTTON"]) {
