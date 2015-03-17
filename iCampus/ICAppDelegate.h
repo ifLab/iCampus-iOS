@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "./External/GexinSdk/include/GexinSdk.h"
 
 @class ICUser;
 
-@interface ICAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ICAppDelegate : UIResponder <UIApplicationDelegate, GexinSdkDelegate> {
+@private
+    UINavigationController *_naviController;
+    NSString *_deviceToken;
+}
+
+- (void)setAliasWith:(NSString *)alias;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ICUser *user;

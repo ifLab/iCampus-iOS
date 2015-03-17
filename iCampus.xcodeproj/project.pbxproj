@@ -22,6 +22,12 @@
 		47D25F23191F5DAF00DADA49 /* ICJobClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F1D191F5DAF00DADA49 /* ICJobClassification.m */; };
 		47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F1F191F5DAF00DADA49 /* ICJobClassificationList.m */; };
 		47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D25F21191F5DAF00DADA49 /* ICJobList.m */; };
+		5C11218D1AB0659800C980FC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C11218C1AB0659800C980FC /* CFNetwork.framework */; };
+		5C11218F1AB065A700C980FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C11218E1AB065A700C980FC /* SystemConfiguration.framework */; };
+		5C1121911AB065B600C980FC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121901AB065B600C980FC /* Security.framework */; };
+		5C1121931AB065D100C980FC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121921AB065D100C980FC /* libsqlite3.dylib */; };
+		5C1121951AB065DF00C980FC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121941AB065DF00C980FC /* libz.dylib */; };
+		5C6DB85B1AAF323C008A8AEB /* libGexinSdk-1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6DB85A1AAF323C008A8AEB /* libGexinSdk-1.1.0.a */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICAccountViewController.m */; };
 		9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9529B9A4192E2AA300C37A3A /* ICAccountEditViewController.m */; };
@@ -209,6 +215,14 @@
 		47D25F1F191F5DAF00DADA49 /* ICJobClassificationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobClassificationList.m; sourceTree = "<group>"; };
 		47D25F20191F5DAF00DADA49 /* ICJobList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobList.h; sourceTree = "<group>"; };
 		47D25F21191F5DAF00DADA49 /* ICJobList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobList.m; sourceTree = "<group>"; };
+		5C11218C1AB0659800C980FC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5C11218E1AB065A700C980FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5C1121901AB065B600C980FC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5C1121921AB065D100C980FC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5C1121941AB065DF00C980FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5C6DB8581AAF323C008A8AEB /* GexinSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GexinSdk.h; sourceTree = "<group>"; };
+		5C6DB8591AAF323C008A8AEB /* GXSdkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSdkError.h; sourceTree = "<group>"; };
+		5C6DB85A1AAF323C008A8AEB /* libGexinSdk-1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGexinSdk-1.1.0.a"; sourceTree = "<group>"; };
 		9508477D18658760008A4571 /* ICBusStationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBusStationView.h; sourceTree = "<group>"; };
 		9508477E18658760008A4571 /* ICBusStationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBusStationView.m; sourceTree = "<group>"; };
 		951BE86618E5E9030049AB5F /* ICAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICAccountViewController.h; path = Setting/ICAccountViewController.h; sourceTree = "<group>"; };
@@ -498,11 +512,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1121951AB065DF00C980FC /* libz.dylib in Frameworks */,
+				5C1121931AB065D100C980FC /* libsqlite3.dylib in Frameworks */,
+				5C1121911AB065B600C980FC /* Security.framework in Frameworks */,
+				5C11218F1AB065A700C980FC /* SystemConfiguration.framework in Frameworks */,
+				5C11218D1AB0659800C980FC /* CFNetwork.framework in Frameworks */,
 				1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */,
 				A30D1DFF182A64BA00F35D4F /* CoreGraphics.framework in Frameworks */,
 				A30D1E01182A64BA00F35D4F /* UIKit.framework in Frameworks */,
 				A30D1DFD182A64BA00F35D4F /* Foundation.framework in Frameworks */,
 				95A000B01861F927008B18BD /* AudioToolbox.framework in Frameworks */,
+				5C6DB85B1AAF323C008A8AEB /* libGexinSdk-1.1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +593,24 @@
 				47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */,
 			);
 			path = Job;
+			sourceTree = "<group>";
+		};
+		5C6DB8561AAF323C008A8AEB /* GexinSdk */ = {
+			isa = PBXGroup;
+			children = (
+				5C6DB8571AAF323C008A8AEB /* include */,
+				5C6DB85A1AAF323C008A8AEB /* libGexinSdk-1.1.0.a */,
+			);
+			path = GexinSdk;
+			sourceTree = "<group>";
+		};
+		5C6DB8571AAF323C008A8AEB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5C6DB8581AAF323C008A8AEB /* GexinSdk.h */,
+				5C6DB8591AAF323C008A8AEB /* GXSdkError.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		951BE86218E5E68F0049AB5F /* Setting */ = {
@@ -1200,6 +1238,11 @@
 		A30D1DFB182A64BA00F35D4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C1121941AB065DF00C980FC /* libz.dylib */,
+				5C1121921AB065D100C980FC /* libsqlite3.dylib */,
+				5C1121901AB065B600C980FC /* Security.framework */,
+				5C11218E1AB065A700C980FC /* SystemConfiguration.framework */,
+				5C11218C1AB0659800C980FC /* CFNetwork.framework */,
 				1C878B0818CDDB3B00BEAC6B /* MapKit.framework */,
 				95A000AF1861F927008B18BD /* AudioToolbox.framework */,
 				A30D1DFC182A64BA00F35D4F /* Foundation.framework */,
@@ -1215,8 +1258,8 @@
 			children = (
 				95A000B518620B91008B18BD /* LICENSE */,
 				95A000AC1861F504008B18BD /* Main.storyboard */,
-				95A000A71861F4CD008B18BD /* ICAppDelegate.m */,
 				95A000A61861F4CD008B18BD /* ICAppDelegate.h */,
+				95A000A71861F4CD008B18BD /* ICAppDelegate.m */,
 				95E4852B18942D90006402FD /* ICConfig.h */,
 				95AC7074185F473200C94B71 /* Model */,
 				95A000E1186218A0008B18BD /* View */,
@@ -1310,6 +1353,7 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5C6DB8561AAF323C008A8AEB /* GexinSdk */,
 				95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */,
 				95B57F8A19F5FDD00069D0A7 /* KMNetworkActivityCenter */,
 				954F626619F62F00001CC1CC /* KMPageMenuViewController */,
@@ -1457,6 +1501,11 @@
 				TargetAttributes = {
 					A30D1DF8182A64BA00F35D4F = {
 						DevelopmentTeam = ZRU9NS7944;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A30D1E19182A64BA00F35D4F = {
 						TestTargetID = A30D1DF8182A64BA00F35D4F;
@@ -1781,7 +1830,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1789,10 +1838,15 @@
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/iCampus/External/GexinSdk/",
+					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iCampus/External/GexinSdk/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1803,7 +1857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = ICLaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = iCampus/iCampus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1811,9 +1865,14 @@
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/iCampus/External/GexinSdk/",
+					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iCampus/External/GexinSdk/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
