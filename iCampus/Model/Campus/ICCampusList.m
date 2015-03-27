@@ -21,7 +21,7 @@
 + (ICCampusList *)campusList {
     ICCampusList *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=map", ICCampusServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=map", ICCampusAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_CAMPUS_DATA_MODULE_DEBUG)

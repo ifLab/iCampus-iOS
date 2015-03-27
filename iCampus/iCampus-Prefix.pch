@@ -14,4 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "DebugNSLog.h"
+    #import "ICConfig.h"
+    #import "ICModelConfig.h"
+    #import "ICControllerConfig.h"
 #endif

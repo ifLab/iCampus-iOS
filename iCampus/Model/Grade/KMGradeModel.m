@@ -61,7 +61,7 @@
         
         _iYears = [@[] mutableCopy];
         
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://jwcapi.iflab.org/year.php?xh=%@", ICCurrentUser.ID]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/year.php?xh=%@", ICGradeAPIURLPrefix, ICCurrentUser.ID]];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url
                                                  cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -118,7 +118,7 @@
         
         _iCategories = [@[] mutableCopy];
         
-        NSURL *url = [NSURL URLWithString:@"http://jwcapi.iflab.org/courseclass.php"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/courseclass.php", ICGradeAPIURLPrefix]];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url
                                                  cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -174,9 +174,9 @@
     _iGrades = [@[] mutableCopy];
     
     /*
-    NSString *strURL = [[NSString stringWithFormat:@"http://jwcapi.iflab.org/score.php?xh=%@&xn=%@&xq=%@&kcxz=%@",@"2011011064" , year, semester, category] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *strURL = [[NSString stringWithFormat:@"jwcapi.iflab.org/score.php?xh=%@&xn=%@&xq=%@&kcxz=%@",@"2011011064" , year, semester, category] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     */
-    NSMutableString *strURL = [[NSString stringWithFormat:@"http://jwcapi.iflab.org/score.php?xh=%@", ICCurrentUser.ID] mutableCopy];
+    NSMutableString *strURL = [[NSString stringWithFormat:@"%@/score.php?xh=%@", ICGradeAPIURLPrefix, ICCurrentUser.ID] mutableCopy];
     if (![year isEqualToString:@"不限"]) {
         [strURL appendFormat:@"&xn=%@", year];
     }

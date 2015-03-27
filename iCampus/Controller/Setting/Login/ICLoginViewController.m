@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     self.HUD = [MBProgressHUD showHUDAddedTo:self.loginView
                                     animated:YES];
-    [self.loginView loadWithURL:[NSURL URLWithString:@"https://222.249.250.89:8443/oauth/authorize"]
+    [self.loginView loadWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/oauth/authorize", ICAuthAPIURLPrefix]]
                     redirectURI:@"about:blank"
                        clientID:@"3ef19cbbc8ff1bd9cecb1f646759a7a1"
                    clientSecret:@"294a5816a059d9bb588bf3221010bfac"];

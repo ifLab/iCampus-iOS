@@ -56,9 +56,9 @@
     
     NSString *strURL = nil;
     if (date != nil) {
-        strURL = [NSString stringWithFormat:@"http://jwcapi.iflab.org/course.php?xh=%@&date=%@", ICCurrentUser.ID, date];
+        strURL = [NSString stringWithFormat:@"%@/course.php?xh=%@&date=%@", ICClassTableAPIURLPrefix, ICCurrentUser.ID, date];
     } else {
-        strURL = [NSString stringWithFormat:@"http://jwcapi.iflab.org/course.php?xh=%@", ICCurrentUser.ID];
+        strURL = [NSString stringWithFormat:@"%@/course.php?xh=%@", ICClassTableAPIURLPrefix, ICCurrentUser.ID];
     }
     
     NSURL *url = [NSURL URLWithString:strURL];

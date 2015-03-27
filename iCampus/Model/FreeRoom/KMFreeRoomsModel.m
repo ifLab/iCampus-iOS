@@ -33,7 +33,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:@"http://jwcapi.iflab.org/district.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"%@/district.php", ICFreeRoomAPIURLPrefix] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSMutableArray *preparedData = [@[] mutableCopy];
             for (NSDictionary *dict in responseObject) {
@@ -57,7 +57,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSDictionary *paras = @{@"districtCode": campusID};
-    [manager GET:@"http://jwcapi.iflab.org/building.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"%@/building.php", ICFreeRoomAPIURLPrefix] parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSMutableArray *preparedData = [@[] mutableCopy];
             for (NSDictionary *dict in responseObject) {
@@ -80,7 +80,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSDictionary *paras = @{@"buildingCode": buildingID};
-    [manager GET:@"http://jwcapi.iflab.org/classroom.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"%@/classroom.php", ICFreeRoomAPIURLPrefix] parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             NSMutableArray *preparedData = [@[] mutableCopy];
             for (NSDictionary *dict in responseObject) {
@@ -106,7 +106,7 @@
 //    formatter.timeZone = [NSTimeZone localTimeZone];
 //    formatter.dateFormat = @"yyyy-MM-dd";
 //    NSDictionary *paras = @{@"jsbh": roomID, @"date": [formatter stringFromDate:[NSDate date]]};
-//    [manager GET:@"http://jwcapi.iflab.org/classinfo.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//    [manager GET:@"jwcapi.iflab.org/classinfo.php" parameters:paras success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        if ([responseObject isKindOfClass:[NSArray class]]) {
 //            NSMutableArray *preparedData = [@[] mutableCopy];
 //            for (NSDictionary *dict in responseObject) {
@@ -131,7 +131,7 @@
 + (id)getRoomDetailWithRoomID:(NSString *)roomID atDate:(NSString *)date
 {
     NSMutableArray *list = [[NSMutableArray alloc] init];
-    NSMutableString *URLString = [NSMutableString stringWithFormat:@"http://jwcapi.iflab.org/classinfo.php?jsbh=%@", roomID];
+    NSMutableString *URLString = [NSMutableString stringWithFormat:@"%@/classinfo.php?jsbh=%@", ICFreeRoomAPIURLPrefix, roomID];
     [URLString appendFormat:@"&date=%@", date];
     NSURL *URL = [NSURL URLWithString:URLString];
     NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:URL]

@@ -12,7 +12,7 @@
 
 #   pragma mark - Debug options
 
-//#   define IC_DATA_MODULE_DEBUG
+#   define IC_DATA_MODULE_DEBUG
 #   ifdef IC_DATA_MODULE_DEBUG
 #       define IC_ABOUT_DATA_MODULE_DEBUG
 #       define IC_CAMPUS_DATA_MODULE_DEBUG
@@ -54,16 +54,44 @@ static const NSString *ICAppPass = @"a9d9edb932a26f47576e8b4739404285";
 
 #   pragma mark - Server domains definations
 
-static const NSString *ICServerDomain    = @"api.bistu.edu.cn";
-static const NSString *ICOldServerDomain = @"m.bistu.edu.cn"  ;
+typedef NS_ENUM(NSUInteger, _ICAuthType) {
+    ICAuthTypeUnknown = 0,
+    ICAuthTypeOAuth = 1,
+    ICAuthTypeCAS = 2
+};
 
-#   define ICAboutServerDomain      ICOldServerDomain
-#   define ICSchoolServerDomain     ICServerDomain
-#   define ICNewsServerDomain       ICServerDomain
-#   define ICBusServerDomain        ICOldServerDomain
-#   define ICCampusServerDomain     ICServerDomain
-#   define ICUserServerDomain       ICServerDomain
-#   define ICYellowPageServerDomain ICOldServerDomain
+static NSString *ICDataAPIURLPrefix = @"http://m.bistu.edu.cn/api";
+static NSString *ICEduAdminAPIURLPrefix = @"http://m.bistu.edu.cn/api";
+static NSString *ICNewsAPIURLPrefix = @"http://m.bistu.edu.cn/newsapi";
+static NSString *ICOAuthAPIURLPrefix = @"https://222.249.250.89:8443";
+static NSString *ICCASAPIURLPrefix = @"https://222.249.250.89:8443";
+static _ICAuthType ICAuthType = ICAuthTypeUnknown;
+
+#   define ICAuthAPIURLPrefix                \
+    ^ NSString * {                           \
+        switch (ICAuthType) {                \
+            case ICAuthTypeCAS:              \
+                return ICCASAPIURLPrefix;    \
+            case ICAuthTypeOAuth:            \
+                return ICOAuthAPIURLPrefix;  \
+            default:                         \
+                return nil;                  \
+        }                                    \
+    }()
+#   define ICAboutAPIURLPrefix      ICDataAPIURLPrefix
+#   define ICBusAPIURLPrefix        ICDataAPIURLPrefix
+#   define ICCampusAPIURLPrefix     ICDataAPIURLPrefix
+#   define ICClassTableAPIURLPrefix ICEduAdminAPIURLPrefix
+#   define ICFreeRoomAPIURLPrefix   ICEduAdminAPIURLPrefix
+#   define ICGradeAPIURLPrefix      ICEduAdminAPIURLPrefix
+#   define ICGroupAPIURLPrefix      ICDataAPIURLPrefix
+#   define ICJobAPIURLPrefix        ICDataAPIURLPrefix
+#   define ICMapAPIURLPrefix        ICDataAPIURLPrefix
+#   define ICNewsAPIURLPrefix       ICNewsAPIURLPrefix
+#   define ICSchoolAPIURLPrefix     ICDataAPIURLPrefix
+#   define ICUsedGoodAPIURLPrefix   ICDataAPIURLPrefix
+#   define ICUserAPIURLPrefix       ICDataAPIURLPrefix
+#   define ICYellowPageAPIURLPrefix ICDataAPIURLPrefix
 
 //=====================================================================
 

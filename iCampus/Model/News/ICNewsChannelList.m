@@ -21,7 +21,7 @@
 + (ICNewsChannelList *)channelList {
     ICNewsChannelList *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=newschannel", ICNewsServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newschannel", ICNewsAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_CHANNEL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsChannelTag, ICFetchingTag, urlString);
@@ -52,7 +52,7 @@
             channel.lastUpdateDate = [dateFormatter dateFromString:a[@"lmt"]];
             channel.title = a[@"n"];
             channel.listKey = a[@"url"];
-            channel.listKey = [channel.listKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
+            channel.listKey = [channel.listKey stringByReplacingOccurrencesOfString:@"newsfeed.bistu.edu.cn"
                                                                          withString:@""];
             [instance addChannel:channel];
         }

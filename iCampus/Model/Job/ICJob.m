@@ -14,7 +14,7 @@
 + (id)loadJobDetailWith:(NSInteger)jobID {
     ICJob *job = [[ICJob alloc] init];
     if (job) {
-        NSString *URLString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/jobdetail.php?id=%ld", (long)jobID];
+        NSString *URLString = [NSString stringWithFormat:@"%@/jobdetail.php?id=%ld", ICJobAPIURLPrefix, (long)jobID];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_DETAIL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICJobDetailTag, ICFetchingTag, URLString);
 #       endif

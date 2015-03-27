@@ -25,8 +25,7 @@
            classification:(ICJobClassification *)classification {
     ICJobList *list = [[ICJobList alloc] init];
     if (list) {
-        NSMutableString *URLString = [NSMutableString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?mod=%@",
-                                      type ? @"1" : @"2"];
+        NSMutableString *URLString = [NSMutableString stringWithFormat:@"%@/job.php?mod=%@", ICJobAPIURLPrefix, type ? @"1" : @"2"];
         if (classification.index != 0) {
             [URLString appendFormat:@"&typeid=%lu", (unsigned long)classification.index];
         }
@@ -62,7 +61,7 @@
 + (id)loadJobListWithID:(NSString *)userID {
     ICJobList *list = [[ICJobList alloc] init];
     if (list) {
-        NSString *URLString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job.php?userid=%@", userID];
+        NSString *URLString = [NSString stringWithFormat:@"%@/job.php?userid=%@", ICJobAPIURLPrefix, userID];
         NSURL *URL = [NSURL URLWithString:URLString];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_LIST_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICJobListTag, ICFetchingTag, URLString);

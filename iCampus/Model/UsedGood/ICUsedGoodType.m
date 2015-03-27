@@ -11,7 +11,7 @@
 @implementation ICUsedGoodType
 
 + (NSArray*)typeList{
-    NSString *urlString = @"http://m.bistu.edu.cn/newapi/secondhandtype.php";
+    NSString *urlString = [NSString stringWithFormat:@"%@/secondhandtype.php", ICUsedGoodAPIURLPrefix];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *data = [NSURLConnection sendSynchronousRequest:request

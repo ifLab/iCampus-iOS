@@ -43,7 +43,7 @@
 + (instancetype)pageWithCategory:(NSString *)category {
     ICAboutWebpage *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/intro.php?mod=%@", ICAboutServerDomain, category];
+        NSString *urlString = [NSString stringWithFormat:@"%@/newapi/intro.php?mod=%@", ICAboutAPIURLPrefix, category];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_ABOUT_DATA_MODULE_DEBUG)

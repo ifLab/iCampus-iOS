@@ -21,7 +21,7 @@
 + (ICSchoolList *)schoolList {
     ICSchoolList *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=collegeintro", ICSchoolServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=collegeintro", ICSchoolAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_SCHOOL_LIST_DATA_MODULE_DEBUG)

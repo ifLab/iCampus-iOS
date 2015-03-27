@@ -16,7 +16,7 @@
 + (NSArray *)goodListWithType:(ICUsedGoodType *)type {
     
     NSMutableArray *list = [NSMutableArray array];
-    NSString *URLString = @"http://m.bistu.edu.cn/newapi/secondhand.php";
+    NSString *URLString = [NSString stringWithFormat:@"%@/secondhand.php", ICUsedGoodAPIURLPrefix];
     if (type) {
         URLString = [URLString stringByAppendingString:[NSString stringWithFormat:@"?typeid=%@", type.ID]];
     }
@@ -60,7 +60,7 @@
 }
 + (NSArray *)goodListWithUserID:(NSString *)userID {
     NSMutableArray *list = [NSMutableArray array];
-    NSString *URLString = @"http://m.bistu.edu.cn/newapi/secondhand.php";
+    NSString *URLString = [NSString stringWithFormat:@"%@/secondhand.php", ICUsedGoodAPIURLPrefix];
     if (userID) {
         URLString = [URLString stringByAppendingString:[NSString stringWithFormat:@"?userid=%@", userID]];
     }

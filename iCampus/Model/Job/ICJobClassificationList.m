@@ -23,7 +23,7 @@
 + (id)loadJobClassificationList {
     ICJobClassificationList *jobClassificationList = [[ICJobClassificationList alloc] init];
     if (jobClassificationList) {
-        NSString *URLString = @"http://m.bistu.edu.cn/newapi/jobtype.php";
+        NSString *URLString = [NSString stringWithFormat:@"%@/jobtype.php", ICJobAPIURLPrefix];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_JOB_CLASSIFICATION_DATA_MODULE_DEBUG)
         NSLog(@"%@ %@ %@", ICJobClassificationTag, ICFetchingTag, URLString);
 #       endif

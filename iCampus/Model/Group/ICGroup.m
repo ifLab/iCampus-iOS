@@ -47,7 +47,7 @@
 }
 */
 +(ICUser *)personalInformation{
-    NSString *urlString = [NSString stringWithFormat:@"http://jwcapi.iflab.org/usergroup.php?userid=%@",ICCurrentUser.ID];
+    NSString *urlString = [NSString stringWithFormat:@"%@/usergroup.php?userid=%@", ICGroupAPIURLPrefix, ICCurrentUser.ID];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *data = [NSURLConnection sendSynchronousRequest:request
@@ -65,7 +65,7 @@
 
 +(NSMutableArray *)personalInformationlist{
     
-    NSString *urlString = [NSString stringWithFormat:@"http://jwcapi.iflab.org/usergroup.php?userid=%@",ICCurrentUser.ID];
+    NSString *urlString = [NSString stringWithFormat:@"%@/usergroup.php?userid=%@", ICGroupAPIURLPrefix, ICCurrentUser.ID];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *data = [NSURLConnection sendSynchronousRequest:request
@@ -78,7 +78,7 @@
     ICUser *user = [[ICUser alloc] init];
     user.group = json[@"group"];
     // NSLog(@"%@", user.group);
-    NSString *urlString1 = [NSString stringWithFormat:@"http://jwcapi.iflab.org/groupuser.php?group=%@&grouptype=class",user.group];
+    NSString *urlString1 = [NSString stringWithFormat:@"%@/groupuser.php?group=%@&grouptype=class", ICGroupAPIURLPrefix, user.group];
     NSString *urlString2 = [urlString1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url1 = [NSURL URLWithString:urlString2];
     NSURLRequest *request1 = [NSURLRequest requestWithURL:url1];
@@ -100,7 +100,7 @@
 //    
 //    for(ICUser *user in detailInformation)
 //    {
-//        NSString *urlString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/userinfo.php?userid=%@",user.ID];
+//        NSString *urlString = [NSString stringWithFormat:@"m.bistu.edu.cn/newapi/userinfo.php?userid=%@",user.ID];
 //        NSURL *url = [NSURL URLWithString:urlString];
 //        NSURLRequest *request = [NSURLRequest requestWithURL:url];
 //        NSData *data = [NSURLConnection sendSynchronousRequest:request

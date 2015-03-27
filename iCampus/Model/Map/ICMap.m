@@ -43,7 +43,7 @@
 
 - (void)loadDataFromServer
 {
-    NSURL *url = [NSURL URLWithString:@"http://m.bistu.edu.cn/newapi/map.php"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/map.php", ICMapAPIURLPrefix]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReloadIgnoringCacheData

@@ -21,7 +21,7 @@
 + (ICYellowPageDepartmentList *)departmentList {
     ICYellowPageDepartmentList *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/yellowpage.php?action=cat", ICYellowPageServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"%@/newapi/yellowpage.php?action=cat", ICYellowPageAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_YELLOWPAGE_DEPARTMENT_DATA_MODULE_DEBUG)

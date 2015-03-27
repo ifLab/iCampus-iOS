@@ -45,7 +45,7 @@
         if (!channel) {
             return self;
         }
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=newslist&url=%@&index=%lu", ICNewsServerDomain, channel.listKey, (unsigned long)index];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newslist&url=%@&index=%lu", ICNewsAPIURLPrefix, channel.listKey, (unsigned long)index];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -82,7 +82,7 @@
             news.preview = a[@"ab"];
             news.imageURL = [NSURL URLWithString:a[@"ic"]];
             news.detailKey = a[@"url"];
-            news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
+            news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@"newsfeed.bistu.edu.cn"
                                                                        withString:@""];
             news.detailKey = [news.detailKey stringByReplacingOccurrencesOfString:@".xml"
                                                                        withString:@""];
@@ -95,7 +95,7 @@
 - (id)initWithKeyword:(NSString *)keyword {
     self = [super init];
     if (self) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/api/api.php?table=newssearch&search=%@", ICNewsServerDomain, keyword];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newssearch&search=%@", ICNewsAPIURLPrefix, keyword];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];

@@ -23,7 +23,7 @@
 + (ICBusListArray *)array {
     ICBusListArray *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@/newapi/bus.php", ICBusServerDomain];
+        NSString *urlString = [NSString stringWithFormat:@"%@/newapi/bus.php", ICBusAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_BUS_DATA_MODULE_DEBUG)

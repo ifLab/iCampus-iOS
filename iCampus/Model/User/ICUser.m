@@ -21,7 +21,7 @@
 }
 
 - (BOOL)login {
-    NSString *URLString = @"https://222.249.250.89:8443/m/userinfo.htm";
+    NSString *URLString = [NSString stringWithFormat:@"%@/m/userinfo.htm", ICAuthAPIURLPrefix];
     NSURL *URL = [NSURL URLWithString:URLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request addValue:[NSString stringWithFormat:@"Bearer %@", self.token]
@@ -46,7 +46,7 @@
     self.idCard = information[@"idCard"];
     self.active = [information[@"active"] isEqualToString:@"1"];
     self.department = information[@"department"];
-    URLString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/userinfo.php?userid=%@", self.ID];
+    URLString = [NSString stringWithFormat:@"%@/newapi/userinfo.php?userid=%@", ICUserAPIURLPrefix, self.ID];
     URL = [NSURL URLWithString:URLString];
     request = [NSMutableURLRequest requestWithURL:URL];
     data = [NSURLConnection sendSynchronousRequest:request
