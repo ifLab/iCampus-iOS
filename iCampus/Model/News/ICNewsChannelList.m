@@ -21,7 +21,7 @@
 + (ICNewsChannelList *)channelList {
     ICNewsChannelList *instance = [[self alloc] init];
     if (instance) {
-        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newschannel", ICNewsAPIURLPrefix];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api.php?table=newschannel", ICNewsAPIURLPrefix];
         NSURL *url = [NSURL URLWithString:urlString];
 #       if !defined(IC_ERROR_ONLY_DEBUG) && defined(IC_NEWS_CHANNEL_DATA_MODULE_DEBUG)
             NSLog(@"%@ %@ %@", ICNewsChannelTag, ICFetchingTag, urlString);

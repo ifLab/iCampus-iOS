@@ -30,7 +30,7 @@
             return self;
         }
         // get data
-        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=news&url=%@", ICNewsAPIURLPrefix, news.detailKey];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api.php?table=news&url=%@", ICNewsAPIURLPrefix, news.detailKey];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];

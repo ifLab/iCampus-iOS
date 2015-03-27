@@ -33,4 +33,4 @@
 
 @end
 
-#define ICCurrentUser ((ICAppDelegate *)[UIApplication sharedApplication].delegate).user
+extern ICUser *ICCurrentUser;

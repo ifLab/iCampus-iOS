@@ -8,6 +8,8 @@
 
 #import "ICUser.h"
 
+ICUser *ICCurrentUser = nil;
+
 @implementation ICUser
 
 - (id)initWithToken:(NSString *)token
@@ -37,7 +39,6 @@
     NSDictionary *information = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
                                                     options:kNilOptions
                                                       error:nil];
-    NSLog(@"%@", jsonString);
     self.ID = information[@"userName"];
     self.name = information[@"realName"];
     self.type = information[@"userType"];
@@ -46,7 +47,7 @@
     self.idCard = information[@"idCard"];
     self.active = [information[@"active"] isEqualToString:@"1"];
     self.department = information[@"department"];
-    URLString = [NSString stringWithFormat:@"%@/newapi/userinfo.php?userid=%@", ICUserAPIURLPrefix, self.ID];
+    URLString = [NSString stringWithFormat:@"%@/userinfo.php?userid=%@", ICUserAPIURLPrefix, self.ID];
     URL = [NSURL URLWithString:URLString];
     request = [NSMutableURLRequest requestWithURL:URL];
     data = [NSURLConnection sendSynchronousRequest:request

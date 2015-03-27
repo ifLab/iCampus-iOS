@@ -38,12 +38,12 @@
                                       user:user
                                   didLogin:success];
     }];
-    
     // 注册推送别名
-    ICAppDelegate *delegate = (ICAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [delegate setAliasWith:user.ID];
-    NSLog(@"[ICLoginViewController]已注册个推别名为：%@", user.ID);
-    
+    if (success) {
+        ICAppDelegate *delegate = (ICAppDelegate *)[[UIApplication sharedApplication] delegate];
+        [delegate setAliasWith:user.ID];
+        NSLog(@"[ICLoginViewController] 已注册个推别名为：%@", user.ID);
+    }
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self
                                                                                            action:@selector(dismiss:)];

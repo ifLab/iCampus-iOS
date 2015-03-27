@@ -45,7 +45,7 @@
         if (!channel) {
             return self;
         }
-        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newslist&url=%@&index=%lu", ICNewsAPIURLPrefix, channel.listKey, (unsigned long)index];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api.php?table=newslist&url=%@&index=%lu", ICNewsAPIURLPrefix, channel.listKey, (unsigned long)index];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -95,7 +95,7 @@
 - (id)initWithKeyword:(NSString *)keyword {
     self = [super init];
     if (self) {
-        NSString *urlString = [NSString stringWithFormat:@"%@/api/api.php?table=newssearch&search=%@", ICNewsAPIURLPrefix, keyword];
+        NSString *urlString = [NSString stringWithFormat:@"%@/api.php?table=newssearch&search=%@", ICNewsAPIURLPrefix, keyword];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];

@@ -119,6 +119,7 @@
 		95B57FA819F5FEC50069D0A7 /* KMGradeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B57FA719F5FEC50069D0A7 /* KMGradeModel.m */; };
 		95C2C4E01907F5E6009E39C7 /* ICAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2C4DF1907F5E6009E39C7 /* ICAboutViewController.m */; };
 		95C2C4E51907F653009E39C7 /* ICAboutWebpage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2C4E41907F653009E39C7 /* ICAboutWebpage.m */; };
+		95D59FCF1AC5B95900F67C40 /* ICModelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D59FCE1AC5B95900F67C40 /* ICModelConfig.m */; };
 		95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852018940E8E006402FD /* ICYellowPageDepartment.m */; };
 		95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E4852318940FE9006402FD /* ICYellowPageDepartmentViewController.m */; };
 		95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48526189411DC006402FD /* ICYellowPageDepartmentList.m */; };
@@ -407,6 +408,7 @@
 		95C2C4DF1907F5E6009E39C7 /* ICAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICAboutViewController.m; path = About/ICAboutViewController.m; sourceTree = "<group>"; };
 		95C2C4E31907F653009E39C7 /* ICAboutWebpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICAboutWebpage.h; sourceTree = "<group>"; };
 		95C2C4E41907F653009E39C7 /* ICAboutWebpage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICAboutWebpage.m; sourceTree = "<group>"; };
+		95D59FCE1AC5B95900F67C40 /* ICModelConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICModelConfig.m; sourceTree = "<group>"; };
 		95E4851F18940E8E006402FD /* ICYellowPageDepartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartment.h; sourceTree = "<group>"; };
 		95E4852018940E8E006402FD /* ICYellowPageDepartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICYellowPageDepartment.m; sourceTree = "<group>"; };
 		95E4852218940FE9006402FD /* ICYellowPageDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICYellowPageDepartmentViewController.h; sourceTree = "<group>"; };
@@ -1015,6 +1017,7 @@
 			isa = PBXGroup;
 			children = (
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
+				95D59FCE1AC5B95900F67C40 /* ICModelConfig.m */,
 				9536605619F9B3790055D5F9 /* Group */,
 				95B57FA519F5FEC50069D0A7 /* Grade */,
 				95B57F8E19F5FDF60069D0A7 /* ClassTable */,
@@ -1660,6 +1663,7 @@
 				95AC70B2185F473300C94B71 /* ICNews.m in Sources */,
 				95A000DA186214FA008B18BD /* ICBusList.m in Sources */,
 				A320CA72183E365D00BCA05F /* AFNetworkReachabilityManager.m in Sources */,
+				95D59FCF1AC5B95900F67C40 /* ICModelConfig.m in Sources */,
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
 				95B57F9419F5FDF60069D0A7 /* KMClassTableModel.m in Sources */,
 				BE168E09193C818C00542524 /* ICUsedGoodDetailViewController.m in Sources */,
