@@ -38,7 +38,7 @@
     ICGrouppersonDetailTableViewController *__self __weak = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         __self.personalInformationString = @"p\\ersonalInformation";
-        NSString *urlString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/userinfo.php?userid=%@",[__self.detailItem objectForKey:@"userid"]];
+        NSString *urlString = [NSString stringWithFormat:@"http://m.bistu.edu.cn/userinfo.php?userid=%@",[__self.detailItem objectForKey:@"userid"]];
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         NSData *data = [NSURLConnection sendSynchronousRequest:request

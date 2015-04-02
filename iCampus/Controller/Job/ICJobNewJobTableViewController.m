@@ -220,7 +220,7 @@
         retryString = @"Please check you network connection and try again.";
         okString = @"OK";
     }
-    AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/job_add.php"
+    AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/job_add.php"
                                            parameters:@{@"title": self.titleTextView.text ? self.titleTextView.text : @"",
                                                         @"mod": mod,
                                                         @"typeid": typeid,

@@ -46,7 +46,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSInteger __block result = 0;
-     AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/newapi/userinfomod.php"
+     AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/userinfomod.php"
                                             parameters:@{@"userid":ICCurrentUser.ID,
                                                          @"qq":self.QQDetailTextField.text,
                                                          @"wechat":[self.WeChatDetailTextField.text stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding],

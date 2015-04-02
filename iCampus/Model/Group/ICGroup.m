@@ -100,7 +100,7 @@
 //    
 //    for(ICUser *user in detailInformation)
 //    {
-//        NSString *urlString = [NSString stringWithFormat:@"m.bistu.edu.cn/newapi/userinfo.php?userid=%@",user.ID];
+//        NSString *urlString = [NSString stringWithFormat:@"m.bistu.edu.cn/userinfo.php?userid=%@",user.ID];
 //        NSURL *url = [NSURL URLWithString:urlString];
 //        NSURLRequest *request = [NSURLRequest requestWithURL:url];
 //        NSData *data = [NSURLConnection sendSynchronousRequest:request

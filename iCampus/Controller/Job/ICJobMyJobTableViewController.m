@@ -118,7 +118,7 @@
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
     ICJob *job = self.jobList.jobList[indexPath.row];
-    NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/newapi/job_unvalid.php?id=%lu", (unsigned long)job.index];
+    NSString *u = [NSString stringWithFormat:@"http://m.bistu.edu.cn/job_unvalid.php?id=%lu", (unsigned long)job.index];
     NSURL *url = [[NSURL alloc] initWithString:u];
     [self.HUD show:YES];
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];

@@ -1846,7 +1846,7 @@
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
 					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1873,7 +1873,7 @@
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
 					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iCampus/External/GexinSdk/";
@@ -1897,7 +1897,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iCampusTests/iCampusTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCampusTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1915,7 +1915,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampusTests/iCampusTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCampusTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
