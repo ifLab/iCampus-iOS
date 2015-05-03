@@ -126,8 +126,8 @@
                        [UIImage imageNamed:@"FrontIconsGradeSearch"],
                        [UIImage imageNamed:@"FrontIconsClassTable"],
                        [UIImage imageNamed:@"FrontIconsFreeRooms"],
-                       [UIImage imageNamed:@"ICGatePlaceHolder"],
-                       [UIImage imageNamed:@"ICGatePlaceHolder"],
+                       [UIImage imageNamed:@"二手货"],
+                       [UIImage imageNamed:@"群组"],
                        [UIImage imageNamed:@"ICGatePlaceHolder"]
                        ];
     }
