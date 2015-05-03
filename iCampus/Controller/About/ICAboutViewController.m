@@ -29,7 +29,7 @@
     UIViewController *detailViewController = [[UIViewController alloc] init];
     detailViewController.title = cell.textLabel.text;
     detailViewController.view.backgroundColor = [UIColor groupTableViewBackgroundColor]; // Necessary!
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:detailViewController.view.frame];
+    UIWebView *webView = [[UIWebView alloc] initWithFrame: CGRectMake(0, 0, detailViewController.view.bounds.size.width, detailViewController.view.bounds.size.height - 64)];
     [detailViewController.view addSubview:webView];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         ICAboutWebpage *aboutPage;

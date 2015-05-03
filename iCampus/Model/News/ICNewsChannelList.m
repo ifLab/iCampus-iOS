@@ -52,7 +52,7 @@
             channel.lastUpdateDate = [dateFormatter dateFromString:a[@"lmt"]];
             channel.title = a[@"n"];
             channel.listKey = a[@"url"];
-            channel.listKey = [channel.listKey stringByReplacingOccurrencesOfString:@"newsfeed.bistu.edu.cn"
+            channel.listKey = [channel.listKey stringByReplacingOccurrencesOfString:@"http://newsfeed.bistu.edu.cn"
                                                                          withString:@""];
             [instance addChannel:channel];
         }

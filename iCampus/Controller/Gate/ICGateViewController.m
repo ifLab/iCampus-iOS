@@ -109,7 +109,7 @@
 - (NSArray *)itemTitles
 {
     if (!_itemTitles) {
-        _itemTitles = @[@"新闻", /*@"学院",*/ @"黄页", @"校车", @"地图", @"兼职", @"成绩", @"课程", @"教室", @"二手", @"群组", @"关于"];
+        _itemTitles = @[@"新闻", @"学院", @"黄页", @"校车", @"地图", @"兼职", @"成绩", @"课程", @"教室", @"二手", @"群组", @"关于"];
     }
     return _itemTitles;
 }
@@ -118,7 +118,7 @@
 {
     if (!_itemIcons) {
         _itemIcons = @[[UIImage imageNamed:@"ICGateNewsIcon"],
-//                       [UIImage imageNamed:@"ICGateSchoolIcon"],
+                       [UIImage imageNamed:@"ICGateSchoolIcon"],
                        [UIImage imageNamed:@"ICGateYellowPageIcon"],
                        [UIImage imageNamed:@"ICGateBusIcon"],
                        [UIImage imageNamed:@"ICGateMapIcon"],
@@ -138,7 +138,7 @@
 {
     if (!_segues) {
         _segues = @[@"IC_GATE_TO_NEWS",
-//                    @"IC_GATE_TO_SCHOOL",
+                    @"IC_GATE_TO_SCHOOL",
                     @"IC_GATE_TO_YELLOWPAGE",
                     @"IC_GATE_TO_BUS",
                     @"IC_GATE_TO_MAP",

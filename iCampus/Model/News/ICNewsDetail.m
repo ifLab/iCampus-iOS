@@ -104,7 +104,12 @@
         }
         self.authors = [NSArray arrayWithArray:authors];
         // source names
-        NSDictionary *sourceNamesDictionary = json[@"docsourcename"];
+        NSDictionary *sourceNamesDictionary;
+        if ([json[@"docsourcename"] isKindOfClass:[NSDictionary class]]) {
+            sourceNamesDictionary = json[@"docsourcename"];
+        } else {
+            sourceNamesDictionary = @{@"key": json[@"docsourcename"]};
+        }
         NSMutableArray *sourceNames = [NSMutableArray array];
         for (NSString *sourceName in sourceNamesDictionary) {
             [sourceNames addObject:sourceName];
