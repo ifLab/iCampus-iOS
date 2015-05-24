@@ -203,7 +203,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:@"http://m.bistu.edu.cn/secondhand_add.php"
+    [manager POST:[NSString stringWithFormat:@"%@/secondhand_add.php", ICUsedGoodAPIURLPrefix]
        parameters:@{@"title": self.titleCell.detailTextField.text,
                     @"typeid": self.typeID,
                     @"xqdm": @"1",

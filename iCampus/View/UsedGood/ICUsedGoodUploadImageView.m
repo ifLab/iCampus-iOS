@@ -49,7 +49,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSData *imageData = UIImageJPEGRepresentation(self.image, 0.5);
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:@"http://jwcapp.bistu.edu.cn/upload.php"
+    [manager POST:[NSString stringWithFormat:@"%@/upload.php", ICUsedGoodAPIURLPrefix]
        parameters:nil constructingBodyWithBlock:
      ^(id<AFMultipartFormData> formData) {
          [formData appendPartWithFileData:imageData
@@ -58,7 +58,7 @@
                                  mimeType:@"image/jpeg"];
      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
          NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:kNilOptions error:nil];
-         self.URL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://jwcapp.bistu.edu.cn%@",
+         self.URL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@", ICUsedGoodAPIURLPrefix,
                                                    json[@"url"]]];
          [UIView animateWithDuration:0.5
                           animations:^{
