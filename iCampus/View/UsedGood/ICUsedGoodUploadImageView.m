@@ -58,7 +58,7 @@
                                  mimeType:@"image/jpeg"];
      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
          NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:kNilOptions error:nil];
-         self.URL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@", ICUsedGoodAPIURLPrefix,
+         self.URL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@",
                                                    json[@"url"]]];
          [UIView animateWithDuration:0.5
                           animations:^{
