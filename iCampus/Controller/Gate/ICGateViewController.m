@@ -49,35 +49,37 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.bistu.edu.cn/icampus_config.json"]];
     typeof(self) __weak self_ = self;
     [NSURLConnection sendAsynchronousRequest:request queue:self.operationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        [SVProgressHUD dismiss];
-        BOOL failed = true;
-        if (!connectionError && data) {
-            NSError *error;
-            NSArray *configs = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            if (!error && configs.count > 0) {
-                failed = false;
-                NSDictionary *bistu = (NSDictionary *)configs[0]; // This will be changed in the universal version.
-                _ICCASAPIURLPrefix = bistu[@"CAS"];
-                _ICOAuthAPIURLPrefix = bistu[@"oAuth2"];
-                _ICEduAdminAPIURLPrefix = bistu[@"jwApi"];
-                _ICNewsAPIURLPrefix = bistu[@"newsApi"];
-                _ICDataAPIURLPrefix = bistu[@"icampusApi"];
-                if ([bistu[@"authType"] isEqual:@"oAuth2"]) {
-                    _ICAuthType = ICAuthTypeOAuth;
-                } else if ([bistu[@"authType"] isEqual:@"CAS"]) {
-                    _ICAuthType = ICAuthTypeCAS;
-                } else {
-                    _ICAuthType = ICAuthTypeUnknown;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            BOOL failed = true;
+            if (!connectionError && data) {
+                NSError *error;
+                NSArray *configs = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+                if (!error && configs.count > 0) {
+                    failed = false;
+                    NSDictionary *bistu = (NSDictionary *)configs[0]; // This will be changed in the universal version.
+                    _ICCASAPIURLPrefix = bistu[@"CAS"];
+                    _ICOAuthAPIURLPrefix = bistu[@"oAuth2"];
+                    _ICEduAdminAPIURLPrefix = bistu[@"jwApi"];
+                    _ICNewsAPIURLPrefix = bistu[@"newsApi"];
+                    _ICDataAPIURLPrefix = bistu[@"icampusApi"];
+                    if ([bistu[@"authType"] isEqual:@"oAuth2"]) {
+                        _ICAuthType = ICAuthTypeOAuth;
+                    } else if ([bistu[@"authType"] isEqual:@"CAS"]) {
+                        _ICAuthType = ICAuthTypeCAS;
+                    } else {
+                        _ICAuthType = ICAuthTypeUnknown;
+                    }
                 }
             }
-        }
-        if (failed) {
-            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"错误" message:@"无法获得服务器信息，可能是服务器维护中，应用即将被关闭。" preferredStyle:UIAlertControllerStyleActionSheet];
-            [ac addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-                exit(EXIT_SUCCESS);
-            }]];
-            [self_ presentViewController:ac animated:true completion:nil];
-        }
+            if (failed) {
+                UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"错误" message:@"无法获得服务器信息，可能是服务器维护中，应用即将被关闭。" preferredStyle:UIAlertControllerStyleActionSheet];
+                [ac addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+                    exit(EXIT_SUCCESS);
+                }]];
+                [self_ presentViewController:ac animated:true completion:nil];
+            }
+        });
     }];
     
 }
