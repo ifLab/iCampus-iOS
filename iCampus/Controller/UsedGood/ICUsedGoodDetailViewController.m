@@ -79,7 +79,7 @@
     NSString *currentLanguage = [languages objectAtIndex:0];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *url=[NSString stringWithFormat:@"http://m.bistu.edu.cn/secondhand_unvalid.php?id=%@",self.usedGood.ID];
+    NSString *url=[NSString stringWithFormat:@"%@/secondhand_unvalid.php?id=%@", ICUsedGoodAPIURLPrefix, self.usedGood.ID];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:url parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {

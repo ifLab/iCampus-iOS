@@ -42,7 +42,6 @@
                 }
             }
             good.imageURLs=[NSMutableArray arrayWithArray:imgURLlist];
-            
             good.price=a[@"price"];
             good.title=a[@"titile"];
             good.time=a[@"time"];

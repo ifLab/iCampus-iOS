@@ -220,7 +220,7 @@
         retryString = @"Please check you network connection and try again.";
         okString = @"OK";
     }
-    AFHTTPRequestOperation *operation = [manager POST:@"http://m.bistu.edu.cn/job_add.php"
+    AFHTTPRequestOperation *operation = [manager POST:[NSString stringWithFormat:@"%@/job_add.php", ICJobAPIURLPrefix]
                                            parameters:@{@"title": self.titleTextView.text ? self.titleTextView.text : @"",
                                                         @"mod": mod,
                                                         @"typeid": typeid,
@@ -239,7 +239,7 @@
                             constructingBodyWithBlock:nil
                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                   [self.HUD hide:YES];
-                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                                                  [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                                                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                  options:kNilOptions
                                                                    error:nil];
@@ -265,7 +265,7 @@
                                                   }
                                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                   [self.HUD hide:YES];
-                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                                                  [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                                                   [[[UIAlertView alloc]initWithTitle:failedString
                                                                              message:retryString
                                                                             delegate:nil
