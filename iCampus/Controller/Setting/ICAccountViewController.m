@@ -30,14 +30,6 @@
 
 @implementation ICAccountViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.numberOfSections = 1;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
@@ -46,11 +38,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (ICCurrentUser) {
-        [self loginViewController:nil
-                             user:ICCurrentUser
-                         didLogin:YES];
-    }
+    [self loginViewController:nil
+                         user:ICCurrentUser
+                     didLogin:ICCurrentUser != nil];
 }
 
 - (void)         tableView:(UITableView *)tableView
@@ -82,9 +72,11 @@
         self.numberOfSections = 3;
         self.navigationItem.rightBarButtonItems = self.rightBarButtonItems;
         [self.tableView reloadData];
-        [self.tableView layoutIfNeeded];
-        [loginViewContrller dismissViewControllerAnimated:YES
+        [loginViewContrller.presentingViewController dismissViewControllerAnimated:YES
                                                completion:nil];
+    } else {
+        self.numberOfSections = 1;
+        [self.tableView reloadData];
     }
 }
 
@@ -105,6 +97,12 @@
     return self.numberOfSections;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    [cell layoutIfNeeded];
+    return cell;
+}
+
 - (void)accountEditViewController:(ICAccountEditViewController *)accountEditViewController
              didDismissWithStatus:(ICAccountEditViewControllerDismissStatus)status {
     [accountEditViewController dismiss:self];
@@ -115,7 +113,6 @@
                     [self loginViewController:nil
                                          user:ICCurrentUser
                                      didLogin:YES];
-                    
                 });
             }
         });
