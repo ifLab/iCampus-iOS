@@ -121,7 +121,7 @@
                         @"课程",
                         @"教室",
                         @"二手",
-//                        @"群组",
+                        @"群组",
                         @"关于"];
     }
     return _itemTitles;
@@ -140,7 +140,7 @@
                        [UIImage imageNamed:@"FrontIconsClassTable"],
                        [UIImage imageNamed:@"FrontIconsFreeRooms"],
                        [UIImage imageNamed:@"二手货"],
-//                       [UIImage imageNamed:@"群组"],
+                       [UIImage imageNamed:@"群组"],
                        [UIImage imageNamed:@"ICGatePlaceHolder"]
                        ];
     }
@@ -160,7 +160,7 @@
                     @"IC_GATE_TO_CLASSTABLE",
                     @"IC_GATE_TO_FREEROOM",
                     @"IC_GATE_TO_USEDGOOD",
-//                    @"IC_GATE_TO_GROUP",
+                    @"IC_GATE_TO_GROUP",
                     @"IC_GATE_TO_ABOUT"];
     }
     return _segues;

@@ -422,6 +422,5 @@
         loginViewController.delegate = self;
     }
 }
-
 @end
 

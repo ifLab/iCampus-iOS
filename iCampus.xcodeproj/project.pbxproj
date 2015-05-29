@@ -10,6 +10,12 @@
 		1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0618CDDACE00BEAC6B /* ICMapViewController.m */; };
 		1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C878B0818CDDB3B00BEAC6B /* MapKit.framework */; };
 		1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C878B0C18CDDFF100BEAC6B /* ICMap.m */; };
+		2A5B21681B13800000686DDA /* KMGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B21671B13800000686DDA /* KMGroupTableViewController.m */; };
+		2A9267AF1B140FDD0056DA00 /* ICGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9267AE1B140FDD0056DA00 /* ICGroup.m */; };
+		2A9267B21B141BC50056DA00 /* KMGroupDetialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9267B11B141BC50056DA00 /* KMGroupDetialTableViewController.m */; };
+		2AEBF8A01B145E8D00A791EE /* ICGroupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBF89F1B145E8D00A791EE /* ICGroupMessage.m */; };
+		2AEBF8A31B14791900A791EE /* KMPersonalMessageTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBF8A21B14791900A791EE /* KMPersonalMessageTabelViewController.m */; };
+		2AEBF8A61B1479C400A791EE /* ICPersonalMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBF8A51B1479C400A791EE /* ICPersonalMessage.m */; };
 		470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */; };
 		4756272C1932236700369FC8 /* ICJobFavoritesJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4756272B1932236700369FC8 /* ICJobFavoritesJobTableViewController.m */; };
 		47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */; };
@@ -40,10 +46,6 @@
 		95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F8D190A96DD00354F0B /* LMNavigationBar.m */; };
 		95353F97190A96DD00354F0B /* LMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95353F8F190A96DD00354F0B /* LMNavigationController.m */; };
 		95353F98190A96DD00354F0B /* Radial.png in Resources */ = {isa = PBXBuildFile; fileRef = 95353F90190A96DD00354F0B /* Radial.png */; };
-		9536605919F9B3790055D5F9 /* ICGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536605819F9B3790055D5F9 /* ICGroup.m */; };
-		9536606119F9B3910055D5F9 /* ICGroupclassificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536605C19F9B3910055D5F9 /* ICGroupclassificationListViewController.m */; };
-		9536606219F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536605E19F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.m */; };
-		9536606319F9B3910055D5F9 /* ICGrouppersonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536606019F9B3910055D5F9 /* ICGrouppersonListTableViewController.m */; };
 		954F569D190CEDAD00138ACF /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F569C190CEDAD00138ACF /* ICUser.m */; };
 		954F626919F62F00001CC1CC /* KMPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F626819F62F00001CC1CC /* KMPageMenuViewController.m */; };
 		955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 955A065F190A51FD00628AA6 /* ICLoginView.mm */; };
@@ -192,6 +194,18 @@
 		1C878B0818CDDB3B00BEAC6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1C878B0B18CDDFF100BEAC6B /* ICMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMap.h; sourceTree = "<group>"; };
 		1C878B0C18CDDFF100BEAC6B /* ICMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMap.m; sourceTree = "<group>"; };
+		2A5B21661B13800000686DDA /* KMGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGroupTableViewController.h; sourceTree = "<group>"; };
+		2A5B21671B13800000686DDA /* KMGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGroupTableViewController.m; sourceTree = "<group>"; };
+		2A9267AD1B140FDD0056DA00 /* ICGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICGroup.h; path = iCampus/Model/ICGroup.h; sourceTree = SOURCE_ROOT; };
+		2A9267AE1B140FDD0056DA00 /* ICGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICGroup.m; path = iCampus/Model/ICGroup.m; sourceTree = SOURCE_ROOT; };
+		2A9267B01B141BC50056DA00 /* KMGroupDetialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGroupDetialTableViewController.h; sourceTree = "<group>"; };
+		2A9267B11B141BC50056DA00 /* KMGroupDetialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMGroupDetialTableViewController.m; sourceTree = "<group>"; };
+		2AEBF89E1B145E8D00A791EE /* ICGroupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICGroupMessage.h; path = iCampus/Model/ICGroupMessage.h; sourceTree = SOURCE_ROOT; };
+		2AEBF89F1B145E8D00A791EE /* ICGroupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICGroupMessage.m; path = iCampus/Model/ICGroupMessage.m; sourceTree = SOURCE_ROOT; };
+		2AEBF8A11B14791900A791EE /* KMPersonalMessageTabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPersonalMessageTabelViewController.h; sourceTree = "<group>"; };
+		2AEBF8A21B14791900A791EE /* KMPersonalMessageTabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPersonalMessageTabelViewController.m; sourceTree = "<group>"; };
+		2AEBF8A41B1479C400A791EE /* ICPersonalMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICPersonalMessage.h; path = iCampus/Model/ICPersonalMessage.h; sourceTree = SOURCE_ROOT; };
+		2AEBF8A51B1479C400A791EE /* ICPersonalMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICPersonalMessage.m; path = iCampus/Model/ICPersonalMessage.m; sourceTree = SOURCE_ROOT; };
 		470EBD021930DADE0007D1A5 /* ICJobMyJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobMyJobTableViewController.h; sourceTree = "<group>"; };
 		470EBD031930DADE0007D1A5 /* ICJobMyJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICJobMyJobTableViewController.m; sourceTree = "<group>"; };
 		4756272A1932236700369FC8 /* ICJobFavoritesJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICJobFavoritesJobTableViewController.h; sourceTree = "<group>"; };
@@ -247,14 +261,6 @@
 		95353F8E190A96DD00354F0B /* LMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationController.h; sourceTree = "<group>"; };
 		95353F8F190A96DD00354F0B /* LMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationController.m; sourceTree = "<group>"; };
 		95353F90190A96DD00354F0B /* Radial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radial.png; sourceTree = "<group>"; };
-		9536605719F9B3790055D5F9 /* ICGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGroup.h; sourceTree = "<group>"; };
-		9536605819F9B3790055D5F9 /* ICGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGroup.m; sourceTree = "<group>"; };
-		9536605B19F9B3910055D5F9 /* ICGroupclassificationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGroupclassificationListViewController.h; sourceTree = "<group>"; };
-		9536605C19F9B3910055D5F9 /* ICGroupclassificationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGroupclassificationListViewController.m; sourceTree = "<group>"; };
-		9536605D19F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGrouppersonDetailTableViewController.h; sourceTree = "<group>"; };
-		9536605E19F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGrouppersonDetailTableViewController.m; sourceTree = "<group>"; };
-		9536605F19F9B3910055D5F9 /* ICGrouppersonListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGrouppersonListTableViewController.h; sourceTree = "<group>"; };
-		9536606019F9B3910055D5F9 /* ICGrouppersonListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGrouppersonListTableViewController.m; sourceTree = "<group>"; };
 		954F569B190CEDAD00138ACF /* ICUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUser.h; path = iCampus/Model/User/ICUser.h; sourceTree = SOURCE_ROOT; };
 		954F569C190CEDAD00138ACF /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUser.m; path = iCampus/Model/User/ICUser.m; sourceTree = SOURCE_ROOT; };
 		954F626719F62F00001CC1CC /* KMPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPageMenuViewController.h; sourceTree = "<group>"; };
@@ -559,6 +565,19 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		2A5B21651B137FD200686DDA /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				2A5B21661B13800000686DDA /* KMGroupTableViewController.h */,
+				2A5B21671B13800000686DDA /* KMGroupTableViewController.m */,
+				2A9267B01B141BC50056DA00 /* KMGroupDetialTableViewController.h */,
+				2A9267B11B141BC50056DA00 /* KMGroupDetialTableViewController.m */,
+				2AEBF8A11B14791900A791EE /* KMPersonalMessageTabelViewController.h */,
+				2AEBF8A21B14791900A791EE /* KMPersonalMessageTabelViewController.m */,
+			);
+			name = Group;
+			sourceTree = "<group>";
+		};
 		47D25F06191F5D2A00DADA49 /* Job */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,21 +673,12 @@
 		9536605619F9B3790055D5F9 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				9536605719F9B3790055D5F9 /* ICGroup.h */,
-				9536605819F9B3790055D5F9 /* ICGroup.m */,
-			);
-			path = Group;
-			sourceTree = "<group>";
-		};
-		9536605A19F9B3910055D5F9 /* Group */ = {
-			isa = PBXGroup;
-			children = (
-				9536605B19F9B3910055D5F9 /* ICGroupclassificationListViewController.h */,
-				9536605C19F9B3910055D5F9 /* ICGroupclassificationListViewController.m */,
-				9536605D19F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.h */,
-				9536605E19F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.m */,
-				9536605F19F9B3910055D5F9 /* ICGrouppersonListTableViewController.h */,
-				9536606019F9B3910055D5F9 /* ICGrouppersonListTableViewController.m */,
+				2A9267AD1B140FDD0056DA00 /* ICGroup.h */,
+				2A9267AE1B140FDD0056DA00 /* ICGroup.m */,
+				2AEBF89E1B145E8D00A791EE /* ICGroupMessage.h */,
+				2AEBF89F1B145E8D00A791EE /* ICGroupMessage.m */,
+				2AEBF8A41B1479C400A791EE /* ICPersonalMessage.h */,
+				2AEBF8A51B1479C400A791EE /* ICPersonalMessage.m */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -923,7 +933,7 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9536605A19F9B3910055D5F9 /* Group */,
+				2A5B21651B137FD200686DDA /* Group */,
 				95B57F6F19F5FAF20069D0A7 /* ClassTable */,
 				95B57F7419F5FAF20069D0A7 /* FreeRoom */,
 				95B57F7D19F5FAF20069D0A7 /* Grade */,
@@ -1571,7 +1581,6 @@
 				95B57F8319F5FAF20069D0A7 /* KMClassTableVC.m in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
 				BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */,
-				9536606119F9B3910055D5F9 /* ICGroupclassificationListViewController.m in Sources */,
 				9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */,
 				95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */,
 				47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */,
@@ -1579,7 +1588,6 @@
 				BE168E0B193C818C00542524 /* ICUsedGoodListViewController.m in Sources */,
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				9508477F18658760008A4571 /* ICBusStationView.m in Sources */,
-				9536606319F9B3910055D5F9 /* ICGrouppersonListTableViewController.m in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
@@ -1600,7 +1608,6 @@
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
 				95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
-				9536606219F9B3910055D5F9 /* ICGrouppersonDetailTableViewController.m in Sources */,
 				95B57F8819F5FAF20069D0A7 /* KMGradeResultTVC.m in Sources */,
 				95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
@@ -1615,20 +1622,24 @@
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
 				95B57FA419F5FE7F0069D0A7 /* KMGradeResultCell.m in Sources */,
+				2AEBF8A31B14791900A791EE /* KMPersonalMessageTabelViewController.m in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
 				95697F23190B5F340088D564 /* RBBAnimation.m in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
+				2A9267AF1B140FDD0056DA00 /* ICGroup.m in Sources */,
 				47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */,
 				A320CA58183E353100BCA05F /* UIImageView+AFNetworking.m in Sources */,
 				BEF1E3EA193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m in Sources */,
 				954F569D190CEDAD00138ACF /* ICUser.m in Sources */,
 				A320CA59183E353100BCA05F /* UIProgressView+AFNetworking.m in Sources */,
 				95A00100186227D0008B18BD /* ICNewsChannelCell.m in Sources */,
+				2AEBF8A01B145E8D00A791EE /* ICGroupMessage.m in Sources */,
 				957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */,
 				A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
 				47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */,
+				2AEBF8A61B1479C400A791EE /* ICPersonalMessage.m in Sources */,
 				47D25F15191F5D2A00DADA49 /* ICJobListTableViewController.m in Sources */,
 				95353F97190A96DD00354F0B /* LMNavigationController.m in Sources */,
 				95697F25190B5F340088D564 /* RBBCubicBezier.m in Sources */,
@@ -1653,9 +1664,9 @@
 				A320CA77183E365D00BCA05F /* AFURLSessionManager.m in Sources */,
 				BE4695C8193CCC9C001D8BFB /* ICUsedGoodType.m in Sources */,
 				955A0660190A51FD00628AA6 /* ICLoginView.mm in Sources */,
+				2A5B21681B13800000686DDA /* KMGroupTableViewController.m in Sources */,
 				9529B9A5192E2AA300C37A3A /* ICAccountEditViewController.m in Sources */,
 				95697F27190B5F340088D564 /* RBBEasingFunction.m in Sources */,
-				9536605919F9B3790055D5F9 /* ICGroup.m in Sources */,
 				BE168E23193C82B300542524 /* ICUsedGoodDetail.m in Sources */,
 				470EBD041930DADE0007D1A5 /* ICJobMyJobTableViewController.m in Sources */,
 				95697F20190B5F340088D564 /* LMFixedTextView.m in Sources */,
@@ -1691,6 +1702,7 @@
 				95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */,
 				BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */,
 				95A000EA186218A0008B18BD /* ICNewsCell.m in Sources */,
+				2A9267B21B141BC50056DA00 /* KMGroupDetialTableViewController.m in Sources */,
 				95A001071862388B008B18BD /* Base64.m in Sources */,
 				95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */,
 				95697F26190B5F340088D564 /* RBBCustomAnimation.m in Sources */,
