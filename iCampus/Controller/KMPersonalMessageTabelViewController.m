@@ -8,10 +8,11 @@
 
 #import "KMPersonalMessageTabelViewController.h"
 
-@interface KMPersonalMessageTabelViewController ()<PersonalMessageProtocol>
+@interface KMPersonalMessageTabelViewController ()<PersonalMessageProtocol,UIAlertViewDelegate>
 @property (nonatomic,strong) NSDictionary *PersonalMessage;
-@property (nonatomic,strong) NSArray *DetialTital;
-@property (nonatomic,strong) NSArray *key;
+@property (nonatomic,strong) NSArray      *DetialTital;
+@property (nonatomic,strong) NSArray      *key;
+@property (nonatomic,strong) NSString     *number;
 @end
 
 @implementation KMPersonalMessageTabelViewController
@@ -38,7 +39,29 @@
         if(indexPath == nil) return ;
         [[UIPasteboard generalPasteboard] setPersistent:YES];
         [[UIPasteboard generalPasteboard] setValue:cell.detailTextLabel.text forPasteboardType:[UIPasteboardTypeListString objectAtIndex:0]];
-        [self copyanimation];
+        if ([cell.textLabel.text isEqualToString:@"移动电话："]) {
+            [self CallPhone:cell.detailTextLabel.text];
+        }else{
+            [self copyanimation];
+        }
+    }
+}
+/**
+ *  拨打电话
+ *
+ *
+ */
+
+-(void)CallPhone:(NSString *)number{
+    NSString  *message     = [NSString stringWithFormat:@"是否拨打此电话“%@”",number ];
+    _number                = [NSString stringWithFormat:@"tel://%@",number];
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Call" message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertview show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_number]];
     }
 }
 /**
