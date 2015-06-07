@@ -25,28 +25,10 @@
     _key                                       = @[@"userid",@"qq",@"wechat",@"mobile",@"email"];
     self.tableView.tableFooterView             = [[UIView alloc]init];
     self.navigationItem.title                  = _message.name;
-    UILongPressGestureRecognizer * longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
-    longPressGr.minimumPressDuration           = 1.0;
-    [self.tableView addGestureRecognizer:longPressGr];
+   
     self.navigationController.hidesBarsOnSwipe = false;
 }
--(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
-{
-    if(gesture.state == UIGestureRecognizerStateBegan)
-    {
-    CGPoint point                              = [gesture locationInView:self.tableView];
-    NSIndexPath * indexPath                    = [self.tableView indexPathForRowAtPoint:point];
-    UITableViewCell *cell                      = [self.tableView cellForRowAtIndexPath:indexPath];
-        if(indexPath == nil) return ;
-        [[UIPasteboard generalPasteboard] setPersistent:YES];
-        [[UIPasteboard generalPasteboard] setValue:cell.detailTextLabel.text forPasteboardType:[UIPasteboardTypeListString objectAtIndex:0]];
-        if ([cell.textLabel.text isEqualToString:@"移动电话："]) {
-            [self CallPhone:cell.detailTextLabel.text];
-        }else{
-            [self copyanimation];
-        }
-    }
-}
+
 /**
  *  拨打电话
  *
@@ -69,8 +51,9 @@
  *  显示一个复制到粘贴板的提示
  */
 -(void)copyanimation{
-    UILabel *label                  = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    UILabel *label                  = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150, 25)];
     label.text                      = @"成功复制到粘贴板";
+    label.textAlignment             = NSTextAlignmentCenter;
     label.backgroundColor           = [UIColor blackColor];
     label.textColor                 = [UIColor whiteColor];
     label.adjustsFontSizeToFitWidth = true;
@@ -119,6 +102,13 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell                      = [self.tableView cellForRowAtIndexPath:indexPath];
+
+    if ([cell.textLabel.text isEqualToString:@"移动电话："]) {
+        [self CallPhone:cell.detailTextLabel.text];
+    }else{
+        [self copyanimation];
+    }
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
