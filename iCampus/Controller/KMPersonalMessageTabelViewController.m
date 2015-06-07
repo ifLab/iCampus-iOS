@@ -28,6 +28,7 @@
     UILongPressGestureRecognizer * longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
     longPressGr.minimumPressDuration           = 1.0;
     [self.tableView addGestureRecognizer:longPressGr];
+    self.navigationController.hidesBarsOnSwipe = false;
 }
 -(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
 {

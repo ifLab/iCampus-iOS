@@ -36,8 +36,11 @@
         self.firstAppear = false;
         [self performSegueWithIdentifier:@"IC_GROUP_TO_LOGIN" sender:self];
     }else{
-        [_Personal receivedPersonnalMessage:ICCurrentUser.ID];
+        if (ICCurrentUser.ID) {
+            [_Personal receivedPersonnalMessage:ICCurrentUser.ID];
+        }
     }
+    self.navigationController.hidesBarsOnSwipe = false;
 }
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

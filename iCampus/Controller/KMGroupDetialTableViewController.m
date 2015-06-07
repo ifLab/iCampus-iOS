@@ -19,13 +19,14 @@
     [super viewDidLoad];
     _Message.delegate                          = self;
     [_Message receivedPersonnalMessage];
-    self.navigationController.hidesBarsOnSwipe = true;
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 
     self.navigationItem.title                  = _Message.group;
 }
-
+- (void)viewDidAppear:(BOOL)animated{
+    self.navigationController.hidesBarsOnSwipe = true;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
