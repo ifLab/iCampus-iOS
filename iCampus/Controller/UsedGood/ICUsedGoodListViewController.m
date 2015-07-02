@@ -18,6 +18,7 @@
 #import "ICUsedGoodMyListTableViewController.h"
 #import "APNavigationController.h"
 #import "ICUsedGoodPublishTableViewController.h"
+#import "MobClick.h"
 
 @interface ICUsedGoodListViewController ()<ICUsedGoodPublishTableViewControllerDelegate,ICUsedGoodFilterViewControllerDelegate>
 @property (nonatomic,copy) NSString *type;
@@ -30,6 +31,7 @@
 - (IBAction)disMiss:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"二手模块"];
 }
 
 - (void)popMyself:(UIBarButtonItem *)item
@@ -111,7 +113,8 @@
     navigationController.dropDownToolbar.items = @[person,button2,filter,button4,publish];
     navigationController.dropDownToolbar.barTintColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:0];
     navigationController.dropDownToolbar.tintColor = [UIColor colorWithRed:100/255.0 green:120/255.0 blue:150/255.0 alpha:1];
-
+    
+    [MobClick beginLogPageView:@"二手模块"];
 }
 
 - (void) usedGoodFilterView:(ICUsedGoodFilterViewController *)view

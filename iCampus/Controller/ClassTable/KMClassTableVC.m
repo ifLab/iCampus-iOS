@@ -12,6 +12,7 @@
 #import "SVProgressHUD.h"
 #import "ICUser.h"
 #import "ICLoginViewController.h"
+#import "MobClick.h"
 
 @interface KMClassTableVC () <KMClassTableModelDelegate, ICLoginViewControllerDelegate>
 
@@ -122,6 +123,8 @@
     [self.model fetchWeeklyCoursesWithDate:nil];
     
     [SVProgressHUD showWithStatus:@"正在加载" maskType:SVProgressHUDMaskTypeBlack];
+    
+    [MobClick beginLogPageView:@"课程表模块"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -413,6 +416,7 @@
 
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"课程表模块"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

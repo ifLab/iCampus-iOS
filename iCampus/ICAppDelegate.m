@@ -7,6 +7,7 @@
 //
 
 #import "ICAppDelegate.h"
+#import "MobClick.h"
 
 typedef enum {
     SdkStatusStoped,
@@ -17,6 +18,7 @@ typedef enum {
 #define kAppId           @"89aUwAaCKo6rcax0lKY295"
 #define kAppKey          @"HVnrqD1d4M8NpuAVPrhDH5"
 #define kAppSecret       @"Vjr5wTOe7a9xwVVwgmdMpA"
+#define UMAppkey         @"559536eb67e58ee8090040b2"
 
 @interface ICAppDelegate()
 
@@ -37,6 +39,11 @@ typedef enum {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 启动友盟统计
+    [MobClick startWithAppkey:UMAppkey reportPolicy:BATCH channelId:nil];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ICNavigationBarBackground"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0]}];

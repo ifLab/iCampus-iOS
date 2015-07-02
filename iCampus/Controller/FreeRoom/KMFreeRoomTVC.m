@@ -10,6 +10,7 @@
 #import "KMFreeRoomsModel.h"
 #import "SVPullToRefresh.h"
 #import "KMFreeRoomBuildingsTVC.h"
+#import "MobClick.h"
 
 @interface KMFreeRoomTVC ()
 
@@ -56,6 +57,8 @@
     NSMutableArray *gestures = [self.view.gestureRecognizers mutableCopy];
     [gestures addObject:swipeGesture];
     self.view.gestureRecognizers = [gestures copy];
+    
+    [MobClick beginLogPageView:@"空闲教室模块"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -116,6 +119,7 @@
 
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"空闲教室模块"];
 }
 
 @end

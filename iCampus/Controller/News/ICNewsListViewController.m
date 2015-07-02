@@ -13,6 +13,7 @@
 #import "../../Model/News/ICNews.h"
 #import "../../View/News/ICNewsCell.h"
 #import "../../External/SVPullToRefresh/SVPullToRefresh.h"
+#import "MobClick.h"
 
 @interface ICNewsListViewController () <ICNewsChannelDelegate>
 
@@ -44,6 +45,8 @@
             [__self.tableView triggerPullToRefresh];
         });
     });
+    
+    [MobClick beginLogPageView:@"新闻模块"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -129,6 +132,8 @@
 
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [MobClick endLogPageView:@"新闻模块"];
 }
 
 @end

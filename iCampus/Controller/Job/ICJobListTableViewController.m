@@ -11,6 +11,7 @@
 #import "ICUser.h"
 #import "ICLoginViewController.h"
 #import "MBProgressHUD.h"
+#import "MobClick.h"
 
 @interface ICJobListTableViewController ()
 
@@ -123,6 +124,7 @@
             }
         });
     });
+    [MobClick beginLogPageView:@"兼职模块"];
 }
 
 //#warning 兼职模块未开启登录验证
@@ -204,6 +206,7 @@
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"兼职模块"];
 }
 
 - (void)needReloadData {

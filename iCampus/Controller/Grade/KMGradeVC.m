@@ -12,6 +12,7 @@
 #import "KMGradeModel.h"
 #import "ICLoginViewController.h"
 #import "ICUser.h"
+#import "MobClick.h"
 
 #define KMTableViewWidth 280.0f
 #define KMTableViewHeight 200.0f
@@ -139,6 +140,8 @@
     [self.model years];
     [self.model semesters];
     [self.model categories];
+    
+    [MobClick beginLogPageView:@"成绩查询模块"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -378,6 +381,7 @@
 
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"成绩查询模块"];
 }
 
 - (void)loginViewController:(ICLoginViewController *)loginViewContrller user:(ICUser *)user didLogin:(BOOL)success {

@@ -33,6 +33,7 @@
 		5C1121911AB065B600C980FC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121901AB065B600C980FC /* Security.framework */; };
 		5C1121931AB065D100C980FC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121921AB065D100C980FC /* libsqlite3.dylib */; };
 		5C1121951AB065DF00C980FC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1121941AB065DF00C980FC /* libz.dylib */; };
+		5C125D7E1B4570C000934FC4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C125D7B1B4570C000934FC4 /* libMobClickLibrary.a */; };
 		5C6DB85B1AAF323C008A8AEB /* libGexinSdk-1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6DB85A1AAF323C008A8AEB /* libGexinSdk-1.1.0.a */; };
 		9508477F18658760008A4571 /* ICBusStationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9508477E18658760008A4571 /* ICBusStationView.m */; };
 		951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BE86718E5E9030049AB5F /* ICAccountViewController.m */; };
@@ -235,6 +236,9 @@
 		5C1121901AB065B600C980FC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5C1121921AB065D100C980FC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5C1121941AB065DF00C980FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5C125D7B1B4570C000934FC4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		5C125D7C1B4570C000934FC4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		5C125D7D1B4570C000934FC4 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		5C6DB8581AAF323C008A8AEB /* GexinSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GexinSdk.h; sourceTree = "<group>"; };
 		5C6DB8591AAF323C008A8AEB /* GXSdkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSdkError.h; sourceTree = "<group>"; };
 		5C6DB85A1AAF323C008A8AEB /* libGexinSdk-1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGexinSdk-1.1.0.a"; sourceTree = "<group>"; };
@@ -523,6 +527,7 @@
 				5C1121951AB065DF00C980FC /* libz.dylib in Frameworks */,
 				5C1121931AB065D100C980FC /* libsqlite3.dylib in Frameworks */,
 				5C1121911AB065B600C980FC /* Security.framework in Frameworks */,
+				5C125D7E1B4570C000934FC4 /* libMobClickLibrary.a in Frameworks */,
 				5C11218F1AB065A700C980FC /* SystemConfiguration.framework in Frameworks */,
 				5C11218D1AB0659800C980FC /* CFNetwork.framework in Frameworks */,
 				1C878B0918CDDB3B00BEAC6B /* MapKit.framework in Frameworks */,
@@ -614,6 +619,16 @@
 				47B934A819360F1C00205034 /* ICJobFavoritesJobList.m */,
 			);
 			path = Job;
+			sourceTree = "<group>";
+		};
+		5C125D7A1B4570C000934FC4 /* UMAnalytics_Sdk_3.5.9 */ = {
+			isa = PBXGroup;
+			children = (
+				5C125D7B1B4570C000934FC4 /* libMobClickLibrary.a */,
+				5C125D7C1B4570C000934FC4 /* MobClick.h */,
+				5C125D7D1B4570C000934FC4 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.5.9;
 			sourceTree = "<group>";
 		};
 		5C6DB8561AAF323C008A8AEB /* GexinSdk */ = {
@@ -1366,6 +1381,7 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5C125D7A1B4570C000934FC4 /* UMAnalytics_Sdk_3.5.9 */,
 				5C6DB8561AAF323C008A8AEB /* GexinSdk */,
 				95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */,
 				95B57F8A19F5FDD00069D0A7 /* KMNetworkActivityCenter */,
@@ -1857,6 +1873,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
 					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
+					"$(PROJECT_DIR)/iCampus/External/UMAnalytics_Sdk_3.5.9",
 				);
 				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";
@@ -1884,6 +1901,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
 					"$(PROJECT_DIR)/iCampus/External/GexinSdk",
+					"$(PROJECT_DIR)/iCampus/External/UMAnalytics_Sdk_3.5.9",
 				);
 				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";

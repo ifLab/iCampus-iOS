@@ -10,6 +10,7 @@
 #import "ICMap.h"
 #import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MobClick.h"
 
 const CGFloat MenuViewHeight = 160.0f;
 const CGFloat InfoViewHeight = 60.0f;
@@ -84,6 +85,8 @@ const CGFloat InfoViewHeight = 60.0f;
     self.zipCodeLabel.font = [UIFont systemFontOfSize:14.0];
     self.zipCodeLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
     [self.infoView addSubview:self.zipCodeLabel];
+    
+    [MobClick beginLogPageView:@"地图模块"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -123,6 +126,7 @@ const CGFloat InfoViewHeight = 60.0f;
 - (IBAction)dismiss:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"地图模块"];
 }
 
 - (IBAction)showMenu:(id)sender

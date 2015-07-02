@@ -10,6 +10,7 @@
 #import "../../Model/Bus/ICBus.h"
 #import "../../View/Bus/ICBusCell.h"
 #import "../../View/Bus/ICBusStationListCell.h"
+#import "MobClick.h"
 
 @interface ICBusViewController ()
 
@@ -30,6 +31,8 @@
             [self.tableView reloadData];
         });
     });
+    
+    [MobClick beginLogPageView:@"校车模块"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,6 +126,8 @@
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+    
+    [MobClick endLogPageView:@"校车模块"];
 }
 
 @end

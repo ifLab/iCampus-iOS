@@ -13,6 +13,8 @@
 #import "KMGroupDetialTableViewController.h"
 #import "ICLoginViewController.h"
 #import "ICGroupMessage.h"
+#import "MobClick.h"
+
 @interface KMGroupTableViewController ()<ICLoginViewControllerDelegate,GroupProtocol>
 @property (nonatomic       ) BOOL           firstAppear;
 @property (nonatomic,strong) NSArray        *sectionname;
@@ -29,6 +31,8 @@
     self.firstAppear   = true;
     _Personal          = [[ICGroup alloc]init];
     _Personal.delegate = self;
+    
+    [MobClick beginLogPageView:@"群组模块"];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -44,6 +48,7 @@
 }
 - (IBAction)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [MobClick endLogPageView:@"群组模块"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
