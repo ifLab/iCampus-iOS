@@ -363,7 +363,8 @@ viewForHeaderInSection:(NSInteger)section {
                        user:(ICUser *)user
                    didLogin:(BOOL)success {
     if (!success) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self cancel:nil];
+        
     }
 }
 
