@@ -31,6 +31,19 @@
 
 - (BOOL)login;
 
++ (void)loginWithEmail:(NSString *)email
+              password:(NSString *)password
+               success:(void (^)(ICUser *))success
+               failure:(void (^)(NSError *))failure;
+
++ (void)registerWithEmail:(NSString *)email
+                 password:(NSString *)password
+                    phone:(NSString *)phone
+                  success:(void (^)(ICUser *))success
+                  failure:(void (^)(NSError *))failure;
++ (void)refreshToken:(void (^)(ICUser *))success
+             failure:(void (^)(NSError *))failure;
+
 @end
 
 extern ICUser *ICCurrentUser;

@@ -20,5 +20,5 @@
 - (void)setAliasWith:(NSString *)alias;
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UIViewController *controller;
 @end

@@ -16,12 +16,21 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *collegeCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *ifLabCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *creditsCell;
+@property (weak, nonatomic) NSArray *pages;
 
 - (IBAction)dismiss:(id)sender;
 
 @end
 
 @implementation ICAboutViewController
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    ICAboutViewController __weak *weakSelf = self;
+    [ICAboutWebpage fetchPageWithSuccess:^(NSArray *pages) {
+        weakSelf.pages = [NSArray arrayWithArray:pages];
+    } failure:nil];
+}
 
 - (void)        tableView:(UITableView *)tableView
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -34,15 +43,15 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         ICAboutWebpage *aboutPage;
         if (cell == self.introductionCell) {
-            aboutPage = [ICAboutWebpage introductionPage];
+            aboutPage = self.pages[0];
         } else if (cell == self.historyCell) {
-            aboutPage = [ICAboutWebpage historyPage];
+            aboutPage = self.pages[1];
         } else if (cell == self.collegeCell) {
-            aboutPage = [ICAboutWebpage collegePage];
+            aboutPage = self.pages[2];
         } else if (cell == self.ifLabCell) {
-            aboutPage = [ICAboutWebpage ifLabPage];
+            aboutPage = self.pages[3];
         } else if (cell == self.creditsCell) {
-            aboutPage = [ICAboutWebpage creditsPage];
+            aboutPage = self.pages[4];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [webView loadHTMLString:aboutPage.content baseURL:nil];

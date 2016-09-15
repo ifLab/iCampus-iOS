@@ -159,6 +159,74 @@
 		A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5401830ED39007D569E /* MBProgressHUD.m */; };
 		A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5451830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m */; };
 		A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */; };
+		A90F8B281D6582E8002CDF86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B261D6582E8002CDF86 /* LoginViewController.swift */; };
+		A90F8B291D6582E8002CDF86 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90F8B271D6582E8002CDF86 /* LoginViewController.xib */; };
+		A90F8B781D658529002CDF86 /* CGRect+MSRAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B481D658529002CDF86 /* CGRect+MSRAccessor.swift */; };
+		A90F8B791D658529002CDF86 /* CGSize+MSRAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B491D658529002CDF86 /* CGSize+MSRAccessor.swift */; };
+		A90F8B7A1D658529002CDF86 /* MSRAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4A1D658529002CDF86 /* MSRAlertAction.swift */; };
+		A90F8B7B1D658529002CDF86 /* MSRAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4B1D658529002CDF86 /* MSRAlertView.swift */; };
+		A90F8B7C1D658529002CDF86 /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4C1D658529002CDF86 /* MSRAnimationInfo.swift */; };
+		A90F8B7D1D658529002CDF86 /* MSRAutoExpandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4D1D658529002CDF86 /* MSRAutoExpandingView.swift */; };
+		A90F8B7E1D658529002CDF86 /* MSRCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4E1D658529002CDF86 /* MSRCollectionView.swift */; };
+		A90F8B7F1D658529002CDF86 /* MSRFrameEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B4F1D658529002CDF86 /* MSRFrameEdge.swift */; };
+		A90F8B801D658529002CDF86 /* MSRKeyboardBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B501D658529002CDF86 /* MSRKeyboardBar.swift */; };
+		A90F8B811D658529002CDF86 /* MSRLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B511D658529002CDF86 /* MSRLayoutGuide.swift */; };
+		A90F8B821D658529002CDF86 /* MSRLoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B521D658529002CDF86 /* MSRLoadMoreControl.swift */; };
+		A90F8B831D658529002CDF86 /* MSRMultilineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B531D658529002CDF86 /* MSRMultilineLabel.swift */; };
+		A90F8B841D658529002CDF86 /* MSRNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B541D658529002CDF86 /* MSRNavigationController.swift */; };
+		A90F8B851D658529002CDF86 /* MSRNavigationWrapperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B551D658529002CDF86 /* MSRNavigationWrapperController.swift */; };
+		A90F8B861D658529002CDF86 /* MSRRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B561D658529002CDF86 /* MSRRoundedImageView.swift */; };
+		A90F8B871D658529002CDF86 /* MSRSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B571D658529002CDF86 /* MSRSegment.swift */; };
+		A90F8B881D658529002CDF86 /* MSRSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B581D658529002CDF86 /* MSRSegmentedControl.swift */; };
+		A90F8B891D658529002CDF86 /* MSRSegmentedControlBlockIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B591D658529002CDF86 /* MSRSegmentedControlBlockIndicator.swift */; };
+		A90F8B8A1D658529002CDF86 /* MSRSegmentedControlCircleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5A1D658529002CDF86 /* MSRSegmentedControlCircleIndicator.swift */; };
+		A90F8B8B1D658529002CDF86 /* MSRSegmentedControlIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5B1D658529002CDF86 /* MSRSegmentedControlIndicator.swift */; };
+		A90F8B8C1D658529002CDF86 /* MSRSegmentedControlLinearIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5C1D658529002CDF86 /* MSRSegmentedControlLinearIndicator.swift */; };
+		A90F8B8D1D658529002CDF86 /* MSRSegmentedControlOverlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5D1D658529002CDF86 /* MSRSegmentedControlOverlineIndicator.swift */; };
+		A90F8B8E1D658529002CDF86 /* MSRSegmentedControlRainbowBlockIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5E1D658529002CDF86 /* MSRSegmentedControlRainbowBlockIndicator.swift */; };
+		A90F8B8F1D658529002CDF86 /* MSRSegmentedControlUnderlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B5F1D658529002CDF86 /* MSRSegmentedControlUnderlineIndicator.swift */; };
+		A90F8B901D658529002CDF86 /* MSRSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B601D658529002CDF86 /* MSRSegmentedViewController.swift */; };
+		A90F8B911D658529002CDF86 /* MSRSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B611D658529002CDF86 /* MSRSidebar.swift */; };
+		A90F8B921D658529002CDF86 /* MSRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B621D658529002CDF86 /* MSRTableView.swift */; };
+		A90F8B931D658529002CDF86 /* MSRTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B631D658529002CDF86 /* MSRTextView.swift */; };
+		A90F8B941D658529002CDF86 /* UIButton+MSRSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B641D658529002CDF86 /* UIButton+MSRSetter.swift */; };
+		A90F8B951D658529002CDF86 /* UIColor+MSRGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B651D658529002CDF86 /* UIColor+MSRGetter.swift */; };
+		A90F8B961D658529002CDF86 /* UIColor+MSRMaterialColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B661D658529002CDF86 /* UIColor+MSRMaterialColor.swift */; };
+		A90F8B971D658529002CDF86 /* UIColor+MSRRandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B671D658529002CDF86 /* UIColor+MSRRandomColor.swift */; };
+		A90F8B981D658529002CDF86 /* UIColor+MSRRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B681D658529002CDF86 /* UIColor+MSRRGBA.swift */; };
+		A90F8B991D658529002CDF86 /* UIImage+MSRClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B691D658529002CDF86 /* UIImage+MSRClip.swift */; };
+		A90F8B9A1D658529002CDF86 /* UIImage+MSRColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6A1D658529002CDF86 /* UIImage+MSRColor.swift */; };
+		A90F8B9B1D658529002CDF86 /* UIImage+MSRGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6B1D658529002CDF86 /* UIImage+MSRGetter.swift */; };
+		A90F8B9C1D658529002CDF86 /* UIImage+MSRResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6C1D658529002CDF86 /* UIImage+MSRResize.swift */; };
+		A90F8B9D1D658529002CDF86 /* UIImage+MSRShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6D1D658529002CDF86 /* UIImage+MSRShape.swift */; };
+		A90F8B9E1D658529002CDF86 /* UIImageView+MSRSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6E1D658529002CDF86 /* UIImageView+MSRSetter.swift */; };
+		A90F8B9F1D658529002CDF86 /* UINavigationBar+MSRAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B6F1D658529002CDF86 /* UINavigationBar+MSRAccessor.swift */; };
+		A90F8BA01D658529002CDF86 /* UIScrollView+MSRPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B701D658529002CDF86 /* UIScrollView+MSRPosition.swift */; };
+		A90F8BA11D658529002CDF86 /* UIScrollView+MSRRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B711D658529002CDF86 /* UIScrollView+MSRRefreshControl.swift */; };
+		A90F8BA21D658529002CDF86 /* UIScrollView+MSRTouchCancelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B721D658529002CDF86 /* UIScrollView+MSRTouchCancelling.swift */; };
+		A90F8BA31D658529002CDF86 /* UITableView+MSRGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B731D658529002CDF86 /* UITableView+MSRGetter.swift */; };
+		A90F8BA41D658529002CDF86 /* UITableViewCell+MSRGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B741D658529002CDF86 /* UITableViewCell+MSRGetter.swift */; };
+		A90F8BA51D658529002CDF86 /* UITextField+MSRGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B751D658529002CDF86 /* UITextField+MSRGetter.swift */; };
+		A90F8BA61D658529002CDF86 /* UIView+MSRAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B761D658529002CDF86 /* UIView+MSRAccessor.swift */; };
+		A90F8BA71D658529002CDF86 /* UIView+MSREasyAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F8B771D658529002CDF86 /* UIView+MSREasyAutoLayout.swift */; };
+		A91273141D65F4C900DF752C /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A91273131D65F4C900DF752C /* AFViewShaker.m */; };
+		A91273221D65F61900DF752C /* Array+MSRAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273151D65F61900DF752C /* Array+MSRAccessor.swift */; };
+		A91273231D65F61900DF752C /* MSRLinearInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273161D65F61900DF752C /* MSRLinearInterpolation.swift */; };
+		A91273241D65F61900DF752C /* MSRNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273171D65F61900DF752C /* MSRNull.swift */; };
+		A91273251D65F61900DF752C /* MSRValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273181D65F61900DF752C /* MSRValue.swift */; };
+		A91273261D65F61900DF752C /* MSRWeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273191D65F61900DF752C /* MSRWeak.swift */; };
+		A91273271D65F61900DF752C /* NSManagedObjectContext+MSROperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731A1D65F61900DF752C /* NSManagedObjectContext+MSROperations.swift */; };
+		A91273281D65F61900DF752C /* NSObject+MSRClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731B1D65F61900DF752C /* NSObject+MSRClone.swift */; };
+		A91273291D65F61900DF752C /* NSObject+MSRUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731C1D65F61900DF752C /* NSObject+MSRUserInfo.swift */; };
+		A912732A1D65F61900DF752C /* Numeric+MSRInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731D1D65F61900DF752C /* Numeric+MSRInitializer.swift */; };
+		A912732B1D65F61900DF752C /* String+MSREncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731E1D65F61900DF752C /* String+MSREncoding.swift */; };
+		A912732C1D65F61900DF752C /* String+MSREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912731F1D65F61900DF752C /* String+MSREncryption.swift */; };
+		A912732D1D65F61900DF752C /* String+MSROperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273201D65F61900DF752C /* String+MSROperations.swift */; };
+		A912732E1D65F61900DF752C /* UnsafePointer+MSRInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273211D65F61900DF752C /* UnsafePointer+MSRInitializer.swift */; };
+		A91273351D65F9A000DF752C /* CGContext+MSRInitialzier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273331D65F9A000DF752C /* CGContext+MSRInitialzier.swift */; };
+		A91273361D65F9A000DF752C /* MSRSegmentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91273341D65F9A000DF752C /* MSRSegmentWrapper.swift */; };
+		A96668491D521EDD003BB703 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A96668481D521EDD003BB703 /* Configuration.plist */; };
+		A966684C1D5223D1003BB703 /* ICNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A966684B1D5223D1003BB703 /* ICNetworkManager.m */; };
 		BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */; };
 		BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF4193C816200542524 /* ICUsedGoodDetailView.m */; };
 		BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF8193C816200542524 /* ICUsedGoodListCell.m */; };
@@ -487,6 +555,77 @@
 		A3C8B5451830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		A3C8B5461830F6CF007D569E /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		A90F8B251D65824D002CDF86 /* iCampus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCampus-Bridging-Header.h"; sourceTree = "<group>"; };
+		A90F8B261D6582E8002CDF86 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
+		A90F8B271D6582E8002CDF86 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Login/LoginViewController.xib; sourceTree = "<group>"; };
+		A90F8B481D658529002CDF86 /* CGRect+MSRAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+MSRAccessor.swift"; path = "Msr/UI/CGRect+MSRAccessor.swift"; sourceTree = "<group>"; };
+		A90F8B491D658529002CDF86 /* CGSize+MSRAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGSize+MSRAccessor.swift"; path = "Msr/UI/CGSize+MSRAccessor.swift"; sourceTree = "<group>"; };
+		A90F8B4A1D658529002CDF86 /* MSRAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRAlertAction.swift; path = Msr/UI/MSRAlertAction.swift; sourceTree = "<group>"; };
+		A90F8B4B1D658529002CDF86 /* MSRAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRAlertView.swift; path = Msr/UI/MSRAlertView.swift; sourceTree = "<group>"; };
+		A90F8B4C1D658529002CDF86 /* MSRAnimationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRAnimationInfo.swift; path = Msr/UI/MSRAnimationInfo.swift; sourceTree = "<group>"; };
+		A90F8B4D1D658529002CDF86 /* MSRAutoExpandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRAutoExpandingView.swift; path = Msr/UI/MSRAutoExpandingView.swift; sourceTree = "<group>"; };
+		A90F8B4E1D658529002CDF86 /* MSRCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRCollectionView.swift; path = Msr/UI/MSRCollectionView.swift; sourceTree = "<group>"; };
+		A90F8B4F1D658529002CDF86 /* MSRFrameEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRFrameEdge.swift; path = Msr/UI/MSRFrameEdge.swift; sourceTree = "<group>"; };
+		A90F8B501D658529002CDF86 /* MSRKeyboardBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRKeyboardBar.swift; path = Msr/UI/MSRKeyboardBar.swift; sourceTree = "<group>"; };
+		A90F8B511D658529002CDF86 /* MSRLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRLayoutGuide.swift; path = Msr/UI/MSRLayoutGuide.swift; sourceTree = "<group>"; };
+		A90F8B521D658529002CDF86 /* MSRLoadMoreControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRLoadMoreControl.swift; path = Msr/UI/MSRLoadMoreControl.swift; sourceTree = "<group>"; };
+		A90F8B531D658529002CDF86 /* MSRMultilineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRMultilineLabel.swift; path = Msr/UI/MSRMultilineLabel.swift; sourceTree = "<group>"; };
+		A90F8B541D658529002CDF86 /* MSRNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRNavigationController.swift; path = Msr/UI/MSRNavigationController.swift; sourceTree = "<group>"; };
+		A90F8B551D658529002CDF86 /* MSRNavigationWrapperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRNavigationWrapperController.swift; path = Msr/UI/MSRNavigationWrapperController.swift; sourceTree = "<group>"; };
+		A90F8B561D658529002CDF86 /* MSRRoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRRoundedImageView.swift; path = Msr/UI/MSRRoundedImageView.swift; sourceTree = "<group>"; };
+		A90F8B571D658529002CDF86 /* MSRSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegment.swift; path = Msr/UI/MSRSegment.swift; sourceTree = "<group>"; };
+		A90F8B581D658529002CDF86 /* MSRSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControl.swift; path = Msr/UI/MSRSegmentedControl.swift; sourceTree = "<group>"; };
+		A90F8B591D658529002CDF86 /* MSRSegmentedControlBlockIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlBlockIndicator.swift; path = Msr/UI/MSRSegmentedControlBlockIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5A1D658529002CDF86 /* MSRSegmentedControlCircleIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlCircleIndicator.swift; path = Msr/UI/MSRSegmentedControlCircleIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5B1D658529002CDF86 /* MSRSegmentedControlIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlIndicator.swift; path = Msr/UI/MSRSegmentedControlIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5C1D658529002CDF86 /* MSRSegmentedControlLinearIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlLinearIndicator.swift; path = Msr/UI/MSRSegmentedControlLinearIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5D1D658529002CDF86 /* MSRSegmentedControlOverlineIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlOverlineIndicator.swift; path = Msr/UI/MSRSegmentedControlOverlineIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5E1D658529002CDF86 /* MSRSegmentedControlRainbowBlockIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlRainbowBlockIndicator.swift; path = Msr/UI/MSRSegmentedControlRainbowBlockIndicator.swift; sourceTree = "<group>"; };
+		A90F8B5F1D658529002CDF86 /* MSRSegmentedControlUnderlineIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedControlUnderlineIndicator.swift; path = Msr/UI/MSRSegmentedControlUnderlineIndicator.swift; sourceTree = "<group>"; };
+		A90F8B601D658529002CDF86 /* MSRSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentedViewController.swift; path = Msr/UI/MSRSegmentedViewController.swift; sourceTree = "<group>"; };
+		A90F8B611D658529002CDF86 /* MSRSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSidebar.swift; path = Msr/UI/MSRSidebar.swift; sourceTree = "<group>"; };
+		A90F8B621D658529002CDF86 /* MSRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRTableView.swift; path = Msr/UI/MSRTableView.swift; sourceTree = "<group>"; };
+		A90F8B631D658529002CDF86 /* MSRTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRTextView.swift; path = Msr/UI/MSRTextView.swift; sourceTree = "<group>"; };
+		A90F8B641D658529002CDF86 /* UIButton+MSRSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+MSRSetter.swift"; path = "Msr/UI/UIButton+MSRSetter.swift"; sourceTree = "<group>"; };
+		A90F8B651D658529002CDF86 /* UIColor+MSRGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+MSRGetter.swift"; path = "Msr/UI/UIColor+MSRGetter.swift"; sourceTree = "<group>"; };
+		A90F8B661D658529002CDF86 /* UIColor+MSRMaterialColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+MSRMaterialColor.swift"; path = "Msr/UI/UIColor+MSRMaterialColor.swift"; sourceTree = "<group>"; };
+		A90F8B671D658529002CDF86 /* UIColor+MSRRandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+MSRRandomColor.swift"; path = "Msr/UI/UIColor+MSRRandomColor.swift"; sourceTree = "<group>"; };
+		A90F8B681D658529002CDF86 /* UIColor+MSRRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+MSRRGBA.swift"; path = "Msr/UI/UIColor+MSRRGBA.swift"; sourceTree = "<group>"; };
+		A90F8B691D658529002CDF86 /* UIImage+MSRClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+MSRClip.swift"; path = "Msr/UI/UIImage+MSRClip.swift"; sourceTree = "<group>"; };
+		A90F8B6A1D658529002CDF86 /* UIImage+MSRColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+MSRColor.swift"; path = "Msr/UI/UIImage+MSRColor.swift"; sourceTree = "<group>"; };
+		A90F8B6B1D658529002CDF86 /* UIImage+MSRGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+MSRGetter.swift"; path = "Msr/UI/UIImage+MSRGetter.swift"; sourceTree = "<group>"; };
+		A90F8B6C1D658529002CDF86 /* UIImage+MSRResize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+MSRResize.swift"; path = "Msr/UI/UIImage+MSRResize.swift"; sourceTree = "<group>"; };
+		A90F8B6D1D658529002CDF86 /* UIImage+MSRShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+MSRShape.swift"; path = "Msr/UI/UIImage+MSRShape.swift"; sourceTree = "<group>"; };
+		A90F8B6E1D658529002CDF86 /* UIImageView+MSRSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+MSRSetter.swift"; path = "Msr/UI/UIImageView+MSRSetter.swift"; sourceTree = "<group>"; };
+		A90F8B6F1D658529002CDF86 /* UINavigationBar+MSRAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+MSRAccessor.swift"; path = "Msr/UI/UINavigationBar+MSRAccessor.swift"; sourceTree = "<group>"; };
+		A90F8B701D658529002CDF86 /* UIScrollView+MSRPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MSRPosition.swift"; path = "Msr/UI/UIScrollView+MSRPosition.swift"; sourceTree = "<group>"; };
+		A90F8B711D658529002CDF86 /* UIScrollView+MSRRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MSRRefreshControl.swift"; path = "Msr/UI/UIScrollView+MSRRefreshControl.swift"; sourceTree = "<group>"; };
+		A90F8B721D658529002CDF86 /* UIScrollView+MSRTouchCancelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView+MSRTouchCancelling.swift"; path = "Msr/UI/UIScrollView+MSRTouchCancelling.swift"; sourceTree = "<group>"; };
+		A90F8B731D658529002CDF86 /* UITableView+MSRGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+MSRGetter.swift"; path = "Msr/UI/UITableView+MSRGetter.swift"; sourceTree = "<group>"; };
+		A90F8B741D658529002CDF86 /* UITableViewCell+MSRGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+MSRGetter.swift"; path = "Msr/UI/UITableViewCell+MSRGetter.swift"; sourceTree = "<group>"; };
+		A90F8B751D658529002CDF86 /* UITextField+MSRGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+MSRGetter.swift"; path = "Msr/UI/UITextField+MSRGetter.swift"; sourceTree = "<group>"; };
+		A90F8B761D658529002CDF86 /* UIView+MSRAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+MSRAccessor.swift"; path = "Msr/UI/UIView+MSRAccessor.swift"; sourceTree = "<group>"; };
+		A90F8B771D658529002CDF86 /* UIView+MSREasyAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+MSREasyAutoLayout.swift"; path = "Msr/UI/UIView+MSREasyAutoLayout.swift"; sourceTree = "<group>"; };
+		A91273121D65F4C900DF752C /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFViewShaker.h; path = AFViewShaker/AFViewShaker/AFViewShaker.h; sourceTree = "<group>"; };
+		A91273131D65F4C900DF752C /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFViewShaker.m; path = AFViewShaker/AFViewShaker/AFViewShaker.m; sourceTree = "<group>"; };
+		A91273151D65F61900DF752C /* Array+MSRAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+MSRAccessor.swift"; path = "Msr/Data/Array+MSRAccessor.swift"; sourceTree = "<group>"; };
+		A91273161D65F61900DF752C /* MSRLinearInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRLinearInterpolation.swift; path = Msr/Data/MSRLinearInterpolation.swift; sourceTree = "<group>"; };
+		A91273171D65F61900DF752C /* MSRNull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRNull.swift; path = Msr/Data/MSRNull.swift; sourceTree = "<group>"; };
+		A91273181D65F61900DF752C /* MSRValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRValue.swift; path = Msr/Data/MSRValue.swift; sourceTree = "<group>"; };
+		A91273191D65F61900DF752C /* MSRWeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRWeak.swift; path = Msr/Data/MSRWeak.swift; sourceTree = "<group>"; };
+		A912731A1D65F61900DF752C /* NSManagedObjectContext+MSROperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+MSROperations.swift"; path = "Msr/Data/NSManagedObjectContext+MSROperations.swift"; sourceTree = "<group>"; };
+		A912731B1D65F61900DF752C /* NSObject+MSRClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject+MSRClone.swift"; path = "Msr/Data/NSObject+MSRClone.swift"; sourceTree = "<group>"; };
+		A912731C1D65F61900DF752C /* NSObject+MSRUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject+MSRUserInfo.swift"; path = "Msr/Data/NSObject+MSRUserInfo.swift"; sourceTree = "<group>"; };
+		A912731D1D65F61900DF752C /* Numeric+MSRInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Numeric+MSRInitializer.swift"; path = "Msr/Data/Numeric+MSRInitializer.swift"; sourceTree = "<group>"; };
+		A912731E1D65F61900DF752C /* String+MSREncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+MSREncoding.swift"; path = "Msr/Data/String+MSREncoding.swift"; sourceTree = "<group>"; };
+		A912731F1D65F61900DF752C /* String+MSREncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+MSREncryption.swift"; path = "Msr/Data/String+MSREncryption.swift"; sourceTree = "<group>"; };
+		A91273201D65F61900DF752C /* String+MSROperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+MSROperations.swift"; path = "Msr/Data/String+MSROperations.swift"; sourceTree = "<group>"; };
+		A91273211D65F61900DF752C /* UnsafePointer+MSRInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UnsafePointer+MSRInitializer.swift"; path = "Msr/Data/UnsafePointer+MSRInitializer.swift"; sourceTree = "<group>"; };
+		A91273331D65F9A000DF752C /* CGContext+MSRInitialzier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGContext+MSRInitialzier.swift"; path = "Msr/UI/Detail/CGContext+MSRInitialzier.swift"; sourceTree = "<group>"; };
+		A91273341D65F9A000DF752C /* MSRSegmentWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSRSegmentWrapper.swift; path = Msr/UI/Detail/MSRSegmentWrapper.swift; sourceTree = "<group>"; };
+		A96668481D521EDD003BB703 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		A966684A1D5223D1003BB703 /* ICNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNetworkManager.h; sourceTree = "<group>"; };
+		A966684B1D5223D1003BB703 /* ICNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNetworkManager.m; sourceTree = "<group>"; };
 		BE1455E31941460C00D9F850 /* ICUsedGoodFilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodFilterTableViewCell.h; path = UsedGood/ICUsedGoodFilterTableViewCell.h; sourceTree = "<group>"; };
 		BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodFilterTableViewCell.m; path = UsedGood/ICUsedGoodFilterTableViewCell.m; sourceTree = "<group>"; };
 		BE168DF3193C816200542524 /* ICUsedGoodDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodDetailView.h; path = UsedGood/ICUsedGoodDetailView.h; sourceTree = "<group>"; };
@@ -948,6 +1087,7 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A90F8B2A1D6582EC002CDF86 /* Login */,
 				2A5B21651B137FD200686DDA /* Group */,
 				95B57F6F19F5FAF20069D0A7 /* ClassTable */,
 				95B57F7419F5FAF20069D0A7 /* FreeRoom */,
@@ -1043,6 +1183,8 @@
 			children = (
 				95AC7082185F473200C94B71 /* ICModelConfig.h */,
 				95D59FCE1AC5B95900F67C40 /* ICModelConfig.m */,
+				A966684A1D5223D1003BB703 /* ICNetworkManager.h */,
+				A966684B1D5223D1003BB703 /* ICNetworkManager.m */,
 				9536605619F9B3790055D5F9 /* Group */,
 				95B57FA519F5FEC50069D0A7 /* Grade */,
 				95B57F8E19F5FDF60069D0A7 /* ClassTable */,
@@ -1308,6 +1450,8 @@
 				A30D1E08182A64BA00F35D4F /* main.m */,
 				1C46417318D5F18B00B4CCED /* DebugNSLog.h */,
 				A30D1E0A182A64BA00F35D4F /* iCampus-Prefix.pch */,
+				A96668481D521EDD003BB703 /* Configuration.plist */,
+				A90F8B251D65824D002CDF86 /* iCampus-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1381,6 +1525,8 @@
 		A3C8B53D1830ED39007D569E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A91273111D65F4BB00DF752C /* AFViewShaker */,
+				A90F8B2B1D6584FA002CDF86 /* Msr */,
 				5C125D7A1B4570C000934FC4 /* UMAnalytics_Sdk_3.5.9 */,
 				5C6DB8561AAF323C008A8AEB /* GexinSdk */,
 				95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */,
@@ -1420,6 +1566,110 @@
 				A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */,
 			);
 			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		A90F8B2A1D6582EC002CDF86 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A90F8B261D6582E8002CDF86 /* LoginViewController.swift */,
+				A90F8B271D6582E8002CDF86 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		A90F8B2B1D6584FA002CDF86 /* Msr */ = {
+			isa = PBXGroup;
+			children = (
+				A90F8B2D1D65850B002CDF86 /* Data */,
+				A90F8B2C1D658505002CDF86 /* UI */,
+			);
+			name = Msr;
+			sourceTree = "<group>";
+		};
+		A90F8B2C1D658505002CDF86 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A91273331D65F9A000DF752C /* CGContext+MSRInitialzier.swift */,
+				A91273341D65F9A000DF752C /* MSRSegmentWrapper.swift */,
+				A90F8B481D658529002CDF86 /* CGRect+MSRAccessor.swift */,
+				A90F8B491D658529002CDF86 /* CGSize+MSRAccessor.swift */,
+				A90F8B4A1D658529002CDF86 /* MSRAlertAction.swift */,
+				A90F8B4B1D658529002CDF86 /* MSRAlertView.swift */,
+				A90F8B4C1D658529002CDF86 /* MSRAnimationInfo.swift */,
+				A90F8B4D1D658529002CDF86 /* MSRAutoExpandingView.swift */,
+				A90F8B4E1D658529002CDF86 /* MSRCollectionView.swift */,
+				A90F8B4F1D658529002CDF86 /* MSRFrameEdge.swift */,
+				A90F8B501D658529002CDF86 /* MSRKeyboardBar.swift */,
+				A90F8B511D658529002CDF86 /* MSRLayoutGuide.swift */,
+				A90F8B521D658529002CDF86 /* MSRLoadMoreControl.swift */,
+				A90F8B531D658529002CDF86 /* MSRMultilineLabel.swift */,
+				A90F8B541D658529002CDF86 /* MSRNavigationController.swift */,
+				A90F8B551D658529002CDF86 /* MSRNavigationWrapperController.swift */,
+				A90F8B561D658529002CDF86 /* MSRRoundedImageView.swift */,
+				A90F8B571D658529002CDF86 /* MSRSegment.swift */,
+				A90F8B581D658529002CDF86 /* MSRSegmentedControl.swift */,
+				A90F8B591D658529002CDF86 /* MSRSegmentedControlBlockIndicator.swift */,
+				A90F8B5A1D658529002CDF86 /* MSRSegmentedControlCircleIndicator.swift */,
+				A90F8B5B1D658529002CDF86 /* MSRSegmentedControlIndicator.swift */,
+				A90F8B5C1D658529002CDF86 /* MSRSegmentedControlLinearIndicator.swift */,
+				A90F8B5D1D658529002CDF86 /* MSRSegmentedControlOverlineIndicator.swift */,
+				A90F8B5E1D658529002CDF86 /* MSRSegmentedControlRainbowBlockIndicator.swift */,
+				A90F8B5F1D658529002CDF86 /* MSRSegmentedControlUnderlineIndicator.swift */,
+				A90F8B601D658529002CDF86 /* MSRSegmentedViewController.swift */,
+				A90F8B611D658529002CDF86 /* MSRSidebar.swift */,
+				A90F8B621D658529002CDF86 /* MSRTableView.swift */,
+				A90F8B631D658529002CDF86 /* MSRTextView.swift */,
+				A90F8B641D658529002CDF86 /* UIButton+MSRSetter.swift */,
+				A90F8B651D658529002CDF86 /* UIColor+MSRGetter.swift */,
+				A90F8B661D658529002CDF86 /* UIColor+MSRMaterialColor.swift */,
+				A90F8B671D658529002CDF86 /* UIColor+MSRRandomColor.swift */,
+				A90F8B681D658529002CDF86 /* UIColor+MSRRGBA.swift */,
+				A90F8B691D658529002CDF86 /* UIImage+MSRClip.swift */,
+				A90F8B6A1D658529002CDF86 /* UIImage+MSRColor.swift */,
+				A90F8B6B1D658529002CDF86 /* UIImage+MSRGetter.swift */,
+				A90F8B6C1D658529002CDF86 /* UIImage+MSRResize.swift */,
+				A90F8B6D1D658529002CDF86 /* UIImage+MSRShape.swift */,
+				A90F8B6E1D658529002CDF86 /* UIImageView+MSRSetter.swift */,
+				A90F8B6F1D658529002CDF86 /* UINavigationBar+MSRAccessor.swift */,
+				A90F8B701D658529002CDF86 /* UIScrollView+MSRPosition.swift */,
+				A90F8B711D658529002CDF86 /* UIScrollView+MSRRefreshControl.swift */,
+				A90F8B721D658529002CDF86 /* UIScrollView+MSRTouchCancelling.swift */,
+				A90F8B731D658529002CDF86 /* UITableView+MSRGetter.swift */,
+				A90F8B741D658529002CDF86 /* UITableViewCell+MSRGetter.swift */,
+				A90F8B751D658529002CDF86 /* UITextField+MSRGetter.swift */,
+				A90F8B761D658529002CDF86 /* UIView+MSRAccessor.swift */,
+				A90F8B771D658529002CDF86 /* UIView+MSREasyAutoLayout.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A90F8B2D1D65850B002CDF86 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A91273151D65F61900DF752C /* Array+MSRAccessor.swift */,
+				A91273161D65F61900DF752C /* MSRLinearInterpolation.swift */,
+				A91273171D65F61900DF752C /* MSRNull.swift */,
+				A91273181D65F61900DF752C /* MSRValue.swift */,
+				A91273191D65F61900DF752C /* MSRWeak.swift */,
+				A912731A1D65F61900DF752C /* NSManagedObjectContext+MSROperations.swift */,
+				A912731B1D65F61900DF752C /* NSObject+MSRClone.swift */,
+				A912731C1D65F61900DF752C /* NSObject+MSRUserInfo.swift */,
+				A912731D1D65F61900DF752C /* Numeric+MSRInitializer.swift */,
+				A912731E1D65F61900DF752C /* String+MSREncoding.swift */,
+				A912731F1D65F61900DF752C /* String+MSREncryption.swift */,
+				A91273201D65F61900DF752C /* String+MSROperations.swift */,
+				A91273211D65F61900DF752C /* UnsafePointer+MSRInitializer.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		A91273111D65F4BB00DF752C /* AFViewShaker */ = {
+			isa = PBXGroup;
+			children = (
+				A91273121D65F4C900DF752C /* AFViewShaker.h */,
+				A91273131D65F4C900DF752C /* AFViewShaker.m */,
+			);
+			name = AFViewShaker;
 			sourceTree = "<group>";
 		};
 		BE168D94193C801300542524 /* UsedGood */ = {
@@ -1525,6 +1775,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IC;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = BISTU;
 				TargetAttributes = {
@@ -1566,12 +1817,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F8B291D6582E8002CDF86 /* LoginViewController.xib in Resources */,
 				95A8418A1944D6AA00CF5B57 /* Main.storyboard in Resources */,
 				95798EA3186285080049CF77 /* KICamera.png in Resources */,
 				A30D1E15182A64BA00F35D4F /* Images.xcassets in Resources */,
 				95B57F9B19F5FE2B0069D0A7 /* SVProgressHUD.bundle in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
+				A96668491D521EDD003BB703 /* Configuration.plist in Resources */,
 				95353F98190A96DD00354F0B /* Radial.png in Resources */,
 				95A000B618620B91008B18BD /* LICENSE in Resources */,
 			);
@@ -1595,26 +1848,40 @@
 			files = (
 				95353F96190A96DD00354F0B /* LMNavigationBar.m in Sources */,
 				95B57F8319F5FAF20069D0A7 /* KMClassTableVC.m in Sources */,
+				A91273281D65F61900DF752C /* NSObject+MSRClone.swift in Sources */,
 				1C878B0718CDDACE00BEAC6B /* ICMapViewController.m in Sources */,
 				BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */,
 				9576D3C81944C1180095FCC2 /* ICLoginViewController.m in Sources */,
 				95697F24190B5F340088D564 /* RBBBlockBasedArray.m in Sources */,
 				47D25F22191F5DAF00DADA49 /* ICJob.m in Sources */,
 				95AC70C1185F473300C94B71 /* ICYellowPage.m in Sources */,
+				A90F8BA71D658529002CDF86 /* UIView+MSREasyAutoLayout.swift in Sources */,
 				BE168E0B193C818C00542524 /* ICUsedGoodListViewController.m in Sources */,
 				95A000DF186214FA008B18BD /* ICSchoolDetail.m in Sources */,
 				9508477F18658760008A4571 /* ICBusStationView.m in Sources */,
+				A90F8B981D658529002CDF86 /* UIColor+MSRRGBA.swift in Sources */,
+				A90F8B9E1D658529002CDF86 /* UIImageView+MSRSetter.swift in Sources */,
+				A90F8BA51D658529002CDF86 /* UITextField+MSRGetter.swift in Sources */,
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */,
+				A90F8B971D658529002CDF86 /* UIColor+MSRRandomColor.swift in Sources */,
+				A90F8B8B1D658529002CDF86 /* MSRSegmentedControlIndicator.swift in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
+				A912732E1D65F61900DF752C /* UnsafePointer+MSRInitializer.swift in Sources */,
 				1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */,
 				95B57F9C19F5FE2B0069D0A7 /* SVProgressHUD.m in Sources */,
 				95353F93190A96DD00354F0B /* LMEmbeddedViewController.m in Sources */,
+				A90F8B7E1D658529002CDF86 /* MSRCollectionView.swift in Sources */,
+				A90F8B7A1D658529002CDF86 /* MSRAlertAction.swift in Sources */,
+				A91273141D65F4C900DF752C /* AFViewShaker.m in Sources */,
 				95C2C4E01907F5E6009E39C7 /* ICAboutViewController.m in Sources */,
 				95AC70C2185F473300C94B71 /* ICYellowPageContact.m in Sources */,
 				95B57F8919F5FAF20069D0A7 /* KMGradeVC.m in Sources */,
 				95B57F8519F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m in Sources */,
+				A90F8BA41D658529002CDF86 /* UITableViewCell+MSRGetter.swift in Sources */,
+				A90F8B8A1D658529002CDF86 /* MSRSegmentedControlCircleIndicator.swift in Sources */,
 				47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */,
+				A90F8B7D1D658529002CDF86 /* MSRAutoExpandingView.swift in Sources */,
 				954F626919F62F00001CC1CC /* KMPageMenuViewController.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
@@ -1623,10 +1890,14 @@
 				95A000DB186214FA008B18BD /* ICBusListArray.m in Sources */,
 				95A000E0186214FA008B18BD /* ICSchoolList.m in Sources */,
 				95FF2841186ACBCD00B5C18A /* ICYellowPageListViewController.m in Sources */,
+				A91273361D65F9A000DF752C /* MSRSegmentWrapper.swift in Sources */,
 				A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				95B57F8819F5FAF20069D0A7 /* KMGradeResultTVC.m in Sources */,
+				A90F8B881D658529002CDF86 /* MSRSegmentedControl.swift in Sources */,
 				95353F91190A96DD00354F0B /* CALayer+ModalAlert.m in Sources */,
+				A90F8B891D658529002CDF86 /* MSRSegmentedControlBlockIndicator.swift in Sources */,
 				95A001211862594E008B18BD /* ICBusViewController.m in Sources */,
+				A91273251D65F61900DF752C /* MSRValue.swift in Sources */,
 				95A001221862594E008B18BD /* ICGateViewController.m in Sources */,
 				95353F95190A96DD00354F0B /* LMModalSegue.m in Sources */,
 				95B57FA819F5FEC50069D0A7 /* KMGradeModel.m in Sources */,
@@ -1637,12 +1908,20 @@
 				A320CA57183E353100BCA05F /* UIButton+AFNetworking.m in Sources */,
 				957279AB1867375D007F3F01 /* ICSchoolListViewController.m in Sources */,
 				A320CA5A183E353100BCA05F /* UIWebView+AFNetworking.m in Sources */,
+				A91273351D65F9A000DF752C /* CGContext+MSRInitialzier.swift in Sources */,
 				95B57FA419F5FE7F0069D0A7 /* KMGradeResultCell.m in Sources */,
 				2AEBF8A31B14791900A791EE /* KMPersonalMessageTabelViewController.m in Sources */,
+				A90F8B9B1D658529002CDF86 /* UIImage+MSRGetter.swift in Sources */,
 				95A000DD186214FA008B18BD /* ICBusStationList.m in Sources */,
+				A90F8B781D658529002CDF86 /* CGRect+MSRAccessor.swift in Sources */,
+				A90F8B8D1D658529002CDF86 /* MSRSegmentedControlOverlineIndicator.swift in Sources */,
+				A90F8B991D658529002CDF86 /* UIImage+MSRClip.swift in Sources */,
 				95697F23190B5F340088D564 /* RBBAnimation.m in Sources */,
+				A912732B1D65F61900DF752C /* String+MSREncoding.swift in Sources */,
 				95AC70B5185F473300C94B71 /* ICNewsDetail.m in Sources */,
+				A91273291D65F61900DF752C /* NSObject+MSRUserInfo.swift in Sources */,
 				2A9267AF1B140FDD0056DA00 /* ICGroup.m in Sources */,
+				A912732C1D65F61900DF752C /* String+MSREncryption.swift in Sources */,
 				47D25F13191F5D2A00DADA49 /* ICJobClassificationListTableViewController.m in Sources */,
 				A320CA58183E353100BCA05F /* UIImageView+AFNetworking.m in Sources */,
 				BEF1E3EA193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m in Sources */,
@@ -1651,16 +1930,20 @@
 				95A00100186227D0008B18BD /* ICNewsChannelCell.m in Sources */,
 				2AEBF8A01B145E8D00A791EE /* ICGroupMessage.m in Sources */,
 				957279AE18673D45007F3F01 /* ICSchoolDetailViewController.m in Sources */,
+				A91273261D65F61900DF752C /* MSRWeak.swift in Sources */,
 				A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */,
 				A320CA54183E353100BCA05F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				95A001081862388B008B18BD /* NSString+RSA.m in Sources */,
 				47D25F25191F5DAF00DADA49 /* ICJobList.m in Sources */,
+				A90F8B9F1D658529002CDF86 /* UINavigationBar+MSRAccessor.swift in Sources */,
 				2AEBF8A61B1479C400A791EE /* ICPersonalMessage.m in Sources */,
+				A91273231D65F61900DF752C /* MSRLinearInterpolation.swift in Sources */,
 				47D25F15191F5D2A00DADA49 /* ICJobListTableViewController.m in Sources */,
 				95353F97190A96DD00354F0B /* LMNavigationController.m in Sources */,
 				95697F25190B5F340088D564 /* RBBCubicBezier.m in Sources */,
 				95A000DE186214FA008B18BD /* ICSchool.m in Sources */,
 				95B57F8719F5FAF20069D0A7 /* KMFreeRoomTVC.m in Sources */,
+				A90F8BA11D658529002CDF86 /* UIScrollView+MSRRefreshControl.swift in Sources */,
 				95C2C4E51907F653009E39C7 /* ICAboutWebpage.m in Sources */,
 				47D25F16191F5D2A00DADA49 /* ICJobMoreTableViewController.m in Sources */,
 				95AC70B3185F473300C94B71 /* ICNewsChannel.m in Sources */,
@@ -1668,12 +1951,23 @@
 				A320CA73183E365D00BCA05F /* AFSecurityPolicy.m in Sources */,
 				95697F31190BB6A30088D564 /* ICSettingViewController.m in Sources */,
 				95697F2A190B5F340088D564 /* RBBTweenAnimation.m in Sources */,
+				A90F8BA21D658529002CDF86 /* UIScrollView+MSRTouchCancelling.swift in Sources */,
 				95697F1C190B5F340088D564 /* CAAnimation+Blocks.m in Sources */,
+				A90F8B281D6582E8002CDF86 /* LoginViewController.swift in Sources */,
 				95A000DC186214FA008B18BD /* ICBusStation.m in Sources */,
+				A90F8B7F1D658529002CDF86 /* MSRFrameEdge.swift in Sources */,
 				95E4852118940E8E006402FD /* ICYellowPageDepartment.m in Sources */,
+				A90F8B931D658529002CDF86 /* MSRTextView.swift in Sources */,
+				A90F8B951D658529002CDF86 /* UIColor+MSRGetter.swift in Sources */,
 				95FF2844186ACFD300B5C18A /* ICYellowPageContactCell.m in Sources */,
 				95AC70B7185F473300C94B71 /* ICNewsList.m in Sources */,
+				A90F8B8C1D658529002CDF86 /* MSRSegmentedControlLinearIndicator.swift in Sources */,
+				A90F8B861D658529002CDF86 /* MSRRoundedImageView.swift in Sources */,
+				A912732A1D65F61900DF752C /* Numeric+MSRInitializer.swift in Sources */,
 				47D25F18191F5D2A00DADA49 /* ICJobNewJobTableViewController.m in Sources */,
+				A90F8B821D658529002CDF86 /* MSRLoadMoreControl.swift in Sources */,
+				A90F8B811D658529002CDF86 /* MSRLayoutGuide.swift in Sources */,
+				A90F8BA01D658529002CDF86 /* UIScrollView+MSRPosition.swift in Sources */,
 				95AC70AD185F473300C94B71 /* ICCampusList.m in Sources */,
 				95B57F9519F5FDF60069D0A7 /* KMFreeRoomsModel.m in Sources */,
 				95A001251862594E008B18BD /* ICNewsListViewController.m in Sources */,
@@ -1691,49 +1985,74 @@
 				95A000DA186214FA008B18BD /* ICBusList.m in Sources */,
 				A320CA72183E365D00BCA05F /* AFNetworkReachabilityManager.m in Sources */,
 				95D59FCF1AC5B95900F67C40 /* ICModelConfig.m in Sources */,
+				A90F8B791D658529002CDF86 /* CGSize+MSRAccessor.swift in Sources */,
 				95A0010D18623ED1008B18BD /* ICNewsDetailView.m in Sources */,
+				A90F8B921D658529002CDF86 /* MSRTableView.swift in Sources */,
 				95B57F9419F5FDF60069D0A7 /* KMClassTableModel.m in Sources */,
 				BE168E09193C818C00542524 /* ICUsedGoodDetailViewController.m in Sources */,
 				95B57F8219F5FAF20069D0A7 /* KMClassTableDetailVC.m in Sources */,
 				A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */,
+				A90F8BA61D658529002CDF86 /* UIView+MSRAccessor.swift in Sources */,
+				A90F8B841D658529002CDF86 /* MSRNavigationController.swift in Sources */,
 				957279BA1867552A007F3F01 /* ICSchoolDetailView.m in Sources */,
 				95B57FA319F5FE7F0069D0A7 /* KMFreeRoomDetailCell.m in Sources */,
 				BE168E0A193C818C00542524 /* ICUsedGoodFilterViewController.m in Sources */,
+				A90F8B8E1D658529002CDF86 /* MSRSegmentedControlRainbowBlockIndicator.swift in Sources */,
 				BE168E22193C82B300542524 /* ICUsedGood.m in Sources */,
 				951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
+				A90F8B9D1D658529002CDF86 /* UIImage+MSRShape.swift in Sources */,
 				BE168E29193C82DC00542524 /* APNavigationController.m in Sources */,
+				A90F8B9A1D658529002CDF86 /* UIImage+MSRColor.swift in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
+				A91273221D65F61900DF752C /* Array+MSRAccessor.swift in Sources */,
 				95B57F8D19F5FDD00069D0A7 /* KMNetworkActivityCenter.m in Sources */,
 				47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */,
+				A91273271D65F61900DF752C /* NSManagedObjectContext+MSROperations.swift in Sources */,
 				955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */,
+				A90F8BA31D658529002CDF86 /* UITableView+MSRGetter.swift in Sources */,
+				A966684C1D5223D1003BB703 /* ICNetworkManager.m in Sources */,
 				BEF1E3ED193F3C1D00ED0B14 /* ICUsedGoodUploadImageView.m in Sources */,
+				A90F8B7C1D658529002CDF86 /* MSRAnimationInfo.swift in Sources */,
 				95E4852418940FE9006402FD /* ICYellowPageDepartmentViewController.m in Sources */,
+				A90F8B901D658529002CDF86 /* MSRSegmentedViewController.swift in Sources */,
+				A90F8B941D658529002CDF86 /* UIButton+MSRSetter.swift in Sources */,
 				BEF1E3F0193F444D00ED0B14 /* ICUsedGoodImagePoster.m in Sources */,
 				95353F94190A96DD00354F0B /* LMModalItemTableViewCell.m in Sources */,
 				A320CA55183E353100BCA05F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				A90F8B851D658529002CDF86 /* MSRNavigationWrapperController.swift in Sources */,
 				A320CA6F183E365D00BCA05F /* AFHTTPRequestOperation.m in Sources */,
 				95697F29190B5F340088D564 /* RBBSpringAnimation.m in Sources */,
 				BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */,
+				A912732D1D65F61900DF752C /* String+MSROperations.swift in Sources */,
+				A90F8B961D658529002CDF86 /* UIColor+MSRMaterialColor.swift in Sources */,
 				95A000EA186218A0008B18BD /* ICNewsCell.m in Sources */,
 				2A9267B21B141BC50056DA00 /* KMGroupDetialTableViewController.m in Sources */,
 				95A001071862388B008B18BD /* Base64.m in Sources */,
 				95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */,
+				A90F8B831D658529002CDF86 /* MSRMultilineLabel.swift in Sources */,
 				95697F26190B5F340088D564 /* RBBCustomAnimation.m in Sources */,
+				A90F8B7B1D658529002CDF86 /* MSRAlertView.swift in Sources */,
+				A90F8B801D658529002CDF86 /* MSRKeyboardBar.swift in Sources */,
 				95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */,
 				BED23A13193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m in Sources */,
 				A30D1E09182A64BA00F35D4F /* main.m in Sources */,
 				A320CA56183E353100BCA05F /* UIAlertView+AFNetworking.m in Sources */,
+				A90F8B9C1D658529002CDF86 /* UIImage+MSRResize.swift in Sources */,
 				95AC70B6185F473300C94B71 /* ICNewsDetailAttachment.m in Sources */,
 				A320CA71183E365D00BCA05F /* AFHTTPSessionManager.m in Sources */,
 				95B57F8419F5FAF20069D0A7 /* KMFreeRoomBuildingsTVC.m in Sources */,
 				95AC70AC185F473300C94B71 /* ICCampus.m in Sources */,
 				A320CA76183E365D00BCA05F /* AFURLResponseSerialization.m in Sources */,
+				A90F8B911D658529002CDF86 /* MSRSidebar.swift in Sources */,
 				957279B418674602007F3F01 /* ICSchoolCell.m in Sources */,
+				A90F8B871D658529002CDF86 /* MSRSegment.swift in Sources */,
+				A90F8B8F1D658529002CDF86 /* MSRSegmentedControlUnderlineIndicator.swift in Sources */,
 				47D25F23191F5DAF00DADA49 /* ICJobClassification.m in Sources */,
 				4756272C1932236700369FC8 /* ICJobFavoritesJobTableViewController.m in Sources */,
+				A91273241D65F61900DF752C /* MSRNull.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1865,10 +2184,12 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
@@ -1877,7 +2198,7 @@
 				);
 				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iCampus/External/GexinSdk/";
 				WRAPPER_EXTENSION = app;
@@ -1893,10 +2214,12 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCampus/iCampus-Prefix.pch";
 				INFOPLIST_FILE = "iCampus/iCampus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/iCampus/External/GexinSdk/",
@@ -1905,7 +2228,7 @@
 				);
 				PRODUCT_NAME = iCampus;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/Controller/iCampus-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iCampus/External/GexinSdk/";
 				WRAPPER_EXTENSION = app;
 			};

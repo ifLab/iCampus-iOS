@@ -72,13 +72,13 @@
                     }
                 }
             }
-            if (failed) {
-                UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"错误" message:@"无法获得服务器信息，可能是服务器维护中，应用即将被关闭。" preferredStyle:UIAlertControllerStyleActionSheet];
-                [ac addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-                    exit(EXIT_SUCCESS);
-                }]];
-                [self_ presentViewController:ac animated:true completion:nil];
-            }
+//            if (failed) {
+//                UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"错误" message:@"无法获得服务器信息，可能是服务器维护中，应用即将被关闭。" preferredStyle:UIAlertControllerStyleActionSheet];
+//                [ac addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+////                    exit(EXIT_SUCCESS);
+//                }]];
+//                [self_ presentViewController:ac animated:true completion:nil];
+//            }
         });
     }];
     

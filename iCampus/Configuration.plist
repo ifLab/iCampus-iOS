@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Website</key>
+	<string>http://104.155.211.143/api/v2/</string>
+	<key>Paths</key>
+	<dict>
+		<key>About</key>
+		<string>ibistu/_table/module_about/</string>
+		<key>Bus</key>
+		<string>ibistu/_table/module_bus/</string>
+		<key>Department</key>
+		<string>ibistu/_table/module_department_list/</string>
+		<key>Yellow Page</key>
+		<string>ibistu/_table/module_yellowpage/</string>
+		<key>Map</key>
+		<string>ibistu/_table/module_map/</string>
+		<key>Login</key>
+		<string>user/session/</string>
+		<key>Register</key>
+		<string>user/register/</string>
+		<key>Change Password</key>
+		<string>user/password/</string>
+	</dict>
+	<key>Token</key>
+	<string></string>
+	<key>APIKey</key>
+	<string>3528bd808dde403b83b456e986ce1632d513f7a06c19f5a582058be87be0d8c2</string>
+</dict>
+</plist>

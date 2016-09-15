@@ -8,6 +8,7 @@
 
 #import "ICAppDelegate.h"
 #import "MobClick.h"
+#import "iCampus-Swift.h"
 
 typedef enum {
     SdkStatusStoped,
@@ -55,6 +56,10 @@ typedef enum {
     [self registerRemoteNotification]; // 注册APNS
     [[UIApplication sharedApplication] cancelAllLocalNotifications]; //清理系统通知
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0; //消除icon角标
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.controller = [[NSBundle mainBundle] loadNibNamed:@"LoginViewController" owner:nil options:nil].firstObject;
+    [self.window setRootViewController:self.controller];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

@@ -7,6 +7,8 @@
 //
 
 #import "ICUser.h"
+#import <CommonCrypto/CommonCrypto.h>
+#import "ICNetworkManager.h"
 
 ICUser *ICCurrentUser = nil;
 
@@ -68,6 +70,102 @@ ICUser *ICCurrentUser = nil;
     self.mobile = information[@"mobile"];
     ICCurrentUser = self;
     return YES;
+}
+
++ (void)registerWithEmail:(NSString *)email
+                 password:(NSString *)password
+                    phone:(NSString *)phone
+                  success:(void (^)(ICUser *))success
+                  failure:(void (^)(NSError *))failure {
+    [[ICNetworkManager defaultManager] POST:@"Register"
+                              GETParameters:nil
+                             POSTParameters:@{
+                                              @"email": email,
+                                              @"password": password,
+                                              @"phone": phone
+                                              }
+                                    success:^(NSDictionary *data) {
+                                        [ICUser loginWithEmail:email
+                                                        password:password success:success
+                                                         failure:failure];
+                                    }
+                                    failure:failure];
+}
+
+
++ (void)loginWithEmail:(NSString *)email
+              password:(NSString *)password
+               success:(void (^)(ICUser *))success
+               failure:(void (^)(NSError *))failure {
+    NSDictionary *POSTParameters = @{
+                                     @"email": email,
+                                     @"password": password,
+                                     };
+    NSDictionary *GETParameters = @{
+                                    @"remember_m": @"true"
+                                    };
+    [[ICNetworkManager defaultManager] POST:@"Login"
+                              GETParameters:GETParameters
+                             POSTParameters:POSTParameters
+                                    success:^(NSDictionary *data) {
+                                        ICUser *user = [[ICUser alloc] init];
+                                        user.token = data[@"session_token"];
+                                        user.ID = data[@"id"];
+                                        user.name = data[@"name"];
+                                        user.email = data[@"email"];
+                                        ICCurrentUser = user;
+                                        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+                                        NSMutableDictionary *plistData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+                                        [plistData setObject:user.token forKey:@"Token"];
+                                        NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+                                        NSString *plistPath1 = [paths objectAtIndex:0];
+                                        NSString *filename=[plistPath1 stringByAppendingPathComponent:@"Configuration.plist"];
+                                        [plistData writeToFile:filename atomically:YES];
+                                        success(user);
+                                    }
+                                    failure:^(NSError *error) {
+                                        failure(error);
+                                    }];
+}
+
++ (void)refreshToken:(void (^)(ICUser *))success
+             failure:(void (^)(NSError *))failure {
+    [[ICNetworkManager defaultManager] PUT:@"Login"
+                                parameters:nil
+                                   success:^(NSDictionary *data) {
+                                       ICUser *user = [[ICUser alloc] init];
+                                       user.token = data[@"session_token"];
+                                       user.ID = data[@"id"];
+                                       user.name = data[@"name"];
+                                       user.email = data[@"email"];
+                                       ICCurrentUser = user;
+                                       NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+                                       NSMutableDictionary *plistData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+                                       [plistData setObject:user.token forKey:@"Token"];
+                                       NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+                                       NSString *plistPath1 = [paths objectAtIndex:0];
+                                       NSString *filename=[plistPath1 stringByAppendingPathComponent:@"Configuration.plist"];
+                                       [plistData writeToFile:filename atomically:YES];
+                                       success(user);
+                                   }
+                                   failure:failure];
+}
+
+- (NSString*)sha1:(NSString *)string {
+    const char *cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData *data = [NSData dataWithBytes:cstr length:string.length];
+    //使用对应的CC_SHA1,CC_SHA256,CC_SHA384,CC_SHA512的长度分别是20,32,48,64
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    //使用对应的CC_SHA256,CC_SHA384,CC_SHA512
+    CC_SHA1(data.bytes, data.length, digest);
+    
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+
+    return output;
 }
 
 @end

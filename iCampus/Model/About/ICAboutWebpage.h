@@ -24,6 +24,9 @@
 
 + (instancetype)ifLabPage;
 
++ (void)fetchPageWithSuccess:(void (^)(NSArray *))success
+                     failure:(void (^)(NSError *))failure;
+
 + (instancetype)pageWithCategory:(NSString *)category;
 
 @end
