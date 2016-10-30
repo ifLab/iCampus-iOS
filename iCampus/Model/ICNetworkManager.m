@@ -36,7 +36,7 @@
 
 - (AFHTTPRequestOperation*)GET:(NSString *)key
                     parameters:(NSDictionary *)parameters
-                       success:(void (^)(id))success
+                       success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
 {
     return [self request:key method:nil GETParameters:parameters POSTParameters:nil constructingBodyWithBlock:nil success:success failure:failure];
@@ -45,7 +45,7 @@
 - (AFHTTPRequestOperation*)POST:(NSString *)key
                   GETParameters:(NSDictionary *)GETParameters
                  POSTParameters:(NSDictionary *)POSTParameters
-                        success:(void (^)(id))success
+                        success:(void (^)(NSDictionary *))success
                         failure:(void (^)(NSError *))failure
 {
     return [self request:key method:nil GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
@@ -53,7 +53,7 @@
 
 - (AFHTTPRequestOperation*)PUT:(NSString *)key
                     parameters:(NSDictionary *)parameters
-                       success:(void (^)(id))success
+                       success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
 {
     return [self request:key method:@"PUT" GETParameters:nil POSTParameters:parameters constructingBodyWithBlock:nil success:success failure:failure];
@@ -69,11 +69,17 @@
 {
     @try {
         NSMutableDictionary *GETP = [NSMutableDictionary dictionaryWithDictionary:GETParameters];
-        GETP[@"api_key"] = self.APIKey;
-        GETP[@"session_token"] = self.token;
-        NSLog(@"%@", [NSString stringWithFormat:@"%@%@", self.website, self.path[key]] );
-        NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:[NSString stringWithFormat:@"%@%@", self.website, self.path[key]] parameters:[NSDictionary dictionaryWithDictionary:GETP]].URL.absoluteString;
-        NSLog(@"%@",URLString);
+        NSString *websiteString;
+//        if ([key  isEqual: @"Verfycode Website"]) {
+//             websiteString = self.verfycodeWebsite;
+//        } else {
+            GETP[@"api_key"] = self.APIKey;
+            GETP[@"session_token"] = self.token;
+            GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
+            websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
+//        }
+        NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP]].URL.absoluteString;
+//        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
         if ([method  isEqual: @"PUT"]) {
             return [self.manager PUT:URLString parameters:POSTParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -112,13 +118,13 @@
 }
 
 - (void)cleanCookies {
-    
+    [ICNetworkManager defaultManager].token = @"";
 }
 
 - (void)handleSuccess:(AFHTTPRequestOperation*)operation
                 data:(NSData*)data
-             success:(void (^)(id object))success
-             failure:(void (^)(NSError *error))failure {
+             success:(void (^)(NSDictionary *))success
+             failure:(void (^)(NSError *))failure {
     NSError *error;
     id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (error != nil || object == nil || !([object isKindOfClass:[NSDictionary class]])) {
@@ -135,17 +141,22 @@
         if (failure) {
             failure(error);
         }
+        return;
     }
     NSDictionary *datas = object;
     if (datas[@"error"][@"code"] == nil) {
         id info = datas;
 //        NSLog(@"\(operation.response.URL!)\n\(info)");
-        success(info);
+        if (success) {
+            success(info);
+        }
+        return;
     } else {
         NSDictionary *data = datas[@"error"];
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  NSLocalizedDescriptionKey, data[@"message"],
-                                  NSURLErrorKey, operation.response.URL,nil];
+        NSDictionary *userInfo = @{
+                                   NSLocalizedDescriptionKey: data[@"message"],
+                                   NSURLErrorKey: operation.response.URL
+                                   };
         NSError *error = [NSError errorWithDomain:self.website code:self.internalErrorCode.integerValue userInfo:userInfo];
         NSLog(@"%@", error);
         failure(error);
@@ -166,8 +177,29 @@
     return self.configuration[@"Website"];
 }
 
+- (NSString *)SMSappKey {
+    return self.configuration[@"Verfycode API Key"];
+}
+
+- (NSString *)SMSappSecret {
+    return self.configuration[@"Verfycode App Secret"];
+}
+
+- (NSString *)verfycodeWebsite {
+    return self.configuration[@"Verfycode Website"];
+}
+
 - (NSString *)token {
-    return self.configuration[@"Token"];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+}
+
+- (void)setToken:(NSString*)newToken {
+    [[NSUserDefaults standardUserDefaults] setObject:newToken forKey:@"token"];
+//    NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:self.configuration];
+//    data[@"Token"] = newToken;
+//    NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"]);
+//    [data writeToFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"] atomically:YES];
+//    self.configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist" ]];
 }
 
 - (NSString *)APIKey {

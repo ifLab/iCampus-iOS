@@ -9,6 +9,9 @@
 #import "ICAppDelegate.h"
 #import "MobClick.h"
 #import "iCampus-Swift.h"
+#import <SMS_SDK/SMSSDK.h>
+#import "ICNetworkManager.h"
+#import "ICGateViewController.h"
 
 typedef enum {
     SdkStatusStoped,
@@ -40,25 +43,32 @@ typedef enum {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // 启动友盟统计
-    [MobClick startWithAppkey:UMAppkey reportPolicy:BATCH channelId:nil];
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    [MobClick setAppVersion:version];
-    
-    // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ICNavigationBarBackground"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0]}];
-    [[UINavigationBar appearance] setTranslucent:NO];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [UIApplication sharedApplication].statusBarHidden = NO;
-    
-    [self startSdkWith:kAppId appKey:kAppKey appSecret:kAppSecret]; // 使用APPID/APPKEY/APPSECRENT创建个推实例
-    [self registerRemoteNotification]; // 注册APNS
-    [[UIApplication sharedApplication] cancelAllLocalNotifications]; //清理系统通知
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0; //消除icon角标
+//    // 启动友盟统计
+//    [MobClick startWithAppkey:UMAppkey reportPolicy:BATCH channelId:nil];
+//    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+//    [MobClick setAppVersion:version];
+//    
+//    // Override point for customization after application launch.
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ICNavigationBarBackground"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0]}];
+//    [[UINavigationBar appearance] setTranslucent:NO];
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [UIApplication sharedApplication].statusBarHidden = NO;
+//    
+//    [self startSdkWith:kAppId appKey:kAppKey appSecret:kAppSecret]; // 使用APPID/APPKEY/APPSECRENT创建个推实例
+//    [self registerRemoteNotification]; // 注册APNS
+//    [[UIApplication sharedApplication] cancelAllLocalNotifications]; //清理系统通知
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0; //消除icon角标
+    [SMSSDK registerApp:[ICNetworkManager defaultManager].SMSappKey withSecret:[ICNetworkManager defaultManager].SMSappSecret];// mod.com短信
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.controller = [[NSBundle mainBundle] loadNibNamed:@"LoginViewController" owner:nil options:nil].firstObject;
-    [self.window setRootViewController:self.controller];
+    if (![ICNetworkManager defaultManager].token || [[ICNetworkManager defaultManager].token isEqualToString:@""]) {
+        self.controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController2" owner:nil options:nil].firstObject;
+        [self.window setRootViewController:self.controller];
+    } else {
+        self.controller = [[ICGateViewController alloc] init];
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.controller];
+        [self.window setRootViewController:self.navigationController];
+    }
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -78,22 +88,22 @@ typedef enum {
     [self stopSdk]; // [EXT] 切后台关闭SDK，让SDK第一时间断线，让个推先用APN推送
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    [self startSdkWith:_appID appKey:_appKey appSecret:_appSecret]; // [EXT] 重新上线
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
+//- (void)applicationWillEnterForeground:(UIApplication *)application
+//{
+//    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+//}
+//
+//- (void)applicationDidBecomeActive:(UIApplication *)application
+//{
+//    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    
+//    [self startSdkWith:_appID appKey:_appKey appSecret:_appSecret]; // [EXT] 重新上线
+//}
+//
+//- (void)applicationWillTerminate:(UIApplication *)application
+//{
+//    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+//}
 
 // 向系统注册推送服务
 - (void)registerRemoteNotification

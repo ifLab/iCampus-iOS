@@ -10,3 +10,4 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "ICUser.h"
 #import "ICGateViewController.h"
+#import "ICLoginManager.h"

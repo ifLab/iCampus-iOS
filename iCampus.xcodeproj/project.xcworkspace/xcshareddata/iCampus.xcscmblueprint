@@ -10,7 +10,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "45F32B09-D344-4926-B7D1-00AD631AFBC6",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "712FDD6737AF8F1A7F354B8479A7EDF3DAA70F35" : "iCampus-iOS",
+    "712FDD6737AF8F1A7F354B8479A7EDF3DAA70F35" : "iCampus-iOS\/",
     "7E34DC5038499618AB49818E0CE9C400E5C223B4" : "iCampus-iOS\/iCampus\/External\/AFViewShaker\/",
     "4A7101121DB0278DE598AC7BC5212A82FABA038A" : "iCampus-iOS\/iCampus\/External\/Msr\/"
   },
