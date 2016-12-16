@@ -11,3 +11,8 @@
 #import "ICUser.h"
 #import "ICGateViewController.h"
 #import "ICLoginManager.h"
+#import "ICNewsListViewController.h"
+#import "ICYellowPageListViewController.h"
+#import "ICBusViewController.h"
+#import "ICMapViewController.h"
+#import "ICAboutViewController.h"

@@ -13,13 +13,11 @@
 
 @interface ICAppDelegate : UIResponder <UIApplicationDelegate, GexinSdkDelegate> {
 @private
-    UINavigationController *_naviController;
+//    UINavigationController *_naviController;
     NSString *_deviceToken;
 }
 
 - (void)setAliasWith:(NSString *)alias;
-
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UIViewController *controller;
-@property (strong, nonatomic) UINavigationController *navigationController;
+
 @end

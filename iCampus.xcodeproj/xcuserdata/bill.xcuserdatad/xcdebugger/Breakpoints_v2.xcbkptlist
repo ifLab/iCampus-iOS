@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCampus/Model/ICNetworkManager.m"
-            timestampString = "499508004.040257"
+            timestampString = "503406483.613429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-request:method:GETParameters:POSTParameters:constructingBodyWithBlock:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCampus/Model/ICNetworkManager.m"
-            timestampString = "499510220.453405"
+            timestampString = "503406483.613429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-request:method:GETParameters:POSTParameters:constructingBodyWithBlock:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
@@ -99,13 +99,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iCampus/Controller/Login/ICLoginViewController2.swift"
-            timestampString = "499519753.763733"
+            filePath = "iCampus/Model/Login/ICLoginManager.m"
+            timestampString = "503472797.874642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "loginOrRegister(_:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "+signUp:password:phone:verfyCode:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iCampus/Model/Login/ICLoginManager.m"
+            timestampString = "503472808.806374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "+signUp:password:phone:verfyCode:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

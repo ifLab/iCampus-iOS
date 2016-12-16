@@ -159,6 +159,7 @@
 		A3C8B5411830ED39007D569E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5401830ED39007D569E /* MBProgressHUD.m */; };
 		A3C8B5481830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5451830F6CF007D569E /* UIScrollView+SVInfiniteScrolling.m */; };
 		A3C8B5491830F6CF007D569E /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */; };
+		A91253A61E016F550086B586 /* ICGateViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91253A51E016F550086B586 /* ICGateViewController2.swift */; };
 		A91273141D65F4C900DF752C /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A91273131D65F4C900DF752C /* AFViewShaker.m */; };
 		A96668491D521EDD003BB703 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A96668481D521EDD003BB703 /* Configuration.plist */; };
 		A966684C1D5223D1003BB703 /* ICNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A966684B1D5223D1003BB703 /* ICNetworkManager.m */; };
@@ -173,6 +174,10 @@
 		A9BD94311DC621C7004EB5F4 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BD94301DC621C7004EB5F4 /* JavaScriptCore.framework */; };
 		A9BD94331DC621D0004EB5F4 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BD94321DC621D0004EB5F4 /* libstdc++.tbd */; };
 		A9BD94391DC62B54004EB5F4 /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD94381DC62B54004EB5F4 /* MSRAnimationInfo.swift */; };
+		A9D596D81E02578A0026BAD5 /* ICGateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D596D61E02578A0026BAD5 /* ICGateViewCell.swift */; };
+		A9D596D91E02578A0026BAD5 /* ICGateViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D596D71E02578A0026BAD5 /* ICGateViewCell.xib */; };
+		A9F478221E02829A007C92F3 /* APNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F478211E02829A007C92F3 /* APNavigationController.m */; };
+		A9F478251E02B8C0007C92F3 /* ICLostGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F478241E02B8C0007C92F3 /* ICLostGoodsController.swift */; };
 		BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */; };
 		BE168DFB193C816200542524 /* ICUsedGoodDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF4193C816200542524 /* ICUsedGoodDetailView.m */; };
 		BE168DFD193C816200542524 /* ICUsedGoodListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168DF8193C816200542524 /* ICUsedGoodListCell.m */; };
@@ -182,7 +187,6 @@
 		BE168E0C193C818C00542524 /* ICUsedGoodMyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E06193C818C00542524 /* ICUsedGoodMyListTableViewController.m */; };
 		BE168E22193C82B300542524 /* ICUsedGood.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E1B193C82B300542524 /* ICUsedGood.m */; };
 		BE168E23193C82B300542524 /* ICUsedGoodDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E1D193C82B300542524 /* ICUsedGoodDetail.m */; };
-		BE168E29193C82DC00542524 /* APNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE168E28193C82DC00542524 /* APNavigationController.m */; };
 		BE4695C8193CCC9C001D8BFB /* ICUsedGoodType.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */; };
 		BED23A13193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED23A12193D726100EBAB92 /* ICUsedGoodPublishTableViewController.m */; };
 		BEF1E3EA193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF1E3E9193EF8F500ED0B14 /* ICUsedGoodPublishTableCellTableViewCell.m */; };
@@ -502,6 +506,7 @@
 		A3C8B5461830F6CF007D569E /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		A3C8B5471830F6CF007D569E /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		A90F8B251D65824D002CDF86 /* iCampus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCampus-Bridging-Header.h"; sourceTree = "<group>"; };
+		A91253A51E016F550086B586 /* ICGateViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewController2.swift; sourceTree = "<group>"; };
 		A91273121D65F4C900DF752C /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFViewShaker.h; path = AFViewShaker/AFViewShaker/AFViewShaker.h; sourceTree = "<group>"; };
 		A91273131D65F4C900DF752C /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFViewShaker.m; path = AFViewShaker/AFViewShaker/AFViewShaker.m; sourceTree = "<group>"; };
 		A96668481D521EDD003BB703 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -520,6 +525,11 @@
 		A9BD94301DC621C7004EB5F4 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A9BD94321DC621D0004EB5F4 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A9BD94381DC62B54004EB5F4 /* MSRAnimationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSRAnimationInfo.swift; sourceTree = "<group>"; };
+		A9D596D61E02578A0026BAD5 /* ICGateViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewCell.swift; sourceTree = "<group>"; };
+		A9D596D71E02578A0026BAD5 /* ICGateViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICGateViewCell.xib; sourceTree = "<group>"; };
+		A9F478201E02829A007C92F3 /* APNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNavigationController.h; sourceTree = "<group>"; };
+		A9F478211E02829A007C92F3 /* APNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNavigationController.m; sourceTree = "<group>"; };
+		A9F478241E02B8C0007C92F3 /* ICLostGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICLostGoodsController.swift; path = LostGoods/ICLostGoodsController.swift; sourceTree = "<group>"; };
 		BE1455E31941460C00D9F850 /* ICUsedGoodFilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodFilterTableViewCell.h; path = UsedGood/ICUsedGoodFilterTableViewCell.h; sourceTree = "<group>"; };
 		BE1455E41941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICUsedGoodFilterTableViewCell.m; path = UsedGood/ICUsedGoodFilterTableViewCell.m; sourceTree = "<group>"; };
 		BE168DF3193C816200542524 /* ICUsedGoodDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodDetailView.h; path = UsedGood/ICUsedGoodDetailView.h; sourceTree = "<group>"; };
@@ -538,8 +548,6 @@
 		BE168E1B193C82B300542524 /* ICUsedGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGood.m; sourceTree = "<group>"; };
 		BE168E1C193C82B300542524 /* ICUsedGoodDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsedGoodDetail.h; sourceTree = "<group>"; };
 		BE168E1D193C82B300542524 /* ICUsedGoodDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGoodDetail.m; sourceTree = "<group>"; };
-		BE168E27193C82DC00542524 /* APNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNavigationController.h; sourceTree = "<group>"; };
-		BE168E28193C82DC00542524 /* APNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNavigationController.m; sourceTree = "<group>"; };
 		BE4695C6193CCC9C001D8BFB /* ICUsedGoodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsedGoodType.h; sourceTree = "<group>"; };
 		BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsedGoodType.m; sourceTree = "<group>"; };
 		BED23A11193D726100EBAB92 /* ICUsedGoodPublishTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICUsedGoodPublishTableViewController.h; path = UsedGood/ICUsedGoodPublishTableViewController.h; sourceTree = "<group>"; };
@@ -891,6 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				95B57F9D19F5FE7F0069D0A7 /* FreeRoom */,
+				A91253A81E018D240086B586 /* Gate */,
 				95B57FA019F5FE7F0069D0A7 /* Grade */,
 				BE168D94193C801300542524 /* UsedGood */,
 				95A000E2186218A0008B18BD /* Bus */,
@@ -988,22 +997,23 @@
 		95A0010E1862594E008B18BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A9BD94381DC62B54004EB5F4 /* MSRAnimationInfo.swift */,
-				A90F8B2A1D6582EC002CDF86 /* Login */,
-				2A5B21651B137FD200686DDA /* Group */,
+				95C2C4DD1907F56A009E39C7 /* About */,
+				95A0010F1862594E008B18BD /* Bus */,
 				95B57F6F19F5FAF20069D0A7 /* ClassTable */,
 				95B57F7419F5FAF20069D0A7 /* FreeRoom */,
+				95A001131862594E008B18BD /* Gate */,
 				95B57F7D19F5FAF20069D0A7 /* Grade */,
-				BE168D95193C801C00542524 /* UsedGood */,
+				2A5B21651B137FD200686DDA /* Group */,
 				95A001161862594E008B18BD /* ICControllerConfig.h */,
 				47D25F06191F5D2A00DADA49 /* Job */,
+				A9F478231E02B7CC007C92F3 /* LostGoods */,
+				A90F8B2A1D6582EC002CDF86 /* Login */,
 				1C878B0418CDDAAD00BEAC6B /* Map */,
-				95A0010F1862594E008B18BD /* Bus */,
-				95A001131862594E008B18BD /* Gate */,
+				A9BD94381DC62B54004EB5F4 /* MSRAnimationInfo.swift */,
 				95A001171862594E008B18BD /* News */,
-				95C2C4DD1907F56A009E39C7 /* About */,
-				951BE86218E5E68F0049AB5F /* Setting */,
 				95A0011E1862594E008B18BD /* School */,
+				951BE86218E5E68F0049AB5F /* Setting */,
+				BE168D95193C801C00542524 /* UsedGood */,
 				95A0011F1862594E008B18BD /* User */,
 				95A001201862594E008B18BD /* YellowPage */,
 			);
@@ -1024,6 +1034,7 @@
 			children = (
 				95A001141862594E008B18BD /* ICGateViewController.h */,
 				95A001151862594E008B18BD /* ICGateViewController.m */,
+				A91253A51E016F550086B586 /* ICGateViewController2.swift */,
 			);
 			path = Gate;
 			sourceTree = "<group>";
@@ -1435,12 +1446,12 @@
 			children = (
 				A9BD94191DC61B31004EB5F4 /* SMS_SDK */,
 				A91273111D65F4BB00DF752C /* AFViewShaker */,
+				A9F4781F1E02829A007C92F3 /* APNavigationController */,
 				5C125D7A1B4570C000934FC4 /* UMAnalytics_Sdk_3.5.9 */,
 				5C6DB8561AAF323C008A8AEB /* GexinSdk */,
 				95B57F9619F5FE2B0069D0A7 /* SVProgressHUD */,
 				95B57F8A19F5FDD00069D0A7 /* KMNetworkActivityCenter */,
 				954F626619F62F00001CC1CC /* KMPageMenuViewController */,
-				BE168E26193C82DC00542524 /* APNavigationController */,
 				95697EFC190B5F340088D564 /* CAAnimationBlocks */,
 				95697F02190B5F340088D564 /* LMFixedTextView */,
 				95697F08190B5F340088D564 /* RBBAnimation */,
@@ -1485,6 +1496,16 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		A91253A81E018D240086B586 /* Gate */ = {
+			isa = PBXGroup;
+			children = (
+				A9D596D61E02578A0026BAD5 /* ICGateViewCell.swift */,
+				A9D596D71E02578A0026BAD5 /* ICGateViewCell.xib */,
+			);
+			name = Gate;
+			path = ../Model;
+			sourceTree = "<group>";
+		};
 		A91273111D65F4BB00DF752C /* AFViewShaker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1511,6 +1532,23 @@
 				A9BD94261DC61C7F004EB5F4 /* ICLoginManager.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		A9F4781F1E02829A007C92F3 /* APNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				A9F478201E02829A007C92F3 /* APNavigationController.h */,
+				A9F478211E02829A007C92F3 /* APNavigationController.m */,
+			);
+			path = APNavigationController;
+			sourceTree = "<group>";
+		};
+		A9F478231E02B7CC007C92F3 /* LostGoods */ = {
+			isa = PBXGroup;
+			children = (
+				A9F478241E02B8C0007C92F3 /* ICLostGoodsController.swift */,
+			);
+			name = LostGoods;
 			sourceTree = "<group>";
 		};
 		BE168D94193C801300542524 /* UsedGood */ = {
@@ -1560,15 +1598,6 @@
 				BE4695C7193CCC9C001D8BFB /* ICUsedGoodType.m */,
 			);
 			path = UsedGood;
-			sourceTree = "<group>";
-		};
-		BE168E26193C82DC00542524 /* APNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				BE168E27193C82DC00542524 /* APNavigationController.h */,
-				BE168E28193C82DC00542524 /* APNavigationController.m */,
-			);
-			path = APNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1667,6 +1696,7 @@
 				95B57F9B19F5FE2B0069D0A7 /* SVProgressHUD.bundle in Resources */,
 				95798EA4186285080049CF77 /* KICamera@2x.png in Resources */,
 				A30D1E07182A64BA00F35D4F /* InfoPlist.strings in Resources */,
+				A9D596D91E02578A0026BAD5 /* ICGateViewCell.xib in Resources */,
 				A96668491D521EDD003BB703 /* Configuration.plist in Resources */,
 				95353F98190A96DD00354F0B /* Radial.png in Resources */,
 				95A000B618620B91008B18BD /* LICENSE in Resources */,
@@ -1703,6 +1733,7 @@
 				95A000AA1861F4CD008B18BD /* ICAppDelegate.m in Sources */,
 				BE1455E51941460C00D9F850 /* ICUsedGoodFilterTableViewCell.m in Sources */,
 				952B5BFB1863FDBA009DDBB5 /* ICBusStationListCell.m in Sources */,
+				A9F478251E02B8C0007C92F3 /* ICLostGoodsController.swift in Sources */,
 				1C878B0D18CDDFF100BEAC6B /* ICMap.m in Sources */,
 				95B57F9C19F5FE2B0069D0A7 /* SVProgressHUD.m in Sources */,
 				95353F93190A96DD00354F0B /* LMEmbeddedViewController.m in Sources */,
@@ -1712,6 +1743,7 @@
 				95B57F8919F5FAF20069D0A7 /* KMGradeVC.m in Sources */,
 				95B57F8519F5FAF20069D0A7 /* KMFreeRoomDetailTVC.m in Sources */,
 				47D25F14191F5D2A00DADA49 /* ICJobDetailTableViewController.m in Sources */,
+				A9D596D81E02578A0026BAD5 /* ICGateViewCell.swift in Sources */,
 				954F626919F62F00001CC1CC /* KMPageMenuViewController.m in Sources */,
 				95798F331863093C0049CF77 /* ICBusCell.m in Sources */,
 				95A001241862594E008B18BD /* ICNewsDetailViewController.m in Sources */,
@@ -1800,10 +1832,10 @@
 				BE168E22193C82B300542524 /* ICUsedGood.m in Sources */,
 				951BE86818E5E9030049AB5F /* ICAccountViewController.m in Sources */,
 				95A000D9186214FA008B18BD /* ICBus.m in Sources */,
-				BE168E29193C82DC00542524 /* APNavigationController.m in Sources */,
 				A320CA70183E365D00BCA05F /* AFHTTPRequestOperationManager.m in Sources */,
 				47B934A919360F1C00205034 /* ICJobFavoritesJobList.m in Sources */,
 				95E48527189411DC006402FD /* ICYellowPageDepartmentList.m in Sources */,
+				A91253A61E016F550086B586 /* ICGateViewController2.swift in Sources */,
 				95B57F8D19F5FDD00069D0A7 /* KMNetworkActivityCenter.m in Sources */,
 				47D25F24191F5DAF00DADA49 /* ICJobClassificationList.m in Sources */,
 				955A0663190A52BE00628AA6 /* ICLoginPage.mm in Sources */,
@@ -1820,6 +1852,7 @@
 				95A000EA186218A0008B18BD /* ICNewsCell.m in Sources */,
 				2A9267B21B141BC50056DA00 /* KMGroupDetialTableViewController.m in Sources */,
 				95A001071862388B008B18BD /* Base64.m in Sources */,
+				A9F478221E02829A007C92F3 /* APNavigationController.m in Sources */,
 				95A001231862594E008B18BD /* ICNewsChannelViewController.m in Sources */,
 				95697F26190B5F340088D564 /* RBBCustomAnimation.m in Sources */,
 				95697F28190B5F340088D564 /* RBBLinearInterpolation.m in Sources */,

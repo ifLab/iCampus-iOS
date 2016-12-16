@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ICGateViewCell" customModule="iCampus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="231"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="231"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8m4-v7-WLX">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="8m4-v7-WLX" secondAttribute="height" id="USP-Lq-MBr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNg-fK-IsG">
+                        <rect key="frame" x="85" y="205" width="31" height="26"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="lNg-fK-IsG" firstAttribute="top" secondItem="8m4-v7-WLX" secondAttribute="bottom" constant="5" id="1gg-TU-T1V"/>
+                <constraint firstItem="lNg-fK-IsG" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Tal-Xo-a2h"/>
+                <constraint firstItem="8m4-v7-WLX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XtQ-aQ-k8r"/>
+                <constraint firstAttribute="bottom" secondItem="lNg-fK-IsG" secondAttribute="bottom" id="bEm-ky-d2X"/>
+                <constraint firstAttribute="trailing" secondItem="8m4-v7-WLX" secondAttribute="trailing" id="c32-lw-eOJ"/>
+                <constraint firstItem="8m4-v7-WLX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pzI-n4-cf5"/>
+            </constraints>
+            <size key="customSize" width="200" height="231"/>
+            <connections>
+                <outlet property="imageView" destination="8m4-v7-WLX" id="UBE-SI-tUE"/>
+                <outlet property="label" destination="lNg-fK-IsG" id="vmD-ET-p4L"/>
+            </connections>
+            <point key="canvasLocation" x="63" y="137.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

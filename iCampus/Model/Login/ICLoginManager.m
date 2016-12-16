@@ -42,7 +42,7 @@
                        customIdentifier:nil
                                  result:^(NSError *error) {
                                      if (error) {
-                                         failure(error.userInfo[NSLocalizedDescriptionKey]);
+                                         failure(error.userInfo[@"getVerificationCode"]);
                                      } else {
                                          success();
                                      }

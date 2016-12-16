@@ -17,7 +17,9 @@
         self.configuration = configuration;
         if (self.configuration[@"Website"] == nil ||
             self.configuration[@"Paths"] == nil ||
-            self.configuration[@"Token"] == nil) {
+            self.configuration[@"Verfycode API Key"] == nil ||
+            self.configuration[@"Verfycode App Secret"] == nil ||
+            self.configuration[@"Verfycode Website"] == nil) {
             return nil;
         }
     }
@@ -195,11 +197,6 @@
 
 - (void)setToken:(NSString*)newToken {
     [[NSUserDefaults standardUserDefaults] setObject:newToken forKey:@"token"];
-//    NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:self.configuration];
-//    data[@"Token"] = newToken;
-//    NSLog(@"%@", [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"]);
-//    [data writeToFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"] atomically:YES];
-//    self.configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist" ]];
 }
 
 - (NSString *)APIKey {

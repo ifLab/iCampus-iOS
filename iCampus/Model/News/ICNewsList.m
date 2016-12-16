@@ -10,6 +10,7 @@
 #import "ICNews.h"
 #import "ICNewsChannel.h"
 #import "../ICModelConfig.h"
+#import "ICNetworkManager.h"
 
 @interface ICNewsList ()
 
@@ -45,6 +46,14 @@
         if (!channel) {
             return self;
         }
+//        [[ICNetworkManager defaultManager] GET:"News List"
+//                                    parameters:@{
+//                                                 @"category": channel.listKey,
+//                                                 @"page": @(index)
+//                                                 }
+//                                       success:^(NSArray *data) {
+//                                           <#code#>
+//                                       } failure:<#^(NSError *)failure#>];
         NSString *urlString = [NSString stringWithFormat:@"%@/api.php?table=newslist&url=%@&index=%lu", ICNewsAPIURLPrefix, channel.listKey, (unsigned long)index];
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
