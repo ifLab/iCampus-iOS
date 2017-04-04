@@ -1,9 +1,4 @@
 [submodule "iCampus/External/ETFoursquareImages"]
 	path = iCampus/External/ETFoursquareImages
 	url = https://github.com/EugeneTrapeznikov/ETFoursquareImages.git
-[submodule "iCampus/External/AFViewShaker"]
-	path = iCampus/External/AFViewShaker
-	url = https://github.com/ArtFeel/AFViewShaker.git
-[submodule "iCampus/External/CocoaSecurity"]
-	path = iCampus/External/CocoaSecurity
-	url = https://github.com/kelp404/CocoaSecurity.git
+
