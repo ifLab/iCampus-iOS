@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ICNewsChannel : NSObject
 
-@property (nonatomic)       NSUInteger  index         ;
-@property (nonatomic, copy) NSString   *title         ;
-@property (nonatomic, copy) NSDate     *lastUpdateDate;
-@property (nonatomic, copy) NSString   *listKey       ;
-
+@property (nonatomic)       NSUInteger  index            ;
+@property (nonatomic, copy) NSString   *title            ;
+@property (nonatomic, copy) NSDate     *lastUpdateDate   ;
+@property (nonatomic, copy) NSString   *listKey          ;
 @end

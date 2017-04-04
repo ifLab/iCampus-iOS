@@ -25,12 +25,12 @@
 @property (nonatomic, copy) NSDate     *creationTime      ;
 @property (nonatomic, copy) NSString   *abstract          ;
 @property (nonatomic, copy) NSString   *body              ;
-@property (nonatomic, copy) NSURL      *pcURL             ;
+@property (nonatomic, copy) NSArray    *pcURL             ;
 @property (nonatomic, copy) NSArray    *attachments       ;
 @property (nonatomic, copy) NSArray    *imageURLs         ;
 
-+ (ICNewsDetail *)newsDetailWithNews:(ICNews *)news;
-
-- (id)initWithNews:(ICNews *)news;
++ (void)newsDetailWithNews:(ICNews *)news
+                   success:(void (^)(ICNewsDetail*))success
+                   failure:(void (^)(NSString*))failure;
 
 @end

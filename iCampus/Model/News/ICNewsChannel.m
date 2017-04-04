@@ -9,5 +9,4 @@
 #import "ICNewsChannel.h"
 
 @implementation ICNewsChannel
-
 @end

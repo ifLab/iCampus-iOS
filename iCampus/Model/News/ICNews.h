@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ICNewsChannel.h"
+#import "ICNewsDetail.h"
+
 
 @interface ICNews : NSObject
 
@@ -18,10 +21,9 @@
 @property (nonatomic, copy) NSString   *detailKey;
 @property (nonatomic, copy) NSURL      *imageURL ;
 
-@end
++(void)fetchNews:(ICNewsChannel *)channel
+            page:(NSInteger)page
+         success:(void(^)(NSArray*))success
+         failure:(void(^)(NSString*))failure;
 
-#import "ICNewsChannel.h"
-#import "ICNewsChannelList.h"
-#import "ICNewsDetail.h"
-#import "ICNewsDetailAttachment.h"
-#import "ICNewsList.h"
+@end
