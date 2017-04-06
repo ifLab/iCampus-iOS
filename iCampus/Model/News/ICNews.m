@@ -21,7 +21,7 @@
                                              @"page": @(page),
                                              }
                                    success:^(NSDictionary *dic) {
-                                       NSArray *data = dic;
+                                       NSArray *data = (NSArray*)dic;
                                        NSMutableArray *array = [[NSMutableArray alloc] init];
                                        for (NSDictionary *element in data) {
                                            ICNews *news = [[ICNews alloc] init];

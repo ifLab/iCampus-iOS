@@ -30,7 +30,7 @@ class ICGateViewController2: UICollectionViewController, UICollectionViewDelegat
                           "二手货",
                           "About",
                           ]
-    let itemIdentifiers = [ICNewsListViewController.self,
+    let itemIdentifiers = [ICNewsMainViewController.self,
                            ICYellowPageListViewController.self,
                            ICBusViewController.self,
                            ICMapViewController.self,

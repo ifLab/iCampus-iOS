@@ -7,6 +7,7 @@
 //
 
 #import "ICUser.h"
+#import "ICNews.h"
 #import "ICLoginManager.h"
 #import "ICYellowPageListViewController.h"
 #import "ICBusViewController.h"
