@@ -1,5 +1,5 @@
 //
-//  ICLoginViewController2.swift
+//  ICLoginViewController.swift
 //  iCampus
 //
 //  Created by Bill Hu on 16/10/28.
@@ -13,7 +13,7 @@ enum ICLoginViewControllerState: Int {
     case register
 }
 
-class ICLoginViewController2: UIViewController, UITextFieldDelegate {
+class ICLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logo: UIImageView!
@@ -97,7 +97,7 @@ class ICLoginViewController2: UIViewController, UITextFieldDelegate {
                                          success: {
                                             [weak self] data in
                                             if let self_ = self {
-                                                let controller = ICGateViewController2(collectionViewLayout: UICollectionViewFlowLayout())
+                                                let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
                                                 controller.view.frame = UIScreen.main.bounds
                                                 let navcontroller = UINavigationController(rootViewController: controller)
                                                 self_.present(navcontroller, animated: true, completion: nil)

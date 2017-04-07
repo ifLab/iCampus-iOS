@@ -16,8 +16,8 @@
 		A90F4B1B1E9690E000DDD6BC /* iCampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B1A1E9690E000DDD6BC /* iCampusTests.swift */; };
 		A90F4B261E9690E000DDD6BC /* iCampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B251E9690E000DDD6BC /* iCampusUITests.swift */; };
 		A90F4B721E96983100DDD6BC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B711E96983100DDD6BC /* LICENSE */; };
-		A90F4B981E96998600DDD6BC /* ICGateViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B751E96998600DDD6BC /* ICGateViewController2.swift */; };
-		A90F4B991E96998600DDD6BC /* ICLoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B771E96998600DDD6BC /* ICLoginViewController2.swift */; };
+		A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B751E96998600DDD6BC /* ICGateViewController.swift */; };
+		A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */; };
 		A90F4B9A1E96998600DDD6BC /* ICLoginViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */; };
 		A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */; };
 		A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */; };
@@ -81,8 +81,8 @@
 		A90F4B251E9690E000DDD6BC /* iCampusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCampusUITests.swift; sourceTree = "<group>"; };
 		A90F4B271E9690E000DDD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90F4B711E96983100DDD6BC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		A90F4B751E96998600DDD6BC /* ICGateViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewController2.swift; sourceTree = "<group>"; };
-		A90F4B771E96998600DDD6BC /* ICLoginViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLoginViewController2.swift; sourceTree = "<group>"; };
+		A90F4B751E96998600DDD6BC /* ICGateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewController.swift; sourceTree = "<group>"; };
+		A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLoginViewController.swift; sourceTree = "<group>"; };
 		A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICLoginViewController2.xib; sourceTree = "<group>"; };
 		A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSRAnimationInfo.swift; sourceTree = "<group>"; };
 		A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsMainViewController.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		A90F4B741E96998600DDD6BC /* Gate */ = {
 			isa = PBXGroup;
 			children = (
-				A90F4B751E96998600DDD6BC /* ICGateViewController2.swift */,
+				A90F4B751E96998600DDD6BC /* ICGateViewController.swift */,
 			);
 			path = Gate;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 		A90F4B761E96998600DDD6BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A90F4B771E96998600DDD6BC /* ICLoginViewController2.swift */,
+				A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */,
 				A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */,
 			);
 			path = Login;
@@ -610,11 +610,11 @@
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
-				A90F4B991E96998600DDD6BC /* ICLoginViewController2.swift in Sources */,
+				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
-				A90F4B981E96998600DDD6BC /* ICGateViewController2.swift in Sources */,
+				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,

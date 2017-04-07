@@ -1,5 +1,5 @@
 //
-//  ICGateViewController2.swift
+//  ICGateViewController.swift
 //  iCampus
 //
 //  Created by Bill Hu on 16/12/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ICGateViewController2: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ICGateViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
 //    MARK: - Properties
     var identifier = "ICGateViewCell"

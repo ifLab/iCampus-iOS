@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         if ICNetworkManager.default().token == nil || ICNetworkManager.default().token == "" {
-            let controller = Bundle.main.loadNibNamed("ICLoginViewController2", owner: nil, options: nil)?.first as! ICLoginViewController2
+            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
             window?.rootViewController = controller
         } else {
-            let controller = ICGateViewController2(collectionViewLayout: UICollectionViewFlowLayout())
+            let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
             navigationController = UINavigationController(rootViewController: controller)
             window?.rootViewController = navigationController
         }
