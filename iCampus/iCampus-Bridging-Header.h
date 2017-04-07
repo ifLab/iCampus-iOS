@@ -6,11 +6,6 @@
 //  Copyright © 2016年 BISTU. All rights reserved.
 //
 
-#import "ICUser.h"
 #import "ICNews.h"
 #import "ICLoginManager.h"
-#import "ICYellowPageListViewController.h"
-#import "ICBusViewController.h"
-#import "ICMapViewController.h"
-#import "ICAboutViewController.h"
-#import "JXBAdPageView.h"
+#import <SMS_SDK/SMSSDK.h>

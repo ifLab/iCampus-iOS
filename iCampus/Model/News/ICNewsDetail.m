@@ -9,7 +9,6 @@
 #import "ICNewsDetail.h"
 #import "ICNews.h"
 #import "ICNetworkManager.h"
-#include "../ICModelConfig.h"
 
 @interface ICNewsDetail ()
 

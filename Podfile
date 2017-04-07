@@ -7,6 +7,7 @@ target 'iCampus' do
   # Pods for iCampus
   pod 'JXBAdPageView'
   pod 'HMSegmentedControl'
+  pod 'AFNetworking', '~> 3.0'
 
   target 'iCampusTests' do
     inherit! :search_paths

@@ -26,9 +26,9 @@
     return self;
 }
 
-- (AFHTTPRequestOperationManager *)manager {
+- (AFHTTPSessionManager *)manager {
     if (!_manager) {
-        _manager = [AFHTTPRequestOperationManager manager];
+        _manager = [AFHTTPSessionManager manager];
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -36,7 +36,7 @@
     return _manager;
 }
 
-- (AFHTTPRequestOperation*)GET:(NSString *)key
+- (NSURLSessionTask*)GET:(NSString *)key
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
@@ -44,7 +44,7 @@
     return [self request:key method:nil GETParameters:parameters POSTParameters:nil constructingBodyWithBlock:nil success:success failure:failure];
 }
 
-- (AFHTTPRequestOperation*)POST:(NSString *)key
+- (NSURLSessionTask*)POST:(NSString *)key
                   GETParameters:(NSDictionary *)GETParameters
                  POSTParameters:(NSDictionary *)POSTParameters
                         success:(void (^)(NSDictionary *))success
@@ -53,7 +53,7 @@
     return [self request:key method:nil GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
 }
 
-- (AFHTTPRequestOperation*)PUT:(NSString *)key
+- (NSURLSessionTask*)PUT:(NSString *)key
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
@@ -61,7 +61,7 @@
     return [self request:key method:@"PUT" GETParameters:nil POSTParameters:parameters constructingBodyWithBlock:nil success:success failure:failure];
 }
 
-- (AFHTTPRequestOperation*)request:(NSString *)key
+- (NSURLSessionTask*)request:(NSString *)key
                             method:(NSString *)method
                      GETParameters:(NSDictionary *)GETParameters
                     POSTParameters:(NSDictionary *)POSTParameters
@@ -80,38 +80,35 @@
             GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
             websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
 //        }
-        NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP]].URL.absoluteString;
+        NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP] error:nil].URL.absoluteString;
 //        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
         if ([method  isEqual: @"PUT"]) {
-            return [self.manager PUT:URLString parameters:POSTParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [weakSelf handleSuccess:operation data:responseObject success:success failure:failure];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            return [self.manager PUT:URLString parameters:POSTParameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failure) {
                     failure(error);
                 }
             }];
         } else if (POSTParameters.count > 0) {
-            return [self.manager POST:URLString
-                           parameters:POSTParameters
-                              success:^(AFHTTPRequestOperation * operation, NSData *data){
-                                  [weakSelf handleSuccess:operation data:data success:success failure:failure];
-                              }
-                              failure:^(AFHTTPRequestOperation *operation, NSError *error){
-                                  if (failure) {
-                                      failure(error);
-                                  }
-                              }];
+            return [self.manager POST:URLString parameters:POSTParameters progress:^(NSProgress * _Nonnull uploadProgress) {
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                if (failure) {
+                    failure(error);
+                }
+            }];
         } else {
-            return [self.manager GET:URLString
-                          parameters:nil
-                             success:^(AFHTTPRequestOperation * operation, NSData *data){
-                                 [weakSelf handleSuccess:operation data:data success:success failure:failure];
-                             } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-                                 if (failure) {
-                                     failure(error);
-                                 }
-                             }];
+            return [self.manager GET:URLString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                if (failure) {
+                    failure(error);
+                }
+            }];
         }
     } @catch (NSError *error) {
         failure(error);
@@ -123,7 +120,7 @@
     [ICNetworkManager defaultManager].token = @"";
 }
 
-- (void)handleSuccess:(AFHTTPRequestOperation*)operation
+- (void)handleSuccess:(NSURLSessionTask*)operation
                 data:(NSData*)data
              success:(void (^)(NSDictionary *))success
              failure:(void (^)(NSError *))failure {

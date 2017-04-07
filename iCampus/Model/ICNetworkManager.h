@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonCrypto.h>
-#import "AFNetworking.h"
+@import AFNetworking;
 
 @interface ICNetworkManager : NSObject
 
-@property (nonatomic) AFHTTPRequestOperationManager *manager;
+@property (nonatomic) AFHTTPSessionManager *manager;
 @property (nonatomic) NSDictionary *configuration;
 @property (nonatomic) NSString *website;
 @property (nonatomic) NSString *verfycodeWebsite;
@@ -28,16 +28,16 @@
 
 - (instancetype)initWithConfiguration:(NSDictionary*)configuration;
 
-- (AFHTTPRequestOperation*)GET:(NSString *)key
+- (NSURLSessionTask*)GET:(NSString *)key
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure;
-- (AFHTTPRequestOperation*)POST:(NSString *)key
+- (NSURLSessionTask*)POST:(NSString *)key
                   GETParameters:(NSDictionary *)GETParameters
                  POSTParameters:(NSDictionary *)POSTParameters
                         success:(void (^)(NSDictionary *))success
                         failure:(void (^)(NSError *))failure;
-- (AFHTTPRequestOperation*)PUT:(NSString *)key
+- (NSURLSessionTask*)PUT:(NSString *)key
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure;

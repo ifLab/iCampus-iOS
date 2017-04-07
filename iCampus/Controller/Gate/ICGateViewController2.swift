@@ -31,11 +31,10 @@ class ICGateViewController2: UICollectionViewController, UICollectionViewDelegat
                           "About",
                           ]
     let itemIdentifiers = [ICNewsMainViewController.self,
-                           ICYellowPageListViewController.self,
-                           ICBusViewController.self,
-                           ICMapViewController.self,
-                           ICLostGoodsController.self,
-                           ICAboutViewController.self,
+                           ICNewsMainViewController.self,
+                           ICNewsMainViewController.self,
+                           ICNewsMainViewController.self,
+                           ICNewsMainViewController.self,
                            ] as [Any]
     
 //    MARK: - Object Lifecycle
