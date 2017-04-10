@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 protocol ICNewsViewCell {
     func update(news: ICNews)
@@ -19,87 +20,95 @@ protocol ICNewsParentViewController {
 class ICNewsTableViewController: UITableViewController {
     
     var delegate: ICNewsParentViewController?
+    var page = 1
+    var channel: ICNewsChannel
+    var news = [ICNews]()
+    let nibNames = ["ICNoneImageViewCell", "ICSimpleImageViewCell"]
+    
+    init(category: String, title: String) {
+        channel = ICNewsChannel()
+        channel.listKey = category
+        channel.title = title
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        super.loadView()
+        title = channel.title
+        for nibName in nibNames {
+            tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
+        }
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = 80//UITableViewAutomaticDimension
+        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.mj_header.beginRefreshing()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return news.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        var cell: UITableViewCell
+        if news[indexPath.row].imageURL == "" {
+            cell = tableView.dequeueReusableCell(withIdentifier: nibNames[0], for: indexPath)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: nibNames[1], for: indexPath)
+        }
+        (cell as! ICNewsViewCell).update(news: news[indexPath.row])
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: MJRefresh
+    internal func refresh() {
+        ICNews.fetch(channel, page: 1,
+                     success: {
+                        [weak self] data in
+                        self?.tableView.mj_header.endRefreshing()
+                        self?.news = data as! [ICNews]
+                        self?.tableView.reloadData()
+                        self?.page = 2
+            },
+                     failure: {
+                        [weak self] _ in
+                        self?.tableView.mj_header.endRefreshing()
+        })
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    internal func loadMore() {
+        ICNews.fetch(channel, page: page,
+                     success: {
+                        [weak self] data in
+                        self?.tableView.mj_footer.endRefreshing()
+                        self?.news.append(contentsOf: data as! [ICNews])
+                        self?.tableView.reloadData()
+                        self?.page += 1
+            },
+                     failure: {
+                        [weak self] _ in
+                            self?.tableView.mj_footer.endRefreshing()
+        })
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

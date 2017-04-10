@@ -92,8 +92,7 @@
                 }
             }];
         } else if (POSTParameters.count > 0) {
-            return [self.manager POST:URLString parameters:POSTParameters progress:^(NSProgress * _Nonnull uploadProgress) {
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            return [self.manager POST:URLString parameters:POSTParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failure) {
@@ -101,8 +100,7 @@
                 }
             }];
         } else {
-            return [self.manager GET:URLString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            return [self.manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failure) {
@@ -126,12 +124,15 @@
              failure:(void (^)(NSError *))failure {
     NSError *error;
     id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if ([object isKindOfClass:[NSArray class]]) {
+        id resource = object;
+        object = @{@"resource": resource};
+    }
     if (error != nil || object == nil || !([object isKindOfClass:[NSDictionary class]])) {
         NSMutableDictionary *userInfo = [@{
                                            NSLocalizedDescriptionKey: @"Failed to parse JSON.",
                                            NSLocalizedFailureReasonErrorKey: @"The data returned from the server does not meet the JSON syntax.",
-                                           NSURLErrorKey: operation.response.URL,
-                                           NSUnderlyingErrorKey: operation.error} mutableCopy];
+                                           NSURLErrorKey: operation.response.URL} mutableCopy];
         if (operation.error != nil) {
             userInfo[NSUnderlyingErrorKey] = operation.error;
         }

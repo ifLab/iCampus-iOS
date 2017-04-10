@@ -14,12 +14,12 @@
 @interface ICNews : NSObject
 
 @property (nonatomic)       NSUInteger  index    ;
-@property (nonatomic, copy) NSDate     *date     ;
+@property (nonatomic, copy) NSString   *date     ;
 @property (nonatomic, copy) NSString   *title    ;
 @property (nonatomic, copy) NSString   *author   ;
 @property (nonatomic, copy) NSString   *preview  ;
 @property (nonatomic, copy) NSString   *detailKey;
-@property (nonatomic, copy) NSURL      *imageURL ;
+@property (nonatomic, copy) NSString   *imageURL ;
 
 +(void)fetchNews:(ICNewsChannel *)channel
             page:(NSInteger)page

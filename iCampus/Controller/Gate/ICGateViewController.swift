@@ -35,6 +35,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
                            ICNewsMainViewController.self,
                            ICNewsMainViewController.self,
                            ICNewsMainViewController.self,
+                           ICNewsMainViewController.self,
                            ] as [Any]
     
 //    MARK: - Object Lifecycle

@@ -11,7 +11,8 @@ import HMSegmentedControl
 
 class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsParentViewController {
     
-    let titles = ["首 页", "综合新闻", "图片新闻", "人才培养", "教学科研", "文化活动", "校园人物", "交流合作", "社会服务", "媒体关注"]
+    let titles = ["综合新闻", "图片新闻", "人才培养", "教学科研", "文化活动", "校园人物", "交流合作", "社会服务", "媒体关注"]
+    let categorys = ["zhxw", "tpxw", "rcpy", "jxky", "whhd", "xyrw", "jlhz", "shfw", "mtgz"]
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     lazy var scrollView: UIScrollView = {
@@ -30,10 +31,9 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         var c = [UIViewController]()
         for i in 0..<self.titles.count {
             let title = self.titles[i]
-            let t = UITableViewController(nibName: nil, bundle: nil)
+            let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
             t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104)
             let random = CGFloat(Double(Int(arc4random()) % 255) / 255.0)
-            t.view.backgroundColor = UIColor(red: random, green: 0, blue: 0, alpha: 1)
             c.append(t)
         }
         return c
@@ -67,7 +67,6 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             [weak self] index in
             if let self_ = self {
                 self_.scrollView.scrollRectToVisible(CGRect(x: CGFloat(index) * self_.width, y: 0, width: self_.width, height: self_.height), animated: true)
-                self_.hideNavigationBar(hide: index % 2 == 0)
             }
         }
     }

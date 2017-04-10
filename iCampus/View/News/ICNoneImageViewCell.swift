@@ -19,9 +19,7 @@ class ICNoneImageViewCell: UITableViewCell, ICNewsViewCell {
 
     func update(news: ICNews) {
         titleLabel.text = news.title
-        let df = DateFormatter()
-        df.dateFormat = "YYYY-MM-DD"
-        dateLabel.text = df.string(from: news.date)
+        dateLabel.text = news.date
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -18,7 +18,7 @@
 		A90F4B721E96983100DDD6BC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B711E96983100DDD6BC /* LICENSE */; };
 		A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B751E96998600DDD6BC /* ICGateViewController.swift */; };
 		A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */; };
-		A90F4B9A1E96998600DDD6BC /* ICLoginViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */; };
+		A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */; };
 		A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */; };
 		A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */; };
 		A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */; };
@@ -42,6 +42,7 @@
 		A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */; };
 		A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */; };
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
+		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +84,7 @@
 		A90F4B711E96983100DDD6BC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		A90F4B751E96998600DDD6BC /* ICGateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewController.swift; sourceTree = "<group>"; };
 		A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLoginViewController.swift; sourceTree = "<group>"; };
-		A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICLoginViewController2.xib; sourceTree = "<group>"; };
+		A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICLoginViewController.xib; sourceTree = "<group>"; };
 		A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSRAnimationInfo.swift; sourceTree = "<group>"; };
 		A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsMainViewController.swift; sourceTree = "<group>"; };
 		A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsTableViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */,
-				A90F4B781E96998600DDD6BC /* ICLoginViewController2.xib */,
+				A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -345,6 +347,7 @@
 		A90F4BAC1E9699A200DDD6BC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9E3DC8C1E97B45F0042FBAA /* Podfile */,
 				A90F4BAF1E969AC900DDD6BC /* iCampus-Bridging-Header.h */,
 				A90F4BB01E969B2B00DDD6BC /* Configuration.plist */,
 			);
@@ -478,8 +481,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
-				A90F4B9A1E96998600DDD6BC /* ICLoginViewController2.xib in Resources */,
+				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
 				A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */,
 				A90F4BA91E96998600DDD6BC /* ICNoneImageViewCell.xib in Resources */,

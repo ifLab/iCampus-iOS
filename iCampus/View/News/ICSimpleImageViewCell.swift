@@ -19,9 +19,11 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     
     func update(news: ICNews) {
         titleLabel.text = news.title
-        let df = DateFormatter()
-        df.dateFormat = "YYYY-MM-DD"
-        dateLabel.text = df.string(from: news.date)
+        dateLabel.text = news.date
+        newsImageView.setImageWith(URLRequest(url: URL(string: news.imageURL)!), placeholderImage: nil, success: {
+            [weak self] _, _, image in
+            self?.newsImageView.image = image
+        }, failure: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

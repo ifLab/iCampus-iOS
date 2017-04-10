@@ -8,6 +8,8 @@ target 'iCampus' do
   pod 'JXBAdPageView'
   pod 'HMSegmentedControl'
   pod 'AFNetworking', '~> 3.0'
+  pod 'MJRefresh'
+  pod 'DTCoreText’
 
   target 'iCampusTests' do
     inherit! :search_paths
