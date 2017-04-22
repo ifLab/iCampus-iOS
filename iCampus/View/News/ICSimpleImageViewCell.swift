@@ -20,6 +20,8 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     func update(news: ICNews) {
         titleLabel.text = news.title
         dateLabel.text = news.date
+        newsImageView.contentMode = .scaleAspectFill
+        newsImageView.layer.masksToBounds = true
         newsImageView.setImageWith(URLRequest(url: URL(string: news.imageURL)!), placeholderImage: nil, success: {
             [weak self] _, _, image in
             self?.newsImageView.image = image

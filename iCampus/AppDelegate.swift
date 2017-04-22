@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
             window?.rootViewController = controller
         } else {
+            ICLoginManager.refreshToken()
             let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
             navigationController = UINavigationController(rootViewController: controller)
             window?.rootViewController = navigationController

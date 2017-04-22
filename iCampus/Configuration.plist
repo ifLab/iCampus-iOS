@@ -20,6 +20,8 @@
 		<string>ibistu/_table/module_department_list/</string>
 		<key>Yellow Page</key>
 		<string>ibistu/_table/module_yellowpage/</string>
+		<key>Yellow Page Channel</key>
+		<string>ibistu/_table/module_yellowpage?filter=isDisplay%3D1&amp;offset=1&amp;group=department</string>
 		<key>Map</key>
 		<string>ibistu/_table/module_map/</string>
 		<key>Login</key>

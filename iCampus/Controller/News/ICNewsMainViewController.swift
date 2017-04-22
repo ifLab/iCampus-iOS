@@ -27,11 +27,12 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
     var viewConstraints = [NSLayoutConstraint]()
     var segmentTopConstraintNavHide = NSLayoutConstraint()
     var segmentTopConstraintNavUnHide = NSLayoutConstraint()
-    lazy var childControllers: [UIViewController] = {
-        var c = [UIViewController]()
+    lazy var childControllers: [ICNewsTableViewController] = {
+        var c = [ICNewsTableViewController]()
         for i in 0..<self.titles.count {
             let title = self.titles[i]
             let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
+            t.delegate = self
             t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104)
             let random = CGFloat(Double(Int(arc4random()) % 255) / 255.0)
             c.append(t)
@@ -67,8 +68,10 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             [weak self] index in
             if let self_ = self {
                 self_.scrollView.scrollRectToVisible(CGRect(x: CGFloat(index) * self_.width, y: 0, width: self_.width, height: self_.height), animated: true)
+                self_.childControllers[index].headerBeginRefresh()
             }
         }
+        childControllers[0].headerBeginRefresh()
     }
     
 //MARK: UIScrollViewDelegate

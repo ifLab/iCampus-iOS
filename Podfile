@@ -9,7 +9,7 @@ target 'iCampus' do
   pod 'HMSegmentedControl'
   pod 'AFNetworking', '~> 3.0'
   pod 'MJRefresh'
-  pod 'DTCoreText’
+  pod 'DTCoreText'
 
   target 'iCampusTests' do
     inherit! :search_paths

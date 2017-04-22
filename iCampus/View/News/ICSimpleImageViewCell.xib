@@ -21,33 +21,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4y-db-ANn">
-                        <rect key="frame" x="5" y="5" width="143.5" height="107.5"/>
+                        <rect key="frame" x="20" y="8" width="135.5" height="101.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="W4y-db-ANn" secondAttribute="height" multiplier="4:3" id="Ko3-rw-ayB"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是个最多显示两行字的label啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-3q-3G8">
-                        <rect key="frame" x="159" y="5" width="268" height="41"/>
+                        <rect key="frame" x="166" y="8" width="261" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-12-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EU-P0r">
-                        <rect key="frame" x="344" y="87.5" width="75" height="17"/>
+                        <rect key="frame" x="344" y="84.5" width="75" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="7em-U2-t7g"/>
-                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BU0-35-rDY"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7em-U2-t7g"/>
+                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BU0-35-rDY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="v3T-EU-P0r" secondAttribute="trailing" constant="10" id="BmT-4z-2PI"/>
                     <constraint firstItem="gnT-3q-3G8" firstAttribute="leading" secondItem="W4y-db-ANn" secondAttribute="trailing" constant="10" id="Qpm-cd-FZD"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="v3T-EU-P0r" secondAttribute="bottom" constant="5" id="XXg-dj-FQ1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v3T-EU-P0r" secondAttribute="bottom" constant="8" id="XXg-dj-FQ1"/>
                     <constraint firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" constant="10" id="dQL-yJ-LQi"/>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="k72-Xs-ecL"/>
-                    <constraint firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="5" id="mj4-NL-Ldc"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k72-Xs-ecL"/>
+                    <constraint firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="8" id="mj4-NL-Ldc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

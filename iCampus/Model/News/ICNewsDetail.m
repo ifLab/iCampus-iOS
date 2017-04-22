@@ -29,8 +29,13 @@
                                        ICNewsDetail *news = [[ICNewsDetail alloc] init];
                                        news.title = dic[@"title"];
                                        news.creationTime = dic[@"time"];
-                                       news.body = dic[@"article"];
                                        news.pcURL = dic[@"imgList"];
+                                       news.body = [NSString stringWithFormat:@"<body><p>%@</p></body>", dic[@"article"]];
+                                       news.body = [news.body stringByReplacingOccurrencesOfString:@"\n" withString:@"</p><p>"];
+                                       news.body = [news.body stringByReplacingOccurrencesOfString:@"<p> </p>" withString:@"<p></p>"];
+                                       for (int i=0; i<news.pcURL.count; i++) {
+                                           news.body = [news.body stringByReplacingCharactersInRange:[news.body rangeOfString:@"<p></p><p></p>"] withString:[NSString stringWithFormat:@"<img src=\"%@\">", news.pcURL[i]]];
+                                       }
                                        success(news);
                                    }
                                    failure:^(NSError *error) {
