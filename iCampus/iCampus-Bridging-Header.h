@@ -9,4 +9,5 @@
 #import "ICNews.h"
 #import "ICLoginManager.h"
 #import "ICNewsDetail.h"
+#import "ICYellowPage.h"
 #import <SMS_SDK/SMSSDK.h>

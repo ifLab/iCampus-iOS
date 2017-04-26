@@ -56,6 +56,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                         self_.textCell.setHTMLString(detail?.body!, options: options)
                                         self_.tableView.mj_header.endRefreshing()
                                         self_.tableView.reloadData()
+                                        self_.title = detail?.title
                                     }
             },
                                 failure: {

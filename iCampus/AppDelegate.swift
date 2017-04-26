@@ -22,7 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
             window?.rootViewController = controller
         } else {
-            ICLoginManager.refreshToken()
+            ICLoginManager.refreshToken() {
+                [weak self] message in
+                if let self_ = self {
+                    let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
+                    self_.navigationController?.present(controller, animated: false, completion: nil)
+                }
+            }
             let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
             navigationController = UINavigationController(rootViewController: controller)
             window?.rootViewController = navigationController

@@ -26,6 +26,6 @@
 +(void)fetchVerfyCode:(NSString *)phone
               success:(void (^)())success
               failure:(void (^)(NSString *))failure;
-+(void)refreshToken;
++(void)refreshTokenWith:(void (^)(NSString *))failure;
 
 @end

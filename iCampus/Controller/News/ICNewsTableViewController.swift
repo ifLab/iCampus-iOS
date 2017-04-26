@@ -13,13 +13,13 @@ protocol ICNewsViewCell {
     func update(news: ICNews)
 }
 
-protocol ICNewsParentViewController {
+protocol ICNewsParentDelegate {
     func hideNavigationBar(hide: Bool)
 }
 
 class ICNewsTableViewController: UITableViewController {
     
-    var delegate: ICNewsParentViewController?
+    var delegate: ICNewsParentDelegate?
     var page = 1
     var channel: ICNewsChannel
     var news = [ICNews]()

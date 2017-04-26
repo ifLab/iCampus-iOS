@@ -45,6 +45,7 @@
 		A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */; };
 		A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96E1EAB5030007882AA /* ICYellowPage.m */; };
 		A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */; };
+		A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */; };
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
 		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
@@ -124,6 +125,7 @@
 		A98CB96E1EAB5030007882AA /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPage.m; path = YellowPage/ICYellowPage.m; sourceTree = "<group>"; };
 		A98CB9701EAB5279007882AA /* ICYellowPageChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPageChannel.h; path = YellowPage/ICYellowPageChannel.h; sourceTree = "<group>"; };
 		A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPageChannel.m; path = YellowPage/ICYellowPageChannel.m; sourceTree = "<group>"; };
+		A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageMainViewController.swift; path = YellowPage/ICYellowPageMainViewController.swift; sourceTree = "<group>"; };
 		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */,
+				A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */,
 			);
 			name = YellowPage;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
+				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,

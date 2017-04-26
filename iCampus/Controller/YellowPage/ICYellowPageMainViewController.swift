@@ -1,23 +1,22 @@
 //
-//  ICNewsMainViewController.swift
+//  ICYellowPageMainViewController.swift
 //  iCampus
 //
-//  Created by Bill Hu on 2017/4/4.
-//  Copyright © 2017年 BISTU. All rights reserved.
+//  Created by Bill Hu on 2017/4/23.
+//  Copyright © 2017年 ifLab. All rights reserved.
 //
 
 import UIKit
 import HMSegmentedControl
+import SVProgressHUD
 
-class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsParentDelegate {
+class ICYellowPageMainViewController: UIViewController, UIScrollViewDelegate, ICYellowPageParentDelegate {
     
-    let titles = ["综合新闻", "图片新闻", "人才培养", "教学科研", "文化活动", "校园人物", "交流合作", "社会服务", "媒体关注"]
-    let categorys = ["zhxw", "tpxw", "rcpy", "jxky", "whhd", "xyrw", "jlhz", "shfw", "mtgz"]
+    var channels = [ICYellowPageChannel]()
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     lazy var scrollView: UIScrollView = {
         let s = UIScrollView(frame: CGRect(x: 0, y: 104, width: self.width, height: self.height - 104))
-        s.contentSize = CGSize(width: self.width * CGFloat(self.titles.count) , height: s.frame.height)
         s.backgroundColor = .white
         s.isPagingEnabled = true
         s.showsHorizontalScrollIndicator = false
@@ -27,21 +26,10 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
     var viewConstraints = [NSLayoutConstraint]()
     var segmentTopConstraintNavHide = NSLayoutConstraint()
     var segmentTopConstraintNavUnHide = NSLayoutConstraint()
-    lazy var childControllers: [ICNewsTableViewController] = {
-        var c = [ICNewsTableViewController]()
-        for i in 0..<self.titles.count {
-            let title = self.titles[i]
-            let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
-            t.delegate = self
-            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104)
-            c.append(t)
-        }
-        return c
-    }()
+    lazy var childControllers = [ICYellowPageViewController]()
     lazy var segmentedControl: HMSegmentedControl = {
-        let sc = HMSegmentedControl(sectionTitles: self.titles)!
-        sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
-        sc.selectionStyle = .fullWidthStripe
+        let sc = HMSegmentedControl(frame: CGRect(x: 0, y: 64, width: self.width - 40, height: 40))
+        sc.selectionStyle = .textWidthStripe
         sc.selectionIndicatorLocation = .down
         sc.selectionIndicatorColor = .orange
         sc.selectionIndicatorHeight = 3
@@ -53,11 +41,47 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         return sc
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.setBackgroundLayerColor(.white)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        ICYellowPageChannel.fetch({
+            [weak self] data in
+            if let self_ = self {
+                self_.channels = data as! [ICYellowPageChannel]
+                self_.loadViews()
+                SVProgressHUD.dismiss()
+            }
+        }) { [weak self] message in
+            if let self_ = self {
+                SVProgressHUD.setDefaultMaskType(.none)
+                SVProgressHUD.setMaximumDismissTimeInterval(1)
+                SVProgressHUD.showError(withStatus: message ?? "未知错误")
+                self_.navigationController?.popViewController(animated: true)
+            }
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "新闻"
+        title = "黄页"
         view.backgroundColor = .white
+    }
+    
+    func loadViews() {
+        segmentedControl.sectionTitles = channels.map({$0.name})
         view.addSubview(segmentedControl)
+        
+        scrollView.contentSize = CGSize(width: width * CGFloat(channels.count) , height: scrollView.frame.height)
+        for i in 0..<self.channels.count {
+            let channel = self.channels[i]
+            let c = ICYellowPageViewController(channel: channel)
+            c.delegate = self
+            c.view.frame = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height - 104)
+            childControllers.append(c)
+        }
         view.addSubview(scrollView)
         for v in childControllers {
             scrollView.addSubview(v.view)
@@ -73,13 +97,13 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         childControllers[0].headerBeginRefresh()
     }
     
-//MARK: UIScrollViewDelegate
+    //MARK: UIScrollViewDelegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
     }
     
-//MARK: HideNavigationBar
+    //MARK: HideNavigationBar
     func hideNavigationBar(hide: Bool) {
         UIView.animate(withDuration: 0.5) {
             [weak self] in

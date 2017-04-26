@@ -29,18 +29,18 @@
 - (instancetype)initWithConfiguration:(NSDictionary*)configuration;
 
 - (NSURLSessionTask*)GET:(NSString *)key
-                    parameters:(NSDictionary *)parameters
-                       success:(void (^)(NSDictionary *))success
-                       failure:(void (^)(NSError *))failure;
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(NSDictionary *))success
+                 failure:(void (^)(NSError *))failure;
 - (NSURLSessionTask*)POST:(NSString *)key
-                  GETParameters:(NSDictionary *)GETParameters
-                 POSTParameters:(NSDictionary *)POSTParameters
-                        success:(void (^)(NSDictionary *))success
-                        failure:(void (^)(NSError *))failure;
+            GETParameters:(NSDictionary *)GETParameters
+           POSTParameters:(NSDictionary *)POSTParameters
+                  success:(void (^)(NSDictionary *))success
+                  failure:(void (^)(NSError *))failure;
 - (NSURLSessionTask*)PUT:(NSString *)key
-                    parameters:(NSDictionary *)parameters
-                       success:(void (^)(NSDictionary *))success
-                       failure:(void (^)(NSError *))failure;
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(NSDictionary *))success
+                 failure:(void (^)(NSError *))failure;
 //- (AFHTTPRequestOperation*)request:(NSString *)key
 //                     GETParameters:(NSDictionary *)GETParameters
 //                    POSTParameters:(NSDictionary *)POSTParameters

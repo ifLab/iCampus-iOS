@@ -9,6 +9,7 @@
 #import "ICLoginManager.h"
 #import "ICNetworkManager.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "iCampus-Swift.h"
 
 @implementation ICLoginManager
 
@@ -99,13 +100,13 @@
                                     }];
 }
 
-+(void)refreshToken
++(void)refreshTokenWith:(void (^)(NSString *))failure
 {
     [[ICNetworkManager defaultManager] PUT:@"Login" parameters:nil success:^(NSDictionary *data) {
         NSString *session = data[@"session_token"];
         [ICNetworkManager defaultManager].token = session;
     } failure:^(NSError *error) {
-        
+        failure(error.userInfo[NSLocalizedDescriptionKey]);
     }];
 }
 

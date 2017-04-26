@@ -10,6 +10,8 @@ target 'iCampus' do
   pod 'AFNetworking', '~> 3.0'
   pod 'MJRefresh'
   pod 'DTCoreText'
+  pod 'SVProgressHUD'
+  pod 'TTGTagCollectionView'
 
   target 'iCampusTests' do
     inherit! :search_paths
