@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-12-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EU-P0r">
-                        <rect key="frame" x="344" y="84.5" width="75" height="17"/>
+                        <rect key="frame" x="344" y="96.5" width="75" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="pR6-8l-9q7"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -43,8 +46,8 @@
                     <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7em-U2-t7g"/>
                     <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BU0-35-rDY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="v3T-EU-P0r" secondAttribute="trailing" constant="10" id="BmT-4z-2PI"/>
+                    <constraint firstItem="v3T-EU-P0r" firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" id="KT1-Ku-0ua"/>
                     <constraint firstItem="gnT-3q-3G8" firstAttribute="leading" secondItem="W4y-db-ANn" secondAttribute="trailing" constant="10" id="Qpm-cd-FZD"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="v3T-EU-P0r" secondAttribute="bottom" constant="8" id="XXg-dj-FQ1"/>
                     <constraint firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" constant="10" id="dQL-yJ-LQi"/>
                     <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k72-Xs-ecL"/>
                     <constraint firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="8" id="mj4-NL-Ldc"/>
