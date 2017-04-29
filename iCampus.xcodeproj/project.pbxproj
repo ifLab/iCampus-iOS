@@ -16,6 +16,7 @@
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
 		2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */; };
 		2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */; };
+		2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBDC1EB478EF006580D7 /* PJHUD.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
@@ -95,6 +96,8 @@
 		2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsViewController.m; sourceTree = "<group>"; };
 		2CF5CBD81EB46C93006580D7 /* PJYellowPageDetailsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageDetailsTableView.h; sourceTree = "<group>"; };
 		2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsTableView.m; sourceTree = "<group>"; };
+		2CF5CBDB1EB478EF006580D7 /* PJHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJHUD.h; sourceTree = "<group>"; };
+		2CF5CBDC1EB478EF006580D7 /* PJHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJHUD.m; sourceTree = "<group>"; };
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +237,7 @@
 		2CF5CBC31EB45AA4006580D7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CBDE1EB479F2006580D7 /* PJHUD */,
 				2CF5CBC21EB45A9F006580D7 /* constant */,
 			);
 			name = Global;
@@ -266,6 +270,15 @@
 				2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		2CF5CBDE1EB479F2006580D7 /* PJHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBDB1EB478EF006580D7 /* PJHUD.h */,
+				2CF5CBDC1EB478EF006580D7 /* PJHUD.m */,
+			);
+			name = PJHUD;
 			sourceTree = "<group>";
 		};
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
@@ -775,6 +788,7 @@
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
+				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,

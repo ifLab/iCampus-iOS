@@ -39,12 +39,14 @@
 }
 
 - (void)getDataFromHttp {
+    [PJHUD showWithStatus:@""];
     NSDictionary *parameters = @{@"offset":@(1), @"filter":[NSString stringWithFormat:@"department=%@", _dataSource[@"department"]]};
     [[ICNetworkManager defaultManager] GET:@"Yellow Page"
                                 parameters:parameters
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
+                                       [PJHUD dismiss];
                                    }
                                    failure:^(NSError *error) {
                                        // error信息要怎么处理？

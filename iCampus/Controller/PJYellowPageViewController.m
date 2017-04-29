@@ -46,11 +46,13 @@
 }
 
 - (void)getDataFromHttp {
+    [PJHUD showWithStatus:@""];
     [[ICNetworkManager defaultManager] GET:@"Yellow Page Channel"
                                 parameters:nil
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
+                                       [PJHUD dismiss];
                                    }
                                    failure:^(NSError *error) {
                                        // error信息要怎么处理？
