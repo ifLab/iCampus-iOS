@@ -17,6 +17,14 @@
 		2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */; };
 		2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */; };
 		2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBDC1EB478EF006580D7 /* PJHUD.m */; };
+		2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBE21EB47B2D006580D7 /* PJBusViewController.m */; };
+		2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBE61EB47BDD006580D7 /* PJBusTableView.m */; };
+		2CF5CBED1EB47C27006580D7 /* PJBusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBEB1EB47C27006580D7 /* PJBusTableViewCell.m */; };
+		2CF5CBEE1EB47C27006580D7 /* PJBusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBEC1EB47C27006580D7 /* PJBusTableViewCell.xib */; };
+		2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBF21EB48936006580D7 /* PJBusDetailsTableView.m */; };
+		2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBF61EB4895F006580D7 /* PJBusDetailsTableViewCell.m */; };
+		2CF5CBF91EB4895F006580D7 /* PJBusDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBF71EB4895F006580D7 /* PJBusDetailsTableViewCell.xib */; };
+		2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBFC1EB48D96006580D7 /* PJBusDetailsViewController.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
@@ -98,6 +106,20 @@
 		2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsTableView.m; sourceTree = "<group>"; };
 		2CF5CBDB1EB478EF006580D7 /* PJHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJHUD.h; sourceTree = "<group>"; };
 		2CF5CBDC1EB478EF006580D7 /* PJHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJHUD.m; sourceTree = "<group>"; };
+		2CF5CBE11EB47B2D006580D7 /* PJBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusViewController.h; sourceTree = "<group>"; };
+		2CF5CBE21EB47B2D006580D7 /* PJBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusViewController.m; sourceTree = "<group>"; };
+		2CF5CBE51EB47BDD006580D7 /* PJBusTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusTableView.h; sourceTree = "<group>"; };
+		2CF5CBE61EB47BDD006580D7 /* PJBusTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusTableView.m; sourceTree = "<group>"; };
+		2CF5CBEA1EB47C27006580D7 /* PJBusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusTableViewCell.h; sourceTree = "<group>"; };
+		2CF5CBEB1EB47C27006580D7 /* PJBusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusTableViewCell.m; sourceTree = "<group>"; };
+		2CF5CBEC1EB47C27006580D7 /* PJBusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJBusTableViewCell.xib; sourceTree = "<group>"; };
+		2CF5CBF11EB48936006580D7 /* PJBusDetailsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusDetailsTableView.h; sourceTree = "<group>"; };
+		2CF5CBF21EB48936006580D7 /* PJBusDetailsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusDetailsTableView.m; sourceTree = "<group>"; };
+		2CF5CBF51EB4895F006580D7 /* PJBusDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusDetailsTableViewCell.h; sourceTree = "<group>"; };
+		2CF5CBF61EB4895F006580D7 /* PJBusDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusDetailsTableViewCell.m; sourceTree = "<group>"; };
+		2CF5CBF71EB4895F006580D7 /* PJBusDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJBusDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		2CF5CBFB1EB48D96006580D7 /* PJBusDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJBusDetailsViewController.h; sourceTree = "<group>"; };
+		2CF5CBFC1EB48D96006580D7 /* PJBusDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJBusDetailsViewController.m; sourceTree = "<group>"; };
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +220,7 @@
 		2C8B9FE91EB4564E0062E918 /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
-				2CF5CBD21EB46BB5006580D7 /* 页内tableview */,
+				2CF5CBD21EB46BB5006580D7 /* 页内 */,
 				2C8B9FEA1EB456630062E918 /* tableView */,
 			);
 			name = YellowPage;
@@ -252,14 +274,14 @@
 			name = "页内";
 			sourceTree = "<group>";
 		};
-		2CF5CBD21EB46BB5006580D7 /* 页内tableview */ = {
+		2CF5CBD21EB46BB5006580D7 /* 页内 */ = {
 			isa = PBXGroup;
 			children = (
 				2CF5CBD31EB46BCB006580D7 /* cell */,
 				2CF5CBD81EB46C93006580D7 /* PJYellowPageDetailsTableView.h */,
 				2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */,
 			);
-			name = "页内tableview";
+			name = "页内";
 			sourceTree = "<group>";
 		};
 		2CF5CBD31EB46BCB006580D7 /* cell */ = {
@@ -279,6 +301,82 @@
 				2CF5CBDC1EB478EF006580D7 /* PJHUD.m */,
 			);
 			name = PJHUD;
+			sourceTree = "<group>";
+		};
+		2CF5CBE01EB47A92006580D7 /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBFA1EB48D7F006580D7 /* 班车详情 */,
+				2CF5CBE11EB47B2D006580D7 /* PJBusViewController.h */,
+				2CF5CBE21EB47B2D006580D7 /* PJBusViewController.m */,
+			);
+			name = Bus;
+			sourceTree = "<group>";
+		};
+		2CF5CBE41EB47BBE006580D7 /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBE81EB47BE5006580D7 /* tableview */,
+			);
+			name = Bus;
+			sourceTree = "<group>";
+		};
+		2CF5CBE81EB47BE5006580D7 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBEF1EB4890E006580D7 /* 班车详情 */,
+				2CF5CBE91EB47C15006580D7 /* cell */,
+				2CF5CBE51EB47BDD006580D7 /* PJBusTableView.h */,
+				2CF5CBE61EB47BDD006580D7 /* PJBusTableView.m */,
+			);
+			name = tableview;
+			sourceTree = "<group>";
+		};
+		2CF5CBE91EB47C15006580D7 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBEA1EB47C27006580D7 /* PJBusTableViewCell.h */,
+				2CF5CBEB1EB47C27006580D7 /* PJBusTableViewCell.m */,
+				2CF5CBEC1EB47C27006580D7 /* PJBusTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2CF5CBEF1EB4890E006580D7 /* 班车详情 */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBF41EB48949006580D7 /* cell */,
+				2CF5CBF01EB4891B006580D7 /* tableview */,
+			);
+			name = "班车详情";
+			sourceTree = "<group>";
+		};
+		2CF5CBF01EB4891B006580D7 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBF11EB48936006580D7 /* PJBusDetailsTableView.h */,
+				2CF5CBF21EB48936006580D7 /* PJBusDetailsTableView.m */,
+			);
+			name = tableview;
+			sourceTree = "<group>";
+		};
+		2CF5CBF41EB48949006580D7 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBF51EB4895F006580D7 /* PJBusDetailsTableViewCell.h */,
+				2CF5CBF61EB4895F006580D7 /* PJBusDetailsTableViewCell.m */,
+				2CF5CBF71EB4895F006580D7 /* PJBusDetailsTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2CF5CBFA1EB48D7F006580D7 /* 班车详情 */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBFB1EB48D96006580D7 /* PJBusDetailsViewController.h */,
+				2CF5CBFC1EB48D96006580D7 /* PJBusDetailsViewController.m */,
+			);
+			name = "班车详情";
 			sourceTree = "<group>";
 		};
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
@@ -358,6 +456,7 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CBE01EB47A92006580D7 /* Bus */,
 				A98CB9691EAAFC73007882AA /* YellowPage */,
 				A90F4B741E96998600DDD6BC /* Gate */,
 				A90F4B761E96998600DDD6BC /* Login */,
@@ -449,6 +548,7 @@
 		A90F4B8F1E96998600DDD6BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CBE41EB47BBE006580D7 /* Bus */,
 				A90F4B901E96998600DDD6BC /* Gate */,
 				2C8B9FE91EB4564E0062E918 /* YellowPage */,
 				A90F4B931E96998600DDD6BC /* News */,
@@ -637,6 +737,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF5CBEE1EB47C27006580D7 /* PJBusTableViewCell.xib in Resources */,
+				2CF5CBF91EB4895F006580D7 /* PJBusDetailsTableViewCell.xib in Resources */,
 				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
@@ -768,6 +870,7 @@
 			files = (
 				A90F4BA31E96998600DDD6BC /* ICNews.m in Sources */,
 				2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */,
+				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
 				A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */,
 				A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */,
@@ -778,15 +881,18 @@
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
+				2CF5CBED1EB47C27006580D7 /* PJBusTableViewCell.m in Sources */,
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
 				2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */,
+				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
+				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
@@ -794,6 +900,8 @@
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,
 				2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */,
+				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
+				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

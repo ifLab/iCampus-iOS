@@ -1,24 +1,24 @@
 //
-//  PJYellowPageViewController.m
+//  PJBusViewController.m
 //  iCampus
 //
 //  Created by #incloud on 2017/4/29.
 //  Copyright © 2017年 ifLab. All rights reserved.
 //
 
-#import "PJYellowPageViewController.h"
-#import "PJYellowPageTableView.h"
+#import "PJBusViewController.h"
+#import "PJBusTableView.h"
 #import "ICNetworkManager.h"
-#import "PJYellowPageDetailsViewController.h"
+#import "PJBusDetailsViewController.h"
 
 
-@interface PJYellowPageViewController () <PJYellowPageTableViewDelegate>
+@interface PJBusViewController () <PJBusTableViewDelegate>
 
 @end
 
-@implementation PJYellowPageViewController
+@implementation PJBusViewController
 {
-    PJYellowPageTableView *_kTableView;
+    PJBusTableView *_kTableView;
 }
 
 - (void)viewDidLoad {
@@ -26,18 +26,14 @@
     [self initView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [_kTableView deselectRowAtIndexPath:[_kTableView indexPathForSelectedRow] animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void)initView {
-    self.title = @"黄页";
+    self.title = @"校车";
     self.view.backgroundColor = [UIColor whiteColor];
-    _kTableView = [PJYellowPageTableView new];
+    _kTableView = [PJBusTableView new];
     _kTableView.tableDelegate = self;
     [self.view addSubview:_kTableView];
     
@@ -46,7 +42,7 @@
 
 - (void)getDataFromHttp {
     [PJHUD showWithStatus:@""];
-    [[ICNetworkManager defaultManager] GET:@"Yellow Page Channel"
+    [[ICNetworkManager defaultManager] GET:@"Bus"
                                 parameters:nil
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
@@ -58,11 +54,10 @@
                                    }];
 }
 
-- (void)PJYellowPageTableViewCellClick:(NSDictionary *)dict {
-    PJYellowPageDetailsViewController *vc = [PJYellowPageDetailsViewController new];
+- (void)PJBusTableViewCellClick:(NSDictionary *)dict {
+    PJBusDetailsViewController *vc = [PJBusDetailsViewController new];
     vc.dataSource = dict;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 @end
