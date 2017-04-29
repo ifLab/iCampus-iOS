@@ -33,7 +33,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             let title = self.titles[i]
             let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
             t.delegate = self
-            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104)
+            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104 - 22)
             c.append(t)
         }
         return c
@@ -81,7 +81,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
     
 //MARK: HideNavigationBar
     func hideNavigationBar(hide: Bool) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.2) {
             [weak self] in
             if let self_ = self {
                 self_.navigationController?.setNavigationBarHidden(hide, animated: false)

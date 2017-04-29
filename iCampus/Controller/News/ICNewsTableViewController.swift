@@ -47,6 +47,7 @@ class ICNewsTableViewController: UITableViewController {
         tableView.rowHeight = 80//UITableViewAutomaticDimension
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
+        refresh()
     }
     
     // MARK: - Table view data source
@@ -113,6 +114,7 @@ class ICNewsTableViewController: UITableViewController {
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         navigationController?.pushViewController(ICNewsDetailViewController(news: news[indexPath.row]), animated: true)
     }
 

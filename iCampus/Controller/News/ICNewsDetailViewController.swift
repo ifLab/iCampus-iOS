@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 import DTCoreText
+import SVProgressHUD
 
 class ICNewsDetailViewController: UITableViewController, DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate {
 
@@ -32,16 +33,19 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .none
-        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
-        tableView.mj_header.beginRefreshing()
+//        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+//        tableView.mj_header.beginRefreshing()
+        refresh()
     }
     
     //MARK: MJRerfresh
     func refresh() {
+        SVProgressHUD.show()
         ICNewsDetail.newsDetail(with: news,
                                 success: {
                                     [weak self] detail in
@@ -54,9 +58,10 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                             DTDefaultLineHeightMultiplier: 1.5,
                                             DTDefaultLinkDecoration: false] as [String : Any]
                                         self_.textCell.setHTMLString(detail?.body!, options: options)
-                                        self_.tableView.mj_header.endRefreshing()
+//                                        self_.tableView.mj_header.endRefreshing()
                                         self_.tableView.reloadData()
                                         self_.title = detail?.title
+                                        SVProgressHUD.dismiss()
                                     }
             },
                                 failure: {
@@ -67,7 +72,6 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -118,23 +122,23 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
     
     //MARK: ScrollView Delegate
     //MARK: HideNavigationBar
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
-        let threshold: CGFloat = 200
-        UIView.animate(withDuration: 0.5) {
-            [weak self] in
-            if let self_ = self {
-                if offset > 0 && velocity < 0 {
-                    self_.navigationItem.setHidesBackButton(true, animated: false)
-                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 0)
-                }
-                if velocity >= threshold {
-                    self_.navigationItem.setHidesBackButton(false, animated: false)
-                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44)
-                }
-            }
-        }
-    }
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offset = scrollView.contentOffset.y
+//        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
+//        let threshold: CGFloat = 200
+//        UIView.animate(withDuration: 0.5) {
+//            [weak self] in
+//            if let self_ = self {
+//                if offset > 0 && velocity < 0 {
+//                    self_.navigationItem.setHidesBackButton(true, animated: false)
+//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 0)
+//                }
+//                if velocity >= threshold {
+//                    self_.navigationItem.setHidesBackButton(false, animated: false)
+//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44)
+//                }
+//            }
+//        }
+//    }
    
 }
