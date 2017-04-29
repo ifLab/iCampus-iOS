@@ -36,7 +36,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
                            PJBusViewController.self,
                            ICNewsMainViewController.self,
                            ICNewsMainViewController.self,
-                           ICNewsMainViewController.self,
+                           PJAboutViewController.self,
                            ] as [Any]
     
 //    MARK: - Object Lifecycle
