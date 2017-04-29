@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */; };
+		2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FE61EB456180062E918 /* PJYellowPageTableView.m */; };
+		2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */; };
+		2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */; };
+		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
+		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
+		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
+		2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */; };
+		2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
@@ -69,6 +78,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C8B9FDF1EB455E60062E918 /* PJYellowPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageViewController.h; sourceTree = "<group>"; };
+		2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageViewController.m; sourceTree = "<group>"; };
+		2C8B9FE51EB456180062E918 /* PJYellowPageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJYellowPageTableView.h; path = ../../Controller/PJYellowPageTableView.h; sourceTree = "<group>"; };
+		2C8B9FE61EB456180062E918 /* PJYellowPageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJYellowPageTableView.m; path = ../../Controller/PJYellowPageTableView.m; sourceTree = "<group>"; };
+		2C8B9FEF1EB456A00062E918 /* PJYellowPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageTableViewCell.h; sourceTree = "<group>"; };
+		2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageTableViewCell.m; sourceTree = "<group>"; };
+		2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJYellowPageTableViewCell.xib; sourceTree = "<group>"; };
+		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
+		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
+		2CF5CBC71EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageDetailsTableViewCell.h; sourceTree = "<group>"; };
+		2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsTableViewCell.m; sourceTree = "<group>"; };
+		2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJYellowPageDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		2CF5CBCF1EB46BA3006580D7 /* PJYellowPageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageDetailsViewController.h; sourceTree = "<group>"; };
+		2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsViewController.m; sourceTree = "<group>"; };
+		2CF5CBD81EB46C93006580D7 /* PJYellowPageDetailsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageDetailsTableView.h; sourceTree = "<group>"; };
+		2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageDetailsTableView.m; sourceTree = "<group>"; };
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +192,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C8B9FE91EB4564E0062E918 /* YellowPage */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBD21EB46BB5006580D7 /* 页内tableview */,
+				2C8B9FEA1EB456630062E918 /* tableView */,
+			);
+			name = YellowPage;
+			path = News;
+			sourceTree = "<group>";
+		};
+		2C8B9FEA1EB456630062E918 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				2C8B9FEB1EB456690062E918 /* cell */,
+				2C8B9FE51EB456180062E918 /* PJYellowPageTableView.h */,
+				2C8B9FE61EB456180062E918 /* PJYellowPageTableView.m */,
+			);
+			name = tableView;
+			sourceTree = "<group>";
+		};
+		2C8B9FEB1EB456690062E918 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C8B9FEF1EB456A00062E918 /* PJYellowPageTableViewCell.h */,
+				2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */,
+				2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2CF5CBC21EB45A9F006580D7 /* constant */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBBE1EB45A79006580D7 /* constant.h */,
+				2CF5CBBF1EB45A79006580D7 /* constant.mm */,
+			);
+			name = constant;
+			sourceTree = "<group>";
+		};
+		2CF5CBC31EB45AA4006580D7 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBC21EB45A9F006580D7 /* constant */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		2CF5CBCE1EB46B85006580D7 /* 页内 */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBCF1EB46BA3006580D7 /* PJYellowPageDetailsViewController.h */,
+				2CF5CBD01EB46BA3006580D7 /* PJYellowPageDetailsViewController.m */,
+			);
+			name = "页内";
+			sourceTree = "<group>";
+		};
+		2CF5CBD21EB46BB5006580D7 /* 页内tableview */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBD31EB46BCB006580D7 /* cell */,
+				2CF5CBD81EB46C93006580D7 /* PJYellowPageDetailsTableView.h */,
+				2CF5CBD91EB46C93006580D7 /* PJYellowPageDetailsTableView.m */,
+			);
+			name = "页内tableview";
+			sourceTree = "<group>";
+		};
+		2CF5CBD31EB46BCB006580D7 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBC71EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.h */,
+				2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */,
+				2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +317,7 @@
 				A90F4B821E96998600DDD6BC /* Model */,
 				A90F4B8F1E96998600DDD6BC /* View */,
 				A90F4B731E96998600DDD6BC /* Controller */,
+				2CF5CBC31EB45AA4006580D7 /* Global */,
 				A90F4B7D1E96998600DDD6BC /* External */,
 				A90F4BAC1E9699A200DDD6BC /* Supporting Files */,
 			);
@@ -334,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				A90F4B901E96998600DDD6BC /* Gate */,
+				2C8B9FE91EB4564E0062E918 /* YellowPage */,
 				A90F4B931E96998600DDD6BC /* News */,
 			);
 			path = View;
@@ -365,6 +469,7 @@
 				A9E3DC8C1E97B45F0042FBAA /* Podfile */,
 				A90F4BAF1E969AC900DDD6BC /* iCampus-Bridging-Header.h */,
 				A90F4BB01E969B2B00DDD6BC /* Configuration.plist */,
+				2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +479,9 @@
 			children = (
 				A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */,
 				A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */,
+				2CF5CBCE1EB46B85006580D7 /* 页内 */,
+				2C8B9FDF1EB455E60062E918 /* PJYellowPageViewController.h */,
+				2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */,
 			);
 			name = YellowPage;
 			sourceTree = "<group>";
@@ -516,10 +624,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
+				2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */,
 				A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */,
 				A90F4BA91E96998600DDD6BC /* ICNoneImageViewCell.xib in Resources */,
 				A90F4B721E96983100DDD6BC /* LICENSE in Resources */,
@@ -644,6 +754,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A90F4BA31E96998600DDD6BC /* ICNews.m in Sources */,
+				2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */,
+				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
 				A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */,
 				A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
@@ -656,13 +768,18 @@
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
+				2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
+				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
+				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
+				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,
+				2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +864,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iCampus/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -795,6 +913,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iCampus/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

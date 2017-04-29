@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import PJYellowPageViewController
 
 class ICGateViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -31,7 +32,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
                           "About",
                           ]
     let itemIdentifiers = [ICNewsMainViewController.self,
-                           ICYellowPageMainViewController.self,
+                           PJYellowPageViewController.self,
                            ICNewsMainViewController.self,
                            ICNewsMainViewController.self,
                            ICNewsMainViewController.self,
