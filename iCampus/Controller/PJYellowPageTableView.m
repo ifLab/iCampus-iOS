@@ -10,6 +10,10 @@
 #import "PJYellowPageTableViewCell.h"
 
 @implementation PJYellowPageTableView
+{
+    UISearchBar *_kSearchBar;
+    NSMutableArray *_kSearchArr;
+}
 
 
 - (id)init {
@@ -26,6 +30,12 @@
     self.tableFooterView = [UIView new];
     self.estimatedRowHeight = 44;
     self.rowHeight = UITableViewAutomaticDimension;
+    
+    _kSearchArr = [@[] mutableCopy];
+    _kSearchBar = [UISearchBar new];
+    _kSearchBar.delegate = self;
+    _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    self.tableHeaderView = _kSearchBar;
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
@@ -38,20 +48,52 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataArr.count;
+    if (_kSearchArr.count > 0) {
+        return _kSearchArr.count;
+    } else {
+        return _dataArr.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJYellowPageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJYellowPageTableViewCell" forIndexPath:indexPath];
-    cell.cellDataSource = _dataArr[indexPath.row];
+    if (_kSearchArr.count > 0) {
+        cell.cellDataSource = _kSearchArr[indexPath.row];
+    } else {
+        cell.cellDataSource = _dataArr[indexPath.row];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PJYellowPageTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    [_kSearchBar resignFirstResponder];
     [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[indexPath.row]];
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
+{
+    // 使用谓词匹配
+    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
+    if (_kSearchArr != nil) {
+        [_kSearchArr removeAllObjects];
+    }
+    for (NSDictionary *dict in _dataArr) {
+        NSString *str = dict[@"name"];
+        if ([preicate evaluateWithObject:str]) {
+            [_kSearchArr addObject:dict];
+        }
+    }
+    [self reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [_kSearchBar resignFirstResponder];
+}
+
+-(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_kSearchBar resignFirstResponder];
+}
 
 @end

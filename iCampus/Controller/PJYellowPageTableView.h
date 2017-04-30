@@ -14,7 +14,7 @@
 
 @end
 
-@interface PJYellowPageTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+@interface PJYellowPageTableView : UITableView <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
