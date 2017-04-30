@@ -52,13 +52,6 @@
     if ([_dataArr[indexPath.row][@"isBottomLine"] isEqualToString:@"1"]) {
         cell.bottomLineView.hidden = NO;
     }
-//    if (indexPath.row == 0) {
-//        cell.topLineView.hidden = YES;
-//    }
-//    if (indexPath.row == _dataArr.count - 1) {
-//        cell.bottomLineView.hidden = YES;
-//    }
-
     return cell;
 }
 

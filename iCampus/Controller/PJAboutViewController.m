@@ -9,8 +9,9 @@
 #import "PJAboutViewController.h"
 #import "ICNetworkManager.h"
 #import "PJAboutTableView.h"
+#import "PJAboutDetailsViewController.h"
 
-@interface PJAboutViewController ()
+@interface PJAboutViewController () <PJAboutTableViewDelegate>
 
 @end
 
@@ -32,6 +33,7 @@
     self.title = @"关于";
     self.view.backgroundColor = [UIColor whiteColor];
     _kTableView = [PJAboutTableView new];
+    _kTableView.tableDelegate = self;
     [self.view addSubview:_kTableView];
     
     [self getDataFromHttp];
@@ -49,6 +51,12 @@
                                    failure:^(NSError *error) {
                                        // error信息要怎么处理？
                                    }];
+}
+
+- (void)PJAboutTableViewCellClick:(NSDictionary *)dict {
+    PJAboutDetailsViewController *vc = [PJAboutDetailsViewController new];
+    vc.dataSource = dict;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

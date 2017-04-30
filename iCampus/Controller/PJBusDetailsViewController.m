@@ -56,6 +56,7 @@
         NSMutableDictionary *d = [dict mutableCopy];
         [d setValue:[NSString stringWithFormat:@"%d", isRed] forKey:@"isRed"];
         
+        // 添加isTopLine和isBottomLine字段，用于判断tableView是否将其二者显示
         [d setValue:[NSString stringWithFormat:@"%d", 1] forKey:@"isTopLine"];
         [d setValue:[NSString stringWithFormat:@"%d", 1] forKey:@"isBottomLine"];
         if (i == 0) {
@@ -70,7 +71,5 @@
     }
     return dataArr;
 }
-
-
 
 @end

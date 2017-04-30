@@ -26,10 +26,6 @@
     [self initView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [_kTableView deselectRowAtIndexPath:[_kTableView indexPathForSelectedRow] animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

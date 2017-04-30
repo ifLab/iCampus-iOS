@@ -29,6 +29,7 @@
 		2CF5CC051EB4C76F006580D7 /* PJAboutTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CC041EB4C76F006580D7 /* PJAboutTableView.m */; };
 		2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CC0B1EB4C850006580D7 /* PJAboutTableViewCell.m */; };
 		2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CC0C1EB4C850006580D7 /* PJAboutTableViewCell.xib */; };
+		2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
@@ -131,6 +132,8 @@
 		2CF5CC0A1EB4C850006580D7 /* PJAboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAboutTableViewCell.h; sourceTree = "<group>"; };
 		2CF5CC0B1EB4C850006580D7 /* PJAboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAboutTableViewCell.m; sourceTree = "<group>"; };
 		2CF5CC0C1EB4C850006580D7 /* PJAboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAboutTableViewCell.xib; sourceTree = "<group>"; };
+		2CF5CC111EB589F4006580D7 /* PJAboutDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAboutDetailsViewController.h; sourceTree = "<group>"; };
+		2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAboutDetailsViewController.m; sourceTree = "<group>"; };
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +388,7 @@
 		2CF5CBFE1EB4C61D006580D7 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CC0F1EB58998006580D7 /* 关于详情 */,
 				2CF5CC061EB4C825006580D7 /* cell */,
 				2CF5CC031EB4C76F006580D7 /* PJAboutTableView.h */,
 				2CF5CC041EB4C76F006580D7 /* PJAboutTableView.m */,
@@ -395,6 +399,7 @@
 		2CF5CBFF1EB4C62A006580D7 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CC101EB589D7006580D7 /* 关于详情 */,
 				2CF5CC001EB4C68C006580D7 /* PJAboutViewController.h */,
 				2CF5CC011EB4C68C006580D7 /* PJAboutViewController.m */,
 			);
@@ -409,6 +414,22 @@
 				2CF5CC0C1EB4C850006580D7 /* PJAboutTableViewCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		2CF5CC0F1EB58998006580D7 /* 关于详情 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "关于详情";
+			sourceTree = "<group>";
+		};
+		2CF5CC101EB589D7006580D7 /* 关于详情 */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CC111EB589F4006580D7 /* PJAboutDetailsViewController.h */,
+				2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */,
+			);
+			name = "关于详情";
 			sourceTree = "<group>";
 		};
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
@@ -912,6 +933,7 @@
 				A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */,
 				A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
+				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
 				A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */,
 				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,

@@ -48,6 +48,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PJYellowPageTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
     [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[indexPath.row]];
 }
 

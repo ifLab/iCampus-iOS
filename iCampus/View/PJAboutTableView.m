@@ -46,4 +46,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PJAboutTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
+    [_tableDelegate PJAboutTableViewCellClick:_dataArr[indexPath.row]];
+}
+
 @end
