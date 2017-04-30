@@ -330,9 +330,8 @@
 		2CF5CBE41EB47BBE006580D7 /* Bus */ = {
 			isa = PBXGroup;
 			children = (
+				2CF5CC141EB60440006580D7 /* tableview */,
 				2CF5CBEF1EB4890E006580D7 /* 班车详情 */,
-				2CF5CBE51EB47BDD006580D7 /* PJBusTableView.h */,
-				2CF5CBE61EB47BDD006580D7 /* PJBusTableView.m */,
 			);
 			name = Bus;
 			sourceTree = "<group>";
@@ -361,7 +360,6 @@
 			children = (
 				2CF5CBF11EB48936006580D7 /* PJBusDetailsTableView.h */,
 				2CF5CBF21EB48936006580D7 /* PJBusDetailsTableView.m */,
-				2CF5CBE91EB47C15006580D7 /* cell */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -430,6 +428,16 @@
 				2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */,
 			);
 			name = "关于详情";
+			sourceTree = "<group>";
+		};
+		2CF5CC141EB60440006580D7 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5CBE91EB47C15006580D7 /* cell */,
+				2CF5CBE51EB47BDD006580D7 /* PJBusTableView.h */,
+				2CF5CBE61EB47BDD006580D7 /* PJBusTableView.m */,
+			);
+			name = tableview;
 			sourceTree = "<group>";
 		};
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
