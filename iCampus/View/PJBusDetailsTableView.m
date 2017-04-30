@@ -44,13 +44,20 @@
     PJBusDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJBusDetailsTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _dataArr[indexPath.row];
     cell.type = [_dataArr[indexPath.row][@"isRed"] integerValue];
-    
-    if (indexPath.row == 0) {
-        cell.topLineView.hidden = YES;
+    cell.topLineView.hidden = YES;
+    cell.bottomLineView.hidden = YES;
+    if ([_dataArr[indexPath.row][@"isTopLine"] isEqualToString:@"1"]) {
+        cell.topLineView.hidden = NO;
     }
-    if (indexPath.row == _dataArr.count - 1) {
-        cell.bottomLineView.hidden = YES;
+    if ([_dataArr[indexPath.row][@"isBottomLine"] isEqualToString:@"1"]) {
+        cell.bottomLineView.hidden = NO;
     }
+//    if (indexPath.row == 0) {
+//        cell.topLineView.hidden = YES;
+//    }
+//    if (indexPath.row == _dataArr.count - 1) {
+//        cell.bottomLineView.hidden = YES;
+//    }
 
     return cell;
 }

@@ -48,13 +48,24 @@
     if (![returnTimeStr isEqualToString:@""]) {
         returnTimeStr = [returnTimeStr substringToIndex:5];
     }
-    for (NSDictionary *dict in arr) {
-        // 如果回程时间字符串 == 某个地点的到达时间，说明以下地点全为回程点
+    for (int i = 0; i < arr.count; i ++) {
+        NSDictionary *dict = arr[i];
         if ([returnTimeStr isEqualToString:dict[@"arrivalTime"]]) {
             isRed = 1;
         }
         NSMutableDictionary *d = [dict mutableCopy];
         [d setValue:[NSString stringWithFormat:@"%d", isRed] forKey:@"isRed"];
+        
+        [d setValue:[NSString stringWithFormat:@"%d", 1] forKey:@"isTopLine"];
+        [d setValue:[NSString stringWithFormat:@"%d", 1] forKey:@"isBottomLine"];
+        if (i == 0) {
+            [d setValue:[NSString stringWithFormat:@"%d", 0] forKey:@"isTopLine"];
+            d[@"isTopLine"] = @"0";
+        }
+        if (i == arr.count - 1) {
+            [d setValue:[NSString stringWithFormat:@"%d", 0] forKey:@"isBottomLine"];
+            d[@"isBottomLine"] = @"0";
+        }
         [dataArr addObject:d];
     }
     return dataArr;
