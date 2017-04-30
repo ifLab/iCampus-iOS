@@ -14,7 +14,7 @@
 
 @end
 
-@interface PJBusTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+@interface PJBusTableView : UITableView <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 

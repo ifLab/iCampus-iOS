@@ -15,7 +15,6 @@
     NSMutableArray *_kSearchArr;
 }
 
-
 - (id)init {
     self = [super init];
     [self initView];
