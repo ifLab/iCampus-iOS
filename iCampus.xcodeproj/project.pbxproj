@@ -11,6 +11,8 @@
 		2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FE61EB456180062E918 /* PJYellowPageTableView.m */; };
 		2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */; };
 		2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */; };
+		2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446491EB6F80400A0FCAF /* PJMapView.m */; };
+		2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */; };
 		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
 		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
@@ -99,6 +101,10 @@
 		2C8B9FEF1EB456A00062E918 /* PJYellowPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageTableViewCell.h; sourceTree = "<group>"; };
 		2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageTableViewCell.m; sourceTree = "<group>"; };
 		2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJYellowPageTableViewCell.xib; sourceTree = "<group>"; };
+		2CA446481EB6F80400A0FCAF /* PJMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMapView.h; sourceTree = "<group>"; };
+		2CA446491EB6F80400A0FCAF /* PJMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMapView.m; sourceTree = "<group>"; };
+		2CA4464C1EB6F87500A0FCAF /* PJMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMapViewController.h; sourceTree = "<group>"; };
+		2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMapViewController.m; sourceTree = "<group>"; };
 		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
@@ -259,6 +265,24 @@
 				2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		2CA446471EB6F7F700A0FCAF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446481EB6F80400A0FCAF /* PJMapView.h */,
+				2CA446491EB6F80400A0FCAF /* PJMapView.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		2CA4464B1EB6F85500A0FCAF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2CA4464C1EB6F87500A0FCAF /* PJMapViewController.h */,
+				2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		2CF5CBC21EB45A9F006580D7 /* constant */ = {
@@ -517,6 +541,7 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CA4464B1EB6F85500A0FCAF /* Map */,
 				2CF5CBFF1EB4C62A006580D7 /* About */,
 				2CF5CBE01EB47A92006580D7 /* Bus */,
 				A98CB9691EAAFC73007882AA /* YellowPage */,
@@ -610,6 +635,7 @@
 		A90F4B8F1E96998600DDD6BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446471EB6F7F700A0FCAF /* Map */,
 				2CF5CBFE1EB4C61D006580D7 /* About */,
 				2CF5CBE41EB47BBE006580D7 /* Bus */,
 				A90F4B901E96998600DDD6BC /* Gate */,
@@ -939,6 +965,7 @@
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
 				A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */,
+				2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */,
 				A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
 				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
@@ -959,6 +986,7 @@
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
+				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,

@@ -34,7 +34,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     let itemIdentifiers = [ICNewsMainViewController.self,
                            PJYellowPageViewController.self,
                            PJBusViewController.self,
-                           ICNewsMainViewController.self,
+                           PJMapViewController.self,
                            ICNewsMainViewController.self,
                            PJAboutViewController.self,
                            ] as [Any]

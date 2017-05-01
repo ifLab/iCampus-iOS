@@ -14,4 +14,5 @@
 #import "PJYellowPageViewController.h"
 #import "PJBusViewController.h"
 #import "PJAboutViewController.h"
+#import "PJMapViewController.h"
 
