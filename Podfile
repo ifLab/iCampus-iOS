@@ -12,6 +12,9 @@ target 'iCampus' do
   pod 'DTCoreText'
   pod 'SVProgressHUD'
   pod 'TTGTagCollectionView'
+  pod 'IDMPhotoBrowser'
+  pod 'SDWebImage'
+  pod 'IDMPhotoBrowser'
 
   target 'iCampusTests' do
     inherit! :search_paths

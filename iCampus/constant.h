@@ -10,13 +10,6 @@
 #define footerRefresh @"footer"
 
 
-extern NSString * const ipAddress;
-extern NSString * const POSTWISHNOTIFICATION;
-extern NSString * const blankCellIdentifier;
-extern NSString * const selectTabbarNOTIFICATION;
-extern NSString * const appShareLink;
-
-
 extern UIColor * mainRedColor;
 extern UIColor * mainBlackColor;
 extern UIColor * mainPurpleColor;

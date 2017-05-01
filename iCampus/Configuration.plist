@@ -24,6 +24,8 @@
 		<string>ibistu/_table/module_yellowpage?filter=isDisplay%3D1&amp;offset=1&amp;group=department</string>
 		<key>Map</key>
 		<string>ibistu/_table/module_map/</string>
+		<key>Lost</key>
+		<string>ibistu/_table/module_lost_found?limit=10&amp;order=createTime%20desc</string>
 		<key>Login</key>
 		<string>user/session/</string>
 		<key>Register</key>

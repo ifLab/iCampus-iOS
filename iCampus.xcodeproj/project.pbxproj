@@ -13,6 +13,11 @@
 		2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF11EB456A00062E918 /* PJYellowPageTableViewCell.xib */; };
 		2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446491EB6F80400A0FCAF /* PJMapView.m */; };
 		2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */; };
+		2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446501EB7403800A0FCAF /* PJLostViewController.m */; };
+		2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446551EB740DE00A0FCAF /* PJLostTableView.m */; };
+		2CA4465E1EB7411400A0FCAF /* PJLostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4465C1EB7411400A0FCAF /* PJLostTableViewCell.m */; };
+		2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4465D1EB7411400A0FCAF /* PJLostTableViewCell.xib */; };
+		2CA446631EB7464C00A0FCAF /* PJNewLostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446621EB7464C00A0FCAF /* PJNewLostViewController.m */; };
 		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
 		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
@@ -105,6 +110,15 @@
 		2CA446491EB6F80400A0FCAF /* PJMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMapView.m; sourceTree = "<group>"; };
 		2CA4464C1EB6F87500A0FCAF /* PJMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMapViewController.h; sourceTree = "<group>"; };
 		2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMapViewController.m; sourceTree = "<group>"; };
+		2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJLostViewController.h; path = ../PJLostViewController.h; sourceTree = "<group>"; };
+		2CA446501EB7403800A0FCAF /* PJLostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJLostViewController.m; path = ../PJLostViewController.m; sourceTree = "<group>"; };
+		2CA446541EB740DE00A0FCAF /* PJLostTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJLostTableView.h; sourceTree = "<group>"; };
+		2CA446551EB740DE00A0FCAF /* PJLostTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJLostTableView.m; sourceTree = "<group>"; };
+		2CA4465B1EB7411400A0FCAF /* PJLostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJLostTableViewCell.h; sourceTree = "<group>"; };
+		2CA4465C1EB7411400A0FCAF /* PJLostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJLostTableViewCell.m; sourceTree = "<group>"; };
+		2CA4465D1EB7411400A0FCAF /* PJLostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJLostTableViewCell.xib; sourceTree = "<group>"; };
+		2CA446611EB7464C00A0FCAF /* PJNewLostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJNewLostViewController.h; sourceTree = "<group>"; };
+		2CA446621EB7464C00A0FCAF /* PJNewLostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJNewLostViewController.m; sourceTree = "<group>"; };
 		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
@@ -283,6 +297,46 @@
 				2CA4464D1EB6F87500A0FCAF /* PJMapViewController.m */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		2CA446521EB7403F00A0FCAF /* Lost */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446601EB7463800A0FCAF /* New Lost */,
+				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
+				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
+			);
+			name = Lost;
+			path = News;
+			sourceTree = "<group>";
+		};
+		2CA446531EB740CC00A0FCAF /* Lost */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446571EB740E300A0FCAF /* cell */,
+				2CA446541EB740DE00A0FCAF /* PJLostTableView.h */,
+				2CA446551EB740DE00A0FCAF /* PJLostTableView.m */,
+			);
+			name = Lost;
+			sourceTree = "<group>";
+		};
+		2CA446571EB740E300A0FCAF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CA4465B1EB7411400A0FCAF /* PJLostTableViewCell.h */,
+				2CA4465C1EB7411400A0FCAF /* PJLostTableViewCell.m */,
+				2CA4465D1EB7411400A0FCAF /* PJLostTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		2CA446601EB7463800A0FCAF /* New Lost */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446611EB7464C00A0FCAF /* PJNewLostViewController.h */,
+				2CA446621EB7464C00A0FCAF /* PJNewLostViewController.m */,
+			);
+			name = "New Lost";
 			sourceTree = "<group>";
 		};
 		2CF5CBC21EB45A9F006580D7 /* constant */ = {
@@ -541,13 +595,14 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
+				2CA446521EB7403F00A0FCAF /* Lost */,
 				2CA4464B1EB6F85500A0FCAF /* Map */,
 				2CF5CBFF1EB4C62A006580D7 /* About */,
 				2CF5CBE01EB47A92006580D7 /* Bus */,
 				A98CB9691EAAFC73007882AA /* YellowPage */,
 				A90F4B741E96998600DDD6BC /* Gate */,
 				A90F4B761E96998600DDD6BC /* Login */,
-				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				A90F4B7A1E96998600DDD6BC /* News */,
 			);
 			path = Controller;
@@ -635,6 +690,7 @@
 		A90F4B8F1E96998600DDD6BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446531EB740CC00A0FCAF /* Lost */,
 				2CA446471EB6F7F700A0FCAF /* Map */,
 				2CF5CBFE1EB4C61D006580D7 /* About */,
 				2CF5CBE41EB47BBE006580D7 /* Bus */,
@@ -833,6 +889,7 @@
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
+				2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */,
 				2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */,
 				2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */,
 				A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */,
@@ -960,6 +1017,7 @@
 			files = (
 				A90F4BA31E96998600DDD6BC /* ICNews.m in Sources */,
 				2CF5CC021EB4C68C006580D7 /* PJAboutViewController.m in Sources */,
+				2CA4465E1EB7411400A0FCAF /* PJLostTableViewCell.m in Sources */,
 				2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */,
 				2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */,
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
@@ -972,6 +1030,7 @@
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
 				A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */,
 				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,
+				2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
@@ -992,10 +1051,12 @@
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
+				2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */,
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,
 				2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */,
 				2CF5CC051EB4C76F006580D7 /* PJAboutTableView.m in Sources */,
+				2CA446631EB7464C00A0FCAF /* PJNewLostViewController.m in Sources */,
 				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
 				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
 			);

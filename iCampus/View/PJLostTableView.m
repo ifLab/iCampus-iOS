@@ -1,0 +1,54 @@
+//
+//  PJLostTableView.m
+//  iCampus
+//
+//  Created by #incloud on 2017/5/1.
+//  Copyright © 2017年 ifLab. All rights reserved.
+//
+
+#import "PJLostTableView.h"
+
+@implementation PJLostTableView
+
+- (id)init {
+    self = [super init];
+    [self initView];
+    return self;
+}
+
+- (void)initView {
+    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.delegate = self;
+    self.dataSource = self;
+    self.tableFooterView = [UIView new];
+    
+    [self registerNib:[UINib nibWithNibName:@"PJLostTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJLostTableViewCell"];
+    self.rowHeight = UITableViewAutomaticDimension;
+    self.estimatedRowHeight = 200;
+}
+
+- (void)setDataArr:(NSMutableArray *)dataArr {
+    _dataArr = dataArr;
+    [self reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _dataArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PJLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJLostTableViewCell" forIndexPath:indexPath];
+    cell.cellDelagate = self;
+    cell.dataSource = _dataArr[indexPath.row];
+    return cell;
+}
+
+- (void)cellClick:(NSArray *)data index:(NSInteger)index {
+    [_tableDelegate tableViewClick:data index:index];
+}
+
+@end

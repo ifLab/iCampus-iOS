@@ -15,4 +15,4 @@
 #import "PJBusViewController.h"
 #import "PJAboutViewController.h"
 #import "PJMapViewController.h"
-
+#import "PJLostViewController.h"

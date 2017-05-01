@@ -35,7 +35,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
                            PJYellowPageViewController.self,
                            PJBusViewController.self,
                            PJMapViewController.self,
-                           ICNewsMainViewController.self,
+                           PJLostViewController.self,
                            PJAboutViewController.self,
                            ] as [Any]
     
