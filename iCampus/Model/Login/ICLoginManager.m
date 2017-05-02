@@ -27,6 +27,10 @@
                                     success:^(NSDictionary *data) {
                                         NSString *session = data[@"session_token"];
                                         [ICNetworkManager defaultManager].token = session;
+                                        PJUser *user = [PJUser new];
+                                        user.name = data[@"name"];
+                                        user.last_login_date = data[@"last_login_date"];
+                                        [user save];
                                         success(data);
                                     }
                                     failure:^(NSError *error) {
@@ -108,6 +112,10 @@
     } failure:^(NSError *error) {
         failure(error.userInfo[NSLocalizedDescriptionKey]);
     }];
+}
+
+-(void)saveUserInfo:(NSDictionary *)result{
+   
 }
 
 @end

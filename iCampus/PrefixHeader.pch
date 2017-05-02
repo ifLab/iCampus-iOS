@@ -12,5 +12,8 @@
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 #import "PJKeyBoard.h"
+#import "MJExtension.h"
+#import "PJUser.h"
+
 
 

@@ -8,6 +8,8 @@
 
 #import "PJNewLostViewController.h"
 #import "logoutFoot.h"
+#import "PJUIImage+Extension.h"
+#import "ICNetworkManager.h"
 
 
 @interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
@@ -70,7 +72,35 @@
         [PJHUD showErrorWithStatus:@"至少添加一张图片"];
         return;
     }
+    NSArray *imgArr = [self setupImg:_imgScrollView.dataSource];
+    [self updaeImgFromHttp:imgArr];
+}
 
+- (void)updaeImgFromHttp:(NSArray *)imgArr {
+    NSDictionary *paramters = @{@"resource":imgArr};
+    [[ICNetworkManager defaultManager] POST:@"Add Lost Image" GETParameters:nil POSTParameters:paramters success:^(NSDictionary *dict) {
+        NSArray *dataArr = dict[@"resource"];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (NSArray *)setupImg:(NSArray *)imgArr {
+    NSMutableArray *newArr = [@[] mutableCopy];
+    for (UIImage *img in imgArr) {
+        NSData *imgData = UIImagePNGRepresentation([img imageCompress:500]);
+        NSString *imgBase64String = [imgData base64EncodedStringWithOptions:0];
+       
+        NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
+        [formatter setDateFormat:@"YYYYMMddhhmmssSSS"];
+        NSString* date = [formatter stringFromDate:[NSDate date]];
+        NSString *timeNow = [[NSString alloc] initWithFormat:@"%@", date];
+        
+        NSDictionary *dict = @{@"name":timeNow, @"type":@"file", @"is_base64":@"true", @"content":imgBase64String};
+        [newArr addObject:dict];
+    }
+    return newArr;
 }
 
 - (BOOL)isTruePhone:(NSString *)mobileNum {
@@ -101,7 +131,7 @@
 
 #pragma mark - PJZoomImageScrollViewDelegate
 -(void)addZoomImage{
-    if (_imgScrollView.dataSource.count > 5) {
+    if (_imgScrollView.dataSource.count > 4) {
         [PJHUD showErrorWithStatus:@"最多只能添加五张照片"];
         return;
     }

@@ -8,6 +8,8 @@
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
 	<dict>
+		<key>Add Lost Image</key>
+		<string>files/ibistu/lost_found/image/</string>
 		<key>About</key>
 		<string>ibistu/_table/module_about/</string>
 		<key>News List</key>
@@ -33,10 +35,10 @@
 		<key>Change Password</key>
 		<string>user/password/</string>
 	</dict>
-	<key>APIKey</key>
-	<string>3528bd808dde403b83b456e986ce1632d513f7a06c19f5a582058be87be0d8c2</string>
 	<key>Verfycode API Key</key>
 	<string>17dca343d1024</string>
+	<key>APIKey</key>
+	<string>3528bd808dde403b83b456e986ce1632d513f7a06c19f5a582058be87be0d8c2</string>
 	<key>Verfycode App Secret</key>
 	<string>48ee667c95945354c19337dc8a8608d6</string>
 </dict>
