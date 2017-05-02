@@ -44,9 +44,17 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "iBistu"
+        let rightItemImg = UIImage(named: "user")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal);
+        let rightItem = UIBarButtonItem.init(image: rightItemImg, style: UIBarButtonItemStyle.done, target: self, action: #selector(ICGateViewController.pushUserVC))
+        self.navigationItem.rightBarButtonItem = rightItem;
         collectionView?.register(
             UINib(nibName: identifier, bundle: Bundle.main), forCellWithReuseIdentifier: identifier)
         collectionView?.backgroundColor = .white
+    }
+    
+    func pushUserVC() {
+        let vc = PJUserViewController.init();
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 //    MARK: - UICollectionViewDataSource

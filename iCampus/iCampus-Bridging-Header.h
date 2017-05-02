@@ -16,3 +16,4 @@
 #import "PJAboutViewController.h"
 #import "PJMapViewController.h"
 #import "PJLostViewController.h"
+#import "PJUserViewController.h"

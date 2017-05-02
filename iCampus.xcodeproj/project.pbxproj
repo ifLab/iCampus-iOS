@@ -25,6 +25,7 @@
 		2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4467F1EB8A45E00A0FCAF /* settingXIB.xib */; };
 		2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446891EB8B91900A0FCAF /* PJUIImage+Extension.m */; };
 		2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4468C1EB8DDA900A0FCAF /* PJUser.m */; };
+		2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */; };
 		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
 		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
@@ -138,6 +139,8 @@
 		2CA446891EB8B91900A0FCAF /* PJUIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PJUIImage+Extension.m"; sourceTree = "<group>"; };
 		2CA4468B1EB8DDA900A0FCAF /* PJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUser.h; sourceTree = "<group>"; };
 		2CA4468C1EB8DDA900A0FCAF /* PJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUser.m; sourceTree = "<group>"; };
+		2CA446911EB8E88C00A0FCAF /* PJUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserViewController.h; sourceTree = "<group>"; };
+		2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserViewController.m; sourceTree = "<group>"; };
 		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
@@ -413,6 +416,15 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		2CA446901EB8E87300A0FCAF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446911EB8E88C00A0FCAF /* PJUserViewController.h */,
+				2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		2CF5CBC21EB45A9F006580D7 /* constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +683,7 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446901EB8E87300A0FCAF /* User */,
 				2CA446821EB8A47D00A0FCAF /* Setting */,
 				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				2CA446521EB7403F00A0FCAF /* Lost */,
@@ -1131,6 +1144,7 @@
 				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
+				2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */,
 				2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */,
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,

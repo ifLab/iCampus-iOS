@@ -1,10 +1,4 @@
-//
-//  orWorkerUser.m
-//  usCRM
-//
-//  Created by xlx on 16/8/30.
-//  Copyright © 2016年 xlx. All rights reserved.
-//
+
 
 #import "PJUser.h"
 #import "MJExtension.h"
