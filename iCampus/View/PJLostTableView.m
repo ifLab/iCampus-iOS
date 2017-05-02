@@ -24,7 +24,7 @@
     
     [self registerNib:[UINib nibWithNibName:@"PJLostTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJLostTableViewCell"];
     self.rowHeight = UITableViewAutomaticDimension;
-    self.estimatedRowHeight = 200;
+    self.estimatedRowHeight = 250;
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
@@ -44,6 +44,7 @@
     PJLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJLostTableViewCell" forIndexPath:indexPath];
     cell.cellDelagate = self;
     cell.dataSource = _dataArr[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
