@@ -8,7 +8,6 @@
 
 #import "PJLostTableViewCell.h"
 #import "ICNetworkManager.h"
-#import "UIImageView+WebCache.h"
 #import "IDMPhoto.h"
 
 @implementation PJLostTableViewCell
@@ -19,6 +18,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self initView];
+}
+
+- (void)setFrame:(CGRect)frame {
+    frame.size.height -= 8;    // 减掉的值就是分隔线的高度
+    [super setFrame:frame];
 }
 
 - (void)initView {

@@ -52,14 +52,15 @@
 }
 
 - (void)rightItemClick {
-    PJNewLostViewController *vc = [PJNewLostViewController new];
+    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
+    PJNewLostViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)getDataFromHttp {
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":@"isFound=false"};
-    
+    [PJHUD showWithStatus:@""];
     [[ICNetworkManager defaultManager] GET:@"Lost"
                                 parameters:paramters
                                    success:^(NSDictionary *dic) {
@@ -72,6 +73,7 @@
                                                [_kTableView.dataArr removeAllObjects];
                                            }
                                            _kTableView.dataArr = [data mutableCopy];
+                                           [PJHUD dismiss];
                                        } else {
                                            [PJHUD showErrorWithStatus:@"没有数据了"];
                                        }

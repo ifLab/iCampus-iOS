@@ -13,12 +13,5 @@
 extern UIColor * mainRedColor;
 extern UIColor * mainBlackColor;
 extern UIColor * mainPurpleColor;
+extern UIColor * mainDeepSkyBlue;
 extern CGFloat normalTableHeight;
-
-
-// 自定义网络请求返回code
-//网络请求  100 成功  403 失败
-typedef NS_OPTIONS(NSUInteger, HttpCode) {
-    HttpError = 403,
-    HttpSuccess = 100,
-};

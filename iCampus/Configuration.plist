@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Website</key>
-	<string>http://104.155.211.143/api/v2/</string>
+	<string>https://api.iflab.org/api/v2/</string>
 	<key>Verfycode Website</key>
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
