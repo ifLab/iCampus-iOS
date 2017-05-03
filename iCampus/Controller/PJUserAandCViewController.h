@@ -1,5 +1,5 @@
 //
-//  PJUserViewController.h
+//  PJUserAandCViewController.h
 //  iCampus
 //
 //  Created by #incloud on 2017/5/3.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PJUserViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface PJUserAandCViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

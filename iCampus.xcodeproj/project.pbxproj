@@ -26,6 +26,12 @@
 		2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446891EB8B91900A0FCAF /* PJUIImage+Extension.m */; };
 		2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4468C1EB8DDA900A0FCAF /* PJUser.m */; };
 		2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */; };
+		2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4469E1EB9BFE500A0FCAF /* PJUserSB.storyboard */; };
+		2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446A21EB9CD3C00A0FCAF /* PJMyLostViewController.m */; };
+		2CA446A61EBA0DDB00A0FCAF /* PJUserAandCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */; };
+		2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */; };
+		2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */; };
+		2CA446B11EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */; };
 		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
 		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
@@ -141,6 +147,15 @@
 		2CA4468C1EB8DDA900A0FCAF /* PJUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUser.m; sourceTree = "<group>"; };
 		2CA446911EB8E88C00A0FCAF /* PJUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserViewController.h; sourceTree = "<group>"; };
 		2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserViewController.m; sourceTree = "<group>"; };
+		2CA4469E1EB9BFE500A0FCAF /* PJUserSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PJUserSB.storyboard; sourceTree = "<group>"; };
+		2CA446A11EB9CD3C00A0FCAF /* PJMyLostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMyLostViewController.h; sourceTree = "<group>"; };
+		2CA446A21EB9CD3C00A0FCAF /* PJMyLostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMyLostViewController.m; sourceTree = "<group>"; };
+		2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserAandCViewController.h; sourceTree = "<group>"; };
+		2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserAandCViewController.m; sourceTree = "<group>"; };
+		2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PJUserAandCSB.storyboard; sourceTree = "<group>"; };
+		2CA446AD1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserUpdatePWViewController.h; sourceTree = "<group>"; };
+		2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserUpdatePWViewController.m; sourceTree = "<group>"; };
+		2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PJUserUpdatePW.storyboard; sourceTree = "<group>"; };
 		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
@@ -324,6 +339,7 @@
 		2CA446521EB7403F00A0FCAF /* Lost */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446A01EB9CD2600A0FCAF /* My Lost */,
 				2CA446601EB7463800A0FCAF /* New Lost */,
 				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
 				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
@@ -419,10 +435,42 @@
 		2CA446901EB8E87300A0FCAF /* User */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446961EB96E4C00A0FCAF /* Account and security */,
 				2CA446911EB8E88C00A0FCAF /* PJUserViewController.h */,
 				2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */,
+				2CA4469E1EB9BFE500A0FCAF /* PJUserSB.storyboard */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		2CA446961EB96E4C00A0FCAF /* Account and security */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446A91EBA1C7700A0FCAF /* updatePW */,
+				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
+				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
+				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
+			);
+			name = "Account and security";
+			sourceTree = "<group>";
+		};
+		2CA446A01EB9CD2600A0FCAF /* My Lost */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446A11EB9CD3C00A0FCAF /* PJMyLostViewController.h */,
+				2CA446A21EB9CD3C00A0FCAF /* PJMyLostViewController.m */,
+			);
+			name = "My Lost";
+			sourceTree = "<group>";
+		};
+		2CA446A91EBA1C7700A0FCAF /* updatePW */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446AD1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.h */,
+				2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */,
+				2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */,
+			);
+			name = updatePW;
 			sourceTree = "<group>";
 		};
 		2CF5CBC21EB45A9F006580D7 /* constant */ = {
@@ -976,6 +1024,7 @@
 			files = (
 				2CF5CBEE1EB47C27006580D7 /* PJBusTableViewCell.xib in Resources */,
 				2CA446751EB83A1F00A0FCAF /* PJNewLost.storyboard in Resources */,
+				2CA446B11EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard in Resources */,
 				2CF5CBF91EB4895F006580D7 /* PJBusDetailsTableViewCell.xib in Resources */,
 				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
@@ -986,10 +1035,12 @@
 				2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */,
 				2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */,
 				2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */,
+				2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */,
 				A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */,
 				A90F4BA91E96998600DDD6BC /* ICNoneImageViewCell.xib in Resources */,
 				A90F4B721E96983100DDD6BC /* LICENSE in Resources */,
 				A90F4BB11E969B2B00DDD6BC /* Configuration.plist in Resources */,
+				2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */,
 				A90F4BAB1E96998600DDD6BC /* ICSimpleImageViewCell.xib in Resources */,
 				A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */,
 			);
@@ -1138,6 +1189,7 @@
 				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
+				2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
@@ -1149,6 +1201,7 @@
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
+				2CA446A61EBA0DDB00A0FCAF /* PJUserAandCViewController.m in Sources */,
 				2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */,
 				2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */,
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
@@ -1158,6 +1211,7 @@
 				2CA446631EB7464C00A0FCAF /* PJNewLostViewController.m in Sources */,
 				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
 				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
+				2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */,
 				2CA446801EB8A45E00A0FCAF /* logoutFoot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

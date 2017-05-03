@@ -77,6 +77,7 @@
 //        } else {
             GETP[@"api_key"] = self.APIKey;
             GETP[@"session_token"] = self.token;
+//            GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
             GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
             websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
 //        }

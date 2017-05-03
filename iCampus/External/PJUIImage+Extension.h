@@ -4,6 +4,8 @@
 
 @interface UIImage(Extension)
 
+- (UIImage *)imageWithColor:(UIColor *)color;
+
 /**
  *  压缩图片
  *

@@ -30,6 +30,7 @@
                                         PJUser *user = [PJUser new];
                                         user.name = data[@"name"];
                                         user.last_login_date = data[@"last_login_date"];
+                                        user.email = data[@"email"];
                                         [user save];
                                         success(data);
                                     }

@@ -8,6 +8,10 @@
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
 	<dict>
+		<key>Update PW</key>
+		<string>user/password</string>
+		<key>Reset</key>
+		<string>user/password?reset=true</string>
 		<key>Add Lost Image</key>
 		<string>files/ibistu/lost_found/image/</string>
 		<key>About</key>

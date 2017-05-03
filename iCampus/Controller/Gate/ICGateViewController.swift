@@ -22,21 +22,21 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
 //                      "课程",
 //                      "教室",
                       "失物招领",
-                      "关于",
+//                      "关于",
                       ]
     let itemImageNames = ["ICGateNewsIcon",
                           "ICGateYellowPageIcon",
                           "ICGateBusIcon",
                           "ICGateMapIcon",
                           "二手货",
-                          "About",
+//                          "About",
                           ]
     let itemIdentifiers = [ICNewsMainViewController.self,
                            PJYellowPageViewController.self,
                            PJBusViewController.self,
                            PJMapViewController.self,
                            PJLostViewController.self,
-                           PJAboutViewController.self,
+//                           PJAboutViewController.self,
                            ] as [Any]
     
 //    MARK: - Object Lifecycle
@@ -53,7 +53,9 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func pushUserVC() {
-        let vc = PJUserViewController.init();
+        let mainStoryboard = UIStoryboard(name:"PJUserSB", bundle:nil)
+        var vc = PJUserViewController.init();
+        vc = mainStoryboard.instantiateViewController(withIdentifier: "PJUserViewController") as! PJUserViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     
