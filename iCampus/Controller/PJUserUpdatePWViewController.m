@@ -10,7 +10,7 @@
 #import "logoutFoot.h"
 #import "ICNetworkManager.h"
 
-@interface PJUserUpdatePWViewController ()
+@interface PJUserUpdatePWViewController () <UITextFieldDelegate>
 
 @end
 
@@ -30,14 +30,12 @@
 
 - (void)initView {
     _nameTextField.text = [NSString stringWithFormat:@"%@", [PJUser currentUser].email];
-    
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
-    _footer = views.firstObject;
-    self.tableView.tableFooterView = _footer;
-    [_footer.logoutBtn setTitle:@"提交修改" forState:UIControlStateNormal];
-    [_footer.logoutBtn setBackgroundColor:mainGreen];
-    _footer.logoutBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [_footer.logoutBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
+    [_oldPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_newnewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [_againNewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -46,27 +44,44 @@
     [_againNewPWTextField endEditing:YES];
 }
 
-- (void)submit {
+- (void)rightItemClick {
+    [self updatePw];
+}
+
+- (void)textFieldDidChange:(UITextField *)textField {
+    if ([_oldPWTextField.text length] > 0 && [_newnewPWTextField.text length] > 0 && [_againNewPWTextField.text length] > 0) {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+}
+
+- (BOOL)submit {
     if ([_oldPWTextField.text isEqualToString:@""]) {
         [PJHUD showErrorWithStatus:@"输入原密码"];
-        return;
+        return NO;
     }
     if ([_newnewPWTextField.text isEqualToString:@""]) {
         [PJHUD showErrorWithStatus:@"输入新密码"];
-        return;
+        return NO;
     }
     if ([_againNewPWTextField.text isEqualToString:@""]) {
         [PJHUD showErrorWithStatus:@"再次输入新密码"];
-        return;
+        return NO;
     }
-    NSDictionary *dict = @{@"old_password":_oldPWTextField.text,
-                           @"new_password":_newnewPWTextField.text,
-                           @"email":[PJUser currentUser].email
-                           };
-    [self updatePW:dict];
+    return YES;
 }
 
-- (void)updatePW:(NSDictionary *)paramters {
+- (void)updatePw{
+    if ([self submit]) {
+        NSDictionary *paramters = @{@"old_password":_oldPWTextField.text,
+                                    @"new_password":_newnewPWTextField.text,
+                                    @"email":[PJUser currentUser].email};
+        [self updatePWwithHttp:paramters];
+    }
+}
+
+- (void)updatePWwithHttp:(NSDictionary *)paramters {
     
     [[ICNetworkManager defaultManager] POST:@"Update PW"
                               GETParameters:nil
