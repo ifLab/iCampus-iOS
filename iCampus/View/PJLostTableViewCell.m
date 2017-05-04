@@ -30,7 +30,9 @@
     _detailsLabel.font = [UIFont systemFontOfSize:14];
     _detailsLabel.textColor = [UIColor lightGrayColor];
     _nameLabel.textColor = [UIColor lightGrayColor];
+    _nameLabel.font = [UIFont systemFontOfSize:14];
     _phoneLabel.textColor = [UIColor lightGrayColor];
+    _phoneLabel.font = [UIFont systemFontOfSize:14];
     _timeLabel.font = [UIFont systemFontOfSize:14];
     _timeLabel.textColor = [UIColor lightGrayColor];
     

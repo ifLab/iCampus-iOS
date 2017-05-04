@@ -347,7 +347,7 @@
 		2CA446521EB7403F00A0FCAF /* Lost */ = {
 			isa = PBXGroup;
 			children = (
-				2CA446601EB7463800A0FCAF /* New Lost */,
+				2CA446601EB7463800A0FCAF /* 添加新失物 */,
 				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
 				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
 			);
@@ -375,7 +375,7 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
-		2CA446601EB7463800A0FCAF /* New Lost */ = {
+		2CA446601EB7463800A0FCAF /* 添加新失物 */ = {
 			isa = PBXGroup;
 			children = (
 				2CA446831EB8A48900A0FCAF /* imgScrollView */,
@@ -383,7 +383,7 @@
 				2CA446621EB7464C00A0FCAF /* PJNewLostViewController.m */,
 				2CA446741EB83A1F00A0FCAF /* PJNewLost.storyboard */,
 			);
-			name = "New Lost";
+			name = "添加新失物";
 			sourceTree = "<group>";
 		};
 		2CA4467C1EB871C800A0FCAF /* PJKeyBoard */ = {
