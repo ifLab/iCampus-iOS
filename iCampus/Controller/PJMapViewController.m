@@ -29,7 +29,7 @@
 }
 
 - (void)initView {
-    self.title = @"地图";
+    self.title = @"校区地图";
     self.view.backgroundColor = [UIColor whiteColor];
     _kMapView = [[PJMapView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:_kMapView];

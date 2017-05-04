@@ -1399,7 +1399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A47E666B3929F0973545A197 /* Pods-iCampus.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1419,7 +1419,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -20,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q2-p7-4qC">
-                        <rect key="frame" x="15" y="10" width="42" height="21"/>
+                        <rect key="frame" x="65" y="10" width="162" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-2a-JuB">
-                        <rect key="frame" x="15" y="28" width="42" height="21"/>
+                        <rect key="frame" x="65" y="28" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,16 +49,35 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICBusDepartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uaj-ks-f2h">
+                        <rect key="frame" x="242" y="13" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="YEK-0y-GBV"/>
+                            <constraint firstAttribute="height" constant="15" id="tbB-ZG-Rdq"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICBusReturnIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hLW-96-uiB">
+                        <rect key="frame" x="242" y="36" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="EnZ-l3-fTV"/>
+                            <constraint firstAttribute="width" constant="15" id="Rzw-2r-T2A"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="7q2-p7-4qC" secondAttribute="bottom" constant="20.5" id="8P6-ME-RD7"/>
-                    <constraint firstItem="7q2-p7-4qC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="8ad-SZ-Vv0"/>
+                    <constraint firstItem="7q2-p7-4qC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="57" id="8ad-SZ-Vv0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gaR-jC-pTW" secondAttribute="trailing" constant="5" id="Fbt-AI-c1I"/>
                     <constraint firstItem="7q2-p7-4qC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="S6a-mR-Dnp"/>
+                    <constraint firstItem="Zfq-0W-QdW" firstAttribute="leading" secondItem="hLW-96-uiB" secondAttribute="trailing" constant="8" id="SYc-fv-3YC"/>
+                    <constraint firstItem="gaR-jC-pTW" firstAttribute="leading" secondItem="Uaj-ks-f2h" secondAttribute="trailing" constant="8" id="X7N-Fc-drT"/>
+                    <constraint firstItem="Uaj-ks-f2h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="XpV-Z8-LOw"/>
                     <constraint firstItem="Zfq-0W-QdW" firstAttribute="leading" secondItem="gaR-jC-pTW" secondAttribute="leading" id="YdD-D6-7WF"/>
                     <constraint firstAttribute="bottom" secondItem="sXR-2a-JuB" secondAttribute="bottom" constant="10.5" id="cVP-dt-wiI"/>
                     <constraint firstItem="Zfq-0W-QdW" firstAttribute="top" secondItem="gaR-jC-pTW" secondAttribute="bottom" constant="5.5" id="he8-sO-BIm"/>
-                    <constraint firstItem="sXR-2a-JuB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mtS-Gy-dcB"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hLW-96-uiB" secondAttribute="bottom" constant="0.5" id="lEz-Jb-9xD"/>
+                    <constraint firstItem="sXR-2a-JuB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="65" id="mtS-Gy-dcB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7q2-p7-4qC" secondAttribute="trailing" constant="85" id="tqK-uP-FIQ"/>
                     <constraint firstItem="gaR-jC-pTW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="xl9-Lg-2dR"/>
                 </constraints>
             </tableViewCellContentView>
@@ -68,6 +87,11 @@
                 <outlet property="departureTimeLabel" destination="gaR-jC-pTW" id="gNm-pD-86o"/>
                 <outlet property="returnTimeLabel" destination="Zfq-0W-QdW" id="82c-fs-qYB"/>
             </connections>
+            <point key="canvasLocation" x="39" y="55"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ICBusDepartIcon" width="20" height="20"/>
+        <image name="ICBusReturnIcon" width="20" height="20"/>
+    </resources>
 </document>
