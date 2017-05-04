@@ -12,6 +12,7 @@
 #import "PJUserAandCViewController.h"
 #import "logoutFoot.h"
 
+#import "iCampus-Swift.h"
 
 @interface PJUserViewController ()
 
@@ -61,7 +62,10 @@
 }
 
 -(void)logout{
-    [PJUser logOut];
+    ICLoginViewController *vc = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
+    [self presentViewController:vc animated:YES completion:^{
+        [PJUser logOut];
+    }];
 }
 
 - (void)toAandC {

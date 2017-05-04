@@ -40,6 +40,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 重置密码
     if (indexPath.row == 1) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定要重置密码么？" message:@"重置成功后将会给您发送一封邮件" preferredStyle: UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
@@ -57,6 +58,7 @@
     }
 }
 
+// 此功能未完成
 - (void)sureClick {
     NSDictionary *paramters = @{@"email":[PJUser currentUser].email};
     [[ICNetworkManager defaultManager] POST:@"Reset"

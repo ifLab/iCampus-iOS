@@ -7,12 +7,18 @@
 //
 
 #import "PJMyLostViewController.h"
+#import "PJMyPublishLostTableView.h"
+
 
 @interface PJMyLostViewController ()
 
 @end
 
 @implementation PJMyLostViewController
+{
+    PJMyPublishLostTableView *_kTableView;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +32,9 @@
 - (void)initView {
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"发布的失物招领";
+    
+    _kTableView = [PJMyPublishLostTableView new];
+    [self.view addSubview:_kTableView];
 }
 
 @end

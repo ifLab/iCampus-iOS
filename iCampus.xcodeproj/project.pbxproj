@@ -32,6 +32,9 @@
 		2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */; };
 		2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */; };
 		2CA446B11EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */; };
+		2CA446B91EBABF4700A0FCAF /* PJMyPublishLostTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446B81EBABF4700A0FCAF /* PJMyPublishLostTableView.m */; };
+		2CA446BE1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446BC1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m */; };
+		2CA446BF1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446BD1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib */; };
 		2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBBF1EB45A79006580D7 /* constant.mm */; };
 		2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC81EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m */; };
 		2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CBC91EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib */; };
@@ -156,6 +159,11 @@
 		2CA446AD1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserUpdatePWViewController.h; sourceTree = "<group>"; };
 		2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserUpdatePWViewController.m; sourceTree = "<group>"; };
 		2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PJUserUpdatePW.storyboard; sourceTree = "<group>"; };
+		2CA446B71EBABF4700A0FCAF /* PJMyPublishLostTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMyPublishLostTableView.h; sourceTree = "<group>"; };
+		2CA446B81EBABF4700A0FCAF /* PJMyPublishLostTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMyPublishLostTableView.m; sourceTree = "<group>"; };
+		2CA446BB1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMyPublishLostTableViewCell.h; sourceTree = "<group>"; };
+		2CA446BC1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMyPublishLostTableViewCell.m; sourceTree = "<group>"; };
+		2CA446BD1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMyPublishLostTableViewCell.xib; sourceTree = "<group>"; };
 		2CF5CBBD1EB45A64006580D7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2CF5CBBE1EB45A79006580D7 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		2CF5CBBF1EB45A79006580D7 /* constant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = constant.mm; sourceTree = "<group>"; };
@@ -339,7 +347,6 @@
 		2CA446521EB7403F00A0FCAF /* Lost */ = {
 			isa = PBXGroup;
 			children = (
-				2CA446A01EB9CD2600A0FCAF /* My Lost */,
 				2CA446601EB7463800A0FCAF /* New Lost */,
 				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
 				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
@@ -428,6 +435,7 @@
 		2CA4468F1EB8E08D00A0FCAF /* User */ = {
 			isa = PBXGroup;
 			children = (
+				2CA446B61EBABF1700A0FCAF /* My Publish Lost */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -435,7 +443,8 @@
 		2CA446901EB8E87300A0FCAF /* User */ = {
 			isa = PBXGroup;
 			children = (
-				2CA446961EB96E4C00A0FCAF /* Account and security */,
+				2CA446A01EB9CD2600A0FCAF /* 我的失物招领 */,
+				2CA446961EB96E4C00A0FCAF /* 账户与安全 */,
 				2CA446911EB8E88C00A0FCAF /* PJUserViewController.h */,
 				2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */,
 				2CA4469E1EB9BFE500A0FCAF /* PJUserSB.storyboard */,
@@ -443,34 +452,55 @@
 			name = User;
 			sourceTree = "<group>";
 		};
-		2CA446961EB96E4C00A0FCAF /* Account and security */ = {
+		2CA446961EB96E4C00A0FCAF /* 账户与安全 */ = {
 			isa = PBXGroup;
 			children = (
-				2CA446A91EBA1C7700A0FCAF /* updatePW */,
+				2CA446A91EBA1C7700A0FCAF /* 修改密码 */,
 				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
 				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
 				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
 			);
-			name = "Account and security";
+			name = "账户与安全";
 			sourceTree = "<group>";
 		};
-		2CA446A01EB9CD2600A0FCAF /* My Lost */ = {
+		2CA446A01EB9CD2600A0FCAF /* 我的失物招领 */ = {
 			isa = PBXGroup;
 			children = (
 				2CA446A11EB9CD3C00A0FCAF /* PJMyLostViewController.h */,
 				2CA446A21EB9CD3C00A0FCAF /* PJMyLostViewController.m */,
 			);
-			name = "My Lost";
+			name = "我的失物招领";
+			path = News;
 			sourceTree = "<group>";
 		};
-		2CA446A91EBA1C7700A0FCAF /* updatePW */ = {
+		2CA446A91EBA1C7700A0FCAF /* 修改密码 */ = {
 			isa = PBXGroup;
 			children = (
 				2CA446AD1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.h */,
 				2CA446AE1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m */,
 				2CA446B01EBA2C6A00A0FCAF /* PJUserUpdatePW.storyboard */,
 			);
-			name = updatePW;
+			name = "修改密码";
+			sourceTree = "<group>";
+		};
+		2CA446B61EBABF1700A0FCAF /* My Publish Lost */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446BA1EBABF5400A0FCAF /* cell */,
+				2CA446B71EBABF4700A0FCAF /* PJMyPublishLostTableView.h */,
+				2CA446B81EBABF4700A0FCAF /* PJMyPublishLostTableView.m */,
+			);
+			name = "My Publish Lost";
+			sourceTree = "<group>";
+		};
+		2CA446BA1EBABF5400A0FCAF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446BB1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.h */,
+				2CA446BC1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m */,
+				2CA446BD1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		2CF5CBC21EB45A9F006580D7 /* constant */ = {
@@ -731,9 +761,9 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				2CA446901EB8E87300A0FCAF /* User */,
 				2CA446821EB8A47D00A0FCAF /* Setting */,
-				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				2CA446521EB7403F00A0FCAF /* Lost */,
 				2CA4464B1EB6F85500A0FCAF /* Map */,
 				2CF5CBFF1EB4C62A006580D7 /* About */,
@@ -1028,6 +1058,7 @@
 				2CF5CBF91EB4895F006580D7 /* PJBusDetailsTableViewCell.xib in Resources */,
 				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
+				2CA446BF1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib in Resources */,
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
@@ -1163,7 +1194,9 @@
 				A90F4BA31E96998600DDD6BC /* ICNews.m in Sources */,
 				2CF5CC021EB4C68C006580D7 /* PJAboutViewController.m in Sources */,
 				2CA4465E1EB7411400A0FCAF /* PJLostTableViewCell.m in Sources */,
+				2CA446B91EBABF4700A0FCAF /* PJMyPublishLostTableView.m in Sources */,
 				2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */,
+				2CA446BE1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m in Sources */,
 				2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */,
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
