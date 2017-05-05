@@ -95,9 +95,9 @@
         NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
         [formatter setDateFormat:@"YYYYMMddhhmmssSSS"];
         NSString* date = [formatter stringFromDate:[NSDate date]];
-        NSString *timeNow = [[NSString alloc] initWithFormat:@"%@", date];
+        NSString *timeNow = [[NSString alloc] initWithFormat:@"%@.jpg", date];
         
-        NSDictionary *dict = @{@"name":timeNow, @"type":@"file", @"is_base64":@"ture", @"content":imgBase64String};
+        NSDictionary *dict = @{@"name":timeNow, @"type":@"file", @"is_base64":@YES, @"content":imgBase64String};
         [newArr addObject:dict];
     }
     return newArr;

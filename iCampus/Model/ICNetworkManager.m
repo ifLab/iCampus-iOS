@@ -29,8 +29,9 @@
 - (AFHTTPSessionManager *)manager {
     if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
-        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
     return _manager;
@@ -72,15 +73,9 @@
     @try {
         NSMutableDictionary *GETP = [NSMutableDictionary dictionaryWithDictionary:GETParameters];
         NSString *websiteString;
-//        if ([key  isEqual: @"Verfycode Website"]) {
-//             websiteString = self.verfycodeWebsite;
-//        } else {
-            GETP[@"api_key"] = self.APIKey;
-            GETP[@"session_token"] = self.token;
-//            GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
-            GETP[@"Content-Type"] = @"application/x-www-form-urlencoded";
-            websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
-//        }
+        GETP[@"api_key"] = self.APIKey;
+        GETP[@"session_token"] = self.token;
+        websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
         NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP] error:nil].URL.absoluteString;
 //        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
