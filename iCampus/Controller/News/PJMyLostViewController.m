@@ -92,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除失物" message:@"是否找到失物主人？" preferredStyle: UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [self updateLost:indexPath.row];
+        [self updateLost:[_kTableView.tableDataArr[indexPath.row][@"id"] integerValue]];
         _kTableView.editing = NO;
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"没有" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
