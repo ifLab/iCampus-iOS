@@ -7,8 +7,14 @@
 //
 
 #import "PJMyPublishLostTableViewCell.h"
+#import "ICNetworkManager.h"
+#import "IDMPhoto.h"
+
 
 @implementation PJMyPublishLostTableViewCell
+{
+    NSArray *_kDataArr;   // 存储最终转化好的ImgURL
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -17,6 +23,26 @@
 
 - (void)initView {
     
+}
+
+- (void)setDataSource:(NSDictionary *)dataSource {
+    _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
+    _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
+    
+    [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
+}
+
+- (NSArray *)setupImgArr:(NSString *)imgURL {
+    NSMutableArray *newArr = [@[] mutableCopy];
+    NSData *jsonData = [imgURL dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray * dataArr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    for (int i = 0; i < dataArr.count; i++) {
+        NSString *webSite = [ICNetworkManager defaultManager].website;
+        webSite = [NSString stringWithFormat:@"%@%@?api_key=%@&session_token=%@", webSite, dataArr[i][@"url"], [ICNetworkManager defaultManager].APIKey, [ICNetworkManager defaultManager].token];
+        [newArr addObject:webSite];
+    }
+    _kDataArr = [newArr mutableCopy];
+    return newArr;
 }
 
 - (void)initScrollView:(NSArray *)dataArr {
@@ -34,7 +60,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(itemX, 0, imgW, imgH)];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.layer.masksToBounds = true;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]] placeholderImage:[UIImage imageNamed:@"nopic"]];
         [self.imgScrollView addSubview:imageView];
         itemNums++;
         lastItemMaxX = CGRectGetMaxX(imageView.frame);
@@ -48,6 +74,16 @@
 }
 
 -(void)clickImage:(UITapGestureRecognizer *)tap{
+    NSInteger tag = tap.view.tag;
+    NSMutableArray *newArr = [[NSMutableArray alloc] init];
+    for (NSString *str in _kDataArr) {
+        [newArr addObject:str];
+    }
+    NSArray *photos = [IDMPhoto photosWithURLs:newArr];
+    [_cellDelegate cellClick:photos index:tag];
+}
+
+- (void)overBtnClick {
     
 }
 

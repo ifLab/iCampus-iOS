@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol PJMyPublishLostTableViewCellDelegate <NSObject>
+
+- (void)cellClick:(NSArray *)data index:(NSInteger)index;
+
+@end
 
 @interface PJMyPublishLostTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
@@ -14,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (nonatomic, strong) NSDictionary *dataSource;
+@property (nonatomic, weak) id<PJMyPublishLostTableViewCellDelegate> cellDelegate;
 @end

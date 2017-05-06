@@ -15,8 +15,6 @@
 #import "MJExtension.h"
 #import "PJUser.h"
 #import "PJUIImage+Extension.h"
-#import "AFNetworking.h"
-
 
 
 

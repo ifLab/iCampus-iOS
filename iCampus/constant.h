@@ -15,4 +15,5 @@ extern UIColor * mainBlackColor;
 extern UIColor * mainPurpleColor;
 extern UIColor * mainDeepSkyBlue;
 extern UIColor * mainGreen;
+extern UIColor * mainBlue;
 extern CGFloat normalTableHeight;
