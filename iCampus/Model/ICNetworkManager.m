@@ -46,8 +46,8 @@
 }
 
 - (NSURLSessionTask*)POST:(NSString *)key
-                  GETParameters:(NSDictionary *)GETParameters
-                 POSTParameters:(NSDictionary *)POSTParameters
+                  GETParameters:(id)GETParameters
+                 POSTParameters:(id)POSTParameters
                         success:(void (^)(NSDictionary *))success
                         failure:(void (^)(NSError *))failure
 {
@@ -64,8 +64,8 @@
 
 - (NSURLSessionTask*)request:(NSString *)key
                             method:(NSString *)method
-                     GETParameters:(NSDictionary *)GETParameters
-                    POSTParameters:(NSDictionary *)POSTParameters
+                     GETParameters:(id)GETParameters
+                    POSTParameters:(id)POSTParameters
          constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> *data))block
                            success:(void (^)(id))success
                            failure:(void (^)(NSError *))failure
@@ -87,7 +87,7 @@
                     failure(error);
                 }
             }];
-        } else if (POSTParameters.count > 0) {
+        } else if (POSTParameters) {
             return [self.manager POST:URLString parameters:POSTParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

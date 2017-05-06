@@ -82,7 +82,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(itemX, 0, imgW, imgH)];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.layer.masksToBounds = true;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]] placeholderImage:[UIImage imageNamed:@"nopic"]];
         [self.showImgScrollView addSubview:imageView];
         itemNums++;
         lastItemMaxX = CGRectGetMaxX(imageView.frame);

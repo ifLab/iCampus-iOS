@@ -33,6 +33,10 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [_kTableView.mj_header beginRefreshing];
+}
+
 - (void)initView {
     page = 0;
     _freshFlag = headerRefresh;
@@ -60,7 +64,6 @@
 - (void)getDataFromHttp {
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":@"isFound=false"};
-    [PJHUD showWithStatus:@""];
     [[ICNetworkManager defaultManager] GET:@"Lost"
                                 parameters:paramters
                                    success:^(NSDictionary *dic) {
@@ -73,7 +76,6 @@
                                                [_kTableView.dataArr removeAllObjects];
                                            }
                                            _kTableView.dataArr = [data mutableCopy];
-                                           [PJHUD dismiss];
                                        } else {
                                            [PJHUD showErrorWithStatus:@"没有数据了"];
                                        }

@@ -69,7 +69,7 @@
                                            [PJHUD showSuccessWithStatus:@"请查看邮箱"];
                                        }
                                     } failure:^(NSError *erroe) {
-                                        // 如何处理错误信息？
+                                        NSLog(@"%@", erroe);
                                     }];
 }
 

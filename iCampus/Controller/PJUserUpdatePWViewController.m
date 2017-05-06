@@ -87,11 +87,9 @@
                               GETParameters:nil
                              POSTParameters:paramters
                                     success:^(NSDictionary *dict) {
-                                        if (dict[@"success"]) {
-            
-                                        }
+                                        
                                     } failure:^(NSError *error) {
-        
+                                        NSLog(@"%@", error);
                                     }];
 }
 

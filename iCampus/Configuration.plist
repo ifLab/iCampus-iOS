@@ -8,6 +8,8 @@
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
 	<dict>
+		<key>New Lost</key>
+		<string>ibistu/_table/module_lost_found</string>
 		<key>Update PW</key>
 		<string>user/password</string>
 		<key>Reset</key>

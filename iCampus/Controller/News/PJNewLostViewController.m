@@ -11,8 +11,10 @@
 #import "PJUIImage+Extension.h"
 #import "ICNetworkManager.h"
 
+//#import "AFHTTPRequestOperationManager.h"
 
-@interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
+
+@interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @end
 
@@ -40,6 +42,8 @@
     _kTableView.tableFooterView = [UIView new];
     _imgScrollView.myDelegate = self;
     _detailsTextView.delegate = self;
+    _nameTextField.delegate = self;
+    _phoneTextField.delegate = self;
     
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
     footer = views.firstObject;
@@ -78,11 +82,35 @@
 
 - (void)updaeImgFromHttp:(NSArray *)imgArr {
     NSDictionary *paramters = @{@"resource":imgArr};
+    [PJHUD showWithStatus:@"发布中"];
     [[ICNetworkManager defaultManager] POST:@"Add Lost Image" GETParameters:nil POSTParameters:paramters success:^(NSDictionary *dict) {
         NSArray *dataArr = dict[@"resource"];
-        
+        NSMutableDictionary *lostDict = [@{@"details":_detailsTextView.text,
+                                   @"author":_nameTextField.text,
+                                   @"phone":_phoneTextField.text} mutableCopy];
+        NSMutableArray *imgURLarr = [@[] mutableCopy];
+        for (NSDictionary *dict in dataArr) {
+            NSString *imgurl = dict[@"path"];
+            NSMutableDictionary *imgURLdict = [@{} mutableCopy];
+            imgurl = [NSString stringWithFormat:@"files/%@", imgurl];
+            imgURLdict[@"url"] = imgurl;
+            [imgURLarr addObject:imgURLdict];
+        }
+        NSString *jsonStr=[imgURLarr mj_JSONString];
+        lostDict[@"imgUrlList"] = jsonStr;
+        NSArray *finalArr = [@[lostDict] mutableCopy];
+        [self publishNewLostWithHttp:finalArr];
     } failure:^(NSError *error) {
         
+    }];
+}
+
+- (void)publishNewLostWithHttp:(NSArray *)lostArr {
+    [[ICNetworkManager defaultManager] POST:@"New Lost" GETParameters:nil POSTParameters:lostArr success:^(NSDictionary *dict) {
+        [PJHUD showSuccessWithStatus:@"发布成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
     }];
 }
 
@@ -107,6 +135,11 @@
     NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0678])\\d{8}$";
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     return [regextestmobile evaluateWithObject:mobileNum];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
