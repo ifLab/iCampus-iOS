@@ -92,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除失物" message:@"是否找到失物主人？" preferredStyle: UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        [self updateLost:[_kTableView.tableDataArr[indexPath.row][@"id"] integerValue]];
+        [self updateLost:indexPath.row];
         _kTableView.editing = NO;
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"没有" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -104,12 +104,14 @@
 }
 
 - (void)updateLost:(NSInteger)index {
-    NSString *webSite = [NSString stringWithFormat:@"https://api.iflab.org/api/v2/ibistu/_table/module_lost_found/%d?", (int)index];
+    NSString *webSite = [NSString stringWithFormat:@"https://api.iflab.org/api/v2/ibistu/_table/module_lost_found/%d?", (int)[_kTableView.tableDataArr[index][@"id"] integerValue]];
     [[ICNetworkManager defaultManager] PATCHWithWebSite:webSite
                                           GETParameters:nil
                                          POSTParameters:@{@"isFound": @1}
                                                 success:^(NSDictionary *dict) {
-                                                    NSLog(@"success");
+                                                    [PJHUD showSuccessWithStatus:@"删除成功"];
+                                                    [_kTableView.tableDataArr removeObjectAtIndex:index];
+                                                    [_kTableView reloadData];
                                                 } failure:^(NSError *error) {
                                                     NSLog(@"failure");
                                                 }];
