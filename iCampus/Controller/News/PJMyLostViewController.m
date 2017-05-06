@@ -104,14 +104,15 @@
 }
 
 - (void)updateLost:(NSInteger)index {
-    NSString *webSite = [NSString stringWithFormat:@"https://api.iflab.org/api/v2/ibistu/_table/module_lost_found/%d?isFound=1", (int)index];
-    [[ICNetworkManager defaultManager]  PUT:webSite
-                                 parameters:nil
-                                    success:^(NSDictionary *dict) {
-                                        
-                                  } failure:^(NSError *error) {
-        
-    }];
+    NSString *webSite = [NSString stringWithFormat:@"https://api.iflab.org/api/v2/ibistu/_table/module_lost_found/%d?", (int)index];
+    [[ICNetworkManager defaultManager] PATCHWithWebSite:webSite
+                                          GETParameters:nil
+                                         POSTParameters:@{@"isFound": @1}
+                                                success:^(NSDictionary *dict) {
+                                                    NSLog(@"success");
+                                                } failure:^(NSError *error) {
+                                                    NSLog(@"failure");
+                                                }];
 }
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index {
