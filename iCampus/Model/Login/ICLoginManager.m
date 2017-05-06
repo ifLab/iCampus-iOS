@@ -107,16 +107,19 @@
 
 +(void)refreshTokenWith:(void (^)(NSString *))failure
 {
-    [[ICNetworkManager defaultManager] PUT:@"Login" parameters:nil success:^(NSDictionary *data) {
-        NSString *session = data[@"session_token"];
-        [ICNetworkManager defaultManager].token = session;
-    } failure:^(NSError *error) {
-        failure(error.userInfo[NSLocalizedDescriptionKey]);
-    }];
+    [[ICNetworkManager defaultManager] PUT:@"Login"
+                             GETParameters:nil
+                            POSTParameters:nil
+                                   success:^(NSDictionary *data) {
+                                       NSString *session = data[@"session_token"];
+                                       [ICNetworkManager defaultManager].token = session;
+                                   } failure:^(NSError *error) {
+                                       failure(error.userInfo[NSLocalizedDescriptionKey]);
+                                   }];
 }
 
 -(void)saveUserInfo:(NSDictionary *)result{
-   
+    
 }
 
 @end

@@ -38,9 +38,15 @@
                   success:(void (^)(NSDictionary *))success
                   failure:(void (^)(NSError *))failure;
 - (NSURLSessionTask*)PUT:(NSString *)key
-              parameters:(NSDictionary *)parameters
+           GETParameters:(NSDictionary *)GETParameters
+          POSTParameters:(NSDictionary *)POSTParameters
                  success:(void (^)(NSDictionary *))success
                  failure:(void (^)(NSError *))failure;
+- (NSURLSessionTask*)PATCHWithWebSite:(NSString *)webSite
+                        GETParameters:(NSDictionary *)GETParameters
+                       POSTParameters:(NSDictionary *)POSTParameters
+                              success:(void (^)(NSDictionary *))success
+                              failure:(void (^)(NSError *))failure;
 //- (AFHTTPRequestOperation*)request:(NSString *)key
 //                     GETParameters:(NSDictionary *)GETParameters
 //                    POSTParameters:(NSDictionary *)POSTParameters

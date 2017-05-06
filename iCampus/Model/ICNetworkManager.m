@@ -42,7 +42,7 @@
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
 {
-    return [self request:key method:nil GETParameters:parameters POSTParameters:nil constructingBodyWithBlock:nil success:success failure:failure];
+    return [self request:key webSite:nil method:nil GETParameters:parameters POSTParameters:nil constructingBodyWithBlock:nil success:success failure:failure];
 }
 
 - (NSURLSessionTask*)POST:(NSString *)key
@@ -51,32 +51,45 @@
                         success:(void (^)(NSDictionary *))success
                         failure:(void (^)(NSError *))failure
 {
-    return [self request:key method:nil GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
+    return [self request:key webSite:nil method:nil GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
 }
 
 - (NSURLSessionTask*)PUT:(NSString *)key
-                    parameters:(NSDictionary *)parameters
+           GETParameters:(NSDictionary *)GETParameters
+          POSTParameters:(NSDictionary *)POSTParameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure
 {
-    return [self request:key method:@"PUT" GETParameters:nil POSTParameters:parameters constructingBodyWithBlock:nil success:success failure:failure];
+    return [self request:key webSite:nil method:@"PUT" GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
 }
 
 
+- (NSURLSessionTask*)PATCHWithWebSite:(NSString *)webSite
+                        GETParameters:(NSDictionary *)GETParameters
+                       POSTParameters:(NSDictionary *)POSTParameters
+                              success:(void (^)(NSDictionary *))success
+                              failure:(void (^)(NSError *))failure{
+    return [self request:nil webSite:webSite method:@"PATCH" GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
+}
 - (NSURLSessionTask*)request:(NSString *)key
-                            method:(NSString *)method
-                     GETParameters:(id)GETParameters
-                    POSTParameters:(id)POSTParameters
-         constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> *data))block
-                           success:(void (^)(id))success
-                           failure:(void (^)(NSError *))failure
+                     webSite:(NSString *)webSite
+                      method:(NSString *)method
+               GETParameters:(id)GETParameters
+              POSTParameters:(id)POSTParameters
+   constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> *data))block
+                     success:(void (^)(id))success
+                     failure:(void (^)(NSError *))failure
 {
     @try {
         NSMutableDictionary *GETP = [NSMutableDictionary dictionaryWithDictionary:GETParameters];
         NSString *websiteString;
         GETP[@"api_key"] = self.APIKey;
         GETP[@"session_token"] = self.token;
-        websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
+        if (key != nil) {
+            websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
+        } else {
+            websiteString = webSite;
+        }
         NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP] error:nil].URL.absoluteString;
 //        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
@@ -87,6 +100,12 @@
                 if (failure) {
                     failure(error);
                 }
+            }];
+        } else if ([method  isEqual: @"PATCH"]) {
+            return [self.manager PATCH:URLString parameters:POSTParameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                failure(error);
             }];
         } else if (POSTParameters) {
             return [self.manager POST:URLString parameters:POSTParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
