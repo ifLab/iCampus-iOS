@@ -33,7 +33,7 @@
     [_oldPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [_newnewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [_againNewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"修改" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.enabled = NO;
 }
@@ -82,7 +82,6 @@
 }
 
 - (void)updatePWwithHttp:(NSDictionary *)paramters {
-    
     [[ICNetworkManager defaultManager] POST:@"Update PW"
                               GETParameters:nil
                              POSTParameters:paramters

@@ -38,7 +38,8 @@
     _freshFlag = headerRefresh;
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"发布的失物招领";
+    
+    [self initTitleView];
     
     _kTableView = [PJMyPublishLostTableView new];
     _kTableView.tableDelegate = self;
@@ -75,6 +76,40 @@
                                        // error信息要怎么处理？
                                    }];
 
+}
+
+- (void)initTitleView {
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    titleLabel.text = @"发布的失物招领";
+    [titleLabel sizeToFit];
+    
+    UILabel *subTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 22, 0, 0)];
+    subTitleLabel.backgroundColor = [UIColor clearColor];
+    subTitleLabel.textColor = [UIColor blackColor];
+    subTitleLabel.font = [UIFont systemFontOfSize:12];
+    subTitleLabel.text = @"侧滑结束发布";
+    [subTitleLabel sizeToFit];
+    
+    UIView *twoLineTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAX(subTitleLabel.frame.size.width, titleLabel.frame.size.width), 30)];
+    [twoLineTitleView addSubview:titleLabel];
+    [twoLineTitleView addSubview:subTitleLabel];
+    
+    float widthDiff = subTitleLabel.frame.size.width - titleLabel.frame.size.width;
+    
+    if (widthDiff > 0) {
+        CGRect frame = titleLabel.frame;
+        frame.origin.x = widthDiff / 2;
+        titleLabel.frame = CGRectIntegral(frame);
+    }else{
+        CGRect frame = subTitleLabel.frame;
+        frame.origin.x = fabsf(widthDiff) / 2;
+        subTitleLabel.frame = CGRectIntegral(frame);
+    }
+    
+    self.navigationItem.titleView = twoLineTitleView;
 }
 
 - (void)headfresh {
