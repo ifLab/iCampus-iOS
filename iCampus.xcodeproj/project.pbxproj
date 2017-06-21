@@ -95,6 +95,7 @@
 		A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */; };
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
 		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
+		A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
 /* End PBXBuildFile section */
 
@@ -257,6 +258,8 @@
 		A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPageChannel.m; path = YellowPage/ICYellowPageChannel.m; sourceTree = "<group>"; };
 		A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageMainViewController.swift; path = YellowPage/ICYellowPageMainViewController.swift; sourceTree = "<group>"; };
 		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A9F0FFE91EFA6C95007168C8 /* CASBistu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CASBistu.h; sourceTree = "<group>"; };
+		A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CASBistu.m; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -839,6 +842,8 @@
 			children = (
 				A90F4B861E96998600DDD6BC /* ICLoginManager.h */,
 				A90F4B871E96998600DDD6BC /* ICLoginManager.m */,
+				A9F0FFE91EFA6C95007168C8 /* CASBistu.h */,
+				A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
+				A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */,
 				2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */,
 				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
