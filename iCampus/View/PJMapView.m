@@ -18,6 +18,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     _mapView = [[MKMapView alloc] initWithFrame:frame];
+    _mapView.delegate = self;
     [self addSubview:_mapView];
     
     [self initView];
@@ -44,7 +45,7 @@
         CGFloat longitude = [dict[@"longitude"] floatValue];
         CLLocationCoordinate2D coordinate = {latitude,longitude};
         annotation.coordinate = coordinate;
-        
+
         [_mapView addAnnotation:annotation];
         [annotations addObject:annotation];
     }
@@ -54,6 +55,10 @@
     [_mapView setCenterCoordinate:coordinate animated:YES];
     MKCoordinateSpan span = {0,0.3};
     [_mapView setRegion:MKCoordinateRegionMake(coordinate, span) animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    [_mapDelegate getSelectedAnnotation:view];
 }
 
 @end

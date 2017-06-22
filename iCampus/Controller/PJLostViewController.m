@@ -33,10 +33,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [_kTableView.mj_header beginRefreshing];
-}
-
 - (void)initView {
     page = 0;
     _freshFlag = headerRefresh;
@@ -62,6 +58,7 @@
 }
 
 - (void)getDataFromHttp {
+    [PJHUD showWithStatus:@""];
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":@"isFound=false"};
     [[ICNetworkManager defaultManager] GET:@"Lost"
@@ -69,7 +66,7 @@
                                    success:^(NSDictionary *dic) {
                                        [_kTableView.mj_header endRefreshing];
                                        [_kTableView.mj_footer endRefreshing];
-                                       
+                                       [PJHUD dismiss];
                                        NSArray *data = dic[@"resource"];
                                        if (data.count) {
                                            if ([_freshFlag isEqualToString:headerRefresh]) {

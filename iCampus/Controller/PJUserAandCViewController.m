@@ -65,6 +65,7 @@
                              GETParameters:nil
                              POSTParameters:paramters
                                    success:^(NSDictionary *dict) {
+                                       
                                        if (dict[@"success"]) {
                                            [PJHUD showSuccessWithStatus:@"请查看邮箱"];
                                        }
