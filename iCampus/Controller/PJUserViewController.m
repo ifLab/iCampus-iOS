@@ -48,12 +48,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            [self toAandC];
+            [self toMyLost];
         }
     }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            [self toMyLost];
+            [self toAandC];
         }
         if (indexPath.row == 1) {
             [self toAbout];

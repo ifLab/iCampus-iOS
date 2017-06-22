@@ -28,7 +28,7 @@
 - (void)initView {
     _kDataArr = [@[] mutableCopy];
     _detailsLabel.font = [UIFont systemFontOfSize:14];
-    _detailsLabel.textColor = [UIColor lightGrayColor];
+    _detailsLabel.textColor = [UIColor blackColor];
     _nameLabel.textColor = [UIColor lightGrayColor];
     _nameLabel.font = [UIFont systemFontOfSize:14];
     _phoneLabel.textColor = [UIColor lightGrayColor];

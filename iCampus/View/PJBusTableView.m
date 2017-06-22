@@ -56,6 +56,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJBusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJBusTableViewCell" forIndexPath:indexPath];
+    [_tableDelegate PJRegister3DtouchCell:cell];
     if (_kSearchArr.count > 0) {
         cell.cellDataSource = _kSearchArr[indexPath.row];
     } else {

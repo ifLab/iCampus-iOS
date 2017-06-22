@@ -39,7 +39,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"失物招领";
     
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"添加" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
     _kTableView = [PJLostTableView new];

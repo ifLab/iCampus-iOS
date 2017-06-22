@@ -11,8 +11,7 @@
 #import "ICNetworkManager.h"
 #import "PJBusDetailsViewController.h"
 
-
-@interface PJBusViewController () <PJBusTableViewDelegate>
+@interface PJBusViewController () <PJBusTableViewDelegate, UIViewControllerPreviewingDelegate>
 
 @end
 
@@ -58,6 +57,27 @@
     PJBusDetailsViewController *vc = [PJBusDetailsViewController new];
     vc.dataSource = dict;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)PJRegister3DtouchCell:(PJBusTableViewCell *)cell {
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:(UIView *)cell];
+    }
+}
+
+//peek
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    NSIndexPath *indexPath = [_kTableView indexPathForCell:(UITableViewCell* )[previewingContext sourceView]];
+    PJBusDetailsViewController *vc = [PJBusDetailsViewController new];
+    vc.dataSource = _kTableView.dataArr[indexPath.row];
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width,60);
+    previewingContext.sourceRect = rect;
+    return vc;
+}
+
+//pop
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 @end

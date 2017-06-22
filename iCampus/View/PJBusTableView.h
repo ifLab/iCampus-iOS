@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class PJBusTableViewCell;
 @protocol PJBusTableViewDelegate <NSObject>
 
 - (void)PJBusTableViewCellClick:(NSDictionary *)dict;
+- (void)PJRegister3DtouchCell:(PJBusTableViewCell *)cell;
 
 @end
 

@@ -33,6 +33,21 @@
     [self reloadData];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    headView.backgroundColor = [self backgroundColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, headView.frame.size.height - 25, SCREEN_WIDTH, 20)];
+    [headView addSubview:label];
+    label.textColor = [UIColor grayColor];
+    label.font = [UIFont systemFontOfSize:14];
+    label.text = @"左滑完结失物招领";
+    return headView;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
