@@ -33,7 +33,7 @@
 }
 
 - (void)initView {
-    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].last_name];
+    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
