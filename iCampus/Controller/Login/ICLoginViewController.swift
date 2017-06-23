@@ -233,6 +233,10 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func notLoginYet(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let pan = UIPanGestureRecognizer(target: self, action: #selector(didTouchBlankArea))
@@ -262,6 +266,10 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     
     func didTouchBlankArea() {
         view.endEditing(true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
 }

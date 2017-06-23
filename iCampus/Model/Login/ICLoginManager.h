@@ -20,6 +20,10 @@
     verfyCode:(NSString *)verfyCode
       success:(void (^)(NSDictionary *))success
       failure:(void (^)(NSString *))failure;
++(void)editInfoWithfirst_name:(NSString *)first_name
+                    last_name:(NSString *)last_name
+                      success:(void (^)(NSDictionary *))success
+                      failure:(void (^)(NSString *))failure;
 +(void)resetPassword:(NSString *)email
       success:(void (^)(NSString *))success
              failure:(void (^)(NSString *))failure;

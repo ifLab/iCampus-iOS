@@ -24,6 +24,9 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
                       "失物招领",
 //                      "关于",
                       ]
+    let limitedTitles = ["黄页",
+                         "失物招领",
+    ]//需要登录并认证的栏目
     let itemImageNames = ["ICGateNewsIcon",
                           "ICGateYellowPageIcon",
                           "ICGateBusIcon",
@@ -53,10 +56,24 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func pushUserVC() {
-        let mainStoryboard = UIStoryboard(name:"PJUserSB", bundle:nil)
-        var vc = PJUserViewController.init();
-        vc = mainStoryboard.instantiateViewController(withIdentifier: "PJUserViewController") as! PJUserViewController
-        navigationController?.pushViewController(vc, animated: true)
+        if PJUser.current() == nil {
+            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
+            present(controller, animated: true, completion: nil)
+        } else {
+            let mainStoryboard = UIStoryboard(name:"PJUserSB", bundle:nil)
+            var vc = PJUserViewController.init();
+            vc = mainStoryboard.instantiateViewController(withIdentifier: "PJUserViewController") as! PJUserViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func isLimited(title: String) -> Bool {
+        for li in limitedTitles {
+            if li == title {
+                return true
+            }
+        }
+        return false
     }
     
 //    MARK: - UICollectionViewDataSource
@@ -76,6 +93,21 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if isLimited(title: itemTitles[indexPath.item]) {//需要登录并且认证
+            if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {//logined
+                if !CASBistu.checkCASCertified() {//CAS not certified
+                    
+                    let controller = Bundle.main.loadNibNamed("ICCASViewController", owner: nil, options: nil)?.first as! ICCASViewController
+                    present(controller, animated: true, completion: nil)
+                    return
+                }
+                //logined and CAS certified, present after exit if.
+            } else {//didn't login, present LoginVC
+                let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first as! ICLoginViewController
+                present(controller, animated: true, completion: nil)
+                return
+            }
+        }
         let controller = (itemIdentifiers[indexPath.item] as! UIViewController.Type).init()
         navigationController?.pushViewController(controller, animated: true)
     }

@@ -1,4 +1,4 @@
- //
+//
 //  ICLoginManager.m
 //  iCampus
 //
@@ -29,6 +29,8 @@
                                         [ICNetworkManager defaultManager].token = session;
                                         PJUser *user = [PJUser new];
                                         user.name = data[@"name"];
+                                        user.first_name = data[@"first_name"];
+                                        user.last_name = data[@"last_name"];
                                         user.last_login_date = data[@"last_login_date"];
                                         user.email = data[@"email"];
                                         [user save];
@@ -84,6 +86,22 @@
                                                                     }];
                                 }
                             }];
+}
+
++(void)editInfoWithfirst_name:(NSString *)first_name
+                    last_name:(NSString *)last_name
+                      success:(void (^)(NSDictionary *))success
+                      failure:(void (^)(NSString *))failure
+{
+    [[ICNetworkManager defaultManager] POST:@"Profile"
+                              GETParameters:nil
+                             POSTParameters:@{
+                                              @"first_name":first_name,
+                                              @"last_name":last_name
+                                              }
+                                    success:success failure:^(NSError *error) {
+                                        failure(error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                                    }];
 }
 
 +(void)resetPassword:(NSString *)email

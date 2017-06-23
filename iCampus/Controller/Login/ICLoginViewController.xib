@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -159,12 +159,23 @@
                                             <action selector="switchStatus:" destination="mRc-pD-zvc" eventType="touchUpInside" id="by0-9J-187"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZs-ff-dNw">
+                                        <rect key="frame" x="159" y="440" width="58" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="暂不登录">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="notLoginYet:" destination="mRc-pD-zvc" eventType="touchUpInside" id="VTa-7H-CGO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="jnz-Fl-0P7" firstAttribute="centerX" secondItem="KsJ-Bj-gSy" secondAttribute="centerX" id="06n-bP-wf5"/>
                                     <constraint firstItem="3bc-Tc-7uz" firstAttribute="centerX" secondItem="EQh-sG-wPB" secondAttribute="centerX" id="3fH-DO-McX"/>
                                     <constraint firstItem="W6f-cR-YNm" firstAttribute="centerX" secondItem="KsJ-Bj-gSy" secondAttribute="centerX" id="7KL-w6-0PG"/>
+                                    <constraint firstItem="WZs-ff-dNw" firstAttribute="centerX" secondItem="KsJ-Bj-gSy" secondAttribute="centerX" id="7kc-4p-eq2"/>
                                     <constraint firstItem="jnz-Fl-0P7" firstAttribute="top" secondItem="czb-6E-A9n" secondAttribute="bottom" constant="10" id="JTO-QI-ePn"/>
                                     <constraint firstItem="b8k-WL-LjM" firstAttribute="centerX" secondItem="KsJ-Bj-gSy" secondAttribute="centerX" id="JXG-gg-Ghi"/>
                                     <constraint firstItem="8aC-Sl-zBk" firstAttribute="top" secondItem="EQh-sG-wPB" secondAttribute="bottom" constant="5" id="JwP-lA-8Ga"/>
@@ -175,6 +186,7 @@
                                     <constraint firstItem="W6f-cR-YNm" firstAttribute="top" secondItem="VTh-uh-HuZ" secondAttribute="bottom" constant="10" id="YwW-Sb-kj1"/>
                                     <constraint firstItem="czb-6E-A9n" firstAttribute="centerX" secondItem="KsJ-Bj-gSy" secondAttribute="centerX" id="alL-ZW-iEh"/>
                                     <constraint firstItem="3bc-Tc-7uz" firstAttribute="centerY" secondItem="EQh-sG-wPB" secondAttribute="centerY" id="bTI-bl-Abf"/>
+                                    <constraint firstItem="WZs-ff-dNw" firstAttribute="top" secondItem="ueq-Vk-Fdc" secondAttribute="bottom" constant="20" id="gh1-qc-626"/>
                                     <constraint firstItem="EQh-sG-wPB" firstAttribute="top" secondItem="czb-6E-A9n" secondAttribute="bottom" constant="30" id="hTJ-OF-Rnn"/>
                                     <constraint firstItem="b8k-WL-LjM" firstAttribute="top" secondItem="dxO-AL-d7w" secondAttribute="bottom" constant="30" id="hX5-9v-3Qu"/>
                                     <constraint firstItem="dxO-AL-d7w" firstAttribute="top" secondItem="KsJ-Bj-gSy" secondAttribute="top" constant="100" id="iAM-ey-euZ"/>

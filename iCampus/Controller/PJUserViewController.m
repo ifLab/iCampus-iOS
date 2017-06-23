@@ -11,7 +11,7 @@
 #import "PJMyLostViewController.h"
 #import "PJUserAandCViewController.h"
 #import "logoutFoot.h"
-
+#import "ICNetworkManager.h"
 #import "iCampus-Swift.h"
 
 @interface PJUserViewController ()
@@ -33,7 +33,7 @@
 }
 
 - (void)initView {
-    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].name];
+    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].last_name];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -64,6 +64,8 @@
 -(void)logout{
     ICLoginViewController *vc = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
     [self presentViewController:vc animated:YES completion:^{
+        [self.navigationController popViewControllerAnimated:NO];
+        [ICNetworkManager defaultManager].token = @"";
         [PJUser logOut];
     }];
 }

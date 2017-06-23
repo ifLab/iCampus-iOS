@@ -13,6 +13,8 @@
 /***************用户属性*****************/
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *first_name;//中文姓名
+@property (nonatomic, strong) NSString *last_name;//==@"@"代表已通过CAS认证
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *last_login_date;
 

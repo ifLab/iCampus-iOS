@@ -12,4 +12,10 @@
 
 @interface CASBistu : NSObject
 
++ (void)loginWithUsername:(NSString *)user
+                 password:(NSString *)pass
+            callBackBlock:(void (^)(NSDictionary *, NSString *))callBackBlock;
+
++ (bool)checkCASCertified;
+
 @end

@@ -96,6 +96,8 @@
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
 		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
 		A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */; };
+		A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */; };
+		A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
 /* End PBXBuildFile section */
 
@@ -260,6 +262,8 @@
 		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9F0FFE91EFA6C95007168C8 /* CASBistu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CASBistu.h; sourceTree = "<group>"; };
 		A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CASBistu.m; sourceTree = "<group>"; };
+		A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICCASViewController.swift; sourceTree = "<group>"; };
+		A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICCASViewController.xib; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -790,6 +794,8 @@
 		A90F4B761E96998600DDD6BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */,
+				A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */,
 				A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */,
 				A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */,
 			);
@@ -1069,6 +1075,7 @@
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
 				2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */,
 				2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */,
+				A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */,
 				2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */,
 				2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */,
 				2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */,
@@ -1216,6 +1223,7 @@
 				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,
 				2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
+				A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
 				2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
@@ -1414,7 +1422,7 @@
 				INFOPLIST_FILE = iCampus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.iCampus;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1434,7 +1442,7 @@
 				INFOPLIST_FILE = iCampus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.iCampus;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

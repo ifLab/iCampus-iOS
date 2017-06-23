@@ -20,3 +20,5 @@
 #import "PJUserAandCViewController.h"
 #import "constant.h"
 #import "PJUserUpdatePWViewController.h"
+#import "PJUser.h"
+#import "CASBistu.h"

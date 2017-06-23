@@ -34,7 +34,13 @@
                                        news.body = [news.body stringByReplacingOccurrencesOfString:@"\n" withString:@"</p><p>"];
                                        news.body = [news.body stringByReplacingOccurrencesOfString:@"<p> </p>" withString:@"<p></p>"];
                                        for (int i=0; i<news.pcURL.count; i++) {
-                                           news.body = [news.body stringByReplacingCharactersInRange:[news.body rangeOfString:@"<p></p><p></p>"] withString:[NSString stringWithFormat:@"<img src=\"%@\">", news.pcURL[i]]];
+                                           @try {
+                                               news.body = [news.body stringByReplacingCharactersInRange:[news.body rangeOfString:@"<p></p><p></p>"] withString:[NSString stringWithFormat:@"<img src=\"%@\">", news.pcURL[i]]];
+                                           } @catch (NSException *exception) {
+                                               if ([exception.name isEqualToString:NSRangeException]) {
+                                                   break;
+                                               }
+                                           }
                                        }
                                        success(news);
                                    }

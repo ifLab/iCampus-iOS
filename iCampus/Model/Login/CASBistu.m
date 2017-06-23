@@ -7,15 +7,14 @@
 //
 
 #import "CASBistu.h"
+#import "ICLoginManager.h"
+#import "PJUser.h"
 
 @implementation CASBistu
 
 + (void)loginWithUsername:(NSString *)user
                  password:(NSString *)pass
-            callBackBlock:(void (^)(NSDictionary *, NSError *))callBackBlock {
-    if (!callBackBlock) {
-        return;
-    }
+            callBackBlock:(void (^)(NSDictionary *, NSString *))callBackBlock {
     NSString *loginURL = @"https://cas.bistu.edu.cn/ibistu/login.php";
     [CAS defaultCAS].casServer = @"https://cas.bistu.edu.cn/v1";
     [CAS defaultCAS].path = @"tickets";
@@ -32,28 +31,58 @@
                             NSError *error;
                             NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                             if (info) {
-                                callBackBlock(info, error);
+                                [ICLoginManager editInfoWithfirst_name:info[@"xm"]
+                                                             last_name:@"@"
+                                                               success:^(NSDictionary *_) {
+                                                                   PJUser *user = [PJUser currentUser];
+                                                                   user.first_name = info[@"xm"];
+                                                                   user.last_name = @"@";
+                                                                   [user save];
+                                                                   if (callBackBlock) {
+                                                                       callBackBlock(info, nil);
+                                                                   }
+                                                               }
+                                                               failure:^(NSString *message) {
+                                                                   callBackBlock(@{}, message);
+                                                               }];
                             } else {
                                 NSLog(@"%@", error);
-                                callBackBlock(@{}, error);
+                                if (callBackBlock) {
+                                    callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                                }
                             }
                         } else {
                             NSLog(@"%@", error);
-                            callBackBlock(@{}, error);
+                            if (callBackBlock) {
+                                callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                            }
                         }
                     }];
                     
                 } else {
                     NSLog(@"%@", error);
-                    callBackBlock(@{}, error);
+                    if (callBackBlock) {
+                        callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                    }
                 }
             }];
             
         } else {
             NSLog(@"%@", error);
-            callBackBlock(@{}, error);
+            if (callBackBlock) {
+                callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+            }
         }
     }];
+}
+
++ (bool)checkCASCertified {
+    PJUser *currentUser = [PJUser currentUser];
+    if ([@"@" isEqualToString:currentUser.last_name]) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 @end

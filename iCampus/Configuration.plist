@@ -40,6 +40,8 @@
 		<string>user/register/</string>
 		<key>Change Password</key>
 		<string>user/password/</string>
+		<key>Profile</key>
+		<string>user/profile</string>
 	</dict>
 	<key>Verfycode API Key</key>
 	<string>17dca343d1024</string>
