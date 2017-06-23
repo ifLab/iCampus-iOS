@@ -101,7 +101,6 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                 controller.view.frame = UIScreen.main.bounds
                                                 let navcontroller = UINavigationController(rootViewController: controller)
                                                 self_.present(navcontroller, animated: true, completion: nil)
-                                                self_.finishedLoginOrRegister()
                                             }
                         },
                                          failure: {
@@ -132,6 +131,9 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                     if let self_ = self {
                                                         self_.messageLabel.text = "success"
                                                         self_.finishedLoginOrRegister()
+                                                        self_.finishedLoginOrRegister()
+                                                        self_.switchStatus(self_.switchButton)
+                                                        self_.loginOrRegister(self_.loginAndRegisterButton)
                                                     }
                                 },
                                                   failure: { [weak self] error in
