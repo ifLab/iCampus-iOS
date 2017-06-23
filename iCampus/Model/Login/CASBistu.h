@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @import CAS_iOS;
+@import serverURL;
 
 @interface CASBistu : NSObject
 
@@ -17,5 +18,7 @@
             callBackBlock:(void (^)(NSDictionary *, NSString *))callBackBlock;
 
 + (bool)checkCASCertified;
+
++ (bool)showCASController;
 
 @end

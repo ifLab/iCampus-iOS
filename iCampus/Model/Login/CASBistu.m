@@ -85,4 +85,12 @@
     }
 }
 
++ (bool)showCASController {
+    if ([@"not_show" isEqualToString:[HBServerURL getWithAppNameAndURL:@"https://api.iflab.org/api/v2/serverurl/_table/serverurl/" apikey:@"c4c6a2a605c559a089f785394561919eecf2c548b631f3256678870f07691b50"]]) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 @end
