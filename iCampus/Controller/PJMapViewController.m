@@ -63,6 +63,7 @@
     CLLocationCoordinate2D loc = CLLocationCoordinate2DMake([lat doubleValue], [lon doubleValue]);
     MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
     MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:loc addressDictionary:nil]];
+    toLocation.name = address;
     [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
                    launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
                                    MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];
