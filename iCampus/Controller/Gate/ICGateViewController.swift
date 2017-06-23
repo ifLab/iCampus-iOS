@@ -95,7 +95,7 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isLimited(title: itemTitles[indexPath.item]) {//需要登录并且认证
             if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {//logined
-                if !CASBistu.checkCASCertified() {//CAS not certified
+                if !CASBistu.checkCASCertified() && CASBistu.showCASController() {//CAS not certified
                     
                     let controller = Bundle.main.loadNibNamed("ICCASViewController", owner: nil, options: nil)?.first as! ICCASViewController
                     present(controller, animated: true, completion: nil)
