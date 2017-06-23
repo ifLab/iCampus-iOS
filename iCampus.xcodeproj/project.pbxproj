@@ -69,7 +69,6 @@
 		A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */; };
 		A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */; };
 		A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */; };
-		A90F4B9E1E96998600DDD6BC /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B7F1E96998600DDD6BC /* MOBFoundation.framework */; };
 		A90F4B9F1E96998600DDD6BC /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B801E96998600DDD6BC /* MOBFoundationEx.framework */; };
 		A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B841E96998600DDD6BC /* ICNetworkManager.m */; };
 		A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B871E96998600DDD6BC /* ICLoginManager.m */; };
@@ -88,6 +87,7 @@
 		A90F4BBC1E9733AA00DDD6BC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */; };
 		A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */; };
 		A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */; };
+		A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B7F1E96998600DDD6BC /* MOBFoundation.framework */; };
 		A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */; };
 		A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */; };
 		A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96E1EAB5030007882AA /* ICYellowPage.m */; };
@@ -252,6 +252,7 @@
 		A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsDetailViewController.swift; sourceTree = "<group>"; };
 		A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageViewController.swift; path = YellowPage/ICYellowPageViewController.swift; sourceTree = "<group>"; };
 		A98CB96D1EAB5030007882AA /* ICYellowPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPage.h; path = YellowPage/ICYellowPage.h; sourceTree = "<group>"; };
@@ -275,10 +276,10 @@
 			files = (
 				A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */,
 				A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */,
+				A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */,
 				A90F4BBC1E9733AA00DDD6BC /* libicucore.tbd in Frameworks */,
 				A90F4BBA1E9733A100DDD6BC /* libz.tbd in Frameworks */,
 				A90F4BB91E97338E00DDD6BC /* JavaScriptCore.framework in Frameworks */,
-				A90F4B9E1E96998600DDD6BC /* MOBFoundation.framework in Frameworks */,
 				A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */,
 				A90F4B9F1E96998600DDD6BC /* MOBFoundationEx.framework in Frameworks */,
 				DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */,
@@ -692,6 +693,7 @@
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */,
 				A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */,
 				A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */,
 				A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */,
@@ -1422,6 +1424,7 @@
 			baseConfigurationReference = A47E666B3929F0973545A197 /* Pods-iCampus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1434,6 +1437,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1442,6 +1446,7 @@
 			baseConfigurationReference = 75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1454,6 +1459,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
