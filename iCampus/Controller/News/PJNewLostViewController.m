@@ -43,6 +43,8 @@
     _imgScrollView.myDelegate = self;
     _detailsTextView.delegate = self;
     _nameTextField.delegate = self;
+    _nameTextField.enabled = false;
+    _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].name];
     _phoneTextField.delegate = self;
     
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
@@ -58,12 +60,12 @@
 
 - (void)uploadLost {
     NSString *phoneNum = _phoneTextField.text;
-    NSString *nameStr = _nameTextField.text;
+//    NSString *nameStr = _nameTextField.text;
     NSString *detailsStr = _detailsTextView.text;
-    if ([nameStr isEqualToString:@""]) {
-        [PJHUD showErrorWithStatus:@"姓名错误"];
-        return;
-    }
+//    if ([nameStr isEqualToString:@""]) {
+//        [PJHUD showErrorWithStatus:@"姓名错误"];
+//        return;
+//    }
     if (![self isTruePhone:phoneNum]) {
         [PJHUD showErrorWithStatus:@"号码错误"];
         return;

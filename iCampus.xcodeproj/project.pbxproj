@@ -462,10 +462,8 @@
 		2CA446961EB96E4C00A0FCAF /* 账户与安全 */ = {
 			isa = PBXGroup;
 			children = (
+				7405EF471EFACDBF0086B0EA /* 重置密码 */,
 				2CA446A91EBA1C7700A0FCAF /* 修改密码 */,
-				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
-				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
-				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
 			);
 			name = "账户与安全";
 			sourceTree = "<group>";
@@ -703,6 +701,16 @@
 				E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7405EF471EFACDBF0086B0EA /* 重置密码 */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
+				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
+				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
+			);
+			name = "重置密码";
 			sourceTree = "<group>";
 		};
 		A90F4AF91E9690E000DDD6BC = {

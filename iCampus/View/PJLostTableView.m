@@ -61,6 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJLostTableViewCell" forIndexPath:indexPath];
     cell.cellDelagate = self;
+    cell.pepleIconImgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", rand()%5]];
     cell.dataSource = _dataArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
