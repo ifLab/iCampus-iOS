@@ -26,6 +26,10 @@
     [self initView];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [PJHUD dismiss];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

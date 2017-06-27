@@ -87,7 +87,8 @@
                               GETParameters:nil
                              POSTParameters:paramters
                                     success:^(NSDictionary *dict) {
-                                        
+                                        [PJHUD showSuccessWithStatus:@"修改成功"];
+                                        [self.navigationController popViewControllerAnimated:YES];
                                     } failure:^(NSError *error) {
                                         NSLog(@"%@", error);
                                     }];

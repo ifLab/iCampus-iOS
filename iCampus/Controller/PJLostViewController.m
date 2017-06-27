@@ -33,6 +33,10 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [PJHUD dismiss];
+}
+
 - (void)initView {
     page = 0;
     _freshFlag = headerRefresh;
