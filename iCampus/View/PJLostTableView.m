@@ -61,7 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJLostTableViewCell" forIndexPath:indexPath];
     cell.cellDelagate = self;
-    cell.pepleIconImgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", rand()%5]];
+//    cell.pepleIconImgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", rand()%5]];
     cell.dataSource = _dataArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -69,6 +69,10 @@
 
 - (void)cellClick:(NSArray *)data index:(NSInteger)index {
     [_tableDelegate tableViewClick:data index:index];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_tableDelegate tableViewClickToDetails:_dataArr[indexPath.row]];
 }
 
 @end

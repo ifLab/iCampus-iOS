@@ -13,6 +13,7 @@
 @protocol PJLostTableViewDelegate <NSObject>
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
+- (void)tableViewClickToDetails:(NSDictionary *)data;
 
 @end
 

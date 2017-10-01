@@ -99,6 +99,8 @@
 		A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */; };
 		A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
+		DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */; };
+		DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +267,10 @@
 		A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CASBistu.m; sourceTree = "<group>"; };
 		A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICCASViewController.swift; sourceTree = "<group>"; };
 		A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICCASViewController.xib; sourceTree = "<group>"; };
+		DAA2B2F51F7F5783006946B2 /* YZLostDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsView.h; sourceTree = "<group>"; };
+		DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsView.m; sourceTree = "<group>"; };
+		DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsViewController.h; sourceTree = "<group>"; };
+		DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsViewController.m; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA446601EB7463800A0FCAF /* 添加新失物 */,
+				DAA2B2F91F7F7B63006946B2 /* 失误详情 */,
 				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
 				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
 			);
@@ -367,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA446571EB740E300A0FCAF /* cell */,
+				DAA2B2F81F7F578B006946B2 /* 失误详情 */,
 				2CA446541EB740DE00A0FCAF /* PJLostTableView.h */,
 				2CA446551EB740DE00A0FCAF /* PJLostTableView.m */,
 			);
@@ -946,6 +954,24 @@
 			name = YellowPage;
 			sourceTree = "<group>";
 		};
+		DAA2B2F81F7F578B006946B2 /* 失误详情 */ = {
+			isa = PBXGroup;
+			children = (
+				DAA2B2F51F7F5783006946B2 /* YZLostDetailsView.h */,
+				DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */,
+			);
+			path = "失误详情";
+			sourceTree = "<group>";
+		};
+		DAA2B2F91F7F7B63006946B2 /* 失误详情 */ = {
+			isa = PBXGroup;
+			children = (
+				DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */,
+				DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */,
+			);
+			name = "失误详情";
+			sourceTree = "<group>";
+		};
 		FEB058C7D5A8B1767C7C9FAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,10 +1306,12 @@
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
 				A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */,
 				2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */,
+				DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */,
 				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */,
+				DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,

@@ -11,6 +11,7 @@
 #import "PJLostTableView.h"
 #import "ICNetworkManager.h"
 #import "IDMPhotoBrowser.h"
+#import "YZLostDetailsViewController.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate>
 
@@ -104,6 +105,12 @@
     browser.displayToolbar = NO;
     [browser setInitialPageIndex:index - 100];
     [self presentViewController:browser animated:YES completion:nil];
+}
+
+- (void)tableViewClickToDetails:(NSDictionary *)data{
+    YZLostDetailsViewController* vc = [[YZLostDetailsViewController alloc]init];
+    vc.dataSource = data;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

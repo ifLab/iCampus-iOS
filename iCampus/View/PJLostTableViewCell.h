@@ -15,13 +15,15 @@
 @end
 
 @interface PJLostTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *callBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *callBtn;
 @property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *showImgScrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeighConstraint;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *pepleIconImgView;
+//@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+//@property (weak, nonatomic) IBOutlet UIImageView *pepleIconImgView;
 
 @property (nonatomic, strong) NSDictionary *dataSource;
 @property (nonatomic, weak) id<PJLostTableViewCellDelegate> cellDelagate;
