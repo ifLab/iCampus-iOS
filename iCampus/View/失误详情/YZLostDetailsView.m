@@ -8,11 +8,13 @@
 
 #import "YZLostDetailsView.h"
 #import "ICNetworkManager.h"
+#import "IDMPhoto.h"
 
 @implementation YZLostDetailsView{
-    CGFloat _textHeight;
-    UILabel* _detailsLabel;
+    CGFloat _kTextHeight;
+    UILabel* _kDetailsLabel;
     CGRect textFrame;
+    NSArray *_kImageUrlArray;
 }
 
 - (instancetype)init {
@@ -30,14 +32,16 @@
     
     _TimeAndPhoneLabel = [[UILabel alloc]init];
     _TimeAndPhoneLabel.frame = CGRectMake(0, SCREEN_HEIGHT-54, SCREEN_WIDTH-108, 54);
-    [_TimeAndPhoneLabel setBackgroundColor:[UIColor grayColor]];
+    [_TimeAndPhoneLabel setBackgroundColor:[UIColor whiteColor]];
+    _TimeAndPhoneLabel.layer.borderWidth = 2.0f;
+    _TimeAndPhoneLabel.layer.borderColor = RGB(190, 190, 190).CGColor;
     [self addSubview:_TimeAndPhoneLabel];
     
-    _detailsLabel = [[UILabel alloc]init];
-    _detailsLabel.lineBreakMode = NSLineBreakByCharWrapping;
-    _detailsLabel.font = [UIFont systemFontOfSize:14.0f];
-    _detailsLabel.numberOfLines = 0;
-    [_scrollview addSubview:_detailsLabel];
+    _kDetailsLabel = [[UILabel alloc]init];
+    _kDetailsLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    _kDetailsLabel.font = [UIFont systemFontOfSize:14.0f];
+    _kDetailsLabel.numberOfLines = 0;
+    [_scrollview addSubview:_kDetailsLabel];
 }
 
 - (NSArray *)setupImgArr:(NSString *)imgURL {
@@ -49,6 +53,7 @@
         webSite = [NSString stringWithFormat:@"%@%@?api_key=%@&session_token=%@", webSite, dataArr[i][@"url"], [ICNetworkManager defaultManager].APIKey, [ICNetworkManager defaultManager].token];
         [newArr addObject:webSite];
     }
+    _kImageUrlArray = [newArr mutableCopy];
     return newArr;
 }
 
@@ -56,15 +61,16 @@
     _dataSource = dataSource;
     _TimeAndPhoneLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"phone"]];
     _imageArray = [self setupImgArr:[NSString stringWithFormat:@"%@", dataSource[@"imgUrlList"]]];
-    _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
+    _kDetailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     //label自适应高度
-    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_detailsLabel.font,NSFontAttributeName, nil];
-    textFrame = _detailsLabel.frame;
-    textFrame.size.height = [_detailsLabel.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-8, 300) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
-    _detailsLabel.frame = CGRectMake(4, 0, SCREEN_WIDTH-8, textFrame.size.height);
-    _textHeight = textFrame.size.height;
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_kDetailsLabel.font,NSFontAttributeName, nil];
+    textFrame = _kDetailsLabel.frame;
+    textFrame.size.height = [_kDetailsLabel.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-8, 300) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
+    _kDetailsLabel.frame = CGRectMake(4, 0, SCREEN_WIDTH-8, textFrame.size.height);
+    _kTextHeight = textFrame.size.height;
     long k = _imageArray.count;
-    CGFloat lastY = _textHeight + 8 + 308*k;
+    CGFloat lastY = _kTextHeight + 8 + 308*k;
+    //设置contenSize符合整个页面所有控件加起来的长度
     _scrollview.contentSize = CGSizeMake(0, lastY);
     [self setupScrollView:dataSource];
 }
@@ -84,8 +90,22 @@
         [_scrollview addSubview:imageView];
         imageNum++;
         lastY = viewY;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickDetailsImage:)];
+        [imageView addGestureRecognizer:tap];
+        imageView.tag = 100+i;
+        imageView.userInteractionEnabled = YES;
     }
 //    _scrollview.contentSize = CGSizeMake(0, lastY);
+}
+
+- (void)clickDetailsImage:(UITapGestureRecognizer *)tap{
+    NSInteger tag = tap.view.tag;
+    NSMutableArray* newArray = [[NSMutableArray alloc]init];
+    for (NSString* str in _kImageUrlArray) {
+        [newArray addObject:str];
+    }
+    NSArray* array = [IDMPhoto photosWithURLs:newArray];
+    [_LostDetailsViewDelegate clickImage:array andTag:tag];
 }
 
 @end

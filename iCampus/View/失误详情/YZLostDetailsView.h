@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YZLostDetailsViewDelegate <NSObject>
+
+- (void) clickImage:(NSArray*)photos andTag:(NSInteger)tag;
+
+@end
+
 @interface YZLostDetailsView : UIView
-@property (nonatomic, strong) NSDictionary* dataSource;
-@property (nonatomic, strong) UIScrollView* scrollview;
+@property (nonatomic ,strong) NSDictionary* dataSource;
+@property (nonatomic ,strong) UIScrollView* scrollview;
 @property (nonatomic ,strong) UILabel* TimeAndPhoneLabel;
 @property (nonatomic ,strong) NSArray* imageArray;
+@property (nonatomic ,weak) id<YZLostDetailsViewDelegate> LostDetailsViewDelegate;
 @end

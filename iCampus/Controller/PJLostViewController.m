@@ -46,6 +46,8 @@
     
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
+    UIBarButtonItem* backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backBtn;
     
     _kTableView = [PJLostTableView new];
     [self.view addSubview:_kTableView];
@@ -103,6 +105,8 @@
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index {
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:data];
     browser.displayToolbar = NO;
+    browser.displayDoneButton = NO;
+    browser.dismissOnTouch = YES;
     [browser setInitialPageIndex:index - 100];
     [self presentViewController:browser animated:YES completion:nil];
 }
