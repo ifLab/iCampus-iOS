@@ -74,13 +74,13 @@
                     <constraint firstItem="19g-Wu-Qa3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lwX-3U-WbH"/>
                     <constraint firstAttribute="bottom" secondItem="1oY-z6-gbI" secondAttribute="bottom" constant="8" id="mNW-zp-JM2"/>
                     <constraint firstItem="1oY-z6-gbI" firstAttribute="top" secondItem="19g-Wu-Qa3" secondAttribute="bottom" constant="8" id="mTP-H6-asu"/>
-                    <constraint firstAttribute="trailing" secondItem="19g-Wu-Qa3" secondAttribute="trailing" id="oTl-z7-IoJ"/>
                     <constraint firstItem="aUB-aj-U2s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="sXi-dK-7o2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailsLabel" destination="1oY-z6-gbI" id="zDN-QB-3dG"/>
                 <outlet property="scrollViewHeighConstraint" destination="VGN-xG-6Tq" id="zmX-uB-Bs6"/>
+                <outlet property="scrollerViewWidth" destination="VlS-dS-m3K" id="tVW-cg-3jD"/>
                 <outlet property="showImgScrollView" destination="19g-Wu-Qa3" id="oL3-yd-Iy7"/>
                 <outlet property="timeLabel" destination="LLl-OR-PMf" id="aCO-37-uXz"/>
             </connections>

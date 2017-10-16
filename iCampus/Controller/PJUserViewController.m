@@ -37,6 +37,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backBtn;
+    
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
     _footer = views.firstObject;
     self.tableView.tableFooterView = _footer;

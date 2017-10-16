@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *showImgScrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeighConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollerViewWidth;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 //@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;

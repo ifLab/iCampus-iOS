@@ -30,12 +30,19 @@
     _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, SCREEN_HEIGHT - 64)];
     [self addSubview:_scrollview];
     
-    _TimeAndPhoneLabel = [[UILabel alloc]init];
-    _TimeAndPhoneLabel.frame = CGRectMake(0, SCREEN_HEIGHT-54, SCREEN_WIDTH-108, 54);
-    [_TimeAndPhoneLabel setBackgroundColor:[UIColor whiteColor]];
-    _TimeAndPhoneLabel.layer.borderWidth = 2.0f;
-    _TimeAndPhoneLabel.layer.borderColor = RGB(190, 190, 190).CGColor;
-    [self addSubview:_TimeAndPhoneLabel];
+    _phoneLabel = [[UILabel alloc]init];
+    _phoneLabel.frame = CGRectMake(0, SCREEN_HEIGHT-54, SCREEN_WIDTH-108, 27);
+//    _phoneLabel.layer.borderWidth = 1.0f;
+//    _phoneLabel.layer.borderColor = RGB(190, 190, 190).CGColor;
+    [_phoneLabel setBackgroundColor:RGB(245, 245, 245)];
+    _phoneLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:_phoneLabel];
+    
+    _timeLabel = [[UILabel alloc]init];
+    _timeLabel.frame = CGRectMake(0, SCREEN_HEIGHT-27, SCREEN_WIDTH-108, 27);
+    [_timeLabel setBackgroundColor:RGB(245, 245, 245)];
+    _timeLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:_timeLabel];
     
     _kDetailsLabel = [[UILabel alloc]init];
     _kDetailsLabel.lineBreakMode = NSLineBreakByCharWrapping;
@@ -59,7 +66,9 @@
 
 - (void)setDataSource:(NSDictionary *)dataSource{
     _dataSource = dataSource;
-    _TimeAndPhoneLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"phone"]];
+    NSString *phoneStr = @"电话:";
+    _phoneLabel.text = [phoneStr stringByAppendingString:[NSString stringWithFormat:@"%@", dataSource[@"phone"]]];
+    _timeLabel.text = [NSString stringWithFormat:@"%@",dataSource[@"createTime"]];
     _imageArray = [self setupImgArr:[NSString stringWithFormat:@"%@", dataSource[@"imgUrlList"]]];
     _kDetailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     //label自适应高度

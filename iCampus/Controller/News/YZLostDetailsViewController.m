@@ -9,6 +9,7 @@
 #import "YZLostDetailsViewController.h"
 #import "YZLostDetailsView.h"
 #import "IDMPhotoBrowser.h"
+#import <UShareUI/UShareUI.h>
 
 @interface YZLostDetailsViewController ()<YZLostDetailsViewDelegate>{
     YZLostDetailsView* _kYZLostDetailsView;
@@ -56,11 +57,46 @@
 }
 
 - (void) pressChatBtn{
-    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", _dataSource[@"phone"]]]];
 }
 
 - (void) pressShareBtn{
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        [self shareImageToPlatformType:platformType];
+    }];
+}
+
+- (void)shareImageToPlatformType:(UMSocialPlatformType)platformType{
+    UIImage *image = [self imageFromView:_kYZLostDetailsView.scrollview];
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
+    //创建图片内容对象
+    UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
+    [shareObject setShareImage:image];
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+//            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+//            NSLog(@"response data is %@",data);
+        }
+    }];
+}
+
+- (UIImage *)imageFromView:(UIView *)theView
+{
+    UIGraphicsBeginImageContext(theView.frame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [theView.layer renderInContext: context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 - (void) clickImage:(NSArray*)photos andTag:(NSInteger)tag{

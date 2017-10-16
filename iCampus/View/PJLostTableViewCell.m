@@ -77,6 +77,7 @@
     CGFloat marginX = 7.5;
     int itemNums = 0;
     CGFloat lastItemMaxX = 0;
+    CGFloat scViewWidth = 0;
     
     for (int i = 0; i < dataArr.count; i++) {
         CGFloat itemX = marginX + (imgH+marginX) * itemNums;
@@ -91,7 +92,10 @@
         [imageView addGestureRecognizer:tap];
         imageView.tag = 100 + i;
         imageView.userInteractionEnabled = true;
+        scViewWidth += imgW;
     }
+    scViewWidth += 15;
+    _scrollerViewWidth.constant = scViewWidth;
     self.showImgScrollView.showsHorizontalScrollIndicator = NO;
     [self.showImgScrollView setContentSize:CGSizeMake(lastItemMaxX, 0)];
 }
