@@ -55,6 +55,7 @@
                                    }
                                    failure:^(NSError *error) {
                                        // error信息要怎么处理？
+                                       NSLog(@"获取Map信息失败,%@",error);
                                    }];
 }
 

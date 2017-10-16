@@ -43,16 +43,13 @@
 	<string>3.3.0.4</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-        <!-- 微信 URL Scheme 白名单-->
-        <string>wechat</string>
-        <string>weixin</string>
-        
-        <!-- 新浪微博 URL Scheme 白名单-->
-        <string>sinaweibohd</string>
-        <string>sinaweibo</string>
-        <string>sinaweibosso</string>
-        <string>weibosdk</string>
-        <string>weibosdk2.5</string>
+		<string>wechat</string>
+		<string>weixin</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -124,6 +121,12 @@
 	<string>在您登录时，需要访问您的联系人信息</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>在您发布失物招领时, 需要访问您的照片</string>
+	<key>NSLocationUsageDescription</key>
+	<string>在您使用地图时，需要使用定位服务</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>在您使用地图时，需要使用定位服务</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>在您使用地图时，需要使用定位服务</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
