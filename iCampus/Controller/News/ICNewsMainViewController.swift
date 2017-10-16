@@ -43,11 +43,11 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
         sc.selectionStyle = .fullWidthStripe
         sc.selectionIndicatorLocation = .down
-        sc.selectionIndicatorColor = .orange
+        sc.selectionIndicatorColor = .blue
         sc.selectionIndicatorHeight = 3
         sc.titleFormatter =  {
             (_, title, _, _) -> NSAttributedString? in
-            let attr = NSAttributedString(string: title!, attributes: [NSForegroundColorAttributeName: UIColor.red])
+            let attr = NSAttributedString(string: title!, attributes: [NSForegroundColorAttributeName: UIColor.black])
             return attr
         }
         return sc
@@ -71,6 +71,14 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             }
         }
         childControllers[0].headerBeginRefresh()
+        
+        /*************************/
+        /* 测试分享使用，后期删除 */
+        
+        let shareBtn = UIBarButtonItem(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
+        
+        self.navigationItem.rightBarButtonItem = shareBtn
+        /*************************/
     }
     
 //MARK: UIScrollViewDelegate
@@ -95,5 +103,38 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             }
         }
     }
+    
+    /*************************/
+    /* 测试分享使用，后期删除 */
+    
+    //弹出分享面板
+    func shareAction() {
+        print("share")
+        UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
+        UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
+            
+            //分享文本测试
+            let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
+            messageObject.text = "社会化组件UShare将各大社交平台接入您的应用，快速武装App。iBistu 分享测试"//分享的文本
+            
+            //分享图片
+            let shareObject:UMShareImageObject = UMShareImageObject.init()
+            shareObject.shareImage = "https://mobile.umeng.com/images/pic/home/social/img-1.png"
+            messageObject.shareObject = shareObject
+
+            
+            UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
+                if error != nil {
+                    print("Share Fail with error ：%@", error)
+                }else{
+                    print("Share succeed")
+                }
+            })
+            
+        }
+    }
+    
+    /* END */
+    /*************************/
     
 }

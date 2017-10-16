@@ -22,3 +22,8 @@
 #import "PJUserUpdatePWViewController.h"
 #import "PJUser.h"
 #import "CASBistu.h"
+
+//友盟分享桥接文件
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
+

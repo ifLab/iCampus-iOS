@@ -27,9 +27,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        //集成 友盟分享
+        
+        /* 打开日志 */
+        UMSocialManager.default().openLog(true)
+        
+        /* 设置友盟appkey */
+        UMSocialManager.default().umSocialAppkey = "59d0e2f69f06fd268d00003e"
+        
+        /* 设置第三方平台 */
+        self.umengSharePlatforms()
+        //end
         return true
     }
     
+    //设置友盟第三方账号
+    func umengSharePlatforms() {
+        //微信
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatSession, appKey: "wx0ef1e170ebdfdc4a", appSecret: "725104c3ba35661df23eb970ce57df47", redirectURL: nil)
+        //新浪微博
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.sina, appKey: "2449930345", appSecret: "089240e283d1250d819e923de41aabd0", redirectURL: nil)
+        //QQ 暂未申请
+    }
+    
+    //友盟回调机制
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let result = UMSocialManager.default().handleOpen(url)
+        if  result {
+            print("分享成功")
+        }else{
+            print("分享失败")
+        }
+        
+        return true
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

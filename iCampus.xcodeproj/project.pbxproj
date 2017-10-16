@@ -101,6 +101,19 @@
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
 		DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */; };
 		DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */; };
+		F50CDF751F935B1200264AB4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF741F935B1200264AB4 /* libsqlite3.tbd */; };
+		F50CDF771F935B2C00264AB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */; };
+		F50CDF781F9366ED00264AB4 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */; };
+		F50CDF791F9366F200264AB4 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */; };
+		F50CDF7A1F9366F700264AB4 /* UMSocialSDKPromptResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */; };
+		F50CDF7B1F9366FC00264AB4 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF701F935A1800264AB4 /* libUMSocialLog.a */; };
+		F50CDF7C1F93670100264AB4 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */; };
+		F50CDF7D1F93670300264AB4 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF731F935A1800264AB4 /* UShareUI.framework */; };
+		F50FB0D91F93889400B8CBBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */; };
+		F50FB0DB1F93889D00B8CBBE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */; };
+		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
+		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
+		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +285,22 @@
 		DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsViewController.h; sourceTree = "<group>"; };
 		DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsViewController.m; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50CDF631F935A1800264AB4 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		F50CDF641F935A1800264AB4 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		F50CDF661F935A1800264AB4 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		F50CDF671F935A1800264AB4 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		F50CDF691F935A1800264AB4 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		F50CDF6A1F935A1800264AB4 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKPromptResources.bundle; sourceTree = "<group>"; };
+		F50CDF701F935A1800264AB4 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
+		F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		F50CDF731F935A1800264AB4 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
+		F50CDF741F935B1200264AB4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,15 +309,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50FB0DB1F93889D00B8CBBE /* CoreTelephony.framework in Frameworks */,
+				F50FB0D91F93889400B8CBBE /* SystemConfiguration.framework in Frameworks */,
+				F50CDF771F935B2C00264AB4 /* CoreGraphics.framework in Frameworks */,
+				F50CDF791F9366F200264AB4 /* UMSocialNetwork.framework in Frameworks */,
+				F50CDF751F935B1200264AB4 /* libsqlite3.tbd in Frameworks */,
 				A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */,
 				A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */,
+				F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */,
+				F50CDF781F9366ED00264AB4 /* UMSocialCore.framework in Frameworks */,
 				A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */,
 				A90F4BBC1E9733AA00DDD6BC /* libicucore.tbd in Frameworks */,
 				A90F4BBA1E9733A100DDD6BC /* libz.tbd in Frameworks */,
+				F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */,
 				A90F4BB91E97338E00DDD6BC /* JavaScriptCore.framework in Frameworks */,
 				A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */,
+				F50CDF7B1F9366FC00264AB4 /* libUMSocialLog.a in Frameworks */,
 				A90F4B9F1E96998600DDD6BC /* MOBFoundationEx.framework in Frameworks */,
 				DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */,
+				F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */,
+				F50CDF7D1F93670300264AB4 /* UShareUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +741,10 @@
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */,
+				F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */,
+				F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */,
+				F50CDF741F935B1200264AB4 /* libsqlite3.tbd */,
 				A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */,
 				A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */,
 				A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */,
@@ -833,6 +877,7 @@
 		A90F4B7D1E96998600DDD6BC /* External */ = {
 			isa = PBXGroup;
 			children = (
+				F50CDF601F935A1800264AB4 /* UMSocial */,
 				2CA446841EB8B84900A0FCAF /* Extension */,
 				A90F4B7E1E96998600DDD6BC /* SMS_SDK */,
 			);
@@ -972,6 +1017,81 @@
 			name = "失误详情";
 			sourceTree = "<group>";
 		};
+		F50CDF601F935A1800264AB4 /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF611F935A1800264AB4 /* SocialLibraries */,
+				F50CDF6B1F935A1800264AB4 /* UMSocialSDK */,
+				F50CDF6F1F935A1800264AB4 /* UMSocialSDKPlugin */,
+				F50CDF711F935A1800264AB4 /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		F50CDF611F935A1800264AB4 /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF621F935A1800264AB4 /* QQ */,
+				F50CDF651F935A1800264AB4 /* Sina */,
+				F50CDF681F935A1800264AB4 /* WeChat */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		F50CDF621F935A1800264AB4 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF631F935A1800264AB4 /* libSocialQQ.a */,
+				F50CDF641F935A1800264AB4 /* UMSocialQQHandler.h */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		F50CDF651F935A1800264AB4 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF661F935A1800264AB4 /* libSocialSina.a */,
+				F50CDF671F935A1800264AB4 /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		F50CDF681F935A1800264AB4 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF691F935A1800264AB4 /* libSocialWeChat.a */,
+				F50CDF6A1F935A1800264AB4 /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		F50CDF6B1F935A1800264AB4 /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */,
+				F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */,
+				F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		F50CDF6F1F935A1800264AB4 /* UMSocialSDKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF701F935A1800264AB4 /* libUMSocialLog.a */,
+			);
+			path = UMSocialSDKPlugin;
+			sourceTree = "<group>";
+		};
+		F50CDF711F935A1800264AB4 /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */,
+				F50CDF731F935A1800264AB4 /* UShareUI.framework */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
 		FEB058C7D5A8B1767C7C9FAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1106,7 +1226,9 @@
 				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
 				2CA446BF1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib in Resources */,
+				F50CDF7A1F9366F700264AB4 /* UMSocialSDKPromptResources.bundle in Resources */,
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
+				F50CDF7C1F93670100264AB4 /* UMSocialSDKResources.bundle in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
 				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
 				2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */,
@@ -1157,7 +1279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		58FCA5A4F929A2CE92DC05D2 /* [CP] Embed Pods Frameworks */ = {
@@ -1266,7 +1388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1494,10 +1616,59 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iCampus/External/SMS_SDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialUI",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					UM_Swift,
+					"DEBUG=1",
+					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = iCampus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/Sina",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CAS_iOS\"",
+					"-framework",
+					"\"DACircularProgress\"",
+					"-framework",
+					"\"DTCoreText\"",
+					"-framework",
+					"\"DTFoundation\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IDMPhotoBrowser\"",
+					"-framework",
+					"\"JXBAdPageView\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TTGTagCollectionView\"",
+					"-framework",
+					"\"pop\"",
+					"-framework",
+					"\"serverURL\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
@@ -1516,10 +1687,58 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iCampus/External/SMS_SDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialUI",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					UM_Swift,
 				);
 				INFOPLIST_FILE = iCampus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/Sina",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CAS_iOS\"",
+					"-framework",
+					"\"DACircularProgress\"",
+					"-framework",
+					"\"DTCoreText\"",
+					"-framework",
+					"\"DTFoundation\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IDMPhotoBrowser\"",
+					"-framework",
+					"\"JXBAdPageView\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TTGTagCollectionView\"",
+					"-framework",
+					"\"pop\"",
+					"-framework",
+					"\"serverURL\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
