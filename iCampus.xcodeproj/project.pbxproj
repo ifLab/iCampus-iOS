@@ -58,7 +58,6 @@
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
 		A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B091E9690E000DDD6BC /* Main.storyboard */; };
-		A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */; };
 		A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B0E1E9690E000DDD6BC /* LaunchScreen.storyboard */; };
 		A90F4B1B1E9690E000DDD6BC /* iCampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B1A1E9690E000DDD6BC /* iCampusTests.swift */; };
 		A90F4B261E9690E000DDD6BC /* iCampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B251E9690E000DDD6BC /* iCampusUITests.swift */; };
@@ -114,6 +113,7 @@
 		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
 		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
 		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
+		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,7 +225,6 @@
 		A90F4B051E9690E000DDD6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A90F4B071E9690E000DDD6BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A90F4B0A1E9690E000DDD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A90F4B0F1E9690E000DDD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90F4B111E9690E000DDD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90F4B161E9690E000DDD6BC /* iCampusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCampusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +300,7 @@
 		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -796,8 +796,8 @@
 				A90F4B051E9690E000DDD6BC /* AppDelegate.swift */,
 				A90F4B071E9690E000DDD6BC /* ViewController.swift */,
 				A90F4B091E9690E000DDD6BC /* Main.storyboard */,
-				A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */,
 				A90F4B0E1E9690E000DDD6BC /* LaunchScreen.storyboard */,
+				F5C73C901F97487B0090D578 /* Assets.xcassets */,
 				A90F4B111E9690E000DDD6BC /* Info.plist */,
 				A90F4B821E96998600DDD6BC /* Model */,
 				A90F4B8F1E96998600DDD6BC /* View */,
@@ -1230,7 +1230,6 @@
 				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
 				F50CDF7C1F93670100264AB4 /* UMSocialSDKResources.bundle in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
-				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
 				2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */,
 				2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */,
 				A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */,
@@ -1244,6 +1243,7 @@
 				2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */,
 				A90F4BAB1E96998600DDD6BC /* ICSimpleImageViewCell.xib in Resources */,
 				A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */,
+				F5C73C911F9748860090D578 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,7 +1279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		58FCA5A4F929A2CE92DC05D2 /* [CP] Embed Pods Frameworks */ = {
@@ -1388,7 +1388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

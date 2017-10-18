@@ -249,6 +249,24 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         verfyCodeButton.backgroundColor = loginAndRegisterButton.backgroundColor
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
+        
+        //ZK - 美化登录界面
+        emailField.leftView = UIImageView(image:(UIImage (named:"用户名.png")))
+        emailField.leftViewMode = UITextFieldViewMode.always
+        
+        passwordField.leftView = UIImageView(image:(UIImage (named: "密码.png")))
+        passwordField.leftViewMode = UITextFieldViewMode.always
+        
+        phoneField.leftView = UIImageView(image:(UIImage (named: "手机.png")))
+        phoneField.leftViewMode = UITextFieldViewMode.always
+        
+        verfyCodeField.leftView = UIImageView(image:(UIImage (named: "验证码.png")))
+        verfyCodeField.leftViewMode = UITextFieldViewMode.always
+        
+        verfyPasswordField.leftView = UIImageView(image:(UIImage (named: "密码.png")))
+        verfyPasswordField.leftViewMode = UITextFieldViewMode.always;
+        
+        
     }
     
     func keyboardWillChangeFrame(notification: Notification) {
