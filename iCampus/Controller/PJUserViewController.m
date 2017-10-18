@@ -33,7 +33,7 @@
 }
 
 - (void)initView {
-    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -70,6 +70,8 @@
         [self.navigationController popViewControllerAnimated:NO];
         [ICNetworkManager defaultManager].token = @"";
         [PJUser logOut];
+        
+        self.tabBarController.selectedIndex = 0;
     }];
 }
 

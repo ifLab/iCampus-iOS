@@ -27,3 +27,5 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
 
+//ZK TabBarController
+#import "ZKTabBarViewController.h"

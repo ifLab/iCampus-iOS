@@ -114,6 +114,7 @@
 		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
 		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
+		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +302,8 @@
 		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
+		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -830,6 +833,7 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F5C73C921F9762DC0090D578 /* Tabbar */,
 				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				2CA446901EB8E87300A0FCAF /* User */,
 				2CA446821EB8A47D00A0FCAF /* Setting */,
@@ -1090,6 +1094,15 @@
 				F50CDF731F935A1800264AB4 /* UShareUI.framework */,
 			);
 			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		F5C73C921F9762DC0090D578 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F5C73C931F9763160090D578 /* ZKTabBarViewController.h */,
+				F5C73C941F9763160090D578 /* ZKTabBarViewController.m */,
+			);
+			name = Tabbar;
 			sourceTree = "<group>";
 		};
 		FEB058C7D5A8B1767C7C9FAD /* Pods */ = {
@@ -1445,6 +1458,7 @@
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
+				F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */,
 				2CA446A61EBA0DDB00A0FCAF /* PJUserAandCViewController.m in Sources */,
 				2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */,
 				2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */,

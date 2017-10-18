@@ -99,8 +99,9 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                             if let self_ = self {
                                                 let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
                                                 controller.view.frame = UIScreen.main.bounds
-                                                let navcontroller = UINavigationController(rootViewController: controller)
-                                                self_.present(navcontroller, animated: true, completion: nil)
+//                                                let navcontroller = UINavigationController(rootViewController: controller)
+//                                                self_.present(navcontroller, animated: true, completion: nil)
+                                                self_.dismiss(animated: true, completion: nil)
                                             }
                         },
                                          failure: {

@@ -23,9 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 _ in
             }
         }
-        let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        navigationController = UINavigationController(rootViewController: controller)
-        window?.rootViewController = navigationController
+        //        let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        //        navigationController = UINavigationController(rootViewController: controller)
+        //        window?.rootViewController = navigationController
+        
+        //4.0版本 主要架构变更为TabBarController
+        let tabBarC = ZKTabBarViewController.init()
+        window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
         
         //集成 友盟分享
