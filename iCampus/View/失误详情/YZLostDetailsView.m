@@ -25,21 +25,20 @@
 
 - (void) setupUI{
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor grayColor];
     
-    _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, SCREEN_HEIGHT - 64)];
+    _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 12, self.frame.size.width, SCREEN_HEIGHT - 64)];
+    _scrollview.backgroundColor = [UIColor whiteColor];
     [self addSubview:_scrollview];
     
     _phoneLabel = [[UILabel alloc]init];
-    _phoneLabel.frame = CGRectMake(0, SCREEN_HEIGHT-54, SCREEN_WIDTH-108, 27);
-//    _phoneLabel.layer.borderWidth = 1.0f;
-//    _phoneLabel.layer.borderColor = RGB(190, 190, 190).CGColor;
+    _phoneLabel.frame = CGRectMake(0, SCREEN_HEIGHT-54, SCREEN_WIDTH, 27);
     [_phoneLabel setBackgroundColor:RGB(245, 245, 245)];
     _phoneLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_phoneLabel];
     
     _timeLabel = [[UILabel alloc]init];
-    _timeLabel.frame = CGRectMake(0, SCREEN_HEIGHT-27, SCREEN_WIDTH-108, 27);
+    _timeLabel.frame = CGRectMake(0, SCREEN_HEIGHT-27, SCREEN_WIDTH, 27);
     [_timeLabel setBackgroundColor:RGB(245, 245, 245)];
     _timeLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_timeLabel];
@@ -104,7 +103,6 @@
         imageView.tag = 100+i;
         imageView.userInteractionEnabled = YES;
     }
-//    _scrollview.contentSize = CGSizeMake(0, lastY);
 }
 
 - (void)clickDetailsImage:(UITapGestureRecognizer *)tap{

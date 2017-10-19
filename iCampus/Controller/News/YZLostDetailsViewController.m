@@ -10,9 +10,11 @@
 #import "YZLostDetailsView.h"
 #import "IDMPhotoBrowser.h"
 #import <UShareUI/UShareUI.h>
+#import "OXExpandingButtonBar.h"
 
 @interface YZLostDetailsViewController ()<YZLostDetailsViewDelegate>{
     YZLostDetailsView* _kYZLostDetailsView;
+    OXExpandingButtonBar *_bar;
 }
 
 @end
@@ -31,20 +33,38 @@
     _kYZLostDetailsView.LostDetailsViewDelegate = self;
     self.title = @"失误详情";
     [self.view addSubview:_kYZLostDetailsView];
-    _PhoneBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _PhoneBtn.frame = CGRectMake(SCREEN_WIDTH-54, SCREEN_HEIGHT-54, 54, 54);
-    [_PhoneBtn setBackgroundColor:RGB(24, 116, 205)];
-    [_PhoneBtn addTarget:self action:@selector(pressPhoneBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_PhoneBtn];
     
-    _ChatBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _ChatBtn.frame = CGRectMake(SCREEN_WIDTH-108, SCREEN_HEIGHT-54, 54, 54);
-    [_ChatBtn setBackgroundColor:RGB(176, 226, 255)];
-    [_ChatBtn addTarget:self action:@selector(pressChatBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_ChatBtn];
+    [self CreatMainBtn];
     
     UIBarButtonItem* ShareBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressShareBtn)];
     self.navigationItem.rightBarButtonItem = ShareBtn;
+}
+
+- (void)CreatMainBtn{
+    UIButton *mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    mainBtn.frame = CGRectMake(0, 0, 50, 50);
+    [mainBtn setBackgroundImage:[UIImage imageNamed:@"arrows.png"] forState:UIControlStateNormal];
+    mainBtn.transform = CGAffineTransformMakeRotation(0);
+    mainBtn.alpha = 0.7;
+    
+    _PhoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_PhoneBtn setImage:[UIImage imageNamed:@"phoneBtn.png"] forState:UIControlStateNormal];
+    _PhoneBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _PhoneBtn.frame = CGRectMake(0, 0, 50, 50);
+    [_PhoneBtn addTarget:self action:@selector(pressPhoneBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    _ChatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _ChatBtn.frame = CGRectMake(0, 0, 50, 50);
+    [_ChatBtn setImage:[UIImage imageNamed:@"chatBtn.png"] forState:UIControlStateNormal];
+    _ChatBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [_ChatBtn addTarget:self action:@selector(pressChatBtn) forControlEvents:UIControlEventTouchUpInside];
+
+    NSArray *buttons = [NSArray arrayWithObjects:_PhoneBtn,_ChatBtn, nil];
+    _bar = [[OXExpandingButtonBar alloc] initWithMainButton:mainBtn buttons:buttons center:CGPointMake(SCREEN_WIDTH-40, SCREEN_HEIGHT-130)];
+    [_bar setMainRotate:-M_PI];
+    [_bar setMainReRotate:0];
+    [_bar setAnimated:YES];
+    [self.view addSubview:_bar];
 }
 
 - (void)setDataSource:(NSDictionary *)dataSource{

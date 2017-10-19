@@ -100,6 +100,7 @@
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
 		DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */; };
 		DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */; };
+		DAABAB0A1F98E61800E09C3B /* OXExpandingButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */; };
 		F50CDF751F935B1200264AB4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF741F935B1200264AB4 /* libsqlite3.tbd */; };
 		F50CDF771F935B2C00264AB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */; };
 		F50CDF781F9366ED00264AB4 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */; };
@@ -284,6 +285,8 @@
 		DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsView.m; sourceTree = "<group>"; };
 		DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsViewController.h; sourceTree = "<group>"; };
 		DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsViewController.m; sourceTree = "<group>"; };
+		DAABAB081F98E60D00E09C3B /* OXExpandingButtonBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OXExpandingButtonBar.h; sourceTree = "<group>"; };
+		DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OXExpandingButtonBar.m; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50CDF631F935A1800264AB4 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
 		F50CDF641F935A1800264AB4 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
@@ -881,6 +884,7 @@
 		A90F4B7D1E96998600DDD6BC /* External */ = {
 			isa = PBXGroup;
 			children = (
+				DAABAB071F98E50900E09C3B /* OXExpandingButtonBar */,
 				F50CDF601F935A1800264AB4 /* UMSocial */,
 				2CA446841EB8B84900A0FCAF /* Extension */,
 				A90F4B7E1E96998600DDD6BC /* SMS_SDK */,
@@ -1019,6 +1023,15 @@
 				DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */,
 			);
 			name = "失误详情";
+			sourceTree = "<group>";
+		};
+		DAABAB071F98E50900E09C3B /* OXExpandingButtonBar */ = {
+			isa = PBXGroup;
+			children = (
+				DAABAB081F98E60D00E09C3B /* OXExpandingButtonBar.h */,
+				DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */,
+			);
+			path = OXExpandingButtonBar;
 			sourceTree = "<group>";
 		};
 		F50CDF601F935A1800264AB4 /* UMSocial */ = {
@@ -1461,6 +1474,7 @@
 				F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */,
 				2CA446A61EBA0DDB00A0FCAF /* PJUserAandCViewController.m in Sources */,
 				2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */,
+				DAABAB0A1F98E61800E09C3B /* OXExpandingButtonBar.m in Sources */,
 				2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */,
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,

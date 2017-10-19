@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
-    [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:1];
+    [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,41 +58,29 @@
 }
 
 - (void)CreatPublishBtn{
-    _window = [[UIWindow alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, SCREEN_HEIGHT-130, 50, 50)];
-    _window.windowLevel = UIWindowLevelAlert + 1;
-    _window.layer.cornerRadius = 12;
-    _window.layer.masksToBounds = YES;
-    _window.hidden = NO;
-    
     _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_publishBtn setImage:[UIImage imageNamed:@"publish.png"] forState:UIControlStateNormal];
-    _publishBtn.frame = CGRectMake(0, 0, 50, 50);
+    _publishBtn.frame = CGRectMake(SCREEN_WIDTH, SCREEN_HEIGHT-130, 50, 50);
     [_publishBtn addTarget:self action:@selector(nextItemClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.window addSubview:_publishBtn];
-    [_window makeKeyAndVisible];
+    [self.view addSubview:_publishBtn];
     
-    CGAffineTransform transform =CGAffineTransformRotate(_window.transform,M_PI);
+    CGAffineTransform transform =CGAffineTransformRotate(_publishBtn.transform,-M_PI);
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDelegate:self];
-    _window.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-130, 50, 50);
-    [_window setTransform:transform];
-    [UIView setAnimationDuration:1.5];
+    [_publishBtn setTransform:transform];
+    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-130, 50, 50);
+    [UIView setAnimationDuration:1];
     [UIView commitAnimations];
-}
-
-- (void)resignWindow{
-    [_window resignKeyWindow];
-    _window = nil;
 }
 
 - (void)nextItemClick {
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
     PJNewLostViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
     vc.returnblock = ^{
-        [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
+        [self ClearPublishBtn];
     };
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    [self resignWindow];
 }
 
 - (void)getDataFromHttp {
@@ -142,21 +130,29 @@
     browser.dismissOnTouch = YES;
     [browser setInitialPageIndex:index - 100];
     [self presentViewController:browser animated:YES completion:nil];
-    [self resignWindow];
 }
 
 - (void)willDisappearPhotoBrowser:(IDMPhotoBrowser *)photoBrowser{
-    [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
+    [self ClearPublishBtn];
 }
 
 - (void)tableViewClickToDetails:(NSDictionary *)data{
     YZLostDetailsViewController* vc = [[YZLostDetailsViewController alloc]init];
     vc.dataSource = data;
     vc.returnblock = ^{
-        [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
+        [self ClearPublishBtn];
     };
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    [self resignWindow];
+}
+
+- (void)ClearPublishBtn{
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            [view removeFromSuperview];
+        }
+    }
+    [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
 }
 
 @end
