@@ -10,4 +10,8 @@
 
 @interface PJLostViewController : UIViewController
 
+@property(strong,nonatomic)UIButton *publishBtn;
+@property(strong,nonatomic)UIWindow *window;
+
 @end
+
