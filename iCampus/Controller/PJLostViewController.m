@@ -59,7 +59,7 @@
 
 - (void)CreatPublishBtn{
     _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_publishBtn setImage:[UIImage imageNamed:@"publish.png"] forState:UIControlStateNormal];
+    [_publishBtn setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
     _publishBtn.frame = CGRectMake(SCREEN_WIDTH, SCREEN_HEIGHT-130, 50, 50);
     [_publishBtn addTarget:self action:@selector(nextItemClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_publishBtn];

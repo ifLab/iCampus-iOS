@@ -39,9 +39,9 @@
     _kMapView.mapDelegate = self;
     [self.view addSubview:_kMapView];
     
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"导航_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"导航"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
-    self.navigationItem.rightBarButtonItem.enabled = false;
+    self.navigationItem.rightBarButtonItem.enabled = true;
 
     [self getDataFromHttp];
 }

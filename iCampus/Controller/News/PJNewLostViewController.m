@@ -44,7 +44,7 @@
     _detailsTextView.delegate = self;
     _nameTextField.delegate = self;
     _nameTextField.enabled = false;
-    _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].name];
+    _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].first_name];
     _phoneTextField.delegate = self;
     
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];

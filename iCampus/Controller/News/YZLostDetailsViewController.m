@@ -36,26 +36,26 @@
     
     [self CreatMainBtn];
     
-    UIBarButtonItem* ShareBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressShareBtn)];
+    UIBarButtonItem *ShareBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStyleDone target:self action:@selector(pressShareBtn)];
     self.navigationItem.rightBarButtonItem = ShareBtn;
 }
 
 - (void)CreatMainBtn{
     UIButton *mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     mainBtn.frame = CGRectMake(0, 0, 50, 50);
-    [mainBtn setBackgroundImage:[UIImage imageNamed:@"arrows.png"] forState:UIControlStateNormal];
+    [mainBtn setBackgroundImage:[UIImage imageNamed:@"arrows"] forState:UIControlStateNormal];
     mainBtn.transform = CGAffineTransformMakeRotation(0);
     mainBtn.alpha = 0.7;
     
     _PhoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_PhoneBtn setImage:[UIImage imageNamed:@"phoneBtn.png"] forState:UIControlStateNormal];
+    [_PhoneBtn setImage:[UIImage imageNamed:@"phoneBtn"] forState:UIControlStateNormal];
     _PhoneBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     _PhoneBtn.frame = CGRectMake(0, 0, 50, 50);
     [_PhoneBtn addTarget:self action:@selector(pressPhoneBtn) forControlEvents:UIControlEventTouchUpInside];
     
     _ChatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _ChatBtn.frame = CGRectMake(0, 0, 50, 50);
-    [_ChatBtn setImage:[UIImage imageNamed:@"chatBtn.png"] forState:UIControlStateNormal];
+    [_ChatBtn setImage:[UIImage imageNamed:@"chatBtn"] forState:UIControlStateNormal];
     _ChatBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [_ChatBtn addTarget:self action:@selector(pressChatBtn) forControlEvents:UIControlEventTouchUpInside];
 

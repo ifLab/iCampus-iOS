@@ -18,7 +18,7 @@
 }
 
 - (void)initView{
-    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
+    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.delegate = self;
     self.dataSource = self;
     [self registerNib:[UINib nibWithNibName:@"PJYellowPageDetailsTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJYellowPageDetailsTableViewCell"];

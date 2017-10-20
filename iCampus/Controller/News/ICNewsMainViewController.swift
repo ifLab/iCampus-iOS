@@ -75,8 +75,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         /*************************/
         /* 测试分享使用，后期删除 */
         
-        let shareBtn = UIBarButtonItem(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
-        
+        let shareBtn = UIBarButtonItem.init(image: UIImage.init(named: "share1"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
         self.navigationItem.rightBarButtonItem = shareBtn
         /*************************/
     }
@@ -125,9 +124,9 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             
             UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
                 if error != nil {
-                    print("Share Fail with error ：%@", error)
+//                    print("Share Fail with error ：%@", error)
                 }else{
-                    print("Share succeed")
+//                    print("Share succeed")
                 }
             })
             
