@@ -19,7 +19,7 @@
 @implementation PJMyLostViewController
 {
     PJMyPublishLostTableView *_kTableView;
-    
+    NSMutableArray *_freshData;
     int page;
     NSString *_freshFlag;
 }
@@ -54,7 +54,7 @@
 }
 
 - (void)getDataFromHttp {
-    NSString *filterStr = [NSString stringWithFormat:@"(isFound=false)And(author=%@)", [PJUser currentUser].name];
+    NSString *filterStr = [NSString stringWithFormat:@"(isFound=false)And(author=%@)", [PJUser currentUser].first_name];
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":filterStr};
     [PJHUD showWithStatus:@""];
@@ -66,11 +66,13 @@
                                        
                                        [PJHUD dismiss];
                                        NSArray *data = dic[@"resource"];
+                                       _freshData = (NSMutableArray*)[_freshData arrayByAddingObjectsFromArray:data];
                                        if (data.count) {
                                            if ([_freshFlag isEqualToString:headerRefresh]) {
                                                [_kTableView.tableDataArr removeAllObjects];
+                                               _freshData = [data mutableCopy];
                                            }
-                                           _kTableView.tableDataArr = [data mutableCopy];
+                                           _kTableView.tableDataArr = [_freshData mutableCopy];
                                        } else {
                                            [PJHUD showErrorWithStatus:@"没有数据了"];
                                        }

@@ -98,6 +98,7 @@
                                        if (data.count) {
                                            if ([_freshFlag isEqualToString:headerRefresh]) {
                                                [_kTableView.dataArr removeAllObjects];
+                                               _freshData = [data mutableCopy];
                                            }
                                            _kTableView.dataArr = [_freshData mutableCopy];
                                        } else {

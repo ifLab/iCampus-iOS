@@ -25,6 +25,13 @@
     
 }
 
+- (void)setFrame:(CGRect)frame{
+    if (frame.size.height>=199) {
+        frame.size.height -= 8;
+    }
+    [super setFrame:frame];
+}
+
 - (void)setDataSource:(NSDictionary *)dataSource {
     _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
