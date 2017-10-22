@@ -11,7 +11,7 @@
 @protocol PJMyPublishLostTableViewDelegate <NSObject>
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)trashClick:(NSIndexPath*)indexPath;
 
 @end
 

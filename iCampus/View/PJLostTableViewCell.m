@@ -21,6 +21,7 @@
 }
 
 - (void)setFrame:(CGRect)frame {
+    frame.origin.y += 8;
     frame.size.height -= 8;    // 减掉的值就是分隔线的高度
     [super setFrame:frame];
 }

@@ -12,7 +12,7 @@
 #import "IDMPhotoBrowser.h"
 
 
-@interface PJMyLostViewController () <PJMyPublishLostTableViewDelegate>
+@interface PJMyLostViewController () <PJMyPublishLostTableViewDelegate,IDMPhotoBrowserDelegate>
 
 @end
 
@@ -95,7 +95,7 @@
     [self getDataFromHttp];
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)trashClick:(NSIndexPath*)indexPath{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除失物" message:@"是否找到失物主人？" preferredStyle: UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self updateLost:indexPath.row];
@@ -106,7 +106,6 @@
         _kTableView.editing = NO;
     }]];
     [self presentViewController:alert animated:true completion:nil];
-
 }
 
 - (void)updateLost:(NSInteger)index {
@@ -125,7 +124,10 @@
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index {
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:data];
+    browser.delegate = self;
     browser.displayToolbar = NO;
+    browser.displayDoneButton = NO;
+    browser.dismissOnTouch = YES;
     [browser setInitialPageIndex:index - 100];
     [self presentViewController:browser animated:YES completion:nil];
 }

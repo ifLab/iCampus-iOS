@@ -33,21 +33,6 @@
     [self reloadData];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 50;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
-    headView.backgroundColor = [self backgroundColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, headView.frame.size.height - 10, SCREEN_WIDTH, 15)];
-    [headView addSubview:label];
-    label.textColor = [UIColor grayColor];
-    label.font = [UIFont systemFontOfSize:14];
-    label.text = @"左滑删除失物招领信息";
-    return headView;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -59,24 +44,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJMyPublishLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJMyPublishLostTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _tableDataArr[indexPath.row];
+    cell.indexPath = indexPath;
     cell.cellDelegate = self;
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [_tableDelegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
-}
-
 - (void)cellClick:(NSArray *)data index:(NSInteger)index {
     [_tableDelegate tableViewClick:data index:index];
+}
+
+- (void)trashClick:(NSIndexPath*)indexPath{
+    [_tableDelegate trashClick:indexPath];
 }
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation PJMyPublishLostTableViewCell
 {
-    NSArray *_kDataArr;   // 存储最终转化好的ImgURL
+    NSArray *_kDataArr;   // 存储最终转化好的ImgURLz
 }
 
 - (void)awakeFromNib {
@@ -22,13 +22,16 @@
 }
 
 - (void)initView {
-    
+    [_trashBtn addTarget:self action:@selector(pressTrashBtn) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)pressTrashBtn{
+    [_cellDelegate trashClick:self.indexPath];
 }
 
 - (void)setFrame:(CGRect)frame{
-    if (frame.size.height>=199) {
-        frame.size.height -= 8;
-    }
+    frame.origin.y += 8;
+    frame.size.height -= 8;
     [super setFrame:frame];
 }
 
@@ -88,10 +91,6 @@
     }
     NSArray *photos = [IDMPhoto photosWithURLs:newArr];
     [_cellDelegate cellClick:photos index:tag];
-}
-
-- (void)overBtnClick {
-    
 }
 
 @end
