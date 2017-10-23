@@ -107,6 +107,7 @@
                                       
                                    }
                                    failure:^(NSError *error) {
+                                       NSLog(@"error:%@",error);
                                        // error信息要怎么处理？
                                    }];
 }

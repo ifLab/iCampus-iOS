@@ -41,6 +41,9 @@
     [self.view addSubview:_kTableView];
     
     [self getDataFromHttp];
+    
+    //隐藏下一层的TabBar
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 - (void)getDataFromHttp {
