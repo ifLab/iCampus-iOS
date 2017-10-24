@@ -8,6 +8,7 @@
 
 #import "PJMapViewController.h"
 #import "PJMapView.h"
+#import "PJBusViewController.h"
 #import "ICNetworkManager.h"
 
 @interface PJMapViewController () <PJMapViewDelegate>
@@ -38,6 +39,10 @@
     _kMapView = [[PJMapView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _kMapView.mapDelegate = self;
     [self.view addSubview:_kMapView];
+    
+    //左侧校车入口
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"公交车"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+    self.navigationItem.leftBarButtonItem = leftItem;
     
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"导航"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
@@ -73,6 +78,13 @@
                    launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
                                    MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];
     return;
+}
+
+- (void)leftItemClick {
+    PJBusViewController *bus = [[PJBusViewController alloc] init];
+    //隐藏本层的TabBar
+    bus.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:bus animated:YES];
 }
 
 - (void)rightItemClick {
