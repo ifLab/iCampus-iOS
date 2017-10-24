@@ -60,17 +60,16 @@
 - (void)CreatPublishBtn{
     _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_publishBtn setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
-    _publishBtn.frame = CGRectMake(SCREEN_WIDTH, SCREEN_HEIGHT-130, 50, 50);
+    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-130, 50, 50);
+    [_publishBtn setAlpha:0.0f];
     [_publishBtn addTarget:self action:@selector(nextItemClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_publishBtn];
     
     CGAffineTransform transform =CGAffineTransformRotate(_publishBtn.transform,-M_PI);
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDelegate:self];
-    [_publishBtn setTransform:transform];
-    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-130, 50, 50);
-    [UIView setAnimationDuration:1];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_publishBtn setTransform:transform];
+        [_publishBtn setAlpha:1.0f];
+    }];
 }
 
 - (void)nextItemClick {

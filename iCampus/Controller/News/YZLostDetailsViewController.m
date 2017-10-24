@@ -60,11 +60,15 @@
     [_ChatBtn addTarget:self action:@selector(pressChatBtn) forControlEvents:UIControlEventTouchUpInside];
 
     NSArray *buttons = [NSArray arrayWithObjects:_PhoneBtn,_ChatBtn, nil];
-    _bar = [[OXExpandingButtonBar alloc] initWithMainButton:mainBtn buttons:buttons center:CGPointMake(SCREEN_WIDTH-40, SCREEN_HEIGHT-130)];
+    _bar = [[OXExpandingButtonBar alloc] initWithMainButton:mainBtn buttons:buttons center:CGPointMake(SCREEN_WIDTH, SCREEN_HEIGHT-130)];
     [_bar setMainRotate:-M_PI];
     [_bar setMainReRotate:0];
     [_bar setAnimated:YES];
     [self.view addSubview:_bar];
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        _bar.center = CGPointMake(SCREEN_WIDTH-40, SCREEN_HEIGHT-130);
+    }];
 }
 
 - (void)setDataSource:(NSDictionary *)dataSource{
