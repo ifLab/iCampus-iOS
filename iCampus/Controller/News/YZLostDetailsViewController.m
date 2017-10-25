@@ -36,7 +36,7 @@
     
     [self CreatMainBtn];
     
-    UIBarButtonItem *ShareBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStyleDone target:self action:@selector(pressShareBtn)];
+    UIBarButtonItem *ShareBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share"] style:UIBarButtonItemStyleDone target:self action:@selector(pressShareBtn)];
     self.navigationItem.rightBarButtonItem = ShareBtn;
 }
 

@@ -14,6 +14,7 @@
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
 - (void)tableViewClickToDetails:(NSDictionary *)data;
+- (void)tableViewMove:(BOOL)hidden;
 
 @end
 
@@ -21,4 +22,6 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, weak) id<PJLostTableViewDelegate> tableDelegate;
+
+@property (nonatomic)CGFloat excursionY;
 @end

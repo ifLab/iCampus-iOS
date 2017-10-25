@@ -75,7 +75,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         /*************************/
         /* 测试分享使用，后期删除 */
         
-        let shareBtn = UIBarButtonItem.init(image: UIImage.init(named: "share1"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
+        let shareBtn = UIBarButtonItem.init(image: UIImage.init(named: "share"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
         self.navigationItem.rightBarButtonItem = shareBtn
         /*************************/
     }

@@ -61,7 +61,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJLostTableViewCell" forIndexPath:indexPath];
     cell.cellDelagate = self;
-//    cell.pepleIconImgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", rand()%5]];
     cell.dataSource = _dataArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -73,6 +72,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [_tableDelegate tableViewClickToDetails:_dataArr[indexPath.row]];
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if (_excursionY+20<targetContentOffset->y) {
+        [_tableDelegate tableViewMove:YES];
+    }
+    if (_excursionY-20>targetContentOffset->y) {
+        [_tableDelegate tableViewMove:NO];
+    }
+    _excursionY = targetContentOffset->y;
 }
 
 @end

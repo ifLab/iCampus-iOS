@@ -30,16 +30,8 @@
     _kDataArr = [@[] mutableCopy];
     _detailsLabel.font = [UIFont systemFontOfSize:14];
     _detailsLabel.textColor = [UIColor blackColor];
-//    _nameLabel.textColor = [UIColor lightGrayColor];
-//    _nameLabel.font = [UIFont systemFontOfSize:14];
-//    _phoneLabel.textColor = [UIColor lightGrayColor];
-//    _phoneLabel.font = [UIFont systemFontOfSize:14];
     _timeLabel.font = [UIFont systemFontOfSize:14];
     _timeLabel.textColor = [UIColor lightGrayColor];
-    
-//    [_callBtn setImage:[UIImage imageNamed:@"call"] forState:UIControlStateNormal];
-//    [_callBtn setTitle:@"" forState:UIControlStateNormal];
-//    [_callBtn addTarget:self action:@selector(callBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)callBtnClick {
@@ -50,8 +42,6 @@
     _dataSource = dataSource;
     _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
-//    _nameLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"author"]];
-//    _phoneLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"phone"]];
     [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
 }
 
