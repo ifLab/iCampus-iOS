@@ -86,8 +86,8 @@
         scViewWidth += imgW;
     }
     scViewWidth += 15;
-    if (scViewWidth > 320) {
-        scViewWidth = 320;
+    if (scViewWidth > SCREEN_WIDTH) {
+        scViewWidth = SCREEN_WIDTH;
     }
     _scrollerViewWidth.constant = scViewWidth;
     self.showImgScrollView.showsHorizontalScrollIndicator = NO;

@@ -43,7 +43,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* 设置第三方平台 */
         self.umengSharePlatforms()
         //end
+        
+        self.creatShortcutItem()
+        
         return true
+    }
+    
+    func creatShortcutItem(){
+        if #available(iOS 9.0, *) {
+            let iconShare = UIApplicationShortcutIcon.init(type: UIApplicationShortcutIconType.search)
+            let item = UIApplicationShortcutItem.init(type: "黄页", localizedTitle: "搜索黄页", localizedSubtitle: nil, icon: iconShare, userInfo: nil);
+            UIApplication.shared.shortcutItems = [item];
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     //设置友盟第三方账号
@@ -66,6 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -88,6 +102,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        switch shortcutItem.type {
+        case "黄页":
+            let vc = ZKTabBarViewController.init()
+            vc.selectedIndex = 1;
+            self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+            break;
+        default:
+            break;
+        }
+    }
 }
 

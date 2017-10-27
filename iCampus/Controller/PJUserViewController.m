@@ -78,16 +78,19 @@
 - (void)toAandC {
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJUserAandCSB" bundle:nil];
     PJUserAandCViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJUserAandCViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
     
 - (void)toMyLost {
     PJMyLostViewController *vc = [PJMyLostViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)toAbout {
     PJAboutViewController *vc = [PJAboutViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

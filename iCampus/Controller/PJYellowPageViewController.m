@@ -61,6 +61,7 @@
 - (void)PJYellowPageTableViewCellClick:(NSDictionary *)dict {
     PJYellowPageDetailsViewController *vc = [PJYellowPageDetailsViewController new];
     vc.dataSource = dict;
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
