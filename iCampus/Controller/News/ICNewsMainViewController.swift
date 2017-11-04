@@ -72,12 +72,6 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         }
         childControllers[0].headerBeginRefresh()
         
-        /*************************/
-        /* 测试分享使用，后期删除 */
-        
-        let shareBtn = UIBarButtonItem.init(image: UIImage.init(named: "share"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareAction))
-        self.navigationItem.rightBarButtonItem = shareBtn
-        /*************************/
     }
     
 //MARK: UIScrollViewDelegate
@@ -103,37 +97,6 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         }
     }
     
-    /*************************/
-    /* 测试分享使用，后期删除 */
-    
-    //弹出分享面板
-    func shareAction() {
-        print("share")
-        UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
-        UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
-            
-            //分享文本测试
-            let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
-            messageObject.text = "社会化组件UShare将各大社交平台接入您的应用，快速武装App。iBistu 分享测试"//分享的文本
-            
-            //分享图片
-            let shareObject:UMShareImageObject = UMShareImageObject.init()
-            shareObject.shareImage = "https://mobile.umeng.com/images/pic/home/social/img-1.png"
-            messageObject.shareObject = shareObject
-
-            
-            UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
-                if error != nil {
-//                    print("Share Fail with error ：%@", error)
-                }else{
-//                    print("Share succeed")
-                }
-            })
-            
-        }
-    }
-    
-    /* END */
-    /*************************/
+   
     
 }

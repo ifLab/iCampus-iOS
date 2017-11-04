@@ -115,7 +115,9 @@ class ICNewsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        navigationController?.pushViewController(ICNewsDetailViewController(news: news[indexPath.row]), animated: true)
+        let newsDetailView:ICNewsDetailViewController = ICNewsDetailViewController(news: news[indexPath.row])
+        newsDetailView.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(newsDetailView, animated: true)
     }
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

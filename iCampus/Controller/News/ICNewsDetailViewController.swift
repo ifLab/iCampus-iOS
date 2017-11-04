@@ -40,6 +40,11 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         tableView.separatorStyle = .none
 //        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
 //        tableView.mj_header.beginRefreshing()
+        
+        //Umeng share button
+        let shareBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
+        
+        self.navigationItem.rightBarButtonItem = shareBtn
         refresh()
     }
     
@@ -140,5 +145,48 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
 //            }
 //        }
 //    }
+    
+    func imageFromView(theView:UITableView) -> UIImage {
+        let savedContentOffset:CGPoint = theView.contentOffset
+        let savedFrame:CGRect = theView.frame
+        
+        theView.contentOffset = CGPoint.zero
+        theView.frame = CGRect(x:0,y:0,width:theView.contentSize.width,height:theView.contentSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(theView.contentSize,true,0.0)
+        theView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let theImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        theView.contentOffset = savedContentOffset
+        theView.frame = savedFrame
+        
+        return theImage
+    }
+    
+    
+    //弹出分享面板
+    func shareAction() {
+        print("share")
+        UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
+        UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
+            
+            let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
+            messageObject.title = self.news.title
+            //分享图片
+            let shareObject:UMShareImageObject = UMShareImageObject.init()
+            shareObject.shareImage = self.imageFromView(theView: self.tableView)
+            messageObject.shareObject = shareObject
+            
+            
+            UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
+                if error != nil {
+                    print("Share Fail with error ：%@", error)
+                }else{
+                    print("Share succeed")
+                }
+            })
+            
+        }
+    }
    
 }
