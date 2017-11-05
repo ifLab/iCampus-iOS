@@ -153,12 +153,29 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         theView.contentOffset = CGPoint.zero
         theView.frame = CGRect(x:0,y:0,width:theView.contentSize.width,height:theView.contentSize.height)
         
-        UIGraphicsBeginImageContextWithOptions(theView.contentSize,true,0.0)
+        //ScrollView
+//        let scrollView:UIScrollView = UIScrollView.init()
+//
+//        let headerView:UIView = UIView.init()
+//        headerView.backgroundColor = .black
+//        headerView.frame = CGRect(x:0,y:0,width:savedFrame.width,height:40)
+//        let logoImage:UIImageView = UIImageView.init(image: UIImage (named: "logo"))
+//        logoImage.frame = CGRect(x:4,y:4,width:36,height:36)
+//        headerView.addSubview(logoImage)
+//        let logoTitleLabel:UILabel = UILabel.init()
+        let shareView:ZKNewsDetailShareView = ZKNewsDetailShareView.init()
+        shareView.newsTitle = self.news.title! as NSString
+        UIGraphicsBeginImageContextWithOptions(theView.frame.size,true,0.0)
         theView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let theImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
+        var theImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        shareView.imageSize = theView.frame.size;
+        shareView.image = theImage;
         theView.contentOffset = savedContentOffset
         theView.frame = savedFrame
+        
+        UIGraphicsBeginImageContextWithOptions(shareView.view.frame.size,true,0.0)
+        shareView.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        theImage =  UIGraphicsGetImageFromCurrentImageContext()!
         
         return theImage
     }
@@ -166,26 +183,27 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
     
     //弹出分享面板
     func shareAction() {
-        print("share")
+
         UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
         UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
-            
+
             let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
             messageObject.title = self.news.title
             //分享图片
             let shareObject:UMShareImageObject = UMShareImageObject.init()
             shareObject.shareImage = self.imageFromView(theView: self.tableView)
             messageObject.shareObject = shareObject
-            
-            
+
+
             UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
                 if error != nil {
                     print("Share Fail with error ：%@", error)
                 }else{
                     print("Share succeed")
+                    
                 }
             })
-            
+
         }
     }
    
