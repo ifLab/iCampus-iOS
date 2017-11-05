@@ -36,6 +36,8 @@
     _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
     _kSearchBar.barTintColor = [UIColor whiteColor];
     _kSearchBar.backgroundImage = [[UIImage alloc]init];
+    //测试
+    _kSearchBar.tag = 10086;
     UITextField *searchField = [_kSearchBar valueForKey:@"searchField"];
     if (searchField) {
         searchField.backgroundColor = [UIColor whiteColor];

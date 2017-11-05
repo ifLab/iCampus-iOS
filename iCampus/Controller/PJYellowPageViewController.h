@@ -10,4 +10,6 @@
 
 @interface PJYellowPageViewController : UIViewController
 
+- (void)yellowPageisSearch:(BOOL)isSearch;
+
 @end

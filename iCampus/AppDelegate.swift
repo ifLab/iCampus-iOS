@@ -15,7 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var shouldPerformAddtionalDelegateHadding = true
+        self.creatShortcutItem()
+        if #available(iOS 9.0, *) {
+            let shortCutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
+            if (shortCutItem != nil){
+                //如果是从3DTouch启动程序
+                self.maininit()
+                self.handleShortCutItems(shortCutItem: shortCutItem!)
+                shouldPerformAddtionalDelegateHadding = false
+            }
+            else{
+                //正常启动
+                self.maininit()
+            }
+        } else {
+            //iOS9.0以下版本
+            self.maininit()
+        }
+        return shouldPerformAddtionalDelegateHadding
+    }
+    
+    func maininit(){
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
@@ -23,9 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 _ in
             }
         }
-        //        let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        //        navigationController = UINavigationController(rootViewController: controller)
-        //        window?.rootViewController = navigationController
         
         //4.0版本 主要架构变更为TabBarController
         let tabBarC = ZKTabBarViewController.init()
@@ -43,17 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* 设置第三方平台 */
         self.umengSharePlatforms()
         //end
-        
-        self.creatShortcutItem()
-        
-        return true
     }
     
     func creatShortcutItem(){
         if #available(iOS 9.0, *) {
             let iconShare = UIApplicationShortcutIcon.init(type: UIApplicationShortcutIconType.search)
-            let item = UIApplicationShortcutItem.init(type: "黄页", localizedTitle: "搜索黄页", localizedSubtitle: nil, icon: iconShare, userInfo: nil);
-            UIApplication.shared.shortcutItems = [item];
+            let itemShare = UIApplicationShortcutItem.init(type: "黄页", localizedTitle: "搜索黄页", localizedSubtitle: nil, icon: iconShare, userInfo: nil);
+            
+            let iconAdd = UIApplicationShortcutIcon.init(type: UIApplicationShortcutIconType.add)
+            let itemAdd = UIApplicationShortcutItem.init(type: "失物", localizedTitle: "添加失物", localizedSubtitle: nil, icon: iconAdd, userInfo: nil)
+            UIApplication.shared.shortcutItems = [itemShare,itemAdd]
         } else {
             // Fallback on earlier versions
         }
@@ -102,17 +119,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    //对3DTouch启动程序的处理
+    @available(iOS 9.0, *)
+    func handleShortCutItems(shortCutItem: UIApplicationShortcutItem){
+        switch shortCutItem.type {
+        case "黄页":
+            let vc = self.window?.rootViewController as! ZKTabBarViewController
+            vc.selectedIndex = 1;
+            let vcc = vc.childViewControllers[1].childViewControllers[0] as! PJYellowPageViewController
+            vcc.yellowPageisSearch(true)
+            break;
+        case "失物":
+            let vc = ZKTabBarViewController.init()
+            vc.selectedIndex = 2;
+            let vcc = vc.childViewControllers[2].childViewControllers[0] as! PJLostViewController
+            vcc.nextItemClick()
+            break;
+        default:
+            break;
+        }
+    }
+    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         switch shortcutItem.type {
         case "黄页":
-            let vc = ZKTabBarViewController.init()
+            let vc = self.window?.rootViewController as! ZKTabBarViewController
             vc.selectedIndex = 1;
-            self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+            let vcc = vc.childViewControllers[1].childViewControllers[0] as! PJYellowPageViewController
+            vcc.yellowPageisSearch(true)
+            break;
+        case "失物":
+            let vc = self.window?.rootViewController as! ZKTabBarViewController
+            vc.selectedIndex = 2;
+            let vcc = vc.childViewControllers[2].childViewControllers[0] as! PJLostViewController
+            vcc.nextItemClick()
             break;
         default:
             break;
         }
     }
 }
-

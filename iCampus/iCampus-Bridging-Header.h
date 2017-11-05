@@ -22,6 +22,7 @@
 #import "PJUserUpdatePWViewController.h"
 #import "PJUser.h"
 #import "CASBistu.h"
+#import "PJNewLostViewController.h"
 
 //友盟分享桥接文件
 #import <UMSocialCore/UMSocialCore.h>

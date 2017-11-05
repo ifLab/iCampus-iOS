@@ -19,6 +19,7 @@
 @implementation PJYellowPageViewController
 {
     PJYellowPageTableView *_kTableView;
+    BOOL _isSearch;
 }
 
 - (void)viewDidLoad {
@@ -39,6 +40,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _kTableView = [PJYellowPageTableView new];
     _kTableView.tableDelegate = self;
+    _isSearch = false;
+    
     [self.view addSubview:_kTableView];
     
     [self getDataFromHttp];
@@ -65,5 +68,16 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)yellowPageisSearch:(BOOL)isSearch{
+    _isSearch = isSearch;
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (_isSearch) {
+        [[self.view viewWithTag:10086]becomeFirstResponder];
+        _isSearch = false;
+    }
+}
 
 @end

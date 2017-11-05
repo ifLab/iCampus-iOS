@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PJZoomImageScrollView.h"
-typedef  void(^ReturnBlock)(void);
 
 @interface PJNewLostViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -16,6 +15,5 @@ typedef  void(^ReturnBlock)(void);
 @property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
 @property (weak, nonatomic) IBOutlet PJZoomImageScrollView *imgScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *detailsTextViewLabel;
-@property (nonatomic ,strong) ReturnBlock returnblock;
 
 @end

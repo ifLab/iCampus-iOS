@@ -215,8 +215,5 @@
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    _returnblock();
-}
 
 @end

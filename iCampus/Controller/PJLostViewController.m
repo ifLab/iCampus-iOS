@@ -14,7 +14,7 @@
 #import "YZLostDetailsViewController.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate,IDMPhotoBrowserDelegate>
-
+@property (nonatomic, strong) PJNewLostViewController *vc;
 @end
 
 @implementation PJLostViewController
@@ -31,6 +31,13 @@
     [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
 }
 
+//- (PJNewLostViewController*)vc {
+//    if (!_vc) {
+//
+//    }
+//    return _vc;
+//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -45,6 +52,8 @@
     _freshData = [[NSMutableArray alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"失物招领";
+    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
+    _vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
     
     UIBarButtonItem* backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBtn;
@@ -73,13 +82,10 @@
 }
 
 - (void)nextItemClick {
-    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
-    PJNewLostViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
-    vc.returnblock = ^{
-        [self ClearPublishBtn];
-    };
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    self.vc.hidesBottomBarWhenPushed = YES;
+    if ([self.navigationController.topViewController isKindOfClass:[PJLostViewController class]]) {
+        [self.navigationController pushViewController:_vc animated:YES];
+    }
 }
 
 - (void)getDataFromHttp {
@@ -133,27 +139,14 @@
     [self presentViewController:browser animated:YES completion:nil];
 }
 
-- (void)willDisappearPhotoBrowser:(IDMPhotoBrowser *)photoBrowser{
-    [self ClearPublishBtn];
-}
-
 - (void)tableViewClickToDetails:(NSDictionary *)data{
     YZLostDetailsViewController* vc = [[YZLostDetailsViewController alloc]init];
     vc.dataSource = data;
     vc.returnblock = ^{
-        [self ClearPublishBtn];
+        [self getDataFromHttp];
     };
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)ClearPublishBtn{
-    for (UIView *view in self.view.subviews) {
-        if ([view isKindOfClass:[UIButton class]]) {
-            [view removeFromSuperview];
-        }
-    }
-    [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
 }
 
 - (void)tableViewMove:(BOOL)hidden{
