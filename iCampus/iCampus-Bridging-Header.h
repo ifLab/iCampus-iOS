@@ -29,3 +29,6 @@
 
 //ZK TabBarController
 #import "ZKTabBarViewController.h"
+
+//ShareView
+#import "ZKNewsDetailShareView.h"
