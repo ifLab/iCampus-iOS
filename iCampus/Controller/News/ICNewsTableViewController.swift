@@ -49,7 +49,10 @@ class ICNewsTableViewController: UITableViewController {
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         refresh()
     }
-    
+//    override func viewDidLoad() {
+//    super.viewDidLoad()
+//        refresh()
+//    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

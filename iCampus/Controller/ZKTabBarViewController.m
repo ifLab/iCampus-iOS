@@ -66,12 +66,11 @@
 
 //代理方法，监听是否登录
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"测试,%d,%@",[self isLimited:viewController.tabBarItem.title],viewController.tabBarItem.title);
+
     if ([self isLimited:viewController.tabBarItem.title]) {
         //需要登录并且认证
         if ([ICNetworkManager defaultManager].token != nil && ![[ICNetworkManager defaultManager].token isEqualToString:@""]) {
             //已登录
-            NSLog(@"已登录");
             if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
                 //CAS not certified
                 ICCASViewController *controller = [[ICCASViewController alloc] initWithNibName:@"ICCASViewController" bundle:nil];
