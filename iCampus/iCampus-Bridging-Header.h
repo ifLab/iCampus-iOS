@@ -33,3 +33,6 @@
 
 //ShareView
 #import "ZKNewsDetailShareView.h"
+
+//Bugly
+#import <Bugly/Bugly.h>
