@@ -57,6 +57,7 @@
     for (int i = 0; i < dataArr.count; i++) {
         NSString *webSite = [ICNetworkManager defaultManager].website;
         webSite = [NSString stringWithFormat:@"%@%@?api_key=%@&session_token=%@", webSite, dataArr[i][@"url"], [ICNetworkManager defaultManager].APIKey, [ICNetworkManager defaultManager].token];
+
         [newArr addObject:webSite];
     }
     _kImageUrlArray = [newArr mutableCopy];

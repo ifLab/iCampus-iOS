@@ -73,7 +73,8 @@
             //已登录
             if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
                 //CAS not certified
-                ICCASViewController *controller = [[ICCASViewController alloc] initWithNibName:@"ICCASViewController" bundle:nil];
+//                ICCASViewController *controller = [[ICCASViewController alloc] initWithNibName:@"ICCASViewController" bundle:nil];
+                ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
                 [self presentViewController:controller animated:YES completion:nil];
                 return ;
             }
