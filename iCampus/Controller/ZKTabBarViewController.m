@@ -76,7 +76,7 @@
 //                ICCASViewController *controller = [[ICCASViewController alloc] initWithNibName:@"ICCASViewController" bundle:nil];
                 ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
                 [self presentViewController:controller animated:YES completion:nil];
-                return ;
+                self.selectedIndex = 0;
             }
             
         }else{

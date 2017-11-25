@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class ICCASViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,7 +24,7 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
         sender.isEnabled = false
         sender.backgroundColor = .gray
         messageLabel.text = ""
-        loginIndicatorView.isHidden = false
+        PJHUD.show(withStatus: "")
         CASBistu.login(withUsername: usernameField.text,
                        password: passwordField.text) {
                         [weak self] dict, error in
@@ -33,9 +32,11 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
                             if error != nil {
                                 self_.messageLabel.text = error
                                 self_.finishedLogin()
+                                PJHUD.dismiss()
                             } else {
                                 self_.messageLabel.text = "认证成功!"
                                 self_.dismiss(animated: true, completion: nil)
+                                PJHUD.dismiss()
                             }
                         }
         }
@@ -44,7 +45,6 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     func finishedLogin() {
         loginButton.isEnabled = true
         loginButton.backgroundColor = buttonColor
-        loginIndicatorView.isHidden = true
     }
     
     @IBAction func forgetPassword(_ sender: UIButton) {
@@ -57,7 +57,11 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func notLoginYet(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        //CAS暂不登入只允许看新闻
+        dismiss(animated: true) {
+            ICNetworkManager.default().token = ""
+            PJUser .logOut()
+        }
     }
     
     override func awakeFromNib() {

@@ -87,11 +87,11 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         sender.isEnabled = false
         sender.backgroundColor = .gray
         messageLabel.text = ""
-        loginIndicatorView.isHidden = false
         if state == .login {
             //            login
             if emailField.text?.range(of: "@") != nil {
                 if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
+                    PJHUD.show(withStatus: "")
                     ICLoginManager.login(emailField.text,
                                          password: passwordField.text,
                                          success: {
@@ -99,8 +99,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                             if let self_ = self {
                                                 let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
                                                 controller.view.frame = UIScreen.main.bounds
-//                                                let navcontroller = UINavigationController(rootViewController: controller)
-//                                                self_.present(navcontroller, animated: true, completion: nil)
+                                                PJHUD.dismiss()
                                                 self_.dismiss(animated: true, completion: nil)
                                             }
                         },
@@ -109,6 +108,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                             if let self_ = self {
                                                 self_.messageLabel.text = message
                                                 self_.finishedLoginOrRegister()
+                                                PJHUD.dismiss()
                                             }
                     })
                 } else {
@@ -125,6 +125,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                 if emailField.text?.range(of: "@") != nil {
                     if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
                         if passwordField.text == verfyPasswordField.text {
+                            PJHUD.show(withStatus: "")
                             ICLoginManager.signUp(emailField.text,
                                                   password: passwordField.text,
                                                   phone: phoneField.text,
@@ -133,6 +134,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                         self_.messageLabel.text = "success"
                                                         self_.finishedLoginOrRegister()
                                                         self_.finishedLoginOrRegister()
+                                                        PJHUD.dismiss()
                                                         self_.switchStatus(self_.switchButton)
                                                         self_.loginOrRegister(self_.loginAndRegisterButton)
                                                     }
@@ -141,6 +143,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                     if let self_ = self {
                                                         self_.messageLabel.text = error
                                                         self_.finishedLoginOrRegister()
+                                                        PJHUD.dismiss()
                                                     }
                             })
                         } else {
@@ -166,7 +169,6 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     func finishedLoginOrRegister() {
         loginAndRegisterButton.isEnabled = true
         loginAndRegisterButton.backgroundColor = buttonColor
-        loginIndicatorView.isHidden = true
     }
     
     @IBAction func forgetPassword(_ sender: UIButton) {
