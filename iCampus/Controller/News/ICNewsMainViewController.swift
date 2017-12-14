@@ -43,7 +43,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
         sc.selectionStyle = .fullWidthStripe
         sc.selectionIndicatorLocation = .down
-        sc.selectionIndicatorColor = .blue
+        sc.selectionIndicatorColor = UIColor(red: 68/255.0, green: 206/255.0, blue: 246/255.0, alpha: 1)
         sc.selectionIndicatorHeight = 3
         sc.titleFormatter =  {
             (_, title, _, _) -> NSAttributedString? in
