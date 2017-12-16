@@ -39,11 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func maininit(){
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
-            ICLoginManager.refreshToken() {
-                _ in
-            }
-        }
+        //ZK 删去原先的刷新机制
+//        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
+//            ICLoginManager.refreshToken() {
+//                _ in
+//            }
+//        }
         
         //4.0版本 主要架构变更为TabBarController
         let tabBarC = ZKTabBarViewController.init()
@@ -64,6 +65,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Bugly */
         self.setupBugly()
         //end
+        
+        
+        /* ZK Token刷新机制*/
+        
+        let file = NSHomeDirectory() + "/Documents/user.data"
+        //判断是否user.data文件是否存在
+        if (FileManager.default.fileExists(atPath: file)){
+            //用户存在
+            //不是第一次登录
+            //获取用户
+            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let lastTime = formatter.date(from: user.last_login_date)!
+            let thisTime = Date()
+            
+            let timeInterval = thisTime.timeIntervalSince(lastTime)
+            
+            //时间差计算 3600 * 24
+            if (timeInterval >= 3600 * 24){
+                //超过一天未使用app
+                let alertController = UIAlertController(title: "自动登录失败", message: "您已长时间未使用本APP，为了您的账号安全，请重新登录", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "好的", style: .default, handler:{
+                    (UIAlertAction) -> Void in
+                })
+                alertController.addAction(okAction)
+                self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+                //退出账号
+                
+                
+                ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
+                PJUser.logOut()
+            }else{
+                //未超过一天
+                //使用现有方法更新Session
+                ICLoginManager.refreshToken() {
+                    _ in
+                }
+            }
+        }else{
+            print("第一次登录")
+        }
     }
     
     func creatShortcutItem(){

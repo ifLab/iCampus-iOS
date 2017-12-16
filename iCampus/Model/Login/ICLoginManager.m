@@ -22,7 +22,7 @@
                               GETParameters:nil
                              POSTParameters:@{
                                               @"email": email,
-                                              @"password": password
+                                              @"password": password,
                                               }
                                     success:^(NSDictionary *data) {
                                         NSString *session = data[@"session_token"];
