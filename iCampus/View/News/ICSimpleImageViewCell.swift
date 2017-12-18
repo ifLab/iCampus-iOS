@@ -12,6 +12,7 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var previewLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +21,7 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     func update(news: ICNews) {
         titleLabel.text = news.title
         dateLabel.text = news.date
+        previewLabel.text = news.preview
         newsImageView.contentMode = .scaleAspectFill
         newsImageView.layer.masksToBounds = true
         newsImageView.setImageWith(URLRequest(url: URL(string: news.imageURL)!), placeholderImage: nil, success: {
