@@ -35,5 +35,6 @@
 //ShareView
 #import "ZKNewsDetailShareView.h"
 
-//Bugly
-#import <Bugly/Bugly.h>
+//友盟U-App
+#import <UMCommon/UMCommon.h>
+#import <UMAnalytics/MobClick.h>

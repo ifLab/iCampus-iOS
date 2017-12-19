@@ -87,6 +87,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         sender.isEnabled = false
         sender.backgroundColor = .gray
         messageLabel.text = ""
+        view.endEditing(true)
         if state == .login {
             //            login
             if emailField.text?.range(of: "@") != nil {

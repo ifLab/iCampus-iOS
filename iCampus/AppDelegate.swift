@@ -58,12 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /* 设置友盟appkey */
         UMSocialManager.default().umSocialAppkey = "59d0e2f69f06fd268d00003e"
+        let _ = MobClick.setScenarioType(eScenarioType(rawValue: 0)!)
         
         /* 设置第三方平台 */
         self.umengSharePlatforms()
         
-        /* Bugly */
-        self.setupBugly()
         //end
         
         
@@ -142,18 +141,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
-    }
-    
-    //Bugly配置
-    func setupBugly() {
-        Bugly.start(withAppId: "a378c96118")
-        
-        let config = BuglyConfig.init()
-        config.debugMode = true
-        config.unexpectedTerminatingDetectionEnable = true
-        config.blockMonitorEnable = true
-        config.blockMonitorTimeout = 3
-        config.reportLogLevel = BuglyLogLevel.warn
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
