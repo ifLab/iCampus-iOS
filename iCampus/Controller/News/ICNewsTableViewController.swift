@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-protocol ICNewsViewCell {
+@objc protocol ICNewsViewCell {
     func update(news: ICNews)
 }
 
@@ -43,8 +43,10 @@ class ICNewsTableViewController: UITableViewController {
             tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
         }
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = 80//UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 250
+        //原数据为80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         refresh()
@@ -108,7 +110,7 @@ class ICNewsTableViewController: UITableViewController {
                         self?.page += 1
             },
                      failure: {
-                        [weak self] _ in
+                        [weak self] error in
                         self?.tableView.mj_footer.endRefreshing()
                         self?.tableView.separatorStyle = .singleLine
         })

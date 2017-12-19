@@ -117,6 +117,8 @@
 		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
 		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
 		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
+		F5326A3E1FE7A95600D25853 /* ZKSimpleImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5326A3C1FE7A95600D25853 /* ZKSimpleImageViewCell.m */; };
+		F5326A3F1FE7A95600D25853 /* ZKSimpleImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5326A3D1FE7A95600D25853 /* ZKSimpleImageViewCell.xib */; };
 		F57A9AE71FADAEC4004F2B52 /* ZKNewsDetailShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */; };
 		F57A9AE81FADAEC4004F2B52 /* ZKNewsDetailShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
@@ -312,6 +314,9 @@
 		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F5326A3B1FE7A95600D25853 /* ZKSimpleImageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKSimpleImageViewCell.h; sourceTree = "<group>"; };
+		F5326A3C1FE7A95600D25853 /* ZKSimpleImageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKSimpleImageViewCell.m; sourceTree = "<group>"; };
+		F5326A3D1FE7A95600D25853 /* ZKSimpleImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKSimpleImageViewCell.xib; sourceTree = "<group>"; };
 		F57A9AE41FADAEC4004F2B52 /* ZKNewsDetailShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKNewsDetailShareView.h; sourceTree = "<group>"; };
 		F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKNewsDetailShareView.m; sourceTree = "<group>"; };
 		F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKNewsDetailShareView.xib; sourceTree = "<group>"; };
@@ -994,6 +999,9 @@
 				A90F4B951E96998600DDD6BC /* ICNoneImageViewCell.xib */,
 				A90F4B961E96998600DDD6BC /* ICSimpleImageViewCell.swift */,
 				A90F4B971E96998600DDD6BC /* ICSimpleImageViewCell.xib */,
+				F5326A3B1FE7A95600D25853 /* ZKSimpleImageViewCell.h */,
+				F5326A3C1FE7A95600D25853 /* ZKSimpleImageViewCell.m */,
+				F5326A3D1FE7A95600D25853 /* ZKSimpleImageViewCell.xib */,
 				F57A9AE41FADAEC4004F2B52 /* ZKNewsDetailShareView.h */,
 				F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */,
 				F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */,
@@ -1296,6 +1304,7 @@
 				F57A9AE81FADAEC4004F2B52 /* ZKNewsDetailShareView.xib in Resources */,
 				A90F4B721E96983100DDD6BC /* LICENSE in Resources */,
 				A90F4BB11E969B2B00DDD6BC /* Configuration.plist in Resources */,
+				F5326A3F1FE7A95600D25853 /* ZKSimpleImageViewCell.xib in Resources */,
 				2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */,
 				A90F4BAB1E96998600DDD6BC /* ICSimpleImageViewCell.xib in Resources */,
 				A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */,
@@ -1485,6 +1494,7 @@
 				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
 				A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */,
+				F5326A3E1FE7A95600D25853 /* ZKSimpleImageViewCell.m in Sources */,
 				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,
 				2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,

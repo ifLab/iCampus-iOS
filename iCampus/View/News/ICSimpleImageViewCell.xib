@@ -13,29 +13,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="ICSimpleImageViewCell" customModule="iCampus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="437" height="118"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="226" id="KGk-i7-Jjw" customClass="ICSimpleImageViewCell" customModule="iCampus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="226"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="437" height="117.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="332" height="225.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4y-db-ANn">
-                        <rect key="frame" x="20" y="8" width="135.5" height="101.5"/>
+                        <rect key="frame" x="10" y="10" width="312" height="104"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="W4y-db-ANn" secondAttribute="height" multiplier="4:3" id="Ko3-rw-ayB"/>
+                            <constraint firstAttribute="width" secondItem="W4y-db-ANn" secondAttribute="height" multiplier="3:1" id="7rR-H2-EGa"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是个最多显示两行字的label啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-3q-3G8">
-                        <rect key="frame" x="166" y="8" width="261" height="41"/>
+                        <rect key="frame" x="10" y="124" width="312" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="这里面也是两行这里面也是两行这里面也是两行这里面也是两行这里面也是两行这里面也是两行" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atd-zc-Vaj">
+                        <rect key="frame" x="10" y="154.5" width="312" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-12-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EU-P0r">
-                        <rect key="frame" x="344" y="96.5" width="75" height="13"/>
+                        <rect key="frame" x="239" y="198.5" width="75" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="13" id="pR6-8l-9q7"/>
+                            <constraint firstAttribute="height" constant="17" id="g7c-4T-Nwr"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,22 +49,27 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7em-U2-t7g"/>
-                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BU0-35-rDY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="v3T-EU-P0r" secondAttribute="trailing" constant="10" id="BmT-4z-2PI"/>
-                    <constraint firstItem="v3T-EU-P0r" firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" id="KT1-Ku-0ua"/>
-                    <constraint firstItem="gnT-3q-3G8" firstAttribute="leading" secondItem="W4y-db-ANn" secondAttribute="trailing" constant="10" id="Qpm-cd-FZD"/>
-                    <constraint firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" constant="10" id="dQL-yJ-LQi"/>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k72-Xs-ecL"/>
-                    <constraint firstAttribute="bottom" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="8" id="mj4-NL-Ldc"/>
+                    <constraint firstAttribute="trailing" secondItem="W4y-db-ANn" secondAttribute="trailing" constant="10" id="6UZ-oe-cwW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="v3T-EU-P0r" secondAttribute="trailing" constant="10" id="NVN-h2-ZK4"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="top" secondItem="gnT-3q-3G8" secondAttribute="bottom" constant="10" id="OaP-3z-eP5"/>
+                    <constraint firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" constant="10" id="aqe-ea-W5q"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bDC-0p-eIq"/>
+                    <constraint firstItem="v3T-EU-P0r" firstAttribute="top" secondItem="Atd-zc-Vaj" secondAttribute="bottom" constant="10" id="fvV-G2-K7v"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gGn-ch-U3Z"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="leading" secondItem="gnT-3q-3G8" secondAttribute="leading" id="gbD-Gx-ceT"/>
+                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="10" id="jjC-lt-k1k"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" id="qpo-Jx-XIy"/>
+                    <constraint firstItem="gnT-3q-3G8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ups-bj-kD8"/>
+                    <constraint firstAttribute="bottom" secondItem="v3T-EU-P0r" secondAttribute="bottom" constant="10" id="yt4-8Z-5MH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="v3T-EU-P0r" id="NP5-gN-joY"/>
                 <outlet property="newsImageView" destination="W4y-db-ANn" id="kfB-zO-OHj"/>
+                <outlet property="previewLabel" destination="Atd-zc-Vaj" id="jeq-xK-7qp"/>
                 <outlet property="titleLabel" destination="gnT-3q-3G8" id="3EU-1T-X34"/>
             </connections>
-            <point key="canvasLocation" x="-170.5" y="-102"/>
+            <point key="canvasLocation" x="-211" y="-41"/>
         </tableViewCell>
     </objects>
 </document>
