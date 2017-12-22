@@ -85,6 +85,8 @@
     //隐藏本层的TabBar
     bus.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:bus animated:YES];
+    //埋点
+    [MobClick event:@"点击进入校车"];
 }
 
 - (void)rightItemClick {

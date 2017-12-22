@@ -18,7 +18,7 @@ target 'iCampus' do
   pod 'SDWebImage'
   pod 'IDMPhotoBrowser'
   pod 'MJExtension'  
-  pod 'Bugly'
+#  pod 'Bugly'
 
   target 'iCampusTests' do
     inherit! :search_paths

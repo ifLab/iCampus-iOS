@@ -147,6 +147,8 @@
     };
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    //埋点
+    [MobClick event:@"点击进入失误详情"];
 }
 
 - (void)tableViewMove:(BOOL)hidden{
