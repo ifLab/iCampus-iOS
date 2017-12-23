@@ -34,6 +34,16 @@
     _kSearchBar = [UISearchBar new];
     _kSearchBar.delegate = self;
     _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    _kSearchBar.barTintColor = [UIColor whiteColor];
+    _kSearchBar.backgroundImage = [[UIImage alloc]init];
+    UITextField *searchField = [_kSearchBar valueForKey:@"searchField"];
+    if (searchField) {
+        searchField.backgroundColor = [UIColor whiteColor];
+        searchField.layer.borderWidth = 1;
+        searchField.layer.borderColor = RGB(181, 181, 181).CGColor;
+        searchField.layer.cornerRadius = 10.0f;
+        searchField.placeholder = @"搜索";
+    }
     self.tableHeaderView = _kSearchBar;
 }
 

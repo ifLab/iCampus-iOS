@@ -58,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /* 设置友盟appkey */
         UMSocialManager.default().umSocialAppkey = "59d0e2f69f06fd268d00003e"
+        UMConfigure.initWithAppkey("59d0e2f69f06fd268d00003e", channel: "App Store")
         let _ = MobClick.setScenarioType(eScenarioType(rawValue: 0)!)
         
         /* 设置第三方平台 */

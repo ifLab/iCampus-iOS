@@ -148,7 +148,9 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     //埋点
-    [MobClick event:@"点击进入失误详情"];
+    [MobClick event:@"event_001"];
+    NSDictionary *dict = @{@"userEmail":[PJUser currentUser].email};
+    [MobClick event:@"ibistu_bus_click" attributes:dict];
 }
 
 - (void)tableViewMove:(BOOL)hidden{

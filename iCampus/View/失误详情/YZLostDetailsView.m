@@ -75,7 +75,7 @@
     NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_kDetailsLabel.font,NSFontAttributeName, nil];
     textFrame = _kDetailsLabel.frame;
     textFrame.size.height = [_kDetailsLabel.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-8, 300) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
-    _kDetailsLabel.frame = CGRectMake(4, 0, SCREEN_WIDTH-8, textFrame.size.height);
+    _kDetailsLabel.frame = CGRectMake(4, 12, SCREEN_WIDTH-8, textFrame.size.height);
     _kTextHeight = textFrame.size.height;
     long k = _imageArray.count;
     CGFloat lastY = _kTextHeight + 8 + 308*k;
@@ -86,7 +86,7 @@
 
 - (void)setupScrollView:(NSDictionary *)data{
     NSArray* imgArry = _imageArray;
-    CGFloat y = textFrame.size.height;
+    CGFloat y = textFrame.size.height + 12;
     CGFloat spaceY = 8;
     int imageNum = 0;
     CGFloat lastY = y;

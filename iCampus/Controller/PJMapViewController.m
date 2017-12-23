@@ -86,7 +86,9 @@
     bus.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:bus animated:YES];
     //埋点
-    [MobClick event:@"点击进入校车"];
+    [MobClick event:@"event_002"];
+    NSDictionary *dict = @{@"userEmail":[PJUser currentUser].email};
+    [MobClick event:@"ibistu_bus_click" attributes:dict];
 }
 
 - (void)rightItemClick {
