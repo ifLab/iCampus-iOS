@@ -51,7 +51,7 @@
     _freshFlag = headerRefresh;
     _freshData = [[NSMutableArray alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"失物招领";
+    self.title = @"失物";
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
     _vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
     
