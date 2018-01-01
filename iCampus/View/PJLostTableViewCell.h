@@ -22,9 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollerViewWidth;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *pepleIconImgView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (nonatomic, strong) NSDictionary *dataSource;
 @property (nonatomic, weak) id<PJLostTableViewCellDelegate> cellDelagate;

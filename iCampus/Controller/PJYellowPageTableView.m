@@ -42,7 +42,7 @@
     if (searchField) {
         searchField.backgroundColor = [UIColor whiteColor];
         searchField.layer.borderWidth = 1;
-        searchField.layer.borderColor = RGB(181, 181, 181).CGColor;
+        searchField.layer.borderColor = RGB(200, 200, 200).CGColor;
         searchField.layer.cornerRadius = 8.0f;
         searchField.placeholder = @"搜索...";
         searchField.font = [UIFont boldSystemFontOfSize:14];

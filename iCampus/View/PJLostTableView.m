@@ -25,7 +25,8 @@
     [self registerNib:[UINib nibWithNibName:@"PJLostTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJLostTableViewCell"];
     self.rowHeight = UITableViewAutomaticDimension;
     self.estimatedRowHeight = 250;
-    self.backgroundColor = RGB(232, 234, 236);
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
         [self setSeparatorInset:UIEdgeInsetsZero];
@@ -72,16 +73,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [_tableDelegate tableViewClickToDetails:_dataArr[indexPath.row]];
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    if (_excursionY+20<targetContentOffset->y) {
-        [_tableDelegate tableViewMove:YES];
-    }
-    if (_excursionY-20>targetContentOffset->y) {
-        [_tableDelegate tableViewMove:NO];
-    }
-    _excursionY = targetContentOffset->y;
 }
 
 @end

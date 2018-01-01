@@ -21,17 +21,13 @@
 }
 
 - (void)setFrame:(CGRect)frame {
-    frame.origin.y += 8;
-    frame.size.height -= 8;    // 减掉的值就是分隔线的高度
+    frame.origin.y += 10;
+    frame.size.height -= 10;    // 减掉的值就是分隔线的高度
     [super setFrame:frame];
 }
 
 - (void)initView {
     _kDataArr = [@[] mutableCopy];
-    _detailsLabel.font = [UIFont systemFontOfSize:14];
-    _detailsLabel.textColor = [UIColor blackColor];
-    _timeLabel.font = [UIFont systemFontOfSize:14];
-    _timeLabel.textColor = [UIColor lightGrayColor];
 }
 
 - (void)callBtnClick {
@@ -42,6 +38,7 @@
     _dataSource = dataSource;
     _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
+    _nameLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"author"]];
     [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
 }
 

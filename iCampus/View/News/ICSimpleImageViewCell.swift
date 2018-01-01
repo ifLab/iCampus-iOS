@@ -15,10 +15,7 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     @IBOutlet weak var previewLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        previewLabel.textColor = UIColor.init(red: 150/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1)
-        newsImageView.layer.cornerRadius = 5
-        newsImageView.layer.masksToBounds = false
+
     }
     
     func update(news: ICNews) {

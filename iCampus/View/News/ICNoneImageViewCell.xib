@@ -25,26 +25,36 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="这是个最多显示两行字的label啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-J9-3iy">
-                        <rect key="frame" x="5" y="5" width="300" height="72.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <rect key="frame" x="5" y="15" width="300" height="62.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-sl-rAD">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="10"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="XHg-5O-6ww"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ReF-6Z-tIZ" secondAttribute="trailing" constant="10" id="33B-QC-2uV"/>
                     <constraint firstAttribute="bottom" secondItem="ReF-6Z-tIZ" secondAttribute="bottom" constant="5" id="8bN-lH-E95"/>
+                    <constraint firstAttribute="trailing" secondItem="yDt-sl-rAD" secondAttribute="trailing" id="KKW-VW-8WB"/>
                     <constraint firstAttribute="trailing" secondItem="U7J-J9-3iy" secondAttribute="trailing" constant="5" id="LaT-Q7-5e4"/>
                     <constraint firstItem="ReF-6Z-tIZ" firstAttribute="top" secondItem="U7J-J9-3iy" secondAttribute="bottom" constant="10" id="MNa-mT-cvm"/>
+                    <constraint firstItem="yDt-sl-rAD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="e03-z9-XJm"/>
                     <constraint firstItem="U7J-J9-3iy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="eX3-as-u18"/>
-                    <constraint firstItem="U7J-J9-3iy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="s9j-Y6-pbk"/>
+                    <constraint firstItem="yDt-sl-rAD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pdu-OW-QcX"/>
+                    <constraint firstItem="U7J-J9-3iy" firstAttribute="top" secondItem="yDt-sl-rAD" secondAttribute="bottom" constant="5" id="ukJ-vg-Hbf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="ReF-6Z-tIZ" id="WBA-Xq-n5k"/>
                 <outlet property="titleLabel" destination="U7J-J9-3iy" id="NOS-2Z-HPG"/>
             </connections>
-            <point key="canvasLocation" x="-54" y="33"/>
+            <point key="canvasLocation" x="-77" y="64"/>
         </tableViewCell>
     </objects>
 </document>

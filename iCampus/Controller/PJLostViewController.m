@@ -14,7 +14,6 @@
 #import "YZLostDetailsViewController.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate,IDMPhotoBrowserDelegate>
-@property (nonatomic, strong) PJNewLostViewController *vc;
 @end
 
 @implementation PJLostViewController
@@ -31,13 +30,6 @@
     [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
 }
 
-//- (PJNewLostViewController*)vc {
-//    if (!_vc) {
-//
-//    }
-//    return _vc;
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -52,12 +44,7 @@
     _freshData = [[NSMutableArray alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"失物";
-    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
-    _vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
-    
-    UIBarButtonItem* backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backBtn;
-    
+        
     _kTableView = [PJLostTableView new];
     [self.view addSubview:_kTableView];
     _kTableView.tableDelegate = self;
@@ -68,24 +55,23 @@
 
 - (void)CreatPublishBtn{
     _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_publishBtn setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
-    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-130, 50, 50);
-    [_publishBtn setAlpha:0.0f];
+    [_publishBtn setImage:[UIImage imageNamed:@"addLostFound"] forState:UIControlStateNormal];
+    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT - 110, 45, 45);
+    _publishBtn.layer.cornerRadius = 25;
+    _publishBtn.layer.masksToBounds = false;
+    _publishBtn.layer.shadowColor = [UIColor blackColor].CGColor;
+    _publishBtn.layer.shadowOffset = CGSizeMake(2, 2);
+    _publishBtn.layer.shadowOpacity = 0.3;
+    _publishBtn.layer.shadowRadius = 2;
     [_publishBtn addTarget:self action:@selector(nextItemClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_publishBtn];
-    
-    CGAffineTransform transform =CGAffineTransformRotate(_publishBtn.transform,-M_PI);
-    [UIView animateWithDuration:0.5 animations:^{
-        [_publishBtn setTransform:transform];
-        [_publishBtn setAlpha:1.0f];
-    }];
 }
 
 - (void)nextItemClick {
-    self.vc.hidesBottomBarWhenPushed = YES;
-    if ([self.navigationController.topViewController isKindOfClass:[PJLostViewController class]]) {
-        [self.navigationController pushViewController:_vc animated:YES];
-    }
+    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJNewLost" bundle:nil];
+    PJNewLostViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJNewLostViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)getDataFromHttp {
@@ -151,35 +137,6 @@
     [MobClick event:@"event_001"];
     NSDictionary *dict = @{@"userEmail":[PJUser currentUser].email};
     [MobClick event:@"ibistu_bus_click" attributes:dict];
-}
-
-- (void)tableViewMove:(BOOL)hidden{
-    UIView *tab = self.tabBarController.view;
-    CGRect  tabRect=self.tabBarController.tabBar.frame;
-    if ([tab.subviews count] < 2) {
-        return;
-    }
-    
-    UIView *view;
-    if ([[tab.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
-        view = [tab.subviews objectAtIndex:1];
-    } else {
-        view = [tab.subviews objectAtIndex:0];
-    }
-    
-    if (hidden) {
-        view.frame = tab.bounds;
-        tabRect.origin.y=[[UIScreen mainScreen] bounds].size.height+self.tabBarController.tabBar.frame.size.height;
-    } else {
-        view.frame = CGRectMake(tab.bounds.origin.x, tab.bounds.origin.y, tab.bounds.size.width, tab.bounds.size.height);
-        tabRect.origin.y=[[UIScreen mainScreen] bounds].size.height-self.tabBarController.tabBar.frame.size.height;
-    }
-    
-    [UIView animateWithDuration:0.5f animations:^{
-        self.tabBarController.tabBar.frame=tabRect;
-    }completion:^(BOOL finished) {
-        
-    }];
 }
 
 @end

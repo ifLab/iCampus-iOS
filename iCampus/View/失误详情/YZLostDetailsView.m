@@ -75,10 +75,10 @@
     NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_kDetailsLabel.font,NSFontAttributeName, nil];
     textFrame = _kDetailsLabel.frame;
     textFrame.size.height = [_kDetailsLabel.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-8, 300) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
-    _kDetailsLabel.frame = CGRectMake(4, 12, SCREEN_WIDTH-8, textFrame.size.height);
+    _kDetailsLabel.frame = CGRectMake(15, 15, SCREEN_WIDTH-30, textFrame.size.height);
     _kTextHeight = textFrame.size.height;
     long k = _imageArray.count;
-    CGFloat lastY = _kTextHeight + 8 + 308*k;
+    CGFloat lastY = _kTextHeight + 30 + 308*k;
     //设置contenSize符合整个页面所有控件加起来的长度
     _scrollview.contentSize = CGSizeMake(0, lastY);
     [self setupScrollView:dataSource];
@@ -86,7 +86,7 @@
 
 - (void)setupScrollView:(NSDictionary *)data{
     NSArray* imgArry = _imageArray;
-    CGFloat y = textFrame.size.height + 12;
+    CGFloat y = textFrame.size.height + 20;
     CGFloat spaceY = 8;
     int imageNum = 0;
     CGFloat lastY = y;

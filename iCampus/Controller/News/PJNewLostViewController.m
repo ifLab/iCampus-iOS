@@ -35,6 +35,7 @@
 
 - (void)initView {
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.title = @"添加失物招领";
     
     _kTableView = [UITableView new];
@@ -47,15 +48,7 @@
     _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].first_name];
     _phoneTextField.delegate = self;
     
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
-    footer = views.firstObject;
-    footer.backgroundColor = [UIColor clearColor];
-    footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
-    _kTableView.tableFooterView = footer;
-    footer.logoutBtn.backgroundColor = mainDeepSkyBlue;
-    [footer.logoutBtn setTitle:@"添加" forState:0];
-    [footer.logoutBtn addTarget:self action:@selector(uploadLost) forControlEvents:1<<6];
-
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pushLost"] style:UIBarButtonItemStylePlain target:self action:@selector(uploadLost)];
 }
 
 - (void)uploadLost {
@@ -207,13 +200,26 @@
     }];
 }
 
-- (void)textViewDidChange:(UITextView *)textView {
-    if ([_detailsTextView.text isEqualToString:@""]) {
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    _detailsTextViewLabel.hidden = YES;
+    return true;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
         _detailsTextViewLabel.hidden = NO;
-    } else {
-        _detailsTextViewLabel.hidden = YES;
     }
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    _phoneTextFieldTipsLabel.hidden = YES;
+    return true;
+};
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([_phoneTextFieldTipsLabel.text isEqualToString:@""]) {
+        _phoneTextFieldTipsLabel.hidden = NO;
+    }
+}
 
 @end

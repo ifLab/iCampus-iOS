@@ -12,33 +12,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="226" id="KGk-i7-Jjw" customClass="ICSimpleImageViewCell" customModule="iCampus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="332" height="226"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="KGk-i7-Jjw" customClass="ICSimpleImageViewCell" customModule="iCampus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="332" height="225.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="332" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4y-db-ANn">
-                        <rect key="frame" x="7" y="0.0" width="318" height="106"/>
+                        <rect key="frame" x="0.0" y="53" width="332" height="110.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="W4y-db-ANn" secondAttribute="height" multiplier="3:1" id="7rR-H2-EGa"/>
+                            <constraint firstAttribute="width" secondItem="W4y-db-ANn" secondAttribute="height" multiplier="3:1" id="Npz-d1-iIC"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="这是个最多显示两行字的label啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-3q-3G8">
-                        <rect key="frame" x="10" y="116" width="312" height="28.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="这里面也是两行这里面也是两行这里面也是两行这里面也是两行这里面也是两行这里面也是两行" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atd-zc-Vaj">
-                        <rect key="frame" x="10" y="154.5" width="312" height="33.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="10" y="178.5" width="312" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-12-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EU-P0r">
-                        <rect key="frame" x="241.5" y="198.5" width="80.5" height="17"/>
+                        <rect key="frame" x="241.5" y="222.5" width="80.5" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="g7c-4T-Nwr"/>
                         </constraints>
@@ -46,19 +40,35 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-Yc-GJs">
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="10"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="n7c-3q-TMk"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="这是个最多显示两行字的label啊啊啊啊啊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-3q-3G8">
+                        <rect key="frame" x="10" y="25" width="312" height="13"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="W4y-db-ANn" secondAttribute="trailing" constant="7" id="6UZ-oe-cwW"/>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BQi-by-eCw"/>
-                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="top" secondItem="gnT-3q-3G8" secondAttribute="bottom" constant="10" id="OaP-3z-eP5"/>
+                    <constraint firstAttribute="trailing" secondItem="W4y-db-ANn" secondAttribute="trailing" id="6UZ-oe-cwW"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="top" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="15" id="GNM-2f-ZE2"/>
+                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="CTl-Yc-GJs" secondAttribute="bottom" constant="15" id="L7c-hT-xGS"/>
+                    <constraint firstItem="CTl-Yc-GJs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZYw-iX-wLz"/>
                     <constraint firstAttribute="trailing" secondItem="v3T-EU-P0r" secondAttribute="trailing" constant="10" id="Zkp-1O-kmu"/>
+                    <constraint firstItem="CTl-Yc-GJs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aHb-2F-pj0"/>
                     <constraint firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" constant="10" id="aqe-ea-W5q"/>
-                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="bDC-0p-eIq"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bDC-0p-eIq"/>
                     <constraint firstItem="v3T-EU-P0r" firstAttribute="top" secondItem="Atd-zc-Vaj" secondAttribute="bottom" constant="10" id="fvV-G2-K7v"/>
-                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="leading" secondItem="gnT-3q-3G8" secondAttribute="leading" id="gbD-Gx-ceT"/>
-                    <constraint firstItem="gnT-3q-3G8" firstAttribute="top" secondItem="W4y-db-ANn" secondAttribute="bottom" constant="10" id="jjC-lt-k1k"/>
-                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" id="qpo-Jx-XIy"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="leading" secondItem="gnT-3q-3G8" secondAttribute="leading" id="qLT-uK-Grv"/>
+                    <constraint firstItem="Atd-zc-Vaj" firstAttribute="trailing" secondItem="gnT-3q-3G8" secondAttribute="trailing" id="qbR-5H-9kz"/>
                     <constraint firstItem="gnT-3q-3G8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ups-bj-kD8"/>
+                    <constraint firstAttribute="trailing" secondItem="CTl-Yc-GJs" secondAttribute="trailing" id="vi5-QL-pBe"/>
+                    <constraint firstItem="W4y-db-ANn" firstAttribute="top" secondItem="gnT-3q-3G8" secondAttribute="bottom" constant="15" id="x8r-uz-Ekh"/>
                     <constraint firstAttribute="bottom" secondItem="v3T-EU-P0r" secondAttribute="bottom" constant="10" id="yt4-8Z-5MH"/>
                 </constraints>
             </tableViewCellContentView>

@@ -13,13 +13,8 @@ import MJRefresh
     func update(news: ICNews)
 }
 
-protocol ICNewsParentDelegate {
-    func hideNavigationBar(hide: Bool)
-}
-
 class ICNewsTableViewController: UITableViewController {
     
-    var delegate: ICNewsParentDelegate?
     var page = 1
     var channel: ICNewsChannel
     var news = [ICNews]()
@@ -47,16 +42,13 @@ class ICNewsTableViewController: UITableViewController {
         //原数据为80
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         refresh()
     }
-//    override func viewDidLoad() {
-//    super.viewDidLoad()
-//        refresh()
-//    }
-    // MARK: - Table view data source
 
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -88,14 +80,12 @@ class ICNewsTableViewController: UITableViewController {
                         [weak self] data in
                         self?.tableView.mj_header.endRefreshing()
                         self?.news = data as! [ICNews]
-                        self?.tableView.separatorStyle = .singleLine
                         self?.tableView.reloadData()
                         self?.page = 2
             },
                      failure: {
                         [weak self] _ in
                         self?.tableView.mj_header.endRefreshing()
-                        self?.tableView.separatorStyle = .singleLine
         })
     }
     
@@ -105,14 +95,12 @@ class ICNewsTableViewController: UITableViewController {
                         [weak self] data in
                         self?.tableView.mj_footer.endRefreshing()
                         self?.news.append(contentsOf: data as! [ICNews])
-                        self?.tableView.separatorStyle = .singleLine
                         self?.tableView.reloadData()
                         self?.page += 1
             },
                      failure: {
                         [weak self] error in
                         self?.tableView.mj_footer.endRefreshing()
-                        self?.tableView.separatorStyle = .singleLine
         })
     }
     
@@ -124,17 +112,4 @@ class ICNewsTableViewController: UITableViewController {
         newsDetailView.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(newsDetailView, animated: true)
     }
-
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
-        let threshold: CGFloat = 200
-        if offset > 0 && velocity < 0 {
-            delegate?.hideNavigationBar(hide: true)
-        }
-        if velocity >= threshold {
-            delegate?.hideNavigationBar(hide: false)
-        }
-    }
-    
 }

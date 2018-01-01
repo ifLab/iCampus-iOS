@@ -14,7 +14,6 @@
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
 - (void)tableViewClickToDetails:(NSDictionary *)data;
-- (void)tableViewMove:(BOOL)hidden;
 
 @end
 

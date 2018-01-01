@@ -9,7 +9,7 @@
 import UIKit
 import HMSegmentedControl
 
-class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsParentDelegate {
+class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     
     let titles = ["综合新闻", "图片新闻", "人才培养", "教学科研", "文化活动", "校园人物", "交流合作", "社会服务", "媒体关注"]
     let categorys = ["zhxw", "tpxw", "rcpy", "jxky", "whhd", "xyrw", "jlhz", "shfw", "mtgz"]
@@ -32,8 +32,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         for i in 0..<self.titles.count {
             let title = self.titles[i]
             let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
-            t.delegate = self
-            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 5, width: self.width, height: self.height - 104 - 22 - 5)
+            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104 - 22)
             c.append(t)
         }
         return c
@@ -78,24 +77,4 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
     }
-    
-//MARK: HideNavigationBar
-    func hideNavigationBar(hide: Bool) {
-        UIView.animate(withDuration: 0.2) {
-            [weak self] in
-            if let self_ = self {
-                self_.navigationController?.setNavigationBarHidden(hide, animated: false)
-                if hide {
-                    self_.scrollView.frame = CGRect(x: 0, y: 60, width: self_.width, height: self_.height - 40)
-                    self_.segmentedControl.frame = CGRect(x: 0, y: 20, width: self_.width, height: 40)
-                } else {
-                    self_.scrollView.frame = CGRect(x: 0, y: 104, width: self_.width, height: self_.height - 104)
-                    self_.segmentedControl.frame = CGRect(x: 0, y: 64, width: self_.width, height: 40)
-                }
-            }
-        }
-    }
-    
-   
-    
 }
