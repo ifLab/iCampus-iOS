@@ -122,6 +122,7 @@
                 if (failure) {
                     failure(error);
                 }
+                NSLog(@"%@",error);
             }];
         }
     } @catch (NSError *error) {
