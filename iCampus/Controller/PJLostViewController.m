@@ -149,7 +149,12 @@
     [self.navigationController pushViewController:vc animated:YES];
     //埋点
     [MobClick event:@"event_001"];
-    NSDictionary *dict = @{@"userEmail":[PJUser currentUser].email};
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dict = @{@"userEmail":[PJUser currentUser].email,@"time":dateString};
     [MobClick event:@"ibistu_bus_click" attributes:dict];
 }
 
