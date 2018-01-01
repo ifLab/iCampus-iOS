@@ -45,6 +45,7 @@
         searchField.layer.borderColor = RGB(181, 181, 181).CGColor;
         searchField.layer.cornerRadius = 10.0f;
         searchField.placeholder = @"搜索";
+        searchField.font = [UIFont boldSystemFontOfSize:14];
     }
     self.tableHeaderView = _kSearchBar;
 }

@@ -28,7 +28,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tabBar.tintColor = [UIColor blackColor];
-    self.tabBar.unselectedItemTintColor = RGB(180, 180, 180);
+    self.tabBar.unselectedItemTintColor = RGB(150, 150, 150);
     self.delegate = self;
     
     //设置受限栏目

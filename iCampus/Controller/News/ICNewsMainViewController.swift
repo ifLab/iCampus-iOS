@@ -33,7 +33,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
             let title = self.titles[i]
             let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
             t.delegate = self
-            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104 - 22)
+            t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 5, width: self.width, height: self.height - 104 - 22 - 5)
             c.append(t)
         }
         return c
@@ -43,13 +43,12 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate, ICNewsPa
         sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
         sc.selectionStyle = .fullWidthStripe
         sc.selectionIndicatorLocation = .down
-        sc.selectionIndicatorColor = UIColor(red: 68/255.0, green: 206/255.0, blue: 246/255.0, alpha: 1)
-        sc.selectionIndicatorHeight = 3
-        sc.titleFormatter =  {
-            (_, title, _, _) -> NSAttributedString? in
-            let attr = NSAttributedString(string: title!, attributes: [NSForegroundColorAttributeName: UIColor.black])
-            return attr
-        }
+        sc.selectionIndicatorColor = UIColor.black
+        sc.selectionIndicatorHeight = 2
+        sc.titleTextAttributes = {[NSForegroundColorAttributeName : UIColor(red: 150/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1),
+                                   NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]}();
+        sc.selectedTitleTextAttributes = {[NSForegroundColorAttributeName : UIColor.black,
+                                           NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]}();
         return sc
     }()
     
