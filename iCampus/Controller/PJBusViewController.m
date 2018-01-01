@@ -15,8 +15,7 @@
 
 @end
 
-@implementation PJBusViewController
-{
+@implementation PJBusViewController {
     PJBusTableView *_kTableView;
 }
 
@@ -45,6 +44,7 @@
 
 - (void)initView {
     self.title = @"校车";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.view.backgroundColor = [UIColor whiteColor];
     _kTableView = [PJBusTableView new];
     _kTableView.tableDelegate = self;

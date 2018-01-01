@@ -34,18 +34,14 @@
 
 - (void)initView {
     self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"] style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBtn;
-    
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
-    _footer = views.firstObject;
-    self.tableView.tableFooterView = _footer;
-    [_footer.logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-    _footer.logoutBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [_footer.logoutBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

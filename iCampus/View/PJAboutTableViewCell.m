@@ -8,6 +8,7 @@
 
 #import "PJAboutTableViewCell.h"
 
+
 @implementation PJAboutTableViewCell
 
 - (void)awakeFromNib {
@@ -16,12 +17,22 @@
 }
 
 - (void)initView {
-    _aboutNameLabel.font = [UIFont systemFontOfSize:28];
+    _bgView.backgroundColor = [UIColor blackColor];
+    _bgView.alpha = 0.2;
 }
 
 - (void)setDataSource:(NSDictionary *)dataSource {
     _dataSource = dataSource;
-    _aboutNameLabel.text = dataSource[@"aboutName"];
+    NSString *focusString = dataSource[@"aboutName"];
+    if ([focusString isEqualToString:@"Credits"]) {
+        _aboutNameLabel.text = focusString;
+        _aboutNameLabel.textColor = [UIColor whiteColor];
+    } else if ([focusString isEqualToString:@"ifLab"]) {
+        _aboutNameLabel.text = @"";
+        _bgView.hidden = true;
+    } else {
+        _aboutNameLabel.text = dataSource[@"aboutName"];
+    }
 }
 
 @end

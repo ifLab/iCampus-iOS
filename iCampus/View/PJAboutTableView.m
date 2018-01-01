@@ -21,8 +21,7 @@
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.delegate = self;
     self.dataSource = self;
-    self.rowHeight = UITableViewAutomaticDimension;
-    self.estimatedRowHeight = 150;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableFooterView = [UIView new];
     [self registerNib:[UINib nibWithNibName:@"PJAboutTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJAboutTableViewCell"];
 }
@@ -36,6 +35,10 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 110;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataArr.count;
 }
@@ -43,6 +46,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJAboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJAboutTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _dataArr[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"about%d", (NSInteger)indexPath.row]];
     return cell;
 }
 

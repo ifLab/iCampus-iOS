@@ -16,13 +16,7 @@
 }
 
 - (void)initView{
-    _busNameLabel.font = [UIFont systemFontOfSize:15];
-    _busTypeLabel.font = [UIFont systemFontOfSize:12];
-    _departureTimeLabel.font = [UIFont systemFontOfSize:12];
-    _returnTimeLabel.font = [UIFont systemFontOfSize:12];
-    
-//    CGRect frame = _busNameLabel.frame;
-//    _busNameLabel.frame = CGRectMake(frame.origin.x, frame.origin.y, SCREEN_WIDTH * 0.4, frame.size.height);
+    self.busTypeLabel.textColor =RGB(150, 150, 150);
 }
 
 - (void)setCellDataSource:(NSDictionary *)cellDataSource {
@@ -32,19 +26,17 @@
     if ([cellDataSource[@"departureTime"] isEqualToString:@""]) {
         _departureTimeLabel.text = @"无";
     } else {
-        _departureTimeLabel.text = [NSString stringWithFormat:@"%@", cellDataSource[@"departureTime"]];
+        _departureTimeLabel.text = [NSString stringWithFormat:@"%@ →", cellDataSource[@"departureTime"]];
     }
     if ([cellDataSource[@"returnTime"] isEqualToString:@""]) {
         _returnTimeLabel.text = @"无";
     } else {
-        _returnTimeLabel.text = [NSString stringWithFormat:@"%@", cellDataSource[@"returnTime"]];
+        _returnTimeLabel.text = [NSString stringWithFormat:@"← %@", cellDataSource[@"returnTime"]];
     }
     if ([cellDataSource[@"busType"] isEqualToString:@"教学班车"]) {
-//        _busTypeImg.image = [UIImage imageNamed:@"Bus_2"];
-        self.imageView.image = [UIImage imageNamed:@"Bus_2"];
+        self.busTypeImage.image = [UIImage imageNamed:@"teachBus"];
     } else {
-//        _busTypeImg.image = [UIImage imageNamed:@"ICBusIcon"];
-        self.imageView.image = [UIImage imageNamed:@"ICBusIcon"];
+        self.busTypeImage.image = [UIImage imageNamed:@"normalBus"];
     }
 }
 @end

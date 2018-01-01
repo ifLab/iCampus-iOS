@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,69 +20,60 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q2-p7-4qC">
-                        <rect key="frame" x="65" y="10" width="162" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="65" y="13" width="40" height="15.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-2a-JuB">
-                        <rect key="frame" x="65" y="28" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="65" y="36.5" width="33" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-jC-pTW">
-                        <rect key="frame" x="265" y="12" width="42" height="15"/>
+                        <rect key="frame" x="271" y="15" width="33" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="9eJ-bG-qLO"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-0W-QdW">
-                        <rect key="frame" x="265" y="32.5" width="42" height="15"/>
+                        <rect key="frame" x="271" y="35.5" width="33" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="ldq-3g-DKf"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICBusDepartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uaj-ks-f2h">
-                        <rect key="frame" x="242" y="13" width="15" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="riS-OT-Edh">
+                        <rect key="frame" x="20" y="17.5" width="25" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="15" id="YEK-0y-GBV"/>
-                            <constraint firstAttribute="height" constant="15" id="tbB-ZG-Rdq"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICBusReturnIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hLW-96-uiB">
-                        <rect key="frame" x="242" y="36" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="EnZ-l3-fTV"/>
-                            <constraint firstAttribute="width" constant="15" id="Rzw-2r-T2A"/>
+                            <constraint firstAttribute="width" constant="25" id="QQo-R3-G9B"/>
+                            <constraint firstAttribute="height" constant="25" id="x6n-8f-Pk6"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="riS-OT-Edh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2hc-FQ-Bwv"/>
+                    <constraint firstItem="7q2-p7-4qC" firstAttribute="leading" secondItem="sXR-2a-JuB" secondAttribute="leading" id="78t-Po-DDj"/>
                     <constraint firstAttribute="bottomMargin" secondItem="7q2-p7-4qC" secondAttribute="bottom" constant="20.5" id="8P6-ME-RD7"/>
-                    <constraint firstItem="7q2-p7-4qC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="57" id="8ad-SZ-Vv0"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="gaR-jC-pTW" secondAttribute="trailing" constant="5" id="Fbt-AI-c1I"/>
                     <constraint firstItem="7q2-p7-4qC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="S6a-mR-Dnp"/>
-                    <constraint firstItem="Zfq-0W-QdW" firstAttribute="leading" secondItem="hLW-96-uiB" secondAttribute="trailing" constant="8" id="SYc-fv-3YC"/>
-                    <constraint firstItem="gaR-jC-pTW" firstAttribute="leading" secondItem="Uaj-ks-f2h" secondAttribute="trailing" constant="8" id="X7N-Fc-drT"/>
-                    <constraint firstItem="Uaj-ks-f2h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="XpV-Z8-LOw"/>
-                    <constraint firstItem="Zfq-0W-QdW" firstAttribute="leading" secondItem="gaR-jC-pTW" secondAttribute="leading" id="YdD-D6-7WF"/>
-                    <constraint firstAttribute="bottom" secondItem="sXR-2a-JuB" secondAttribute="bottom" constant="10.5" id="cVP-dt-wiI"/>
+                    <constraint firstAttribute="bottom" secondItem="sXR-2a-JuB" secondAttribute="bottom" constant="8.5" id="cVP-dt-wiI"/>
                     <constraint firstItem="Zfq-0W-QdW" firstAttribute="top" secondItem="gaR-jC-pTW" secondAttribute="bottom" constant="5.5" id="he8-sO-BIm"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="hLW-96-uiB" secondAttribute="bottom" constant="0.5" id="lEz-Jb-9xD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gaR-jC-pTW" secondAttribute="trailing" id="lqt-B9-jOV"/>
                     <constraint firstItem="sXR-2a-JuB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="65" id="mtS-Gy-dcB"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="7q2-p7-4qC" secondAttribute="trailing" constant="85" id="tqK-uP-FIQ"/>
+                    <constraint firstItem="riS-OT-Edh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="v5z-b1-b5N"/>
                     <constraint firstItem="gaR-jC-pTW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="xl9-Lg-2dR"/>
+                    <constraint firstItem="gaR-jC-pTW" firstAttribute="trailing" secondItem="Zfq-0W-QdW" secondAttribute="trailing" id="z3s-N5-MhF"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="busNameLabel" destination="7q2-p7-4qC" id="JTZ-HC-kSw"/>
+                <outlet property="busTypeImage" destination="riS-OT-Edh" id="v08-dh-2mu"/>
                 <outlet property="busTypeLabel" destination="sXR-2a-JuB" id="Ywo-pd-cbj"/>
                 <outlet property="departureTimeLabel" destination="gaR-jC-pTW" id="gNm-pD-86o"/>
                 <outlet property="returnTimeLabel" destination="Zfq-0W-QdW" id="82c-fs-qYB"/>
@@ -90,8 +81,4 @@
             <point key="canvasLocation" x="39" y="55"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="ICBusDepartIcon" width="20" height="20"/>
-        <image name="ICBusReturnIcon" width="20" height="20"/>
-    </resources>
 </document>

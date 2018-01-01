@@ -35,16 +35,17 @@
 
 - (void)initView {
     self.title = @"地图";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.view.backgroundColor = [UIColor whiteColor];
     _kMapView = [[PJMapView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _kMapView.mapDelegate = self;
     [self.view addSubview:_kMapView];
     
     //左侧校车入口
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"公交车"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"busTime"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"导航"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"mapNav"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.enabled = true;
 

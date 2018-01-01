@@ -65,6 +65,7 @@ class ICNewsTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: nibNames[1], for: indexPath)
         }
         (cell as! ICNewsViewCell).update(news: news[indexPath.row])
+         cell.selectionStyle = .none;
         return cell
     }
     
