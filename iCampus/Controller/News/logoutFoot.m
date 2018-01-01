@@ -14,6 +14,7 @@
 -(void)initUI{
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 69);
     _logoutBtn.layer.cornerRadius = 10;
+    _logoutBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     _logoutBtn.layer.masksToBounds = true;
 }
 

@@ -34,16 +34,14 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true);
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .none
-//        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
-//        tableView.mj_header.beginRefreshing()
         
         //Umeng share button
-        let shareBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
-        
+        let shareBtn = UIBarButtonItem(image: UIImage.init(named: "newsShare"), style: .done, target: self, action: #selector(shareAction))
         self.navigationItem.rightBarButtonItem = shareBtn
         refresh()
     }
@@ -124,27 +122,6 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         textCell.attributedTextContextView.relayoutText()
         tableView.reloadData()
     }
-    
-    //MARK: ScrollView Delegate
-    //MARK: HideNavigationBar
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset.y
-//        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
-//        let threshold: CGFloat = 200
-//        UIView.animate(withDuration: 0.5) {
-//            [weak self] in
-//            if let self_ = self {
-//                if offset > 0 && velocity < 0 {
-//                    self_.navigationItem.setHidesBackButton(true, animated: false)
-//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 0)
-//                }
-//                if velocity >= threshold {
-//                    self_.navigationItem.setHidesBackButton(false, animated: false)
-//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44)
-//                }
-//            }
-//        }
-//    }
     
     func imageFromView(theView:UITableView) -> UIImage {
         let savedContentOffset:CGPoint = theView.contentOffset

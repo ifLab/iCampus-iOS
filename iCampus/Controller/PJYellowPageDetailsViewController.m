@@ -32,6 +32,7 @@
 - (void)initView {
     self.title = _dataSource[@"name"];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     _kTableView = [PJYellowPageDetailsTableView new];
     [self.view addSubview:_kTableView];
 

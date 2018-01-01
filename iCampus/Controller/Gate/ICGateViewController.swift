@@ -13,17 +13,18 @@ class ICGateViewController: UICollectionViewController, UICollectionViewDelegate
     
 //    MARK: - Properties
     var identifier = "ICGateViewCell"
-    let itemTitles = ["新闻",
-                      "黄页",
-                      "校车",
-                      "地图",
+    let itemTitles = [""];
+//                      "新闻",
+//                      "黄页",
+//                      "校车",
+//                      "地图",
 //                      "兼职",
 //                      "成绩",
 //                      "课程",
 //                      "教室",
-                      "失物招领",
+//                      "失物招领",
 //                      "关于",
-                      ]
+//                      ]
     let limitedTitles = ["黄页",
                          "失物招领",
     ]//需要登录并认证的栏目
