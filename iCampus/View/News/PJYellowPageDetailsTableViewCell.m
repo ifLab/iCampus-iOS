@@ -16,8 +16,7 @@
 }
 
 - (void)initView {
-    _nameLabel.font = [UIFont systemFontOfSize:14];
-    _phoneLabel.font = [UIFont systemFontOfSize:14];
+
 }
 
 - (void)setCellDataSource:(NSDictionary *)cellDataSource {
