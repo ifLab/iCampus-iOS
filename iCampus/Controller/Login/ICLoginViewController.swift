@@ -101,7 +101,9 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                 let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
                                                 controller.view.frame = UIScreen.main.bounds
                                                 PJHUD.dismiss()
-                                                self_.dismiss(animated: true, completion: nil)
+                                                self_.dismiss(animated: true, completion: {
+                                                    NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil)
+                                                })
                                             }
                         },
                                          failure: {

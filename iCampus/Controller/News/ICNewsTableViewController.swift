@@ -30,6 +30,10 @@ class ICNewsTableViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func loadView() {
         super.loadView()
@@ -46,6 +50,8 @@ class ICNewsTableViewController: UITableViewController {
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         refresh()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
     }
 
     // MARK: - Table view data source
@@ -102,6 +108,22 @@ class ICNewsTableViewController: UITableViewController {
                      failure: {
                         [weak self] error in
                         self?.tableView.mj_footer.endRefreshing()
+        })
+    }
+    
+    func loginRefresh() {
+        tableView.mj_header.beginRefreshing()
+        ICNews.fetch(channel, page: 1,
+                     success: {
+                        [weak self] data in
+                        self?.tableView.mj_header.endRefreshing()
+                        self?.news = data as! [ICNews]
+                        self?.tableView.reloadData()
+                        self?.page = 2
+            },
+                     failure: {
+                        [weak self] _ in
+                        self?.tableView.mj_header.endRefreshing()
         })
     }
     

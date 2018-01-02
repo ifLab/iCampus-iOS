@@ -15,42 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var navigationController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        var shouldPerformAddtionalDelegateHadding = true
-        self.creatShortcutItem()
-        if #available(iOS 9.0, *) {
-            let shortCutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
-            if (shortCutItem != nil){
-                //如果是从3DTouch启动程序
-                self.maininit()
-                self.handleShortCutItems(shortCutItem: shortCutItem!)
-                shouldPerformAddtionalDelegateHadding = false
-            }
-            else{
-                //正常启动
-                self.maininit()
-            }
-        } else {
-            //iOS9.0以下版本
-            self.maininit()
-        }
-        return shouldPerformAddtionalDelegateHadding
+        self.maininit()
+        
+        return true
     }
     
     func maininit(){
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        //ZK 删去原先的刷新机制
-//        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
-//            ICLoginManager.refreshToken() {
-//                _ in
-//            }
-//        }
+        
         
         //4.0版本 主要架构变更为TabBarController
         let tabBarC = ZKTabBarViewController.init()
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
         tabBarC.delegate = self
+
+        //判断是否登入，不登入弹出登入controller
+        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
+            if !CASBistu.checkCASCertified() && CASBistu.showCASController() {
+                let controller = Bundle.main.loadNibNamed("ICCASViewController", owner: nil, options: nil)?.first
+                tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
+            }
+        }else{
+            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+            tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
+        }
         
         //集成 友盟分享
         
@@ -99,16 +89,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 
                 ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
                 PJUser.logOut()
-            }else{
-                //未超过一天
-                //使用现有方法更新Session
-                ICLoginManager.refreshToken() {
-                    _ in
-                }
             }
         }else{
             print("第一次登录")
         }
+        
     }
     
     func creatShortcutItem(){
@@ -164,27 +149,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-    //对3DTouch启动程序的处理
-    @available(iOS 9.0, *)
-    func handleShortCutItems(shortCutItem: UIApplicationShortcutItem){
-        switch shortCutItem.type {
-        case "黄页":
-            let vc = self.window?.rootViewController as! ZKTabBarViewController
-            vc.selectedIndex = 1;
-            let vcc = vc.childViewControllers[1].childViewControllers[0] as! PJYellowPageViewController
-            vcc.yellowPageisSearch(true)
-            break;
-        case "失物":
-            let vc = ZKTabBarViewController.init()
-            vc.selectedIndex = 2;
-            let vcc = vc.childViewControllers[2].childViewControllers[0] as! PJLostViewController
-            vcc.nextItemClick()
-            break;
-        default:
-            break;
+        let file = NSHomeDirectory() + "/Documents/user.data"
+        if (FileManager.default.fileExists(atPath: file)){
+            //用户存在
+            //不是第一次登录
+            //获取用户
+            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let lastTime = formatter.date(from: user.last_login_date)!
+            let thisTime = Date()
+            
+            let timeInterval = thisTime.timeIntervalSince(lastTime)
+            
+            //时间差计算 3600 * 24
+            if (timeInterval <= 3600 * 24){
+                //未超过一天
+                //使用现有方法更新Session
+                ICLoginManager.refreshToken() {
+                    _ in
+                }
+            }
         }
     }
     

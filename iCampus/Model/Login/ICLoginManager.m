@@ -131,6 +131,13 @@
                                    success:^(NSDictionary *data) {
                                        NSString *session = data[@"session_token"];
                                        [ICNetworkManager defaultManager].token = session;
+                                       PJUser *user = [PJUser new];
+                                       user.name = data[@"name"];
+                                       user.first_name = data[@"first_name"];
+                                       user.last_name = data[@"last_name"];
+                                       user.last_login_date = data[@"last_login_date"];
+                                       user.email = data[@"email"];
+                                       [user save];
                                    } failure:^(NSError *error) {
                                        failure(error.userInfo[NSLocalizedDescriptionKey]);
                                    }];
