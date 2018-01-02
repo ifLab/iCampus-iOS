@@ -91,10 +91,8 @@
 		A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */; };
 		A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B7F1E96998600DDD6BC /* MOBFoundation.framework */; };
 		A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */; };
-		A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */; };
 		A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96E1EAB5030007882AA /* ICYellowPage.m */; };
 		A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */; };
-		A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */; };
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
 		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
 		A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */; };
@@ -278,12 +276,10 @@
 		A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsDetailViewController.swift; sourceTree = "<group>"; };
-		A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageViewController.swift; path = YellowPage/ICYellowPageViewController.swift; sourceTree = "<group>"; };
 		A98CB96D1EAB5030007882AA /* ICYellowPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPage.h; path = YellowPage/ICYellowPage.h; sourceTree = "<group>"; };
 		A98CB96E1EAB5030007882AA /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPage.m; path = YellowPage/ICYellowPage.m; sourceTree = "<group>"; };
 		A98CB9701EAB5279007882AA /* ICYellowPageChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPageChannel.h; path = YellowPage/ICYellowPageChannel.h; sourceTree = "<group>"; };
 		A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPageChannel.m; path = YellowPage/ICYellowPageChannel.m; sourceTree = "<group>"; };
-		A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageMainViewController.swift; path = YellowPage/ICYellowPageMainViewController.swift; sourceTree = "<group>"; };
 		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9F0FFE91EFA6C95007168C8 /* CASBistu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CASBistu.h; sourceTree = "<group>"; };
 		A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CASBistu.m; sourceTree = "<group>"; };
@@ -1015,8 +1011,6 @@
 		A98CB9691EAAFC73007882AA /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
-				A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */,
-				A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */,
 				2CF5CBCE1EB46B85006580D7 /* 页内 */,
 				2C8B9FDF1EB455E60062E918 /* PJYellowPageViewController.h */,
 				2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */,
@@ -1485,7 +1479,6 @@
 				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
 				A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */,
-				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,
 				2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */,
@@ -1507,7 +1500,6 @@
 				DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
-				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
 				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,

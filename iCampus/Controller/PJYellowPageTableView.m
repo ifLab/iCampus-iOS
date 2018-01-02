@@ -52,7 +52,6 @@
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
     _dataArr = dataArr;
-    [self reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -98,6 +97,12 @@
         }
     }
     [self reloadData];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (scrollView.contentOffset.y < -150) {
+        [_tableDelegate PJYellowPageTableView:self scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

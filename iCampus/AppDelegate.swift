@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     
     var window: UIWindow?
     var navigationController: UINavigationController?
@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarC = ZKTabBarViewController.init()
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
+        tabBarC.delegate = self
         
         //集成 友盟分享
         
@@ -205,5 +206,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         default:
             break;
         }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabBarDidSelectedNotification"), object: nil, userInfo: nil)
     }
 }

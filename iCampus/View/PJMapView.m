@@ -55,31 +55,12 @@
     CGFloat longitude = [_dataArr[1][@"longitude"] floatValue];
     CLLocationCoordinate2D coordinate = {latitude,longitude};
     [_mapView setCenterCoordinate:coordinate animated:YES];
-    MKCoordinateSpan span = {0,0.3};
+    MKCoordinateSpan span = {0.1, 0.25};
     [_mapView setRegion:MKCoordinateRegionMake(coordinate, span) animated:YES];
-//    [_mapView setRegion:MKCoordinateRegionMakeWithDistance(coordinate, 5000, 5000) animated:YES];
-
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     [_mapDelegate getSelectedAnnotation:view];
-}
-
-// ZK - 自定义大头针
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    static NSString *annoID = @"zkAnno";
-    
-    MKAnnotationView *annoView = [mapView dequeueReusableAnnotationViewWithIdentifier:annoID];
-    if (!annoView) {
-        annoView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annoID
-                    ];
-    }
-    
-    annoView.image = [UIImage imageNamed:@"pin-map"];
-    //显示气泡信息
-    annoView.canShowCallout = YES;
-    
-    return annoView;
 }
 
 @end

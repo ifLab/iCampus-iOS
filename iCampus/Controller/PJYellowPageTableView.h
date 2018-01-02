@@ -11,6 +11,7 @@
 @protocol PJYellowPageTableViewDelegate <NSObject>
 
 - (void)PJYellowPageTableViewCellClick:(NSDictionary *)dict;
+- (void)PJYellowPageTableView:(UITableView *)tableView scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
 
 @end
 

@@ -54,6 +54,7 @@
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
+                                       [_kTableView reloadData];
                                        [PJHUD dismiss];
                                    }
                                    failure:^(NSError *error) {
@@ -66,6 +67,10 @@
     vc.dataSource = dict;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)PJYellowPageTableView:(UITableView *)tableView scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self getDataFromHttp];
 }
 
 - (void)yellowPageisSearch:(BOOL)isSearch{
