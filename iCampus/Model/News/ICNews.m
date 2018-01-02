@@ -36,6 +36,7 @@
                                    }
                                    failure:^(NSError *error) {
                                        failure(error.userInfo[NSLocalizedFailureReasonErrorKey]);
+//                                       NSLog(@"%@",error);
                                    }];
 }
 @end
