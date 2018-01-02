@@ -31,8 +31,8 @@
     self.tabBar.unselectedItemTintColor = RGB(150, 150, 150);
     self.delegate = self;
     
-    //设置受限栏目
-    limitedTitles = [NSArray arrayWithObjects:@"黄页", @"失物",@"我", nil];
+//    //设置受限栏目
+//    limitedTitles = [NSArray arrayWithObjects:@"黄页", @"失物",@"我", nil];
     
     //新闻
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[ICNewsMainViewController alloc] init]] title:@"新闻" image:@"news"];
@@ -57,38 +57,33 @@
     [self addChildViewController:navC];
 }
 
-- (BOOL)isLimited:(NSString *)title {
-    for(NSString *name in limitedTitles){
-        if ([name isEqualToString:title]) {
-            return YES;
-        }
-    }
-    return NO;
-}
+//- (BOOL)isLimited:(NSString *)title {
+//    for(NSString *name in limitedTitles){
+//        if ([name isEqualToString:title]) {
+//            return YES;
+//        }
+//    }
+//    return NO;
+//}
 
 //代理方法，监听是否登录
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-
-    if ([self isLimited:viewController.tabBarItem.title]) {
-        //需要登录并且认证
-        if ([ICNetworkManager defaultManager].token != nil && ![[ICNetworkManager defaultManager].token isEqualToString:@""]) {
-            //已登录
-            if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
-                //CAS not certified
-//                ICCASViewController *controller = [[ICCASViewController alloc] initWithNibName:@"ICCASViewController" bundle:nil];
-                ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
-                [self presentViewController:controller animated:YES completion:nil];
-                self.selectedIndex = 0;
-            }
-            
-        }else{
-            //未登录
-            self.selectedIndex = 0;
-            ICLoginViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
+    //需要登录并且认证
+    if ([ICNetworkManager defaultManager].token != nil && ![[ICNetworkManager defaultManager].token isEqualToString:@""]) {
+        //已登录
+        if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
+            //CAS not certified
+            ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
             [self presentViewController:controller animated:YES completion:nil];
-            return ;
+            self.selectedIndex = 0;
         }
         
+    }else{
+        //未登录
+        self.selectedIndex = 0;
+        ICLoginViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
+        [self presentViewController:controller animated:YES completion:nil];
+        return ;
     }
 }
 

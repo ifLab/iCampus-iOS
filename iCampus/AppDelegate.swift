@@ -39,17 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func maininit(){
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        //ZK 删去原先的刷新机制
-//        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
-//            ICLoginManager.refreshToken() {
-//                _ in
-//            }
-//        }
         
         //4.0版本 主要架构变更为TabBarController
         let tabBarC = ZKTabBarViewController.init()
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
+        
+        //判断是否登入，不登入弹出登入controller
+        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
+            if !CASBistu.checkCASCertified() && CASBistu.showCASController() {
+                let controller = Bundle.main.loadNibNamed("ICCASViewController", owner: nil, options: nil)?.first
+                tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
+            }
+        }else{
+            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+            tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
+        }
         
         //集成 友盟分享
         
