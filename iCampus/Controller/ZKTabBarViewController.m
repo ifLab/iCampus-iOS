@@ -34,7 +34,6 @@
     
     //新闻
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[ICNewsMainViewController alloc] init]] title:@"新闻" image:@"news"];
-    
     //黄页
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[PJYellowPageViewController alloc] init]] title:@"黄页" image:@"yellowPages"];
     //失物招领
