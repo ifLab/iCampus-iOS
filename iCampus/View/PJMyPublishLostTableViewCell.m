@@ -22,16 +22,11 @@
 }
 
 - (void)initView {
-    [_trashBtn addTarget:self action:@selector(pressTrashBtn) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)pressTrashBtn{
-    [_cellDelegate trashClick:self.indexPath];
 }
 
 - (void)setFrame:(CGRect)frame{
-    frame.origin.y += 8;
-    frame.size.height -= 8;
+    frame.origin.y += 10;
+    frame.size.height -= 10;
     [super setFrame:frame];
 }
 

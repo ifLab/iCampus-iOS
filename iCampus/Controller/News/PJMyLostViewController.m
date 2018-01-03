@@ -42,7 +42,7 @@
     _freshFlag = headerRefresh;
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"发布的失物招领";
+    self.title = @"发布的失物";
     
     _kTableView = [PJMyPublishLostTableView new];
     _kTableView.tableDelegate = self;
@@ -96,12 +96,12 @@
 }
 
 - (void)trashClick:(NSIndexPath*)indexPath{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除失物" message:@"是否找到失物主人？" preferredStyle: UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除失物" message:@"确定找到失物的主人了嘛？TA现在一定很着急" preferredStyle: UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self updateLost:indexPath.row];
         _kTableView.editing = NO;
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"没有" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
         _kTableView.editing = NO;
     }]];
@@ -117,8 +117,10 @@
                                                     [PJHUD showSuccessWithStatus:@"删除成功"];
                                                     [_kTableView.tableDataArr removeObjectAtIndex:index];
                                                     [_kTableView reloadData];
+                                                    [PJTapic succee];
                                                 } failure:^(NSError *error) {
-                                                    NSLog(@"failure");
+                                                    [PJHUD showErrorWithStatus:@"删除失败"];
+                                                    [PJTapic error];
                                                 }];
 }
 
@@ -131,4 +133,14 @@
     [browser setInitialPageIndex:index - 100];
     [self presentViewController:browser animated:YES completion:nil];
 }
+
+- (NSArray *)PJMyPublishLostTableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *detailAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"完成" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self trashClick:indexPath];
+    }];
+    detailAction.backgroundColor = RGB(0, 205, 0);
+    
+    return @[detailAction];
+}
+
 @end

@@ -12,6 +12,7 @@
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
 - (void)trashClick:(NSIndexPath*)indexPath;
+- (NSArray *)PJMyPublishLostTableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

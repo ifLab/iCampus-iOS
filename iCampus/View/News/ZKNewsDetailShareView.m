@@ -25,12 +25,6 @@
     self.bodyImage.image = self.image;
     CGPoint bodyPoint = self.bodyImage.center;
     bodyPoint.x = [UIScreen mainScreen].bounds.size.width * 0.5;
-    
-//    self.tableView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.tableView.contentSize.height);
-//    CGRect frame = self.bodyView.frame;
-//    frame.size.height = self.tableView.frame.size.height;
-//    self.bodyView.frame = frame;
-    
 }
 
 - (void)didReceiveMemoryWarning {

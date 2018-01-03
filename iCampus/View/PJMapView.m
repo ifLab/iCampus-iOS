@@ -28,7 +28,9 @@
 - (void)initView {
     _dataArr = [@[] mutableCopy];
     _mapView.mapType = MKMapTypeStandard;
+    _mapView.showsUserLocation = true;
     annotations = [@[] mutableCopy];
+    
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {

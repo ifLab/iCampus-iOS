@@ -28,11 +28,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tabBar.tintColor = [UIColor blackColor];
+    // iOS 10起用
     self.tabBar.unselectedItemTintColor = RGB(150, 150, 150);
     self.delegate = self;
-    
-//    //设置受限栏目
-//    limitedTitles = [NSArray arrayWithObjects:@"黄页", @"失物",@"我", nil];
     
     //新闻
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[ICNewsMainViewController alloc] init]] title:@"新闻" image:@"news"];
@@ -56,15 +54,6 @@
     navC.tabBarItem.selectedImage = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self addChildViewController:navC];
 }
-
-//- (BOOL)isLimited:(NSString *)title {
-//    for(NSString *name in limitedTitles){
-//        if ([name isEqualToString:title]) {
-//            return YES;
-//        }
-//    }
-//    return NO;
-//}
 
 //代理方法，监听是否登录
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {

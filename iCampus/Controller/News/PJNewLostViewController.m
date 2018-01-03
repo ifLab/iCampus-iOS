@@ -53,12 +53,7 @@
 
 - (void)uploadLost {
     NSString *phoneNum = _phoneTextField.text;
-//    NSString *nameStr = _nameTextField.text;
     NSString *detailsStr = _detailsTextView.text;
-//    if ([nameStr isEqualToString:@""]) {
-//        [PJHUD showErrorWithStatus:@"姓名错误"];
-//        return;
-//    }
     if (![self isTruePhone:phoneNum]) {
         [PJHUD showErrorWithStatus:@"号码错误"];
         return;
@@ -96,16 +91,19 @@
         NSArray *finalArr = [@[lostDict] mutableCopy];
         [self publishNewLostWithHttp:finalArr];
     } failure:^(NSError *error) {
-        
+        [PJHUD showErrorWithStatus:@"发布失败"];
+        [PJTapic error];
     }];
 }
 
 - (void)publishNewLostWithHttp:(NSArray *)lostArr {
     [[ICNetworkManager defaultManager] POST:@"New Lost" GETParameters:nil POSTParameters:lostArr success:^(NSDictionary *dict) {
         [PJHUD showSuccessWithStatus:@"发布成功"];
+        [PJTapic succee];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
-        NSLog(@"%@", error);
+        [PJHUD showErrorWithStatus:@"发布失败"];
+        [PJTapic error];
     }];
 }
 

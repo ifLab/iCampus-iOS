@@ -19,7 +19,7 @@
 
 - (void)initView {
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    self.backgroundColor = RGB(232, 234, 236);
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.delegate = self;
     self.dataSource = self;
     [self registerNib:[UINib nibWithNibName:@"PJMyPublishLostTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJMyPublishLostTableViewCell"];
@@ -47,6 +47,10 @@
     cell.indexPath = indexPath;
     cell.cellDelegate = self;
     return cell;
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [_tableDelegate PJMyPublishLostTableView:tableView editActionsForRowAtIndexPath:indexPath];
 }
 
 - (void)cellClick:(NSArray *)data index:(NSInteger)index {

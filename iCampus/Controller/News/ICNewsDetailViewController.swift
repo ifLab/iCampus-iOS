@@ -31,6 +31,10 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        PJHUD.dismiss()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true);
@@ -123,38 +127,62 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         tableView.reloadData()
     }
     
-    func imageFromView(theView:UITableView) -> UIImage {
-        let savedContentOffset:CGPoint = theView.contentOffset
-        let savedFrame:CGRect = theView.frame
+    func createShareView() -> UIScrollView {
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+
+        let scrollView:UIScrollView = UIScrollView.init(frame: CGRect(x:0, y:0, width:screenWidth, height:screenHeight))
+        scrollView.backgroundColor = UIColor.white
         
-        theView.contentOffset = CGPoint.zero
-        theView.frame = CGRect(x:0,y:0,width:theView.contentSize.width,height:theView.contentSize.height)
+        let titleLabel = UILabel.init(frame: CGRect(x:0, y:10, width:screenWidth, height:50))
+        scrollView.addSubview(titleLabel)
+        titleLabel.text = "iBistu 新闻"
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
         
-        //ScrollView
-//        let scrollView:UIScrollView = UIScrollView.init()
-//
-//        let headerView:UIView = UIView.init()
-//        headerView.backgroundColor = .black
-//        headerView.frame = CGRect(x:0,y:0,width:savedFrame.width,height:40)
-//        let logoImage:UIImageView = UIImageView.init(image: UIImage (named: "logo"))
-//        logoImage.frame = CGRect(x:4,y:4,width:36,height:36)
-//        headerView.addSubview(logoImage)
-//        let logoTitleLabel:UILabel = UILabel.init()
-        let shareView:ZKNewsDetailShareView = ZKNewsDetailShareView.init()
-        shareView.newsTitle = self.news.title! as NSString
-        UIGraphicsBeginImageContextWithOptions(theView.frame.size,true,0.0)
-        theView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        var theImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        shareView.imageSize = theView.frame.size;
-        shareView.image = theImage;
-        theView.contentOffset = savedContentOffset
-        theView.frame = savedFrame
+        let titleImageView = UIImageView.init(frame: CGRect(x:titleLabel.frame.width / 2 - 50 - 45, y:titleLabel.frame.origin.y + 5, width:40, height:40))
+        titleImageView.image = UIImage.init(named: "logo-png")
+        scrollView.addSubview(titleImageView)
         
-        UIGraphicsBeginImageContextWithOptions(shareView.view.frame.size,true,0.0)
-        shareView.view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        theImage =  UIGraphicsGetImageFromCurrentImageContext()!
+        let tableViewImageView = imageFromView(scrollView: tableView)
+        tableViewImageView.frame = CGRect(x:0, y:titleLabel.frame.height + 10, width:tableViewImageView.frame.width, height:tableViewImageView.frame.height)
+        scrollView.addSubview(tableViewImageView)
         
-        return theImage
+        let QRCodeImageView = UIImageView.init(frame: CGRect(x:(screenWidth - 100)/2, y: tableViewImageView.frame.height + 80, width:100, height:100))
+        QRCodeImageView.image = UIImage.init(named: "QRcode")
+        scrollView.addSubview(QRCodeImageView)
+        
+        scrollView.contentSize = CGSize(width: tableViewImageView.frame.width, height:tableViewImageView.frame.height + 170 + titleImageView.frame.height + 20)
+        
+        let tipsLabel = UILabel.init()
+        tipsLabel.text = "下载iBistu，看更多校内新闻！"
+        tipsLabel.textColor = UIColor.black;
+        tipsLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        tipsLabel.sizeToFit()
+        tipsLabel.frame = CGRect(x:(scrollView.frame.width - tipsLabel.frame.width)/2, y:scrollView.contentSize.height - 30, width:tipsLabel.frame.width, height:15)
+        scrollView.addSubview(tipsLabel)
+        
+        return scrollView;
+    }
+    
+    func imageFromView(scrollView:UIScrollView) -> UIImageView {
+        var image:UIImage? = nil;
+        UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, true, UIScreen.main.scale);
+        let savedContentOffset = scrollView.contentOffset;
+        let savedFrame = scrollView.frame;
+        scrollView.contentOffset = CGPoint.zero;
+        scrollView.frame = CGRect(x:0, y:0, width:scrollView.contentSize.width, height:scrollView.contentSize.height);
+        scrollView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        scrollView.contentOffset = savedContentOffset;
+        scrollView.frame = savedFrame;
+        UIGraphicsEndImageContext();
+        
+        let imageView:UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width:scrollView.contentSize.width, height:scrollView.contentSize.height));
+        imageView.image = image;
+        
+        return imageView;
     }
     
     
@@ -168,7 +196,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
             messageObject.title = self.news.title
             //分享图片
             let shareObject:UMShareImageObject = UMShareImageObject.init()
-            shareObject.shareImage = self.imageFromView(theView: self.tableView)
+            shareObject.shareImage = self.imageFromView(scrollView: self.createShareView()).image
             messageObject.shareObject = shareObject
 
 
