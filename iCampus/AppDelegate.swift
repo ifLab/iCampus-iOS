@@ -80,18 +80,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let alertController = UIAlertController(title: "自动登录失败", message: "您已长时间未使用本APP，为了您的账号安全，请重新登录", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "好的", style: .default, handler:{
                     (UIAlertAction) -> Void in
+                    //退出账号
+                    let vc = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+                    self.window?.rootViewController?.present(vc as! UIViewController, animated: true, completion: {
+                        ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
+                        PJUser.logOut()
+                    })
                 })
                 alertController.addAction(okAction)
                 self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-                //退出账号
-                
-                
-                let vc = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
-                tabBarC.present(vc as! UIViewController, animated: true, completion: {
-                    ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
-                    PJUser.logOut()
-                    tabBarC.select(0)
-                })
             }
         }else{
             print("第一次登录")
