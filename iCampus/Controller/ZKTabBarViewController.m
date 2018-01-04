@@ -65,6 +65,9 @@
             [self presentViewController:controller animated:YES completion:nil];
             self.selectedIndex = 0;
         }
+        if ([viewController.tabBarItem.title isEqualToString:@"地图"]) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"tabBarDidSelectedNotification" object:nil userInfo:nil];
+        }
         
     }else{
         //未登录
