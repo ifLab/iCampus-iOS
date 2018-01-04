@@ -144,4 +144,8 @@
     [MobClick event:@"ibistu_bus_click" attributes:dict];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return false;
+}
+
 @end

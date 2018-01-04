@@ -30,6 +30,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var emailPostionConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginButtonPostionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginBGView: UIView!
     @IBOutlet weak var switchButton: UIButton!//switch between login and register
     lazy var state: ICLoginViewControllerState = {
         return .login
@@ -255,24 +256,37 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         verfyCodeButton.backgroundColor = loginAndRegisterButton.backgroundColor
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
+        let emailLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
+        emailLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        emailField.addSubview(emailLine)
+        emailField.attributedPlaceholder = NSAttributedString.init(string: emailField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         
-        //ZK - 美化登录界面
-        emailField.leftView = UIImageView(image:(UIImage (named:"用户名.png")))
-        emailField.leftViewMode = UITextFieldViewMode.always
+        let phoneFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
+        phoneFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        phoneField.addSubview(phoneFieldLine)
+        phoneField.attributedPlaceholder = NSAttributedString.init(string: phoneField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         
-        passwordField.leftView = UIImageView(image:(UIImage (named: "密码.png")))
-        passwordField.leftViewMode = UITextFieldViewMode.always
+        let passwordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
+        passwordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        passwordField.addSubview(passwordFieldLine)
+        passwordField.attributedPlaceholder = NSAttributedString.init(string: passwordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         
-        phoneField.leftView = UIImageView(image:(UIImage (named: "手机.png")))
-        phoneField.leftViewMode = UITextFieldViewMode.always
+        let verfyCodeFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
+        verfyCodeFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        verfyCodeField.addSubview(verfyCodeFieldLine)
+        verfyCodeField.attributedPlaceholder = NSAttributedString.init(string: verfyCodeField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         
-        verfyCodeField.leftView = UIImageView(image:(UIImage (named: "验证码.png")))
-        verfyCodeField.leftViewMode = UITextFieldViewMode.always
+        let verfyPasswordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
+        verfyPasswordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        verfyPasswordField.addSubview(verfyPasswordFieldLine)
+        verfyPasswordField.attributedPlaceholder = NSAttributedString.init(string: verfyPasswordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         
-        verfyPasswordField.leftView = UIImageView(image:(UIImage (named: "密码.png")))
-        verfyPasswordField.leftViewMode = UITextFieldViewMode.always;
-        
-        
+        loginBGView.backgroundColor = UIColor.black;
+        loginBGView.alpha = 0.5;
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func keyboardWillChangeFrame(notification: Notification) {

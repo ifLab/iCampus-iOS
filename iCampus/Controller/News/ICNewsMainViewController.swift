@@ -69,7 +69,10 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
             }
         }
         childControllers[0].headerBeginRefresh()
-        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
 //MARK: UIScrollViewDelegate

@@ -13,6 +13,7 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var casBGView: UIView!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -72,6 +73,23 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
         containerView.addGestureRecognizer(pan)
         containerView.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        casBGView.backgroundColor = UIColor.black
+        casBGView.alpha = 0.3
+        
+        let usernameFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:usernameField.frame.size.width, height:1))
+        usernameFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        usernameField.addSubview(usernameFieldLine)
+        usernameField.attributedPlaceholder = NSAttributedString.init(string: usernameField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        
+        let passwordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:usernameField.frame.size.width, height:1))
+        passwordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        passwordField.addSubview(passwordFieldLine)
+        passwordField.attributedPlaceholder = NSAttributedString.init(string: passwordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func keyboardWillChangeFrame(notification: Notification) {

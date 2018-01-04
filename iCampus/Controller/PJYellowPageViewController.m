@@ -85,4 +85,8 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return false;
+}
+
 @end

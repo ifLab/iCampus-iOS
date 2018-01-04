@@ -90,4 +90,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return false;
+}
+
 @end
