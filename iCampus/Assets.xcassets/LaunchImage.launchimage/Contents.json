@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
-      "minimum-system-version" : "11.0",
+      "idiom" : "iphone",
       "subtype" : "2436h",
+      "filename" : "X.jpeg",
+      "minimum-system-version" : "11.0",
+      "orientation" : "portrait",
       "scale" : "3x"
     },
     {
@@ -20,7 +21,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "736h",
-      "filename" : "j_1iPhonePortraitiOS89_414x736pt@3x.png",
+      "filename" : "5.5.jpeg",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
       "scale" : "3x"
@@ -37,7 +38,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "667h",
-      "filename" : "j_1iPhonePortraitiOS89_375x667pt@2x.png",
+      "filename" : "4.7.jpeg",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -45,7 +46,6 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "j_1iPhonePortraitiOS56_320x480pt@2x.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
@@ -54,7 +54,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "appicon.png",
+      "filename" : "4.jpeg",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"

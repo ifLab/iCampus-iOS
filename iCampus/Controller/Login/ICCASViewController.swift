@@ -24,6 +24,10 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     @IBAction func login(_ sender: UIButton) {
         sender.isEnabled = false
         sender.backgroundColor = .gray
+        CASLogin()
+    }
+    
+    func CASLogin() {
         messageLabel.text = ""
         PJHUD.show(withStatus: "")
         CASBistu.login(withUsername: usernameField.text,
@@ -82,12 +86,30 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
         usernameField.addSubview(usernameFieldLine)
         usernameField.attributedPlaceholder = NSAttributedString.init(string: usernameField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         usernameField.tintColor = UIColor.white
+        usernameField.returnKeyType = .next
+        usernameField.delegate = self
+        usernameField.tag = 10
         
         let passwordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:usernameField.frame.size.width, height:1))
         passwordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         passwordField.addSubview(passwordFieldLine)
         passwordField.attributedPlaceholder = NSAttributedString.init(string: passwordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
         passwordField.tintColor = UIColor.white
+        passwordField.returnKeyType = .go
+        passwordField.delegate = self
+        passwordField.tag = 20
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if usernameField.isFirstResponder {
+            passwordField.becomeFirstResponder()
+        }
+        
+        if textField.tag == 20 {
+            CASLogin()
+        }
+        
+        return true
     }
     
     override var prefersStatusBarHidden: Bool {

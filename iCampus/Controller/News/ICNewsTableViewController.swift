@@ -51,6 +51,9 @@ class ICNewsTableViewController: UITableViewController {
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         refresh()
         
+        tableView.estimatedSectionHeaderHeight = 0;
+        tableView.estimatedSectionFooterHeight = 0;
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
     }
 
