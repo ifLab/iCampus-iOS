@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var navigationController: UINavigationController?
@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let tabBarC = ZKTabBarViewController.init()
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
-        tabBarC.delegate = self
 
         //判断是否登入，不登入弹出登入controller
         if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
@@ -87,26 +86,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 //退出账号
                 
                 
-                ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
-                PJUser.logOut()
+                let vc = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+                tabBarC.present(vc as! UIViewController, animated: true, completion: {
+                    ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
+                    PJUser.logOut()
+                    tabBarC.select(0)
+                })
             }
         }else{
             print("第一次登录")
         }
         
-    }
-    
-    func creatShortcutItem(){
-        if #available(iOS 9.0, *) {
-            let iconShare = UIApplicationShortcutIcon.init(type: UIApplicationShortcutIconType.search)
-            let itemShare = UIApplicationShortcutItem.init(type: "黄页", localizedTitle: "搜索黄页", localizedSubtitle: nil, icon: iconShare, userInfo: nil);
-            
-            let iconAdd = UIApplicationShortcutIcon.init(type: UIApplicationShortcutIconType.add)
-            let itemAdd = UIApplicationShortcutItem.init(type: "失物", localizedTitle: "添加失物", localizedSubtitle: nil, icon: iconAdd, userInfo: nil)
-            UIApplication.shared.shortcutItems = [itemShare,itemAdd]
-        } else {
-            // Fallback on earlier versions
-        }
     }
     
     //设置友盟第三方账号
@@ -172,29 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 }
             }
         }
+        NotificationCenter.default.post(name: NSNotification.Name("NewsShouldCacheNotification"), object: nil)
     }
     
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        switch shortcutItem.type {
-        case "黄页":
-            let vc = self.window?.rootViewController as! ZKTabBarViewController
-            vc.selectedIndex = 1;
-            let vcc = vc.childViewControllers[1].childViewControllers[0] as! PJYellowPageViewController
-            vcc.yellowPageisSearch(true)
-            break;
-        case "失物":
-            let vc = self.window?.rootViewController as! ZKTabBarViewController
-            vc.selectedIndex = 2;
-            let vcc = vc.childViewControllers[2].childViewControllers[0] as! PJLostViewController
-            vcc.nextItemClick()
-            break;
-        default:
-            break;
-        }
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabBarDidSelectedNotification"), object: nil, userInfo: nil)
-    }
 }
