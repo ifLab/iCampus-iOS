@@ -27,8 +27,6 @@
     self.dataSource = self;
     self.backgroundColor = RGB(245, 245, 245);
     [self registerNib:[UINib nibWithNibName:@"PJBusDetailsTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJBusDetailsTableViewCell"];
-    self.rowHeight = UITableViewAutomaticDimension;
-    self.estimatedRowHeight = 80;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -40,18 +38,25 @@
     return _dataArr.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJBusDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJBusDetailsTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _dataArr[indexPath.row];
     cell.type = [_dataArr[indexPath.row][@"isRed"] integerValue];
-    cell.topLineView.hidden = YES;
-    cell.bottomLineView.hidden = YES;
-    if ([_dataArr[indexPath.row][@"isTopLine"] isEqualToString:@"1"]) {
-        cell.topLineView.hidden = NO;
+    NSDictionary *cellDataSource = _dataArr[indexPath.row];
+    
+    // PJ : 这是之前遗留下来的字典数据，就这样吧，我反正是不想改了。心累。_(:зゝ∠)_
+    if ([cellDataSource[@"isBottomLine"] isEqualToString:cellDataSource[@"isTopLine"]]) {
+        cell.lineImageView.image = [UIImage imageNamed:@"LinePoint"];
+    } else if ([_dataArr[indexPath.row][@"isTopLine"] isEqualToString:@"1"]) {
+        cell.lineImageView.image = [UIImage imageNamed:@"bottomLinePoint"];
+    } else if ([_dataArr[indexPath.row][@"isBottomLine"] isEqualToString:@"1"]) {
+        cell.lineImageView.image = [UIImage imageNamed:@"topLinePoint"];
     }
-    if ([_dataArr[indexPath.row][@"isBottomLine"] isEqualToString:@"1"]) {
-        cell.bottomLineView.hidden = NO;
-    }
+
     return cell;
 }
 

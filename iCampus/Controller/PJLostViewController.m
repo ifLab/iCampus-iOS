@@ -14,10 +14,10 @@
 #import "YZLostDetailsViewController.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate,IDMPhotoBrowserDelegate>
+
 @end
 
-@implementation PJLostViewController
-{
+@implementation PJLostViewController {
     PJLostTableView *_kTableView;
     NSMutableArray *_freshData;
     int page;
@@ -128,9 +128,6 @@
 - (void)tableViewClickToDetails:(NSDictionary *)data{
     YZLostDetailsViewController* vc = [[YZLostDetailsViewController alloc]init];
     vc.dataSource = data;
-    vc.returnblock = ^{
-        [self getDataFromHttp];
-    };
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     //埋点

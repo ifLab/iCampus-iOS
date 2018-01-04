@@ -704,7 +704,6 @@
 		2CF5CBFE1EB4C61D006580D7 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				2CF5CC0F1EB58998006580D7 /* 关于详情 */,
 				2CF5CC061EB4C825006580D7 /* cell */,
 				2CF5CC031EB4C76F006580D7 /* PJAboutTableView.h */,
 				2CF5CC041EB4C76F006580D7 /* PJAboutTableView.m */,
@@ -730,13 +729,6 @@
 				2CF5CC0C1EB4C850006580D7 /* PJAboutTableViewCell.xib */,
 			);
 			name = cell;
-			sourceTree = "<group>";
-		};
-		2CF5CC0F1EB58998006580D7 /* 关于详情 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "关于详情";
 			sourceTree = "<group>";
 		};
 		2CF5CC101EB589D7006580D7 /* 关于详情 */ = {

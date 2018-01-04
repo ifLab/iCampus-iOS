@@ -15,6 +15,5 @@ typedef  void(^ReturnBlock)(void);
 @property (nonatomic, strong) NSDictionary *dataSource;
 @property (nonatomic ,strong) UIButton* PhoneBtn;
 @property (nonatomic ,strong) UIButton* ChatBtn;
-@property (nonatomic ,strong) ReturnBlock returnblock;
 
 @end

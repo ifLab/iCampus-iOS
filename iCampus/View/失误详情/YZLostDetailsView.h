@@ -15,10 +15,13 @@
 @end
 
 @interface YZLostDetailsView : UIView
+
 @property (nonatomic ,strong) NSDictionary* dataSource;
 @property (nonatomic ,strong) UIScrollView* scrollview;
-@property (nonatomic ,strong) UILabel* timeLabel;
-@property (nonatomic ,strong) UILabel* phoneLabel;
-@property (nonatomic ,strong) NSArray* imageArray;
+@property (nonatomic ,strong) NSArray *imageArray;
 @property (nonatomic ,weak) id<YZLostDetailsViewDelegate> LostDetailsViewDelegate;
+
+- (UIImage *)shareImage;
+
 @end
+

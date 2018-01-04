@@ -17,8 +17,6 @@
 
 - (void)initView {
     self.backgroundColor = RGB(245, 245, 245);
-    _backView.layer.cornerRadius = 15;
-    _backView.layer.masksToBounds = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
@@ -38,11 +36,21 @@
 }
 
 - (void)redType {
-    _backView.backgroundColor = RGB(255, 191, 174);
+    _arrivalTimeLabel.textColor = RGB(100, 149, 237);
+    _arrivalTimeLabel.text = [NSString stringWithFormat:@"← %@", _arrivalTimeLabel.text];
+//    NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:_arrivalTimeLabel.text];
+//    NSRange redRange = NSMakeRange(0, 1);
+//    [noteStr addAttribute:NSForegroundColorAttributeName value:RGB(100, 149, 237) range:redRange];
+//    _arrivalTimeLabel.attributedText = noteStr;
 }
 
 - (void)blueType {
-    _backView.backgroundColor = RGB(152, 222, 255);
+    _arrivalTimeLabel.textColor = RGB(238, 99, 99);
+    _arrivalTimeLabel.text = [NSString stringWithFormat:@"→ %@", _arrivalTimeLabel.text];
+//    NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:_arrivalTimeLabel.text];
+//    NSRange redRange = NSMakeRange(0, 1);
+//    [noteStr addAttribute:NSForegroundColorAttributeName value:RGB(238, 99, 99) range:redRange];
+//    _arrivalTimeLabel.attributedText = noteStr;
 }
 
 @end
