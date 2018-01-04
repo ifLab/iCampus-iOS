@@ -57,4 +57,18 @@
     [_tableDelegate PJAboutTableViewCellClick:_dataArr[indexPath.row]];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    footerView.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 35, SCREEN_WIDTH, 10)];
+    tipsLabel.text = @"若使用中遇到问题，请联系 ifLab";
+    [footerView addSubview:tipsLabel];
+    tipsLabel.textAlignment = NSTextAlignmentCenter;
+    tipsLabel.textColor = [UIColor lightGrayColor];
+    tipsLabel.font = [UIFont boldSystemFontOfSize:12];
+    
+    return footerView;
+}
+
 @end

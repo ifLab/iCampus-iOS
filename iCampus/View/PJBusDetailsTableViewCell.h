@@ -16,10 +16,9 @@ typedef enum : NSUInteger {
 @interface PJBusDetailsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *arrivalTimeLabel;
-@property (weak, nonatomic) IBOutlet UIView *backView;
-@property (weak, nonatomic) IBOutlet UIView *topLineView;
-@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+@property (weak, nonatomic) IBOutlet UIImageView *lineImageView;
 
 @property (nonatomic, strong) NSDictionary *dataSource;
 @property (nonatomic) PJBusDetailsTableViewCellType type;
+
 @end

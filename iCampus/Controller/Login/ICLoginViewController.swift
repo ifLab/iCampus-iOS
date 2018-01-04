@@ -260,26 +260,31 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         emailLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         emailField.addSubview(emailLine)
         emailField.attributedPlaceholder = NSAttributedString.init(string: emailField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        emailField.tintColor = UIColor.white
         
         let phoneFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
         phoneFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         phoneField.addSubview(phoneFieldLine)
         phoneField.attributedPlaceholder = NSAttributedString.init(string: phoneField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        phoneField.tintColor = UIColor.white
         
         let passwordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
         passwordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         passwordField.addSubview(passwordFieldLine)
         passwordField.attributedPlaceholder = NSAttributedString.init(string: passwordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        passwordField.tintColor = UIColor.white
         
         let verfyCodeFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
         verfyCodeFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         verfyCodeField.addSubview(verfyCodeFieldLine)
         verfyCodeField.attributedPlaceholder = NSAttributedString.init(string: verfyCodeField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        verfyCodeField.tintColor = UIColor.white
         
         let verfyPasswordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:emailField.frame.size.width, height:1))
         verfyPasswordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         verfyPasswordField.addSubview(verfyPasswordFieldLine)
         verfyPasswordField.attributedPlaceholder = NSAttributedString.init(string: verfyPasswordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        verfyPasswordField.tintColor = UIColor.white
         
         loginBGView.backgroundColor = UIColor.black;
         loginBGView.alpha = 0.5;

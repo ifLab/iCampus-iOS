@@ -81,11 +81,13 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
         usernameFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         usernameField.addSubview(usernameFieldLine)
         usernameField.attributedPlaceholder = NSAttributedString.init(string: usernameField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        usernameField.tintColor = UIColor.white
         
         let passwordFieldLine = UIView.init(frame: CGRect(x:0, y:39, width:usernameField.frame.size.width, height:1))
         passwordFieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         passwordField.addSubview(passwordFieldLine)
         passwordField.attributedPlaceholder = NSAttributedString.init(string: passwordField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        passwordField.tintColor = UIColor.white
     }
     
     override var prefersStatusBarHidden: Bool {
