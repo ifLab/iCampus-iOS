@@ -24,6 +24,8 @@
 #import "PJNewLostViewController.h"
 #import "PJHUD.h"
 #import "PJCurrentPhone.h"
+#import "PJNewsPoints.h"
+
 
 //友盟分享桥接文件
 #import <UMSocialCore/UMSocialCore.h>

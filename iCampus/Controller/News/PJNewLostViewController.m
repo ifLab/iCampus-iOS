@@ -96,6 +96,17 @@
     [[ICNetworkManager defaultManager] POST:@"New Lost" GETParameters:nil POSTParameters:lostArr success:^(NSDictionary *dict) {
         [PJHUD showSuccessWithStatus:@"发布成功"];
         [PJTapic succee];
+        
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        NSDictionary *dic = @{
+                               @"username":[PJUser currentUser].first_name,
+                               @"uploadtime":dateString
+                               };
+        [MobClick event:@"ibistu_lost_new" attributes:dic];
+        
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         [PJHUD showErrorWithStatus:@"发布失败"];

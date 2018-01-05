@@ -55,6 +55,10 @@ class ICNewsTableViewController: UITableViewController {
         tableView.estimatedSectionFooterHeight = 0;
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
+        PJNewsPoints.setNewsPoint({[
+            "username" : PJUser.defaultManager().first_name,
+            "newstitle" : channel.title
+            ]}())
     }
 
     // MARK: - Table view data source
@@ -133,7 +137,6 @@ class ICNewsTableViewController: UITableViewController {
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let newsDetailView:ICNewsDetailViewController = ICNewsDetailViewController(news: news[indexPath.row])
         newsDetailView.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(newsDetailView, animated: true)

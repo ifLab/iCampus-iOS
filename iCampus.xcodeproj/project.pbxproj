@@ -56,6 +56,7 @@
 		7486338E1FFCA2370091A10E /* PJTapic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7486338D1FFCA2370091A10E /* PJTapic.m */; };
 		74DBBE0A1FFF1DED00C70F88 /* PJCurrentPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */; };
 		74DBBE0E1FFF5B0700C70F88 /* ICNewsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE0C1FFF5B0700C70F88 /* ICNewsChannel.m */; };
+		74DBBE141FFF941700C70F88 /* PJNewsPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE131FFF941700C70F88 /* PJNewsPoints.m */; };
 		A03774231FE8C9DF0051D41A /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774221FE8C9DF0051D41A /* UTDID.framework */; };
 		A03774251FE8C9E90051D41A /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774241FE8C9E90051D41A /* UMAnalytics.framework */; };
 		A03774271FE8C9F10051D41A /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774261FE8C9F10051D41A /* UMCommon.framework */; };
@@ -220,6 +221,8 @@
 		74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJCurrentPhone.m; sourceTree = "<group>"; };
 		74DBBE0C1FFF5B0700C70F88 /* ICNewsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsChannel.m; sourceTree = "<group>"; };
 		74DBBE0D1FFF5B0700C70F88 /* ICNewsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsChannel.h; sourceTree = "<group>"; };
+		74DBBE121FFF941700C70F88 /* PJNewsPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJNewsPoints.h; sourceTree = "<group>"; };
+		74DBBE131FFF941700C70F88 /* PJNewsPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJNewsPoints.m; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03774221FE8C9DF0051D41A /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
@@ -869,6 +872,8 @@
 		A90F4B7A1E96998600DDD6BC /* News */ = {
 			isa = PBXGroup;
 			children = (
+				74DBBE121FFF941700C70F88 /* PJNewsPoints.h */,
+				74DBBE131FFF941700C70F88 /* PJNewsPoints.m */,
 				A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */,
 				A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */,
 				A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */,
@@ -1456,6 +1461,7 @@
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
 				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
+				74DBBE141FFF941700C70F88 /* PJNewsPoints.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
 				74DBBE0E1FFF5B0700C70F88 /* ICNewsChannel.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,

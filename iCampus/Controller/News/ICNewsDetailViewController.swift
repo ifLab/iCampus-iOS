@@ -190,6 +190,8 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
         UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
 
+            PJNewsPoints.setNewsShare()
+            
             let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
             messageObject.title = self.news.title
             //分享图片

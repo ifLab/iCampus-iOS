@@ -11,5 +11,6 @@
 @interface PJYellowPageDetailsTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, copy) NSString *departmentName;
 
 @end

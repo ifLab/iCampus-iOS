@@ -45,6 +45,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dic = @{
+                          @"username" : [PJUser currentUser].first_name,
+                          @"departmentname" : [NSString stringWithFormat:@"%@%@", self.departmentName, _dataArr[indexPath.row][@"name"]],
+                          @"uploadtime" : dateString
+                          };
+    [MobClick event:@"ibistu_yellowpages_details" attributes:dic];
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataArr[indexPath.row][@"telephone"]]] options:@{} completionHandler:^(BOOL success) {
         
     }];

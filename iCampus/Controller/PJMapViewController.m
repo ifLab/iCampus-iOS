@@ -93,9 +93,7 @@
     //隐藏本层的TabBar
     bus.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:bus animated:YES];
-    //埋点
-    [MobClick event:@"event_002"];
-    
+        
     NSDate *date = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"MM-dd HH:mm:ss"];
@@ -107,6 +105,18 @@
 
 - (void)rightItemClick {
     if (self.isSelectAnnotation) {
+        
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        NSDictionary *dic = @{
+                              @"username" : [PJUser currentUser].first_name,
+                              @"uploadtime" : dateString,
+                              @"goto" : self.kAnnotationView.annotation.title
+                              };
+        [MobClick event:@"ibistu_map_nav" attributes:dic];
+        
         [NSString stringWithFormat:@"%@", self.kAnnotationView];
         [self gothereWithAddress:[NSString stringWithFormat:@"北京信息科技大学%@", self.kAnnotationView.annotation.title]
                           andLat:[NSString stringWithFormat:@"%f", self.kAnnotationView.annotation.coordinate.latitude]

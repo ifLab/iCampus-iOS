@@ -45,6 +45,7 @@
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
+                                       _kTableView.departmentName = _dataSource[@"name"];
                                        [PJHUD dismiss];
                                    }
                                    failure:^(NSError *error) {
