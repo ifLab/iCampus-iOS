@@ -31,11 +31,28 @@
 - (void)initView {
     _nameTextField.text = [NSString stringWithFormat:@"%@", [PJUser currentUser].email];
     [_oldPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _oldPWTextField.delegate = self;
     [_newnewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _newnewPWTextField.delegate = self;
     [_againNewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _againNewPWTextField.delegate = self;
+    _againNewPWTextField.tag = 10;
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([_oldPWTextField isFirstResponder]) {
+        [_newnewPWTextField becomeFirstResponder];
+    } else if ([_newnewPWTextField isFirstResponder]) {
+        [_againNewPWTextField becomeFirstResponder];
+    }
+    
+    if (textField.tag == 10) {
+        [self updatePw];
+    }
+    return true;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -56,6 +56,7 @@
 		2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
 		7486338E1FFCA2370091A10E /* PJTapic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7486338D1FFCA2370091A10E /* PJTapic.m */; };
+		74DBBE0A1FFF1DED00C70F88 /* PJCurrentPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */; };
 		A03774231FE8C9DF0051D41A /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774221FE8C9DF0051D41A /* UTDID.framework */; };
 		A03774251FE8C9E90051D41A /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774241FE8C9E90051D41A /* UMAnalytics.framework */; };
 		A03774271FE8C9F10051D41A /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774261FE8C9F10051D41A /* UMCommon.framework */; };
@@ -116,8 +117,6 @@
 		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
 		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
 		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
-		F57A9AE71FADAEC4004F2B52 /* ZKNewsDetailShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */; };
-		F57A9AE81FADAEC4004F2B52 /* ZKNewsDetailShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
 		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
 /* End PBXBuildFile section */
@@ -226,6 +225,8 @@
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
 		7486338C1FFCA2370091A10E /* PJTapic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJTapic.h; sourceTree = "<group>"; };
 		7486338D1FFCA2370091A10E /* PJTapic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJTapic.m; sourceTree = "<group>"; };
+		74DBBE081FFF1DED00C70F88 /* PJCurrentPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJCurrentPhone.h; sourceTree = "<group>"; };
+		74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJCurrentPhone.m; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03774221FE8C9DF0051D41A /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
@@ -311,9 +312,6 @@
 		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		F57A9AE41FADAEC4004F2B52 /* ZKNewsDetailShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKNewsDetailShareView.h; sourceTree = "<group>"; };
-		F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKNewsDetailShareView.m; sourceTree = "<group>"; };
-		F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZKNewsDetailShareView.xib; sourceTree = "<group>"; };
 		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
 		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
@@ -902,6 +900,8 @@
 				A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */,
 				A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */,
 				A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */,
+				74DBBE081FFF1DED00C70F88 /* PJCurrentPhone.h */,
+				74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -995,9 +995,6 @@
 				A90F4B951E96998600DDD6BC /* ICNoneImageViewCell.xib */,
 				A90F4B961E96998600DDD6BC /* ICSimpleImageViewCell.swift */,
 				A90F4B971E96998600DDD6BC /* ICSimpleImageViewCell.xib */,
-				F57A9AE41FADAEC4004F2B52 /* ZKNewsDetailShareView.h */,
-				F57A9AE51FADAEC4004F2B52 /* ZKNewsDetailShareView.m */,
-				F57A9AE61FADAEC4004F2B52 /* ZKNewsDetailShareView.xib */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -1292,7 +1289,6 @@
 				2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */,
 				A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */,
 				A90F4BA91E96998600DDD6BC /* ICNoneImageViewCell.xib in Resources */,
-				F57A9AE81FADAEC4004F2B52 /* ZKNewsDetailShareView.xib in Resources */,
 				A90F4B721E96983100DDD6BC /* LICENSE in Resources */,
 				A90F4BB11E969B2B00DDD6BC /* Configuration.plist in Resources */,
 				2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */,
@@ -1491,7 +1487,6 @@
 				2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
 				2CF5CBED1EB47C27006580D7 /* PJBusTableViewCell.m in Sources */,
-				F57A9AE71FADAEC4004F2B52 /* ZKNewsDetailShareView.m in Sources */,
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
@@ -1511,6 +1506,7 @@
 				2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */,
 				2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */,
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
+				74DBBE0A1FFF1DED00C70F88 /* PJCurrentPhone.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
 				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
 				F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */,

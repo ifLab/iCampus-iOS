@@ -24,6 +24,7 @@
 #import "CASBistu.h"
 #import "PJNewLostViewController.h"
 #import "PJHUD.h"
+#import "PJCurrentPhone.h"
 
 //友盟分享桥接文件
 #import <UMSocialCore/UMSocialCore.h>
@@ -31,9 +32,6 @@
 
 //ZK TabBarController
 #import "ZKTabBarViewController.h"
-
-//ShareView
-#import "ZKNewsDetailShareView.h"
 
 //友盟U-App
 #import <UMCommon/UMCommon.h>

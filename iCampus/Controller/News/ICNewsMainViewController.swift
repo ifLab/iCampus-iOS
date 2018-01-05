@@ -16,7 +16,12 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     lazy var scrollView: UIScrollView = {
-        let s = UIScrollView(frame: CGRect(x: 0, y: 104, width: self.width, height: self.height - 104))
+        var s = UIScrollView.init()
+        if PJCurrentPhone.pjCurrentPhone("iPhoneX") {
+            s.frame = CGRect(x: 0, y: 130, width: self.width, height: self.height - 124)
+        } else {
+            s.frame = CGRect(x: 0, y: 104, width: self.width, height: self.height - 104)
+        }
         s.contentSize = CGSize(width: self.width * CGFloat(self.titles.count) , height: s.frame.height)
         s.backgroundColor = .white
         s.isPagingEnabled = true
@@ -39,15 +44,23 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     }()
     lazy var segmentedControl: HMSegmentedControl = {
         let sc = HMSegmentedControl(sectionTitles: self.titles)!
-        sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
+        if PJCurrentPhone.pjCurrentPhone("iPhoneX") {
+            sc.frame = CGRect(x: 0, y: 90, width: self.width, height: 40)
+        } else {
+            sc.frame = CGRect(x: 0, y: 64, width: self.width, height: 40)
+        }
         sc.selectionStyle = .fullWidthStripe
         sc.selectionIndicatorLocation = .down
         sc.selectionIndicatorColor = UIColor.black
         sc.selectionIndicatorHeight = 2
-        sc.titleTextAttributes = {[NSForegroundColorAttributeName : UIColor(red: 150/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1),
-                                   NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]}();
-        sc.selectedTitleTextAttributes = {[NSForegroundColorAttributeName : UIColor.black,
-                                           NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]}();
+        sc.titleTextAttributes = {[
+            NSForegroundColorAttributeName : UIColor(red: 150/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1),
+            NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)
+            ]}();
+        sc.selectedTitleTextAttributes = {[
+            NSForegroundColorAttributeName : UIColor.black,
+            NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)
+            ]}();
         return sc
     }()
     

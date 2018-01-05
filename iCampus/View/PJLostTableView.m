@@ -17,7 +17,11 @@
 }
 
 - (void)initView {
-    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    if (iPhoneX) {
+        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 84);
+    } else {
+        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64);
+    }
     self.delegate = self;
     self.dataSource = self;
     self.tableFooterView = [UIView new];
@@ -27,6 +31,15 @@
     self.estimatedRowHeight = 250;
     self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (@available(iOS 11.0, *)) {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        if (iPhoneX) {
+            self.contentInset = UIEdgeInsetsMake(84, 0, 49, 0);
+        } else {
+            self.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+        }
+        self.scrollIndicatorInsets = self.contentInset;
+    }
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {

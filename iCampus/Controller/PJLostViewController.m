@@ -56,7 +56,11 @@
 - (void)CreatPublishBtn{
     _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_publishBtn setImage:[UIImage imageNamed:@"addLostFound"] forState:UIControlStateNormal];
-    _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT - 110, 45, 45);
+    if (iPhoneX) {
+        _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT - 140, 45, 45);
+    } else {
+        _publishBtn.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT - 110, 45, 45);
+    }
     _publishBtn.layer.cornerRadius = 25;
     _publishBtn.layer.masksToBounds = false;
     _publishBtn.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -75,7 +79,6 @@
 }
 
 - (void)getDataFromHttp {
-    [PJHUD showWithStatus:@""];
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":@"isFound=false"};
     [[ICNetworkManager defaultManager] GET:@"Lost"
@@ -83,7 +86,6 @@
                                    success:^(NSDictionary *dic) {
                                        [_kTableView.mj_header endRefreshing];
                                        [_kTableView.mj_footer endRefreshing];
-                                       [PJHUD dismiss];
                                        NSArray *data = dic[@"resource"];
                                        _freshData = (NSMutableArray*)[_freshData arrayByAddingObjectsFromArray:data];
                                        if (data.count) {

@@ -46,8 +46,18 @@
     
     _kTableView = [PJMyPublishLostTableView new];
     _kTableView.tableDelegate = self;
+
     _kTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headfresh)];
     _kTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footfresh)];
+    if (@available(iOS 11.0, *)) {
+        _kTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        if (iPhoneX) {
+            _kTableView.contentInset = UIEdgeInsetsMake(84, 0, 49, 0);
+        } else {
+            _kTableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+        }
+        _kTableView.scrollIndicatorInsets = _kTableView.contentInset;
+    }
     [self.view addSubview:_kTableView];
     
     [self getDataFromHttp];
@@ -57,14 +67,12 @@
     NSString *filterStr = [NSString stringWithFormat:@"(isFound=false)And(author=%@)", [PJUser currentUser].first_name];
     NSDictionary *paramters = @{@"offset":@(page*10),
                                 @"filter":filterStr};
-    [PJHUD showWithStatus:@""];
     [[ICNetworkManager defaultManager] GET:@"Lost"
                                 parameters:paramters
                                    success:^(NSDictionary *dic) {
                                        [_kTableView.mj_header endRefreshing];
                                        [_kTableView.mj_footer endRefreshing];
                                        
-                                       [PJHUD dismiss];
                                        NSArray *data = dic[@"resource"];
                                        _freshData = (NSMutableArray*)[_freshData arrayByAddingObjectsFromArray:data];
                                        if (data.count) {
