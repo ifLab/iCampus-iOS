@@ -7,7 +7,6 @@
 //
 
 #import "PJUserUpdatePWViewController.h"
-#import "logoutFoot.h"
 #import "ICNetworkManager.h"
 
 @interface PJUserUpdatePWViewController () <UITextFieldDelegate>
@@ -15,9 +14,6 @@
 @end
 
 @implementation PJUserUpdatePWViewController
-{
-    logoutFoot *_footer;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +33,7 @@
     [_againNewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     _againNewPWTextField.delegate = self;
     _againNewPWTextField.tag = 10;
+    
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.enabled = NO;

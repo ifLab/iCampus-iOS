@@ -10,9 +10,7 @@
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
 
-
-@implementation PJMyPublishLostTableViewCell
-{
+@implementation PJMyPublishLostTableViewCell {
     NSArray *_kDataArr;   // 存储最终转化好的ImgURLz
 }
 

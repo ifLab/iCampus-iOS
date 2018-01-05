@@ -20,8 +20,7 @@
 
 @end
 
-@implementation PJMapViewController
-{
+@implementation PJMapViewController {
     PJMapView *_kMapView;
 }
 
@@ -82,8 +81,10 @@
     MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:loc addressDictionary:nil]];
     toLocation.name = address;
     [MKMapItem openMapsWithItems:@[currentLocation, toLocation]
-                   launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
-                                   MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];
+                   launchOptions:@{
+                                   MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
+                                   MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]
+                                   }];
     return;
 }
 
@@ -107,7 +108,9 @@
 - (void)rightItemClick {
     if (self.isSelectAnnotation) {
         [NSString stringWithFormat:@"%@", self.kAnnotationView];
-        [self gothereWithAddress:[NSString stringWithFormat:@"北京信息科技大学%@", self.kAnnotationView.annotation.title] andLat:[NSString stringWithFormat:@"%f", self.kAnnotationView.annotation.coordinate.latitude] andLon:[NSString stringWithFormat:@"%f", self.kAnnotationView.annotation.coordinate.longitude]];
+        [self gothereWithAddress:[NSString stringWithFormat:@"北京信息科技大学%@", self.kAnnotationView.annotation.title]
+                          andLat:[NSString stringWithFormat:@"%f", self.kAnnotationView.annotation.coordinate.latitude]
+                          andLon:[NSString stringWithFormat:@"%f", self.kAnnotationView.annotation.coordinate.longitude]];
     }else {
         [PJHUD showErrorWithStatus:@"请先选择地点"];
     }

@@ -47,7 +47,7 @@
     PJAboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJAboutTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _dataArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"about%d", (NSInteger)indexPath.row]];
+    cell.backImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"about%d", (int)indexPath.row]];
     return cell;
 }
 

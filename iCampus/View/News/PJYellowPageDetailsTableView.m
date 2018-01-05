@@ -45,7 +45,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataArr[indexPath.row][@"telephone"]]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataArr[indexPath.row][@"telephone"]]] options:@{} completionHandler:^(BOOL success) {
+        
+    }];
     PJYellowPageDetailsTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
 }

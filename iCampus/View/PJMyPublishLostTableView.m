@@ -8,7 +8,6 @@
 
 #import "PJMyPublishLostTableView.h"
 
-
 @implementation PJMyPublishLostTableView
 
 - (id)init {

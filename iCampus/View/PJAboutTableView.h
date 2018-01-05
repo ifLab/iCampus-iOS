@@ -19,4 +19,5 @@
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
 @property (nonatomic, weak) id<PJAboutTableViewDelegate> tableDelegate;
+
 @end

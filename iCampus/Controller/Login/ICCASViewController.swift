@@ -17,6 +17,7 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var messageLabel: UILabel!
+    
     lazy var buttonColor: UIColor = {
         UIColor(red: 26/255.0, green: 152/255.0, blue: 252/255.0, alpha: 1)
     }()

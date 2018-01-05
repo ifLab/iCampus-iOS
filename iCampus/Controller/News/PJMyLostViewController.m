@@ -11,13 +11,11 @@
 #import "ICNetworkManager.h"
 #import "IDMPhotoBrowser.h"
 
-
 @interface PJMyLostViewController () <PJMyPublishLostTableViewDelegate,IDMPhotoBrowserDelegate>
 
 @end
 
-@implementation PJMyLostViewController
-{
+@implementation PJMyLostViewController {
     PJMyPublishLostTableView *_kTableView;
     NSMutableArray *_freshData;
     int page;
@@ -52,9 +50,9 @@
     if (@available(iOS 11.0, *)) {
         _kTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         if (iPhoneX) {
-            _kTableView.contentInset = UIEdgeInsetsMake(84, 0, 49, 0);
+            _kTableView.contentInset = UIEdgeInsetsMake(84, 0, 0, 0);
         } else {
-            _kTableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+            _kTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
         }
         _kTableView.scrollIndicatorInsets = _kTableView.contentInset;
     }
@@ -65,8 +63,10 @@
 
 - (void)getDataFromHttp {
     NSString *filterStr = [NSString stringWithFormat:@"(isFound=false)And(author=%@)", [PJUser currentUser].first_name];
-    NSDictionary *paramters = @{@"offset":@(page*10),
-                                @"filter":filterStr};
+    NSDictionary *paramters = @{
+                                @"offset":@(page*10),
+                                @"filter":filterStr
+                                };
     [[ICNetworkManager defaultManager] GET:@"Lost"
                                 parameters:paramters
                                    success:^(NSDictionary *dic) {

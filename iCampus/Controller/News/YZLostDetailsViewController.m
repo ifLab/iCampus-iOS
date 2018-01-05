@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    // Do any additional setup after loading the view.
 }
 
 - (void) setupUI{

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PJBusTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *busNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *busTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *departureTimeLabel;

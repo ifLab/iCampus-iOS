@@ -7,21 +7,15 @@
 //
 
 #import "PJNewLostViewController.h"
-#import "logoutFoot.h"
 #import "PJUIImage+Extension.h"
 #import "ICNetworkManager.h"
-
-//#import "AFHTTPRequestOperationManager.h"
-
 
 @interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @end
 
-@implementation PJNewLostViewController
-{
+@implementation PJNewLostViewController {
     UITableView *_kTableView;
-    logoutFoot *footer;
 }
 
 - (void)viewDidLoad {
@@ -75,9 +69,11 @@
     [PJHUD showWithStatus:@"发布中"];
     [[ICNetworkManager defaultManager] POST:@"Add Lost Image" GETParameters:nil POSTParameters:paramters success:^(NSDictionary *dict) {
         NSArray *dataArr = dict[@"resource"];
-        NSMutableDictionary *lostDict = [@{@"details":_detailsTextView.text,
-                                   @"author":_nameTextField.text,
-                                   @"phone":_phoneTextField.text} mutableCopy];
+        NSMutableDictionary *lostDict = [@{
+                                           @"details":_detailsTextView.text,
+                                           @"author":_nameTextField.text,
+                                           @"phone":_phoneTextField.text} mutableCopy
+                                         ];
         NSMutableArray *imgURLarr = [@[] mutableCopy];
         for (NSDictionary *dict in dataArr) {
             NSString *imgurl = dict[@"path"];

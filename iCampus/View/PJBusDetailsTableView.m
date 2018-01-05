@@ -9,8 +9,7 @@
 #import "PJBusDetailsTableView.h"
 #import "PJBusDetailsTableViewCell.h"
 
-@implementation PJBusDetailsTableView
-{
+@implementation PJBusDetailsTableView {
     BOOL isRed;
 }
 

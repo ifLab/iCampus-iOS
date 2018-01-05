@@ -9,8 +9,7 @@
 #import "PJYellowPageTableView.h"
 #import "PJYellowPageTableViewCell.h"
 
-@implementation PJYellowPageTableView
-{
+@implementation PJYellowPageTableView {
     UISearchBar *_kSearchBar;
     NSMutableArray *_kSearchArr;
 }
@@ -83,8 +82,7 @@
     [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[indexPath.row]];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
-{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText; {
     // 使用谓词匹配
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
     if (_kSearchArr != nil) {

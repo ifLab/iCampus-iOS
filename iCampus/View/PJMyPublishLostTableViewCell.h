@@ -15,11 +15,14 @@
 @end
 
 @interface PJMyPublishLostTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *imgScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) NSDictionary *dataSource;
+
 @property (nonatomic, weak) id<PJMyPublishLostTableViewCellDelegate> cellDelegate;
+
 @end

@@ -10,13 +10,11 @@
 #import "PJYellowPageDetailsTableView.h"
 #import "ICNetworkManager.h"
 
-
 @interface PJYellowPageDetailsViewController ()
 
 @end
 
-@implementation PJYellowPageDetailsViewController
-{
+@implementation PJYellowPageDetailsViewController {
     PJYellowPageDetailsTableView *_kTableView;
 }
 

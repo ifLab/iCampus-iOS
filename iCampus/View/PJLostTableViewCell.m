@@ -10,8 +10,7 @@
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
 
-@implementation PJLostTableViewCell
-{
+@implementation PJLostTableViewCell {
     NSArray *_kDataArr;   // 存储最终转化好的ImgURL
 }
 
@@ -49,9 +48,8 @@
     for (int i = 0; i < dataArr.count; i++) {
         NSString *webSite = [ICNetworkManager defaultManager].website;
         webSite = [NSString stringWithFormat:@"%@%@?api_key=%@&session_token=%@", webSite, dataArr[i][@"url"], [ICNetworkManager defaultManager].APIKey, [ICNetworkManager defaultManager].token];
-
+        
         [newArr addObject:webSite];
-
     }
     _kDataArr = [newArr mutableCopy];
     return newArr;

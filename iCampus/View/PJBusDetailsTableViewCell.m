@@ -38,19 +38,11 @@
 - (void)redType {
     _arrivalTimeLabel.textColor = RGB(100, 149, 237);
     _arrivalTimeLabel.text = [NSString stringWithFormat:@"← %@", _arrivalTimeLabel.text];
-//    NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:_arrivalTimeLabel.text];
-//    NSRange redRange = NSMakeRange(0, 1);
-//    [noteStr addAttribute:NSForegroundColorAttributeName value:RGB(100, 149, 237) range:redRange];
-//    _arrivalTimeLabel.attributedText = noteStr;
 }
 
 - (void)blueType {
     _arrivalTimeLabel.textColor = RGB(238, 99, 99);
     _arrivalTimeLabel.text = [NSString stringWithFormat:@"→ %@", _arrivalTimeLabel.text];
-//    NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:_arrivalTimeLabel.text];
-//    NSRange redRange = NSMakeRange(0, 1);
-//    [noteStr addAttribute:NSForegroundColorAttributeName value:RGB(238, 99, 99) range:redRange];
-//    _arrivalTimeLabel.attributedText = noteStr;
 }
 
 @end

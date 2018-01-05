@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PJUserUpdatePWViewController : UITableViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *oldPWTextField;
 @property (weak, nonatomic) IBOutlet UITextField *newnewPWTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *againNewPWTextField;
 
 @end

@@ -15,8 +15,7 @@
 
 @end
 
-@implementation PJAboutViewController
-{
+@implementation PJAboutViewController {
     PJAboutTableView *_kTableView;
 }
 
@@ -47,8 +46,7 @@
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
                                        [PJHUD dismiss];
-                                   }
-                                   failure:^(NSError *error) {
+                                   } failure:^(NSError *error) {
                                        // error信息要怎么处理？
                                    }];
 }

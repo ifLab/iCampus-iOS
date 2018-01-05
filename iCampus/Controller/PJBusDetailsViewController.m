@@ -15,8 +15,7 @@
 
 @end
 
-@implementation PJBusDetailsViewController
-{
+@implementation PJBusDetailsViewController {
     PJBusDetailsTableView *_kTableView;
 }
 

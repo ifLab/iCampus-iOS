@@ -32,35 +32,25 @@
               parameters:(NSDictionary *)parameters
                  success:(void (^)(NSDictionary *))success
                  failure:(void (^)(NSError *))failure;
+
 - (NSURLSessionTask*)POST:(NSString *)key
             GETParameters:(NSDictionary *)GETParameters
            POSTParameters:(NSDictionary *)POSTParameters
                   success:(void (^)(NSDictionary *))success
                   failure:(void (^)(NSError *))failure;
+
 - (NSURLSessionTask*)PUT:(NSString *)key
            GETParameters:(NSDictionary *)GETParameters
           POSTParameters:(NSDictionary *)POSTParameters
                  success:(void (^)(NSDictionary *))success
                  failure:(void (^)(NSError *))failure;
+
 - (NSURLSessionTask*)PATCHWithWebSite:(NSString *)webSite
                         GETParameters:(NSDictionary *)GETParameters
                        POSTParameters:(NSDictionary *)POSTParameters
                               success:(void (^)(NSDictionary *))success
                               failure:(void (^)(NSError *))failure;
-//- (AFHTTPRequestOperation*)request:(NSString *)key
-//                     GETParameters:(NSDictionary *)GETParameters
-//                    POSTParameters:(NSDictionary *)POSTParameters
-//         constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> *data))block
-//                           success:(void (^)(id))success
-//                           failure:(void (^)(NSError *))failure;
 
 - (void)cleanCookies;
-
-//-(void)handleSuccess:(AFHTTPRequestOperation*)operation
-//                data:(NSData*)data
-//             success:(void (^)(id object))success
-//             failure:(void (^)(NSError *error))failure;
-
-
 
 @end

@@ -4,20 +4,18 @@
 
 @implementation PJZoomImageScrollView
 
--(void)awakeFromNib{
+-(void)awakeFromNib {
     [super awakeFromNib];
     [self initUI];
 }
-/*
- * 初始化UI
- */
--(void)initUI{
+
+- (void)initUI {
     _dataSource = [@[] mutableCopy];
     self.showsVerticalScrollIndicator = false;
     self.showsHorizontalScrollIndicator = false;
     [self reloadData];
 }
--(void)reloadData{
+- (void)reloadData {
     for (UIView *view in self.subviews) {
         [view  removeFromSuperview];
     }
@@ -54,11 +52,13 @@
     [self setContentSize:CGSizeMake(X, 70)];
 }
 
--(void)addZoomImage{
+-(void)addZoomImage {
     [_myDelegate addZoomImage];
 }
--(void)delImage:(UIButton *)btn{
+
+-(void)delImage:(UIButton *)btn {
     [_dataSource removeObjectAtIndex:btn.tag];
     [self reloadData];
 }
+
 @end
