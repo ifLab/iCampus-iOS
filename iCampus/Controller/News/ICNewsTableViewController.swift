@@ -55,10 +55,6 @@ class ICNewsTableViewController: UITableViewController {
         tableView.estimatedSectionFooterHeight = 0;
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
-        PJNewsPoints.setNewsPoint({[
-            "username" : PJUser.defaultManager().first_name,
-            "newstitle" : channel.title
-            ]}())
     }
 
     // MARK: - Table view data source

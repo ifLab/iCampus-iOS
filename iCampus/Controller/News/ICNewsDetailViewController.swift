@@ -69,6 +69,11 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                         self_.tableView.reloadData()
                                         self_.title = detail?.title
                                         SVProgressHUD.dismiss()
+                                        
+                                        PJNewsPoints.setNewsPoint({[
+                                            "username" : PJUser.defaultManager().first_name,
+                                            "newstitle" : detail?.title
+                                            ]}())
                                     }
             }, failure: {
                 [weak self] _ in
