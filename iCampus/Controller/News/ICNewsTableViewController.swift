@@ -19,11 +19,13 @@ class ICNewsTableViewController: UITableViewController {
     var channel: ICNewsChannel
     var news = [ICNews]()
     let nibNames = ["ICNoneImageViewCell", "ICSimpleImageViewCell"]
+    var backImageView:UIImageView
     
     init(category: String, title: String) {
         channel = ICNewsChannel()
         channel.listKey = category
         channel.title = title
+        backImageView = UIImageView.init()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,9 +52,10 @@ class ICNewsTableViewController: UITableViewController {
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
         
-        if PJUser.current() != nil {
-            refresh()
-        }
+        backImageView = UIImageView.init(frame: CGRect(x:(tableView.frame.size.width - 100)/2, y:UIScreen.main.bounds.size.height * 0.3, width:100, height:100))
+        backImageView.image = UIImage.init(named: "logo")
+        tableView.addSubview(backImageView)
+        tableView.sendSubview(toBack: backImageView)
         
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
@@ -91,6 +94,7 @@ class ICNewsTableViewController: UITableViewController {
         ICNews.fetch(channel, page: 0,
                      success: {
                         [weak self] data in
+                        self?.backImageView.isHidden = true
                         self?.tableView.mj_header.endRefreshing()
                         self?.news = data as! [ICNews]
                         self?.tableView.reloadData()
@@ -118,6 +122,11 @@ class ICNewsTableViewController: UITableViewController {
     }
     
     func loginRefresh() {
+        // 只有是”综合新闻“才登录后刷新
+        if channel.title != "综合新闻" {
+            return;
+        }
+        
         tableView.mj_header.beginRefreshing()
         ICNews.fetch(channel, page: 0,
                      success: {

@@ -80,11 +80,10 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
             [weak self] index in
             if let self_ = self {
                 self_.scrollView.scrollRectToVisible(CGRect(x: CGFloat(index) * self_.width, y: 0, width: self_.width, height: self_.height), animated: true)
-                self_.childControllers[index].headerBeginRefresh()
             }
         }
         if PJUser.current() != nil {
-            childControllers[0].headerBeginRefresh()
+            childControllers[0].refresh()
         }
     }
     
