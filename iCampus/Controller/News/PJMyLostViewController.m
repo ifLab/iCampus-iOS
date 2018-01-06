@@ -52,14 +52,15 @@
     if (@available(iOS 11.0, *)) {
         _kTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         if (iPhoneX) {
-            _kTableView.contentInset = UIEdgeInsetsMake(84, 0, 49, 0);
+            _kTableView.contentInset = UIEdgeInsetsMake(84, 0, 0, 0);
         } else {
-            _kTableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+            _kTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
         }
         _kTableView.scrollIndicatorInsets = _kTableView.contentInset;
     }
     [self.view addSubview:_kTableView];
     
+    [_kTableView.mj_header beginRefreshing];
     [self getDataFromHttp];
 }
 

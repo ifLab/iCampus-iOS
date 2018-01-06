@@ -159,7 +159,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        NotificationCenter.default.post(name: NSNotification.Name("NewsShouldCacheNotification"), object: nil)
     }
     
 }

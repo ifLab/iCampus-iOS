@@ -91,7 +91,7 @@
             websiteString = webSite;
         }
         NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP] error:nil].URL.absoluteString;
-        NSLog(@"%@",URLString);
+//        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
         if ([method  isEqual: @"PUT"]) {
             return [self.manager PUT:URLString parameters:POSTParameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -122,7 +122,7 @@
                 if (failure) {
                     failure(error);
                 }
-//                NSLog(@"%@",error);
+                NSLog(@"%@",error);
             }];
         }
     } @catch (NSError *error) {
