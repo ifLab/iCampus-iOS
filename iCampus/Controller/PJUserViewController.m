@@ -24,6 +24,10 @@
     [self initView];
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -37,6 +41,8 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"] style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBtn;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userDidLogin) name:@"UserDidLoginNotification" object:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,6 +59,10 @@
             [self toAbout];
         }
     }
+}
+
+- (void)userDidLogin{
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
 }
 
 -(void)logout{
