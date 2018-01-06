@@ -8,7 +8,6 @@
 
 #import "PJAboutTableViewCell.h"
 
-
 @implementation PJAboutTableViewCell
 
 - (void)awakeFromNib {

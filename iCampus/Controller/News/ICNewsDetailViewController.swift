@@ -19,6 +19,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         c.attributedTextContextView.shouldDrawLinks = true
         return c
     }()
+    
     var news: ICNews
     var newsDetail: ICNewsDetail?
     
@@ -65,15 +66,18 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                             DTDefaultLineHeightMultiplier: 1.5,
                                             DTDefaultLinkDecoration: false] as [String : Any]
                                         self_.textCell.setHTMLString(detail?.body!, options: options)
-//                                        self_.tableView.mj_header.endRefreshing()
                                         self_.tableView.reloadData()
                                         self_.title = detail?.title
                                         SVProgressHUD.dismiss()
+                                        
+                                        PJNewsPoints.setNewsPoint({[
+                                            "username" : PJUser.defaultManager().first_name,
+                                            "newstitle" : detail?.title
+                                            ]}())
                                     }
-            },
-                                failure: {
-                                    [weak self] _ in
-                                    self?.tableView.separatorStyle = .singleLine
+            }, failure: {
+                [weak self] _ in
+                self?.tableView.separatorStyle = .singleLine
         })
     }
 
@@ -188,10 +192,11 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
     
     //弹出分享面板
     func shareAction() {
-
         UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
         UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
 
+            PJNewsPoints.setNewsShare()
+            
             let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
             messageObject.title = self.news.title
             //分享图片

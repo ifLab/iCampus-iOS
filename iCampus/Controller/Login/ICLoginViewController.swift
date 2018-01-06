@@ -90,10 +90,8 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         messageLabel.text = ""
         view.endEditing(true)
         if state == .login {
-            //            login
             userLogin()
         } else {
-            //register
             userRegister()
         }
     }
@@ -117,14 +115,13 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                     object: nil)
                                             })
                                         }
-                    },
-                                     failure: {
-                                        [weak self] message in
-                                        if let self_ = self {
-                                            self_.messageLabel.text = message
-                                            self_.finishedLoginOrRegister()
-                                            PJHUD.dismiss()
-                                        }
+                    }, failure: {
+                        [weak self] message in
+                        if let self_ = self {
+                            self_.messageLabel.text = message
+                            self_.finishedLoginOrRegister()
+                            PJHUD.dismiss()
+                        }
                 })
             } else {
                 messageLabel.text = "密码长度最少6个字符"
@@ -154,13 +151,12 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                     self_.switchStatus(self_.switchButton)
                                                     self_.loginOrRegister(self_.loginAndRegisterButton)
                                                 }
-                            },
-                                              failure: { [weak self] error in
-                                                if let self_ = self {
-                                                    self_.messageLabel.text = error
-                                                    self_.finishedLoginOrRegister()
-                                                    PJHUD.dismiss()
-                                                }
+                            }, failure: { [weak self] error in
+                                if let self_ = self {
+                                    self_.messageLabel.text = error
+                                    self_.finishedLoginOrRegister()
+                                    PJHUD.dismiss()
+                                }
                         })
                     } else {
                         messageLabel.text = "两次输入的密码不一样"
@@ -221,19 +217,18 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                          repeats: true)
             ICLoginManager.fetchVerfyCode(phoneField.text,
                                           success: {
-            },
-                                          failure: {
-                                            [weak self] message in
-                                            if let self_ = self {
-                                                self_.timer = nil
-                                                self_.verfyCodeFetchedTime = nil
-                                                self_.verfyCodeButton.isEnabled = true
-                                                self_.verfyCodeButton.backgroundColor = self_.buttonColor
-                                                self_.verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
-                                                self_.messageLabel.text = message
-                                            }
+                                            
+            }, failure: {
+                [weak self] message in
+                if let self_ = self {
+                    self_.timer = nil
+                    self_.verfyCodeFetchedTime = nil
+                    self_.verfyCodeButton.isEnabled = true
+                    self_.verfyCodeButton.backgroundColor = self_.buttonColor
+                    self_.verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
+                    self_.messageLabel.text = message
+                }
             })
-            
         }
     }
     
@@ -314,7 +309,9 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         let FieldLine = UIView.init(frame: CGRect(x:0, y:39, width:textField.frame.size.width, height:1))
         FieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
         textField.addSubview(FieldLine)
-        textField.attributedPlaceholder = NSAttributedString.init(string: textField.placeholder!, attributes: {[NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)]}())
+        textField.attributedPlaceholder = NSAttributedString.init(string: textField.placeholder!, attributes: {[
+            NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+            ]}())
         textField.tintColor = UIColor.white
     }
     

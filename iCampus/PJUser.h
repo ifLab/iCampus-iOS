@@ -7,8 +7,8 @@
  *  当前用户
  *
  */
-+(PJUser *)currentUser;
-
++ (PJUser *)currentUser;
++ (PJUser *)defaultManager;
 
 /***************用户属性*****************/
 

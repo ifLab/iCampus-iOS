@@ -9,7 +9,6 @@
 #import "ICNews.h"
 #import "ICLoginManager.h"
 #import "ICNewsDetail.h"
-#import "ICYellowPage.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "PJYellowPageViewController.h"
 #import "PJBusViewController.h"
@@ -25,6 +24,8 @@
 #import "PJNewLostViewController.h"
 #import "PJHUD.h"
 #import "PJCurrentPhone.h"
+#import "PJNewsPoints.h"
+
 
 //友盟分享桥接文件
 #import <UMSocialCore/UMSocialCore.h>

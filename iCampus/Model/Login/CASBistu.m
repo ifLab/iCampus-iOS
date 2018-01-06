@@ -20,16 +20,16 @@
     [CAS defaultCAS].path = @"tickets";
     [[CAS defaultCAS] requestTGTWithUsername:user password:pass callBackBlock:^(NSString * tgt, NSError * error) {
         if (!error) {
-            
             [[CAS defaultCAS] requestSTForService:loginURL callBackBlock:^(NSString *st, NSError *error) {
                 if (!error) {
-                    
                     NSString *url = [NSString stringWithFormat:@"%@?ticket=%@", loginURL, st];
                     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
                     [[CAS defaultCAS] sendrequestWithRequest:req callBackBlock:^(NSData *data, NSURLResponse *resp, NSError *error) {
                         if (!error) {
                             NSError *error;
-                            NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                            NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data
+                                                                                 options:0
+                                                                                   error:&error];
                             if (info) {
                                 [ICLoginManager editInfoWithfirst_name:info[@"xm"]
                                                              last_name:@"@"
@@ -58,7 +58,6 @@
                             }
                         }
                     }];
-                    
                 } else {
                     NSLog(@"%@", error);
                     if (callBackBlock) {
@@ -66,7 +65,6 @@
                     }
                 }
             }];
-            
         } else {
             NSLog(@"%@", error);
             if (callBackBlock) {

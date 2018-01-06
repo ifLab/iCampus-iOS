@@ -10,7 +10,6 @@
 #import "PJAboutViewController.h"
 #import "PJMyLostViewController.h"
 #import "PJUserAandCViewController.h"
-#import "logoutFoot.h"
 #import "ICNetworkManager.h"
 #import "iCampus-Swift.h"
 
@@ -19,9 +18,6 @@
 @end
 
 @implementation PJUserViewController
-{
-    logoutFoot *_footer;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +35,6 @@
     self.tableView.dataSource = self;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"] style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
-    
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBtn;
 }

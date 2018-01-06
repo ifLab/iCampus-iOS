@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PJYellowPageTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
-
 @property (nonatomic, strong) NSDictionary *cellDataSource;
+
 @end

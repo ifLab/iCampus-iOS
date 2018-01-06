@@ -133,7 +133,6 @@ class ICNewsTableViewController: UITableViewController {
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let newsDetailView:ICNewsDetailViewController = ICNewsDetailViewController(news: news[indexPath.row])
         newsDetailView.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(newsDetailView, animated: true)

@@ -10,11 +10,9 @@
 #import "YZLostDetailsView.h"
 #import "IDMPhotoBrowser.h"
 #import <UShareUI/UShareUI.h>
-#import "OXExpandingButtonBar.h"
 
 @interface YZLostDetailsViewController ()<YZLostDetailsViewDelegate>{
     YZLostDetailsView* _kYZLostDetailsView;
-    OXExpandingButtonBar *_bar;
 }
 
 @end
@@ -24,14 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    // Do any additional setup after loading the view.
 }
 
 - (void) setupUI{
     _kYZLostDetailsView = [[YZLostDetailsView alloc]init];
     _kYZLostDetailsView.dataSource = _dataSource;
     _kYZLostDetailsView.LostDetailsViewDelegate = self;
-    self.title = @"失误详情";
+    self.title = @"失物详情";
     [self.view addSubview:_kYZLostDetailsView];
         
     NSMutableArray *buttons=[[NSMutableArray alloc] initWithCapacity:5];
@@ -50,13 +47,29 @@
 
 - (void) pressPhoneBtn{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataSource[@"phone"]]] options:@{} completionHandler:^(BOOL success) {
-        
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        NSDictionary *dict = @{
+                               @"username":[PJUser currentUser].first_name,
+                               @"uploadtime":dateString
+                               };
+        [MobClick event:@"ibistu_lost_details_phone" attributes:dict];
     }];
 }
 
 - (void) pressChatBtn{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", _dataSource[@"phone"]]] options:@{} completionHandler:^(BOOL success) {
-        
+            NSDate *date = [NSDate date];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+            NSString *dateString = [formatter stringFromDate:date];
+            NSDictionary *dict = @{
+                                   @"username":[PJUser currentUser].first_name,
+                                   @"time":dateString
+                                   };
+            [MobClick event:@"ibistu_lost_details_message" attributes:dict];
     }];
 }
 
@@ -81,6 +94,16 @@
 //            NSLog(@"response data is %@",data);
         }
     }];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dict = @{
+                           @"username":[PJUser currentUser].first_name,
+                           @"uploadtime":dateString
+                           };
+    [MobClick event:@"ibistu_lost_details_share" attributes:dict];
 }
 
 - (void)clickImage:(NSArray*)photos andTag:(NSInteger)tag{

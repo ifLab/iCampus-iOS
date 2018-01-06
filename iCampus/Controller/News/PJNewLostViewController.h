@@ -10,6 +10,7 @@
 #import "PJZoomImageScrollView.h"
 
 @interface PJNewLostViewController : UITableViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextView *detailsTextView;

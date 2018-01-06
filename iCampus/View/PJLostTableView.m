@@ -20,7 +20,8 @@
     if (iPhoneX) {
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 84);
     } else {
-        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64);
+        // PJ ：好奇怪，按道理应该是-64才对，估计是iOS 11的锅
+        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 50);
     }
     self.delegate = self;
     self.dataSource = self;
@@ -34,9 +35,9 @@
     if (@available(iOS 11.0, *)) {
         self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         if (iPhoneX) {
-            self.contentInset = UIEdgeInsetsMake(84, 0, 49, 0);
+            self.contentInset = UIEdgeInsetsMake(84, 0, 0, 0);
         } else {
-            self.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+            self.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
         }
         self.scrollIndicatorInsets = self.contentInset;
     }

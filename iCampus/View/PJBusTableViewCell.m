@@ -16,7 +16,7 @@
 }
 
 - (void)initView{
-    self.busTypeLabel.textColor =RGB(150, 150, 150);
+    self.busTypeLabel.textColor = RGB(150, 150, 150);
 }
 
 - (void)setCellDataSource:(NSDictionary *)cellDataSource {

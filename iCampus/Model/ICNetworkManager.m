@@ -10,8 +10,16 @@
 
 @implementation ICNetworkManager
 
-- (instancetype)initWithConfiguration:(NSDictionary*)configuration
-{
++ (instancetype)defaultManager {
+    static dispatch_once_t ID = 0;
+    static ICNetworkManager *manager = nil;
+    dispatch_once(&ID, ^{
+        manager = [[ICNetworkManager alloc] initWithConfiguration:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist" ]]];
+    });
+    return manager;
+}
+
+- (instancetype)initWithConfiguration:(NSDictionary*)configuration {
     self = [super init];
     if (self) {
         self.configuration = configuration;
@@ -40,27 +48,45 @@
 - (NSURLSessionTask*)GET:(NSString *)key
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
-                       failure:(void (^)(NSError *))failure
-{
-    return [self request:key webSite:nil method:nil GETParameters:parameters POSTParameters:nil constructingBodyWithBlock:nil success:success failure:failure];
+                       failure:(void (^)(NSError *))failure {
+    return [self request:key
+                 webSite:nil
+                  method:nil
+           GETParameters:parameters
+          POSTParameters:nil
+constructingBodyWithBlock:nil
+                 success:success
+                 failure:failure];
 }
 
 - (NSURLSessionTask*)POST:(NSString *)key
                   GETParameters:(id)GETParameters
                  POSTParameters:(id)POSTParameters
                         success:(void (^)(NSDictionary *))success
-                        failure:(void (^)(NSError *))failure
-{
-    return [self request:key webSite:nil method:nil GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
+                        failure:(void (^)(NSError *))failure {
+    return [self request:key
+                 webSite:nil
+                  method:nil
+           GETParameters:GETParameters
+          POSTParameters:POSTParameters
+constructingBodyWithBlock:nil
+                 success:success
+                 failure:failure];
 }
 
 - (NSURLSessionTask*)PUT:(NSString *)key
            GETParameters:(NSDictionary *)GETParameters
           POSTParameters:(NSDictionary *)POSTParameters
                        success:(void (^)(NSDictionary *))success
-                       failure:(void (^)(NSError *))failure
-{
-    return [self request:key webSite:nil method:@"PUT" GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
+                       failure:(void (^)(NSError *))failure {
+    return [self request:key
+                 webSite:nil
+                  method:@"PUT"
+           GETParameters:GETParameters
+          POSTParameters:POSTParameters
+constructingBodyWithBlock:nil
+                 success:success
+                 failure:failure];
 }
 
 
@@ -68,8 +94,15 @@
                         GETParameters:(NSDictionary *)GETParameters
                        POSTParameters:(NSDictionary *)POSTParameters
                               success:(void (^)(NSDictionary *))success
-                              failure:(void (^)(NSError *))failure{
-    return [self request:nil webSite:webSite method:@"PATCH" GETParameters:GETParameters POSTParameters:POSTParameters constructingBodyWithBlock:nil success:success failure:failure];
+                              failure:(void (^)(NSError *))failure {
+    return [self request:nil
+                 webSite:webSite
+                  method:@"PATCH"
+           GETParameters:GETParameters
+          POSTParameters:POSTParameters
+constructingBodyWithBlock:nil
+                 success:success
+                 failure:failure];
 }
 - (NSURLSessionTask*)request:(NSString *)key
                      webSite:(NSString *)webSite
@@ -78,8 +111,7 @@
               POSTParameters:(id)POSTParameters
    constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> *data))block
                      success:(void (^)(id))success
-                     failure:(void (^)(NSError *))failure
-{
+                     failure:(void (^)(NSError *))failure {
     @try {
         NSMutableDictionary *GETP = [NSMutableDictionary dictionaryWithDictionary:GETParameters];
         NSString *websiteString;
@@ -90,32 +122,51 @@
         } else {
             websiteString = webSite;
         }
+        
         NSString *URLString = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:websiteString parameters:[NSDictionary dictionaryWithDictionary:GETP] error:nil].URL.absoluteString;
 //        NSLog(@"%@",URLString);
         ICNetworkManager __weak *weakSelf = self;
+        
         if ([method  isEqual: @"PUT"]) {
-            return [self.manager PUT:URLString parameters:POSTParameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                if (failure) {
-                    failure(error);
-                }
-            }];
-        } else if ([method  isEqual: @"PATCH"]) {
-            return [self.manager PATCH:URLString parameters:POSTParameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                failure(error);
-            }];
+            return [self.manager PUT:URLString
+                          parameters:POSTParameters
+                             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task
+                                   data:responseObject
+                                success:success
+                                failure:failure];
+                             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                 if (failure) {
+                                     failure(error);
+                                 }
+                             }];
+        } else if ([method isEqual: @"PATCH"]) {
+            return [self.manager PATCH:URLString
+                            parameters:POSTParameters
+                               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task
+                                   data:responseObject
+                                success:success
+                                failure:failure];
+                               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                   failure(error);
+                               }];
         } else if (POSTParameters) {
-            return [self.manager POST:URLString parameters:POSTParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                if (failure) {
-                    failure(error);
-                }
-            }];
+            return [self.manager POST:URLString
+                           parameters:POSTParameters
+                             progress:nil
+                              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task
+                                   data:responseObject
+                                success:success
+                                failure:failure];
+                              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                  if (failure) {
+                                      failure(error);
+                                  }
+                              }];
         } else {
+<<<<<<< HEAD
             return [self.manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -124,6 +175,21 @@
                 }
                 NSLog(@"%@",error);
             }];
+=======
+            return [self.manager GET:URLString
+                          parameters:nil
+                            progress:nil
+                             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [weakSelf handleSuccess:task
+                                   data:responseObject
+                                success:success
+                                failure:failure];
+                             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                 if (failure) {
+                                     failure(error);
+                                 }
+                             }];
+>>>>>>> 084189a1cd7fa24fdc2e06f6e2d0319d47397c75
         }
     } @catch (NSError *error) {
         failure(error);
@@ -131,16 +197,14 @@
     }
 }
 
-- (void)cleanCookies {
-    [ICNetworkManager defaultManager].token = @"";
-}
-
 - (void)handleSuccess:(NSURLSessionTask*)operation
-                data:(NSData*)data
-             success:(void (^)(NSDictionary *))success
-             failure:(void (^)(NSError *))failure {
+                 data:(NSData*)data
+              success:(void (^)(NSDictionary *))success
+              failure:(void (^)(NSError *))failure {
     NSError *error;
-    id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    id object = [NSJSONSerialization JSONObjectWithData:data
+                                                options:0
+                                                  error:&error];
     if ([object isKindOfClass:[NSArray class]]) {
         id resource = object;
         object = @{@"resource": resource};
@@ -163,7 +227,6 @@
     NSDictionary *datas = object;
     if (datas[@"error"][@"code"] == nil) {
         id info = datas;
-//        NSLog(@"\(operation.response.URL!)\n\(info)");
         if (success) {
             success(info);
         }
@@ -178,16 +241,6 @@
         NSLog(@"%@", error);
         failure(error);
     }
-}
-
-
-+ (instancetype)defaultManager {
-    static dispatch_once_t ID = 0;
-    static ICNetworkManager *manager = nil;
-    dispatch_once(&ID, ^{
-        manager = [[ICNetworkManager alloc] initWithConfiguration:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist" ]]];
-    });
-    return manager;
 }
 
 - (NSString *)website {
@@ -220,6 +273,10 @@
 
 - (NSDictionary *)path {
     return self.configuration[@"Paths"];
+}
+
+- (void)cleanCookies {
+    [ICNetworkManager defaultManager].token = @"";
 }
 
 @end

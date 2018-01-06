@@ -29,6 +29,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         s.delegate = self
         return s
     }()
+    
     var viewConstraints = [NSLayoutConstraint]()
     var segmentTopConstraintNavHide = NSLayoutConstraint()
     var segmentTopConstraintNavUnHide = NSLayoutConstraint()
@@ -42,6 +43,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         }
         return c
     }()
+    
     lazy var segmentedControl: HMSegmentedControl = {
         let sc = HMSegmentedControl(sectionTitles: self.titles)!
         if PJCurrentPhone.pjCurrentPhone("iPhoneX") {

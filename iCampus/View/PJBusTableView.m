@@ -9,8 +9,7 @@
 #import "PJBusTableView.h"
 #import "PJBusTableViewCell.h"
 
-@implementation PJBusTableView
-{
+@implementation PJBusTableView {
     UISearchBar *_kSearchBar;
     NSMutableArray *_kSearchArr;
 }
@@ -81,10 +80,20 @@
     cell.selected = NO;
     [_kSearchBar resignFirstResponder];
     [_tableDelegate PJBusTableViewCellClick:_dataArr[indexPath.row]];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dict = @{
+                           @"username" : [PJUser currentUser].first_name,
+                           @"cellname" : cell.busNameLabel.text,
+                           @"time" : dateString
+                           };
+    [MobClick event:@"ibistu_bus_details" attributes:dict];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
-{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText; {
     // 使用谓词匹配
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
     if (_kSearchArr != nil) {

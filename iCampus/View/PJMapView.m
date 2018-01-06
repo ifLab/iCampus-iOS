@@ -9,8 +9,7 @@
 #import "PJMapView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@implementation PJMapView
-{
+@implementation PJMapView {
     MKMapView *_mapView;
     NSMutableArray *annotations;
 }
@@ -38,7 +37,6 @@
     [self insertAnno];
 }
 -(void)insertAnno{
-    
     [_mapView removeAnnotations:annotations];
     for (NSDictionary *dict in _dataArr) {
         MKPointAnnotation* annotation = [[MKPointAnnotation alloc]init];

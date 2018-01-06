@@ -68,6 +68,7 @@
     _dataSource = dataSource;
     self.nameLabel.text = [NSString stringWithFormat:@"%@在%@发布了:", dataSource[@"author"], dataSource[@"createTime"]];
     [self.nameLabel sizeToFit];
+    
     _imageArray = [self setupImgArr:[NSString stringWithFormat:@"%@", dataSource[@"imgUrlList"]]];
     _kDetailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     //label自适应高度
@@ -75,9 +76,11 @@
     textFrame = _kDetailsLabel.frame;
     textFrame.size.height = [_kDetailsLabel.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-8, 300) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size.height;
     _kDetailsLabel.frame = CGRectMake(15, self.nameLabel.frame.origin.y + self.nameLabel.frame.size.height + 20, SCREEN_WIDTH-30, textFrame.size.height);
+    
     _kTextHeight = textFrame.size.height;
     long k = _imageArray.count;
     CGFloat lastY = _kTextHeight + 308*k + self.nameLabel.frame.origin.y + self.nameLabel.frame.size.height + _kDetailsLabel.frame.origin.y + _kDetailsLabel.frame.size.height;
+    
     //设置contenSize符合整个页面所有控件加起来的长度
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, lastY);
     [self setupScrollView:dataSource scrollView:_scrollview];
@@ -88,7 +91,6 @@
     tipsLabel.textAlignment = NSTextAlignmentCenter;
     tipsLabel.textColor = [UIColor lightGrayColor];
     tipsLabel.font = [UIFont boldSystemFontOfSize:12];
-    
 }
 
 - (void)setupScrollView:(NSDictionary *)data scrollView:(UIScrollView *)scrollView{
@@ -113,39 +115,18 @@
     }
 }
 
-- (UIImage *)saveLongImage:(UIScrollView *)scrollView {
-    UIImage* image = nil;
-    UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, YES, [UIScreen mainScreen].scale);
-    CGPoint savedContentOffset = scrollView.contentOffset;
-    CGRect savedFrame = scrollView.frame;
-    scrollView.contentOffset = CGPointZero;
-    scrollView.frame = CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height);
-    [scrollView.layer renderInContext: UIGraphicsGetCurrentContext()];
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    scrollView.contentOffset = savedContentOffset;
-    scrollView.frame = savedFrame;
-    UIGraphicsEndImageContext();
-    if (image != nil) {
-        return image;
-    } else {
-        return nil;
-    }
-}
-
 - (UIImageView *)captureScreenScrollView:(UIScrollView *)scrollView {
     CGPoint savedContentOffset = scrollView.contentOffset;
     CGRect savedFrame = scrollView.frame;
 
     scrollView.frame = CGRectMake(0, scrollView.frame.origin.y, scrollView.contentSize.width, scrollView.contentSize.height);
-    UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, YES, 0.0); //currentView 当前的view  创建一个基于位图的图形上下文并指定大小为
+    UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, YES, 0.0);
     [scrollView.layer renderInContext:UIGraphicsGetCurrentContext()];//renderInContext呈现接受者及其子范围到指定的上下文
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();//返回一个基于当前图形上下文的图片
-
     scrollView.contentOffset = savedContentOffset;
     scrollView.frame = savedFrame;
-
     UIGraphicsEndImageContext();
-    
+
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height)];
     imageView.image = image;
     

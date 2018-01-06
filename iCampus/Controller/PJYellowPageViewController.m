@@ -16,8 +16,7 @@
 
 @end
 
-@implementation PJYellowPageViewController
-{
+@implementation PJYellowPageViewController {
     PJYellowPageTableView *_kTableView;
     BOOL _isSearch;
 }

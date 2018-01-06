@@ -20,4 +20,5 @@
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
 @property (nonatomic, weak) id<PJYellowPageTableViewDelegate> tableDelegate;
+
 @end
