@@ -206,7 +206,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
 
             UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
                 if error != nil {
-                    print("Share Fail with error ：%@", error)
+                    print("Share Fail with error ：%@", error as Any)
                 }else{
                     print("Share succeed")
                 }

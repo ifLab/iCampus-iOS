@@ -83,7 +83,9 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
                 self_.childControllers[index].headerBeginRefresh()
             }
         }
-        childControllers[0].headerBeginRefresh()
+        if PJUser.current() != nil {
+            childControllers[0].headerBeginRefresh()
+        }
     }
     
     override var prefersStatusBarHidden: Bool {

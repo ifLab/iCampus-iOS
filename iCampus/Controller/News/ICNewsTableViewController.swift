@@ -35,8 +35,8 @@ class ICNewsTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         title = channel.title
         for nibName in nibNames {
             tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
@@ -49,7 +49,10 @@ class ICNewsTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
-        refresh()
+        
+        if PJUser.current() != nil {
+            refresh()
+        }
         
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
@@ -85,13 +88,13 @@ class ICNewsTableViewController: UITableViewController {
     }
     
     func refresh() {
-        ICNews.fetch(channel, page: 1,
+        ICNews.fetch(channel, page: 0,
                      success: {
                         [weak self] data in
                         self?.tableView.mj_header.endRefreshing()
                         self?.news = data as! [ICNews]
                         self?.tableView.reloadData()
-                        self?.page = 2
+                        self?.page = 1
             },
                      failure: {
                         [weak self] _ in
@@ -116,13 +119,13 @@ class ICNewsTableViewController: UITableViewController {
     
     func loginRefresh() {
         tableView.mj_header.beginRefreshing()
-        ICNews.fetch(channel, page: 1,
+        ICNews.fetch(channel, page: 0,
                      success: {
                         [weak self] data in
                         self?.tableView.mj_header.endRefreshing()
                         self?.news = data as! [ICNews]
                         self?.tableView.reloadData()
-                        self?.page = 2
+                        self?.page = 1
             },
                      failure: {
                         [weak self] _ in

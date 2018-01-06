@@ -166,7 +166,6 @@ constructingBodyWithBlock:nil
                                   }
                               }];
         } else {
-<<<<<<< HEAD
             return [self.manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [weakSelf handleSuccess:task data:responseObject success:success failure:failure];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -175,7 +174,6 @@ constructingBodyWithBlock:nil
                 }
                 NSLog(@"%@",error);
             }];
-=======
             return [self.manager GET:URLString
                           parameters:nil
                             progress:nil
@@ -189,7 +187,6 @@ constructingBodyWithBlock:nil
                                      failure(error);
                                  }
                              }];
->>>>>>> 084189a1cd7fa24fdc2e06f6e2d0319d47397c75
         }
     } @catch (NSError *error) {
         failure(error);
