@@ -84,7 +84,18 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         }
         if PJUser.current() != nil {
             childControllers[0].refresh()
+            childControllers[0].headerBeginRefresh()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func loginRefresh() {
+        childControllers[0].refresh()
+        childControllers[0].headerBeginRefresh()
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -15,7 +15,7 @@ import MJRefresh
 
 class ICNewsTableViewController: UITableViewController {
     
-    var page = 1
+    var page = 0
     var channel: ICNewsChannel
     var news = [ICNews]()
     let nibNames = ["ICNoneImageViewCell", "ICSimpleImageViewCell"]
@@ -31,10 +31,6 @@ class ICNewsTableViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
 
     override func viewDidLoad() {
@@ -59,8 +55,6 @@ class ICNewsTableViewController: UITableViewController {
         
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
     }
 
     // MARK: - Table view data source
@@ -118,27 +112,6 @@ class ICNewsTableViewController: UITableViewController {
                      failure: {
                         [weak self] error in
                         self?.tableView.mj_footer.endRefreshing()
-        })
-    }
-    
-    func loginRefresh() {
-        // 只有是”综合新闻“才登录后刷新
-        if channel.title != "综合新闻" {
-            return;
-        }
-        
-        tableView.mj_header.beginRefreshing()
-        ICNews.fetch(channel, page: 0,
-                     success: {
-                        [weak self] data in
-                        self?.tableView.mj_header.endRefreshing()
-                        self?.news = data as! [ICNews]
-                        self?.tableView.reloadData()
-                        self?.page = 1
-            },
-                     failure: {
-                        [weak self] _ in
-                        self?.tableView.mj_header.endRefreshing()
         })
     }
     
