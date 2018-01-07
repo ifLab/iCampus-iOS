@@ -44,6 +44,12 @@
     //个人中心
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"PJUserSB" bundle:nil];
     [self addController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"PJUserViewController"]] title:@"我" image:@"userCenter"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userNotLoginYetNotification) name:@"UserNotLoginYetNotification" object:nil];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 //将控制器添加到tabBar中
@@ -59,11 +65,14 @@
     //需要登录并且认证
     if ([ICNetworkManager defaultManager].token != nil && ![[ICNetworkManager defaultManager].token isEqualToString:@""]) {
         //已登录
-        if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
-            //CAS not certified
-            ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
-            [self presentViewController:controller animated:YES completion:nil];
-            self.selectedIndex = 0;
+        if ([viewController.tabBarItem.title isEqualToString:@"失物"]) {
+            //查看失物需要CAS认证
+            if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
+                //CAS not certified
+                ICCASViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICCASViewController" owner:nil options:nil].firstObject;
+                [self presentViewController:controller animated:YES completion:nil];
+//                self.selectedIndex = 0;
+            }
         }
         if ([viewController.tabBarItem.title isEqualToString:@"地图"]) {
             [[NSNotificationCenter defaultCenter]postNotificationName:@"tabBarDidSelectedNotification" object:nil userInfo:nil];
@@ -76,6 +85,10 @@
         [self presentViewController:controller animated:YES completion:nil];
         return ;
     }
+}
+
+- (void)userNotLoginYetNotification{
+    self.selectedIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {

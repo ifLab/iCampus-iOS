@@ -29,14 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarC = ZKTabBarViewController.init()
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
-
+        
         //判断是否登入，不登入弹出登入controller
-        if ICNetworkManager.default().token != nil && ICNetworkManager.default().token != "" {
-            if !CASBistu.checkCASCertified() && CASBistu.showCASController() {
-                let controller = Bundle.main.loadNibNamed("ICCASViewController", owner: nil, options: nil)?.first
-                tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
-            }
-        } else{
+        if ICNetworkManager.default().token == nil || ICNetworkManager.default().token == "" {
             let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
             tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
         }

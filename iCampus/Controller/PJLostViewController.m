@@ -12,6 +12,7 @@
 #import "ICNetworkManager.h"
 #import "IDMPhotoBrowser.h"
 #import "YZLostDetailsViewController.h"
+#import "CASBistu.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate,IDMPhotoBrowserDelegate>
 
@@ -50,7 +51,11 @@
     _kTableView.tableDelegate = self;
     _kTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headfresh)];
     _kTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footfresh)];
-    [self getDataFromHttp];
+    
+    if ([CASBistu checkCASCertified]) {
+        [self getDataFromHttp];
+        [_kTableView.mj_header beginRefreshing];
+    }
 }
 
 - (void)CreatPublishBtn{
@@ -97,9 +102,10 @@
                                        } else {
                                            [PJHUD showErrorWithStatus:@"没有数据了"];
                                        }
-                                      
+                                      [_kTableView.mj_header endRefreshing];
                                    }
                                    failure:^(NSError *error) {
+                                       [_kTableView.mj_header endRefreshing];
                                        NSLog(@"error:%@",error);
                                        // error信息要怎么处理？
                                    }];

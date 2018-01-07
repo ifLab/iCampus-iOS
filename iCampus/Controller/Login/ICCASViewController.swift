@@ -18,39 +18,29 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    lazy var buttonColor: UIColor = {
-        UIColor(red: 26/255.0, green: 152/255.0, blue: 252/255.0, alpha: 1)
-    }()
-    
     @IBAction func login(_ sender: UIButton) {
-        sender.isEnabled = false
-        sender.backgroundColor = .gray
         CASLogin()
+        passwordField.resignFirstResponder()
+        usernameField.resignFirstResponder()
     }
     
     func CASLogin() {
-        messageLabel.text = ""
         PJHUD.show(withStatus: "")
         CASBistu.login(withUsername: usernameField.text,
                        password: passwordField.text) {
                         [weak self] dict, error in
                         if let self_ = self {
                             if error != nil {
-                                self_.messageLabel.text = error
-                                self_.finishedLogin()
-                                PJHUD.dismiss()
+                                let errStr = "输入错误"
+                                PJHUD.showError(withStatus: errStr)
                             } else {
-                                self_.messageLabel.text = "认证成功!"
-                                self_.dismiss(animated: true, completion: nil)
+                                self_.dismiss(animated: true, completion: {
+                                    NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"),object: nil)
+                                })
                                 PJHUD.dismiss()
                             }
                         }
         }
-    }
-    
-    func finishedLogin() {
-        loginButton.isEnabled = true
-        loginButton.backgroundColor = buttonColor
     }
     
     @IBAction func forgetPassword(_ sender: UIButton) {
@@ -64,9 +54,8 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func notLoginYet(_ sender: UIButton) {
         //CAS暂不登入只允许看新闻
+        NotificationCenter.default.post(name: NSNotification.Name("UserNotLoginYetNotification"),object: nil)
         dismiss(animated: true) {
-            ICNetworkManager.default().token = ""
-            PJUser .logOut()
         }
     }
     
@@ -108,6 +97,8 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
         
         if textField.tag == 20 {
             CASLogin()
+            passwordField.resignFirstResponder()
+            usernameField.resignFirstResponder()
         }
         
         return true

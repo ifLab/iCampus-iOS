@@ -48,27 +48,27 @@
                             } else {
                                 NSLog(@"%@", error);
                                 if (callBackBlock) {
-                                    callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                                    callBackBlock(@{}, error.userInfo[@"NSLocalizedDescription"]);
                                 }
                             }
                         } else {
                             NSLog(@"%@", error);
                             if (callBackBlock) {
-                                callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                                callBackBlock(@{}, error.userInfo[@"NSLocalizedDescription"]);
                             }
                         }
                     }];
                 } else {
                     NSLog(@"%@", error);
                     if (callBackBlock) {
-                        callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                        callBackBlock(@{}, error.userInfo[@"NSLocalizedDescription"]);
                     }
                 }
             }];
         } else {
             NSLog(@"%@", error);
             if (callBackBlock) {
-                callBackBlock(@{}, error.userInfo[NSLocalizedFailureReasonErrorKey]);
+                callBackBlock(@{}, error.userInfo[@"NSLocalizedDescription"]);
             }
         }
     }];
