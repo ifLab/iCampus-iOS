@@ -118,7 +118,9 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                     }, failure: {
                         [weak self] message in
                         if let self_ = self {
-                            self_.messageLabel.text = message
+                            if message == "Request failed: unauthorized (401)" {
+                                self_.messageLabel.text = "密码错误"
+                            }
                             self_.finishedLoginOrRegister()
                             PJHUD.dismiss()
                         }
@@ -153,7 +155,11 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                 }
                             }, failure: { [weak self] error in
                                 if let self_ = self {
-                                    self_.messageLabel.text = error
+                                    if error == "Request failed: unauthorized (400)" {
+                                        self_.messageLabel.text = "邮箱已存在"
+                                    } else {
+                                        self_.messageLabel.text = error
+                                    }
                                     self_.finishedLoginOrRegister()
                                     PJHUD.dismiss()
                                 }
@@ -225,7 +231,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                     self_.verfyCodeFetchedTime = nil
                     self_.verfyCodeButton.isEnabled = true
                     self_.verfyCodeButton.backgroundColor = self_.buttonColor
-                    self_.verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
+                    self_.verfyCodeButton.setTitle("验证码", for: UIControlState.normal)
                     self_.messageLabel.text = message
                 }
             })
@@ -241,8 +247,8 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                 timer = nil
                 verfyCodeFetchedTime = nil
                 verfyCodeButton.isEnabled = true
-                verfyCodeButton.backgroundColor = loginAndRegisterButton.backgroundColor
-                verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
+                verfyCodeButton.backgroundColor = UIColor.init(red: 15/255.0, green: 128/255.0, blue: 1, alpha: 1)
+                verfyCodeButton.setTitle("验证码", for: UIControlState.normal)
             }
         }
     }

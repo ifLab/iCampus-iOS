@@ -56,6 +56,12 @@
         [self getDataFromHttp];
         [_kTableView.mj_header beginRefreshing];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CASloginSuccess) name:@"UserDidLoginNotification" object:nil];
+}
+
+- (void)CASloginSuccess {
+    [_kTableView.mj_header beginRefreshing];
 }
 
 - (void)CreatPublishBtn{
