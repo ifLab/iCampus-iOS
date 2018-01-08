@@ -145,7 +145,7 @@
     titleLabel.font = [UIFont boldSystemFontOfSize:22];
     
     UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(titleLabel.frame.size.width / 2 - 50 - 45, titleLabel.frame.origin.y + 5, 40, 40)];
-    titleImageView.image = [UIImage imageNamed:@"logo-png"];
+    titleImageView.image = [UIImage imageNamed:@"logo"];
     [tempScrollView addSubview:titleImageView];
     
     UIImageView *contentImageView = [self captureScreenScrollView:_scrollview];

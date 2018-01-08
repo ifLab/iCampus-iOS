@@ -146,7 +146,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
         
         let titleImageView = UIImageView.init(frame: CGRect(x:titleLabel.frame.width / 2 - 50 - 45, y:titleLabel.frame.origin.y + 5, width:40, height:40))
-        titleImageView.image = UIImage.init(named: "logo-png")
+        titleImageView.image = UIImage.init(named: "logo")
         scrollView.addSubview(titleImageView)
         
         let tableViewImageView = imageFromView(scrollView: tableView)
