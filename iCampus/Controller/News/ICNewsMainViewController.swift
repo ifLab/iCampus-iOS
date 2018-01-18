@@ -87,10 +87,21 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
             childControllers[0].headerBeginRefresh()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(newsItemDidSelectedNotification), name: NSNotification.Name("NewsItemDidSelectedNotification"), object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func newsItemDidSelectedNotification() {
+        if childControllers[segmentedControl.selectedSegmentIndex].tableView.contentOffset.y > 0 {
+            childControllers[segmentedControl.selectedSegmentIndex].tableView.setContentOffset(CGPoint(x:0 ,y:0), animated: true)
+        }else {
+            childControllers[segmentedControl.selectedSegmentIndex].refresh()
+            childControllers[segmentedControl.selectedSegmentIndex].headerBeginRefresh()
+        }
     }
     
     func loginRefresh() {

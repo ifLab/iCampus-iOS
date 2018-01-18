@@ -37,4 +37,8 @@
 
 +(void)refreshTokenWith:(void (^)(NSString *))failure;
 
++ (void)saveUserNameWithString:(NSString*)userName;
+
++ (void)readUserNameWithBlock:(void(^)(NSString *))userName;
+
 @end

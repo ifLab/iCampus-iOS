@@ -77,6 +77,10 @@
         if ([viewController.tabBarItem.title isEqualToString:@"地图"]) {
             [[NSNotificationCenter defaultCenter]postNotificationName:@"tabBarDidSelectedNotification" object:nil userInfo:nil];
         }
+        if ([viewController.tabBarItem.title isEqualToString:@"新闻"]) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"NewsItemDidSelectedNotification" object:nil userInfo:nil];
+        }
+
         
     }else{
         //未登录

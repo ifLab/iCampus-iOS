@@ -113,13 +113,14 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                                 NotificationCenter.default.post(
                                                     name: NSNotification.Name("UserDidLoginNotification"),
                                                     object: nil)
+                                                            ICLoginManager.saveUserName(with: self_.emailField.text)
                                             })
                                         }
                     }, failure: {
                         [weak self] message in
                         if let self_ = self {
                             if message == "Request failed: unauthorized (401)" {
-                                self_.messageLabel.text = "密码错误"
+                                self_.messageLabel.text = "账号或密码错误"
                             }
                             self_.finishedLoginOrRegister()
                             PJHUD.dismiss()
@@ -269,6 +270,12 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         
         emailField.delegate = self;
         emailField.returnKeyType = .next
+        ICLoginManager.readUserName {
+            [weak self] userName in
+            if userName != nil {
+                self?.emailField.text = userName
+            }
+        }
         
         passwordField.delegate = self
         passwordField.returnKeyType = .done

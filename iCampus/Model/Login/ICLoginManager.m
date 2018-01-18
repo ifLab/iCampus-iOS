@@ -129,4 +129,16 @@
                                    }];
 }
 
++ (void)saveUserNameWithString:(NSString*)userName{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userName forKey:@"暂存用户邮箱"];
+    [defaults synchronize];
+}
+
++ (void)readUserNameWithBlock:(void (^)(NSString *))userName{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *str = [defaults objectForKey:@"暂存用户邮箱"];
+    userName(str);
+}
+
 @end
