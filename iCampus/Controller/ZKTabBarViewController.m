@@ -46,6 +46,8 @@
     [self addController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"PJUserViewController"]] title:@"我" image:@"userCenter"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userNotLoginYetNotification) name:@"UserNotLoginYetNotification" object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userPasswordDidChange) name:@"UserPasswordDidChangeNotification" object:nil];
 }
 
 - (void)dealloc{
@@ -93,6 +95,12 @@
 
 - (void)userNotLoginYetNotification{
     self.selectedIndex = 0;
+}
+
+- (void)userPasswordDidChange{
+    self.selectedIndex = 0;
+    ICLoginViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

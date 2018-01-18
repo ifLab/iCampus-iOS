@@ -96,14 +96,18 @@
 }
 
 - (void)updatePWwithHttp:(NSDictionary *)paramters {
-    
+    [PJHUD showWithStatus:@""];
     [[ICNetworkManager defaultManager] POST:@"Update PW"
                               GETParameters:nil
                              POSTParameters:paramters
                                     success:^(NSDictionary *dict) {
-                                        [PJHUD showSuccessWithStatus:@"修改成功"];
-                                        [self.navigationController popViewControllerAnimated:YES];
+                                        [self.navigationController popToRootViewControllerAnimated:true];
+                                        [PJHUD dismiss];
+                                        [[NSNotificationCenter defaultCenter]postNotificationName:@"UserPasswordDidChangeNotification" object:nil];
+                                        [ICNetworkManager defaultManager].token = @"";
+                                        [PJUser logOut];
                                     } failure:^(NSError *error) {
+                                        [PJHUD dismiss];
                                         NSLog(@"%@", error);
                                     }];
 }
