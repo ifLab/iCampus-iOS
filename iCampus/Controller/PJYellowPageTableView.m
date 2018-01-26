@@ -47,8 +47,6 @@
         searchField.font = [UIFont boldSystemFontOfSize:14];
     }
     self.tableHeaderView = _kSearchBar;
-    
-    _kSectionTitle = [[NSMutableArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#", nil];
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
@@ -57,12 +55,14 @@
 
 - (void)setIndexArray:(NSMutableArray *)indexArray {
     _indexArray = indexArray;
-    for (int i = (int)_indexArray.count-1; i>=0; i--) {
+    NSMutableArray *shortSectionTitle = [[NSMutableArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#", nil];
+    for (int i=0; i<_indexArray.count; i++) {
         if ([_indexArray[i] count] == 0) {
-            [_kSectionTitle removeObjectAtIndex:i];
             [_indexArray removeObjectAtIndex:i];
+            [shortSectionTitle removeObjectAtIndex:i];
         }
     }
+    _kSectionTitle = shortSectionTitle.copy;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -78,14 +78,6 @@
     _isSearch = isSearch;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (_isSearch) {
-        [[self.view viewWithTag:10086]becomeFirstResponder];
-        _isSearch = false;
-    }
-}
-
 - (BOOL)prefersStatusBarHidden {
     return false;
 }
