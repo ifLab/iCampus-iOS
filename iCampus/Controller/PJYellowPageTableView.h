@@ -18,6 +18,7 @@
 @interface PJYellowPageTableView : UITableView <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property(strong,nonatomic)NSMutableArray *indexArray;
 
 @property (nonatomic, weak) id<PJYellowPageTableViewDelegate> tableDelegate;
 

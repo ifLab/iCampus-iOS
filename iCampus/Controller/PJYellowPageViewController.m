@@ -10,6 +10,7 @@
 #import "PJYellowPageTableView.h"
 #import "ICNetworkManager.h"
 #import "PJYellowPageDetailsViewController.h"
+#import "YZYellowPageIndexManager.h"
 
 
 @interface PJYellowPageViewController () <PJYellowPageTableViewDelegate>
@@ -53,6 +54,7 @@
                                    success:^(NSDictionary *dic) {
                                        NSArray *data = dic[@"resource"];;
                                        _kTableView.dataArr = [data mutableCopy];
+                                       _kTableView.indexArray = [YZYellowPageIndexManager indexArrayWithDataArray:data];
                                        [_kTableView reloadData];
                                        [PJHUD dismiss];
                                    }

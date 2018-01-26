@@ -8,10 +8,12 @@
 
 #import "PJYellowPageTableView.h"
 #import "PJYellowPageTableViewCell.h"
+#import "ChineseString.h"
 
 @implementation PJYellowPageTableView {
     UISearchBar *_kSearchBar;
     NSMutableArray *_kSearchArr;
+    NSMutableArray *_kSectionTitle;
 }
 
 - (id)init {
@@ -35,8 +37,6 @@
     _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
     _kSearchBar.barTintColor = [UIColor whiteColor];
     _kSearchBar.backgroundImage = [[UIImage alloc]init];
-    //测试
-    _kSearchBar.tag = 10086;
     UITextField *searchField = [_kSearchBar valueForKey:@"searchField"];
     if (searchField) {
         searchField.backgroundColor = [UIColor whiteColor];
@@ -47,30 +47,46 @@
         searchField.font = [UIFont boldSystemFontOfSize:14];
     }
     self.tableHeaderView = _kSearchBar;
+    
+    _kSectionTitle = [[NSMutableArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#", nil];
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
     _dataArr = dataArr;
 }
 
+- (void)setIndexArray:(NSMutableArray *)indexArray {
+    _indexArray = indexArray;
+    for (int i = (int)_indexArray.count-1; i>=0; i--) {
+        if ([_indexArray[i] count] == 0) {
+            [_kSectionTitle removeObjectAtIndex:i];
+            [_indexArray removeObjectAtIndex:i];
+        }
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    if (_kSearchArr.count > 0) {
+        return 1;
+    }else{
+        return self.indexArray.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_kSearchArr.count > 0) {
         return _kSearchArr.count;
     } else {
-        return _dataArr.count;
+        return [_indexArray[section] count];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJYellowPageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJYellowPageTableViewCell" forIndexPath:indexPath];
     if (_kSearchArr.count > 0) {
-        cell.cellDataSource = _kSearchArr[indexPath.row];
+        cell.dataDict = _kSearchArr[indexPath.row];
     } else {
-        cell.cellDataSource = _dataArr[indexPath.row];
+        cell.cellDataSource = _indexArray[indexPath.section][indexPath.row];
     }
     return cell;
 }
@@ -79,10 +95,18 @@
     PJYellowPageTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
     [_kSearchBar resignFirstResponder];
-    [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[indexPath.row]];
+    for (int i=0; i<_dataArr.count; i++) {
+        NSDictionary *dict = _dataArr[i];
+        NSString *shortStr = [dict objectForKey:@"name"];
+        ChineseString *cString = _indexArray[indexPath.section][indexPath.row];
+        if ([shortStr isEqualToString:cString.string]) {
+            [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[i]];
+            break;
+        }
+    }
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText; {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     // 使用谓词匹配
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
     if (_kSearchArr != nil) {
@@ -96,6 +120,45 @@
     }
     [self reloadData];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (_kSearchArr.count > 0) {
+        return 0;
+    }else{
+        return 30;
+    }
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (_kSearchArr.count > 0) {
+        return nil;
+    }else{
+        if ([self.indexArray[section] count] == 0) {
+            return nil;
+        }else{
+            return [_kSectionTitle objectAtIndex:section];
+        }
+    }
+}
+
+- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    if (_kSearchArr.count > 0) {
+        return nil;
+    }else{
+        return _kSectionTitle;
+    }
+}
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
+    NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:0 inSection:index];
+    if (![_indexArray[index] count]) {
+        return 0;
+    }else{
+        [tableView scrollToRowAtIndexPath:selectIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        return index;
+    }
+}
+
+
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (scrollView.contentOffset.y < -150) {

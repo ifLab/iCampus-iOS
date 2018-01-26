@@ -19,8 +19,13 @@
 
 }
 
-- (void)setCellDataSource:(NSDictionary *)cellDataSource {
-    _nameLabel.text = [NSString stringWithFormat:@"%@", cellDataSource[@"name"]];
+- (void)setCellDataSource:(ChineseString *)cellDataSource {
+//    _nameLabel.text = [NSString stringWithFormat:@"%@", cellDataSource[@"name"]];
+    _nameLabel.text = cellDataSource.string;
+}
+
+- (void)setDataDict:(NSDictionary *)dataDict{
+    _nameLabel.text = [NSString stringWithFormat:@"%@", dataDict[@"name"]];
 }
 
 @end

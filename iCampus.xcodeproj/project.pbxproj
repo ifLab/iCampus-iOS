@@ -60,6 +60,9 @@
 		A03774231FE8C9DF0051D41A /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774221FE8C9DF0051D41A /* UTDID.framework */; };
 		A03774251FE8C9E90051D41A /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774241FE8C9E90051D41A /* UMAnalytics.framework */; };
 		A03774271FE8C9F10051D41A /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774261FE8C9F10051D41A /* UMCommon.framework */; };
+		A057FE63201AF9FB001C6B04 /* YZYellowPageIndexManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A057FE62201AF9FB001C6B04 /* YZYellowPageIndexManager.m */; };
+		A057FE6D201AFA8C001C6B04 /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = A057FE6C201AFA8C001C6B04 /* ChineseString.m */; };
+		A057FE70201AFB52001C6B04 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = A057FE6E201AFB52001C6B04 /* pinyin.c */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
 		A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B091E9690E000DDD6BC /* Main.storyboard */; };
 		A90F4B1B1E9690E000DDD6BC /* iCampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B1A1E9690E000DDD6BC /* iCampusTests.swift */; };
@@ -228,6 +231,12 @@
 		A03774221FE8C9DF0051D41A /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		A03774241FE8C9E90051D41A /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
 		A03774261FE8C9F10051D41A /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		A057FE61201AF9FB001C6B04 /* YZYellowPageIndexManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZYellowPageIndexManager.h; sourceTree = "<group>"; };
+		A057FE62201AF9FB001C6B04 /* YZYellowPageIndexManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZYellowPageIndexManager.m; sourceTree = "<group>"; };
+		A057FE6B201AFA8C001C6B04 /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseString.h; sourceTree = "<group>"; };
+		A057FE6C201AFA8C001C6B04 /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseString.m; sourceTree = "<group>"; };
+		A057FE6E201AFB52001C6B04 /* pinyin.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = pinyin.c; sourceTree = "<group>"; };
+		A057FE6F201AFB52001C6B04 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		A47E666B3929F0973545A197 /* Pods-iCampus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.debug.xcconfig"; sourceTree = "<group>"; };
 		A90F4B021E9690E000DDD6BC /* iCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F4B051E9690E000DDD6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -774,6 +783,27 @@
 			path = "U-App";
 			sourceTree = "<group>";
 		};
+		A057FE60201AF9DC001C6B04 /* YellowPageIndex */ = {
+			isa = PBXGroup;
+			children = (
+				A057FE64201AFA02001C6B04 /* 第三方 */,
+				A057FE61201AF9FB001C6B04 /* YZYellowPageIndexManager.h */,
+				A057FE62201AF9FB001C6B04 /* YZYellowPageIndexManager.m */,
+			);
+			path = YellowPageIndex;
+			sourceTree = "<group>";
+		};
+		A057FE64201AFA02001C6B04 /* 第三方 */ = {
+			isa = PBXGroup;
+			children = (
+				A057FE6B201AFA8C001C6B04 /* ChineseString.h */,
+				A057FE6C201AFA8C001C6B04 /* ChineseString.m */,
+				A057FE6F201AFB52001C6B04 /* pinyin.h */,
+				A057FE6E201AFB52001C6B04 /* pinyin.c */,
+			);
+			path = "第三方";
+			sourceTree = "<group>";
+		};
 		A90F4AF91E9690E000DDD6BC = {
 			isa = PBXGroup;
 			children = (
@@ -908,6 +938,7 @@
 		A90F4B821E96998600DDD6BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A057FE60201AF9DC001C6B04 /* YellowPageIndex */,
 				A90F4B831E96998600DDD6BC /* ICNetworkManager.h */,
 				A90F4B841E96998600DDD6BC /* ICNetworkManager.m */,
 				A90F4B851E96998600DDD6BC /* Login */,
@@ -1435,6 +1466,7 @@
 				2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */,
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
+				A057FE70201AFB52001C6B04 /* pinyin.c in Sources */,
 				2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
 				2CA4467B1EB871C400A0FCAF /* PJKeyBoard.m in Sources */,
@@ -1457,6 +1489,7 @@
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */,
+				A057FE63201AF9FB001C6B04 /* YZYellowPageIndexManager.m in Sources */,
 				DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
@@ -1481,6 +1514,7 @@
 				2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */,
 				2CF5CC051EB4C76F006580D7 /* PJAboutTableView.m in Sources */,
 				2CA446631EB7464C00A0FCAF /* PJNewLostViewController.m in Sources */,
+				A057FE6D201AFA8C001C6B04 /* ChineseString.m in Sources */,
 				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
 				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
 				2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */,

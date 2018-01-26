@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChineseString.h"
 
 @interface PJYellowPageTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
-@property (nonatomic, strong) NSDictionary *cellDataSource;
+@property (nonatomic, strong) ChineseString *cellDataSource;
+
+@property (nonatomic,strong)NSDictionary *dataDict;
 
 @end
