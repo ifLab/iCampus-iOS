@@ -51,7 +51,18 @@ Android：
 
 [SMS_SDK](http://sms.mob.com/)
 
+## 相关开发文档
 
+[徐正科_iOS – iBistu4.0开发中的 ‘坑坑换坑坑’](http://www.xuzhengke.cn/?p=386)
 
+[翁培钧_iBistu4.0（先导篇）](http://pjhubs.cn/2018/01/24/iBistu4-0%EF%BC%88%E5%85%88%E5%AF%BC%E7%AF%87%EF%BC%89/)
 
+[翁培钧_iBistu4.0（黄页）](http://pjhubs.cn/2018/01/24/iBistu4-0%EF%BC%88%E9%BB%84%E9%A1%B5%EF%BC%89/)
 
+[翁培钧_iBistu4.0（失物）](http://pjhubs.cn/2018/01/25/iBistu4-0%EF%BC%88%E5%A4%B1%E7%89%A9%EF%BC%89/)
+
+[翁培钧_iBistu4.0（地图）](http://pjhubs.cn/2018/01/26/iBistu4-0%EF%BC%88%E5%9C%B0%E5%9B%BE%EF%BC%89/)
+
+[翁培钧_iBistu4.0（新闻）](http://pjhubs.cn/2018/01/27/iBistu4-0%EF%BC%88%E6%96%B0%E9%97%BB%EF%BC%89/)
+
+updating...
