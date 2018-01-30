@@ -81,7 +81,9 @@ class ICNewsTableViewController: UITableViewController {
     // MARK: MJRefresh
     
     internal func headerBeginRefresh() {
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header.beginRefreshing {
+            self.refresh()
+        }
     }
     
     func refresh() {
@@ -104,6 +106,7 @@ class ICNewsTableViewController: UITableViewController {
         ICNews.fetch(channel, page: page,
                      success: {
                         [weak self] data in
+                        self?.backImageView.isHidden = true
                         self?.tableView.mj_footer.endRefreshing()
                         self?.news.append(contentsOf: data as! [ICNews])
                         self?.tableView.reloadData()
