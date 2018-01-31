@@ -95,13 +95,17 @@
     PJYellowPageTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
     [_kSearchBar resignFirstResponder];
-    for (int i=0; i<_dataArr.count; i++) {
-        NSDictionary *dict = _dataArr[i];
-        NSString *shortStr = [dict objectForKey:@"name"];
-        ChineseString *cString = _indexArray[indexPath.section][indexPath.row];
-        if ([shortStr isEqualToString:cString.string]) {
-            [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[i]];
-            break;
+    if (_kSearchArr.count > 0) {
+        [_tableDelegate PJYellowPageTableViewCellClick:_kSearchArr[indexPath.row]];
+    }else {
+        for (int i=0; i<_dataArr.count; i++) {
+            NSDictionary *dict = _dataArr[i];
+            NSString *shortStr = [dict objectForKey:@"name"];
+            ChineseString *cString = _indexArray[indexPath.section][indexPath.row];
+            if ([shortStr isEqualToString:cString.string]) {
+                [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[i]];
+                break;
+            }
         }
     }
 }
