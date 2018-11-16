@@ -8,7 +8,7 @@
 
 #import "ZKLoginViewController.h"
 #import "ZKLoginView.h"
-#import "ICNetworkManager.h"
+#import "ICLoginManager.h"
 
 @interface ZKLoginViewController()<ZKLoginViewDelegate>
 
@@ -22,6 +22,7 @@
     ZKLoginView *loginView = [ZKLoginView new];
     [self.view addSubview:loginView];
     self.mainView = loginView;
+    self.mainView.delegate = self;
     
     // 监听键盘弹出
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasChange:) name:UIKeyboardDidShowNotification object:nil];
@@ -46,8 +47,35 @@
 }
 
 - (void)registerBtnActionWithUsername:(NSString *)username passWord:(NSString *)password verifyCode:(NSString *)verifyCode {
+    
+    if (username.length != 11) {
+        [PJHUD showErrorWithStatus:@"请输入正确手机号"];
+        return ;
+    }
+    
+    if (password.length == 0) {
+        [PJHUD showErrorWithStatus:@"请输入密码"];
+        return ;
+    }
+    
+    if (verifyCode.length == 0) {
+        [PJHUD showErrorWithStatus:@"请输入验证码"];
+        return ;
+    }
+    
     [PJHUD showWithStatus:@""];
-    []
+    [ICLoginManager signUp:nil password:password.md5 phone:username verfyCode:verifyCode success:^(NSDictionary *dict) {
+        NSLog(@"注册成功:%@",dict);
+        [PJHUD dismiss];
+        [PJHUD showWithStatus:@"注册成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [PJHUD dismiss];
+        });
+        
+        
+    } failure:^(NSString *err){
+        NSLog(@"注册失败: %@",err);
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

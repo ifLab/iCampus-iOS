@@ -8,6 +8,8 @@
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
 	<dict>
+		<key>Register</key>
+		<string>masuser/createmasuser</string>
 		<key>New Lost</key>
 		<string>ibistu/_table/module_lost_found</string>
 		<key>Update PW</key>
@@ -34,9 +36,9 @@
 		<string>ibistu/_table/module_map/</string>
 		<key>Lost</key>
 		<string>ibistu/_table/module_lost_found?limit=10&amp;order=createTime%20desc</string>
-		<key>Login</key>
+		<key>Old_Login</key>
 		<string>user/session/</string>
-		<key>Register</key>
+		<key>Old_Register</key>
 		<string>user/register/</string>
 		<key>Change Password</key>
 		<string>user/password/</string>

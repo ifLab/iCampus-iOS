@@ -90,7 +90,7 @@
 //                            }];
     
 # warning 不验证验证码
-    [[ICNetworkManager defaultManager] POST:@"masuser/createmasuser"
+    [[ICNetworkManager defaultManager] POST:@"Register"
                               GETParameters:nil
                              POSTParameters:@{
                                               @"phoneNumber": phone,

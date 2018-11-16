@@ -163,7 +163,7 @@ static const CGFloat kStateViewWidth = 30;
     
     UIButton *loginActionBtn = [self getActionBtnWithTitle:@"注册"];
     loginActionBtn.mj_y = passwordTextField.mj_y + passwordTextField.mj_h + 20;
-    [loginActionBtn addTarget:self action:@selector(loginBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [loginActionBtn addTarget:self action:@selector(registerBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [registerView addSubview:loginActionBtn];
     self.registerActionBtn = loginActionBtn;
     

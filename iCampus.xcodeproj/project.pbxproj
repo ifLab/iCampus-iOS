@@ -1192,7 +1192,6 @@
 				A90F4AFF1E9690E000DDD6BC /* Frameworks */,
 				A90F4B001E9690E000DDD6BC /* Resources */,
 				58FCA5A4F929A2CE92DC05D2 /* [CP] Embed Pods Frameworks */,
-				B758AA524F0A86AFA0BB3BFF /* [CP] Copy Pods Resources */,
 				DA1349381FCC1E5600502154 /* Run Script */,
 			);
 			buildRules = (
@@ -1212,8 +1211,6 @@
 				A90F4B121E9690E000DDD6BC /* Sources */,
 				A90F4B131E9690E000DDD6BC /* Frameworks */,
 				A90F4B141E9690E000DDD6BC /* Resources */,
-				9DAB76E287D37A0C52D936BF /* [CP] Embed Pods Frameworks */,
-				9A15D8C30D12D151ECD170FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1402,51 +1399,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iCampus/Pods-iCampus-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A15D8C30D12D151ECD170FD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DAB76E287D37A0C52D936BF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B758AA524F0A86AFA0BB3BFF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iCampus/Pods-iCampus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C9FDCBBB2BA8CF9B21C0AEB6 /* [CP] Check Pods Manifest.lock */ = {
