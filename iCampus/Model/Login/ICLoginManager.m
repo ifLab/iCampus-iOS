@@ -14,17 +14,21 @@
 
 @implementation ICLoginManager
 
-+(void)login:(NSString *)email
++(void)login:(NSString *)phoneNumber
     password:(NSString *)password
      success:(void (^)(NSDictionary *))success
      failure:(void (^)(NSString *))failure {
-    [[ICNetworkManager defaultManager] POST:@"Login"
+    [[ICNetworkManager defaultManager] POST:@"masuser/createmasuser"
                               GETParameters:nil
                              POSTParameters:@{
-                                              @"email": email,
+                                              @"phoneNumber": phoneNumber,
                                               @"password": password
                                               }
                                     success:^(NSDictionary *data) {
+                                    
+                                        NSLog(@"%@",data);
+                                        
+                                        
                                         NSString *session = data[@"session_token"];
                                         [ICNetworkManager defaultManager].token = session;
                                         PJUser *user = [PJUser new];
@@ -62,26 +66,40 @@
     verfyCode:(NSString *)verfyCode
       success:(void (^)(NSDictionary *))success
       failure:(void (^)(NSString *))failure {
-    [SMSSDK commitVerificationCode:verfyCode
-                       phoneNumber:phone
-                              zone:@"86"
-                            result:^(SMSSDKUserInfo *userInfo, NSError *error) {
-                                if (error) {
-                                    failure(error.userInfo[@"commitVerificationCode"]);
-                                } else {
-                                    [[ICNetworkManager defaultManager] POST:@"Register"
-                                                              GETParameters:nil
-                                                             POSTParameters:@{
-                                                                              @"email": email,
-                                                                              @"password": password,
-                                                                              @"phone": phone
-                                                                              }
-                                                                    success:^(NSDictionary *data) {
-                                                                        success(data);
-                                                                    } failure:^(NSError *error) {                                                                 failure(error.userInfo[NSLocalizedDescriptionKey]);
-                                                                    }];
-                                }
-                            }];
+    
+#warning 临时关闭短信验证码验证
+//    [SMSSDK commitVerificationCode:verfyCode
+//                       phoneNumber:phone
+//                              zone:@"86"
+//                            result:^(SMSSDKUserInfo *userInfo, NSError *error) {
+//                                if (error) {
+//                                    failure(error.userInfo[@"commitVerificationCode"]);
+//                                } else {
+//                                    [[ICNetworkManager defaultManager] POST:@"Register"
+//                                                              GETParameters:nil
+//                                                             POSTParameters:@{
+//                                                                              @"email": email,
+//                                                                              @"password": password,
+//                                                                              @"phone": phone
+//                                                                              }
+//                                                                    success:^(NSDictionary *data) {
+//                                                                        success(data);
+//                                                                    } failure:^(NSError *error) {                                                                 failure(error.userInfo[NSLocalizedDescriptionKey]);
+//                                                                    }];
+//                                }
+//                            }];
+    
+# warning 不验证验证码
+    [[ICNetworkManager defaultManager] POST:@"masuser/createmasuser"
+                              GETParameters:nil
+                             POSTParameters:@{
+                                              @"phoneNumber": phone,
+                                              @"password": password,
+                                              }
+                                    success:^(NSDictionary *data) {
+                                        success(data);
+                                    } failure:^(NSError *error) {                                                                 failure(error.userInfo[NSLocalizedDescriptionKey]);
+                                    }];
 }
 
 +(void)editInfoWithfirst_name:(NSString *)first_name

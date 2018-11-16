@@ -115,6 +115,9 @@
 		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
 		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
 		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
+		F5784C55219ABCE7004C63BA /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F5784C54219ABCE7004C63BA /* NSString+Category.m */; };
+		F579D09E219AFCF0002C350D /* ZKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D09D219AFCF0002C350D /* ZKLoginViewController.m */; };
+		F579D0A2219AFD7E002C350D /* ZKLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D0A1219AFD7E002C350D /* ZKLoginView.m */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
 		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
 /* End PBXBuildFile section */
@@ -309,6 +312,12 @@
 		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F5784C53219ABCE7004C63BA /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		F5784C54219ABCE7004C63BA /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		F579D09C219AFCF0002C350D /* ZKLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKLoginViewController.h; sourceTree = "<group>"; };
+		F579D09D219AFCF0002C350D /* ZKLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKLoginViewController.m; sourceTree = "<group>"; };
+		F579D0A0219AFD7E002C350D /* ZKLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKLoginView.h; sourceTree = "<group>"; };
+		F579D0A1219AFD7E002C350D /* ZKLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKLoginView.m; sourceTree = "<group>"; };
 		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
 		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
@@ -895,6 +904,8 @@
 				A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */,
 				A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */,
 				A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */,
+				F579D09C219AFCF0002C350D /* ZKLoginViewController.h */,
+				F579D09D219AFCF0002C350D /* ZKLoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -916,6 +927,7 @@
 		A90F4B7D1E96998600DDD6BC /* External */ = {
 			isa = PBXGroup;
 			children = (
+				F5784C4F219ABC68004C63BA /* Category */,
 				A03774211FE8C9B70051D41A /* U-App */,
 				DAABAB071F98E50900E09C3B /* OXExpandingButtonBar */,
 				F50CDF601F935A1800264AB4 /* UMSocial */,
@@ -974,6 +986,7 @@
 		A90F4B8F1E96998600DDD6BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F579D09F219AFD09002C350D /* Login */,
 				2CA4468F1EB8E08D00A0FCAF /* User */,
 				2CA446531EB740CC00A0FCAF /* Lost */,
 				2CA446471EB6F7F700A0FCAF /* Map */,
@@ -1127,6 +1140,24 @@
 				F50CDF731F935A1800264AB4 /* UShareUI.framework */,
 			);
 			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		F5784C4F219ABC68004C63BA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F5784C53219ABCE7004C63BA /* NSString+Category.h */,
+				F5784C54219ABCE7004C63BA /* NSString+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F579D09F219AFD09002C350D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F579D0A0219AFD7E002C350D /* ZKLoginView.h */,
+				F579D0A1219AFD7E002C350D /* ZKLoginView.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		F5C73C921F9762DC0090D578 /* Tabbar */ = {
@@ -1468,7 +1499,9 @@
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
 				A057FE70201AFB52001C6B04 /* pinyin.c in Sources */,
 				2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */,
+				F5784C55219ABCE7004C63BA /* NSString+Category.m in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
+				F579D09E219AFCF0002C350D /* ZKLoginViewController.m in Sources */,
 				2CA4467B1EB871C400A0FCAF /* PJKeyBoard.m in Sources */,
 				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
@@ -1488,6 +1521,7 @@
 				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
+				F579D0A2219AFD7E002C350D /* ZKLoginView.m in Sources */,
 				2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */,
 				A057FE63201AF9FB001C6B04 /* YZYellowPageIndexManager.m in Sources */,
 				DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */,

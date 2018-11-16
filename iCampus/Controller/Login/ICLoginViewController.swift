@@ -100,8 +100,8 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         if emailField.text?.range(of: "@") != nil {
             if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
                 PJHUD.show(withStatus: "")
-                ICLoginManager.login(emailField.text,
-                                     password: passwordField.text,
+                ICLoginManager.login(phoneField.text,
+                                     password: md5String(str: passwordField.text!),
                                      success: {
                                         [weak self] data in
                                         if let self_ = self {
@@ -136,16 +136,22 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+    * 用户注册
+    */
+    
     func userRegister() {
         if (phoneField.text?.lengthOfBytes(using: String.Encoding.ascii)) == 11 {
-            if emailField.text?.range(of: "@") != nil {
+//            if emailField.text?.range(of: "@") != nil {   // 临时关闭邮箱验证
+            if true {
                 if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
                     if passwordField.text == verfyPasswordField.text {
                         PJHUD.show(withStatus: "")
                         ICLoginManager.signUp(emailField.text,
-                                              password: passwordField.text,
+                                              password: md5String(str: passwordField.text!),
                                               phone: phoneField.text,
                                               verfyCode: verfyCodeField.text, success: { [weak self] (data) in
+                                                print(data)
                                                 if let self_ = self {
                                                     self_.messageLabel.text = "success"
                                                     self_.finishedLoginOrRegister()
@@ -353,6 +359,18 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    func md5String(str:String) -> String{
+        let cStr = str.cString(using: String.Encoding.utf8);
+        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
+        CC_MD5(cStr!,(CC_LONG)(strlen(cStr!)), buffer)
+        let md5String = NSMutableString();
+        for i in 0 ..< 16{
+            md5String.appendFormat("%02x", buffer[i])
+        }
+        free(buffer)
+        return md5String as String
     }
     
 }

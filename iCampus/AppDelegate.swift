@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func maininit(){
+        
         // init bmobSMS
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -32,56 +33,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //判断是否登入，不登入弹出登入controller
         if ICNetworkManager.default().token == nil || ICNetworkManager.default().token == "" {
-            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+//            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+            let controller = ZKLoginViewController.init()
             tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
         }
         
         // UM
-        // open log
-        UMSocialManager.default().openLog(true)
-        // set key
-        UMSocialManager.default().umSocialAppkey = "59d0e2f69f06fd268d00003e"
-        UMConfigure.initWithAppkey("59d0e2f69f06fd268d00003e", channel: "App Store")
-        let _ = MobClick.setScenarioType(eScenarioType(rawValue: 0)!)
-        /* 设置第三方平台 */
-        self.umengSharePlatforms()
+//        // open log
+//        UMSocialManager.default().openLog(true)
+//        // set key
+//        UMSocialManager.default().umSocialAppkey = "59d0e2f69f06fd268d00003e"
+//        UMConfigure.initWithAppkey("59d0e2f69f06fd268d00003e", channel: "App Store")
+//        let _ = MobClick.setScenarioType(eScenarioType(rawValue: 0)!)
+//        /* 设置第三方平台 */
+//        self.umengSharePlatforms()
         
         /* ZK Token刷新机制*/
         
-        let file = NSHomeDirectory() + "/Documents/user.data"
+//        let file = NSHomeDirectory() + "/Documents/user.data"
         // 判断是否user.data文件是否存在
-        if (FileManager.default.fileExists(atPath: file)){
-            // 用户存在
-            // 不是第一次登录
-            // 获取用户
-            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
-
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let lastTime = formatter.date(from: user.last_login_date)!
-            let thisTime = Date()
-            
-            let timeInterval = thisTime.timeIntervalSince(lastTime)
-            
-            //时间差计算 3600 * 24
-            if (timeInterval >= 3600 * 24){
-                //超过一天未使用app
-                let alertController = UIAlertController(title: "自动登录失败", message: "您已长时间未使用本APP，为了您的账号安全，请重新登录", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "好的", style: .default, handler:{
-                    (UIAlertAction) -> Void in
-                    //退出账号
-                    let vc = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
-                    self.window?.rootViewController?.present(vc as! UIViewController, animated: true, completion: {
-                        ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
-                        PJUser.logOut()
-                    })
-                })
-                alertController.addAction(okAction)
-                self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-            }
-        }else{
-            print("第一次登录")
-        }
+//        if (FileManager.default.fileExists(atPath: file)){
+//            // 用户存在
+//            // 不是第一次登录
+//            // 获取用户
+//            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
+//
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//            let lastTime = formatter.date(from: user.last_login_date)!
+//            let thisTime = Date()
+//
+//            let timeInterval = thisTime.timeIntervalSince(lastTime)
+//
+//            //时间差计算 3600 * 24
+//            if (timeInterval >= 3600 * 24){
+//                //超过一天未使用app
+//                let alertController = UIAlertController(title: "自动登录失败", message: "您已长时间未使用本APP，为了您的账号安全，请重新登录", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "好的", style: .default, handler:{
+//                    (UIAlertAction) -> Void in
+//                    //退出账号
+//                    let vc = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+//                    self.window?.rootViewController?.present(vc as! UIViewController, animated: true, completion: {
+//                        ICNetworkManager.default().token = ""   //如果没有此句代码，点击个人中心之后首先弹出的是CAS认证而不是账号登录
+//                        PJUser.logOut()
+//                    })
+//                })
+//                alertController.addAction(okAction)
+//                self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+//            }
+//        }else{
+//            print("第一次登录")
+//        }
     }
     
     func umengSharePlatforms() {

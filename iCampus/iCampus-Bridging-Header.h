@@ -34,6 +34,9 @@
 //ZK TabBarController
 #import "ZKTabBarViewController.h"
 
+//ZK Login
+#import "ZKLoginViewController.h"
+
 //友盟U-App
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
