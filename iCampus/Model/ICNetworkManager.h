@@ -10,6 +10,14 @@
 #import <CommonCrypto/CommonCrypto.h>
 @import AFNetworking;
 
+typedef NS_ENUM(NSInteger, ICNetworkResponseCode){
+    ICNetworkResponseCodeSuccess = 666,
+    ICNetworkResponseCodeError = 2333,
+    ICNetworkResponseCodeTokenError = 1001,
+    ICNetworkResponseCodeParamErrpor = 1002,
+    ICNetworkResponseCodeMethodError = 2001
+};
+
 @interface ICNetworkManager : NSObject
 
 @property (nonatomic) AFHTTPSessionManager *manager;

@@ -8,6 +8,8 @@
 	<string>https://api.netease.im/sms/sendcode.action/</string>
 	<key>Paths</key>
 	<dict>
+		<key>Login</key>
+		<string>masuser/login</string>
 		<key>Register</key>
 		<string>masuser/createmasuser</string>
 		<key>New Lost</key>

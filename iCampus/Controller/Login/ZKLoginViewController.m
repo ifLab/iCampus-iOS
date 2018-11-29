@@ -43,6 +43,26 @@
 }
 
 - (void)loginBtnActionWithUsername:(NSString *)username password:(NSString *)password {
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+    interval = (interval / 300);
+    
+    password = [NSString stringWithFormat:@"%@%.0lf",password.md5,interval].md5;
+    
+    if (username.length != 11) {
+        [PJHUD showErrorWithStatus:@"请输入正确手机号"];
+        return ;
+    }
+    
+    if (password.length == 0) {
+        [PJHUD showErrorWithStatus:@"请输入密码"];
+        return ;
+    }
+    
+    [ICLoginManager login:username password:password success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+    } failure:^(NSString *error) {
+        
+    }];
     
 }
 
@@ -65,9 +85,13 @@
     
     [PJHUD showWithStatus:@""];
     [ICLoginManager signUp:nil password:password.md5 phone:username verfyCode:verifyCode success:^(NSDictionary *dict) {
-        NSLog(@"注册成功:%@",dict);
         [PJHUD dismiss];
-        [PJHUD showWithStatus:@"注册成功"];
+        if ([dict[@"msgCode"] integerValue] == ICNetworkResponseCodeSuccess) {
+            [PJHUD showWithStatus:@"注册成功"];
+        }else{
+            [PJHUD showErrorWithStatus:dict[@"msg"]];
+        }
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [PJHUD dismiss];
         });

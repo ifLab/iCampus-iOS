@@ -16,28 +16,28 @@
 
 +(void)login:(NSString *)phoneNumber
     password:(NSString *)password
-     success:(void (^)(NSDictionary *))success
-     failure:(void (^)(NSString *))failure {
-    [[ICNetworkManager defaultManager] POST:@"masuser/createmasuser"
+     success:(void (^)(NSDictionary *dict))success
+     failure:(void (^)(NSString *error))failure {
+    [[ICNetworkManager defaultManager] POST:@"Login"
                               GETParameters:nil
                              POSTParameters:@{
                                               @"phoneNumber": phoneNumber,
-                                              @"password": password
+                                              @"sign": password
                                               }
                                     success:^(NSDictionary *data) {
                                     
                                         NSLog(@"%@",data);
                                         
                                         
-                                        NSString *session = data[@"session_token"];
-                                        [ICNetworkManager defaultManager].token = session;
-                                        PJUser *user = [PJUser new];
-                                        user.name = data[@"name"];
-                                        user.first_name = data[@"first_name"];
-                                        user.last_name = data[@"last_name"];
-                                        user.last_login_date = data[@"last_login_date"];
-                                        user.email = data[@"email"];
-                                        [user save];
+//                                        NSString *session = data[@"session_token"];
+//                                        [ICNetworkManager defaultManager].token = session;
+//                                        PJUser *user = [PJUser new];
+//                                        user.name = data[@"name"];
+//                                        user.first_name = data[@"first_name"];
+//                                        user.last_name = data[@"last_name"];
+//                                        user.last_login_date = data[@"last_login_date"];
+//                                        user.email = data[@"email"];
+//                                        [user save];
                                         success(data);
                                     }
                                     failure:^(NSError *error) {
