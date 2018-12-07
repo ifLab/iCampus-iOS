@@ -8,7 +8,7 @@
 
 #import "CASBistu.h"
 #import "ICLoginManager.h"
-#import "PJUser.h"
+#import "UserModel.h"
 
 @implementation CASBistu
 
@@ -75,20 +75,19 @@
 }
 
 + (bool)checkCASCertified {
-    PJUser *currentUser = [PJUser currentUser];
-    if ([@"@" isEqualToString:currentUser.last_name]) {
-        return true;
-    } else {
-        return false;
-    }
+    return UserModel.CASCertified;
 }
 
+# pragma waring ZK-CAS的二层验证，暂时关闭
 + (bool)showCASController {
-    if ([@"not_show" isEqualToString:[HBServerURL getWithAppNameAndURL:@"https://api.iflab.org/api/v2/serverurl/_table/serverurl/" apikey:@"c4c6a2a605c559a089f785394561919eecf2c548b631f3256678870f07691b50"]]) {
-        return false;
-    } else {
-        return true;
-    }
+
+//    if ([@"not_show" isEqualToString:[HBServerURL getWithAppNameAndURL:@"https://api.iflab.org/api/v2/serverurl/_table/serverurl/" apikey:@"c4c6a2a605c559a089f785394561919eecf2c548b631f3256678870f07691b50"]]) {
+//        return false;
+//    } else {
+//        return true;
+//    }
+    
+    return YES;
 }
 
 @end

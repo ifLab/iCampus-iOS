@@ -17,7 +17,7 @@
          failure:(void(^)(NSString*))failure {
     [[ICNetworkManager defaultManager] GET:@"News List"
                                 parameters:@{
-                                             @"category": channel.listKey,
+//                                             @"category": channel.listKey,
                                              @"page": @(page),
                                              }
                                    success:^(NSDictionary *dic) {

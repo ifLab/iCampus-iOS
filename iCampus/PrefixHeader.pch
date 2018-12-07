@@ -6,6 +6,8 @@
 //  Copyright © 2017年 ifLab. All rights reserved.
 //
 
+#import "ICGlobalKey.h"
+
 #import "constant.h"
 #import "PJHUD.h"
 #import "SVProgressHUD.h"

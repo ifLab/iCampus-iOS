@@ -23,8 +23,8 @@ class ICNewsTableViewController: UITableViewController {
     
     init(category: String, title: String) {
         channel = ICNewsChannel()
-        channel.listKey = category
-        channel.title = title
+//        channel.listKey = category
+//        channel.title = title
         backImageView = UIImageView.init()
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +35,7 @@ class ICNewsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = channel.title
+//        title = channel.title
         for nibName in nibNames {
             tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
         }
@@ -87,19 +87,19 @@ class ICNewsTableViewController: UITableViewController {
     }
     
     func refresh() {
-        ICNews.fetch(channel, page: 0,
-                     success: {
-                        [weak self] data in
-                        self?.backImageView.isHidden = true
-                        self?.tableView.mj_header.endRefreshing()
-                        self?.news = data as! [ICNews]
-                        self?.tableView.reloadData()
-                        self?.page = 1
-            },
-                     failure: {
-                        [weak self] _ in
-                        self?.tableView.mj_header.endRefreshing()
-        })
+//        ICNews.fetch(channel, page: 0,
+//                     success: {
+//                        [weak self] data in
+//                        self?.backImageView.isHidden = true
+//                        self?.tableView.mj_header.endRefreshing()
+//                        self?.news = data as! [ICNews]
+//                        self?.tableView.reloadData()
+//                        self?.page = 1
+//            },
+//                     failure: {
+//                        [weak self] _ in
+//                        self?.tableView.mj_header.endRefreshing()
+//        })
     }
     
     func loadMore() {

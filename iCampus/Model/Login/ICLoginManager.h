@@ -12,6 +12,7 @@
 
 +(void)login:(NSString *)email
     password:(NSString *)password
+   timestamp:(NSString *)timestamp
      success:(void (^)(NSDictionary *))success
      failure:(void (^)(NSString *))failure;
 

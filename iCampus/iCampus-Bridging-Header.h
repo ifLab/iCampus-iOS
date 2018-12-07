@@ -25,6 +25,7 @@
 #import "PJHUD.h"
 #import "PJCurrentPhone.h"
 #import "PJNewsPoints.h"
+#import "ICNewsChannel.h"
 
 
 //友盟分享桥接文件
@@ -36,9 +37,11 @@
 
 //ZK Login
 #import "ZKLoginViewController.h"
+#import "UserModel.h"
 
 //友盟U-App
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
 
+#import <SVProgressHUD/SVProgressHUD.h>
 

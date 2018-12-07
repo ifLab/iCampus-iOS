@@ -7,6 +7,7 @@
 //
 
 #import "ICNetworkManager.h"
+#import "UserModel.h"
 
 @implementation ICNetworkManager
 
@@ -37,18 +38,29 @@
 - (AFHTTPSessionManager *)manager {
     if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
-        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [_manager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Content-Type"];
-        
+        [self setManager:_manager params:nil];
+    }
+    return _manager;
+}
+
+- (void)setManager: (AFHTTPSessionManager *)manager params:(NSDictionary *)params {
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSString *interval_str = nil;
+    if (![params valueForKey:@"timestamp"]) {
         // 添加timestamp
         NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
         interval = (interval / 300) + 1;
-        
-        [_manager.requestSerializer setValue:[NSString stringWithFormat:@"%.0lf",interval] forHTTPHeaderField:@"timestamp"];
-        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        interval_str = [NSString stringWithFormat:@"%.0lf",interval];
+    }else{
+        interval_str = [params valueForKey:@"timestamp"];
     }
-    return _manager;
+    
+    [manager.requestSerializer setValue: interval_str forHTTPHeaderField:@"timestamp"];
+    
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 }
 
 - (NSURLSessionTask*)GET:(NSString *)key
@@ -72,9 +84,21 @@ constructingBodyWithBlock:nil
                         failure:(void (^)(NSError *))failure {
     // 请求必须带uid nick_name
     NSMutableDictionary *newPOSTParameters = [(NSDictionary *)POSTParameters mutableCopy];
-    newPOSTParameters[@"uid"] = @"";
-    newPOSTParameters[@"nick_name"] = @"";
-    newPOSTParameters[@"token"] = @"";
+    UserModel *user = UserModel.user;
+    if (user) {
+        newPOSTParameters[@"uid"] = user.masuser.uid;
+        newPOSTParameters[@"nick_name"] = user.masuser.nick_name;
+        newPOSTParameters[@"token"] = user.token;
+    }else{
+        newPOSTParameters[@"uid"] = @"";
+        newPOSTParameters[@"nick_name"] = @"";
+        newPOSTParameters[@"token"] = @"";
+    }
+    
+    if ([newPOSTParameters valueForKey:@"timestamp"]) {
+        [self setManager:_manager params:@{@"timestamp": newPOSTParameters[@"timestamp"]}];
+        
+    }
     
     return [self request:key
                  webSite:nil
@@ -130,7 +154,11 @@ constructingBodyWithBlock:nil
         GETP[@"api_key"] = self.APIKey;
         GETP[@"session_token"] = self.token;
         if (key != nil) {
-            websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
+            if (self.path[key]) {
+                websiteString = [NSString stringWithFormat:@"%@%@", self.website, self.path[key]];
+            }else{
+                websiteString = key;
+            }
         } else {
             websiteString = webSite;
         }

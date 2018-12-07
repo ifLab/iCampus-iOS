@@ -11,8 +11,17 @@
 
 @interface ICNewsChannel : NSObject
 
-@property (nonatomic)       NSUInteger  index            ;
-@property (nonatomic, copy) NSString   *title            ;
-@property (nonatomic, copy) NSDate     *lastUpdateDate   ;
-@property (nonatomic, copy) NSString   *listKey          ;
+//@property (nonatomic)       NSUInteger  index            ;
+//@property (nonatomic, copy) NSString   *title            ;
+//@property (nonatomic, copy) NSDate     *lastUpdateDate   ;
+//@property (nonatomic, copy) NSString   *listKey          ;
+
+@property (nonatomic, assign) NSInteger cheldoccount;
+@property (nonatomic, copy)   NSString *chnlid;
+@property (nonatomic, copy)   NSString *chnlname;
+@property (nonatomic, copy)   NSString *chnlurl;
+
+
++ (void)getChannelWithSuccess:(void (^)(NSArray<ICNewsChannel *> * channels))success failure:(void (^)(NSError *error))failure;
+
 @end

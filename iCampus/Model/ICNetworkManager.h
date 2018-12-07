@@ -18,6 +18,9 @@ typedef NS_ENUM(NSInteger, ICNetworkResponseCode){
     ICNetworkResponseCodeMethodError = 2001
 };
 
+static NSString * const kMsg = @"msg";
+static NSString * const kMsgCode = @"msgCode";
+
 @interface ICNetworkManager : NSObject
 
 @property (nonatomic) AFHTTPSessionManager *manager;

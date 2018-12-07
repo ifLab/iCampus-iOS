@@ -13,6 +13,11 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     
     let titles = ["综合新闻", "图片新闻", "人才培养", "教学科研", "文化活动", "校园人物", "交流合作", "社会服务", "媒体关注"]
     let categorys = ["zhxw", "tpxw", "rcpy", "jxky", "whhd", "xyrw", "jlhz", "shfw", "mtgz"]
+//    var titles: [String]?
+//    var categorys: [String]?
+    
+    var channels: [ICNewsChannel]?
+    
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     lazy var scrollView: UIScrollView = {
@@ -22,7 +27,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         } else {
             s.frame = CGRect(x: 0, y: 104, width: self.width, height: self.height - 104)
         }
-        s.contentSize = CGSize(width: self.width * CGFloat(self.titles.count) , height: s.frame.height)
+        s.contentSize = CGSize(width: self.width * CGFloat((self.channels?.count)!) , height: s.frame.height)
         s.backgroundColor = .white
         s.isPagingEnabled = true
         s.showsHorizontalScrollIndicator = false
@@ -35,17 +40,25 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     var segmentTopConstraintNavUnHide = NSLayoutConstraint()
     lazy var childControllers: [ICNewsTableViewController] = {
         var c = [ICNewsTableViewController]()
-        for i in 0..<self.titles.count {
-            let title = self.titles[i]
-            let t = ICNewsTableViewController(category: self.categorys[i], title: self.titles[i])
+        var i = 0
+        for channel in self.channels! {
+            let title = channel.chnlname
+            let t = ICNewsTableViewController(category: channel.chnlurl, title: title!)
             t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104 - 22)
             c.append(t)
+            i += 1
         }
         return c
     }()
     
     lazy var segmentedControl: HMSegmentedControl = {
-        let sc = HMSegmentedControl(sectionTitles: self.titles)!
+        var titles = [String]()
+        
+        for channel in self.channels! {
+            titles.append(channel.chnlname)
+        }
+
+        let sc = HMSegmentedControl(sectionTitles: titles)!
         if PJCurrentPhone.pjCurrentPhone("iPhoneX") {
             sc.frame = CGRect(x: 0, y: 90, width: self.width, height: 40)
         } else {
@@ -70,24 +83,39 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         title = "新闻"
         view.backgroundColor = .white
-        view.addSubview(segmentedControl)
-        view.addSubview(scrollView)
-        for v in childControllers {
-            scrollView.addSubview(v.view)
-            addChildViewController(v)
-        }
-        segmentedControl.indexChangeBlock = {
-            [weak self] index in
-            if let self_ = self {
-                self_.scrollView.scrollRectToVisible(CGRect(x: CGFloat(index) * self_.width, y: 0, width: self_.width, height: self_.height), animated: true)
-            }
-        }
-        if PJUser.current() != nil {
-            childControllers[0].headerBeginRefresh()
-        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loginRefresh), name: NSNotification.Name("UserDidLoginNotification"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(newsItemDidSelectedNotification), name: NSNotification.Name("NewsItemDidSelectedNotification"), object: nil)
+        
+        SVProgressHUD.show()
+        ICNewsChannel.getWithSuccess({ (channels) in
+            self.channels = channels
+            print("栏目加载成功")
+            SVProgressHUD.dismiss()
+            
+            self.view.addSubview(self.segmentedControl)
+            self.segmentedControl.indexChangeBlock = {
+                [weak self] index in
+                if let self_ = self {
+                    self_.scrollView.scrollRectToVisible(CGRect(x: CGFloat(index) * self_.width, y: 0, width: self_.width, height: self_.height), animated: true)
+                }
+            }
+            
+            self.view.addSubview(self.scrollView)
+            for v in self.childControllers {
+                self.scrollView.addSubview(v.view)
+                self.addChildViewController(v)
+            }
+            
+            if PJUser.current() != nil {
+                self.childControllers[0].headerBeginRefresh()
+            }
+            
+        }) { (err) in
+            print(err as Any)
+            SVProgressHUD.showError(withStatus: "加载失败,\(err!)")
+        }
     }
     
     deinit {

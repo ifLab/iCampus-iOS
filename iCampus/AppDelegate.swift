@@ -32,10 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         //判断是否登入，不登入弹出登入controller
-        if ICNetworkManager.default().token == nil || ICNetworkManager.default().token == "" {
+        if !UserModel.isLogin() {
 //            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
             let controller = ZKLoginViewController.init()
-            tabBarC.present(controller as! UIViewController, animated: true, completion: nil)
+            tabBarC.present(controller as UIViewController, animated: true, completion: nil)
         }
         
         // UM

@@ -16,13 +16,15 @@
 
 +(void)login:(NSString *)phoneNumber
     password:(NSString *)password
+   timestamp:(NSString *)timestamp
      success:(void (^)(NSDictionary *dict))success
      failure:(void (^)(NSString *error))failure {
     [[ICNetworkManager defaultManager] POST:@"Login"
                               GETParameters:nil
                              POSTParameters:@{
                                               @"phoneNumber": phoneNumber,
-                                              @"sign": password
+                                              @"sign": password,
+                                              @"timestamp": timestamp
                                               }
                                     success:^(NSDictionary *data) {
                                     
@@ -46,7 +48,7 @@
 }
 
 +(void)fetchVerfyCode:(NSString *)phone
-              success:(void (^)())success
+              success:(void (^)(void))success
               failure:(void (^)(NSString *))failure {
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS
                             phoneNumber:phone zone:@"86"

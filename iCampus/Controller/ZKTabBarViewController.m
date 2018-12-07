@@ -14,6 +14,8 @@
 #import "ICNetworkManager.h"
 #import "CASBistu.h"
 #import "iCampus-Swift.h"
+#import "UserModel.h"
+#import "ZKLoginViewController.h"
 
 @interface ZKTabBarViewController ()<UITabBarControllerDelegate>
 
@@ -65,7 +67,7 @@
 //代理方法，监听是否登录
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     //需要登录并且认证
-    if ([ICNetworkManager defaultManager].token != nil && ![[ICNetworkManager defaultManager].token isEqualToString:@""]) {
+    if (UserModel.isLogin) {
         //已登录
         if ([viewController.tabBarItem.title isEqualToString:@"失物"]) {
             //查看失物需要CAS认证
@@ -87,8 +89,9 @@
     }else{
         //未登录
         self.selectedIndex = 0;
-        ICLoginViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
-        [self presentViewController:controller animated:YES completion:nil];
+//        ICLoginViewController *controller = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
+        ZKLoginViewController *loginVC = [ZKLoginViewController new];
+        [self presentViewController:loginVC animated:YES completion:nil];
         return ;
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CC0A6FC21B0182E0064465A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0A6FB21B0182E0064465A /* UserModel.m */; };
 		2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */; };
 		2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FE61EB456180062E918 /* PJYellowPageTableView.m */; };
 		2C8B9FF21EB456A00062E918 /* PJYellowPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B9FF01EB456A00062E918 /* PJYellowPageTableViewCell.m */; };
@@ -140,6 +141,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C34230621B2335100C22E79 /* ICGlobalKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICGlobalKey.h; sourceTree = "<group>"; };
+		1CC0A6FA21B0182E0064465A /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		1CC0A6FB21B0182E0064465A /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		2C8B9FDF1EB455E60062E918 /* PJYellowPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJYellowPageViewController.h; sourceTree = "<group>"; };
 		2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJYellowPageViewController.m; sourceTree = "<group>"; };
 		2C8B9FE51EB456180062E918 /* PJYellowPageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJYellowPageTableView.h; path = ../../Controller/PJYellowPageTableView.h; sourceTree = "<group>"; };
@@ -373,6 +377,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CC0A6F921B0181C0064465A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1CC0A6FA21B0182E0064465A /* UserModel.h */,
+				1CC0A6FB21B0182E0064465A /* UserModel.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		2C8B9FE91EB4564E0062E918 /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 				2CA4467C1EB871C800A0FCAF /* PJKeyBoard */,
 				2CF5CBDE1EB479F2006580D7 /* PJHUD */,
 				2CF5CBC21EB45A9F006580D7 /* constant */,
+				1C34230621B2335100C22E79 /* ICGlobalKey.h */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -950,6 +964,7 @@
 		A90F4B821E96998600DDD6BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CC0A6F921B0181C0064465A /* User */,
 				A057FE60201AF9DC001C6B04 /* YellowPageIndex */,
 				A90F4B831E96998600DDD6BC /* ICNetworkManager.h */,
 				A90F4B841E96998600DDD6BC /* ICNetworkManager.m */,
@@ -1461,6 +1476,7 @@
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
+				1CC0A6FC21B0182E0064465A /* UserModel.m in Sources */,
 				2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
 				2CF5CBED1EB47C27006580D7 /* PJBusTableViewCell.m in Sources */,

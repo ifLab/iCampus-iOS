@@ -101,7 +101,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
             if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
                 PJHUD.show(withStatus: "")
                 ICLoginManager.login(phoneField.text,
-                                     password: md5String(str: passwordField.text!),
+                                     password: md5String(str: passwordField.text!), timestamp: nil,
                                      success: {
                                         [weak self] data in
                                         if let self_ = self {

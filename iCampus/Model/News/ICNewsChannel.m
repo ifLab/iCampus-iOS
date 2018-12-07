@@ -7,6 +7,24 @@
 //
 
 #import "ICNewsChannel.h"
+#import "ICNetworkManager.h"
 
 @implementation ICNewsChannel
+
++ (void)getChannelWithSuccess:(void (^)(NSArray<ICNewsChannel *> *))success failure:(void (^)(NSError *))failure{
+    [ICNetworkManager.defaultManager GET:@"http://newsfeed.bistu.edu.cn/ibistu/channel.json" parameters:nil success:^(NSDictionary *res) {
+        if([res[kMsgCode] integerValue] == 1) {
+            NSMutableArray<ICNewsChannel *> *array = [@[] mutableCopy];
+            for(NSDictionary *dict in res[kMsg][@"docchannel"]) {
+                ICNewsChannel *channel = [ICNewsChannel mj_objectWithKeyValues:dict];
+                [array addObject:channel];
+            }
+            
+            success(array);
+        }
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end
