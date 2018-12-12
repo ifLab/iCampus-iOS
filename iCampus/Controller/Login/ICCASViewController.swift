@@ -34,9 +34,7 @@ class ICCASViewController: UIViewController, UITextFieldDelegate {
                                 let errStr = "输入错误"
                                 PJHUD.showError(withStatus: errStr)
                             } else {
-                                self_.dismiss(animated: true, completion: {
-                                    NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"),object: nil)
-                                })
+                                self_.dismiss(animated: true, completion: nil)
                                 PJHUD.dismiss()
                             }
                         }

@@ -31,20 +31,34 @@
                                                                                  options:0
                                                                                    error:&error];
                             if (info) {
-                                [ICLoginManager editInfoWithfirst_name:info[@"xm"]
-                                                             last_name:@"@"
-                                                               success:^(NSDictionary *_) {
-                                                                   PJUser *user = [PJUser currentUser];
-                                                                   user.first_name = info[@"xm"];
-                                                                   user.last_name = @"@";
-                                                                   [user save];
-                                                                   if (callBackBlock) {
-                                                                       callBackBlock(info, nil);
-                                                                   }
-                                                               }
-                                                               failure:^(NSString *message) {
-                                                                   callBackBlock(@{}, message);
-                                                               }];
+                                [UserModel updateUserInfo:@{ @"nick_name": info[@"xm"]} success:^{
+                                    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                                    [defaults setValue:@(YES) forKey:kLoginCASCertifiedSuccessKey];
+                                    [NSNotificationCenter.defaultCenter postNotificationName:kLoginCASCertifiedSuccessNotificationKey object:self userInfo:nil];
+                                    
+                                    [SVProgressHUD showWithStatus:@"已通过CAS认证"];
+                                    
+                                    if (callBackBlock) {
+                                        callBackBlock(info, nil);
+                                    }
+                                        
+                                } fialure:^(NSString * _Nonnull error) {
+                                    [SVProgressHUD showErrorWithStatus:@"未通过CAS认证，部分功能无法使用"];
+                                }];
+//                                [ICLoginManager editInfoWithfirst_name:info[@"xm"]
+//                                                             last_name:@"@"
+//                                                               success:^(NSDictionary *_) {
+//                                                                   PJUser *user = [PJUser currentUser];
+//                                                                   user.first_name = info[@"xm"];
+//                                                                   user.last_name = @"@";
+//                                                                   [user save];
+//                                                                   if (callBackBlock) {
+//                                                                       callBackBlock(info, nil);
+//                                                                   }
+//                                                               }
+//                                                               failure:^(NSString *message) {
+//                                                                   callBackBlock(@{}, message);
+//                                                               }];
                             } else {
                                 NSLog(@"%@", error);
                                 if (callBackBlock) {
@@ -78,7 +92,7 @@
     return UserModel.CASCertified;
 }
 
-# pragma waring ZK-CAS的二层验证，暂时关闭
+# pragma warning ZK-CAS的二层验证,暂时关闭
 + (bool)showCASController {
 
 //    if ([@"not_show" isEqualToString:[HBServerURL getWithAppNameAndURL:@"https://api.iflab.org/api/v2/serverurl/_table/serverurl/" apikey:@"c4c6a2a605c559a089f785394561919eecf2c548b631f3256678870f07691b50"]]) {

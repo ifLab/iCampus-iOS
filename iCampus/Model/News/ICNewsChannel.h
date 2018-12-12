@@ -16,7 +16,7 @@
 //@property (nonatomic, copy) NSDate     *lastUpdateDate   ;
 //@property (nonatomic, copy) NSString   *listKey          ;
 
-@property (nonatomic, assign) NSInteger cheldoccount;
+@property (nonatomic, strong) NSNumber *chnldoccount;
 @property (nonatomic, copy)   NSString *chnlid;
 @property (nonatomic, copy)   NSString *chnlname;
 @property (nonatomic, copy)   NSString *chnlurl;

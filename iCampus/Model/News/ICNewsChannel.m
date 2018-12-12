@@ -27,4 +27,9 @@
     }];
 }
 
+- (NSString *)chnlurl {
+    NSArray *temp = [_chnlurl componentsSeparatedByString:@"/"];
+    return temp.count - 2 >= 0 ? temp[temp.count - 2] : nil;
+}
+
 @end

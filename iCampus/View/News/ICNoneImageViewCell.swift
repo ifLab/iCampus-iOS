@@ -18,8 +18,8 @@ class ICNoneImageViewCell: UITableViewCell, ICNewsViewCell {
     }
 
     func update(news: ICNews) {
-        titleLabel.text = news.title
-        dateLabel.text = news.date
+        titleLabel.text = news.doctitle
+        dateLabel.text = news.docpubtime
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

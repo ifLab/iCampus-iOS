@@ -7,6 +7,7 @@
 //
 
 #import "UserModel.h"
+#import "ICNetworkManager.h"
 
 @interface Avatar()<NSCoding>
 
@@ -83,6 +84,7 @@
     
     if (UserModel.isLogin) {
         user = (UserModel *)[NSKeyedUnarchiver unarchiveObjectWithFile:UserModel.userPath];
+        NSLog(@"%@",user);
     }
     
     return user;
@@ -120,6 +122,26 @@
     return @{
              @"masuser": @"MasUser",
              };
+}
+
++ (void)updateUserInfo:(NSDictionary *)dict success:(void (^)(void))success fialure:(void (^)(NSString *error))failure {
+    [ICNetworkManager.defaultManager POST:@"UpdateUser" GETParameters:nil POSTParameters:dict success:^(NSDictionary *dict) {
+        NSLog(@"%@", dict);
+        if ([dict[kMsgCode] integerValue] == ICNetworkResponseCodeSuccess) {
+            UserModel *newUser = [UserModel mj_objectWithKeyValues:dict[kMsg]];
+            newUser.token = UserModel.user.token;
+            [NSKeyedArchiver archiveRootObject:newUser toFile:UserModel.userPath];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kUserUpdateInfoSuccessNotificationKey object:self userInfo:nil];
+            success();
+        }else{
+            NSLog(@"更新用户信息失败");
+            failure(dict[kMsg]);
+        }
+    } failure:^(NSError *err) {
+        NSLog(@"请求更新用户信息失败:%@",err);
+        failure(@"请求更新用户信息失败");
+    }];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

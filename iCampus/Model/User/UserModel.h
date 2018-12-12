@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)user;
 + (BOOL)isLogin;
 + (BOOL)CASCertified;
++ (void)updateUserInfo:(NSDictionary *)dict success:(void (^)(void))success fialure:(void (^)(NSString *error))failure;
 
 // 存储登录信息
 - (void)loginSuccess;

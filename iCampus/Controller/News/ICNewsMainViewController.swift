@@ -43,7 +43,7 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         var i = 0
         for channel in self.channels! {
             let title = channel.chnlname
-            let t = ICNewsTableViewController(category: channel.chnlurl, title: title!)
+            let t = ICNewsTableViewController(channel: channel, title: title!)
             t.view.frame = CGRect(x: CGFloat(i) * self.width, y: 0, width: self.width, height: self.height - 104 - 22)
             c.append(t)
             i += 1
@@ -88,12 +88,9 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(newsItemDidSelectedNotification), name: NSNotification.Name("NewsItemDidSelectedNotification"), object: nil)
         
-        SVProgressHUD.show()
         ICNewsChannel.getWithSuccess({ (channels) in
             self.channels = channels
             print("栏目加载成功")
-            SVProgressHUD.dismiss()
-            
             self.view.addSubview(self.segmentedControl)
             self.segmentedControl.indexChangeBlock = {
                 [weak self] index in
@@ -142,5 +139,10 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
+        
+        let vc = self.childControllers[Int(page)]
+        if vc.news.count == 0 {
+            vc.headerBeginRefresh()
+        }
     }
 }

@@ -12,6 +12,8 @@
 		<string>masuser/login</string>
 		<key>Register</key>
 		<string>masuser/createmasuser</string>
+		<key>UpdateUser</key>
+		<string>masuser/updateUser</string>
 		<key>New Lost</key>
 		<string>ibistu/_table/module_lost_found</string>
 		<key>Update PW</key>

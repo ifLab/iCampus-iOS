@@ -23,7 +23,7 @@
                    failure:(void (^)(NSString*))failure{
     [[ICNetworkManager defaultManager] GET:@"News Detail"
                                 parameters:@{
-                                             @"link": news.detailKey
+//                                             @"link": news.detailKey
                                              }
                                    success:^(NSDictionary *dic) {
                                        ICNewsDetail *news = [[ICNewsDetail alloc] init];

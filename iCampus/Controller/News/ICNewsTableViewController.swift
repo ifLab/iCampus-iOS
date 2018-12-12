@@ -16,15 +16,16 @@ import MJRefresh
 class ICNewsTableViewController: UITableViewController {
     
     var page = 0
+    var maxpage = 0
     var channel: ICNewsChannel
     var news = [ICNews]()
     let nibNames = ["ICNoneImageViewCell", "ICSimpleImageViewCell"]
     var backImageView:UIImageView
     
-    init(category: String, title: String) {
-        channel = ICNewsChannel()
-//        channel.listKey = category
-//        channel.title = title
+    init(channel: ICNewsChannel, title: String) {
+        self.channel = channel
+        maxpage = channel.chnldoccount.intValue / 20
+
         backImageView = UIImageView.init()
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +36,6 @@ class ICNewsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        title = channel.title
         for nibName in nibNames {
             tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
         }
@@ -55,6 +55,7 @@ class ICNewsTableViewController: UITableViewController {
         
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
+    
     }
 
     // MARK: - Table view data source
@@ -68,7 +69,7 @@ class ICNewsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell
-        if news[indexPath.row].imageURL == "" {
+        if news[indexPath.row].docpic == "" {
             cell = tableView.dequeueReusableCell(withIdentifier: nibNames[0], for: indexPath)
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: nibNames[1], for: indexPath)
@@ -87,22 +88,27 @@ class ICNewsTableViewController: UITableViewController {
     }
     
     func refresh() {
-//        ICNews.fetch(channel, page: 0,
-//                     success: {
-//                        [weak self] data in
-//                        self?.backImageView.isHidden = true
-//                        self?.tableView.mj_header.endRefreshing()
-//                        self?.news = data as! [ICNews]
-//                        self?.tableView.reloadData()
-//                        self?.page = 1
-//            },
-//                     failure: {
-//                        [weak self] _ in
-//                        self?.tableView.mj_header.endRefreshing()
-//        })
+        ICNews.fetch(channel, page: 0,
+                     success: {
+                        [weak self] data in
+                        self?.backImageView.isHidden = true
+                        self?.tableView.mj_header.endRefreshing()
+                        self?.news = data as! [ICNews]
+                        self?.tableView.reloadData()
+                        self?.page = 0
+            },
+                     failure: {
+                        [weak self] _ in
+                        self?.tableView.mj_header.endRefreshing()
+        })
     }
     
     func loadMore() {
+        if page >= maxpage {
+            SVProgressHUD.show(withStatus: "无更多新闻")
+            return
+        }
+        
         ICNews.fetch(channel, page: page,
                      success: {
                         [weak self] data in

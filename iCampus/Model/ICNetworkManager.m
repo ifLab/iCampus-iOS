@@ -48,6 +48,13 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
+    UserModel *user = UserModel.user;
+    if (user) {
+        [manager.requestSerializer setValue: user.token forHTTPHeaderField:@"userToken"];
+    }else{
+        [manager.requestSerializer setValue: @"" forHTTPHeaderField:@"token"];
+    }
+    
     NSString *interval_str = nil;
     if (![params valueForKey:@"timestamp"]) {
         // 添加timestamp
@@ -84,15 +91,16 @@ constructingBodyWithBlock:nil
                         failure:(void (^)(NSError *))failure {
     // 请求必须带uid nick_name
     NSMutableDictionary *newPOSTParameters = [(NSDictionary *)POSTParameters mutableCopy];
+    
     UserModel *user = UserModel.user;
     if (user) {
         newPOSTParameters[@"uid"] = user.masuser.uid;
-        newPOSTParameters[@"nick_name"] = user.masuser.nick_name;
-        newPOSTParameters[@"token"] = user.token;
+        if (![newPOSTParameters objectForKey:@"nick_name"]) {
+            newPOSTParameters[@"nick_name"] = user.masuser.nick_name;
+        }
     }else{
         newPOSTParameters[@"uid"] = @"";
         newPOSTParameters[@"nick_name"] = @"";
-        newPOSTParameters[@"token"] = @"";
     }
     
     if ([newPOSTParameters valueForKey:@"timestamp"]) {

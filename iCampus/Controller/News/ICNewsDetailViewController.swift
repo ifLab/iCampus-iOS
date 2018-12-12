@@ -198,7 +198,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
             PJNewsPoints.setNewsShare()
             
             let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
-            messageObject.title = self.news.title
+//            messageObject.title = self.news.title
             //分享图片
             let shareObject:UMShareImageObject = UMShareImageObject.init()
             shareObject.shareImage = self.imageFromView(scrollView: self.createShareView()).image

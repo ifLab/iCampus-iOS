@@ -19,12 +19,12 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     }
     
     func update(news: ICNews) {
-        titleLabel.text = news.title
-        dateLabel.text = news.date
-        previewLabel.text = news.preview
+        titleLabel.text = news.doctitle
+        dateLabel.text = news.docpubtime
+        previewLabel.text = "文章简介"
         newsImageView.contentMode = .scaleAspectFill
         newsImageView.layer.masksToBounds = true
-        newsImageView.setImageWith(URLRequest(url: URL(string: news.imageURL)!), placeholderImage: nil, success: {
+        newsImageView.setImageWith(URLRequest(url: URL(string: news.docpic)!), placeholderImage: UIImage(named: "picloading"), success: {
             [weak self] _, _, image in
             self?.newsImageView.image = image
         }, failure: nil)

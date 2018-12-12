@@ -15,24 +15,44 @@
             page:(NSInteger)page
          success:(void(^)(NSArray*))success
          failure:(void(^)(NSString*))failure {
-    [[ICNetworkManager defaultManager] GET:@"News List"
-                                parameters:@{
-//                                             @"category": channel.listKey,
-                                             @"page": @(page),
-                                             }
+    
+    NSString *chnlurl = channel.chnlurl;
+    
+    NSLog(@"%@", channel.chnlname);
+    
+    if (!channel) {
+        failure(@"当前栏目信息获取失败");
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"http://newsfeed.bistu.edu.cn/ibistu/%@/list%@.json", chnlurl, (page == 0 ? @"" : [NSString stringWithFormat:@"_%ld",(long)page])];
+    
+    [[ICNetworkManager defaultManager] GET:url
+                                parameters:nil
                                    success:^(NSDictionary *dic) {
-                                       NSArray *data = dic[@"resource"];
-                                       NSMutableArray *array = [[NSMutableArray alloc] init];
-                                       for (NSDictionary *element in data) {
-                                           ICNews *news = [[ICNews alloc] init];
-                                           news.title = element[@"newsTitle"];
-                                           news.date = element[@"newsTime"];
-                                           news.detailKey = element[@"newsLink"];
-                                           news.imageURL = element[@"newsImage"];
-                                           news.preview = element[@"newsIntro"];
-                                           [array addObject:news];
+                                       NSMutableArray<ICNews *> *array = [NSMutableArray new];
+                                       
+                                       if ([dic[kMsgCode] integerValue] == 2) {
+                                           for(NSDictionary *c in dic[kMsg][@"doclist"]){
+                                               ICNews *news = [ICNews mj_objectWithKeyValues:c];
+                                               [array addObject:news];
+                                           }
+                                           
+                                           success([array copy]);
+                                       }else{
+                                           failure(@"请求失败");
                                        }
-                                       success(array);
+//                                       NSArray *data = dic[@"resource"];
+//                                       NSMutableArray *array = [[NSMutableArray alloc] init];
+//                                       for (NSDictionary *element in data) {
+//                                           ICNews *news = [[ICNews alloc] init];
+//                                           news.title = element[@"newsTitle"];
+//                                           news.date = element[@"newsTime"];
+//                                           news.detailKey = element[@"newsLink"];
+//                                           news.imageURL = element[@"newsImage"];
+//                                           news.preview = element[@"newsIntro"];
+//                                           [array addObject:news];
+//                                       }
+//                                       success(array);
                                    }
                                    failure:^(NSError *error) {
                                        failure(error.userInfo[NSLocalizedFailureReasonErrorKey]);
