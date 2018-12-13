@@ -65,15 +65,15 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                             DTDefaultTextColor: UIColor.black,
                                             DTDefaultLineHeightMultiplier: 1.5,
                                             DTDefaultLinkDecoration: false] as [String : Any]
-                                        self_.textCell.setHTMLString(detail?.body!, options: options)
+                                        self_.textCell.setHTMLString(detail?.dochtmlcon, options: options)
                                         self_.tableView.reloadData()
-                                        self_.title = detail?.title
+                                        self_.title = detail?.doctitle
                                         SVProgressHUD.dismiss()
-                                        
-                                        PJNewsPoints.setNewsPoint({[
-                                            "username" : PJUser.defaultManager().first_name,
-                                            "newstitle" : detail?.title
-                                            ]}())
+                                        print("新闻正文加载完成")
+//                                        PJNewsPoints.setNewsPoint({[
+//                                            "username" : PJUser.defaultManager().first_name,
+//                                            "newstitle" : detail?.title
+//                                            ]}())
                                     }
             }, failure: {
                 [weak self] _ in

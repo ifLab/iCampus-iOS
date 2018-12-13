@@ -12,6 +12,8 @@
 #import "PJUserAandCViewController.h"
 #import "ICNetworkManager.h"
 #import "iCampus-Swift.h"
+#import "UserModel.h"
+#import "ZKLoginViewController.h"
 
 @interface PJUserViewController ()
 
@@ -33,7 +35,7 @@
 }
 
 - (void)initView {
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", UserModel.user.masuser.nick_name];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -62,15 +64,14 @@
 }
 
 - (void)userDidLogin{
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", UserModel.user.masuser.nick_name];
 }
 
 -(void)logout{
-    ICLoginViewController *vc = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
-    [self presentViewController:vc animated:YES completion:^{
+    ZKLoginViewController *loginVC = [[ZKLoginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:^{
         [self.navigationController popViewControllerAnimated:NO];
-        [ICNetworkManager defaultManager].token = @"";
-        [PJUser logOut];
+        [UserModel logout];
         
         self.tabBarController.selectedIndex = 0;
     }];

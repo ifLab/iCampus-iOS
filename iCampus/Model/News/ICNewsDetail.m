@@ -21,28 +21,18 @@
 + (void)newsDetailWithNews:(ICNews *)news
                    success:(void (^)(ICNewsDetail*))success
                    failure:(void (^)(NSString*))failure{
-    [[ICNetworkManager defaultManager] GET:@"News Detail"
+    [[ICNetworkManager defaultManager] GET:news.docpuburl
                                 parameters:@{
 //                                             @"link": news.detailKey
                                              }
                                    success:^(NSDictionary *dic) {
-                                       ICNewsDetail *news = [[ICNewsDetail alloc] init];
-                                       news.title = dic[@"title"];
-                                       news.creationTime = dic[@"time"];
-                                       news.pcURL = dic[@"imgList"];
-                                       news.body = [NSString stringWithFormat:@"<body><p>%@</p></body>", dic[@"article"]];
-                                       news.body = [news.body stringByReplacingOccurrencesOfString:@"\n" withString:@"</p><p>"];
-                                       news.body = [news.body stringByReplacingOccurrencesOfString:@"<p> </p>" withString:@"<p></p>"];
-                                       for (int i=0; i<news.pcURL.count; i++) {
-                                           @try {
-                                               news.body = [news.body stringByReplacingCharactersInRange:[news.body rangeOfString:@"<p></p><p></p>"] withString:[NSString stringWithFormat:@"<img src=\"%@\">", news.pcURL[i]]];
-                                           } @catch (NSException *exception) {
-                                               if ([exception.name isEqualToString:NSRangeException]) {
-                                                   break;
-                                               }
-                                           }
+                                       if([dic[kMsgCode] intValue] == 3){
+                                           ICNewsDetail *news = [ICNewsDetail mj_objectWithKeyValues:dic[kMsg][@"docdetail"]];
+                                           success(news);
+                                       }else{
+                                           failure(@"内容加载失败");
                                        }
-                                       success(news);
+
                                    }
                                    failure:^(NSError *error) {
                                        failure(error.userInfo[NSLocalizedFailureReasonErrorKey]);

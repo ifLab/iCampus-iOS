@@ -26,6 +26,7 @@
 #import "PJCurrentPhone.h"
 #import "PJNewsPoints.h"
 #import "ICNewsChannel.h"
+#import "ICGlobalKey.h"
 
 
 //友盟分享桥接文件

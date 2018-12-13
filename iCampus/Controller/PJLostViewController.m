@@ -44,7 +44,7 @@
     _freshFlag = headerRefresh;
     _freshData = [[NSMutableArray alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"失物";
+    self.title = @"大厅";
         
     _kTableView = [PJLostTableView new];
     [self.view addSubview:_kTableView];

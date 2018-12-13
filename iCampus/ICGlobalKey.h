@@ -17,5 +17,6 @@
 #define kLoginCASCertifiedSuccessKey @"kLoginCASCertifiedSuccessKey"
 #define kLoginCASCertifiedSuccessNotificationKey @"kLoginCASCertifiedSuccessNotificationKey"
 #define kUserUpdateInfoSuccessNotificationKey @"kUserUpdateInfoSuccessNotificationKey"
+#define kUserLastLoginTimeDefaultKey @"kUserLastLoginTimeDefaultKey"
 
 #endif /* ICGlobalKey_h */

@@ -31,11 +31,21 @@
                                                                                  options:0
                                                                                    error:&error];
                             if (info) {
-                                [UserModel updateUserInfo:@{ @"nick_name": info[@"xm"]} success:^{
+                                [UserModel updateUserInfo:@{
+                                                            @"slogan": @"",
+                                                            @"work_mes": @"",
+                                                            @"interest_mes": @"",
+                                                            @"travel_mes": @"",
+                                                            @"nick_name": info[@"xm"]
+                                                            } success:^{
                                     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                     [defaults setValue:@(YES) forKey:kLoginCASCertifiedSuccessKey];
                                     [NSNotificationCenter.defaultCenter postNotificationName:kLoginCASCertifiedSuccessNotificationKey object:self userInfo:nil];
                                     
+                                    UserModel *user = UserModel.user;
+                                    user.masuser.nick_name = info[@"xm"];
+                                    [user update];
+                                                                
                                     [SVProgressHUD showWithStatus:@"已通过CAS认证"];
                                     
                                     if (callBackBlock) {

@@ -84,10 +84,17 @@
     
     if (UserModel.isLogin) {
         user = (UserModel *)[NSKeyedUnarchiver unarchiveObjectWithFile:UserModel.userPath];
-        NSLog(@"%@",user);
     }
     
     return user;
+}
+
++ (void)logout {
+    [NSKeyedArchiver archiveRootObject:[NSNull null] toFile:UserModel.userPath];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@(NO) forKey:kLoginSueecssUserDefaultKey];
+    [defaults synchronize];
 }
 
 + (BOOL)isLogin {
@@ -109,14 +116,19 @@
 }
 
 - (void)loginSuccess {
-    
     [NSKeyedArchiver archiveRootObject:self toFile:UserModel.userPath];
     
+    id loginTime = [NSDate dateWithTimeIntervalSinceNow: 0];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@(YES) forKey:kLoginSueecssUserDefaultKey];
+    [defaults setObject: loginTime forKey:kUserLastLoginTimeDefaultKey];
     [defaults synchronize];
 }
 
+- (void)update {
+    [NSKeyedArchiver archiveRootObject:self toFile:UserModel.userPath];
+}
 
 + (NSDictionary *)mj_objectClassInArray {
     return @{

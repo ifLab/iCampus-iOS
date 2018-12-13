@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSString *doctitle;
 @property (nonatomic, copy) NSString *docpubtime;
 @property (nonatomic, copy) NSString *docpuburl;
+@property (nonatomic, copy) NSString *docabstract;
 @property (nonatomic, copy) NSString *docpic;
 
 +(void)fetchNews:(ICNewsChannel *)channel

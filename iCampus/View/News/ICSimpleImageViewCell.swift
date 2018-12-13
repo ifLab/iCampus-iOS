@@ -21,7 +21,7 @@ class ICSimpleImageViewCell: UITableViewCell, ICNewsViewCell {
     func update(news: ICNews) {
         titleLabel.text = news.doctitle
         dateLabel.text = news.docpubtime
-        previewLabel.text = "文章简介"
+        previewLabel.text = news.docabstract
         newsImageView.contentMode = .scaleAspectFill
         newsImageView.layer.masksToBounds = true
         newsImageView.setImageWith(URLRequest(url: URL(string: news.docpic)!), placeholderImage: UIImage(named: "picloading"), success: {

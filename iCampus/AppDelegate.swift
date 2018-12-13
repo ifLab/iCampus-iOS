@@ -31,9 +31,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarC
         window?.makeKeyAndVisible()
         
+        
+        // 登录时间判断
+        let lastTime = UserDefaults.standard.object(forKey: kUserLastLoginTimeDefaultKey) as? Date
+        print("lastTime \(lastTime)")
+        var loginInterval:Double = 3600 * 24
+        
+        if let lastTime = lastTime {
+            loginInterval = Date().timeIntervalSince(lastTime)
+        }
+        
+        print("loginInterval \(loginInterval)")
+        
+        let timeout = loginInterval >= 3600 * 24
+        
+        print("timeout \(timeout)")
+        
         //判断是否登入，不登入弹出登入controller
-        if !UserModel.isLogin() {
-//            let controller = Bundle.main.loadNibNamed("ICLoginViewController", owner: nil, options: nil)?.first
+        if !UserModel.isLogin() || timeout {
+
+            if timeout {
+                UserModel.logout()
+            }
+            
             let controller = ZKLoginViewController.init()
             tabBarC.present(controller as UIViewController, animated: true, completion: nil)
         }

@@ -12,22 +12,31 @@
 
 @interface ICNewsDetail : NSObject
 
-@property (nonatomic)       NSUInteger  sourceIndex       ;
-@property (nonatomic)       NSUInteger  channelIndex      ;
-@property (nonatomic)       NSUInteger  type              ;
-@property (nonatomic, copy) NSString   *title             ;
-@property (nonatomic, copy) NSArray    *subtitles         ;
-@property (nonatomic, copy) NSArray    *authors           ;
-@property (nonatomic, copy) NSArray    *sourceNames       ;
-@property (nonatomic, copy) NSDate     *sourceCreationTime;
-@property (nonatomic, copy) NSDate     *modificationTime  ;
-@property (nonatomic, copy) NSString   *creator           ;
-@property (nonatomic, copy) NSDate     *creationTime      ;
-@property (nonatomic, copy) NSString   *abstract          ;
-@property (nonatomic, copy) NSString   *body              ;
-@property (nonatomic, copy) NSArray    *pcURL             ;
-@property (nonatomic, copy) NSArray    *attachments       ;
-@property (nonatomic, copy) NSArray    *imageURLs         ;
+//@property (nonatomic)       NSUInteger  sourceIndex       ;
+//@property (nonatomic)       NSUInteger  channelIndex      ;
+//@property (nonatomic)       NSUInteger  type              ;
+//@property (nonatomic, copy) NSString   *title             ;
+//@property (nonatomic, copy) NSArray    *subtitles         ;
+//@property (nonatomic, copy) NSArray    *authors           ;
+//@property (nonatomic, copy) NSArray    *sourceNames       ;
+//@property (nonatomic, copy) NSDate     *sourceCreationTime;
+//@property (nonatomic, copy) NSDate     *modificationTime  ;
+//@property (nonatomic, copy) NSString   *creator           ;
+//@property (nonatomic, copy) NSDate     *creationTime      ;
+//@property (nonatomic, copy) NSString   *abstract          ;
+//@property (nonatomic, copy) NSString   *body              ;
+//@property (nonatomic, copy) NSArray    *pcURL             ;
+//@property (nonatomic, copy) NSArray    *attachments       ;
+//@property (nonatomic, copy) NSArray    *imageURLs         ;
+
+@property (nonatomic, copy) NSString *docid;
+@property (nonatomic, copy) NSString *doctitle;
+@property (nonatomic, copy) NSString *docpubtime;
+@property (nonatomic, copy) NSString *docpuburl;
+@property (nonatomic, copy) NSString *docpic;
+@property (nonatomic, copy) NSString *docauthor;
+@property (nonatomic, copy) NSString *doccruser;
+@property (nonatomic, copy) NSString *dochtmlcon;
 
 + (void)newsDetailWithNews:(ICNews *)news
                    success:(void (^)(ICNewsDetail*))success

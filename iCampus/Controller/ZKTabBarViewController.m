@@ -39,7 +39,7 @@
     //黄页
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[PJYellowPageViewController alloc] init]] title:@"黄页" image:@"yellowPages"];
     //失物招领
-    [self addController:[[UINavigationController alloc] initWithRootViewController:[[PJLostViewController alloc] init]] title:@"失物" image:@"LostFound"];
+    [self addController:[[UINavigationController alloc] initWithRootViewController:[[PJLostViewController alloc] init]] title:@"大厅" image:@"square"];
     //地图
     [self addController:[[UINavigationController alloc] initWithRootViewController:[[PJMapViewController alloc] init]] title:@"地图" image:@"map"];
     
@@ -69,7 +69,10 @@
     //需要登录并且认证
     if (UserModel.isLogin) {
         //已登录
-        if ([viewController.tabBarItem.title isEqualToString:@"失物"]) {
+        if ([viewController.tabBarItem.title isEqualToString:@"大厅"] ||
+            [viewController.tabBarItem.title isEqualToString:@"我的"] ||
+            [viewController.tabBarItem.title isEqualToString:@"黄页"]
+            ) {
             //查看失物需要CAS认证
             if (![CASBistu checkCASCertified] && [CASBistu showCASController]) {
                 //CAS not certified

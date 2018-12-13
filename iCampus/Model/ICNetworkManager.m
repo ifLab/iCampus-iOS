@@ -52,7 +52,7 @@
     if (user) {
         [manager.requestSerializer setValue: user.token forHTTPHeaderField:@"userToken"];
     }else{
-        [manager.requestSerializer setValue: @"" forHTTPHeaderField:@"token"];
+        [manager.requestSerializer setValue: @"" forHTTPHeaderField:@"userToken"];
     }
     
     NSString *interval_str = nil;
@@ -89,6 +89,9 @@ constructingBodyWithBlock:nil
                  POSTParameters:(id)POSTParameters
                         success:(void (^)(NSDictionary *))success
                         failure:(void (^)(NSError *))failure {
+    
+    [self setManager:_manager params: POSTParameters];
+    
     // 请求必须带uid nick_name
     NSMutableDictionary *newPOSTParameters = [(NSDictionary *)POSTParameters mutableCopy];
     
