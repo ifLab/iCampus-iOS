@@ -119,6 +119,9 @@
 		F5784C55219ABCE7004C63BA /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F5784C54219ABCE7004C63BA /* NSString+Category.m */; };
 		F579D09E219AFCF0002C350D /* ZKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D09D219AFCF0002C350D /* ZKLoginViewController.m */; };
 		F579D0A2219AFD7E002C350D /* ZKLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D0A1219AFD7E002C350D /* ZKLoginView.m */; };
+		F59E185E21C49FA6002B56D3 /* BlogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F59E185D21C49FA6002B56D3 /* BlogModel.m */; };
+		F59E186221C4D847002B56D3 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F59E186121C4D847002B56D3 /* CommentModel.m */; };
+		F59E186521C4EB3B002B56D3 /* BlogDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F59E186421C4EB3B002B56D3 /* BlogDetailView.m */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
 		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
 /* End PBXBuildFile section */
@@ -322,6 +325,12 @@
 		F579D09D219AFCF0002C350D /* ZKLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKLoginViewController.m; sourceTree = "<group>"; };
 		F579D0A0219AFD7E002C350D /* ZKLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKLoginView.h; sourceTree = "<group>"; };
 		F579D0A1219AFD7E002C350D /* ZKLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKLoginView.m; sourceTree = "<group>"; };
+		F59E185C21C49FA6002B56D3 /* BlogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogModel.h; sourceTree = "<group>"; };
+		F59E185D21C49FA6002B56D3 /* BlogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogModel.m; sourceTree = "<group>"; };
+		F59E186021C4D847002B56D3 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		F59E186121C4D847002B56D3 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		F59E186321C4EB3B002B56D3 /* BlogDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogDetailView.h; sourceTree = "<group>"; };
+		F59E186421C4EB3B002B56D3 /* BlogDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogDetailView.m; sourceTree = "<group>"; };
 		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
 		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
@@ -964,6 +973,8 @@
 		A90F4B821E96998600DDD6BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F59E185F21C4D834002B56D3 /* Comment */,
+				F59E185B21C49F92002B56D3 /* Blog */,
 				1CC0A6F921B0181C0064465A /* User */,
 				A057FE60201AF9DC001C6B04 /* YellowPageIndex */,
 				A90F4B831E96998600DDD6BC /* ICNetworkManager.h */,
@@ -1060,6 +1071,8 @@
 			children = (
 				DAA2B2F51F7F5783006946B2 /* YZLostDetailsView.h */,
 				DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */,
+				F59E186321C4EB3B002B56D3 /* BlogDetailView.h */,
+				F59E186421C4EB3B002B56D3 /* BlogDetailView.m */,
 			);
 			path = "失误详情";
 			sourceTree = "<group>";
@@ -1173,6 +1186,24 @@
 				F579D0A1219AFD7E002C350D /* ZKLoginView.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		F59E185B21C49F92002B56D3 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				F59E185C21C49FA6002B56D3 /* BlogModel.h */,
+				F59E185D21C49FA6002B56D3 /* BlogModel.m */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		F59E185F21C4D834002B56D3 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				F59E186021C4D847002B56D3 /* CommentModel.h */,
+				F59E186121C4D847002B56D3 /* CommentModel.m */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		F5C73C921F9762DC0090D578 /* Tabbar */ = {
@@ -1390,6 +1421,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
+				"${BUILT_PRODUCTS_DIR}/XHInputView/XHInputView.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 				"${BUILT_PRODUCTS_DIR}/serverURL/serverURL.framework",
 			);
@@ -1408,6 +1440,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XHInputView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/serverURL.framework",
 			);
@@ -1460,6 +1493,7 @@
 				2CA4465E1EB7411400A0FCAF /* PJLostTableViewCell.m in Sources */,
 				2CA446B91EBABF4700A0FCAF /* PJMyPublishLostTableView.m in Sources */,
 				2CF5CBCA1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.m in Sources */,
+				F59E186521C4EB3B002B56D3 /* BlogDetailView.m in Sources */,
 				2CA446BE1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.m in Sources */,
 				2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */,
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
@@ -1476,6 +1510,7 @@
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
 				A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
+				F59E185E21C49FA6002B56D3 /* BlogModel.m in Sources */,
 				1CC0A6FC21B0182E0064465A /* UserModel.m in Sources */,
 				2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
@@ -1520,6 +1555,7 @@
 				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
 				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
 				2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */,
+				F59E186221C4D847002B56D3 /* CommentModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

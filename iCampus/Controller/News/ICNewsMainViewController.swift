@@ -90,7 +90,6 @@ class ICNewsMainViewController: UIViewController, UIScrollViewDelegate {
         
         ICNewsChannel.getWithSuccess({ (channels) in
             self.channels = channels
-            print("栏目加载成功")
             self.view.addSubview(self.segmentedControl)
             self.segmentedControl.indexChangeBlock = {
                 [weak self] index in

@@ -18,6 +18,7 @@ target 'iCampus' do
   pod 'SDWebImage'
   pod 'IDMPhotoBrowser'
   pod 'MJExtension'  
+  pod 'XHInputView'
 #  pod 'Bugly'
 
   target 'iCampusTests' do

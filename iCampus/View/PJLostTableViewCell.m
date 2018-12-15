@@ -9,6 +9,8 @@
 #import "PJLostTableViewCell.h"
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
+#import "BlogModel.h"
+#import "UserModel.h"
 
 @implementation PJLostTableViewCell {
     NSArray *_kDataArr;   // 存储最终转化好的ImgURL
@@ -30,15 +32,15 @@
 }
 
 - (void)callBtnClick {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataSource[@"phone"]]]];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataSource[@"phone"]]]];
 }
 
-- (void)setDataSource:(NSDictionary *)dataSource {
+- (void)setDataSource:(BlogModel *)dataSource {
     _dataSource = dataSource;
-    _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
-    _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
-    _nameLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"author"]];
-    [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
+    _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource.content];
+    _nameLabel.text = [NSString stringWithFormat:@"%@", [dataSource.masuser.nick_name isEqualToString:@""] ? @"匿名消息" : dataSource.masuser.nick_name];
+    _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource.created_time];
+//    [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
 }
 
 - (NSArray *)setupImgArr:(NSString *)imgURL {
@@ -55,41 +57,41 @@
     return newArr;
 }
 
-- (void)initScrollView:(NSArray *)dataArr {
-    for (UIView *view in self.showImgScrollView.subviews) {
-        [view removeFromSuperview];
-    }
-    CGFloat imgW = (SCREEN_WIDTH - 30) / 3;
-    CGFloat imgH = imgW;
-    _scrollViewHeighConstraint.constant = imgH + 10;
-    CGFloat marginX = 7.5;
-    int itemNums = 0;
-    CGFloat lastItemMaxX = 0;
-    CGFloat scViewWidth = 0;
-    
-    for (int i = 0; i < dataArr.count; i++) {
-        CGFloat itemX = marginX + (imgH+marginX) * itemNums;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(itemX, 0, imgW, imgH)];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        imageView.layer.masksToBounds = true;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]] placeholderImage:[UIImage imageNamed:@"nopic"]];
-        [self.showImgScrollView addSubview:imageView];
-        itemNums++;
-        lastItemMaxX = CGRectGetMaxX(imageView.frame);
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickImage:)];
-        [imageView addGestureRecognizer:tap];
-        imageView.tag = 100 + i;
-        imageView.userInteractionEnabled = true;
-        scViewWidth += imgW;
-    }
-    scViewWidth += 15;
-    if (scViewWidth > SCREEN_WIDTH) {
-        scViewWidth = SCREEN_WIDTH;
-    }
-    _scrollerViewWidth.constant = scViewWidth;
-    self.showImgScrollView.showsHorizontalScrollIndicator = NO;
-    [self.showImgScrollView setContentSize:CGSizeMake(lastItemMaxX, 0)];
-}
+//- (void)initScrollView:(NSArray *)dataArr {
+//    for (UIView *view in self.showImgScrollView.subviews) {
+//        [view removeFromSuperview];
+//    }
+//    CGFloat imgW = (SCREEN_WIDTH - 30) / 3;
+//    CGFloat imgH = imgW;
+//    _scrollViewHeighConstraint.constant = imgH + 10;
+//    CGFloat marginX = 7.5;
+//    int itemNums = 0;
+//    CGFloat lastItemMaxX = 0;
+//    CGFloat scViewWidth = 0;
+//
+//    for (int i = 0; i < dataArr.count; i++) {
+//        CGFloat itemX = marginX + (imgH+marginX) * itemNums;
+//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(itemX, 0, imgW, imgH)];
+//        imageView.contentMode = UIViewContentModeScaleAspectFill;
+//        imageView.layer.masksToBounds = true;
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:dataArr[i]] placeholderImage:[UIImage imageNamed:@"nopic"]];
+//        [self.showImgScrollView addSubview:imageView];
+//        itemNums++;
+//        lastItemMaxX = CGRectGetMaxX(imageView.frame);
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickImage:)];
+//        [imageView addGestureRecognizer:tap];
+//        imageView.tag = 100 + i;
+//        imageView.userInteractionEnabled = true;
+//        scViewWidth += imgW;
+//    }
+//    scViewWidth += 15;
+//    if (scViewWidth > SCREEN_WIDTH) {
+//        scViewWidth = SCREEN_WIDTH;
+//    }
+//    _scrollerViewWidth.constant = scViewWidth;
+//    self.showImgScrollView.showsHorizontalScrollIndicator = NO;
+//    [self.showImgScrollView setContentSize:CGSizeMake(lastItemMaxX, 0)];
+//}
 
 -(void)clickImage:(UITapGestureRecognizer *)tap{
     NSInteger tag = tap.view.tag;

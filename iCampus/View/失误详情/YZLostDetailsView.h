@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class BlogModel;
+
 @protocol YZLostDetailsViewDelegate <NSObject>
 
 - (void) clickImage:(NSArray*)photos andTag:(NSInteger)tag;
@@ -16,7 +18,7 @@
 
 @interface YZLostDetailsView : UIView
 
-@property (nonatomic ,strong) NSDictionary* dataSource;
+@property (nonatomic ,strong) BlogModel* dataSource;
 @property (nonatomic ,strong) UIScrollView* scrollview;
 @property (nonatomic ,strong) NSArray *imageArray;
 @property (nonatomic ,weak) id<YZLostDetailsViewDelegate> LostDetailsViewDelegate;

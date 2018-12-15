@@ -13,6 +13,7 @@
 #import "IDMPhotoBrowser.h"
 #import "YZLostDetailsViewController.h"
 #import "CASBistu.h"
+#import "BlogModel.h"
 
 @interface PJLostViewController () <PJLostTableViewDelegate,IDMPhotoBrowserDelegate>
 
@@ -29,6 +30,8 @@
     [super viewDidLoad];
     [self initView];
     [self performSelector:@selector(CreatPublishBtn) withObject:nil afterDelay:0.5];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(blogCreateSuccess) name:kBlogCreateSuccessNotificationKey object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +61,10 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CASloginSuccess) name:@"UserDidLoginNotification" object:nil];
+}
+
+- (void)blogCreateSuccess {
+    [self getDataFromHttp];
 }
 
 - (void)CASloginSuccess {
@@ -90,31 +97,54 @@
 }
 
 - (void)getDataFromHttp {
-    NSDictionary *paramters = @{@"offset":@(page*10),
-                                @"filter":@"isFound=false"};
-    [[ICNetworkManager defaultManager] GET:@"Lost"
-                                parameters:paramters
-                                   success:^(NSDictionary *dic) {
-                                       [_kTableView.mj_header endRefreshing];
-                                       [_kTableView.mj_footer endRefreshing];
-                                       NSArray *data = dic[@"resource"];
-                                       _freshData = (NSMutableArray*)[_freshData arrayByAddingObjectsFromArray:data];
-                                       if (data.count) {
-                                           if ([_freshFlag isEqualToString:headerRefresh]) {
-                                               [_kTableView.dataArr removeAllObjects];
-                                               _freshData = [data mutableCopy];
-                                           }
-                                           _kTableView.dataArr = [_freshData mutableCopy];
-                                       } else {
-                                           [PJHUD showErrorWithStatus:@"没有数据了"];
-                                       }
-                                      [_kTableView.mj_header endRefreshing];
-                                   }
-                                   failure:^(NSError *error) {
-                                       [_kTableView.mj_header endRefreshing];
-                                       NSLog(@"error:%@",error);
-                                       // error信息要怎么处理？
-                                   }];
+    
+    [BlogModel getBlogsWithPage:page success:^(NSArray<BlogModel *> * _Nonnull data) {
+        [_kTableView.mj_header endRefreshing];
+        [_kTableView.mj_footer endRefreshing];
+        
+        [_freshData arrayByAddingObjectsFromArray:data];
+        if (data.count) {
+           if ([_freshFlag isEqualToString:headerRefresh]) {
+               [_kTableView.dataArr removeAllObjects];
+               _freshData = [data mutableCopy];
+           }
+           _kTableView.dataArr = [_freshData mutableCopy];
+        } else {
+           [PJHUD showErrorWithStatus:@"没有数据了"];
+        }
+        [_kTableView.mj_header endRefreshing];
+    } failure:^(NSString * _Nonnull err) {
+        [_kTableView.mj_header endRefreshing];
+        [SVProgressHUD showErrorWithStatus:err];
+    }];
+//    NSDictionary *paramters = @{@"offset":@(page*10),
+//                                @"filter":@"isFound=false"};
+//    [[ICNetworkManager defaultManager] GET:@"Blog"
+//                                parameters:@{
+//                                             @"page": @(1)
+//                                             }
+//                                   success:^(NSDictionary *dic) {
+//                                       [_kTableView.mj_header endRefreshing];
+//                                       [_kTableView.mj_footer endRefreshing];
+//                                       NSLog(@"%@",dic);
+//                                       NSArray *data = dic[@"resource"];
+//                                       _freshData = (NSMutableArray*)[_freshData arrayByAddingObjectsFromArray:data];
+//                                       if (data.count) {
+//                                           if ([_freshFlag isEqualToString:headerRefresh]) {
+//                                               [_kTableView.dataArr removeAllObjects];
+//                                               _freshData = [data mutableCopy];
+//                                           }
+//                                           _kTableView.dataArr = [_freshData mutableCopy];
+//                                       } else {
+//                                           [PJHUD showErrorWithStatus:@"没有数据了"];
+//                                       }
+//                                      [_kTableView.mj_header endRefreshing];
+//                                   }
+//                                   failure:^(NSError *error) {
+//                                       [_kTableView.mj_header endRefreshing];
+//                                       NSLog(@"error:%@",error);
+//                                       // error信息要怎么处理？
+//                                   }];
 }
 
 - (void)headfresh {
@@ -148,6 +178,10 @@
 
 - (BOOL)prefersStatusBarHidden {
     return false;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

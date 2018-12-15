@@ -9,6 +9,7 @@
 #import "PJNewLostViewController.h"
 #import "PJUIImage+Extension.h"
 #import "ICNetworkManager.h"
+#import "UserModel.h"
 
 @interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
@@ -30,7 +31,7 @@
 - (void)initView {
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.title = @"添加失物招领";
+    self.title = @"发布新帖子";
     
     _kTableView = [UITableView new];
     _kTableView = self.tableView;
@@ -39,29 +40,44 @@
     _detailsTextView.delegate = self;
     _nameTextField.delegate = self;
     _nameTextField.enabled = false;
-    _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].first_name];
+    _nameTextField.text = [NSString stringWithFormat:@"%@",UserModel.user.masuser.nick_name];
     _phoneTextField.delegate = self;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pushLost"] style:UIBarButtonItemStylePlain target:self action:@selector(uploadLost)];
 }
 
 - (void)uploadLost {
-    NSString *phoneNum = _phoneTextField.text;
+//    NSString *phoneNum = _phoneTextField.text;
     NSString *detailsStr = _detailsTextView.text;
-    if (![self isTruePhone:phoneNum]) {
-        [PJHUD showErrorWithStatus:@"号码错误"];
-        return;
-    }
+//    if (![self isTruePhone:phoneNum]) {
+//        [PJHUD showErrorWithStatus:@"号码错误"];
+//        return;
+//    }
     if ([detailsStr isEqualToString:@""]) {
-        [PJHUD showErrorWithStatus:@"请填写描述信息"];
+        [PJHUD showErrorWithStatus:@"请填写详细内容"];
         return;
     }
-    if (_imgScrollView.dataSource.count == 0) {
-        [PJHUD showErrorWithStatus:@"至少添加一张图片"];
-        return;
-    }
-    NSArray *imgArr = [self setupImg:_imgScrollView.dataSource];
-    [self updaeImgFromHttp:imgArr];
+//    if (_imgScrollView.dataSource.count == 0) {
+//        [PJHUD showErrorWithStatus:@"至少添加一张图片"];
+//        return;
+//    }
+//    NSArray *imgArr = [self setupImg:_imgScrollView.dataSource];
+//    [self updaeImgFromHttp:imgArr];
+    
+    [SVProgressHUD show];
+    
+    [[ICNetworkManager defaultManager] POST:@"CreateBlog" GETParameters:nil POSTParameters:@{ @"content": detailsStr} success:^(NSDictionary *dic) {
+        if([dic[kMsgCode] integerValue] == ICNetworkResponseCodeSuccess) {
+            [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kBlogCreateSuccessNotificationKey object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:dic[kMsg]];
+        }
+        
+    } failure:^(NSError *err) {
+        
+    }];
 }
 
 - (void)updaeImgFromHttp:(NSArray *)imgArr {

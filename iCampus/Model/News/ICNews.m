@@ -17,9 +17,7 @@
          failure:(void(^)(NSString*))failure {
     
     NSString *chnlurl = channel.chnlurl;
-    
-    NSLog(@"%@", channel.chnlname);
-    
+        
     if (!channel) {
         failure(@"当前栏目信息获取失败");
     }

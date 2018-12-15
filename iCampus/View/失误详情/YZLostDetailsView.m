@@ -9,6 +9,8 @@
 #import "YZLostDetailsView.h"
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
+#import "BlogModel.h"
+#import "UserModel.h"
 
 @interface YZLostDetailsView ()
 
@@ -64,13 +66,13 @@
     return newArr;
 }
 
-- (void)setDataSource:(NSDictionary *)dataSource{
+- (void)setDataSource:(BlogModel *)dataSource{
     _dataSource = dataSource;
-    self.nameLabel.text = [NSString stringWithFormat:@"%@在%@发布了:", dataSource[@"author"], dataSource[@"createTime"]];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", dataSource.masuser.nick_name];
     [self.nameLabel sizeToFit];
     
-    _imageArray = [self setupImgArr:[NSString stringWithFormat:@"%@", dataSource[@"imgUrlList"]]];
-    _kDetailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
+//    _imageArray = [self setupImgArr:[NSString stringWithFormat:@"%@", dataSource[@"imgUrlList"]]];
+    _kDetailsLabel.text = [NSString stringWithFormat:@"%@", dataSource.content];
     //label自适应高度
     NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_kDetailsLabel.font,NSFontAttributeName, nil];
     textFrame = _kDetailsLabel.frame;
@@ -87,7 +89,7 @@
     
     UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, lastY - 25, SCREEN_WIDTH, 10)];
     [_scrollview addSubview:tipsLabel];
-    tipsLabel.text = @"小主人一定很着急，快帮忙扩散消息啦~";
+    tipsLabel.text = @"评论内容";
     tipsLabel.textAlignment = NSTextAlignmentCenter;
     tipsLabel.textColor = [UIColor lightGrayColor];
     tipsLabel.font = [UIFont boldSystemFontOfSize:12];

@@ -74,10 +74,24 @@
                     parameters:(NSDictionary *)parameters
                        success:(void (^)(NSDictionary *))success
                        failure:(void (^)(NSError *))failure {
+    
+    UserModel *user = UserModel.user;
+    NSMutableDictionary *newParameters = [(NSDictionary *)parameters mutableCopy];
+
+    if (user) {
+        newParameters[@"uid"] = user.masuser.uid;
+        if (![newParameters objectForKey:@"nick_name"]) {
+            newParameters[@"nick_name"] = user.masuser.nick_name;
+        }
+    }else{
+        newParameters[@"uid"] = @"";
+        newParameters[@"nick_name"] = @"";
+    }
+    
     return [self request:key
                  webSite:nil
                   method:nil
-           GETParameters:parameters
+           GETParameters:newParameters
           POSTParameters:nil
 constructingBodyWithBlock:nil
                  success:success

@@ -60,6 +60,7 @@
         return ;
     }
     
+    [SVProgressHUD show];
     [ICLoginManager login:username password:password timestamp:[NSString stringWithFormat:@"%.0lf",interval] success:^(NSDictionary *data) {
         if ([data[kMsgCode] integerValue] == ICNetworkResponseCodeSuccess) {
             // 登录成功
@@ -73,8 +74,9 @@
         }else{
             [PJHUD showErrorWithStatus:data[kMsg]];
         }
+        [SVProgressHUD dismiss];
     } failure:^(NSString *error) {
-        
+        [SVProgressHUD showErrorWithStatus:@"网络请求失败"];
     }];
     
 }

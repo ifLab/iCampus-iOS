@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class BlogModel;
+
 typedef  void(^ReturnBlock)(void);
 
 @interface YZLostDetailsViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *dataSource;
+@property (nonatomic, strong) BlogModel *dataSource;
 @property (nonatomic ,strong) UIButton* PhoneBtn;
 @property (nonatomic ,strong) UIButton* ChatBtn;
 

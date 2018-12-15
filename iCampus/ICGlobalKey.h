@@ -19,4 +19,7 @@
 #define kUserUpdateInfoSuccessNotificationKey @"kUserUpdateInfoSuccessNotificationKey"
 #define kUserLastLoginTimeDefaultKey @"kUserLastLoginTimeDefaultKey"
 
+// 帖子
+#define kBlogCreateSuccessNotificationKey @"kBlogCreateSuccessNotificationKey"
+
 #endif /* ICGlobalKey_h */

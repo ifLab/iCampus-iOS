@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func maininit(){
         
+        UITabBar.appearance().isTranslucent = false
         // init bmobSMS
         SMSSDK.registerApp(ICNetworkManager.default().smSappKey, withSecret: ICNetworkManager.default().smSappSecret)
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -34,18 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 登录时间判断
         let lastTime = UserDefaults.standard.object(forKey: kUserLastLoginTimeDefaultKey) as? Date
-        print("lastTime \(lastTime)")
         var loginInterval:Double = 3600 * 24
         
         if let lastTime = lastTime {
             loginInterval = Date().timeIntervalSince(lastTime)
         }
         
-        print("loginInterval \(loginInterval)")
-        
         let timeout = loginInterval >= 3600 * 24
-        
-        print("timeout \(timeout)")
         
         //判断是否登入，不登入弹出登入controller
         if !UserModel.isLogin() || timeout {
