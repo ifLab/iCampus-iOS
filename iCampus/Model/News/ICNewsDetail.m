@@ -21,13 +21,13 @@
 + (void)newsDetailWithNews:(ICNews *)news
                    success:(void (^)(ICNewsDetail*))success
                    failure:(void (^)(NSString*))failure{
-    [[ICNetworkManager defaultManager] GET:news.docpuburl
+    [[ICNetworkManager defaultManager] GET:[@"http://job.xuzhengke.cn/ibistu.php?url=" stringByAppendingString:news.docpuburl]
                                 parameters:@{
 //                                             @"link": news.detailKey
                                              }
                                    success:^(NSDictionary *dic) {
                                        if([dic[kMsgCode] intValue] == 3){
-                                           ICNewsDetail *news = [ICNewsDetail mj_objectWithKeyValues:dic[kMsg][@"docdetail"]];
+                                           ICNewsDetail *news = [ICNewsDetail mj_objectWithKeyValues:dic[kMsg][@"docdetail"][0]];
                                            success(news);
                                        }else{
                                            failure(@"内容加载失败");

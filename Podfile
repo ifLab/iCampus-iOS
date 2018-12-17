@@ -19,6 +19,7 @@ target 'iCampus' do
   pod 'IDMPhotoBrowser'
   pod 'MJExtension'  
   pod 'XHInputView'
+# pod 'GTMNSString-HTML'
 #  pod 'Bugly'
 
   target 'iCampusTests' do
