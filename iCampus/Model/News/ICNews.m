@@ -22,7 +22,7 @@
         failure(@"当前栏目信息获取失败");
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://newsfeed.bistu.edu.cn/ibistu/%@/list%@.json", chnlurl, (page == 0 ? @"" : [NSString stringWithFormat:@"_%ld",(long)page])];
+    NSString *url = [NSString stringWithFormat:@"http://job.xuzhengke.cn/ibistu.php?url=http://newsfeed.bistu.edu.cn/ibistu/%@/list%@.json", chnlurl, (page == 0 ? @"" : [NSString stringWithFormat:@"_%ld",(long)page])];
     
     [[ICNetworkManager defaultManager] GET:url
                                 parameters:nil

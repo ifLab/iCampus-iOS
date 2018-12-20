@@ -47,7 +47,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         
         //Umeng share button
         let shareBtn = UIBarButtonItem(image: UIImage.init(named: "newsShare"), style: .done, target: self, action: #selector(shareAction))
-        self.navigationItem.rightBarButtonItem = shareBtn
+//        self.navigationItem.rightBarButtonItem = shareBtn
         refresh()
     }
     
@@ -65,11 +65,16 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                             DTDefaultTextColor: UIColor.black,
                                             DTDefaultLineHeightMultiplier: 1.5,
                                             DTDefaultLinkDecoration: false] as [String : Any]
-                                        self_.textCell.setHTMLString(detail?.dochtmlcon, options: options)
+                                        self_.textCell.setHTMLString(detail?.dochtmlcon.replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "&lt;", with: "<").replacingOccurrences(of: "&gt;", with: ">"), options: options)
+//                                        self_.textCell.setHTMLString("<h1>Hello</h1>", options: options)
+                                        print("==========")
+                                        print()
                                         self_.tableView.reloadData()
-                                        self_.title = detail?.doctitle
+                                        self_.navigationItem.title = detail?.doctitle
                                         SVProgressHUD.dismiss()
                                         print("新闻正文加载完成")
+                                        
+//                                        print(detail?.dochtmlcon.htmlToString);
 //                                        PJNewsPoints.setNewsPoint({[
 //                                            "username" : PJUser.defaultManager().first_name,
 //                                            "newstitle" : detail?.title
@@ -214,4 +219,11 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         }
     }
    
+}
+
+
+extension String {
+    var htmlToString:String {
+        return try!  NSAttributedString(data: data(using: String.Encoding.utf8)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute:String.Encoding.utf8], documentAttributes: nil).string
+    }
 }

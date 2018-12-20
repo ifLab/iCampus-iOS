@@ -12,7 +12,7 @@
 @implementation ICNewsChannel
 
 + (void)getChannelWithSuccess:(void (^)(NSArray<ICNewsChannel *> *))success failure:(void (^)(NSError *))failure{
-    [ICNetworkManager.defaultManager GET:@"http://newsfeed.bistu.edu.cn/ibistu/channel.json" parameters:nil success:^(NSDictionary *res) {
+    [ICNetworkManager.defaultManager GET:@"http://job.xuzhengke.cn/ibistu.php?url=http://newsfeed.bistu.edu.cn/ibistu/channel.json" parameters:nil success:^(NSDictionary *res) {
         if([res[kMsgCode] integerValue] == 1) {
             NSMutableArray<ICNewsChannel *> *array = [@[] mutableCopy];
             for(NSDictionary *dict in res[kMsg][@"docchannel"]) {
