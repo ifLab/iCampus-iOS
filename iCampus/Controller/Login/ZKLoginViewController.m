@@ -44,6 +44,8 @@
 }
 
 - (void)loginBtnActionWithUsername:(NSString *)username password:(NSString *)password {
+    [self.mainView resignAllFirstResponder];
+    
     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
     interval = (interval / 300) + 1;
     
@@ -82,6 +84,7 @@
 }
 
 - (void)registerBtnActionWithUsername:(NSString *)username passWord:(NSString *)password verifyCode:(NSString *)verifyCode {
+    [self.mainView resignAllFirstResponder];
     
     if (username.length != 11) {
         [PJHUD showErrorWithStatus:@"请输入正确手机号"];

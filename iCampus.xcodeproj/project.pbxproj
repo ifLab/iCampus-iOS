@@ -124,6 +124,7 @@
 		F59E186521C4EB3B002B56D3 /* BlogDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F59E186421C4EB3B002B56D3 /* BlogDetailView.m */; };
 		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
 		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
+		F5EEFCF321CBCE5D002C4DAB /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFCF221CBCE5C002C4DAB /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +335,8 @@
 		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
 		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
+		F5EEFCF121CBCE5C002C4DAB /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		F5EEFCF221CBCE5C002C4DAB /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -863,6 +866,8 @@
 			children = (
 				A90F4B711E96983100DDD6BC /* LICENSE */,
 				A90F4B051E9690E000DDD6BC /* AppDelegate.swift */,
+				F5EEFCF121CBCE5C002C4DAB /* TestViewController.h */,
+				F5EEFCF221CBCE5C002C4DAB /* TestViewController.m */,
 				A90F4B091E9690E000DDD6BC /* Main.storyboard */,
 				F5C73C901F97487B0090D578 /* Assets.xcassets */,
 				A90F4B111E9690E000DDD6BC /* Info.plist */,
@@ -1533,6 +1538,7 @@
 				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
 				74DBBE141FFF941700C70F88 /* PJNewsPoints.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
+				F5EEFCF321CBCE5D002C4DAB /* TestViewController.m in Sources */,
 				74DBBE0E1FFF5B0700C70F88 /* ICNewsChannel.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
 				2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */,
