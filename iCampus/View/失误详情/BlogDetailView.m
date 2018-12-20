@@ -46,6 +46,27 @@ static NSString * const kCellID = @"commentCell";
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self addSubview:_tableView];
+
+}
+
+- (void)clickCell:(UITapGestureRecognizer *)tap {
+    CGPoint location = [tap locationInView:self.tableView];
+    NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:location];
+//        self.clickHandler(_comments[indexPath.row]);
+    if ([_delegate respondsToSelector:@selector(clickWithComment:)]) {
+        [_delegate clickWithComment:_comments[indexPath.row]];
+    }
+}
+
+- (void)longPressCell:(UILongPressGestureRecognizer *)longPress{
+    CGPoint location = [longPress locationInView:self.tableView];
+    NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:location];
+//        self.longClickHandler(_comments[indexPath.row]);
+    if(longPress.state == UIGestureRecognizerStateEnded) {
+        if ([_delegate respondsToSelector:@selector(longPressWithComment:)]) {
+            [_delegate longPressWithComment:_comments[indexPath.row]];
+        }
+    }
 }
 
 - (void)setDataSource:(BlogModel *)dataSource {
@@ -132,8 +153,15 @@ static NSString * const kCellID = @"commentCell";
     
     CommentModel *comment = (CommentModel *)self.comments[indexPath.row];
     cell.textLabel.text = comment.masuser.nick_name;
-    cell.detailTextLabel.text = comment.comment_content;
+    NSString *detailText = (comment.child_comments.count == 0 ? comment.comment_content : [NSString stringWithFormat:@"%@\n\n 0条回复",comment.comment_content]);
+    cell.detailTextLabel.text = detailText;
     cell.detailTextLabel.numberOfLines = 0;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickCell:)];
+    [cell addGestureRecognizer:tap];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressCell:)];
+    [cell addGestureRecognizer:longPress];
     
     return cell;
 }

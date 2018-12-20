@@ -15,7 +15,7 @@
 #import "CommentModel.h"
 #import <XHInputView/XHInputView.h>
 
-@interface YZLostDetailsViewController ()<YZLostDetailsViewDelegate, XHInputViewDelagete>{
+@interface YZLostDetailsViewController ()<BlogDetailViewDelegate, XHInputViewDelagete>{
     BlogDetailView* _kYZLostDetailsView;
 }
 
@@ -43,6 +43,7 @@
 - (void) setupUI{
     _kYZLostDetailsView = [[BlogDetailView alloc]init];
     _kYZLostDetailsView.dataSource = _dataSource;
+    _kYZLostDetailsView.delegate = self;
 //    _kYZLostDetailsView.LostDetailsViewDelegate = self;
     self.title = @"帖子详情";
     [self.view addSubview:_kYZLostDetailsView];
@@ -57,6 +58,25 @@
     self.navigationItem.rightBarButtonItem = commentBtn;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
+//    __weak typeof(self) weakSelf = self;
+//
+//    _kYZLostDetailsView.clickHandler = ^(CommentModel * _Nonnull comment) {
+//
+//    };
+//
+//    _kYZLostDetailsView.longClickHandler = ^(CommentModel * _Nonnull comment) {
+//        [weakSelf pressCommentBtnWithType:kCommentTypeComment contentID:comment.comment_id];
+////        [self pressCommentBtnWithType:kCommentTypeBlog contentID:_dataSource.blog_id];
+//    };
+    
+}
+
+- (void)clickWithComment:(CommentModel *)comment {
+//    [self pressCommentBtnWithType:kCommentTypeComment contentID:comment.comment_id];
+}
+
+- (void)longPressWithComment:(CommentModel *)comment {
+    [self pressCommentBtnWithType:kCommentTypeComment contentID: _dataSource.blog_id parentID:comment.comment_id];
 }
 
 - (void)setDataSource:(BlogModel *)dataSource{
@@ -64,6 +84,10 @@
 }
 
 - (void)pressCommentBtn {
+    [self pressCommentBtnWithType:kCommentTypeBlog contentID:_dataSource.blog_id parentID:0];
+}
+
+- (void)pressCommentBtnWithType:(NSString *)contentType  contentID:(NSInteger)contentID parentID:(NSInteger)parentID {
     [XHInputView showWithStyle:InputViewStyleDefault configurationBlock:^(XHInputView *inputView) {
         /** 代理 */
         inputView.delegate = self;
@@ -75,9 +99,9 @@
         /** 输入框颜色 */
         inputView.textViewBackgroundColor = [UIColor groupTableViewBackgroundColor];
     } sendBlock:^BOOL(NSString *text) {
-        [SVProgressHUD show];
         if(text.length){
-            [CommentModel commentWithContentType:kCommentTypeBlog contentID:_dataSource.blog_id content:text parentID:0 success:^(NSString * _Nonnull msg) {
+            [SVProgressHUD show];
+            [CommentModel commentWithContentType:contentType contentID:contentID content:text parentID:parentID success:^(NSString * _Nonnull msg) {
                 [SVProgressHUD showSuccessWithStatus:msg];
             } failure:^(NSString * _Nonnull err) {
                 [SVProgressHUD showErrorWithStatus:err];

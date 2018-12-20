@@ -138,29 +138,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        let file = NSHomeDirectory() + "/Documents/user.data"
-        if (FileManager.default.fileExists(atPath: file)){
-            //用户存在
-            //不是第一次登录
-            //获取用户
-            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let lastTime = formatter.date(from: user.last_login_date)!
-            let thisTime = Date()
-            
-            let timeInterval = thisTime.timeIntervalSince(lastTime)
-            
-            //时间差计算 3600 * 24
-            if (timeInterval <= 3600 * 24){
-                //未超过一天
-                //使用现有方法更新Session
-                ICLoginManager.refreshToken() {
-                    _ in
-                }
-            }
-        }
+//        let file = NSHomeDirectory() + "/Documents/user.data"
+//        if (FileManager.default.fileExists(atPath: file)){
+//            //用户存在
+//            //不是第一次登录
+//            //获取用户
+//            let user:PJUser = NSKeyedUnarchiver.unarchiveObject(withFile: file) as! PJUser
+//            
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//            let lastTime = formatter.date(from: user.last_login_date)!
+//            let thisTime = Date()
+//            
+//            let timeInterval = thisTime.timeIntervalSince(lastTime)
+//            
+//            //时间差计算 3600 * 24
+//            if (timeInterval <= 3600 * 24){
+//                //未超过一天
+//                //使用现有方法更新Session
+//                ICLoginManager.refreshToken() {
+//                    _ in
+//                }
+//            }
+//        }
     }
     
 }
